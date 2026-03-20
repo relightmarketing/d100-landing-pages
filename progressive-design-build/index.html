@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progressive Design Build | Luxury Remodeling With Peace of Mind</title>
+  <meta name="description" content="Luxury design-build remodeling in Southwest Florida for homeowners who want a beautiful result with less stress, stronger communication, and a smoother process." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #3EB1C8;
+      --secondary: #F2C75C;
+      --accent: #CC9933;
+      --bg: #FFFFFF;
+      --surface: #F6F6F6;
+      --surface-2: #FAFAFA;
+      --text: #333333;
+      --muted: #6B7280;
+      --border: #E0DEDE;
+      --shadow: 0 20px 60px rgba(51, 51, 51, 0.12);
+      --radius: 22px;
+      --container: 1180px;
+      --font-heading: 'Open Sans', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(62, 177, 200, 0.12), transparent 32%),
+        radial-gradient(circle at top right, rgba(242, 199, 92, 0.20), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #fcfcfc 100%);
+      line-height: 1.65;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--container), calc(100% - 2rem)); margin: 0 auto; }
+    .section { padding: 5.5rem 0; }
+    .eyebrow {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    h1, h2, h3 { font-family: var(--font-heading); line-height: 1.15; margin: 0 0 1rem; }
+    h1 { font-size: clamp(2.7rem, 6vw, 5rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+    h3 { font-size: 1.2rem; }
+    p { margin: 0 0 1rem; }
+    .lead { font-size: 1.1rem; color: var(--muted); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 54px;
+      padding: 0 1.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      border: 0;
+    }
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--text);
+      box-shadow: 0 10px 30px rgba(204, 153, 51, 0.22);
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.7);
+      color: #ffffff;
+    }
+    .topbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+    .topbar-inner, .nav-inner {
+      width: min(var(--container), calc(100% - 2rem));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .topbar-inner { min-height: 48px; color: var(--muted); }
+    .topbar a strong { color: var(--text); }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(255,255,255,0.88);
+      border-bottom: 1px solid rgba(224, 222, 222, 0.8);
+    }
+    .nav-inner { min-height: 82px; }
+    .brand { display: flex; align-items: center; gap: 0.75rem; }
+    .brand img { width: 190px; height: auto; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .hero {
+      padding: 4.5rem 0 5rem;
+      overflow: clip;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-card {
+      position: relative;
+      border-radius: 32px;
+      overflow: hidden;
+      min-height: 620px;
+      box-shadow: var(--shadow);
+      background: #10323a;
+    }
+    .hero-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(16, 50, 58, 0.10) 0%, rgba(16, 50, 58, 0.72) 100%);
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 620px;
+      color: #ffffff;
+    }
+    .hero-copy .eyebrow { color: rgba(255,255,255,0.88); }
+    .hero-sub {
+      font-size: 1.15rem;
+      max-width: 38rem;
+      color: rgba(255,255,255,0.86);
+      margin-bottom: 1.5rem;
+    }
+    .hero-panel {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(224, 222, 222, 0.9);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .hero-panel ul {
+      padding: 0;
+      margin: 1.5rem 0 0;
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+    }
+    .hero-panel li {
+      padding: 1rem 1rem 1rem 1.1rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      position: relative;
+    }
+    .hero-panel li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: 18px;
+      width: 4px;
+      background: var(--primary);
+      border-radius: 999px;
+    }
+    .logo-row {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .logo-pill {
+      padding: 0.65rem 0.9rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .stat {
+      padding: 1.4rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(51,51,51,0.06);
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+    .problem {
+      background: linear-gradient(180deg, #f8fbfc 0%, #ffffff 100%);
+    }
+    .problem-grid, .proof-grid, .services-grid, .faq-grid, .final-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .problem-grid { grid-template-columns: 1.05fr 0.95fr; align-items: start; }
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 1.75rem;
+      box-shadow: 0 10px 30px rgba(51,51,51,0.05);
+    }
+    .checklist { list-style: none; padding: 0; margin: 1.25rem 0 0; display: grid; gap: 0.85rem; }
+    .checklist li {
+      padding-left: 1.8rem;
+      position: relative;
+    }
+    .checklist li::before {
+      content: '•';
+      position: absolute;
+      left: 0.4rem;
+      top: -0.05rem;
+      color: var(--secondary);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .step-num {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: rgba(62, 177, 200, 0.12);
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .proof-grid { grid-template-columns: 0.9fr 1.1fr; align-items: stretch; }
+    .quote-large {
+      background: linear-gradient(180deg, rgba(62, 177, 200, 0.08), rgba(242, 199, 92, 0.16));
+    }
+    .result-highlight {
+      margin-top: 1.25rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .sub-note {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .service-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 1rem;
+    }
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .form-wrap {
+      background: linear-gradient(180deg, rgba(16, 50, 58, 0.96), rgba(26, 79, 90, 0.96));
+      color: #ffffff;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .form-panel {
+      background: rgba(255,255,255,0.96);
+      color: var(--text);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    form { display: grid; gap: 1rem; }
+    .field-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    label { font-size: 0.92rem; font-weight: 700; display: grid; gap: 0.5rem; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0.95rem 1rem;
+      font: inherit;
+      color: var(--text);
+      background: #ffffff;
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .note {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    .faq-grid { grid-template-columns: repeat(3, 1fr); }
+    .final-grid { grid-template-columns: 1fr 1fr; }
+    .footer {
+      padding: 2.5rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid, .problem-grid, .proof-grid, .form-grid, .final-grid { grid-template-columns: 1fr; }
+      .services-grid, .faq-grid, .process-grid, .stats { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .hero-card, .hero-copy { min-height: 520px; }
+    }
+
+    @media (max-width: 680px) {
+      .section { padding: 4rem 0; }
+      .services-grid, .faq-grid, .process-grid, .stats, .field-row { grid-template-columns: 1fr; }
+      .hero-copy { padding: 2rem; }
+      .hero-panel, .card, .form-panel { padding: 1.35rem; }
+      .topbar-inner { flex-direction: column; justify-content: center; padding: 0.6rem 0; text-align: center; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <!-- VSL recording brief: In this video call out the circumstance of homeowners trying to remodel while out of town, explain why free estimate promises, generic before-and-after ads, and vague luxury positioning do not work, introduce Progressive Design Build as the premium remodeler for people who want a beautiful result without babysitting the project, then send them to the form. -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Bonita Springs, Naples, Fort Myers, and surrounding Southwest Florida communities</span>
+      <a href="tel:+12399395411"><strong>Call Us Today! (239) 939-5411</strong></a>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <img src="https://progressivedesignbuild.com/wp-content/uploads/2017/07/progressive-design-build-logo-300x69.png" alt="Progressive Design Build" />
+      </a>
+      <nav class="nav-links">
+        <a href="#process">Process</a>
+        <a href="#proof">Proof</a>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQs</a>
+      </nav>
+      <a class="btn btn-primary" href="#form">Let's Start a Project Together!</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Award-winning luxury home remodeling</span>
+          <h1>Luxury remodeling for homeowners who want peace of mind</h1>
+          <p class="hero-sub">peace of mind for Southwest Florida homeowners who want a beautiful result, a smoother process, and a team they can trust even when they are out of town.</p>
+          <p class="lead">Progressive Design Build guides homeowners through design, budgeting, communication, and construction with one accountable team from concept to completion.</p>
+          <div style="display:flex; gap:0.9rem; flex-wrap:wrap; margin-top:1.5rem;">
+            <a class="btn btn-primary" href="#form">Let's Start a Project Together!</a>
+            <a class="btn" style="background:#ffffff;border:1px solid var(--border);color:var(--text);" href="#proof">See Client Proof</a>
+          </div>
+          <div class="logo-row">
+            <span class="logo-pill">Since 1989</span>
+            <span class="logo-pill">3-Year Warranty</span>
+            <span class="logo-pill">NARI CotY Winners</span>
+            <span class="logo-pill">Best of Houzz Design</span>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>1989</strong><span>Serving Southwest Florida</span></div>
+            <div class="stat"><strong>3</strong><span>Clear phases in the process</span></div>
+            <div class="stat"><strong>3-Year</strong><span>Workmanship warranty</span></div>
+            <div class="stat"><strong>30+</strong><span>Years of remodeling trust</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="hero-card">
+            <img src="https://progressivedesignbuild.com/wp-content/uploads/2021/03/Naples-FL-Pond-Lane-Great-Room.jpg" alt="Luxury remodeled great room by Progressive Design Build" />
+            <div class="hero-copy">
+              <span class="eyebrow">Making it easy to remodel even when you're out of town</span>
+              <h2 style="font-size:2rem; color:#fff; margin-bottom:0.8rem;">A refined home, handled by a team that stays accountable.</h2>
+              <p style="max-width:30rem; color:rgba(255,255,255,0.86);">Clear planning, accurate estimates, BuilderTrend updates, and a process designed to reduce delays, confusion, and homeowner stress.</p>
+            </div>
+          </div>
+          <div class="hero-panel" style="margin-top:-3.5rem; margin-left:auto; max-width:470px; position:relative; z-index:2;">
+            <h3>Why homeowners choose Progressive</h3>
+            <ul>
+              <li>One design-build team manages the project from concept through construction.</li>
+              <li>Structured planning helps reduce change-order stress and budget confusion.</li>
+              <li>Progress updates and photos help you stay informed from anywhere.</li>
+              <li>Premium workmanship backed by a 3-year warranty and annual inspections.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem">
+      <div class="container problem-grid">
+        <div>
+          <span class="eyebrow">The real homeowner tension</span>
+          <h2>there are no surprises</h2>
+          <p class="lead">That is what Southwest Florida homeowners want to hear before trusting anyone with a major remodel. Not vague promises. Not scattered updates. Not a project they have to supervise from a distance.</p>
+          <ul class="checklist">
+            <li>You are away for part of the year and do not want to babysit the project.</li>
+            <li>You want design, budgeting, and construction aligned before work begins.</li>
+            <li>You care about quality and communication more than finding the cheapest bid.</li>
+            <li>You want to know what is happening without chasing people for answers.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Progressive is built for homeowners who value calm, clarity, and quality.</h3>
+          <p>Instead of juggling multiple companies, you work with one accountable design-build firm. The team handles discovery, detailed design, selections, permitting, scheduling, and construction updates in a connected process.</p>
+          <p>This page is designed for the homeowner who wants the project done right and wants a better experience while it is happening.</p>
+          <a class="btn btn-primary" href="#form" style="margin-top:0.5rem;">Let's Start a Project Together!</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <span class="eyebrow">How the experience works</span>
+        <h2>The luxury remodeler for people who do not want to babysit the project</h2>
+        <p class="lead">Progressive's process is designed to make a premium remodel feel more organized, more transparent, and easier to trust from the very first phase.</p>
+        <div class="process-grid">
+          <div class="card">
+            <span class="step-num">1</span>
+            <h3>Discovery</h3>
+            <p>Measurements, site research, as-built plans, concept direction, and a pre-estimate to clarify scope and budget range early.</p>
+          </div>
+          <div class="card">
+            <span class="step-num">2</span>
+            <h3>Detailed Design</h3>
+            <p>Selections, design refinement, systems review, supplier input, and a final cost estimate that helps remove guesswork before construction.</p>
+          </div>
+          <div class="card">
+            <span class="step-num">3</span>
+            <h3>Construction and Communication</h3>
+            <p>Scheduling, permitting, BuilderTrend updates, lead carpenter coordination, quality control, and warranty follow-through after the project wraps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="container proof-grid">
+        <div class="card quote-large">
+          <span class="eyebrow">Client proof</span>
+          <h2>Trust is built in the details</h2>
+          <p>"Our extensive remodel was completed on time and on budget. The construction software they use kept us informed on construction progress, all of our selections and budget. Weekly photos were also provided."</p>
+          <p><strong>Geri B.</strong></p>
+          <p class="result-highlight">A Bonita Springs homeowner trusted Progressive with three projects over three years and said the work was performed on schedule and at the highest quality level.</p>
+          <p class="sub-note">That same long-view confidence is why repeat homeowners describe Progressive as a firm they trust when quality, communication, and consistency matter most.</p>
+        </div>
+        <div class="card">
+          <span class="eyebrow">Why it matters</span>
+          <h3>Premium homeowners are not just buying a finished room. They are buying a better experience while the project is happening.</h3>
+          <ul class="checklist">
+            <li>Completed on time and on budget language shows up repeatedly in public reviews.</li>
+            <li>Multiple clients describe managing the process remotely while out of town.</li>
+            <li>Review language emphasizes communication, accountability, and peace of mind.</li>
+            <li>The brand backs workmanship with a 3-year warranty and annual inspections.</li>
+          </ul>
+          <a class="btn btn-primary" href="#form" style="margin-top:1rem;">Let's Start a Project Together!</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <span class="eyebrow">Services</span>
+        <h2>Spaces Progressive helps homeowners reimagine</h2>
+        <div class="services-grid">
+          <article class="card service-card">
+            <img src="https://progressivedesignbuild.com/wp-content/uploads/2020/02/Bonita-Springs-FL-Transitional-Kitchen-Remodel-Sink.jpg" alt="Kitchen remodel by Progressive Design Build" />
+            <h3>Kitchen remodels</h3>
+            <p>Refined kitchens designed for everyday living, entertaining, and lasting value.</p>
+          </article>
+          <article class="card service-card">
+            <img src="https://progressivedesignbuild.com/wp-content/uploads/2019/06/Bonita-Bay-Fl-Transitional-Master-Bathroom-Remodel.jpg" alt="Bathroom remodel by Progressive Design Build" />
+            <h3>Bathroom remodels</h3>
+            <p>Elegant bath environments with strong functionality, comfort, and craftsmanship.</p>
+          </article>
+          <article class="card service-card">
+            <img src="https://progressivedesignbuild.com/wp-content/uploads/2021/03/Naples-FL-Pond-Lane-Great-Room.jpg" alt="Whole house remodel by Progressive Design Build" />
+            <h3>Whole house remodeling</h3>
+            <p>Comprehensive transformation for homeowners ready to align their space with how they live now.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section form-wrap" id="form">
+      <div class="container form-grid">
+        <div>
+          <span class="eyebrow" style="color:rgba(255,255,255,0.78);">Request a consultation</span>
+          <h2 style="color:#fff;">Start the conversation with a team built for high-trust remodeling.</h2>
+          <p style="color:rgba(255,255,255,0.84);">If you are planning a kitchen, bath, whole-home, addition, or outdoor living project in Southwest Florida, tell us a little about your home and your goals. We will follow up about next steps.</p>
+          <div class="card" style="margin-top:1.5rem; background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.18); color:#fff; box-shadow:none;">
+            <h3 style="color:#fff;">What homeowners value here</h3>
+            <ul class="checklist" style="margin-top:1rem;">
+              <li>Clear communication from a team that stays accountable.</li>
+              <li>Structured planning before construction begins.</li>
+              <li>A smoother remodel for homeowners who may be away during the project.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="form-panel">
+          <h3 style="margin-bottom:0.25rem;">Let's Start a Project Together!</h3>
+          <p class="note">This page uses a simple lead form for preview. On a live build, connect this section to Progressive's consultation intake flow.</p>
+          <form>
+            <div class="field-row">
+              <label>First Name<input type="text" name="first_name" placeholder="First name" /></label>
+              <label>Last Name<input type="text" name="last_name" placeholder="Last name" /></label>
+            </div>
+            <div class="field-row">
+              <label>Email<input type="email" name="email" placeholder="you@example.com" /></label>
+              <label>Phone<input type="tel" name="phone" placeholder="(239) 555-0123" /></label>
+            </div>
+            <div class="field-row">
+              <label>Service Needed
+                <select name="service">
+                  <option>Complete Home Renovation</option>
+                  <option>Home Additions</option>
+                  <option>Interior Renovations</option>
+                  <option>Kitchens</option>
+                  <option>Bathrooms</option>
+                  <option>Outdoor Living</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>Investment Level
+                <select name="investment">
+                  <option>Select your range</option>
+                  <option>$50,000 - $100,000</option>
+                  <option>$100,000 - $250,000</option>
+                  <option>$250,000 - $500,000</option>
+                  <option>$500,000+</option>
+                </select>
+              </label>
+            </div>
+            <label>Property Location<input type="text" name="location" placeholder="Bonita Springs, Naples, Fort Myers, etc." /></label>
+            <label>Tell us about your project<textarea name="project" placeholder="What do you want to update, and what matters most to you in the experience?"></textarea></label>
+            <button class="btn btn-primary" type="submit">Let's Start a Project Together!</button>
+            <p class="note">By submitting, you are requesting a consultation with Progressive Design Build.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <span class="eyebrow">FAQs</span>
+        <h2>Questions thoughtful homeowners usually ask first</h2>
+        <div class="faq-grid">
+          <div class="card">
+            <h3>Can we move forward if we are out of town for part of the project?</h3>
+            <p>Yes. Public reviews repeatedly describe homeowners staying informed through updates, photos, and a structured communication process while living away from the property.</p>
+          </div>
+          <div class="card">
+            <h3>What makes the design-build approach different?</h3>
+            <p>One team coordinates design, pricing, planning, and construction together, which helps reduce disconnects that often create stress later in the project.</p>
+          </div>
+          <div class="card">
+            <h3>Is Progressive the right fit for budget-first shoppers?</h3>
+            <p>Progressive is better suited for homeowners who prioritize quality, communication, and process over chasing the lowest-cost bid.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container final-grid">
+        <div class="card">
+          <span class="eyebrow">Luxury, handled right</span>
+          <h2>When the process feels right, the project feels different.</h2>
+          <p class="lead">Progressive Design Build serves homeowners who want strong design, careful execution, and a remodel experience grounded in accountability.</p>
+        </div>
+        <div class="card" style="background:linear-gradient(180deg, rgba(62, 177, 200, 0.08), rgba(242, 199, 92, 0.20));">
+          <h3 style="margin-bottom:0.75rem;">Ready for the next step?</h3>
+          <p>If your home and your expectations call for a more organized, more thoughtful remodel experience, begin with a consultation request.</p>
+          <a class="btn btn-primary" href="#form" style="margin-top:0.75rem;">Let's Start a Project Together!</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong style="color:var(--text);">Progressive Design Build</strong><br />
+        27180 Bay Landing Dr #3, Bonita Springs, FL 34135
+      </div>
+      <div>
+        <a href="tel:+12399395411">(239) 939-5411</a><br />
+        <a href="https://progressivedesignbuild.com/" target="_blank" rel="noreferrer">progressivedesignbuild.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
