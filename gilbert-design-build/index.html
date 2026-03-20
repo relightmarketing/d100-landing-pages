@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gilbert Design Build | Award-Winning Kitchen and Bathroom Remodeling in Sarasota</title>
+<meta name="description" content="Gilbert Design Build is Sarasota's premier design-build remodeling firm. Kitchen, bathroom, and whole home remodeling. A+ BBB rated. 20+ years of trusted craftsmanship. Book your free consultation.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#2C2C2C;line-height:1.6;background:#FFFFFF;}
+img{max-width:100%;height:auto;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* UTILITY */
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.section-pad{padding:80px 0;}
+.text-center{text-align:center;}
+.btn{display:inline-block;background:#C8A96E;color:#FFFFFF;padding:16px 36px;border-radius:6px;font-weight:700;font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;transition:background 0.3s,transform 0.2s;border:none;cursor:pointer;}
+.btn:hover{background:#b8994e;transform:translateY(-2px);}
+.btn-outline{background:transparent;border:2px solid #FFFFFF;color:#FFFFFF;}
+.btn-outline:hover{background:rgba(255,255,255,0.15);}
+.btn-dark{background:#1B3A5C;color:#FFFFFF;}
+.btn-dark:hover{background:#15304d;}
+
+/* NAV */
+.nav{background:#1B3A5C;padding:14px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.15);}
+.nav .container{display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:48px;width:auto;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{color:#F5F1EC;font-size:0.92rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:#C8A96E;}
+.nav-phone{color:#C8A96E;font-weight:700;font-size:1rem;}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;}
+.mobile-toggle span{display:block;width:26px;height:3px;background:#F5F1EC;margin:5px 0;border-radius:2px;transition:0.3s;}
+
+/* HERO */
+.hero{position:relative;min-height:600px;display:flex;align-items:center;background:#1B3A5C;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:url('https://gilbertdesignbuild.com/hubfs/Packard%20Kitchen%20Blue%20Island%20Wood%20Floors/Beautiful%20Wood%20Floor%20in%20Remodeled%20Kitchen%20with%20Built%20in%20Appliances%20in%20Sarasota%20Packard.jpg') center/cover no-repeat;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(27,58,92,0.88) 0%,rgba(27,58,92,0.55) 100%);}
+.hero-content{position:relative;z-index:2;max-width:640px;padding:80px 0;}
+.hero-badge{display:inline-block;background:rgba(200,169,110,0.2);border:1px solid #C8A96E;color:#C8A96E;padding:6px 18px;border-radius:20px;font-size:0.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}
+.hero h1{font-size:2.8rem;font-weight:800;color:#FFFFFF;line-height:1.15;margin-bottom:16px;}
+.hero h1 span{color:#C8A96E;}
+.hero p{font-size:1.15rem;color:#ddd;margin-bottom:32px;line-height:1.7;}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;}
+
+/* TRUST BAR */
+.trust-bar{background:#F5F1EC;padding:28px 0;border-bottom:1px solid #e0dbd3;}
+.trust-bar .container{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:10px;font-size:0.92rem;font-weight:600;color:#1B3A5C;}
+.trust-item .icon{font-size:1.4rem;}
+
+/* SERVICES */
+.services{background:#FFFFFF;}
+.services .section-title{font-size:2rem;font-weight:800;color:#1B3A5C;margin-bottom:12px;}
+.services .section-sub{font-size:1.05rem;color:#666;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.service-card{border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform 0.3s,box-shadow 0.3s;background:#FFF;}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 8px 30px rgba(0,0,0,0.14);}
+.service-card img{width:100%;height:220px;object-fit:cover;}
+.service-card-body{padding:24px;}
+.service-card-body h3{font-size:1.2rem;color:#1B3A5C;margin-bottom:8px;}
+.service-card-body p{font-size:0.92rem;color:#555;margin-bottom:16px;}
+.service-card-body a{color:#C8A96E;font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.5px;}
+.service-card-body a:hover{color:#1B3A5C;}
+
+/* ABOUT */
+.about{background:#F5F1EC;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.about-img{border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.1);}
+.about-img img{width:100%;height:100%;object-fit:cover;}
+.about-text .section-title{font-size:2rem;font-weight:800;color:#1B3A5C;margin-bottom:16px;}
+.about-text p{font-size:1rem;color:#444;margin-bottom:16px;}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+.value-item{display:flex;align-items:center;gap:8px;font-size:0.9rem;font-weight:600;color:#1B3A5C;}
+.value-item .dot{width:10px;height:10px;background:#C8A96E;border-radius:50%;flex-shrink:0;}
+
+/* GALLERY */
+.gallery{background:#FFFFFF;}
+.gallery .section-title{font-size:2rem;font-weight:800;color:#1B3A5C;margin-bottom:12px;}
+.gallery .section-sub{font-size:1.05rem;color:#666;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:8px;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;}
+.gallery-grid img:hover{transform:scale(1.03);box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+
+/* PROCESS */
+.process{background:#1B3A5C;color:#FFFFFF;}
+.process .section-title{font-size:2rem;font-weight:800;color:#FFFFFF;margin-bottom:12px;}
+.process .section-sub{font-size:1.05rem;color:#ccc;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;}
+.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.process-step{text-align:center;padding:32px 20px;background:rgba(255,255,255,0.06);border-radius:12px;border:1px solid rgba(255,255,255,0.1);transition:background 0.3s;}
+.process-step:hover{background:rgba(255,255,255,0.1);}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;background:#C8A96E;color:#FFFFFF;border-radius:50%;font-size:1.3rem;font-weight:800;margin-bottom:16px;}
+.process-step h3{font-size:1.1rem;margin-bottom:8px;color:#FFFFFF;}
+.process-step p{font-size:0.88rem;color:#bbb;line-height:1.6;}
+
+/* TESTIMONIALS */
+.testimonials{background:#F5F1EC;}
+.testimonials .section-title{font-size:2rem;font-weight:800;color:#1B3A5C;margin-bottom:12px;}
+.testimonials .section-sub{font-size:1.05rem;color:#666;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.testimonial-card{background:#FFFFFF;padding:32px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.06);position:relative;}
+.testimonial-card::before{content:"\201C";position:absolute;top:16px;left:24px;font-size:3rem;color:#C8A96E;font-family:Georgia,serif;line-height:1;}
+.testimonial-card .stars{color:#C8A96E;font-size:1.1rem;margin-bottom:12px;padding-top:20px;}
+.testimonial-card p{font-size:0.92rem;color:#444;margin-bottom:16px;font-style:italic;line-height:1.7;}
+.testimonial-card .author{font-weight:700;color:#1B3A5C;font-size:0.88rem;}
+
+/* FAQ */
+.faq{background:#FFFFFF;}
+.faq .section-title{font-size:2rem;font-weight:800;color:#1B3A5C;margin-bottom:12px;}
+.faq .section-sub{font-size:1.05rem;color:#666;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;}
+.faq-list{max-width:760px;margin:0 auto;}
+.faq-item{border-bottom:1px solid #e0dbd3;overflow:hidden;}
+.faq-question{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-size:1.05rem;font-weight:600;color:#1B3A5C;background:none;border:none;width:100%;text-align:left;font-family:inherit;transition:color 0.2s;}
+.faq-question:hover{color:#C8A96E;}
+.faq-question .arrow{font-size:1.2rem;transition:transform 0.3s;flex-shrink:0;margin-left:12px;}
+.faq-item.active .faq-question .arrow{transform:rotate(180deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;}
+.faq-item.active .faq-answer{max-height:500px;}
+.faq-answer-inner{padding:0 0 20px 0;font-size:0.95rem;color:#555;line-height:1.7;}
+
+/* FORM SECTION */
+.form-section{background:linear-gradient(135deg,#1B3A5C 0%,#244b72 100%);color:#FFFFFF;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.form-text .section-title{font-size:2rem;font-weight:800;color:#FFFFFF;margin-bottom:16px;}
+.form-text p{font-size:1rem;color:#ccc;margin-bottom:20px;line-height:1.7;}
+.form-text .form-benefits{list-style:none;margin-bottom:24px;}
+.form-text .form-benefits li{padding:6px 0;font-size:0.95rem;color:#ddd;}
+.form-text .form-benefits li::before{content:"\2713";color:#C8A96E;font-weight:700;margin-right:10px;}
+.form-box{background:#FFFFFF;border-radius:12px;padding:40px;box-shadow:0 8px 30px rgba(0,0,0,0.2);}
+.form-box h3{font-size:1.3rem;color:#1B3A5C;margin-bottom:20px;font-weight:700;}
+/* Formspree setup: Replace YOUR_FORM_ID with your actual Formspree form ID. Create one at https://formspree.io -->  */
+.form-box label{display:block;font-size:0.85rem;font-weight:600;color:#1B3A5C;margin-bottom:4px;margin-top:14px;}
+.form-box input,.form-box select,.form-box textarea{width:100%;padding:12px 14px;border:1px solid #d0ccc4;border-radius:6px;font-size:0.95rem;font-family:inherit;transition:border-color 0.2s;background:#FAFAFA;}
+.form-box input:focus,.form-box select:focus,.form-box textarea:focus{outline:none;border-color:#C8A96E;background:#FFF;}
+.form-box textarea{resize:vertical;min-height:80px;}
+.form-box .btn{width:100%;margin-top:20px;text-align:center;font-size:1.05rem;padding:16px;}
+
+/* FOOTER */
+.footer{background:#0f1f30;color:#999;padding:48px 0 28px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+.footer-brand p{font-size:0.88rem;line-height:1.7;margin-top:12px;color:#888;}
+.footer-brand img{height:40px;margin-bottom:8px;}
+.footer h4{color:#FFFFFF;font-size:0.95rem;margin-bottom:16px;}
+.footer-links{list-style:none;}
+.footer-links li{margin-bottom:8px;}
+.footer-links a{color:#999;font-size:0.88rem;transition:color 0.2s;}
+.footer-links a:hover{color:#C8A96E;}
+.footer-bottom{border-top:1px solid #1e3450;padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;flex-wrap:wrap;gap:12px;}
+.footer-bottom a{color:#C8A96E;}
+
+/* MOBILE */
+@media(max-width:768px){
+.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#1B3A5C;flex-direction:column;padding:20px;gap:16px;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+.nav-links.open{display:flex;}
+.mobile-toggle{display:block;}
+.hero h1{font-size:1.9rem;}
+.hero-content{padding:50px 0;}
+.hero{min-height:auto;}
+.trust-bar .container{flex-direction:column;gap:16px;}
+.services-grid{grid-template-columns:1fr;}
+.about-grid{grid-template-columns:1fr;gap:32px;}
+.gallery-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
+.gallery-grid img{height:160px;}
+.process-steps{grid-template-columns:1fr;gap:20px;}
+.testimonial-grid{grid-template-columns:1fr;}
+.form-grid{grid-template-columns:1fr;gap:32px;}
+.footer-grid{grid-template-columns:1fr;gap:28px;}
+.footer-bottom{flex-direction:column;text-align:center;}
+.hero-buttons{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+<div class="container">
+<a href="#" class="nav-logo">
+<img src="https://gilbertdesignbuild.com/hs-fs/hubfs/GilbertDesignBuild-logo.png?width=440&height=124&name=GilbertDesignBuild-logo.png" alt="Gilbert Design Build Logo">
+</a>
+<button class="mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+<span></span><span></span><span></span>
+</button>
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#process">Our Process</a>
+<a href="#testimonials">Reviews</a>
+<a href="#faq">FAQ</a>
+<a href="#form" class="nav-phone">(941) 757-3395</a>
+<a href="#form" class="btn" style="padding:10px 22px;font-size:0.85rem;">Free Consultation</a>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="container">
+<div class="hero-content">
+<span class="hero-badge">Sarasota's Premier Design-Build Firm</span>
+<h1>Beautiful Work, with Care, <span>on Time and on Budget</span></h1>
+<p>For over 20 years, Gilbert Design Build has been transforming kitchens, bathrooms, and whole homes across Sarasota, Bradenton, and the Suncoast. One team handles everything from design to completion, so you can relax and enjoy the results.</p>
+<div class="hero-buttons">
+<a href="#form" class="btn">Book Your Free Consultation</a>
+<a href="#gallery" class="btn btn-outline">View Our Portfolio</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+<div class="container">
+<div class="trust-item"><span class="icon">&#9733;</span> A+ BBB Rating</div>
+<div class="trust-item"><span class="icon">&#127942;</span> Home Remodeling BIG 50</div>
+<div class="trust-item"><span class="icon">&#128197;</span> 20+ Years of Excellence</div>
+<div class="trust-item"><span class="icon">&#128100;</span> Family-Owned and Operated</div>
+<div class="trust-item"><span class="icon">&#128736;</span> Licensed CBC1263526</div>
+</div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services section-pad">
+<div class="container">
+<div class="text-center">
+<h2 class="section-title">Our Remodeling Services</h2>
+<p class="section-sub">From kitchens and bathrooms to whole-home transformations, we design, build, and manage every detail under one roof.</p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<img src="https://gilbertdesignbuild.com/hubfs/Rose%20Cohen%20Kitchen%20Modern%20White/Island%20with%20Sink%20and%20Sculptural%20Pendant%20Lighting%20in%20Modern%20Sarasota%20Kitchen%20Remodel%20Cohen.jpg" alt="Modern kitchen remodel in Sarasota with island and pendant lighting">
+<div class="service-card-body">
+<h3>Kitchen Remodeling</h3>
+<p>Transform the heart of your home with custom cabinetry, modern layouts, and finishes that reflect your style. From open-concept designs to chef-worthy kitchens.</p>
+<a href="#form">Get Started &#8594;</a>
+</div>
+</div>
+<div class="service-card">
+<img src="https://gilbertdesignbuild.com/hubfs/Johnson%20Bathroom%20Wood/Marble%20Countertop%20in%20Remodeled%20Sarasota%20Primary%20Bathroom%20with%20Glass%20Shower%20Door%20Johnson.jpeg" alt="Luxury bathroom remodel in Sarasota with marble countertop">
+<div class="service-card-body">
+<h3>Bathroom Remodeling</h3>
+<p>Create your personal retreat with walk-in showers, soaking tubs, custom tile work, and double vanities. Luxury and function designed around you.</p>
+<a href="#form">Get Started &#8594;</a>
+</div>
+</div>
+<div class="service-card">
+<img src="https://gilbertdesignbuild.com/hubfs/Elliot%20Feature%20Wall/Feature%20Wall%20in%20Sarasota%20Home%20Remodel%20with%20Built%20In%20Alcoves%20Interior%20Design%20Elliot.jpeg" alt="Whole home remodel with feature wall in Sarasota">
+<div class="service-card-body">
+<h3>Whole Home Remodeling</h3>
+<p>Reimagine your entire living space. We handle multi-room renovations, feature walls, structural modifications, and complete interior transformations.</p>
+<a href="#form">Get Started &#8594;</a>
+</div>
+</div>
+<div class="service-card">
+<img src="https://gilbertdesignbuild.com/hubfs/Sivia%20Bathroom%20ADA%20Level%20Entry%20Shower/Aging%20in%20Place%20Remodel%20for%20Accessible%20Shower%20in%20Bradenton%20Sivia.jpeg" alt="Accessible ADA bathroom remodel in Bradenton">
+<div class="service-card-body">
+<h3>Accessible Remodeling</h3>
+<p>CAPS-certified aging-in-place design that is beautiful, functional, and safe. Level-entry showers, grab bars, and thoughtful layouts for every stage of life.</p>
+<a href="#form">Get Started &#8594;</a>
+</div>
+</div>
+<div class="service-card">
+<img src="https://gilbertdesignbuild.com/hubfs/Lipscomb%20Kitchen%20Remodel/Cherry%20Lower%20Cabinets%20and%20Warm%20Gray%20Upper%20Cabinets%20in%20Kitchen%20Remodel%20in%20Sarasota.jpg" alt="Custom cherry cabinets in Sarasota kitchen remodel">
+<div class="service-card-body">
+<h3>Custom Cabinets</h3>
+<p>Premium cabinet design and installation for kitchens, bathrooms, and beyond. Choose from modern flat-front to classic shaker styles, all expertly fitted to your space.</p>
+<a href="#form">Get Started &#8594;</a>
+</div>
+</div>
+<div class="service-card">
+<img src="https://gilbertdesignbuild.com/hubfs/2024%20Open%20House/Design%20Center%20Wall%20GDB.jpg" alt="Gilbert Design Build showroom design center">
+<div class="service-card-body">
+<h3>Design Services</h3>
+<p>Our in-house professional designers create 3D renderings so you can see your remodel come to life before construction begins. Guided selections, refined to perfection.</p>
+<a href="#form">Get Started &#8594;</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about section-pad">
+<div class="container">
+<div class="about-grid">
+<div class="about-img">
+<img src="https://gilbertdesignbuild.com/hubfs/Gilbert_Design_Build_July2023/Images/about-us-section-circle-optimized.webp" alt="Gilbert Design Build team serving Sarasota and Bradenton">
+</div>
+<div class="about-text">
+<h2 class="section-title">Why Sarasota Families Choose Gilbert Design Build</h2>
+<p>We are a family-owned, design-build remodeling company serving the Suncoast from Sarasota and Bradenton to Lakewood Ranch and the barrier islands. For over two decades, we have delivered stunning results with transparent pricing, zero hidden costs, and a process designed to eliminate the common frustrations of remodeling.</p>
+<p>At Gilbert Design Build, we are obsessed with getting the details right. We manage every facet of your remodeling project under one roof, with personal service and one accountable team from start to finish.</p>
+<div class="about-values">
+<div class="value-item"><span class="dot"></span> Honor</div>
+<div class="value-item"><span class="dot"></span> Excellence</div>
+<div class="value-item"><span class="dot"></span> Beauty</div>
+<div class="value-item"><span class="dot"></span> Innovation</div>
+<div class="value-item"><span class="dot"></span> Family</div>
+<div class="value-item"><span class="dot"></span> Integrity</div>
+</div>
+<div style="margin-top:28px;">
+<a href="#form" class="btn">Schedule Your Consultation</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery section-pad">
+<div class="container">
+<div class="text-center">
+<h2 class="section-title">Our Remodeling Portfolio</h2>
+<p class="section-sub">Explore real projects completed for Sarasota and Bradenton homeowners. Every image represents our commitment to quality craftsmanship.</p>
+</div>
+<div class="gallery-grid">
+<img src="https://gilbertdesignbuild.com/hubfs/Packard%20Kitchen%20Blue%20Island%20Wood%20Floors/Blue%20Island%20with%20Stovetop%20and%20Ceiling%20Height%20Wall%20Cabinets%20in%20Sarasota%20Kitchen%20Remodel%20Packard.jpg" alt="Blue island kitchen remodel in Sarasota">
+<img src="https://gilbertdesignbuild.com/hubfs/Franz%20Kitchen%20Remodel%20Mid%20Century/Updated%20Mid%20Century%20Modern%20Natural%20Warm%20Wood%20Kitchen%20Cabinets%20in%20Sarasota%20Kitchen%20Remodel.jpeg" alt="Mid century modern kitchen remodel Sarasota">
+<img src="https://gilbertdesignbuild.com/hubfs/Rose%20Cohen%20Kitchen%20Modern%20White/Open%20Concept%20White%20Kitchen%20with%20Island%20Seating%20in%20Sarasota%20Remodel%20Cohen.jpg" alt="Open concept white kitchen remodel Sarasota">
+<img src="https://gilbertdesignbuild.com/hubfs/Clark%20Blue%20Galley%20Kitchen/Modern%20Galley%20Kitchen%20Remodel%20in%20Sarasota%20with%20Flat%20Front%20Cabinets%20Clark.jpeg" alt="Modern blue galley kitchen remodel Sarasota">
+<img src="https://gilbertdesignbuild.com/hubfs/Franz%20Wood%20Bathroom/Walk%20In%20Shower%20and%20Double%20Natural%20Warm%20Wood%20Vanity%20with%20Twin%20Mirrors%20in%20Sarasota%20Bathroom%20Remodel%20Franz.jpeg" alt="Mid century modern bathroom remodel Sarasota">
+<img src="https://gilbertdesignbuild.com/hubfs/Jones%20Dodd%20Bathroom%20White%20and%20Blue/Brushed%20Metal%20Fixtures%20in%20Remodeled%20Sarasota%20Bathroom%20Jones%20Dodd.jpeg" alt="Gray and white bathroom remodel Sarasota">
+<img src="https://gilbertdesignbuild.com/hubfs/Sivia%20Bathroom%20ADA%20Level%20Entry%20Shower/Warm%20Gray%20Toned%20Bathroom%20Vanity%20with%20Accessible%20Level%20Entry%20Shower%20in%20Bradenton%20Remodel%20Sivia.jpeg" alt="Accessible level entry shower Bradenton">
+<img src="https://gilbertdesignbuild.com/hubfs/Guenard%20Bathroom%20Remodel/Primary%20Bathroom%20with%20Storage%20and%20Double%20Vanity%20and%20Large%20Mirror%20and%20Walk%20in%20ADA%20Shower%20in%20Sarasota%20Guenard.jpeg" alt="Accessible primary bathroom remodel Sarasota">
+<img src="https://gilbertdesignbuild.com/hubfs/Packard%20Kitchen%20Blue%20Island%20Wood%20Floors/Island%20Seating%20in%20Renovated%20Sarasota%20Kitchen%20with%20Wall%20of%20Storage%20and%20Coffee%20Bar%20Packard.jpg" alt="Kitchen island seating and coffee bar Sarasota">
+<img src="https://gilbertdesignbuild.com/hubfs/Lipscomb%20Kitchen%20Remodel/Southern%20Coastal%20Kitchen%20Remodel%20with%20Herringbone%20Backsplash%20and%20Blue%20Cabinets%20in%20Sarasota.jpg" alt="Coastal kitchen with herringbone backsplash Sarasota">
+<img src="https://gilbertdesignbuild.com/hubfs/Johnson%20Bathroom%20Wood/Wood%20Vanity%20with%20Marble%20Countertop%20in%20Remodeled%20Sarasota%20Primary%20Bathroom%20Johnson.jpeg" alt="Wood vanity with marble countertop Sarasota bathroom">
+<img src="https://gilbertdesignbuild.com/hubfs/Franz%20Kitchen%20Remodel%20Mid%20Century/Curved%20Warm%20Wood%20Island%20in%20Mid%20Century%20Modern%20Sarasota%20Kitchen%20Remodel%20Franz.jpeg" alt="Curved wood island mid century modern kitchen Sarasota">
+</div>
+<div class="text-center" style="margin-top:40px;">
+<a href="#form" class="btn btn-dark">Start Your Transformation</a>
+</div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process section-pad">
+<div class="container">
+<div class="text-center">
+<h2 class="section-title">Our Proven 6-Step Process</h2>
+<p class="section-sub">One contract. One point of contact. One accountable team working to make your remodeling project easier and more enjoyable than you ever imagined.</p>
+</div>
+<div class="process-steps">
+<div class="process-step">
+<div class="step-num">1</div>
+<h3>Design Center Meeting</h3>
+<p>Visit our Lakewood Ranch showroom to discuss your project goals, timeline, and budget with our team.</p>
+</div>
+<div class="process-step">
+<div class="step-num">2</div>
+<h3>Designer Home Visit</h3>
+<p>Your consultant visits your home to review the space, gather measurements, and understand your vision in person.</p>
+</div>
+<div class="process-step">
+<div class="step-num">3</div>
+<h3>Design Selection</h3>
+<p>Return to our showroom to review 3D renderings, make product selections, and refine every design detail with your consultant.</p>
+</div>
+<div class="process-step">
+<div class="step-num">4</div>
+<h3>Construction Agreement</h3>
+<p>Review and approve the final plan, including the full scope of work, product selections, and transparent pricing. No surprises.</p>
+</div>
+<div class="process-step">
+<div class="step-num">5</div>
+<h3>Pre-Start Meeting</h3>
+<p>Meet your project manager on-site to review access, work hours, and what to expect throughout the construction phase.</p>
+</div>
+<div class="process-step">
+<div class="step-num">6</div>
+<h3>Enjoy the Result</h3>
+<p>Your dream remodel is complete. Backed by a two-year workmanship warranty, enjoy your beautiful new space for years to come.</p>
+</div>
+</div>
+<div class="text-center" style="margin-top:48px;">
+<a href="#form" class="btn">Begin Step One Today</a>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials section-pad">
+<div class="container">
+<div class="text-center">
+<h2 class="section-title">What Our Clients Say</h2>
+<p class="section-sub">Real reviews from Sarasota and Bradenton homeowners who trusted Gilbert Design Build with their dream remodel.</p>
+</div>
+<div class="testimonial-grid">
+<div class="testimonial-card">
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p>I am extremely pleased with the total remodel of the master bathroom. The entire process was smooth going, professional with very high quality products and workmanship. Jesse's attention to detail is impeccable.</p>
+<div class="author">Karen S., Bradenton</div>
+</div>
+<div class="testimonial-card">
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p>They did a fantastic job installing a somewhat complicated backsplash. As an architectural designer, I am kind of (ok, VERY) picky but Gilbert Design Build exceeded my expectations and I highly recommend them!</p>
+<div class="author">Brooke D., Sarasota</div>
+</div>
+<div class="testimonial-card">
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p>From the initial walk-in greeting to the final fist bumps, we could not have been more pleased by the entire crew. Highly recommended!</p>
+<div class="author">Michael F., Sarasota</div>
+</div>
+<div class="testimonial-card">
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p>Total gut job of my master bathroom was done very professionally. He was very respectful of my budget. All the workers were so clean and neat. Heartily recommend this company.</p>
+<div class="author">Fran S., Sarasota</div>
+</div>
+<div class="testimonial-card">
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p>The work was carried out to a very high standard, and our house was respected and kept clean throughout. The punch list was agreed upon and resolved quickly and easily. Very happy.</p>
+<div class="author">T.C., Bradenton</div>
+</div>
+<div class="testimonial-card">
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p>The owner even went so far as to give me some leftover tile so I could create a backsplash that originally did not fit within my budget. I love my kitchen! Thank you, Gilbert Design Build.</p>
+<div class="author">R.D., University Park</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq section-pad">
+<div class="container">
+<div class="text-center">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-sub">Get answers to the most common questions Sarasota homeowners have about the remodeling process.</p>
+</div>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question">What is design-build and why does it matter?<span class="arrow">&#9660;</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Design-build means one company handles both the design and construction of your remodel. At Gilbert Design Build, this gives you a single point of contact, a seamless process, and full accountability from concept to completion. There is no need to hire and manage separate designers and contractors, which saves time, reduces miscommunication, and typically delivers a shorter overall project timeline.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">How much does a kitchen remodel cost in Sarasota?<span class="arrow">&#9660;</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Kitchen remodels vary widely based on the scope of work, the size of the space, and the grade of finishes you choose. Because every project is unique, we recommend scheduling a free consultation so we can discuss your goals and provide a realistic estimate tailored to your vision and budget.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">How much does a bathroom remodel cost?<span class="arrow">&#9660;</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Many bathroom remodels in the Sarasota and Bradenton area fall between $35,000 and $90,000, depending on the scope of work and the size of the bathroom. A simple cosmetic refresh will be on the lower end, while a full gut renovation with structural changes will be higher. Contact us for a personalized estimate.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">How long does a typical remodel take?<span class="arrow">&#9660;</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">A bathroom remodel typically takes 3 to 4 weeks for straightforward renovations and 6 to 8 weeks for more extensive work. Kitchen remodels and whole-home projects take longer. The design process itself takes 3 to 6 months on average. We provide estimated timelines during the consultation so you know what to expect.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Are you licensed and insured?<span class="arrow">&#9660;</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Yes. Gilbert Design Build holds Florida state contractor license CBC1263526 and is fully insured. We value safety and compliance, and maintain all required credentials to protect both your property and our team.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Do I need to be home during the remodel?<span class="arrow">&#9660;</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Not at all. Many of our clients, especially seasonal residents, choose to have their remodeling done while they are away. We keep you informed through our project portal where we post photos and videos of progress. You can return to a beautifully transformed home.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">What areas do you serve?<span class="arrow">&#9660;</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">We serve Sarasota, Bradenton, Lakewood Ranch, Osprey, Nokomis, Longboat Key, Siesta Key, Lido Key, Parrish, Venice, and the surrounding Suncoast communities in Southwest Florida.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Do you offer financing options?<span class="arrow">&#9660;</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Yes. We offer tailored financing options to ensure your project aligns with your budget. Our goal is to make the remodeling process as accessible as possible so you can move forward with confidence.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FORM -->
+<section id="form" class="form-section section-pad">
+<div class="container">
+<div class="form-grid">
+<div class="form-text">
+<h2 class="section-title">Book Your Free Consultation</h2>
+<p>Your dream remodel starts with a conversation. Tell us about your project and we will reach out to schedule your free consultation at our Lakewood Ranch showroom.</p>
+<ul class="form-benefits">
+<li>Discuss your vision and goals for your remodeled home</li>
+<li>Learn about the design-build advantage</li>
+<li>Get transparent project timelines and budget guidance</li>
+<li>Tour our showroom and see materials in person</li>
+<li>No pressure, no obligation</li>
+</ul>
+<p style="color:#C8A96E;font-weight:700;font-size:1.1rem;">Call us directly: (941) 757-3395</p>
+<p style="font-size:0.88rem;color:#999;margin-top:8px;">6924 Professional Pkwy E, Lakewood Ranch, FL 34240<br>Tuesday through Friday: 9am to 5pm | Monday: 12pm to 5pm</p>
+</div>
+<div class="form-box">
+<h3>Tell Us About Your Project</h3>
+<!-- Formspree: Replace YOUR_FORM_ID below with your Formspree endpoint. Sign up free at https://formspree.io -->
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<input type="hidden" name="_subject" value="New Gilbert Design Build Landing Page Lead">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" placeholder="John and Jane Smith" required>
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" placeholder="you@example.com" required>
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" placeholder="(941) 555-1234" required>
+<label for="project">Project Type</label>
+<select id="project" name="project" required>
+<option value="" disabled selected>Select your project type</option>
+<option value="Kitchen Remodel">Kitchen Remodel</option>
+<option value="Bathroom Remodel">Bathroom Remodel</option>
+<option value="Whole Home Remodel">Whole Home Remodel</option>
+<option value="Accessible Remodel">Accessible / Aging in Place</option>
+<option value="Cabinets">Custom Cabinets</option>
+<option value="Other">Other</option>
+</select>
+<label for="message">Tell Us About Your Project</label>
+<textarea id="message" name="message" placeholder="What are you hoping to accomplish with your remodel?"></textarea>
+<button type="submit" class="btn">Book My Free Consultation</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<img src="https://gilbertdesignbuild.com/hs-fs/hubfs/Gilbert_Design_Build_July2023/Images/GDB-Logo-No-POS-Reversed-FIN.webp?width=326&height=89&name=GDB-Logo-No-POS-Reversed-FIN.webp" alt="Gilbert Design Build">
+<p>Serving and enriching lives by providing beautiful work, with care, on time and on budget. Family-owned and operated in Sarasota since 2000.</p>
+<p style="margin-top:8px;">License: CBC1263526</p>
+</div>
+<div>
+<h4>Services</h4>
+<ul class="footer-links">
+<li><a href="#services">Kitchen Remodeling</a></li>
+<li><a href="#services">Bathroom Remodeling</a></li>
+<li><a href="#services">Whole Home Remodeling</a></li>
+<li><a href="#services">Accessible Remodeling</a></li>
+<li><a href="#services">Custom Cabinets</a></li>
+</ul>
+</div>
+<div>
+<h4>Company</h4>
+<ul class="footer-links">
+<li><a href="#process">Our Process</a></li>
+<li><a href="#testimonials">Reviews</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#form">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>2026 Gilbert Design Build. All rights reserved.</span>
+<span>Sarasota | Bradenton | Lakewood Ranch | Osprey | Nokomis | Longboat Key</span>
+</div>
+</div>
+</footer>
+
+<!-- FAQ ACCORDION JAVASCRIPT -->
+<script>
+document.querySelectorAll('.faq-question').forEach(function(btn){
+btn.addEventListener('click',function(){
+var item=this.parentElement;
+var isActive=item.classList.contains('active');
+document.querySelectorAll('.faq-item').forEach(function(el){el.classList.remove('active');});
+if(!isActive){item.classList.add('active');}
+});
+});
+</script>
+
+</body>
+</html>
