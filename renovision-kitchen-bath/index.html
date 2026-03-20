@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RenoVision Kitchen &amp; Bath | Palm Beach County Kitchen &amp; Bathroom Remodeling</title>
+<meta name="description" content="RenoVision Kitchen and Bath is Palm Beach County's design-build remodeling firm. See your new kitchen or bathroom in Virtual Reality before construction begins. Free design consultation.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFFFFF;
+  --surface: #F7F5F2;
+  --accent: #B87333;
+  --accent-dark: #9A5F28;
+  --gold: #D4A853;
+  --navy: #1A1A1A;
+  --navy-deep: #111111;
+  --text: #333333;
+  --text-muted: #777777;
+  --font-head: 'Montserrat', -apple-system, sans-serif;
+  --font-body: 'Lato', -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  color: var(--navy);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #FFFFFF;
+}
+
+/* Pre-headline labels */
+.pre-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* ==================== NAV ==================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--navy);
+  z-index: 1000;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo img {
+  height: 44px;
+  width: auto;
+}
+
+.nav-cta .btn {
+  padding: 10px 24px;
+  font-size: 13px;
+}
+
+/* ==================== SECTION 1: HERO ==================== */
+.hero {
+  margin-top: 72px;
+  background: linear-gradient(135deg, #1A1A1A 0%, #2C2014 100%);
+  padding: 80px 24px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+}
+
+.hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-text {
+  color: #FFFFFF;
+}
+
+.hero-text .pre-label {
+  color: var(--gold);
+}
+
+.hero-text h1 {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  font-size: 42px;
+}
+
+.hero-text h1 span {
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.hero-proof {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.hero-proof-item {
+  text-align: center;
+}
+
+.hero-proof-num {
+  font-family: var(--font-head);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gold);
+  display: block;
+  line-height: 1.1;
+}
+
+.hero-proof-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-image {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+/* ==================== SECTION 2: TRUST BAR ==================== */
+.trust-bar {
+  background: var(--surface);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.trust-bar-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trust-icon {
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ==================== SECTION 3: PROBLEM ==================== */
+.section-problem {
+  background: var(--bg);
+  padding: 80px 24px;
+}
+
+.section-problem .container {
+  max-width: 720px;
+}
+
+.section-problem h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.problem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+}
+
+.problem-icon {
+  color: var(--accent);
+  font-size: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.problem-cta {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.problem-cta p {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.problem-cta .sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ==================== SECTION 4: OFFER / HOW IT WORKS ==================== */
+.section-offer {
+  background: var(--surface);
+  padding: 80px 24px;
+}
+
+.section-offer .section-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-offer h2 {
+  margin-bottom: 12px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.step-card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.step-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.step-card-body {
+  padding: 24px;
+}
+
+.step-num {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.step-card h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.step-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Inclusions */
+.inclusions {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 36px 40px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.inclusions h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.inclusions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+}
+
+.inclusion-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.timeline-callout {
+  background: var(--navy);
+  color: #FFFFFF;
+  padding: 24px 32px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.timeline-callout span {
+  color: var(--gold);
+}
+
+.offer-cta {
+  text-align: center;
+}
+
+/* ==================== SECTION 5: GALLERY ==================== */
+.section-gallery {
+  background: var(--navy);
+  padding: 80px 24px;
+}
+
+.section-gallery h2 {
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-gallery .pre-label {
+  text-align: center;
+  color: var(--gold);
+}
+
+.section-gallery .subtitle {
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  font-size: 15px;
+  margin-bottom: 48px;
+}
+
+.gallery-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery-item {
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  padding: 20px 14px 12px;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ==================== SECTION 6: SOCIAL PROOF ==================== */
+.section-proof {
+  background: var(--bg);
+  padding: 80px 24px;
+}
+
+.section-proof .section-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 0 auto 48px;
+  max-width: 960px;
+}
+
+.testimonial-card {
+  background: var(--surface);
+  padding: 32px 28px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  font-family: var(--font-head);
+  font-size: 64px;
+  color: var(--accent);
+  line-height: 1;
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  opacity: 0.4;
+}
+
+.testimonial-text {
+  font-size: 15px;
+  line-height: 1.7;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+}
+
+.testimonial-author {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.testimonial-location {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.proof-stats {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #E8E4DE;
+}
+
+.stat-item {}
+
+.stat-number {
+  font-family: var(--font-head);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--accent);
+  display: block;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ==================== SECTION 7: ABOUT ==================== */
+.section-about {
+  background: var(--surface);
+  padding: 80px 24px;
+}
+
+.about-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-image {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.about-text .pre-label {
+  color: var(--accent);
+}
+
+.about-text h2 {
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.about-highlight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.about-highlight .check-icon {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  font-size: 10px;
+}
+
+/* ==================== SECTION 8: FORM ==================== */
+.section-form {
+  background: var(--navy);
+  padding: 80px 24px;
+}
+
+.form-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.form-left {
+  color: #FFFFFF;
+}
+
+.form-left .pre-label {
+  color: var(--gold);
+}
+
+.form-left h2 {
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.form-left p {
+  color: rgba(255,255,255,0.75);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.form-left-features {
+  list-style: none;
+  margin-top: 24px;
+}
+
+.form-left-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 14px;
+}
+
+.form-left-features li .check-icon {
+  background: var(--accent);
+}
+
+.form-right {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 36px 32px;
+}
+
+.form-right h3 {
+  margin-bottom: 24px;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Formspree setup: Replace YOUR_FORM_ID with your actual Formspree form ID.
+   Create a free form at https://formspree.io and paste the ID below. */
+.form-right form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+
+.form-right form label:first-of-type {
+  margin-top: 0;
+}
+
+.form-right form input,
+.form-right form select,
+.form-right form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #D8D4CE;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text);
+  background: #FAFAF8;
+  transition: border-color 0.2s;
+}
+
+.form-right form input:focus,
+.form-right form select:focus,
+.form-right form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.form-right form textarea {
+  height: 90px;
+  resize: vertical;
+}
+
+.form-right form .btn {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-reassurance {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+/* ==================== SECTION 9: FAQ ==================== */
+.section-faq {
+  background: var(--surface);
+  padding: 80px 24px;
+}
+
+.section-faq h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #FFFFFF;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: color 0.2s;
+}
+
+.faq-question:hover {
+  color: var(--accent);
+}
+
+.faq-icon {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-answer-inner {
+  padding: 0 24px 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* ==================== SECTION 10: FINAL CTA ==================== */
+.section-final-cta {
+  background: linear-gradient(135deg, #1A1A1A 0%, #2C2014 100%);
+  padding: 72px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.section-final-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+}
+
+.section-final-cta h2 {
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  font-size: 32px;
+}
+
+.section-final-cta p {
+  color: rgba(255,255,255,0.75);
+  font-size: 17px;
+  max-width: 560px;
+  margin: 0 auto 28px;
+}
+
+.section-final-cta .btn {
+  margin-bottom: 20px;
+}
+
+.final-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background: var(--navy-deep);
+  padding: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer a {
+  color: rgba(255,255,255,0.5);
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .hero {
+    padding: 56px 24px 48px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+  }
+
+  .hero-proof {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    height: 260px;
+  }
+
+  .trust-bar-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inclusions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img {
+    height: 280px;
+  }
+
+  .form-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .section-final-cta h2 {
+    font-size: 26px;
+  }
+
+  .nav-cta .btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== NAV ==================== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://www.renovisionkb.com/" class="nav-logo" target="_blank" rel="noopener">
+      <img src="https://www.renovisionkb.com/wp-content/uploads/2022/06/logorenovfooter-1.png" alt="RenoVision Kitchen and Bath logo">
+    </a>
+    <div class="nav-cta">
+      <a href="#form" class="btn">Book Free Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== SECTION 1: HERO ==================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="pre-label">Kitchen &amp; Bath Remodeling in Palm Beach County</span>
+      <h1>See Your New Kitchen in <span>Virtual Reality</span> Before We Build It</h1>
+      <p class="hero-sub">RenoVision is the only Palm Beach County remodeler that lets you walk through your finished space in VR, so you know exactly what you are getting before construction begins.</p>
+      <a href="#form" class="btn">Book Your Free Design Consultation</a>
+      <div class="hero-proof">
+        <div class="hero-proof-item">
+          <span class="hero-proof-num">60+</span>
+          <span class="hero-proof-label">Projects Done</span>
+        </div>
+        <div class="hero-proof-item">
+          <span class="hero-proof-num">VR</span>
+          <span class="hero-proof-label">Design Preview</span>
+        </div>
+        <div class="hero-proof-item">
+          <span class="hero-proof-num">Laser</span>
+          <span class="hero-proof-label">Precision Tools</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Village-Walk-Kitchen-9-850x520.webp" alt="Village Walk Kitchen remodel by RenoVision Kitchen and Bath">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 2: TRUST BAR ==================== -->
+<section class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><span class="trust-icon">&#10003;</span> VR Design Experience</div>
+    <div class="trust-item"><span class="trust-icon">&#10003;</span> Laser-Precision Measurements</div>
+    <div class="trust-item"><span class="trust-icon">&#10003;</span> Royal Palm Beach Showroom</div>
+    <div class="trust-item"><span class="trust-icon">&#10003;</span> Full Design-Build Service</div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 3: PROBLEM ==================== -->
+<section class="section-problem">
+  <div class="container">
+    <span class="pre-label" style="text-align:center;">Sound familiar?</span>
+    <h2>The Kitchen Remodel You Keep Putting Off</h2>
+    <div class="problem-grid">
+      <div class="problem-item">
+        <span class="problem-icon">&#9679;</span>
+        <span>You have saved hundreds of kitchen photos online, but you still cannot picture what will actually work in your space.</span>
+      </div>
+      <div class="problem-item">
+        <span class="problem-icon">&#9679;</span>
+        <span>You got a quote from a contractor who gave you a number but no design plan, and you have no idea what you are actually paying for.</span>
+      </div>
+      <div class="problem-item">
+        <span class="problem-icon">&#9679;</span>
+        <span>The countertop looked great in a two-inch sample, but you are terrified it will look completely different across a ten-foot island.</span>
+      </div>
+      <div class="problem-item">
+        <span class="problem-icon">&#9679;</span>
+        <span>You have been putting this off for years because the fear of spending thousands on a result you might hate keeps you stuck.</span>
+      </div>
+      <div class="problem-item">
+        <span class="problem-icon">&#9679;</span>
+        <span>Your last contractor did sloppy work, disappeared mid-project, or left you managing every detail yourself.</span>
+      </div>
+      <div class="problem-item">
+        <span class="problem-icon">&#9679;</span>
+        <span>You are overwhelmed by the number of decisions: cabinets, countertops, tile, fixtures, lighting, flooring, and you do not know where to start.</span>
+      </div>
+    </div>
+    <div class="problem-cta">
+      <p>What if you could walk through your finished kitchen before we touched a single wall?</p>
+      <p class="sub">That is exactly what RenoVision's VR design experience makes possible.</p>
+      <a href="#form" class="btn" style="margin-top:16px;">Book Your Free Design Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 4: OFFER / HOW IT WORKS ==================== -->
+<section class="section-offer">
+  <div class="container">
+    <div class="section-head">
+      <span class="pre-label">How it works</span>
+      <h2>3 Steps. Zero Surprises.</h2>
+      <p style="color:var(--text-muted);max-width:600px;margin:12px auto 0;">Our process is designed to eliminate guesswork. You will see, approve, and experience every detail of your remodel before construction begins.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2024/05/DSC07886-1-scaled.webp" alt="RenoVision team performing laser measurements during home visit">
+        <div class="step-card-body">
+          <span class="step-num">Step 01</span>
+          <h3>Home Visit and Laser Measurement</h3>
+          <p>We come to your home with professional laser-sensitive measuring devices. Every dimension of your kitchen or bathroom is captured with precision, not estimated with a tape measure and a notepad.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2024/05/DSC08052-1-scaled.webp" alt="RenoVision computer-generated 3D kitchen design">
+        <div class="step-card-body">
+          <span class="step-num">Step 02</span>
+          <h3>Computer Design and VR Preview</h3>
+          <p>We build a complete 3D model of your new space using the laser measurements. Then you visit our showroom, put on VR goggles, and walk through your finished kitchen or bathroom. Every cabinet, countertop, and fixture, visible and accurate.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Paso-Fino-Kitchen-13-850x520.webp" alt="Completed Paso Fino kitchen remodel by RenoVision">
+        <div class="step-card-body">
+          <span class="step-num">Step 03</span>
+          <h3>Build and Reveal</h3>
+          <p>Once you have approved the design, our team handles every phase of construction. You already know exactly what the finished result will look like, because you have already walked through it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="inclusions">
+      <h3>What Is Included in Every Project</h3>
+      <div class="inclusions-grid">
+        <div class="inclusion-item"><span class="check-icon">&#10003;</span> Professional laser measurements</div>
+        <div class="inclusion-item"><span class="check-icon">&#10003;</span> Computer-generated 3D designs</div>
+        <div class="inclusion-item"><span class="check-icon">&#10003;</span> Virtual Reality walk-through</div>
+        <div class="inclusion-item"><span class="check-icon">&#10003;</span> Custom cabinetry and layout</div>
+        <div class="inclusion-item"><span class="check-icon">&#10003;</span> Countertop selection and install</div>
+        <div class="inclusion-item"><span class="check-icon">&#10003;</span> Tile, backsplash, and flooring</div>
+        <div class="inclusion-item"><span class="check-icon">&#10003;</span> Fixtures and lighting</div>
+        <div class="inclusion-item"><span class="check-icon">&#10003;</span> Full project management</div>
+      </div>
+    </div>
+
+    <div class="timeline-callout">
+      <span>You dream it. We design it.</span> You see it in VR. Then we build it.
+    </div>
+
+    <div class="offer-cta">
+      <a href="#form" class="btn">Book Your Free Design Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 5: GALLERY ==================== -->
+<section class="section-gallery">
+  <div class="container">
+    <span class="pre-label">Our work</span>
+    <h2>Kitchens and Bathrooms Across Palm Beach County</h2>
+    <p class="subtitle">Over 60 projects completed in communities from Wellington to West Palm Beach.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Village-Walk-Kitchen-9-850x520.webp" alt="Village Walk Kitchen by RenoVision">
+        <span class="gallery-label">Village Walk Kitchen</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Oakmont-Estates-Kitchen-6-850x520.webp" alt="Oakmont Estates Kitchen by RenoVision">
+        <span class="gallery-label">Oakmont Estates Kitchen</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Loxahatchee-Kitchen-8-850x520.webp" alt="Loxahatchee Kitchen by RenoVision">
+        <span class="gallery-label">Loxahatchee Kitchen</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Lakefield-West-Kitchen-8-850x520.webp" alt="Lakefield West Kitchen by RenoVision">
+        <span class="gallery-label">Lakefield West Kitchen</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/West-Palm-Bathroom-15-850x520.webp" alt="West Palm Bathroom by RenoVision">
+        <span class="gallery-label">West Palm Bathroom</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Wellington-Equestrian-Club-Master-Bathroom-7-1-850x520.webp" alt="Wellington Equestrian Club Master Bathroom by RenoVision">
+        <span class="gallery-label">Wellington Equestrian Club</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/San-Andros-Master-Bathroom-1-1-850x520.webp" alt="San Andros Master Bathroom by RenoVision">
+        <span class="gallery-label">San Andros Bathroom</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Rambling-Drive-Bathroom-1-850x520.webp" alt="Rambling Drive Bathroom by RenoVision">
+        <span class="gallery-label">Rambling Drive Bathroom</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Ponte-Vecchio-Bathroom-4-850x520.webp" alt="Harbour Lake Bathroom by RenoVision">
+        <span class="gallery-label">Harbour Lake Bathroom</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Buena-Vida-Master-Bathroom-1-850x520.webp" alt="Buena Vida Master Bathroom by RenoVision">
+        <span class="gallery-label">Buena Vida Bathroom</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2025/01/Bella-Terra-Master-Bathroom-1-850x520.webp" alt="Bella Terra Master Bathroom by RenoVision">
+        <span class="gallery-label">Bella Terra Bathroom</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.renovisionkb.com/wp-content/uploads/2024/05/DSC05944-850x520.webp" alt="Kitchen Project by RenoVision">
+        <span class="gallery-label">Custom Kitchen</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 6: SOCIAL PROOF ==================== -->
+<section class="section-proof">
+  <div class="container">
+    <div class="section-head">
+      <span class="pre-label">What homeowners say</span>
+      <h2>From Design to Installation, Handled</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">They showed us exactly what our new kitchen would look like before they even started. When the remodel was finished, it was identical to what we saw in the VR goggles. That kind of accuracy gave us total confidence.</p>
+        <p class="testimonial-author">Village Walk Homeowner</p>
+        <p class="testimonial-location">Royal Palm Beach, FL</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">Our friends cannot believe this is the same bathroom. The design team helped us choose materials we never would have considered on our own, and the result is better than anything we found on Pinterest.</p>
+        <p class="testimonial-author">Wellington Homeowner</p>
+        <p class="testimonial-location">Wellington, FL</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">The whole process was so much easier than we expected. From the first home visit to the final walk-through, everything was handled. We did not have to coordinate a single trade or chase a single timeline.</p>
+        <p class="testimonial-author">Loxahatchee Homeowner</p>
+        <p class="testimonial-location">Loxahatchee, FL</p>
+      </div>
+    </div>
+
+    <div class="proof-stats">
+      <div class="stat-item">
+        <span class="stat-number">60+</span>
+        <span class="stat-label">Projects Done</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Interior Designs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">40+</span>
+        <span class="stat-label">Construction</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">VR</span>
+        <span class="stat-label">Every Project</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 7: ABOUT ==================== -->
+<section class="section-about">
+  <div class="about-inner">
+    <div class="about-image">
+      <img src="https://www.renovisionkb.com/wp-content/uploads/2024/05/DSC07860-1-scaled.webp" alt="RenoVision Kitchen and Bath showroom in Royal Palm Beach Florida">
+    </div>
+    <div class="about-text">
+      <span class="pre-label">About RenoVision</span>
+      <h2>The Showroom Where You See It Before You Build It</h2>
+      <p>RenoVision Kitchen and Bath operates from a showroom in Royal Palm Beach, Florida, where homeowners can experience their remodeled space in Virtual Reality before any construction begins. The team uses laser-precision measuring tools and computer-generated 3D designs to remove every ounce of guesswork from the remodeling process.</p>
+      <p>With over 60 completed projects across Palm Beach County, from Village Walk to Wellington Equestrian Club, the RenoVision team has earned their reputation for precision, transparency, and results that match the design exactly.</p>
+      <div class="about-highlights">
+        <div class="about-highlight"><span class="check-icon">&#10003;</span> Physical Showroom</div>
+        <div class="about-highlight"><span class="check-icon">&#10003;</span> VR Design Preview</div>
+        <div class="about-highlight"><span class="check-icon">&#10003;</span> Laser Measurements</div>
+        <div class="about-highlight"><span class="check-icon">&#10003;</span> Full Design-Build</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 8: FORM ==================== -->
+<section class="section-form" id="form">
+  <div class="form-wrapper">
+    <div class="form-left">
+      <span class="pre-label">Get started</span>
+      <h2>Book Your Free Design Consultation</h2>
+      <p>Fill out the short form and our design team will reach out to schedule your home visit. We bring the laser tools, take precise measurements, and start building your 3D design. Then you experience it in VR at our showroom.</p>
+      <ul class="form-left-features">
+        <li><span class="check-icon">&#10003;</span> Free home visit with laser measurement</li>
+        <li><span class="check-icon">&#10003;</span> Computer-generated 3D design of your space</li>
+        <li><span class="check-icon">&#10003;</span> VR walk-through before any construction</li>
+        <li><span class="check-icon">&#10003;</span> No obligation, no pressure</li>
+      </ul>
+    </div>
+    <div class="form-right">
+      <h3>Tell Us About Your Project</h3>
+      <!-- Formspree setup: Replace YOUR_FORM_ID below with your actual Formspree endpoint.
+           Create a free form at https://formspree.io, then replace the action URL. -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="New RenoVision KB Design Consultation Request">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@email.com" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(561) 000-0000" required>
+
+        <label for="project">What type of project?</label>
+        <select id="project" name="project" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="Kitchen Remodel">Kitchen Remodel</option>
+          <option value="Bathroom Remodel">Bathroom Remodel</option>
+          <option value="Kitchen and Bathroom">Kitchen and Bathroom</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="location">Where is your home?</label>
+        <select id="location" name="location" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="Royal Palm Beach">Royal Palm Beach</option>
+          <option value="Wellington">Wellington</option>
+          <option value="West Palm Beach">West Palm Beach</option>
+          <option value="Palm Beach Gardens">Palm Beach Gardens</option>
+          <option value="Loxahatchee">Loxahatchee</option>
+          <option value="Jupiter">Jupiter</option>
+          <option value="Lake Worth">Lake Worth</option>
+          <option value="Boynton Beach">Boynton Beach</option>
+          <option value="Other Palm Beach County">Other Palm Beach County</option>
+        </select>
+
+        <label for="stage">What stage are you at?</label>
+        <select id="stage" name="stage" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="Just exploring ideas">Just exploring ideas</option>
+          <option value="Getting quotes">Getting quotes from contractors</option>
+          <option value="Ready within 3 months">Ready to start within 3 months</option>
+          <option value="Ready now">Ready to start now</option>
+        </select>
+
+        <label for="budget">Estimated budget range</label>
+        <select id="budget" name="budget" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="Under $25,000">Under $25,000</option>
+          <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+          <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+          <option value="$100,000+">$100,000+</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+
+        <label for="notes">Anything else about your project?</label>
+        <textarea id="notes" name="notes" placeholder="Tell us about your vision, your space, or any concerns you have..."></textarea>
+
+        <button type="submit" class="btn">Book Your Free Design Consultation</button>
+      </form>
+      <p class="form-reassurance">No commitment required. See your space in VR before you decide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 9: FAQ ==================== -->
+<section class="section-faq">
+  <div class="container">
+    <h2>Questions Before You Get Started</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          What is the VR design experience, and how does it work?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            After we take laser measurements of your space and build a 3D computer model, you visit our Royal Palm Beach showroom and put on VR goggles. You are then able to walk through a life-size virtual version of your new kitchen or bathroom. You can see the cabinets, countertops, fixtures, lighting, and layout exactly as they will be built. This lets you approve every detail and request changes before any construction begins.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          How long does a typical kitchen or bathroom remodel take?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Timelines vary based on the scope and complexity of your project. A bathroom remodel typically takes less time than a full kitchen renovation. During your initial consultation, we will provide a realistic timeline based on your specific space and design. Because our laser measurements and VR preview process catches issues before construction, the build phase runs smoother and avoids the costly delays that come from mid-project changes.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          I have been burned by a contractor before. How is RenoVision different?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            We hear this more often than you might expect. The difference is our process. Before any construction starts, you have already seen your finished space in Virtual Reality and approved every detail. There are no surprises on reveal day because you walked through the result weeks earlier. We also manage the full project from our Royal Palm Beach office, with a dedicated team handling design, construction, and communication so you are never left chasing subcontractors.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          What if I do not know exactly what I want yet?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            That is perfectly fine and actually quite common. Most of our clients come to us with a general sense of style and a few inspiration photos, not a finished plan. Our design team guides you through every option, from layout and materials to hardware and finishes. The VR preview is especially helpful here because it lets you see different options in your actual space before you commit to anything.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          How much does a kitchen or bathroom remodel cost?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Costs depend on the size of your space, the materials you select, and the scope of work involved. Rather than quoting a generic range, we prefer to discuss your goals and budget during the free design consultation. Our team works within your parameters and presents options at different price points. There is no pressure and no obligation. The purpose of the first meeting is to give you clarity.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          Do you handle just the design, or the full build as well?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            We are a full design-build firm. That means we handle everything from the initial measurement and 3D design through construction and final installation. You work with one team from start to finish, which eliminates the communication breakdowns and finger-pointing that happen when design and construction are handled by separate companies.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 10: FINAL CTA ==================== -->
+<section class="section-final-cta">
+  <div class="container">
+    <h2>Your kitchen has waited long enough.</h2>
+    <p>One consultation and you will see exactly why homeowners across Palm Beach County trust RenoVision to get it right.</p>
+    <a href="#form" class="btn">Book Your Free Design Consultation</a>
+    <p class="final-sub">Royal Palm Beach Showroom. VR Design Preview. Laser-Precision Measurements.</p>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <p>RenoVision Kitchen &amp; Bath &copy; 2026. All rights reserved. 11041 Southern Blvd, Ste 110, Royal Palm Beach, FL 33411. <a href="tel:561-328-9115">(561) 328-9115</a></p>
+</footer>
+
+<!-- ==================== FAQ ACCORDION JS ==================== -->
+<script>
+(function() {
+  var faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(function(item) {
+    var question = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', function() {
+      var isActive = item.classList.contains('active');
+
+      faqItems.forEach(function(otherItem) {
+        otherItem.classList.remove('active');
+        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      if (!isActive) {
+        item.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
