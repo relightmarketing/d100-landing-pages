@@ -64,42 +64,47 @@ nav:not(.bg) .nav-logo{filter:brightness(0) invert(1)}
   background:
     radial-gradient(ellipse 70% 40% at 50% 0%,rgba(201,168,76,.09) 0%,transparent 55%),
     linear-gradient(170deg,#1a2839 0%,#0d1720 60%,#121f2b 100%);
-  padding:100px 0 72px;
-  overflow:hidden;
+  padding:104px 0 0;
+  overflow:visible;
   position:relative;
   text-align:center;
 }
 .hero::after{
-  content:'';position:absolute;inset:0;
+  content:'';position:absolute;inset:0;bottom:auto;height:100%;
   background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   pointer-events:none
 }
-.hero-top{position:relative;z-index:1;margin-bottom:48px}
-.hero-logo{height:38px;filter:brightness(0) invert(1) opacity(.8);margin:0 auto 24px}
+.hero-top{position:relative;z-index:1;margin-bottom:40px}
+.hero-logo{height:36px;filter:brightness(0) invert(1) opacity(.8);margin:0 auto 20px}
 .hero-kicker{
   display:inline-flex;align-items:center;gap:8px;
-  margin-bottom:22px;
+  margin-bottom:18px;
   padding:6px 14px 6px 8px;
   border-radius:999px;
   background:rgba(201,168,76,.12);
   border:1px solid rgba(201,168,76,.25);
-  font-size:.78rem;font-weight:600;letter-spacing:.06em;
+  font-size:.75rem;font-weight:600;letter-spacing:.06em;
   color:var(--gold);text-transform:uppercase;
 }
 .hero-kicker-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
-.hero h1{color:#fff;margin-bottom:0;max-width:780px;margin-inline:auto;font-size:clamp(2.6rem,5vw,4.4rem)}
-.hero-video{position:relative;z-index:1}
+.hero h1{color:#fff;margin-bottom:0;max-width:740px;margin-inline:auto;font-size:clamp(2.4rem,4.8vw,4rem)}
+/* Video bleeds out of hero — sits half in dark, half in white */
+.hero-video{
+  position:relative;z-index:2;
+  margin-bottom:-120px;
+  padding-bottom:56px;
+}
 .hero-video-inner{
   position:relative;
-  border-radius:18px;
+  border-radius:16px;
   overflow:hidden;
   aspect-ratio:16/9;
-  background:linear-gradient(135deg,#182a3a,#0d1a25);
+  background:#0a1219;
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.07),
-    0 24px 60px rgba(0,0,0,.5),
-    0 64px 120px rgba(0,0,0,.3);
+    0 0 0 1px rgba(255,255,255,.08),
+    0 32px 80px rgba(0,0,0,.55),
+    0 80px 160px rgba(0,0,0,.2);
   max-width:860px;
   margin-inline:auto;
 }
@@ -107,28 +112,33 @@ nav:not(.bg) .nav-logo{filter:brightness(0) invert(1)}
 .vid-ph{
   position:absolute;inset:0;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:20px;text-align:center;padding:32px;
-  background:radial-gradient(ellipse 60% 60% at 50% 40%,rgba(201,168,76,.05),transparent);
+  gap:18px;text-align:center;padding:32px;
+  cursor:pointer;
+  background:radial-gradient(ellipse 50% 50% at 50% 45%,rgba(201,168,76,.04),transparent);
 }
 .play{
-  width:68px;height:68px;border-radius:50%;
+  width:72px;height:72px;border-radius:50%;
   background:var(--gold);
   display:grid;place-items:center;
-  box-shadow:0 0 0 12px rgba(201,168,76,.15),0 8px 28px rgba(201,168,76,.4);
+  box-shadow:0 0 0 14px rgba(201,168,76,.12),0 8px 28px rgba(201,168,76,.4);
   animation:playPulse 2.5s ease infinite;
   flex-shrink:0;
+  transition:transform .2s;
 }
-@keyframes playPulse{0%,100%{box-shadow:0 0 0 12px rgba(201,168,76,.15),0 8px 28px rgba(201,168,76,.4)}50%{box-shadow:0 0 0 20px rgba(201,168,76,.06),0 8px 28px rgba(201,168,76,.4)}}
-.play svg{width:22px;height:22px;fill:var(--navy);margin-left:4px}
-.vid-ph-text strong{color:#fff;font-size:1rem;display:block;margin-bottom:6px}
-.vid-ph-text span{font-size:.875rem;color:rgba(255,255,255,.5);max-width:420px;display:block;margin-inline:auto;line-height:1.6}
+.vid-ph:hover .play{transform:scale(1.06)}
+@keyframes playPulse{0%,100%{box-shadow:0 0 0 14px rgba(201,168,76,.12),0 8px 28px rgba(201,168,76,.4)}50%{box-shadow:0 0 0 24px rgba(201,168,76,.04),0 8px 28px rgba(201,168,76,.4)}}
+.play svg{width:24px;height:24px;fill:var(--navy);margin-left:4px}
+.vid-ph-text strong{color:#fff;font-size:1.05rem;display:block;margin-bottom:4px}
+.vid-ph-text span{font-size:.85rem;color:rgba(255,255,255,.45);max-width:420px;display:block;margin-inline:auto;line-height:1.6}
 .hero-after-video{
-  position:relative;z-index:1;
-  margin-top:28px;
-  display:flex;flex-direction:column;align-items:center;gap:16px;
+  margin-top:20px;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
 }
-.hero-cta-note{font-size:.82rem;color:rgba(255,255,255,.35);margin-top:4px}
+.hero-cta-note{font-size:.8rem;color:rgba(255,255,255,.3)}
 .hero-card{display:none}
+/* Push first content section down to make room for the bleed */
+.hero + .divider + section,
+.hero + section{padding-top:152px}
 
 /* ─── DIVIDER ─── */
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent);margin:0}
@@ -351,8 +361,8 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
       <h1 class="dm">A plug-and-play Meta ads funnel to get you 2 new clients in the next 2 weeks.</h1>
     </div>
 
-    <!-- Video — the main event -->
-    <div class="hero-video fade in" style="transition-delay:.14s">
+    <!-- Video — the main event, bleeds out of the dark hero into white -->
+    <div class="hero-video fade in" style="transition-delay:.12s">
       <div class="hero-video-inner">
         <!--
           REPLACE THIS BLOCK WITH YOUR LOOM EMBED:
@@ -367,16 +377,14 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
           </div>
           <div class="vid-ph-text">
             <strong>Watch the personalised walkthrough</strong>
-            <span>See exactly how this funnel is built around Revive's strongest angle — and what it would take to get it live this week.</span>
+            <span>See how this funnel is built around Revive's strongest angle — and what it takes to get it live this week.</span>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Single CTA below video -->
-    <div class="hero-after-video fade in" style="transition-delay:.26s">
-      <a class="btn btn-gold" style="padding:15px 32px;font-size:1rem" href="https://calendly.com/arthur-relightmarketing/30min" target="_blank">Book a free call to get this live</a>
-      <span class="hero-cta-note">No cost, no obligation — 30 minutes to see if it's a fit</span>
+      <div class="hero-after-video">
+        <a class="btn btn-gold" style="padding:14px 30px;font-size:.95rem" href="https://calendly.com/arthur-relightmarketing/30min" target="_blank">Book a free call to set this up</a>
+        <span class="hero-cta-note">No cost, no obligation — 30 min to see if it fits</span>
+      </div>
     </div>
 
   </div>
