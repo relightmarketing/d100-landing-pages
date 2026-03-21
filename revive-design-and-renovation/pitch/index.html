@@ -196,8 +196,8 @@ nav:not(.bg) .nav-logo{filter:brightness(0) invert(1)}
 .ads3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .ad-card{border-radius:var(--r);overflow:hidden;border:1.5px solid var(--line);background:var(--white);transition:border-color .2s,box-shadow .2s}
 .ad-card:hover{border-color:rgba(201,168,76,.5);box-shadow:0 6px 24px rgba(201,168,76,.08)}
-.ad-img{aspect-ratio:4/3;background:linear-gradient(135deg,var(--off) 0%,#eef1f5 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.ad-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ad-img{background:linear-gradient(135deg,var(--off) 0%,#eef1f5 100%);display:flex;align-items:center;justify-content:center;min-height:280px}
+.ad-img img{display:block;width:100%;height:auto}
 .ad-placeholder-label{font-size:.78rem;font-weight:500;color:var(--sub2);text-align:center;padding:16px;line-height:1.5}
 .ad-body{padding:16px 18px 18px}
 .ad-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px}
@@ -459,7 +459,7 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
     <div class="wrap-sm fade" style="margin-bottom:52px">
       <p class="eyebrow" style="margin-bottom:12px">Image ads</p>
       <h2 class="dm">9 ad concepts across the full buying journey.</h2>
-      <p class="muted" style="margin-top:12px">Drop your generated images into the placeholders below - they'll load automatically once added to the images folder.</p>
+      <p class="muted" style="margin-top:12px">Generated ads are shown below at full size with no placeholder overlays.</p>
     </div>
 
     <div class="fade" style="transition-delay:.05s">
@@ -470,7 +470,7 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
       <div class="ads3">
         <div class="ad-card">
           <div class="ad-img">
-            <img src="./images/ad-01.png" onerror="this.style.display='none'" alt="Ad 1"/>
+            <img src="./images/ad-01.png" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" alt="Ad 1"/>
             <p class="ad-placeholder-label">Ad 01 - Offerings collage<br/><span style="opacity:.6">Image loads when ad-01.png is added</span></p>
           </div>
           <div class="ad-body">
@@ -480,7 +480,7 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
         </div>
         <div class="ad-card">
           <div class="ad-img">
-            <img src="./images/ad-02.png" onerror="this.style.display='none'" alt="Ad 2"/>
+            <img src="./images/ad-02.png" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" alt="Ad 2"/>
             <p class="ad-placeholder-label">Ad 02 - Before &amp; after<br/><span style="opacity:.6">Image loads when ad-02.png is added</span></p>
           </div>
           <div class="ad-body">
@@ -490,7 +490,7 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
         </div>
         <div class="ad-card">
           <div class="ad-img">
-            <img src="./images/ad-03.png" onerror="this.style.display='none'" alt="Ad 3"/>
+            <img src="./images/ad-03.png" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" alt="Ad 3"/>
             <p class="ad-placeholder-label">Ad 03 - Pain point<br/><span style="opacity:.6">Image loads when ad-03.png is added</span></p>
           </div>
           <div class="ad-body">
@@ -507,7 +507,7 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
       <div class="ads3">
         <div class="ad-card">
           <div class="ad-img">
-            <img src="./images/ad-04.png" onerror="this.style.display='none'" alt="Ad 4"/>
+            <img src="./images/ad-04.png" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" alt="Ad 4"/>
             <p class="ad-placeholder-label">Ad 04 - Team credibility<br/><span style="opacity:.6">Image loads when ad-04.png is added</span></p>
           </div>
           <div class="ad-body">
@@ -517,7 +517,7 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
         </div>
         <div class="ad-card">
           <div class="ad-img">
-            <img src="./images/ad-05.png" onerror="this.style.display='none'" alt="Ad 5"/>
+            <img src="./images/ad-05.png" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" alt="Ad 5"/>
             <p class="ad-placeholder-label">Ad 05 - Social proof<br/><span style="opacity:.6">Image loads when ad-05.png is added</span></p>
           </div>
           <div class="ad-body">
@@ -527,7 +527,7 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
         </div>
         <div class="ad-card">
           <div class="ad-img">
-            <img src="./images/ad-06.png" onerror="this.style.display='none'" alt="Ad 6"/>
+            <img src="./images/ad-06.png" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" alt="Ad 6"/>
             <p class="ad-placeholder-label">Ad 06 - Process clarity<br/><span style="opacity:.6">Image loads when ad-06.png is added</span></p>
           </div>
           <div class="ad-body">
@@ -544,7 +544,7 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
       <div class="ads3">
         <div class="ad-card">
           <div class="ad-img">
-            <img src="./images/ad-07.png" onerror="this.style.display='none'" alt="Ad 7"/>
+            <img src="./images/ad-07.png" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" alt="Ad 7"/>
             <p class="ad-placeholder-label">Ad 07 - Consultation offer<br/><span style="opacity:.6">Image loads when ad-07.png is added</span></p>
           </div>
           <div class="ad-body">
@@ -554,7 +554,7 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
         </div>
         <div class="ad-card">
           <div class="ad-img">
-            <img src="./images/ad-08.png" onerror="this.style.display='none'" alt="Ad 8"/>
+            <img src="./images/ad-08.png" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" alt="Ad 8"/>
             <p class="ad-placeholder-label">Ad 08 - Urgency<br/><span style="opacity:.6">Image loads when ad-08.png is added</span></p>
           </div>
           <div class="ad-body">
@@ -564,7 +564,7 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
         </div>
         <div class="ad-card">
           <div class="ad-img">
-            <img src="./images/ad-09.png" onerror="this.style.display='none'" alt="Ad 9"/>
+            <img src="./images/ad-09.png" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" alt="Ad 9"/>
             <p class="ad-placeholder-label">Ad 09 - Hero result<br/><span style="opacity:.6">Image loads when ad-09.png is added</span></p>
           </div>
           <div class="ad-body">
