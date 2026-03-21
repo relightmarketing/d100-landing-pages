@@ -225,46 +225,62 @@ nav:not(.bg) .nav-logo{filter:brightness(0) invert(1)}
 /* ─── LP PREVIEW ─── */
 .lp-embed-wrap{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:start;
-}
-.lp-browser{
-  border-radius:20px;
-  overflow:hidden;
-  border:1.5px solid var(--line);
-  background:var(--white);
-  box-shadow:0 24px 64px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);
-}
-.lp-browser-bar{
-  display:flex;
+  grid-template-columns:340px 1fr;
+  gap:56px;
   align-items:center;
-  gap:8px;
-  padding:12px 16px;
-  background:#f4f5f7;
-  border-bottom:1px solid var(--line);
 }
-.lp-browser-dots{display:flex;gap:6px}
-.lp-browser-dot{width:10px;height:10px;border-radius:50%;background:#ddd}
-.lp-browser-url{
-  flex:1;
-  margin-left:8px;
-  padding:5px 12px;
-  border-radius:8px;
-  background:#fff;
-  border:1px solid var(--line);
-  font-size:.72rem;
-  color:var(--sub);
-  white-space:nowrap;
+/* Phone mockup */
+.lp-phone{
+  width:320px;
+  margin:0 auto;
+  position:relative;
+}
+.lp-phone-frame{
+  border-radius:42px;
   overflow:hidden;
-  text-overflow:ellipsis;
+  border:8px solid #1a1a1a;
+  background:#1a1a1a;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.08),
+    0 32px 80px rgba(0,0,0,.25),
+    0 8px 24px rgba(0,0,0,.12);
+  position:relative;
 }
-.lp-browser iframe{
-  width:100%;
-  height:600px;
+.lp-phone-notch{
+  position:absolute;
+  top:0;left:50%;
+  transform:translateX(-50%);
+  width:120px;
+  height:28px;
+  background:#1a1a1a;
+  border-radius:0 0 18px 18px;
+  z-index:2;
+}
+.lp-phone-screen{
+  border-radius:34px;
+  overflow:hidden;
+  position:relative;
+}
+.lp-phone-screen iframe{
+  width:375px;
+  height:680px;
   border:none;
   display:block;
+  transform:scale(0.8533);
+  transform-origin:0 0;
 }
+.lp-phone-screen-inner{
+  width:320px;
+  height:580px;
+  overflow:hidden;
+}
+.lp-phone-label{
+  text-align:center;
+  margin-top:16px;
+  font-size:.78rem;
+  color:var(--sub2);
+}
+/* Side copy */
 .lp-side{}
 .lp-side h2{margin-bottom:20px}
 .lp-side .btn{margin-top:24px}
@@ -354,8 +370,8 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
   .hero-layout{grid-template-columns:1fr}
   .hero-card{display:none}
   .why-layout,.about-grid,.cta-band,.lp-embed-wrap{grid-template-columns:1fr}
+  .lp-embed-wrap{justify-items:center}
   .cta-band{padding:40px 32px}
-  .lp-browser iframe{height:480px}
   .cards3,.ads3,.cases3,.steps3{grid-template-columns:1fr 1fr}
   .flow{grid-template-columns:1fr 1fr;gap:24px}
   .flow-item::before{display:none}
@@ -649,24 +665,25 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
 <section style="background:var(--off);padding:96px 0">
   <div class="wrap">
     <div class="lp-embed-wrap fade">
-      <!-- Browser mockup with live iframe -->
-      <div class="lp-browser">
-        <div class="lp-browser-bar">
-          <div class="lp-browser-dots">
-            <div class="lp-browser-dot"></div>
-            <div class="lp-browser-dot"></div>
-            <div class="lp-browser-dot"></div>
+      <!-- Phone mockup with live iframe -->
+      <div class="lp-phone">
+        <div class="lp-phone-frame">
+          <div class="lp-phone-notch"></div>
+          <div class="lp-phone-screen">
+            <div class="lp-phone-screen-inner">
+              <iframe src="https://relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/" loading="lazy" title="Revive Design and Renovation landing page preview"></iframe>
+            </div>
           </div>
-          <div class="lp-browser-url">relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/</div>
         </div>
-        <iframe src="https://relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/" loading="lazy" title="Revive Design and Renovation landing page"></iframe>
+        <p class="lp-phone-label">Mobile view - scroll to preview the full page</p>
       </div>
       <!-- Copy alongside -->
       <div class="lp-side">
         <p class="eyebrow" style="margin-bottom:12px">Your custom landing page</p>
         <h2 class="dm">This is where the traffic lands after the click.</h2>
-        <p class="muted" style="margin-top:16px">Not the full website. A single focused page with one job: turn the click into a booked in-home consultation. Scroll through it right here to see the full experience.</p>
-        <a class="btn btn-outline" href="https://relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/" target="_blank">Open in new tab</a>
+        <p class="muted" style="margin-top:16px">Most people will see this page on their phone, straight from Facebook or Instagram. It is built mobile-first so the experience feels native, not like a website they have to pinch and zoom.</p>
+        <p class="muted" style="margin-top:10px">Scroll the phone preview to see the full page, or open it in a new tab to explore it yourself.</p>
+        <a class="btn btn-outline" href="https://relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/" target="_blank">Open full page</a>
         <div class="qa-list-v">
           <div class="qa">
             <h3>Why not send them to your website?</h3>
