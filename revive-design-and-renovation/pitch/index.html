@@ -61,41 +61,74 @@ nav:not(.bg) .nav-logo{filter:brightness(0) invert(1)}
 
 /* ─── HERO ─── */
 .hero{
-  min-height:100svh;
-  display:flex;align-items:center;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 50%,rgba(201,168,76,.07) 0%,transparent 70%),
-    radial-gradient(ellipse 60% 80% at 0% 100%,rgba(201,168,76,.05) 0%,transparent 60%),
-    linear-gradient(160deg,#1a2839 0%,#0f1c28 55%,#162230 100%);
-  padding:120px 0 80px;
+    radial-gradient(ellipse 70% 40% at 50% 0%,rgba(201,168,76,.09) 0%,transparent 55%),
+    linear-gradient(170deg,#1a2839 0%,#0d1720 60%,#121f2b 100%);
+  padding:100px 0 72px;
   overflow:hidden;
   position:relative;
+  text-align:center;
 }
 .hero::after{
   content:'';position:absolute;inset:0;
-  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.018'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   pointer-events:none
 }
-.hero-layout{display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center;position:relative;z-index:1}
-.hero-logo{height:44px;filter:brightness(0) invert(1) opacity(.9);margin-bottom:28px}
-.hero h1{color:#fff;margin-bottom:20px}
-.hero-sub{color:rgba(255,255,255,.65);font-size:1.0625rem;line-height:1.75;max-width:560px;margin-bottom:32px}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
-.tag{padding:7px 14px;border-radius:999px;font-size:.82rem;font-weight:500;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.8)}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.hero-card{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:28px;
-  padding:28px;
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  box-shadow:0 24px 64px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.07)
+.hero-top{position:relative;z-index:1;margin-bottom:48px}
+.hero-logo{height:38px;filter:brightness(0) invert(1) opacity(.8);margin:0 auto 24px}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-bottom:22px;
+  padding:6px 14px 6px 8px;
+  border-radius:999px;
+  background:rgba(201,168,76,.12);
+  border:1px solid rgba(201,168,76,.25);
+  font-size:.78rem;font-weight:600;letter-spacing:.06em;
+  color:var(--gold);text-transform:uppercase;
 }
-.hero-card .eyebrow{color:rgba(255,255,255,.4);margin-bottom:12px}
-.hero-card h3{font-size:1.2rem;color:#fff;margin-bottom:10px;font-weight:600}
-.hero-card p{color:rgba(255,255,255,.65);font-size:.9375rem;line-height:1.7}
-.hero-card strong{color:var(--gold)}
+.hero-kicker-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.75)}}
+.hero h1{color:#fff;margin-bottom:0;max-width:780px;margin-inline:auto;font-size:clamp(2.6rem,5vw,4.4rem)}
+.hero-video{position:relative;z-index:1}
+.hero-video-inner{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  aspect-ratio:16/9;
+  background:linear-gradient(135deg,#182a3a,#0d1a25);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.07),
+    0 24px 60px rgba(0,0,0,.5),
+    0 64px 120px rgba(0,0,0,.3);
+  max-width:860px;
+  margin-inline:auto;
+}
+.hero-video-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-ph{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:20px;text-align:center;padding:32px;
+  background:radial-gradient(ellipse 60% 60% at 50% 40%,rgba(201,168,76,.05),transparent);
+}
+.play{
+  width:68px;height:68px;border-radius:50%;
+  background:var(--gold);
+  display:grid;place-items:center;
+  box-shadow:0 0 0 12px rgba(201,168,76,.15),0 8px 28px rgba(201,168,76,.4);
+  animation:playPulse 2.5s ease infinite;
+  flex-shrink:0;
+}
+@keyframes playPulse{0%,100%{box-shadow:0 0 0 12px rgba(201,168,76,.15),0 8px 28px rgba(201,168,76,.4)}50%{box-shadow:0 0 0 20px rgba(201,168,76,.06),0 8px 28px rgba(201,168,76,.4)}}
+.play svg{width:22px;height:22px;fill:var(--navy);margin-left:4px}
+.vid-ph-text strong{color:#fff;font-size:1rem;display:block;margin-bottom:6px}
+.vid-ph-text span{font-size:.875rem;color:rgba(255,255,255,.5);max-width:420px;display:block;margin-inline:auto;line-height:1.6}
+.hero-after-video{
+  position:relative;z-index:1;
+  margin-top:28px;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+}
+.hero-cta-note{font-size:.82rem;color:rgba(255,255,255,.35);margin-top:4px}
+.hero-card{display:none}
 
 /* ─── DIVIDER ─── */
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent);margin:0}
@@ -305,62 +338,49 @@ footer{padding:40px 0 52px;text-align:center;color:var(--sub2);font-size:.875rem
 </nav>
 
 <!-- HERO -->
-<header class="hero">
+<header class="hero" id="video">
   <div class="wrap">
-    <div class="hero-layout">
-      <div class="fade in">
-        <img class="hero-logo" src="https://www.revivedesignandrenovation.com/wp-content/uploads/2024/09/Logo.svg" alt="Revive Design and Renovation"/>
-        <p class="eyebrow" style="color:rgba(201,168,76,.9);margin-bottom:16px">Built exclusively for Revive Design &amp; Renovation</p>
-        <h1 class="dm">A plug-and-play Meta ads funnel to get you 2 new clients in 2 weeks.</h1>
-        <p class="hero-sub">The creative is written, the landing page is live, and the strategy is mapped around the exact angle your best reviews already prove — all yours, for free.</p>
-        <div class="hero-tags">
-          <span class="tag">Tampa &amp; Orlando market</span>
-          <span class="tag">23 NARI awards leveraged</span>
-          <span class="tag">Free for 14 days</span>
-        </div>
-        <div class="hero-btns">
-          <a class="btn btn-gold" href="#video">Watch the walkthrough</a>
-          <a class="btn btn-ghost" href="#deliverables">See what's included</a>
-        </div>
+
+    <!-- Headline — centered, above video -->
+    <div class="hero-top fade in">
+      <img class="hero-logo" src="https://www.revivedesignandrenovation.com/wp-content/uploads/2024/09/Logo.svg" alt="Revive Design and Renovation"/>
+      <div class="hero-kicker">
+        <span class="hero-kicker-dot"></span>
+        Built exclusively for Revive Design &amp; Renovation
       </div>
-      <div class="hero-card fade in" style="transition-delay:.15s">
-        <p class="eyebrow">The core insight</p>
-        <h3>Your strongest angle is sitting inside your reviews.</h3>
-        <p>Homeowners who've had a <strong>bad contractor experience</strong> are still waiting to remodel — not because of budget, but because they don't trust anyone yet. This funnel is built around that exact trust gap.</p>
+      <h1 class="dm">A plug-and-play Meta ads funnel to get you 2 new clients in the next 2 weeks.</h1>
+    </div>
+
+    <!-- Video — the main event -->
+    <div class="hero-video fade in" style="transition-delay:.14s">
+      <div class="hero-video-inner">
+        <!--
+          REPLACE THIS BLOCK WITH YOUR LOOM EMBED:
+          <iframe src="https://www.loom.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+
+          To update: paste your Loom embed URL into
+          Output/6. Revive Design and Renovation/assets/loom-url.txt
+        -->
+        <div class="vid-ph">
+          <div class="play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="vid-ph-text">
+            <strong>Watch the personalised walkthrough</strong>
+            <span>See exactly how this funnel is built around Revive's strongest angle — and what it would take to get it live this week.</span>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Single CTA below video -->
+    <div class="hero-after-video fade in" style="transition-delay:.26s">
+      <a class="btn btn-gold" style="padding:15px 32px;font-size:1rem" href="https://calendly.com/arthur-relightmarketing/30min" target="_blank">Book a free call to get this live</a>
+      <span class="hero-cta-note">No cost, no obligation — 30 minutes to see if it's a fit</span>
+    </div>
+
   </div>
 </header>
-
-<!-- VIDEO -->
-<section class="tight" id="video">
-  <div class="wrap-sm fade">
-    <p class="eyebrow" style="text-align:center;margin-bottom:10px">Personalized walkthrough</p>
-    <h2 class="dm" style="text-align:center;margin-bottom:8px">Watch the full breakdown.</h2>
-    <p class="muted" style="text-align:center;margin-bottom:32px">A short video walking through the strategy, the deliverables, and why this funnel fits your market right now.</p>
-  </div>
-  <div class="wrap fade" style="transition-delay:.1s">
-    <div class="video-frame">
-      <!--
-        LOOM VIDEO PLACEHOLDER
-        After recording: paste the Loom embed URL into
-        Output/6. Revive Design and Renovation/assets/loom-url.txt
-        Then replace this comment block with:
-        <iframe src="YOUR_LOOM_EMBED_URL" allowfullscreen></iframe>
-      -->
-      <div class="vid-ph">
-        <div class="play">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <div>
-          <strong style="color:#fff;font-size:1rem;display:block;margin-bottom:6px">Loom walkthrough — coming shortly</strong>
-          <span style="font-size:.875rem">Record a 3-5 min video showing the strategy, the landing page, and why the bad-contractor angle is the unlock for this market.</span>
-        </div>
-      </div>
-    </div>
-    <p class="vid-caption">Everything below is already built. The video just makes the presentation feel personal.</p>
-  </div>
-</section>
 
 <div class="divider"></div>
 
