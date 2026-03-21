@@ -3,1365 +3,1252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Revive Design and Renovation | Custom Meta Ads Funnel — Relight Marketing</title>
+  <title>Revive Design and Renovation | Custom Funnel Presentation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --brand-primary:  #2C3E50;
-      --brand-accent:   #C9A84C;
-      --brand-cream:    #F5F0EB;
-      --white:          #ffffff;
-      --gray-light:     #f7f7f7;
-      --gray-mid:       #eeeeee;
-      --gray-text:      #666666;
-      --dark-text:      #333333;
-      --navy-deep:      #1B2838;
-      --red-callout:    #8B1A1A;
-      --yellow-callout: #FFF9C4;
-      --font-head:      'Playfair Display', Georgia, serif;
-      --font-body:      'Open Sans', Arial, sans-serif;
-      --max-w:          1000px;
+      --navy: #2c3e50;
+      --navy-deep: #1b2838;
+      --gold: #c9a84c;
+      --bg: #ffffff;
+      --bg-soft: #f7f8fa;
+      --bg-tint: #f5f0eb;
+      --line: #e7eaee;
+      --text: #17202a;
+      --muted: #667085;
+      --muted-2: #98a2b3;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+      --shadow-soft: 0 4px 14px rgba(15, 23, 42, 0.05);
+      --radius: 24px;
+      --radius-sm: 18px;
+      --max: 1120px;
+      --text-max: 760px;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: var(--font-body);
-      color: var(--dark-text);
-      background: var(--white);
-      font-size: 1.0625rem;
-      line-height: 1.7;
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .text-wrap { width: min(var(--text-max), 100%); }
 
-    /* ── NAVBAR ── */
-    .navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      background: var(--navy-deep);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.9rem 2rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-    }
-    .navbar__logo img {
-      height: 36px;
-      filter: brightness(0) invert(1);
-    }
-    .btn {
+    .eyebrow {
       display: inline-block;
-      background: var(--brand-accent);
-      color: var(--navy-deep);
-      font-family: var(--font-body);
+      margin-bottom: 16px;
+      font-size: 12px;
       font-weight: 700;
-      font-size: 0.875rem;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
+      color: var(--gold);
     }
-    .btn:hover { background: #b8943e; transform: translateY(-1px); }
-    .btn--large { font-size: 1rem; padding: 16px 36px; }
-    .btn--white {
-      background: var(--white);
-      color: var(--navy-deep);
-    }
-    .btn--white:hover { background: var(--brand-cream); }
-    .btn--small { font-size: 0.8rem; padding: 10px 20px; }
 
-    /* ── HERO ── */
-    .hero {
-      background: var(--brand-primary);
-      padding: 120px 24px 80px;
-      text-align: center;
+    h1, h2, h3 { margin: 0; color: var(--navy-deep); }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
     }
-    .hero__logo {
-      max-width: 220px;
-      margin: 0 auto 2.5rem;
-      display: block;
-      filter: brightness(0) invert(1);
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 800;
     }
-    .hero h1 {
-      font-family: var(--font-head);
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      color: var(--white);
+    h3 {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
       line-height: 1.2;
-      max-width: 760px;
-      margin: 0 auto 2rem;
+      font-weight: 700;
     }
-    .hero__callout {
+    p { margin: 0; color: var(--muted); font-size: 1rem; }
+    .lead {
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.82);
+    }
+    .section {
+      padding: 112px 0;
+    }
+    .section.tight { padding: 88px 0; }
+    .section-header {
+      margin-bottom: 42px;
+    }
+    .section-header.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .section-header.center .text-wrap { margin: 0 auto; }
+
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 1rem;
-      background: var(--brand-accent);
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 24px;
+      border-radius: 999px;
+      background: var(--gold);
       color: var(--navy-deep);
-      font-family: var(--font-head);
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      text-decoration: none;
       font-weight: 700;
-      padding: 1.25rem 3rem;
-      border-radius: 6px;
-      margin-top: 1rem;
+      font-size: 0.96rem;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12); }
+    .btn.secondary {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: none;
+    }
+    .btn.secondary:hover { background: rgba(255,255,255,0.18); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    /* ── VIDEO SECTION ── */
-    .video-section {
-      background: var(--white);
-      padding: 60px 24px 20px;
-      text-align: center;
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: background 0.2s ease, box-shadow 0.2s ease, backdrop-filter 0.2s ease;
     }
-    .video-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 840px;
+    .nav.scrolled {
+      background: rgba(255,255,255,0.84);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 1px 0 rgba(15, 23, 42, 0.08);
+    }
+    .nav-inner {
+      width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
-      padding-bottom: 47.25%; /* 56.25% of 840/1000 */
-      height: 0;
-      overflow: hidden;
-      background: #111;
-      border-radius: 8px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
-    .video-wrap iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 0;
+    .nav-logo {
+      height: 34px;
+      filter: brightness(0) invert(1);
+      transition: filter 0.2s ease;
+    }
+    .nav.scrolled .nav-logo { filter: none; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(201,168,76,0.14), transparent 32%),
+        linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: #fff;
+      padding: 140px 0 110px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: end;
+    }
+    .hero-logo {
+      width: 220px;
+      margin-bottom: 28px;
+      filter: brightness(0) invert(1);
+    }
+    .hero h1 { color: #fff; max-width: 760px; }
+    .hero .subcopy {
+      max-width: 620px;
+      margin-top: 24px;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+    .hero-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.11);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.88);
+    }
+    .hero-callout {
+      padding: 28px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .hero-callout .eyebrow { color: rgba(255,255,255,0.55); }
+    .hero-callout h3 {
+      color: #fff;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .hero-callout p { color: rgba(255,255,255,0.76); }
+    .hero-callout strong { color: var(--gold); }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .video-shell {
+      width: min(960px, 100%);
+      margin: 0 auto;
+    }
+    .video-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #223140 0%, #182432 100%);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15,23,42,0.06);
     }
     .video-placeholder {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      inset: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, var(--brand-primary) 0%, var(--navy-deep) 100%);
-      cursor: pointer;
+      text-align: center;
+      padding: 32px;
+      color: rgba(255,255,255,0.78);
     }
-    .video-placeholder__play {
-      width: 72px; height: 72px;
-      background: var(--brand-accent);
+    .play-button {
+      width: 78px;
+      height: 78px;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1rem;
-      transition: transform 0.2s;
-    }
-    .video-placeholder:hover .video-placeholder__play { transform: scale(1.08); }
-    .video-placeholder__play::after {
-      content: '';
-      border-style: solid;
-      border-width: 12px 0 12px 22px;
-      border-color: transparent transparent transparent var(--navy-deep);
-      margin-left: 4px;
-    }
-    .video-placeholder__text {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      font-family: var(--font-body);
-    }
-
-    .video-callout {
-      background: var(--white);
-      padding: 20px 24px 60px;
-      text-align: center;
-    }
-    .callout {
-      max-width: 760px;
-      margin: 0 auto;
-      border-radius: 6px;
-      padding: 1.5rem 2rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    .callout--yellow {
-      background: var(--yellow-callout);
-      border: 1px solid #e6d96e;
-    }
-    .callout--yellow .callout__icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
-    .callout--yellow .callout__body p { font-family: var(--font-body); color: var(--dark-text); }
-    .callout--yellow .callout__body p strong { font-size: 1.2rem; font-family: var(--font-head); }
-
-    .callout--dark {
-      background: var(--brand-primary);
-      color: var(--white);
-      text-align: center;
-      display: block;
-      padding: 2rem 2.5rem;
-    }
-    .callout--dark p { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.7; }
-    .callout--dark p + p { margin-top: 0.75rem; }
-    .callout--dark em { color: var(--brand-accent); font-style: italic; }
-    .callout--dark strong { color: var(--white); }
-
-    .callout--red {
-      background: var(--red-callout);
-      color: var(--white);
-      text-align: center;
-      display: block;
-      padding: 2rem 2.5rem;
-    }
-    .callout--red p { font-size: 1.1rem; line-height: 1.7; }
-    .callout--red p + p { margin-top: 0.75rem; }
-    .callout--red em { font-style: italic; text-decoration: underline; color: var(--white); }
-
-    /* ── SECTIONS ── */
-    section { padding: 80px 24px; }
-    .section--brand { background: var(--brand-primary); }
-    .section--cream { background: var(--brand-cream); }
-    .section--gray  { background: var(--gray-light); }
-
-    .section__label {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--brand-accent);
-      margin-bottom: 0.75rem;
-    }
-    .section__label--white { color: rgba(255,255,255,0.6); }
-
-    h2 {
-      font-family: var(--font-head);
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-    h2.white { color: var(--white); }
-    h2.center { text-align: center; }
-
-    p.subtitle {
-      font-size: 1.0625rem;
-      color: var(--gray-text);
-      margin-bottom: 2rem;
-    }
-    p.subtitle.center { text-align: center; }
-
-    /* ── TRANSITION ── */
-    .transition-section {
-      text-align: center;
-      padding: 60px 24px;
-    }
-    .transition-section h2 { color: var(--brand-primary); margin-bottom: 0.75rem; }
-    .transition-section p { font-size: 1.1rem; color: var(--gray-text); }
-    .transition-section strong { color: var(--brand-primary); }
-
-    /* ── WHY CARE ── */
-    .why-care .container { max-width: 760px; }
-    .why-care h2 { text-align: center; color: var(--brand-primary); }
-    .benefits-list {
-      list-style: none;
-      margin: 2rem 0;
-    }
-    .benefits-list li {
-      padding: 0.5rem 0 0.5rem 1.5rem;
+      background: #fff;
       position: relative;
-      font-size: 1.0625rem;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
     }
-    .benefits-list li::before {
-      content: '→';
+    .play-button::before {
+      content: '';
       position: absolute;
-      left: 0;
-      color: var(--brand-accent);
-      font-weight: 700;
+      top: 50%; left: 50%;
+      transform: translate(-40%, -50%);
+      border-style: solid;
+      border-width: 12px 0 12px 20px;
+      border-color: transparent transparent transparent var(--navy-deep);
     }
-    .benefits-list li strong { color: var(--brand-primary); }
-    .closing-line { font-weight: 700; color: var(--brand-primary); margin-top: 1.5rem; font-size: 1.05rem; }
-    .subline { color: var(--gray-text); margin-top: 0.5rem; }
+    .video-note {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
 
-    /* ── DELIVERABLES OVERVIEW ── */
-    .deliverables h2 { text-align: center; color: var(--brand-primary); }
-    .cards-grid {
+    .statement {
+      text-align: center;
+    }
+    .statement h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      max-width: 840px;
+      margin: 0 auto 18px;
+    }
+    .statement strong { color: var(--gold); }
+    .statement p { max-width: 700px; margin: 0 auto; }
+
+    .insight {
+      display: grid;
+      grid-template-columns: minmax(0, 720px);
+      justify-content: center;
+      gap: 28px;
+    }
+    .insight-quote {
+      padding-left: 22px;
+      border-left: 3px solid var(--gold);
+    }
+    .insight-quote p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .insight-list {
+      display: grid;
+      gap: 14px;
+    }
+    .insight-row {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .insight-row span {
+      color: var(--gold);
+      font-weight: 800;
+      margin-top: 2px;
+    }
+    .insight-row strong { color: var(--navy-deep); }
+
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
+      gap: 18px;
     }
     .card {
-      border: 2px solid var(--brand-primary);
-      border-radius: 8px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      background: var(--white);
+      padding: 28px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
-    .card__icon-box {
-      width: 56px; height: 56px;
-      background: var(--brand-primary);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.25rem;
-      font-size: 1.5rem;
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
     }
-    .card h3 {
-      font-family: var(--font-head);
-      font-size: 1.25rem;
-      color: var(--brand-primary);
-      margin-bottom: 0.5rem;
-    }
-    .card p { font-size: 0.9375rem; color: var(--gray-text); }
-
-    /* ── IMAGE ADS ── */
-    .image-ads { background: var(--gray-light); }
-    .image-ads h2 { text-align: center; color: var(--brand-primary); }
-    .phase { margin-bottom: 3.5rem; }
-    .phase:last-child { margin-bottom: 0; }
-    .phase__label {
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--brand-accent);
-      text-align: center;
-      margin-bottom: 1.25rem;
-    }
-    .ads-grid {
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+      place-items: center;
+      margin-bottom: 18px;
+      background: rgba(44,62,80,0.06);
+      color: var(--navy);
+      font-weight: 800;
     }
-    .ad-card {
-      background: var(--white);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      border: 1px solid var(--gray-mid);
-    }
-    .ad-card__image {
-      aspect-ratio: 4/3;
-      background: var(--brand-primary);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      text-align: center;
-    }
-    .ad-card__image img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-    }
-    .ad-card__num {
-      font-family: var(--font-head);
-      font-size: 2rem;
-      color: var(--brand-accent);
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-    .ad-card__type {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.5);
-    }
-    .ad-card__copy {
-      padding: 1rem 1.1rem;
-    }
-    .ad-card__hook {
-      font-size: 0.875rem;
-      color: var(--dark-text);
-      line-height: 1.55;
-    }
+    .card p { margin-top: 10px; }
 
-    /* ── VIDEO SCRIPTS ── */
-    .video-scripts h2 { text-align: center; color: var(--brand-primary); }
-    .script-item {
-      border: 1px solid var(--gray-mid);
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      overflow: hidden;
-      background: var(--white);
-    }
-    .script-btn {
-      width: 100%;
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 1.5rem;
-      text-align: left;
-      gap: 1rem;
-    }
-    .script-btn:hover { background: var(--gray-light); }
-    .script-btn__title {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      color: var(--brand-primary);
-      font-weight: 700;
-    }
-    .script-btn__toggle {
-      font-size: 1.5rem;
-      color: var(--brand-accent);
-      font-weight: 700;
-      flex-shrink: 0;
-      line-height: 1;
-    }
-    .script-content {
-      display: none;
-      padding: 0 1.5rem 1.5rem;
-      border-top: 1px solid var(--gray-mid);
-    }
-    .script-item.open .script-content { display: block; }
-    .script-item.open .script-btn__toggle { content: '−'; }
-    .script-body h4 {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--brand-accent);
-      margin: 1.25rem 0 0.4rem;
-    }
-    .script-body p {
-      font-size: 0.9375rem;
-      color: var(--dark-text);
-      line-height: 1.75;
-    }
-    .angle-tag {
+    .phase-block + .phase-block { margin-top: 48px; }
+    .phase-label {
       display: inline-block;
-      background: var(--brand-primary);
-      color: var(--white);
-      font-size: 0.7rem;
+      margin-bottom: 18px;
+      color: var(--muted-2);
+      font-size: 12px;
       font-weight: 700;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 3px 10px;
-      border-radius: 3px;
-      margin-bottom: 1rem;
-      margin-top: 1rem;
     }
-    .why-works-box {
-      background: var(--brand-cream);
-      border-left: 4px solid var(--brand-accent);
-      border-radius: 0 8px 8px 0;
-      padding: 1.5rem 2rem;
-      margin-top: 2rem;
+    .ad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
-    .why-works-box h3 {
-      font-family: var(--font-head);
-      font-size: 1.25rem;
-      color: var(--brand-primary);
-      margin-bottom: 0.75rem;
+    .ad-item {
+      display: grid;
+      gap: 14px;
     }
-    .why-works-box p { font-size: 0.9375rem; color: var(--dark-text); line-height: 1.75; }
-    .why-works-box ul { margin: 0.75rem 0 0.75rem 1.25rem; }
-    .why-works-box ul li { font-size: 0.9375rem; color: var(--dark-text); margin-bottom: 0.4rem; }
-
-    /* ── LANDING PAGE PREVIEW ── */
-    .lp-preview h2 { color: var(--brand-primary); text-align: center; }
-    .preview-card {
-      border: 2px solid var(--gray-mid);
-      border-radius: 8px;
-      padding: 1.5rem 2rem;
-      margin: 1.5rem auto;
-      max-width: 700px;
-      background: var(--gray-light);
+    .ad-visual {
+      border-radius: 24px;
+      background: linear-gradient(180deg, #fafbfc 0%, #f0f3f6 100%);
+      border: 1px solid var(--line);
+      aspect-ratio: 4 / 3;
+      display: grid;
+      place-items: center;
+      color: var(--muted-2);
+      font-size: 0.92rem;
+      text-align: center;
+      padding: 24px;
     }
-    .preview-card__url {
+    .ad-meta {
       display: flex;
+      gap: 10px;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .preview-card__url a {
-      color: var(--brand-primary);
-      font-weight: 700;
-      font-size: 0.9375rem;
-      word-break: break-all;
-      text-decoration: underline;
-    }
-    .preview-card__meta {
-      font-size: 0.875rem;
+      color: var(--muted-2);
+      font-size: 0.83rem;
       font-weight: 600;
-      color: var(--dark-text);
-      margin-bottom: 0.3rem;
     }
-    .preview-card__desc { font-size: 0.8125rem; color: var(--gray-text); }
-    .preview-note {
-      font-size: 0.875rem;
-      color: var(--gray-text);
-      text-align: center;
-      font-style: italic;
-      margin-top: 0.75rem;
-    }
-    .lp-faq { max-width: 700px; margin: 2.5rem auto 0; }
-    .lp-faq h3 {
-      font-family: var(--font-head);
-      font-size: 1.3rem;
-      color: var(--brand-primary);
-      margin-bottom: 0.6rem;
-      margin-top: 2rem;
-    }
-    .lp-faq p { font-size: 0.9375rem; color: var(--dark-text); line-height: 1.75; }
-    .lp-faq ul { margin: 0.5rem 0 0 1.25rem; }
-    .lp-faq ul li { font-size: 0.9375rem; color: var(--dark-text); margin-bottom: 0.4rem; }
-
-    /* ── FUNNEL DIAGRAM ── */
-    .funnel-section { background: var(--gray-light); }
-    .funnel-section h2 { text-align: center; color: var(--brand-primary); }
-    .funnel {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-      margin-top: 2.5rem;
-    }
-    .funnel__step {
-      width: 100%;
-      text-align: center;
-      padding: 1.75rem 2rem;
-      position: relative;
-    }
-    .funnel__step:nth-child(1) { max-width: 100%;  background: #aac8f0; border-radius: 8px 8px 0 0; }
-    .funnel__step:nth-child(2) { max-width: 90%;   background: #90d490; }
-    .funnel__step:nth-child(3) { max-width: 80%;   background: #f5c98a; }
-    .funnel__step:nth-child(4) { max-width: 70%;   background: #ffe08a; }
-    .funnel__step:nth-child(5) { max-width: 60%;   background: #e0e0e0; border-radius: 0 0 8px 8px; }
-    .funnel__step h3 {
-      font-family: var(--font-head);
-      font-size: 1.15rem;
-      color: var(--navy-deep);
-      margin-bottom: 0.4rem;
-    }
-    .funnel__step p { font-size: 0.875rem; color: #444; line-height: 1.55; }
-    .funnel__step p + p { margin-top: 0.3rem; }
-
-    /* ── CTA SECTION ── */
-    .cta-section {
-      background: var(--brand-primary);
-      text-align: center;
-      padding: 80px 24px;
-    }
-    .cta-section h2 {
-      color: var(--white);
-      max-width: 680px;
-      margin: 0 auto 2rem;
-    }
-
-    /* ── HOW IT WORKS ── */
-    .how-it-works h2 { text-align: center; color: var(--brand-primary); }
-    .steps-grid {
+    .ad-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--bg-tint);
+      color: var(--navy);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 2.5rem;
+      place-items: center;
+      font-size: 0.78rem;
+      font-weight: 800;
     }
-    .step {
-      text-align: center;
-      padding: 1.5rem;
-    }
-    .step__number {
-      font-family: var(--font-head);
-      font-size: 3.5rem;
-      color: var(--brand-accent);
-      line-height: 1;
-      margin-bottom: 0.75rem;
-    }
-    .step p {
-      font-size: 1rem;
-      color: var(--dark-text);
-      line-height: 1.6;
-    }
+    .ad-item p { color: var(--text); font-size: 0.96rem; }
 
-    /* ── SOCIAL PROOF ── */
-    .proof-header {
-      background: var(--brand-primary);
-      padding: 50px 24px;
-      text-align: center;
-    }
-    .proof-header h2 { color: var(--white); margin: 0; }
-    .proof-body { padding: 60px 24px; background: var(--white); }
-    .case-studies {
+    .accordion-list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: var(--max-w);
-      margin: 0 auto;
+      gap: 14px;
     }
-    .case-card {
-      border: 1px solid var(--gray-mid);
-      border-radius: 8px;
+    .accordion {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
       overflow: hidden;
-      background: var(--white);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
-    .case-card__image {
+    .accordion-button {
       width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      display: block;
-    }
-    .case-card__content { padding: 1.25rem 1.5rem; }
-    .case-card__content h3 {
-      font-family: var(--font-head);
-      font-size: 1.15rem;
-      color: var(--brand-primary);
-      margin-bottom: 0.35rem;
-    }
-    .case-card__company { font-size: 0.8125rem; color: var(--gray-text); margin-bottom: 1rem; }
-    .case-card__logo { max-width: 110px; max-height: 40px; object-fit: contain; display: block; }
-    .proof-note {
-      max-width: var(--max-w);
-      margin: 2rem auto 0;
-      background: #FFF3E0;
-      border: 1px solid #FFB74D;
-      border-radius: 6px;
-      padding: 1.25rem 2rem;
+      border: 0;
+      background: transparent;
+      padding: 24px 26px;
       display: flex;
       align-items: center;
-      gap: 1rem;
-      font-size: 1rem;
-      color: var(--dark-text);
-    }
-    .proof-note span { font-size: 1.4rem; }
-
-    /* ── FAQ ── */
-    .faq-header {
-      background: var(--brand-primary);
-      padding: 50px 24px;
-      text-align: center;
-    }
-    .faq-header h2 { color: var(--white); margin: 0; }
-    .faq-body { padding: 60px 24px; background: var(--white); }
-    .faq-items { max-width: 760px; margin: 0 auto; }
-    .faq-item { border-bottom: 1px solid var(--gray-mid); }
-    .faq-item:first-child { border-top: 1px solid var(--gray-mid); }
-    .faq-btn {
-      width: 100%;
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 0;
+      gap: 18px;
+      cursor: pointer;
       text-align: left;
-      gap: 1rem;
     }
-    .faq-btn__q {
-      font-family: var(--font-head);
+    .accordion-title {
       font-size: 1.05rem;
       font-weight: 700;
-      color: var(--brand-primary);
+      color: var(--navy-deep);
     }
-    .faq-toggle {
-      font-size: 1.5rem;
-      color: var(--brand-accent);
+    .accordion-sub {
+      margin-top: 6px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .accordion-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--bg-soft);
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-size: 1.1rem;
+      flex: 0 0 auto;
+      transition: transform 0.22s ease;
+    }
+    .accordion.open .accordion-icon { transform: rotate(45deg); }
+    .accordion-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .accordion-inner {
+      padding: 0 26px 26px;
+      display: grid;
+      gap: 18px;
+    }
+    .script-block {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: var(--bg-soft);
+    }
+    .script-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
       font-weight: 700;
-      flex-shrink: 0;
-      line-height: 1;
     }
-    .faq-answer {
-      display: none;
-      padding-bottom: 1.25rem;
-      font-size: 0.9375rem;
-      color: var(--dark-text);
-      line-height: 1.75;
-    }
-    .faq-answer p + p { margin-top: 0.5rem; }
-    .faq-item.open .faq-answer { display: block; }
+    .script-block p { color: var(--text); font-size: 0.95rem; }
 
-    /* ── ABOUT ── */
-    .about { background: var(--gray-light); }
-    .about h2 { text-align: center; color: var(--brand-primary); margin-bottom: 2.5rem; }
+    .lp-preview {
+      display: grid;
+      gap: 28px;
+    }
+    .lp-card {
+      padding: 28px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+    .lp-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .lp-domain {
+      font-size: 0.86rem;
+      color: var(--muted-2);
+      word-break: break-word;
+    }
+    .lp-link {
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .qa-list {
+      display: grid;
+      gap: 22px;
+      width: min(760px, 100%);
+    }
+    .qa h3 { margin-bottom: 8px; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+    .flow-step {
+      position: relative;
+      padding-top: 54px;
+    }
+    .flow-step::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 34px;
+      right: -18px;
+      height: 1px;
+      background: var(--line);
+      z-index: 0;
+    }
+    .flow-step:last-child::before { display: none; }
+    .flow-dot {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+      z-index: 1;
+      box-shadow: 0 0 0 10px #fff;
+    }
+    .flow-step h3 { margin-bottom: 8px; font-size: 1rem; }
+    .flow-step p { font-size: 0.92rem; }
+
+    .cta-band {
+      background:
+        radial-gradient(circle at top right, rgba(201,168,76,0.14), transparent 28%),
+        linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+      border-radius: 36px;
+      padding: 54px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .cta-band h2 { color: #fff; max-width: 620px; }
+    .cta-band p { color: rgba(255,255,255,0.78); margin-top: 12px; max-width: 540px; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .step-card {
+      padding: 28px;
+      border-radius: 24px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+    }
+    .step-no {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .step-card p { margin-top: 8px; }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .case {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .case img:first-child {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: var(--bg-soft);
+    }
+    .case-body { padding: 22px; }
+    .case-stat {
+      font-size: 1.35rem;
+      line-height: 1.15;
+      color: var(--navy-deep);
+      font-weight: 800;
+    }
+    .case-name {
+      margin-top: 10px;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+    .case-logo {
+      margin-top: 18px;
+      max-width: 110px;
+      max-height: 36px;
+      object-fit: contain;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 34px;
       align-items: center;
     }
-    .about-grid__image img {
+    .about-photo {
+      overflow: hidden;
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      min-height: 100%;
+    }
+    .about-photo img {
       width: 100%;
-      border-radius: 8px;
+      height: 100%;
       object-fit: cover;
-      aspect-ratio: 4/3;
+      aspect-ratio: 4 / 3;
     }
-    .about-grid__copy h3 {
-      font-family: var(--font-head);
-      font-size: 1.5rem;
-      color: var(--brand-primary);
-      margin-bottom: 1rem;
-    }
-    .about-grid__copy p { font-size: 0.9375rem; line-height: 1.75; color: var(--dark-text); margin-bottom: 0.75rem; }
+    .about-copy p + p { margin-top: 12px; }
 
-    /* ── FINAL CTA ── */
-    .final-cta { text-align: center; padding: 80px 24px; }
-    .final-cta h2 { color: var(--brand-primary); max-width: 680px; margin: 0 auto 2rem; }
-    .final-cta__headshot {
-      width: 160px; height: 160px;
+    .final {
+      display: grid;
+      justify-items: center;
+      text-align: center;
+      gap: 18px;
+    }
+    .headshot {
+      width: 126px;
+      height: 126px;
       border-radius: 50%;
       object-fit: cover;
-      object-position: top;
-      border: 4px solid var(--brand-accent);
-      margin: 0 auto 1.5rem;
-      display: block;
+      object-position: center top;
+      box-shadow: var(--shadow);
     }
-    .final-cta__booking {
-      max-width: 480px;
-      margin: 0 auto;
-      background: var(--gray-light);
-      border: 1px solid var(--gray-mid);
-      border-radius: 8px;
-      padding: 1.5rem;
-    }
-    .final-cta__booking p { font-size: 0.875rem; color: var(--gray-text); margin-bottom: 1.25rem; }
-    .final-cta__booking strong { display: block; font-size: 1rem; color: var(--dark-text); margin-bottom: 0.4rem; }
-
-    /* ── FOOTER ── */
     .footer {
-      background: var(--navy-deep);
-      color: rgba(255,255,255,0.5);
-      padding: 2rem 24px;
+      padding: 40px 0 56px;
+      color: var(--muted-2);
+      font-size: 0.9rem;
       text-align: center;
-      font-size: 0.8125rem;
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .navbar { padding: 0.75rem 1rem; }
-      .navbar__logo img { height: 28px; }
-      .btn { padding: 10px 18px; }
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .about-grid,
+      .cta-band,
+      .cards,
+      .case-grid,
+      .steps,
+      .flow,
+      .ad-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-band { padding: 38px 28px; }
+      .flow-step::before { display: none; }
+      .flow-step { padding-top: 0; padding-left: 58px; }
+      .flow-dot { top: 0; left: 0; box-shadow: none; }
+      .hero-callout { max-width: 520px; }
+    }
 
-      .hero { padding: 100px 20px 60px; }
-      .hero__callout { padding: 1rem 1.5rem; font-size: 1.25rem; }
-
-      .cards-grid { grid-template-columns: 1fr; }
-      .ads-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; }
-      .case-studies { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
-
-      .funnel__step { max-width: 100% !important; }
-      .funnel__step:nth-child(1) { border-radius: 8px 8px 0 0; }
-      .funnel__step:nth-child(5) { border-radius: 0 0 8px 8px; }
-
-      section { padding: 50px 20px; }
-      .proof-body, .faq-body { padding: 40px 20px; }
+    @media (max-width: 720px) {
+      .section { padding: 72px 0; }
+      .section.tight { padding: 64px 0; }
+      .hero { padding: 120px 0 82px; }
+      .nav-inner { min-height: 70px; }
+      .nav-logo { height: 28px; }
+      .hero-logo { width: 180px; }
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .accordion-button,
+      .accordion-inner,
+      .lp-card,
+      .card,
+      .step-card,
+      .case-body { padding-left: 18px; padding-right: 18px; }
     }
   </style>
 </head>
 <body>
-
-  <!-- ── NAVBAR ── -->
-  <nav class="navbar">
-    <div class="navbar__logo">
-      <img src="https://www.revivedesignandrenovation.com/wp-content/uploads/2024/09/Logo.svg" alt="Revive Design and Renovation" />
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <img class="nav-logo" src="https://www.revivedesignandrenovation.com/wp-content/uploads/2024/09/Logo.svg" alt="Revive Design and Renovation" />
+      <a class="btn" href="https://calendly.com/arthur-relightmarketing/30min" target="_blank" rel="noreferrer">Book a call</a>
     </div>
-    <a href="https://calendly.com/arthur-relightmarketing/30min" target="_blank" class="btn">Book a Call</a>
   </nav>
 
-  <!-- ── SECTION 1: HERO ── -->
-  <section class="hero">
-    <div class="container">
-      <img
-        src="https://www.revivedesignandrenovation.com/wp-content/uploads/2024/09/Logo.svg"
-        alt="Revive Design and Renovation"
-        class="hero__logo"
-      />
-      <h1>Plug &amp; Play Meta Ads funnel to help you get 2 new clients in the next 2 weeks.</h1>
-      <div class="hero__callout">
-        <span>⚠️</span>
-        For free!
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SECTION 2: VIDEO ── -->
-  <section class="video-section">
-    <div class="container">
-      <div class="video-wrap">
-        <!--
-          LOOM VIDEO:
-          1. Record your personalized walkthrough for Revive Design and Renovation
-          2. Greet them by name, walk through the 3 deliverables, highlight the "bad contractor recovery" angle from the research
-          3. Show the landing page preview at relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/
-          4. Paste the Loom embed URL into: Output/6. Revive Design and Renovation/assets/loom-url.txt
-          5. Replace the div below with: <iframe src="YOUR_LOOM_EMBED_URL" allowfullscreen></iframe>
-        -->
-        <div class="video-placeholder">
-          <div class="video-placeholder__play"></div>
-          <p class="video-placeholder__text">Personal video walkthrough — coming soon</p>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="reveal visible">
+        <span class="eyebrow">Custom funnel built for Revive</span>
+        <img class="hero-logo" src="https://www.revivedesignandrenovation.com/wp-content/uploads/2024/09/Logo.svg" alt="Revive Design and Renovation" />
+        <h1>Plug and play Meta ads funnel to help you get 2 new clients in the next 2 weeks.</h1>
+        <p class="lead subcopy">I already mapped the angle, wrote the ads, structured the video scripts, and built the landing page around the exact trust blockers that are holding homeowners back from booking.</p>
+        <div class="hero-meta">
+          <div class="hero-chip">Built specifically for Tampa + Orlando</div>
+          <div class="hero-chip">23 NARI awards leveraged</div>
+          <div class="hero-chip">For free</div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="#video">Watch the walkthrough</a>
+          <a class="btn secondary" href="#deliverables">See the deliverables</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ── VIDEO CALLOUT ── -->
-  <div class="video-callout">
-    <div class="callout callout--yellow">
-      <span class="callout__icon">⚠️</span>
-      <div class="callout__body">
-        <p><strong>Watch the video above!</strong></p>
-        <p>You will see how we can get you 2 new clients in 2 weeks.</p>
+      <div class="hero-callout reveal visible">
+        <span class="eyebrow">Core opportunity</span>
+        <h3>Your strongest angle is already sitting in the reviews.</h3>
+        <p>Homeowners who had a <strong>bad contractor experience</strong> are still putting the remodel off. The funnel turns that hesitation into trust by showing one team, one process, one warranty, and one next step.</p>
       </div>
     </div>
-  </div>
+  </header>
 
-  <!-- ── SECTION 3: TRANSITION ── -->
-  <section class="transition-section">
+  <section class="section tight reveal" id="video">
     <div class="container">
-      <h2>Everything below is yours, completely free</h2>
-      <p>This entire ad funnel is created specifically for <strong>Revive Design and Renovation.</strong></p>
-    </div>
-  </section>
-
-  <!-- ── SECTION 4: WHY CARE ── -->
-  <section class="why-care" style="background: var(--white);">
-    <div class="container">
-      <h2>Why should you even care?</h2>
-
-      <div class="callout callout--red" style="margin: 2rem 0;">
-        <p><strong>Most businesses running Meta ads are getting <em>some</em> results.</strong></p>
-        <p>But "some results" and <em>maximum</em> results are two very different things.</p>
+      <div class="section-header center text-wrap">
+        <span class="eyebrow">Quick walkthrough</span>
+        <h2>Watch the personalized breakdown.</h2>
+        <p>I recorded this section as a placeholder so you can swap in your Loom and make the presentation feel one-to-one.</p>
       </div>
-
-      <p style="margin-bottom: 1rem;">The difference isn't budget. It's strategy.</p>
-
-      <ul class="benefits-list">
-        <li><strong>Optimized creatives</strong> → More Clicks</li>
-        <li><strong>The right funnel</strong> → More conversions</li>
-        <li><strong>The right technical setup</strong> → Let the machine learn to optimize for your best clients only</li>
-      </ul>
-
-      <p class="closing-line">This system takes what's working and turns it into a repeatable, scalable lead engine.</p>
-      <p class="subline">Let me show you how.</p>
+      <div class="video-shell">
+        <div class="video-frame">
+          <!-- Replace with Loom iframe after pasting the embed URL into Output/6. Revive Design and Renovation/assets/loom-url.txt -->
+          <div class="video-placeholder">
+            <div class="play-button"></div>
+            <strong style="font-size:1.05rem; color:#fff; margin-bottom:8px;">Personal Loom walkthrough goes here</strong>
+            <span style="max-width:460px;">Record a 3 to 5 minute walkthrough showing the strategy, the landing page, and why the bad-contractor angle is the unlock.</span>
+          </div>
+        </div>
+        <p class="video-note">Everything below is already built. The video just helps the presentation feel personal and frictionless.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ── SECTION 5: DELIVERABLES OVERVIEW ── -->
-  <section class="deliverables section--gray">
+  <section class="section tight reveal">
+    <div class="container statement text-wrap">
+      <h2>Everything below is yours, completely free, and built specifically for <strong>Revive Design and Renovation.</strong></h2>
+      <p>The goal is simple: make it easy for your team to see the strategy, understand why it fits the market, and decide whether you want to put it live.</p>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container insight">
+      <div class="section-header text-wrap">
+        <span class="eyebrow">Why this matters</span>
+        <h2>Most companies running Meta ads are getting some results. Very few are squeezing the full value out of them.</h2>
+      </div>
+      <div class="insight-quote">
+        <p>The difference is not budget. It is how well the creative, the funnel, and the qualification step work together once someone clicks.</p>
+      </div>
+      <div class="insight-list">
+        <div class="insight-row"><span>→</span><p><strong>Sharper creative</strong> increases click-through and grabs attention from colder homeowners.</p></div>
+        <div class="insight-row"><span>→</span><p><strong>A focused landing page</strong> turns that click into a real booked consultation instead of a website browse.</p></div>
+        <div class="insight-row"><span>→</span><p><strong>The right setup</strong> helps Meta learn which prospects look most like your best remodeling clients.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="deliverables">
     <div class="container">
-      <h2>Here's everything we made for you, to get more out of your Meta Ads.</h2>
-      <div class="cards-grid">
+      <div class="section-header center">
+        <div class="text-wrap">
+          <span class="eyebrow">What is included</span>
+          <h2>Three deliverables, built to work as one funnel.</h2>
+          <p>The page below mirrors exactly what you would need to launch: image ads to capture attention, videos to build trust, and a landing page to convert the traffic.</p>
+        </div>
+      </div>
+      <div class="cards">
         <div class="card">
-          <div class="card__icon-box">🖼️</div>
-          <h3>9 Image ads</h3>
-          <p>Ready to publish on Facebook &amp; Instagram ads today</p>
+          <div class="card-icon">01</div>
+          <h3>9 image ads</h3>
+          <p>Mapped across prospecting, trust, and conversion so you are not relying on one message to do all the work.</p>
         </div>
         <div class="card">
-          <div class="card__icon-box">🎬</div>
-          <h3>3 Video ad scripts</h3>
-          <p>Ready to film. We do the editing.</p>
+          <div class="card-icon">02</div>
+          <h3>3 video scripts</h3>
+          <p>Written around three separate buying triggers so the algorithm can match the right angle to the right homeowner.</p>
         </div>
         <div class="card">
-          <div class="card__icon-box">📱</div>
-          <h3>A Landing page</h3>
-          <p>To convert website traffic into appointments</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SECTION 6: IMAGE ADS SHOWCASE ── -->
-  <section class="image-ads">
-    <div class="container">
-      <h2>9 Image ads ready to advertise</h2>
-      <p class="subtitle center">These images can be used to:</p>
-
-      <!-- PHASE 1: PROSPECTING -->
-      <div class="phase">
-        <p class="phase__label">Generate interest from new audiences</p>
-        <div class="ads-grid">
-
-          <div class="ad-card">
-            <div class="ad-card__image">
-              <div class="ad-card__num">01</div>
-              <div class="ad-card__type">Offerings Collage</div>
-            </div>
-            <div class="ad-card__copy">
-              <p class="ad-card__hook">4-quadrant grid: kitchens, bathrooms, full interiors, custom details. "Your Complete Interior Remodeling Solution."</p>
-            </div>
-          </div>
-
-          <div class="ad-card">
-            <div class="ad-card__image">
-              <div class="ad-card__num">02</div>
-              <div class="ad-card__type">Before &amp; After</div>
-            </div>
-            <div class="ad-card__copy">
-              <p class="ad-card__hook">Split-screen: dated 1990s kitchen on left, full custom renovation on right. "BEFORE" vs "WE LOVE THE END RESULT"</p>
-            </div>
-          </div>
-
-          <div class="ad-card">
-            <div class="ad-card__image">
-              <div class="ad-card__num">03</div>
-              <div class="ad-card__type">Pain / Problem</div>
-            </div>
-            <div class="ad-card__copy">
-              <p class="ad-card__hook">"Still putting off the kitchen you actually deserve?" Close-up of aged countertop, chipped laminate, broken hinge.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PHASE 2: TRUST -->
-      <div class="phase">
-        <p class="phase__label">Build trust</p>
-        <div class="ads-grid">
-
-          <div class="ad-card">
-            <div class="ad-card__image">
-              <div class="ad-card__num">04</div>
-              <div class="ad-card__type">Owner / Team</div>
-            </div>
-            <div class="ad-card__copy">
-              <p class="ad-card__hook">Professional team member in showroom. Right panel: 23 NARI Awards, 5x Best of the City, 30+ Years Experience.</p>
-            </div>
-          </div>
-
-          <div class="ad-card">
-            <div class="ad-card__image">
-              <div class="ad-card__num">05</div>
-              <div class="ad-card__type">Social Proof</div>
-            </div>
-            <div class="ad-card__copy">
-              <p class="ad-card__hook">"Best remodeler I have used. We love the end result." — Mike W., Tampa. 5-star overlay on luxury kitchen photo.</p>
-            </div>
-          </div>
-
-          <div class="ad-card">
-            <div class="ad-card__image">
-              <div class="ad-card__num">06</div>
-              <div class="ad-card__type">Process / How It Works</div>
-            </div>
-            <div class="ad-card__copy">
-              <p class="ad-card__hook">"Revive Your Home in 3 Steps" — 01 Complimentary Consultation, 02 Custom Design, 03 Watch the Revival Unfold.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PHASE 3: CONVERSION -->
-      <div class="phase">
-        <p class="phase__label">Make them take action now, not later</p>
-        <div class="ads-grid">
-
-          <div class="ad-card">
-            <div class="ad-card__image">
-              <div class="ad-card__num">07</div>
-              <div class="ad-card__type">Free Offer</div>
-            </div>
-            <div class="ad-card__copy">
-              <p class="ad-card__hook">Luxury bathroom left, navy panel right: "Complimentary In-Home Consultation. 0% Interest, No Payments Until 2028."</p>
-            </div>
-          </div>
-
-          <div class="ad-card">
-            <div class="ad-card__image">
-              <div class="ad-card__num">08</div>
-              <div class="ad-card__type">Urgency</div>
-            </div>
-            <div class="ad-card__copy">
-              <p class="ad-card__hook">"0% Interest Ends Soon. Lock In Your Rate. No Payments Until 2028 on Full Kitchen Renovations."</p>
-            </div>
-          </div>
-
-          <div class="ad-card">
-            <div class="ad-card__image">
-              <div class="ad-card__num">09</div>
-              <div class="ad-card__type">Lead / Product Hero</div>
-            </div>
-            <div class="ad-card__copy">
-              <p class="ad-card__hook">Magazine-quality wide kitchen shot. Waterfall island, brushed gold pendants. "Revive Design and Renovation. Tampa and Orlando."</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SECTION 7: VIDEO SCRIPTS ── -->
-  <section class="video-scripts section--gray">
-    <div class="container">
-      <h2>3 Ready to film video ad scripts</h2>
-      <p class="subtitle center" style="margin-bottom: 2rem;">Just send them over and we will do the editing.</p>
-
-      <!-- Script 1 -->
-      <div class="script-item">
-        <button class="script-btn">
-          <span class="script-btn__title">Script 1 — Protect yourself from another bad contractor</span>
-          <span class="script-btn__toggle">+</span>
-        </button>
-        <div class="script-content">
-          <div class="script-body">
-            <div class="angle-tag">Pain / Circumstance</div>
-            <h4>Central Angle</h4>
-            <p>If your last contractor ghosted, did shoddy work, or turned your home into a construction zone for months, the problem was not that you made a bad choice. The problem is that most remodeling companies are not set up to protect you. Revive is.</p>
-            <h4>Hook (0–10s)</h4>
-            <p>If your last kitchen or bathroom contractor left you with a half-finished project, broken promises, and a mess in your home, this is for you. You are not alone. We hear this story every single week from homeowners across Tampa and Orlando. And the reason you are still putting off the remodel you actually need is that you are afraid it will happen again.</p>
-            <h4>Body (11–90s)</h4>
-            <p>Here is what most people do after a bad contractor experience. They wait. Sometimes a year. Sometimes three years. They browse Pinterest, save ideas, and tell themselves they will get to it eventually. But the real reason they wait is not timing or budget. It is fear. Fear that the next contractor will be just as bad.</p>
-            <p>And that fear makes sense, because most remodeling companies are set up in a way that makes problems almost inevitable. They sub out every trade to a different crew. Your plumber does not talk to your electrician. Your electrician does not talk to your cabinet installer. Nobody owns the full project. So when something goes wrong, everyone points at someone else, and you are stuck in the middle trying to manage a construction site in your own home.</p>
-            <p>That is exactly why Revive Design and Renovation exists. We are a single team. One company handles your design, your permitting, your demolition, your plumbing, your electrical, your cabinets, your countertops, your tile, and your final walkthrough. You get one project manager who is your single point of contact from day one to the day we hand you the keys to your finished kitchen.</p>
-            <p>One of our clients, Richard, told us he was hesitant to use another contractor after a bad experience. His kitchen was done in less time than we quoted. He said the team worked hard, showed up on time, cleaned up every day, and he would use us again without hesitation.</p>
-            <p>We back every project with a 5-year workmanship warranty. Not one year. Five. Because we are not going anywhere, and neither is your kitchen.</p>
-            <h4>CTA (90–120s)</h4>
-            <p>If you are a homeowner in Tampa or Orlando who has been putting off a kitchen or bathroom remodel because of a past experience, click the link below. You will see a short page that explains exactly how our process works. At the bottom there is a quick form. Fill it out, and we will schedule a complimentary in-home consultation. No cost, no pressure. Just a conversation about what your space could look like.</p>
-            <h4>Filming Brief</h4>
-            <p><strong>Environment:</strong> Standing in a completed kitchen showroom or a bright, finished kitchen.<br>
-            <strong>Camera:</strong> Phone propped on a mini-tripod, eye-level, direct to camera.<br>
-            <strong>Lighting:</strong> Natural window light is ideal. Ring light if filming after hours.<br>
-            <strong>Energy:</strong> Empathetic but confident. "I understand why you feel that way, and here is why it will be different."<br>
-            <strong>Wardrobe:</strong> Navy polo or button-down. Avoid bright red, neon, or busy patterns.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Script 2 -->
-      <div class="script-item">
-        <button class="script-btn">
-          <span class="script-btn__title">Script 2 — Quality materials at the smartest price</span>
-          <span class="script-btn__toggle">+</span>
-        </button>
-        <div class="script-content">
-          <div class="script-body">
-            <div class="angle-tag">Result / Case Study</div>
-            <h4>Central Angle</h4>
-            <p>A homeowner on his fourth kitchen remodel across multiple homes met with numerous companies before choosing Revive. His one non-negotiable: real wood, dovetail drawers, not a cheap big-box kitchen. He got exactly that, at the most cost-efficient price, from the most knowledgeable team he spoke with.</p>
-            <h4>Hook (0–10s)</h4>
-            <p>A homeowner came to us and said, "I do not want a cheap Home Depot like kitchen. I want real wood and dovetail drawers. This is the last house I will ever live in." He had already met with multiple kitchen companies. None of them gave him what he wanted at a price that made sense. Here is what happened when he chose us.</p>
-            <h4>Body (11–90s)</h4>
-            <p>Mike had done this before. This was his fourth kitchen renovation across different homes. He knew exactly what he wanted, and he knew exactly what bad work looked like. So when he started shopping for a contractor in Tampa, he was not easy to impress.</p>
-            <p>He sat down with company after company. Some pushed cheap materials. Some were knowledgeable but expensive. Some were affordable but could not explain their process.</p>
-            <p>When he met with our team, two things happened. First, we presented the most cost-efficient option he had seen. Not the cheapest. The smartest use of his budget. Second, our designer walked him through every material choice, every layout decision, and every structural consideration so he understood exactly what he was paying for and why.</p>
-            <p>He got his real wood cabinets. He got dovetail drawers. He got a kitchen that is built to last in the home he plans to live in for the rest of his life. And he said, "I feel great to have found them."</p>
-            <p>That is what 23 NARI awards and five consecutive Best of the City wins look like in practice. Not just a trophy on a shelf. A homeowner who went through the process and came out the other side saying this is the best it has ever been.</p>
-            <p>Right now, we are offering 0% interest and no payments until 2028 on full kitchen renovations. That same level of design, the same quality of materials, the same dedicated project manager, with financing that removes the upfront burden entirely.</p>
-            <h4>CTA (90–120s)</h4>
-            <p>If you are planning a kitchen remodel in Tampa or Orlando and you want it done right, click the link below. You will land on a page that walks you through our process. Fill out the short form at the bottom, and we will schedule a complimentary in-home consultation. We will come to your home, look at the space, and give you a detailed pricing breakdown. No cost, no obligation.</p>
-            <h4>Filming Brief</h4>
-            <p><strong>Environment:</strong> Seated at a kitchen island or standing beside a completed cabinet installation.<br>
-            <strong>Camera:</strong> Phone propped on a mini-tripod, eye-level, direct to camera.<br>
-            <strong>Lighting:</strong> Natural window light or pendant lighting. Warm and inviting.<br>
-            <strong>Energy:</strong> Story-driven and conversational. "Let me tell you what happened with this one client."<br>
-            <strong>Wardrobe:</strong> Navy or dark charcoal top. Avoid bright red or neon.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Script 3 -->
-      <div class="script-item">
-        <button class="script-btn">
-          <span class="script-btn__title">Script 3 — One team handles everything so you don't have to</span>
-          <span class="script-btn__toggle">+</span>
-        </button>
-        <div class="script-content">
-          <div class="script-body">
-            <div class="angle-tag">Contrarian / Insight</div>
-            <h4>Central Angle</h4>
-            <p>Most homeowners believe that hiring individual tradespeople and managing them yourself saves money. In reality, the delays, miscommunication, rework, and stress of that approach cost more in both money and sanity than hiring a single turnkey team.</p>
-            <h4>Hook (0–10s)</h4>
-            <p>If you are thinking about remodeling your kitchen or bathroom by hiring a plumber, an electrician, a tile guy, and a cabinet installer separately, and managing them all yourself, let me save you six months of headaches. That approach does not save you money. It costs you more. Here is why.</p>
-            <h4>Body (11–90s)</h4>
-            <p>When you hire five separate tradespeople, you become the general contractor. That means you are the one making sure the plumber finishes before the tile guy shows up. You are the one dealing with it when the electrician's schedule slips by two weeks and now your cabinet installer cannot start on time. You are the one on the phone at 7 AM asking why nobody showed up today.</p>
-            <p>And here is the part nobody tells you upfront: when something goes wrong between two trades, neither one takes responsibility. The tile guy says the plumber left the rough-in in the wrong spot. The plumber says the tile guy should have adjusted. You are standing in your gutted kitchen mediating a dispute between two people who have never met, and the project is now three weeks behind.</p>
-            <p>That is the hidden cost of managing your own remodel. Not just the money. The time. The stress. The feeling of your home being a construction zone with no end date in sight.</p>
-            <p>At Revive, we handle every trade under one roof. One company. One project manager. One schedule. One warranty. Your plumber, electrician, demo crew, cabinet team, tile installer, and designer all work for us. They communicate with each other every day because they are on the same team. When something needs adjusting, it gets handled internally. You never have to make that call.</p>
-            <p>Our clients consistently tell us the same thing: the process was smooth, communication was clear, and the project was done on time or ahead of schedule. One client said, "You get what you pay for. It might cost more for concierge-like service, but it made the job go so smooth and we love the end result."</p>
-            <p>A typical bathroom takes 4 to 8 weeks. A kitchen takes 8 to 12 weeks. And every project is backed by our 5-year workmanship warranty.</p>
-            <h4>CTA (90–120s)</h4>
-            <p>If you are a homeowner in Tampa or Orlando who is ready for a kitchen or bathroom remodel, click the link below. Fill out the short form on the next page, and we will schedule a complimentary in-home consultation. We will come to your home, walk through the space, and show you exactly how the turnkey process works. No cost, no obligation. Schedule your complimentary consultation now.</p>
-            <h4>Filming Brief</h4>
-            <p><strong>Environment:</strong> Standing in a showroom or at a design table with blueprints or material samples visible.<br>
-            <strong>Camera:</strong> Phone propped on a mini-tripod, eye-level, direct to camera.<br>
-            <strong>Lighting:</strong> Natural window light. Clean and bright.<br>
-            <strong>Energy:</strong> Direct and educational. "Let me explain something most people get wrong."<br>
-            <strong>Wardrobe:</strong> Navy button-down or polo. Blueprints or material samples in background reinforce the planning/expertise angle.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Why it works -->
-      <div class="why-works-box">
-        <h3>Why will this work?</h3>
-        <p>Each ad speaks to a different type of buyer:</p>
-        <ul>
-          <li><strong>Script 1</strong> — Fear-driven ("protect yourself from another bad contractor")</li>
-          <li><strong>Script 2</strong> — Practical ("quality materials at the smartest price")</li>
-          <li><strong>Script 3</strong> — Effort and time efficiency ("one team handles everything so you don't have to")</li>
-        </ul>
-        <p style="margin-top: 0.75rem;">The algorithm shows each ad to the people most likely to respond to that angle. Instead of hoping one message lands, you're covering every type of buyer in the market at once.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SECTION 8: LANDING PAGE PREVIEW ── -->
-  <section class="lp-preview">
-    <div class="container">
-      <h2>Your custom landing page</h2>
-      <p class="subtitle center">This is where people will land after clicking on your image/video ads.</p>
-
-      <div class="preview-card">
-        <div class="preview-card__url">
-          <span>🔗</span>
-          <a href="https://relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/" target="_blank">
-            relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/
-          </a>
-        </div>
-        <p class="preview-card__meta">Revive Design and Renovation | Tampa &amp; Orlando Kitchen &amp; Bath Remodeling</p>
-        <p class="preview-card__desc">Family-owned. 23 NARI awards. 5-year workmanship warranty. One team handles your entire project from custom design through construction. No subcontractor juggling. No surprises.</p>
-      </div>
-      <p class="preview-note">Optimized for mobile — most people will arrive from Facebook / Instagram while scrolling.</p>
-
-      <div class="lp-faq">
-        <h3>Why not just send them to your website?</h3>
-        <p>Your website has too many options. People click around and leave without doing anything. A landing page has one job: turn the click into a booked call. No distractions. One clear next step.</p>
-
-        <h3>Why this page works</h3>
-        <ul>
-          <li>It matches the ad they just clicked. It speaks to their exact problem.</li>
-          <li>It makes booking a consultation as easy as possible.</li>
-          <li>It qualifies leads with a short form — so your team only speaks to serious homeowners.</li>
-          <li>It's mobile-optimized so people can take action from their phone.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SECTION 9: HOW THE SYSTEM WORKS ── -->
-  <section class="funnel-section">
-    <div class="container">
-      <h2>How this system works</h2>
-      <div class="funnel">
-        <div class="funnel__step">
-          <h3>Facebook + Instagram ads</h3>
-          <p>Your ads reach your ideal customers with different marketing angles.</p>
-        </div>
-        <div class="funnel__step">
+          <div class="card-icon">03</div>
           <h3>Custom landing page</h3>
-          <p>Interested prospects click on your ad and are directed to your landing page.</p>
-          <p>Here they can request a quote or book a call.</p>
-        </div>
-        <div class="funnel__step">
-          <h3>Lead filtering booking system</h3>
-          <p>A short questionnaire that weeds out timewasters.</p>
-        </div>
-        <div class="funnel__step">
-          <h3>Automatic emails</h3>
-          <p>When they book a call, they receive follow-up emails to pre-sell them and make sure they actually show.</p>
-        </div>
-        <div class="funnel__step">
-          <h3>Sale</h3>
-          <p>Your sales team only speaks to customers who are qualified. They free up their time and see improved conversion rates.</p>
+          <p>Built to make the click turn into a booked consultation instead of sending people into a full website with too many exits.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── SECTION 10: CTA - BOOK A CALL ── -->
-  <section class="cta-section">
+  <section class="section reveal">
     <div class="container">
-      <h2>Book a call with me to set up the ads and landing page</h2>
-      <a href="https://calendly.com/arthur-relightmarketing/30min" target="_blank" class="btn btn--white btn--large">Get your page live</a>
-    </div>
-  </section>
+      <div class="section-header center">
+        <div class="text-wrap">
+          <span class="eyebrow">Image ads</span>
+          <h2>Nine ad concepts, mapped to the full buying journey.</h2>
+          <p>Clean hooks, clean positioning, and enough variation to cover the emotional, practical, and urgency-driven buyers in your market.</p>
+        </div>
+      </div>
 
-  <!-- ── SECTION 11: HOW DOES IT WORK ── -->
-  <section class="how-it-works">
-    <div class="container">
-      <h2>How does it work?</h2>
-      <div class="steps-grid">
-        <div class="step">
-          <div class="step__number">1</div>
-          <p>We will hop on a call to setup your Facebook ad account and your custom landing page.</p>
-        </div>
-        <div class="step">
-          <div class="step__number">2</div>
-          <p>I will run your ads for free for 14 days.</p>
-        </div>
-        <div class="step">
-          <div class="step__number">3</div>
-          <p>Your team handles the sales calls.</p>
+      <div class="phase-block">
+        <span class="phase-label">Generate interest from new audiences</span>
+        <div class="ad-grid">
+          <div class="ad-item">
+            <div class="ad-visual">Prospecting ad placeholder<br />Drop `ad-01.png` here later</div>
+            <div class="ad-meta"><div class="ad-number">1</div><span>Offerings collage</span></div>
+            <p>Show Revive as the complete interior remodeling solution across kitchens, bathrooms, full interiors, and custom details.</p>
+          </div>
+          <div class="ad-item">
+            <div class="ad-visual">Prospecting ad placeholder<br />Drop `ad-02.png` here later</div>
+            <div class="ad-meta"><div class="ad-number">2</div><span>Before and after</span></div>
+            <p>Contrast a dated kitchen with the finished result to make the transformation immediate and visually undeniable.</p>
+          </div>
+          <div class="ad-item">
+            <div class="ad-visual">Prospecting ad placeholder<br />Drop `ad-03.png` here later</div>
+            <div class="ad-meta"><div class="ad-number">3</div><span>Pain / problem</span></div>
+            <p>Call out the homeowner who is still living with an outdated kitchen because starting feels overwhelming.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ── SECTION 12: SOCIAL PROOF ── -->
-  <div class="proof-header">
-    <div class="container">
-      <h2>Results we got for other businesses</h2>
-    </div>
-  </div>
-  <div class="proof-body">
-    <div class="case-studies">
-      <div class="case-card">
-        <img src="https://relightmarketing.github.io/d100-landing-pages/assets/case-techtalent.png" alt="TechTalent results" class="case-card__image" />
-        <div class="case-card__content">
-          <h3>145 Leads within 2 weeks</h3>
-          <p class="case-card__company">Outsourcing of Technicians | TechTalent</p>
-          <img src="https://relightmarketing.github.io/d100-landing-pages/assets/logo-techtalent.png" alt="TechTalent" class="case-card__logo" />
+      <div class="phase-block">
+        <span class="phase-label">Build trust</span>
+        <div class="ad-grid">
+          <div class="ad-item">
+            <div class="ad-visual">Trust ad placeholder<br />Drop `ad-04.png` here later</div>
+            <div class="ad-meta"><div class="ad-number">4</div><span>Team credibility</span></div>
+            <p>Make the awards, track record, and premium positioning visible without sounding generic.</p>
+          </div>
+          <div class="ad-item">
+            <div class="ad-visual">Trust ad placeholder<br />Drop `ad-05.png` here later</div>
+            <div class="ad-meta"><div class="ad-number">5</div><span>Social proof</span></div>
+            <p>Use a real quote that reinforces the smooth process and strong end result, not just the visual transformation.</p>
+          </div>
+          <div class="ad-item">
+            <div class="ad-visual">Trust ad placeholder<br />Drop `ad-06.png` here later</div>
+            <div class="ad-meta"><div class="ad-number">6</div><span>Process clarity</span></div>
+            <p>Reduce hesitation by showing the path from consultation to design to construction in one simple visual.</p>
+          </div>
         </div>
       </div>
-      <div class="case-card">
-        <img src="https://relightmarketing.github.io/d100-landing-pages/assets/case-vossen.png" alt="Vossen results" class="case-card__image" />
-        <div class="case-card__content">
-          <h3>66 new recurring clients in 27 days</h3>
-          <p class="case-card__company">E-commerce business | Vossen</p>
-          <img src="https://relightmarketing.github.io/d100-landing-pages/assets/logo-vossen.png" alt="Vossen" class="case-card__logo" />
-        </div>
-      </div>
-      <div class="case-card">
-        <img src="https://relightmarketing.github.io/d100-landing-pages/assets/case-containercleaner.png" alt="Container Cleaner results" class="case-card__image" />
-        <div class="case-card__content">
-          <h3>50 recurring clients in 2 weeks</h3>
-          <p class="case-card__company">B2B Container cleaner service | Container Cleaner</p>
-          <img src="https://relightmarketing.github.io/d100-landing-pages/assets/logo-containercleaner.webp" alt="Container Cleaner" class="case-card__logo" />
-        </div>
-      </div>
-    </div>
-    <div class="proof-note">
-      <span>⚠️</span>
-      <p><strong>These results are possible with high quality ads and an optimized landing page.</strong></p>
-    </div>
-  </div>
 
-  <!-- ── SECTION 13: FAQ ── -->
-  <div class="faq-header">
-    <div class="container">
-      <h2>FAQ</h2>
-    </div>
-  </div>
-  <div class="faq-body">
-    <div class="faq-items">
-      <div class="faq-item">
-        <button class="faq-btn">
-          <span class="faq-btn__q">Why are you giving this away for free?</span>
-          <span class="faq-toggle">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>We're so confident in this system that we know you'll get results. The free 14-day trial lets you see what's possible with zero risk on your end.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">
-          <span class="faq-btn__q">Why should I trust you?</span>
-          <span class="faq-toggle">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>To be honest you shouldn't — not yet. That's why you should hop on a quick call with me so you can see I'm not an AI bot.</p>
-          <a href="https://calendly.com/arthur-relightmarketing/30min" target="_blank" class="btn btn--small" style="margin-top: 1rem; display: inline-block;">Book a call</a>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">
-          <span class="faq-btn__q">How long does it take to see results?</span>
-          <span class="faq-toggle">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>We will run your ads for free for 14 days with the goal of getting you 2 new clients. Results depend on your average deal size, but our case studies show leads within the first week.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">
-          <span class="faq-btn__q">What do we need to provide to get started?</span>
-          <span class="faq-toggle">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Very little. We'll cover exactly what we need on the call. We've already done the research and built your creatives — we just need a few things to get them live.</p>
-          <a href="https://calendly.com/arthur-relightmarketing/30min" target="_blank" class="btn btn--small" style="margin-top: 1rem; display: inline-block;">Book a call</a>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">
-          <span class="faq-btn__q">How much do we need to spend on ads?</span>
-          <span class="faq-toggle">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>This depends on how many clients you want to attract. We'll go through this together on the call and give you a clear recommendation based on your target revenue and average project value.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── SECTION 14: ABOUT ME ── -->
-  <section class="about">
-    <div class="container">
-      <h2>About me</h2>
-      <div class="about-grid">
-        <div class="about-grid__image">
-          <img src="https://relightmarketing.github.io/d100-landing-pages/assets/relight-team.png" alt="Relight Marketing team" />
-        </div>
-        <div class="about-grid__copy">
-          <h3>Arthur — Relight Marketing</h3>
-          <p>I founded <strong>// RELIGHT MARKETING</strong> with one mission: to eliminate the guesswork in finding new clients.</p>
-          <p>We exist to make sure businesses can focus on what they do best.</p>
-          <p><strong>Focus on delivering for their clients.</strong></p>
-          <a href="https://calendly.com/arthur-relightmarketing/30min" target="_blank" class="btn" style="margin-top: 1.5rem; display: inline-block;">Book a free call</a>
+      <div class="phase-block">
+        <span class="phase-label">Make them act now</span>
+        <div class="ad-grid">
+          <div class="ad-item">
+            <div class="ad-visual">Conversion ad placeholder<br />Drop `ad-07.png` here later</div>
+            <div class="ad-meta"><div class="ad-number">7</div><span>Consultation offer</span></div>
+            <p>Package the complimentary in-home consultation with your strongest trust markers and financing lever.</p>
+          </div>
+          <div class="ad-item">
+            <div class="ad-visual">Conversion ad placeholder<br />Drop `ad-08.png` here later</div>
+            <div class="ad-meta"><div class="ad-number">8</div><span>Urgency</span></div>
+            <p>Use the 0% interest until 2028 offer as a real reason to move now instead of “sometime later.”</p>
+          </div>
+          <div class="ad-item">
+            <div class="ad-visual">Conversion ad placeholder<br />Drop `ad-09.png` here later</div>
+            <div class="ad-meta"><div class="ad-number">9</div><span>Hero result</span></div>
+            <p>End with a premium finished kitchen visual that makes the standard of work feel aspirational and concrete.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── SECTION 15: FINAL CTA ── -->
-  <section class="final-cta">
+  <section class="section reveal">
     <div class="container">
-      <h2>Book a free call to setup your ads and landing page.</h2>
-      <img src="https://relightmarketing.github.io/d100-landing-pages/assets/headshot.jpeg" alt="Arthur Vandelaer" class="final-cta__headshot" />
-      <div class="final-cta__booking">
-        <strong>Discovery call (30 min) with Arthur</strong>
-        <p>On this call, we'll run through your business, where you're currently at, and see if we'd be a good fit to work together. If any partners or decision-makers need to be on the call, please include them.</p>
-        <a href="https://calendly.com/arthur-relightmarketing/30min" target="_blank" class="btn btn--large">Book Your Free Call</a>
+      <div class="section-header center">
+        <div class="text-wrap">
+          <span class="eyebrow">Video scripts</span>
+          <h2>Three scripts built around three different buyer triggers.</h2>
+          <p>This makes the campaign more resilient. Instead of hoping one message lands, you give Meta multiple angles to learn from.</p>
+        </div>
+      </div>
+
+      <div class="accordion-list">
+        <div class="accordion">
+          <button class="accordion-button" type="button">
+            <div>
+              <div class="accordion-title">Script 1 — Protect yourself from another bad contractor</div>
+              <div class="accordion-sub">Pain-driven angle for homeowners who have already been burned once.</div>
+            </div>
+            <div class="accordion-icon">+</div>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-inner">
+              <div class="script-block">
+                <span class="script-label">Central angle</span>
+                <p>If your last contractor ghosted, did shoddy work, or turned your home into a construction zone for months, the problem was not that you made a bad choice. The problem is that most remodeling companies are not set up to protect you. Revive is.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">Hook</span>
+                <p>If your last kitchen or bathroom contractor left you with a half-finished project, broken promises, and a mess in your home, this is for you. You are not alone. We hear this story every single week from homeowners across Tampa and Orlando.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">Body</span>
+                <p>Most people wait after a bad contractor experience, not because of timing or budget, but because they do not want to go through the same chaos again. Revive's differentiator is that everything runs under one roof, one team, one project manager, one warranty, instead of five disconnected trades and a homeowner stuck in the middle.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">CTA</span>
+                <p>Click the link, see the short page, fill out the form, and schedule a complimentary in-home consultation with no pressure.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">Filming brief</span>
+                <p>Film in a bright completed kitchen or showroom. Keep the tone empathetic and confident. Phone on a tripod, eye-level, natural light, navy polo or button-down.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion-button" type="button">
+            <div>
+              <div class="accordion-title">Script 2 — Quality materials at the smartest price</div>
+              <div class="accordion-sub">Case-study angle for the homeowner comparing options carefully.</div>
+            </div>
+            <div class="accordion-icon">+</div>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-inner">
+              <div class="script-block">
+                <span class="script-label">Central angle</span>
+                <p>A homeowner on his fourth kitchen remodel met with multiple companies before choosing Revive. He wanted real wood and dovetail drawers, not a cheap big-box kitchen, and he found the most cost-efficient option with the strongest process clarity.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">Hook</span>
+                <p>“I do not want a cheap Home Depot like kitchen. I want real wood and dovetail drawers.” He had already met with multiple kitchen companies. None of them gave him what he wanted at a price that made sense.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">Body</span>
+                <p>The story proves that premium does not have to mean vague or overpriced. Revive wins by helping the homeowner understand exactly what they are paying for, how the materials differ, and why the process feels more secure from day one.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">CTA</span>
+                <p>Click through, walk through the process, fill out the short form, and get a detailed in-home consultation with pricing clarity.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">Filming brief</span>
+                <p>Film seated at a kitchen island or beside a completed cabinet installation. Warm lighting, conversational tone, and a story-driven delivery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion-button" type="button">
+            <div>
+              <div class="accordion-title">Script 3 — One team handles everything so you do not have to</div>
+              <div class="accordion-sub">Contrarian angle that reframes “doing it yourself” as the expensive option.</div>
+            </div>
+            <div class="accordion-icon">+</div>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-inner">
+              <div class="script-block">
+                <span class="script-label">Central angle</span>
+                <p>Hiring separate trades and managing them yourself looks cheaper on paper, but the delays, finger-pointing, and stress usually make it more expensive in both money and sanity.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">Hook</span>
+                <p>If you are thinking about hiring a plumber, an electrician, a tile guy, and a cabinet installer separately, let me save you six months of headaches. That approach does not save you money. It costs you more.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">Body</span>
+                <p>The real enemy is fragmented accountability. Revive removes that by keeping the trades, the project manager, the communication, and the warranty under one company and one schedule.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">CTA</span>
+                <p>Click the page, fill out the short form, and book a complimentary consultation to see exactly how the turnkey model works.</p>
+              </div>
+              <div class="script-block">
+                <span class="script-label">Filming brief</span>
+                <p>Film near blueprints, material samples, or a design table. Keep the tone direct, educational, and authoritative without feeling aggressive.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
+  <section class="section reveal">
+    <div class="container lp-preview">
+      <div class="section-header text-wrap">
+        <span class="eyebrow">Landing page</span>
+        <h2>This is where the traffic lands after the click.</h2>
+        <p>Not on the full website. Not on a page with too many exits. Just one clear page with one clear next step.</p>
+      </div>
+      <div class="lp-card">
+        <div class="lp-top">
+          <div>
+            <div class="lp-domain">Live preview</div>
+            <a class="lp-link" href="https://relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/" target="_blank" rel="noreferrer">relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/</a>
+          </div>
+          <a class="btn" href="https://relightmarketing.github.io/d100-landing-pages/revive-design-and-renovation/" target="_blank" rel="noreferrer">Open page</a>
+        </div>
+        <p><strong style="color:var(--navy-deep);">Revive Design and Renovation | Tampa &amp; Orlando Kitchen &amp; Bath Remodeling</strong></p>
+        <p style="margin-top:8px;">Family-owned. 23 NARI awards. 5-year workmanship warranty. One team handles your entire project from custom design through construction. No subcontractor juggling. No surprises.</p>
+      </div>
+      <div class="qa-list">
+        <div class="qa">
+          <h3>Why not just send them to your website?</h3>
+          <p>Your website has too many options. People click around, compare pages, and drift. A landing page keeps the momentum from the ad and makes the next step obvious.</p>
+        </div>
+        <div class="qa">
+          <h3>Why this page works</h3>
+          <p>It matches the exact problem the ad introduced, filters out weaker leads, and makes it easy for serious homeowners to request the consultation without friction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-header center">
+        <div class="text-wrap">
+          <span class="eyebrow">System flow</span>
+          <h2>How the funnel works from first click to booked consultation.</h2>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-dot">1</div>
+          <h3>Meta ads</h3>
+          <p>The creative reaches Tampa and Orlando homeowners with multiple angles.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-dot">2</div>
+          <h3>Landing page</h3>
+          <p>The click goes to a page built to continue the same message.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-dot">3</div>
+          <h3>Qualification</h3>
+          <p>A short form filters out renters, investors, and lower-fit leads.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-dot">4</div>
+          <h3>Follow-up</h3>
+          <p>Automated reminders and context make booked calls more likely to show.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-dot">5</div>
+          <h3>Sales call</h3>
+          <p>Your team speaks to warmer, better-qualified homeowners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <span class="eyebrow section-label--white">Next step</span>
+          <h2>Book a quick call with me and we can get the ads and landing page live.</h2>
+          <p>I will handle the setup, run the ads for 14 days for free, and show you exactly how the funnel would be launched.</p>
+        </div>
+        <div>
+          <a class="btn" href="https://calendly.com/arthur-relightmarketing/30min" target="_blank" rel="noreferrer">Get your page live</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-header center">
+        <div class="text-wrap">
+          <span class="eyebrow">How it works</span>
+          <h2>A simple rollout, not a complicated project.</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-no">Step 01</div>
+          <h3>We set up the account and the page</h3>
+          <p>We hop on a call, connect what is needed, and make sure the funnel is ready to launch properly.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-no">Step 02</div>
+          <h3>I run the ads for 14 days for free</h3>
+          <p>You get to see what the funnel can do without paying management fees upfront.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-no">Step 03</div>
+          <h3>Your team handles the sales calls</h3>
+          <p>The marketing system brings in the opportunities. Your team closes the right ones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-header center">
+        <div class="text-wrap">
+          <span class="eyebrow">Social proof</span>
+          <h2>Results from other businesses we have supported.</h2>
+          <p>The verticals are different. The principle is the same: good creative plus a focused landing page converts far better than vague traffic.</p>
+        </div>
+      </div>
+      <div class="case-grid">
+        <div class="case">
+          <img src="https://relightmarketing.github.io/d100-landing-pages/assets/case-techtalent.png" alt="TechTalent results" />
+          <div class="case-body">
+            <div class="case-stat">145 leads within 2 weeks</div>
+            <div class="case-name">Outsourcing of Technicians | TechTalent</div>
+            <img class="case-logo" src="https://relightmarketing.github.io/d100-landing-pages/assets/logo-techtalent.png" alt="TechTalent" />
+          </div>
+        </div>
+        <div class="case">
+          <img src="https://relightmarketing.github.io/d100-landing-pages/assets/case-vossen.png" alt="Vossen results" />
+          <div class="case-body">
+            <div class="case-stat">66 new recurring clients in 27 days</div>
+            <div class="case-name">E-commerce business | Vossen</div>
+            <img class="case-logo" src="https://relightmarketing.github.io/d100-landing-pages/assets/logo-vossen.png" alt="Vossen" />
+          </div>
+        </div>
+        <div class="case">
+          <img src="https://relightmarketing.github.io/d100-landing-pages/assets/case-containercleaner.png" alt="Container Cleaner results" />
+          <div class="case-body">
+            <div class="case-stat">50 recurring clients in 2 weeks</div>
+            <div class="case-name">B2B container cleaner service | Container Cleaner</div>
+            <img class="case-logo" src="https://relightmarketing.github.io/d100-landing-pages/assets/logo-containercleaner.webp" alt="Container Cleaner" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-header center">
+        <div class="text-wrap">
+          <span class="eyebrow">FAQ</span>
+          <h2>The obvious questions, answered simply.</h2>
+        </div>
+      </div>
+      <div class="faq-list accordion-list">
+        <div class="accordion">
+          <button class="accordion-button" type="button">
+            <div>
+              <div class="accordion-title">Why are you giving this away for free?</div>
+            </div>
+            <div class="accordion-icon">+</div>
+          </button>
+          <div class="accordion-panel"><div class="accordion-inner"><p>Because I want to show what the system can do before asking you to commit. If the funnel makes sense and the conversation goes well, we can talk about putting it live properly.</p></div></div>
+        </div>
+        <div class="accordion">
+          <button class="accordion-button" type="button">
+            <div>
+              <div class="accordion-title">Why should I trust you?</div>
+            </div>
+            <div class="accordion-icon">+</div>
+          </button>
+          <div class="accordion-panel"><div class="accordion-inner"><p>You should not trust a page alone. That is why the next step is just a short call. You get to ask questions, see how I think, and decide whether this is worth exploring further.</p></div></div>
+        </div>
+        <div class="accordion">
+          <button class="accordion-button" type="button">
+            <div>
+              <div class="accordion-title">How quickly would results show up?</div>
+            </div>
+            <div class="accordion-icon">+</div>
+          </button>
+          <div class="accordion-panel"><div class="accordion-inner"><p>The initial test window is 14 days. Depending on budget, market responsiveness, and creative fit, you should start seeing signal quickly enough to judge whether the funnel has legs.</p></div></div>
+        </div>
+        <div class="accordion">
+          <button class="accordion-button" type="button">
+            <div>
+              <div class="accordion-title">What would you need from our side?</div>
+            </div>
+            <div class="accordion-icon">+</div>
+          </button>
+          <div class="accordion-panel"><div class="accordion-inner"><p>Very little to start. Mostly access, alignment on the offer, and a few practical setup items. We can cover all of that on the call.</p></div></div>
+        </div>
+        <div class="accordion">
+          <button class="accordion-button" type="button">
+            <div>
+              <div class="accordion-title">How much ad spend would make sense?</div>
+            </div>
+            <div class="accordion-icon">+</div>
+          </button>
+          <div class="accordion-panel"><div class="accordion-inner"><p>That depends on your client goal, geography, and how aggressively you want to test. We can map a realistic spend level against your average project value during the call.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <img src="https://relightmarketing.github.io/d100-landing-pages/assets/relight-team.png" alt="Relight Marketing team" />
+      </div>
+      <div class="about-copy text-wrap">
+        <span class="eyebrow">About me</span>
+        <h2>Arthur — Relight Marketing</h2>
+        <p>I founded Relight Marketing with one mission: eliminate the guesswork in finding new clients.</p>
+        <p>We build focused funnels so businesses can stop relying on random marketing activity and start seeing a clearer path from attention to booked conversations.</p>
+        <p>The goal is not to make things flashy. It is to make the right offer obvious, trustworthy, and easy to act on.</p>
+        <div style="margin-top:24px;"><a class="btn" href="https://calendly.com/arthur-relightmarketing/30min" target="_blank" rel="noreferrer">Book a free call</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container final text-wrap">
+      <span class="eyebrow">Final step</span>
+      <h2>Book a free call to set this up.</h2>
+      <p>If the strategy feels aligned, we can walk through what it would take to launch it properly and what the first 14 days would look like.</p>
+      <img class="headshot" src="https://relightmarketing.github.io/d100-landing-pages/assets/headshot.jpeg" alt="Arthur Vandelaer" />
+      <a class="btn" href="https://calendly.com/arthur-relightmarketing/30min" target="_blank" rel="noreferrer">Book your 30 min call</a>
+    </div>
+  </section>
+
   <footer class="footer">
-    <p>&copy; 2026 Relight Marketing. All rights reserved.</p>
+    <div class="container">Relight Marketing — custom growth systems built to reduce friction and convert attention into qualified calls.</div>
   </footer>
 
   <script>
-    // FAQ accordion
-    document.querySelectorAll('.faq-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 24);
     });
 
-    // Video scripts accordion
-    document.querySelectorAll('.script-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.script-item');
-        const isOpen = item.classList.contains('open');
-        const toggle = btn.querySelector('.script-btn__toggle');
-        document.querySelectorAll('.script-item').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.script-btn__toggle').textContent = '+';
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          toggle.textContent = '−';
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    document.querySelectorAll('.accordion').forEach((item) => {
+      const button = item.querySelector('.accordion-button');
+      const panel = item.querySelector('.accordion-panel');
+      button.addEventListener('click', () => {
+        const open = item.classList.contains('open');
+        item.classList.toggle('open');
+        if (open) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
         }
       });
     });
   </script>
-
 </body>
 </html>
