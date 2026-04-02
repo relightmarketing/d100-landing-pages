@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoder Homes Funnel Pitch</title>
+  <meta name="description" content="Custom funnel pitch page for Yoder Homes from Relight Marketing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1B4F89;
+      --navy-deep: #12365f;
+      --gold: #2C5790;
+      --gold-light: rgba(44, 87, 144, 0.12);
+      --bg: #ffffff;
+      --off: #f7f9fc;
+      --line: #e6ebf2;
+      --txt: #162130;
+      --sub: #5e6f84;
+      --sub2: #90a0b4;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      color: var(--txt);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    iframe { border: 0; }
+    .dm { font-family: 'DM Serif Display', serif; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .wrap-sm { width: min(760px, calc(100% - 40px)); margin: 0 auto; }
+    section { padding: 96px 0; }
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    h1, h2, h3 { margin: 0 0 14px; line-height: 1.08; }
+    h1 { font-size: clamp(2.4rem, 4.8vw, 4rem); }
+    h2 { font-size: clamp(2rem, 3.5vw, 3.25rem); font-weight: 800; letter-spacing: -0.03em; }
+    h3 { font-size: 1.1rem; font-weight: 700; }
+    p { margin: 0 0 16px; color: var(--sub); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+    .btn-gold { background: var(--gold); color: #fff; }
+    .btn-outline { background: transparent; border-color: var(--line); color: var(--txt); }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(230,235,242,0.75);
+    }
+    .topbar-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .logo img { width: 170px; height: auto; }
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(44,87,144,0.22), transparent 32%),
+        linear-gradient(160deg, var(--navy-deep), var(--navy));
+      color: #fff;
+      overflow: visible;
+      padding-bottom: 0;
+    }
+    .hero-inner { text-align: center; }
+    .hero-logo {
+      width: 180px;
+      margin: 0 auto 24px;
+    }
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      margin-bottom: 22px;
+      font-size: 0.94rem;
+    }
+    .hero-kicker::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 0 8px rgba(255,255,255,0.08);
+    }
+    .hero p { color: rgba(255,255,255,0.82); }
+    .video-shell {
+      max-width: 920px;
+      margin: 34px auto 0;
+      border-radius: 30px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 28px 80px rgba(7, 18, 34, 0.38);
+      position: relative;
+      margin-bottom: -120px;
+    }
+    .video-frame {
+      aspect-ratio: 16 / 9;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 40%),
+        linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+    }
+    .play {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.14);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 0 16px rgba(255,255,255,0.06);
+    }
+    .play::before {
+      content: "";
+      border-top: 18px solid transparent;
+      border-bottom: 18px solid transparent;
+      border-left: 28px solid #fff;
+      margin-left: 8px;
+    }
+    .section-top { text-align: center; margin-bottom: 28px; }
+    .cards-3, .ads-grid, .steps-grid, .cases-grid, .faq-grid, .flow-grid {
+      display: grid;
+      gap: 20px;
+    }
+    .cards-3, .steps-grid, .cases-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ads-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .flow-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .card, .ad-card, .accordion, .step-card, .case-card, .faq-card, .flow-card, .cta-band, .about-card, .calendly-shell {
+      border: 1.5px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+    }
+    .card, .step-card, .case-card, .about-card, .faq-card { padding: 24px; }
+    .num-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    blockquote {
+      margin: 0;
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--gold);
+      background: var(--gold-light);
+      color: var(--txt);
+      font-size: 1.05rem;
+    }
+    .bullets { display: grid; gap: 16px; }
+    .bullet {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 9px;
+      flex: 0 0 auto;
+    }
+    .phase {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 34px 0 14px;
+      color: var(--sub2);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .phase::before, .phase::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+    .ad-card { overflow: hidden; }
+    .ad-image {
+      background: linear-gradient(145deg, #eef3fb, #f8fafc);
+      min-height: 220px;
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .ad-image img { width: 100%; height: auto; display: block; }
+    .ad-body { padding: 18px; }
+    .ad-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+    .ad-label::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .accordion { padding: 0; overflow: hidden; }
+    .acc-head {
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+    }
+    .acc-head button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
+      color: var(--txt);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+    }
+    .acc-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-weight: 700;
+      flex: 0 0 auto;
+    }
+    .acc-body {
+      display: none;
+      padding: 0 24px 24px;
+    }
+    .accordion.open .acc-body { display: block; }
+    .sblock {
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--off);
+      margin-bottom: 14px;
+    }
+    .slabel {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .mobile-preview {
+      width: min(400px, 100%);
+      margin: 0 auto;
+      border-radius: 38px;
+      padding: 16px;
+      background: #0d1523;
+      box-shadow: 0 30px 80px rgba(15, 25, 41, 0.18);
+    }
+    .mobile-screen {
+      border-radius: 28px;
+      overflow: hidden;
+      background: #fff;
+      height: 760px;
+    }
+    .flow-card {
+      padding: 24px 18px;
+      text-align: center;
+      position: relative;
+    }
+    .flow-card:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      width: 20px;
+      height: 1px;
+      background: var(--line);
+    }
+    .cta-band {
+      background: linear-gradient(145deg, var(--navy-deep), var(--navy));
+      color: #fff;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 26px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: "";
+      position: absolute;
+      inset: auto -70px -70px auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 65%);
+    }
+    .cta-band p, .about-card p { color: rgba(255,255,255,0.82); }
+    .step-card {
+      background: var(--off);
+      position: relative;
+      overflow: hidden;
+    }
+    .step-card .watermark {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 3.4rem;
+      line-height: 1;
+      color: rgba(44,87,144,0.1);
+      font-weight: 800;
+    }
+    .case-card img, .about-photo img {
+      border-radius: 18px;
+      margin-bottom: 18px;
+    }
+    .about-card {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 28px;
+      background: linear-gradient(145deg, var(--navy-deep), var(--navy));
+      color: #fff;
+    }
+    .calendly-shell {
+      max-width: 700px;
+      margin: 0 auto;
+      overflow: hidden;
+      box-shadow: 0 18px 60px rgba(18, 54, 95, 0.12);
+    }
+    .calendly-shell iframe { width: 100%; height: 700px; }
+    footer {
+      text-align: center;
+      color: var(--sub2);
+      padding: 36px 0 60px;
+    }
+    @media (max-width: 960px) {
+      .cards-3, .ads-grid, .steps-grid, .cases-grid, .flow-grid, .split, .about-card, .cta-band {
+        grid-template-columns: 1fr;
+      }
+      .video-shell { margin-bottom: -72px; }
+      section { padding: 72px 0; }
+      .flow-card:not(:last-child)::after {
+        top: auto;
+        left: 50%;
+        bottom: -10px;
+        right: auto;
+        width: 1px;
+        height: 20px;
+      }
+    }
+    @media (max-width: 640px) {
+      .topbar-inner { flex-direction: column; align-items: flex-start; padding: 14px 0; }
+      .btn { width: 100%; }
+      .cta-band { padding: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="logo" href="#top">
+        <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/Yoder-Homes-Logo-USE-THIS-ONE-AS-MAIN.png" alt="Yoder Homes logo">
+      </a>
+      <a class="btn btn-gold" href="#calendly">Let's get this live</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <img class="hero-logo" src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/Yoder-Homes-Logo-USE-THIS-ONE-AS-MAIN.png" alt="Yoder Homes logo">
+        <div class="hero-kicker">Built exclusively for Yoder Homes</div>
+        <h1 class="dm">I will help you get 10 new clients within 14 days with this Meta ads funnel I created for you.</h1>
+        <p class="wrap-sm">The strongest public proof for Yoder is not generic luxury messaging. It is the promise of a seamless building experience for Sarasota homeowners who do not want to manage individual contractors themselves.</p>
+        <div class="video-shell">
+          <div class="video-frame">
+            <!-- Loom placeholder: record a 3-5 minute walkthrough covering the public proof, the remodel angle, the 9 ad concepts, the landing-page structure, and why this funnel should focus on communication plus guidance over generic luxury claims. -->
+            <div class="play" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div style="padding: 146px 0 52px;">
+          <a class="btn btn-gold" href="#calendly">Let's get this live</a>
+          <p style="margin-top:14px;">No cost, no obligation - 30 min to see if it fits</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top: 152px;">
+      <div class="wrap-sm section-top">
+        <span class="eyebrow">Everything below is yours, for free</span>
+        <h2>Three deliverables, built specifically for Yoder Homes.</h2>
+        <p>This funnel is designed to move Yoder away from thin, generic ad activity and toward a stronger local remodel message backed by real public proof.</p>
+      </div>
+      <div class="wrap cards-3">
+        <article class="card">
+          <div class="num-label">01</div>
+          <h3>9 image ad concepts</h3>
+          <p>Built around the strongest public angle: less contractor chaos, more guidance, more trust.</p>
+        </article>
+        <article class="card">
+          <div class="num-label">02</div>
+          <h3>3 video scripts</h3>
+          <p>Different angles for pain, proof, and decision-making, all in a voice that matches Yoder's grounded brand.</p>
+        </article>
+        <article class="card">
+          <div class="num-label">03</div>
+          <h3>A dedicated landing page</h3>
+          <p>A cleaner conversion path built around the exact message your testimonials already support.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Why This Matters</span>
+          <h2>Yoder's white space is trust through guidance.</h2>
+          <blockquote>
+            The market is crowded with dream-home and luxury-first language. The proof on Yoder's own site is stronger: homeowners trust you when they feel guided, updated, and protected from project chaos.
+          </blockquote>
+        </div>
+        <div class="bullets">
+          <div class="bullet"><span class="dot"></span><div><strong>Stronger pain callout</strong><p>The clearest pain line is "don't want to worry about managing individual contractors."</p></div></div>
+          <div class="bullet"><span class="dot"></span><div><strong>Better proof usage</strong><p>Your testimonials already talk about communication, process enjoyment, craftsmanship, and on-budget work.</p></div></div>
+          <div class="bullet"><span class="dot"></span><div><strong>Cleaner CTA path</strong><p>Every ad pushes to one focused page and one clear action: schedule the site visit.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--off);">
+      <div class="wrap section-top">
+        <span class="eyebrow">Image Ads</span>
+        <h2>9 concepts mapped across the funnel.</h2>
+        <p>These concepts are built from Yoder's own testimonial language, Sarasota positioning, and the biggest gap in the current creative: no clear stress-relief message for remodel buyers.</p>
+      </div>
+
+      <div class="wrap">
+        <div class="phase">Phase 1 - Generate interest</div>
+        <div class="ads-grid">
+          <article class="ad-card"><div class="ad-image"><img src="./images/1.png" alt="Ad concept 1"></div><div class="ad-body"><div class="ad-label">Collage</div><h3>Offer breadth without feeling generic</h3><p>Show custom homes, remodels, condo renovations, and additions in one architectural collage so the prospect immediately sees range.</p></div></article>
+          <article class="ad-card"><div class="ad-image"><img src="./images/2.png" alt="Ad concept 2"></div><div class="ad-body"><div class="ad-label">Before &amp; After</div><h3>Use the bathroom transformation proof</h3><p>Visually connect the "ugly master bath" problem to the "absolutely stunning spa bathroom" result.</p></div></article>
+          <article class="ad-card"><div class="ad-image"><img src="./images/3.png" alt="Ad concept 3"></div><div class="ad-body"><div class="ad-label">Pain / Problem</div><h3>Call out contractor chaos</h3><p>The strongest problem-aware line in the public data is not wanting to manage individual contractors.</p></div></article>
+        </div>
+
+        <div class="phase">Phase 2 - Build trust</div>
+        <div class="ads-grid">
+          <article class="ad-card"><div class="ad-image"><img src="./images/4.png" alt="Ad concept 4"></div><div class="ad-body"><div class="ad-label">Social Proof</div><h3>Craftsmanship and attention to detail</h3><p>Use the bath-and-closet remodel testimonial to prove finish quality and ease of working together.</p></div></article>
+          <article class="ad-card"><div class="ad-image"><img src="./images/5.png" alt="Ad concept 5"></div><div class="ad-body"><div class="ad-label">Social Proof</div><h3>On-budget condo renovation proof</h3><p>Pair the condo story with the on-budget, highly satisfied testimonial to reinforce process trust.</p></div></article>
+          <article class="ad-card"><div class="ad-image"><img src="./images/6.png" alt="Ad concept 6"></div><div class="ad-body"><div class="ad-label">Process</div><h3>One team, clear communication</h3><p>A simple 3-step process graphic creates structure around planning, design-build, and tracked updates.</p></div></article>
+        </div>
+
+        <div class="phase">Phase 3 - Drive action</div>
+        <div class="ads-grid">
+          <article class="ad-card"><div class="ad-image"><img src="./images/7.png" alt="Ad concept 7"></div><div class="ad-body"><div class="ad-label">Community / Local</div><h3>Sarasota trust signal</h3><p>Lean into the strongest local proof line: serving SWFL for 20 years.</p></div></article>
+          <article class="ad-card"><div class="ad-image"><img src="./images/8.png" alt="Ad concept 8"></div><div class="ad-body"><div class="ad-label">Free Offer</div><h3>Promote the site visit</h3><p>Give the homeowner a concrete first step instead of a vague consultation invitation.</p></div></article>
+          <article class="ad-card"><div class="ad-image"><img src="./images/9.png" alt="Ad concept 9"></div><div class="ad-body"><div class="ad-label">Lead / Hero</div><h3>Sell the seamless experience</h3><p>The hero ad uses the strongest outcome phrase directly: a seamless building experience.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap-sm section-top">
+        <span class="eyebrow">Video Scripts</span>
+        <h2>Three distinct ad scripts for three different buyer mindsets.</h2>
+      </div>
+      <div class="wrap" style="display:grid; gap:18px;">
+        <article class="accordion open">
+          <div class="acc-head"><button type="button"><span><strong>Script 1</strong><br><span style="color:var(--sub);">Stop Managing Contractors</span></span><span class="acc-icon">+</span></button></div>
+          <div class="acc-body">
+            <div class="sblock"><span class="slabel">Central angle</span><p>Homeowners do not want to act as project manager during a remodel.</p></div>
+            <div class="sblock"><span class="slabel">Hook (0-10s)</span><p>If you're planning a remodel and you don't want to worry about managing individual contractors, listen to this. Most projects get stressful before they ever get exciting, because the homeowner ends up acting like the project manager.</p></div>
+            <div class="sblock"><span class="slabel">Body (11-90s)</span><p>That's where people get stuck. They start by calling a few trades, comparing prices, chasing callbacks, and trying to keep the whole thing moving themselves. Then communication slips, details get missed, and a project that was supposed to improve your home starts draining your time.</p><p>At Yoder Homes, every project is a partnership. We're here to listen, to guide, and to build. That means one team helping you plan the work, coordinate the moving pieces, and keep you informed all the way through.</p><p>We've been serving SWFL for 20 years, and that steady communication shows up in the feedback people leave us. One condo-renovation client said they would highly recommend Yoder to anyone with a complex project who doesn't want to worry about managing individual contractors. And the end result is a seamless building experience.</p></div>
+            <div class="sblock"><span class="slabel">CTA (90-120s)</span><p>If that sounds like the kind of remodel process you want, click the button below, land on the project page, answer a few quick questions, and schedule your site visit.</p></div>
+            <div class="sblock"><span class="slabel">Filming brief</span><p>Environment: finished kitchen or office. Camera: phone, eye-level. Framing: medium shot. Lighting: natural window light. Energy: calm and confident. Wardrobe: deep blue or charcoal, avoid red, purple, and neon colors.</p></div>
+          </div>
+        </article>
+
+        <article class="accordion">
+          <div class="acc-head"><button type="button"><span><strong>Script 2</strong><br><span style="color:var(--sub);">The Condo Renovation Proof</span></span><span class="acc-icon">+</span></button></div>
+          <div class="acc-body">
+            <div class="sblock"><span class="slabel">Central angle</span><p>Yoder's strongest proof is the guided experience clients describe after complex remodels.</p></div>
+            <div class="sblock"><span class="slabel">Hook (0-10s)</span><p>If you're about to gut a condo or take on a major home remodel, the question is not just who can build it. The question is who can guide it well from start to finish.</p></div>
+            <div class="sblock"><span class="slabel">Body (11-90s)</span><p>One Sarasota condo client said Yoder guided the project with expertise, experience, and a professional standard that was unrivaled. Another said the process was enjoyable and completed with great quality. Another said the work was on budget and left them extremely satisfied.</p><p>That does not happen by accident. It comes from having a real process, clear communication, and an assigned point of contact instead of bouncing from trade to trade. Crafting Distinctive Value means the final space looks beautiful, but it also means the way you get there feels organized and well handled.</p></div>
+            <div class="sblock"><span class="slabel">CTA (90-120s)</span><p>Click the button below, go to the next page, fill out the short project form, and schedule your site visit so we can see what's possible in your home.</p></div>
+            <div class="sblock"><span class="slabel">Filming brief</span><p>Environment: desk with plans or finish samples. Camera: phone, eye-level. Framing: medium shot. Lighting: soft natural light. Energy: reassuring and detail-oriented. Wardrobe: deep blue or charcoal, avoid orange, purple, and neon green.</p></div>
+          </div>
+        </article>
+
+        <article class="accordion">
+          <div class="acc-head"><button type="button"><span><strong>Script 3</strong><br><span style="color:var(--sub);">The Cheapest Bid Is Not The Safest Plan</span></span><span class="acc-icon">+</span></button></div>
+          <div class="acc-body">
+            <div class="sblock"><span class="slabel">Central angle</span><p>The bigger homeowner risk is not higher spend, it's a fragmented process that creates mistakes and stress.</p></div>
+            <div class="sblock"><span class="slabel">Hook (0-10s)</span><p>Here's the mistake a lot of homeowners make before a remodel. They think the safest move is collecting the cheapest bids from a bunch of separate contractors.</p></div>
+            <div class="sblock"><span class="slabel">Body (11-90s)</span><p>What usually happens next is exactly why hiring someone for a job feels so stressful. Nobody owns the whole process. One person blames another. The homeowner has to chase updates.</p><p>Yoder was built to work differently. The company has been serving SWFL for 20 years, has a team of over 18, and does upwards of $20 million in annual sales. That points to stability, systems, and support. If what you want is a seamless building experience, the answer is not more contractors. It's a better process.</p></div>
+            <div class="sblock"><span class="slabel">CTA (90-120s)</span><p>If you want to see what that process would look like for your project, click below, review the next page, complete the short form, and schedule your site visit.</p></div>
+            <div class="sblock"><span class="slabel">Filming brief</span><p>Environment: tidy office or active but clean project area. Camera: phone, eye-level. Framing: medium shot. Lighting: natural light. Energy: direct, steady, lightly contrarian. Wardrobe: charcoal or deep blue, avoid yellow, purple, and neon tones.</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section style="background: var(--off);">
+      <div class="wrap-sm section-top">
+        <span class="eyebrow">Landing Page</span>
+        <h2>A dedicated page built around one clear promise.</h2>
+        <p>The page focuses on the exact angle Yoder can own: a seamless building experience for Sarasota homeowners who want a better process.</p>
+      </div>
+      <div class="wrap">
+        <div class="mobile-preview">
+          <div class="mobile-screen">
+            <iframe src="./landing-page/index.html" title="Yoder Homes landing page preview" width="100%" height="100%"></iframe>
+          </div>
+        </div>
+        <div class="cards-3" style="margin-top: 28px;">
+          <article class="card"><h3>Why not send them to your website?</h3><p>Your website has broad navigation and multiple audience paths. This page gives one audience one message and one next step.</p></article>
+          <article class="card"><h3>Why this page converts</h3><p>It turns testimonials into positioning, trims the choices down, and points every CTA to a site visit.</p></article>
+          <article class="card"><h3>Why this angle works</h3><p>It uses the strongest language your customers already gave you, rather than borrowing generic luxury copy from the market.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap-sm section-top">
+        <span class="eyebrow">System Flow</span>
+        <h2>How the funnel works end to end.</h2>
+      </div>
+      <div class="wrap flow-grid">
+        <article class="flow-card"><div class="num-label">1</div><h3>Meta ads</h3><p>Pain, proof, and site-visit messaging.</p></article>
+        <article class="flow-card"><div class="num-label">2</div><h3>Landing page</h3><p>One promise, one form, one CTA.</p></article>
+        <article class="flow-card"><div class="num-label">3</div><h3>Qualification</h3><p>Project type, timing, and fit.</p></article>
+        <article class="flow-card"><div class="num-label">4</div><h3>Follow-up</h3><p>Yoder reviews and reaches out.</p></article>
+        <article class="flow-card"><div class="num-label">5</div><h3>Sales call</h3><p>Site visit or planning conversation.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap cta-band">
+        <div>
+          <span class="eyebrow" style="color:#dce8f7;">Next Step</span>
+          <h2>Let's get this live.</h2>
+          <p>The research, angles, ads, scripts, and landing page are aligned around the strongest white space in Yoder's market.</p>
+        </div>
+        <div>
+          <a class="btn btn-gold" href="#calendly">Let's get this live</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap-sm section-top">
+        <span class="eyebrow">How It Works</span>
+        <h2>Three steps from concept to launch.</h2>
+      </div>
+      <div class="wrap steps-grid">
+        <article class="step-card"><div class="watermark">01</div><h3>Approve the direction</h3><p>Confirm the remodel-first angle, site-visit CTA, and your preferred market priority.</p></article>
+        <article class="step-card"><div class="watermark">02</div><h3>Generate the creatives</h3><p>Drop the 9 image prompts into production, record the Loom, and film the scripts.</p></article>
+        <article class="step-card"><div class="watermark">03</div><h3>Launch and optimize</h3><p>Connect the page, route the form properly, and test the ads against a clear local offer.</p></article>
+      </div>
+    </section>
+
+    <section style="background: var(--off);">
+      <div class="wrap-sm section-top">
+        <span class="eyebrow">Case Studies</span>
+        <h2>Relight proof</h2>
+      </div>
+      <div class="wrap cases-grid">
+        <article class="case-card"><img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case study"><h3>TechTalent</h3><p>145 leads in 2 weeks.</p></article>
+        <article class="case-card"><img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case study"><h3>Vossen</h3><p>66 recurring clients in 27 days.</p></article>
+        <article class="case-card"><img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case study"><h3>Container Cleaner</h3><p>50 recurring clients in 2 weeks.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap-sm section-top">
+        <span class="eyebrow">FAQ</span>
+        <h2>What you might be thinking.</h2>
+      </div>
+      <div class="wrap faq-grid">
+        <article class="faq-card"><h3>Why are you giving this away for free?</h3><p>The goal is simple: show Yoder exactly how the funnel could look before you commit to anything.</p></article>
+        <article class="faq-card"><h3>Why should we trust this angle?</h3><p>Because it comes from Yoder's own testimonials and public proof, not generic agency copy.</p></article>
+        <article class="faq-card"><h3>How quickly could this launch?</h3><p>Once the creative assets and form routing are approved, the funnel can go live fast.</p></article>
+        <article class="faq-card"><h3>What would you need from our side?</h3><p>Best project photos, preferred service priority, and final approval on the CTA path.</p></article>
+        <article class="faq-card"><h3>How much ad spend would make sense?</h3><p>That depends on service priority and geography, but the funnel is structured so spend has a focused destination from day one.</p></article>
+      </div>
+    </section>
+
+    <section style="background: var(--off);">
+      <div class="wrap about-card">
+        <div class="about-photo"><img src="https://preview.relightmarketing.com/assets/relight-team.png" alt="Arthur from Relight Marketing"></div>
+        <div>
+          <span class="eyebrow" style="color:#dce8f7;">About</span>
+          <h2 class="dm">Arthur - Relight Marketing</h2>
+          <p>I build focused direct-response funnels for businesses that need stronger messaging, cleaner conversion paths, and a real reason for the right buyer to respond.</p>
+          <p>For Yoder, the opportunity is not adding more generic custom-home language. It is building a clearer trust path around project guidance, communication, and relief from contractor chaos.</p>
+          <p>That is the spine of everything on this page: the ad concepts, the video scripts, and the landing-page structure.</p>
+          <a class="btn btn-gold" href="#calendly">Let's get this live</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendly">
+      <div class="wrap-sm section-top">
+        <span class="eyebrow">Let's do this</span>
+        <h2>Let's get this ad funnel live ASAP.</h2>
+        <p>Pick a time below.</p>
+      </div>
+      <div class="calendly-shell">
+        <iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Calendly booking"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Relight Marketing - built for Yoder Homes
+  </footer>
+
+  <script>
+    document.querySelectorAll('.acc-head button').forEach((button) => {
+      button.addEventListener('click', () => {
+        button.closest('.accordion').classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

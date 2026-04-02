@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoder Homes | Sarasota Remodel Planning Page</title>
+  <meta name="description" content="Schedule a site visit with Yoder Homes for your Sarasota remodel, condo renovation, addition, or semi-custom home project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f4f7fb;
+      --accent: #1B4F89;
+      --accent-dark: #12365f;
+      --navy: #050708;
+      --navy-deep: #0f1f34;
+      --text: #050708;
+      --text-muted: #5a6b7c;
+      --line: #d6deea;
+      --font-head: 'Montserrat', Arial, sans-serif;
+      --font-body: 'Lato', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
+      padding-bottom: 76px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; }
+    .wrap { width: min(960px, calc(100% - 32px)); margin: 0 auto; }
+    section { padding: 48px 0; }
+    h1, h2, h3 {
+      margin: 0 0 14px;
+      color: var(--text);
+      font-family: var(--font-head);
+      line-height: 1.12;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+    h3 { font-size: 1.05rem; }
+    p { margin: 0 0 16px; color: var(--text-muted); font-size: 1.0625rem; }
+    .pre-headline,
+    .pre-label {
+      display: inline-block;
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .btn {
+      display: inline-block;
+      width: 100%;
+      min-height: 48px;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-sm {
+      width: auto;
+      min-height: 36px;
+      padding: 8px 12px;
+      font-size: 0.72rem;
+      white-space: nowrap;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      gap: 8px;
+    }
+    .nav-brand { min-width: 0; flex-shrink: 1; }
+    .nav-logo {
+      height: 24px;
+      max-width: 140px;
+      width: auto;
+      min-width: 0;
+      flex-shrink: 1;
+      filter: brightness(0) invert(1);
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .nav-phone-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      display: grid;
+      place-items: center;
+    }
+    .nav-phone-text,
+    .nav-cta-desktop { display: none; }
+    .hero {
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: #fff;
+      text-align: center;
+      padding-top: 40px;
+    }
+    .hero .pre-headline,
+    .hero h1,
+    .hero p,
+    .hero .cta-note { color: #fff; }
+    .hero .pre-headline { color: rgba(255,255,255,0.75); }
+    .hero-logo {
+      width: min(220px, 70vw);
+      margin: 0 auto 18px;
+      filter: brightness(0) invert(1);
+    }
+    .hero-sub {
+      width: min(730px, 100%);
+      margin: 18px auto 0;
+      color: rgba(255,255,255,0.82);
+    }
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 840px;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 28px auto 0;
+      border-radius: 18px;
+      background: #000;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.3);
+    }
+    .vsl-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image:
+        linear-gradient(rgba(15,31,52,0.58), rgba(15,31,52,0.58)),
+        url('https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2024/02/003_LidoShores-Seibert-AndMasters_RGP-scaled.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .play {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.14);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 0 12px rgba(255,255,255,0.08);
+    }
+    .play::before {
+      content: '';
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 16px solid #fff;
+      margin-left: 4px;
+    }
+    .hero-actions {
+      margin-top: 24px;
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+    }
+    .cta-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .proof-bar {
+      background: var(--bg);
+      border-bottom: 1px solid var(--surface);
+      padding: 16px 0;
+    }
+    .proof-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      text-align: center;
+    }
+    .proof-num {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+      font-family: var(--font-head);
+    }
+    .proof-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .img-strip {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px 0 0;
+    }
+    .img-strip::-webkit-scrollbar { display: none; }
+    .img-strip img {
+      height: 200px;
+      width: 280px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .pain-section { background: var(--surface); }
+    .pain-grid { display: flex; flex-direction: column; gap: 2rem; }
+    .pain-grid__img { display: none; }
+    .pain-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 2rem;
+    }
+    .pain-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+      display: grid;
+      gap: 0.85rem;
+    }
+    .pain-list li {
+      background: #fff;
+      border-radius: 6px;
+      padding: 1.1rem 1.25rem 1.1rem 3.2rem;
+      position: relative;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .pain-list li::before {
+      content: '';
+      position: absolute;
+      left: 1.25rem;
+      top: 1.35rem;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+    .bridge {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 6px;
+      padding: 1.5rem 1.75rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+    .bridge strong { color: #8ab3e3; }
+    .solution-copy,
+    .offer-copy,
+    .social-copy,
+    .form-copy,
+    .final-copy { margin-bottom: 24px; }
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      background: var(--navy);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 22px;
+    }
+    .mini-stat {
+      padding: 1rem 0.75rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .mini-stat:nth-child(2n) { border-right: none; }
+    .mini-stat__num {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .mini-stat__label {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .offer-section { background: var(--surface); }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin: 24px 0;
+    }
+    .step {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .step img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+    .step__body { padding: 18px; }
+    .step__num {
+      color: var(--accent);
+      font-family: var(--font-head);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .inclusions {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: grid;
+      gap: 10px;
+    }
+    .inclusions li {
+      position: relative;
+      padding-left: 28px;
+      color: var(--text-muted);
+    }
+    .inclusions li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .timeline-callout {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 14px 16px;
+      background: #fff;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+    .credibility-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .credibility-stat {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      padding: 18px 16px;
+      text-align: center;
+    }
+    .credibility-stat__num {
+      display: block;
+      color: var(--accent);
+      font-family: var(--font-head);
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .credibility-stat__label {
+      display: block;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.65rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .testimonial-card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      padding: 18px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+    .stars svg { width: 18px; height: 18px; fill: #f59e0b; }
+    .testimonial-card blockquote {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-style: italic;
+    }
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .pull-quote {
+      border-left: 4px solid var(--accent);
+      padding: 10px 0 10px 16px;
+      color: var(--text);
+      font-style: italic;
+    }
+    .creds-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .creds-bar img {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 16px;
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .form-next {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .form-next li {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: var(--text-muted);
+    }
+    .form-shell {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .form-shell h3 { margin-bottom: 6px; }
+    .form-subnote {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .form-row-2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .field { display: grid; gap: 8px; margin-bottom: 16px; }
+    label { font-weight: 700; color: var(--text); }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      font-size: 16px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: #fff;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .privacy-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 10px;
+    }
+    .faq-wrap {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      padding: 0 18px;
+    }
+    .faq-item { border-bottom: 1px solid var(--surface); }
+    .faq-item:first-child { border-top: 1px solid var(--surface); }
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      text-align: left;
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .faq-btn::after {
+      content: '+';
+      color: var(--accent);
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+    .faq-item.open .faq-btn::after { content: '-'; }
+    .faq-answer {
+      display: none;
+      padding-bottom: 16px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-answer { display: block; }
+    .final-cta {
+      text-align: center;
+      padding: 28px 22px;
+      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    footer {
+      padding: 28px 0 36px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .mobile-cta {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      padding: 10px 12px;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+      border-top: 1px solid var(--line);
+      transition: transform 0.3s ease;
+    }
+    .mobile-cta .btn { flex: 1; padding: 13px 12px; font-size: 0.85rem; }
+    .cta-call {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+    @media (min-width: 641px) {
+      body { padding-bottom: 0; }
+      .wrap { width: min(960px, calc(100% - 48px)); }
+      section { padding: 64px 0; }
+      .nav-inner { height: 64px; gap: 12px; }
+      .nav-logo { height: 32px; max-width: none; flex-shrink: 0; }
+      .nav-phone-icon { display: none; }
+      .nav-phone-text {
+        display: inline-flex;
+        color: rgba(255,255,255,0.78);
+        align-items: center;
+      }
+      .nav-cta-mobile { display: none; }
+      .nav-cta-desktop { display: inline-block; }
+      .btn { width: auto; }
+      .proof-items { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+      .proof-num { font-size: 1.5rem; }
+      .img-strip { padding: 32px 0 0; }
+      .img-strip img { height: 240px; width: 340px; }
+      .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+      .pain-grid__img {
+        display: block;
+        width: 100%;
+        border-radius: 6px;
+        object-fit: cover;
+        aspect-ratio: 3 / 4;
+        position: sticky;
+        top: calc(64px + 2rem);
+      }
+      .mini-stats { grid-template-columns: repeat(4, 1fr); }
+      .mini-stat { border-bottom: none; }
+      .mini-stat:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.1); }
+      .mini-stat:last-child { border-right: none; }
+      .steps,
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .credibility-stats { grid-template-columns: repeat(4, 1fr); }
+      .quote-grid { grid-template-columns: 1fr 1fr; }
+      .form-grid { grid-template-columns: 0.95fr 1.05fr; }
+      .form-row-2 { grid-template-columns: 1fr 1fr; }
+      .creds-bar img { height: 72px; }
+      .mobile-cta { display: none; }
+    }
+    @media (min-width: 961px) {
+      .wrap { width: min(960px, calc(100% - 64px)); }
+      section { padding: 80px 0; }
+      .nav-inner { height: 72px; }
+      .nav-logo { height: 40px; }
+      .img-strip img { height: 280px; width: 400px; }
+      .steps,
+      .cards { grid-template-columns: repeat(3, 1fr); }
+      .creds-bar img { height: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ASSET INVENTORY SUMMARY - Yoder Homes
+       Hero background: https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2024/02/003_LidoShores-Seibert-AndMasters_RGP-scaled.jpg
+       Logo: https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/Yoder-Homes-Logo-USE-THIS-ONE-AS-MAIN.png
+       Image strip 1:
+       1. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/10/Custom-Homes-scaled.jpg
+       2. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/10/Condo-Home-Remodels-scaled.jpg
+       3. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/10/Additions-ADUs.webp
+       Pain image: https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2024/02/jimmywhitephoto-1-scaled.jpg
+       Step images:
+       1. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/10/Contact-Us-scaled.jpg
+       2. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/10/Build-on-Your-Lot.jpg
+       3. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2024/02/jimmywhitephoto-7.jpg
+       Image strip 2:
+       1. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2024/02/10801_561946_pl.jpg
+       2. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2024/02/10801_562010_pl.jpg
+       3. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/05/800-32-scaled.jpg
+       Credential logos:
+       1. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/houzz_logo_footer.png
+       2. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/NKBA_logo19.png
+       3. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/EPA_logo19.png
+       4. https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/01/SBA-logo-2.png
+  -->
+
+  <header class="topbar">
+    <div class="wrap nav-inner">
+      <a class="nav-brand" href="#top">
+        <img class="nav-logo" src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/Yoder-Homes-Logo-USE-THIS-ONE-AS-MAIN.png" alt="Yoder Homes logo">
+      </a>
+      <div class="nav-right">
+        <a class="nav-phone-icon" href="tel:9419535630" aria-label="Call Yoder Homes">Call</a>
+        <a class="nav-phone-text" href="tel:9419535630">941-953-5630</a>
+        <a class="btn btn-sm nav-cta-mobile" href="#form">Site Visit</a>
+        <a class="btn btn-sm nav-cta-desktop" href="#form">Schedule Your Site Visit</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <img class="hero-logo" src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/Yoder-Homes-Logo-USE-THIS-ONE-AS-MAIN.png" alt="Yoder Homes logo">
+        <p class="pre-headline">For Sarasota homeowners planning a serious remodel, condo renovation, addition, or semi-custom build</p>
+        <h1>a seamless building experience</h1>
+        <div class="video-wrap">
+          <div class="vsl-placeholder">
+            <!-- VSL: Record a 3-5 minute talking-head video for Sarasota homeowners planning a serious remodel, addition, or semi-custom build. Open with the pain that they do not want to worry about managing individual contractors. Explain why disconnected trades create delays, stress, and missed details. Position Yoder Homes as the design-build partner that guides the project from planning through execution. Close by telling them to fill out the form below to schedule their site visit. -->
+            <div class="play" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="hero-sub">Yoder Homes helps homeowners move from project stress to a guided process with stronger communication, real craftsmanship, and one team that stays accountable from the first conversation through the finished space.</p>
+        <div class="hero-actions">
+          <a href="#form" class="btn">Schedule Your Site Visit</a>
+          <p class="cta-note">No obligation. No pressure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-bar">
+      <div class="wrap proof-items">
+        <div><div class="proof-num">20</div><div class="proof-label">Years in SWFL</div></div>
+        <div><div class="proof-num">18+</div><div class="proof-label">Team members</div></div>
+        <div><div class="proof-num">2005</div><div class="proof-label">Founded</div></div>
+        <div><div class="proof-num">$20M+</div><div class="proof-label">Sales last year</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap img-strip" aria-label="Yoder Homes project gallery">
+        <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/10/Custom-Homes-scaled.jpg" alt="Custom home exterior by Yoder Homes in Sarasota" loading="lazy">
+        <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/10/Condo-Home-Remodels-scaled.jpg" alt="Condo and home remodel project by Yoder Homes" loading="lazy">
+        <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/10/Additions-ADUs.webp" alt="Addition and ADU project by Yoder Homes" loading="lazy">
+      </div>
+    </section>
+
+    <section class="pain-section">
+      <div class="wrap pain-grid">
+        <div>
+          <span class="pre-label">Sound familiar?</span>
+          <h2 class="pain-title">"don't want to worry about managing individual contractors."</h2>
+          <ul class="pain-list">
+            <li>You've probably delayed the project because hiring the wrong team feels expensive, stressful, and hard to undo.</li>
+            <li>If you're planning a serious remodel, you may already be worried about budget drift, missed details, and too many moving parts.</li>
+            <li>You've probably looked at separate trades and realized the homeowner ends up coordinating the schedule, the questions, and the follow-through.</li>
+            <li>If you're updating a condo or whole home, you may want the finished result without turning the process into a second job.</li>
+            <li>You've probably seen that beautiful work alone is not enough if communication slips and nobody owns the full picture.</li>
+          </ul>
+          <div class="bridge">Most homeowners do not need more contractor quotes. They need <strong>one accountable team</strong> that can guide the project, keep communication clear, and turn a complex remodel into a calmer process.</div>
+        </div>
+        <img class="pain-grid__img" src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2024/02/jimmywhitephoto-1-scaled.jpg" alt="Finished interior remodel by Yoder Homes in Sarasota" loading="lazy">
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="solution-copy">
+          <p class="pre-headline">The solution</p>
+          <h2>Design-build guidance that removes contractor chaos</h2>
+          <p>Most homeowners have already considered piecing the job together with separate trades, chasing multiple bids, and trying to manage the schedule themselves. That sounds cheaper at first, but it usually creates more stress, more confusion, and more room for details to slip.</p>
+          <p>Yoder's strongest white space is not louder luxury language. It is the promise of a guided process. The winning angle here is a Sarasota design-build partner that keeps the homeowner informed, keeps the work moving, and makes the experience feel organized from start to finish.</p>
+        </div>
+        <div class="mini-stats">
+          <div class="mini-stat"><div class="mini-stat__num">20</div><div class="mini-stat__label">Years serving SWFL</div></div>
+          <div class="mini-stat"><div class="mini-stat__num">18+</div><div class="mini-stat__label">Team members</div></div>
+          <div class="mini-stat"><div class="mini-stat__num">1,000+</div><div class="mini-stat__label">Homes built in founder career</div></div>
+          <div class="mini-stat"><div class="mini-stat__num">$20M+</div><div class="mini-stat__label">Sales last year</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer-section">
+      <div class="wrap">
+        <div class="offer-copy">
+          <p class="pre-headline">How it works</p>
+          <h2>A clear path from first conversation to finished project</h2>
+          <p>Yoder's public proof points to a practical, communication-led process. This page turns that into a simple path a serious homeowner can understand before they ever book the site visit.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/10/Contact-Us-scaled.jpg" alt="Initial project conversation with Yoder Homes" loading="lazy">
+            <div class="step__body">
+              <div class="step__num">01</div>
+              <h3>Start with the right conversation</h3>
+              <p>Share the property, the scope, and what no longer works in the space. Yoder uses that to decide whether the project is a fit and what the smartest next step looks like.</p>
+            </div>
+          </article>
+          <article class="step">
+            <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/10/Build-on-Your-Lot.jpg" alt="Planning and design-build coordination by Yoder Homes" loading="lazy">
+            <div class="step__body">
+              <div class="step__num">02</div>
+              <h3>Plan the smartest design-build path</h3>
+              <p>Instead of leaving the homeowner to coordinate separate trades, Yoder maps the process, aligns the work, and sets the project up with one team responsible for the details.</p>
+            </div>
+          </article>
+          <article class="step">
+            <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2024/02/jimmywhitephoto-7.jpg" alt="Completed remodel result by Yoder Homes" loading="lazy">
+            <div class="step__body">
+              <div class="step__num">03</div>
+              <h3>Move with one team and clear updates</h3>
+              <p>Clients repeatedly mention guidance, availability, and communication throughout the job. That is what makes the finished result feel like a seamless building experience.</p>
+            </div>
+          </article>
+        </div>
+        <ul class="inclusions">
+          <li>Custom homes, semi-custom homes, condo remodels, home remodels, and additions through one accountable company</li>
+          <li>Design-build guidance that reduces the need for the homeowner to manage separate contractors</li>
+          <li>Project communication and support that continues throughout the work, not just before the contract is signed</li>
+          <li>A site visit and project-fit conversation before deeper planning begins</li>
+        </ul>
+        <div class="timeline-callout">Project timing depends on scope, property conditions, and selections. The strongest public proof available is that clients describe the process as guided, enjoyable, and on budget rather than rushed or chaotic.</div>
+        <a href="#form" class="btn">Schedule Your Site Visit</a>
+        <p class="cta-note" style="color:var(--text-muted); text-align:center;">No obligation. No pressure.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap img-strip" aria-label="Additional Yoder Homes project gallery">
+        <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2024/02/10801_561946_pl.jpg" alt="Finished Sarasota home project by Yoder Homes" loading="lazy">
+        <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2024/02/10801_562010_pl.jpg" alt="Refined interior project by Yoder Homes" loading="lazy">
+        <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/05/800-32-scaled.jpg" alt="Completed home build by Yoder Homes" loading="lazy">
+      </div>
+    </section>
+
+    <section class="offer-section">
+      <div class="wrap">
+        <div class="social-copy">
+          <p class="pre-headline">Social proof</p>
+          <h2>The public proof already supports the message</h2>
+        </div>
+        <div class="credibility-stats">
+          <div class="credibility-stat"><span class="credibility-stat__num">20</span><span class="credibility-stat__label">Years in business</span></div>
+          <div class="credibility-stat"><span class="credibility-stat__num">18+</span><span class="credibility-stat__label">Team members</span></div>
+          <div class="credibility-stat"><span class="credibility-stat__num">1,000+</span><span class="credibility-stat__label">Founder homes built</span></div>
+          <div class="credibility-stat"><span class="credibility-stat__num">$20M+</span><span class="credibility-stat__label">Sales last year</span></div>
+        </div>
+        <div class="cards">
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 star review">
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+            </div>
+            <h3>20-year-old Sarasota condominium remodel</h3>
+            <p>Before: an older condo needed full remodeling and close guidance.</p>
+            <p><strong>Result:</strong> the client says the project was guided with expertise, communication, and excellent quality.</p>
+            <blockquote>"their team guided us with expertise, experience, and a professional standard that was unrivaled"</blockquote>
+            <strong>Christine F.</strong>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 star review">
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+            </div>
+            <h3>Complex condo renovation</h3>
+            <p>Before: a renovation that could have required the homeowner to manage multiple moving parts.</p>
+            <p><strong>Result:</strong> the client says the process was enjoyable and completed with great quality.</p>
+            <blockquote>"completed it with great quality ... don't want to worry about managing individual contractors."</blockquote>
+            <strong>Ingrid C.</strong>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 star review">
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 15l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
+            </div>
+            <h3>Two-bedroom condo gut renovation</h3>
+            <p>Before: walls removed, layout redesigned, baths and kitchen fully renovated.</p>
+            <p><strong>Result:</strong> the client says the work was on budget and they were extremely satisfied.</p>
+            <blockquote>"The work was on budget too. We were extremely satisfied."</blockquote>
+            <strong>Peter F.</strong>
+          </article>
+        </div>
+        <div class="quote-grid">
+          <div class="pull-quote">"This company truly CARES about their customers rather than seeing us as dollar signs." - Lisa A.</div>
+          <div class="pull-quote">"my ugly master bath was transformed into an absolutely stunning spa bathroom!" - Lisa A.</div>
+        </div>
+        <div class="creds-bar">
+          <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/houzz_logo_footer.png" alt="Houzz credential logo" loading="lazy">
+          <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/NKBA_logo19.png" alt="NKBA credential logo" loading="lazy">
+          <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoderhomesremo.wpengine.com/wp-content/uploads/2023/05/EPA_logo19.png" alt="EPA credential logo" loading="lazy">
+          <img src="https://cdn-kjfmd.nitrocdn.com/QhCpycQKrvUVQwoCdWmZptjXsDJXVsFM/assets/images/optimized/rev-b260dec/yoder-homes.com/wp-content/uploads/2025/01/SBA-logo-2.png" alt="Suncoast Builders Association logo" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="form">
+      <div class="wrap form-grid">
+        <div class="form-copy">
+          <p class="pre-headline">Schedule your site visit</p>
+          <h2>Tell Yoder about the remodel, addition, or build you are planning</h2>
+          <p>This is built as a real lead filter, not a generic contact form. The questions below are meant to qualify serious homeowners and make the follow-up conversation more useful on both sides.</p>
+          <ul class="form-next">
+            <li>You tell Yoder what type of project you are considering, your timing, and your expected investment range.</li>
+            <li>Yoder reviews the fit, the scope, and whether the project matches the kind of work they are best positioned to guide.</li>
+            <li>If it looks like a fit, the team follows up to schedule your site visit and talk through the smartest next step.</li>
+          </ul>
+        </div>
+        <div class="form-shell">
+          <h3>Start your project fit review</h3>
+          <p class="form-subnote">Takes less than 60 seconds. We respond within 1 business day.</p>
+          <!--
+            FORMSPREE SETUP:
+            1. Go to formspree.io - create a free account
+            2. Create a new form - copy the form ID (e.g. xabcdefg)
+            3. Replace YOUR_FORM_ID below with that ID
+            Submissions will be emailed automatically.
+          -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-row-2">
+              <div class="field">
+                <label for="full-name">Full name</label>
+                <input id="full-name" name="full_name" type="text" placeholder="Your full name" required>
+              </div>
+              <div class="field">
+                <label for="phone">Best phone number</label>
+                <input id="phone" name="phone" type="tel" placeholder="Best number to reach you" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" placeholder="Your email address" required>
+            </div>
+            <div class="field">
+              <label for="project-scope">What type of project are you planning?</label>
+              <select id="project-scope" name="project_scope" required>
+                <option value="">Select one</option>
+                <option>Condo remodel</option>
+                <option>Whole-home remodel</option>
+                <option>Kitchen or bathroom remodel</option>
+                <option>Addition or ADU</option>
+                <option>Semi-custom home</option>
+                <option>Custom home</option>
+              </select>
+            </div>
+            <div class="form-row-2">
+              <div class="field">
+                <label for="budget-range">What investment range are you comfortable with for this project?</label>
+                <select id="budget-range" name="budget_range" required>
+                  <option value="">Select one</option>
+                  <option>Under $25,000</option>
+                  <option>$25,000 - $50,000</option>
+                  <option>$50,000 - $100,000</option>
+                  <option>$100,000 - $250,000</option>
+                  <option>$250,000 - $500,000</option>
+                  <option>$500,000+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="timeline">When are you hoping to get started?</label>
+                <select id="timeline" name="timeline" required>
+                  <option value="">Select one</option>
+                  <option>As soon as possible</option>
+                  <option>Within 1-3 months</option>
+                  <option>Within 3-6 months</option>
+                  <option>Within 6-12 months</option>
+                  <option>Just planning and researching</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="property-status">Which best describes your current situation?</label>
+              <select id="property-status" name="property_status" required>
+                <option value="">Select one</option>
+                <option>I already own the home or condo</option>
+                <option>I am under contract or actively buying</option>
+                <option>I own the lot and am planning a build</option>
+                <option>I am still deciding whether to move forward</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="decision-readiness">Who will be involved in the decision to move forward?</label>
+              <select id="decision-readiness" name="decision_readiness" required>
+                <option value="">Select one</option>
+                <option>I am the main decision-maker</option>
+                <option>My spouse or partner and I will decide together</option>
+                <option>There are other decision-makers involved</option>
+                <option>I am still gathering information before deciding</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="details">What feels outdated, stressful, or no longer works in the space today?</label>
+              <textarea id="details" name="details" placeholder="Tell Yoder what is not working, what you have tried so far, and what outcome you are hoping for."></textarea>
+            </div>
+            <button class="btn" type="submit">Schedule Your Site Visit</button>
+            <p class="privacy-note">No spam. No obligation. Your information is kept private.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer-section">
+      <div class="wrap">
+        <p class="pre-headline">FAQ</p>
+        <h2>Questions serious homeowners actually ask</h2>
+        <div class="faq-wrap">
+          <div class="faq-item open">
+            <button class="faq-btn" type="button">How do I know I won't end up managing individual contractors myself?</button>
+            <div class="faq-answer">That is exactly the pain this page is built around. Yoder is positioned here as the accountable design-build partner, not just another trade. The public proof supports that angle too: multiple testimonials mention guidance, communication, and relief from having to manage a complex renovation alone.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" type="button">What if I am still worried about budget getting away from me?</button>
+            <div class="faq-answer">That concern is fair, especially on larger remodels and additions. The point of the lead filter and site-visit step is to qualify the project honestly before deeper planning begins. One of Yoder's strongest public proof points is a client saying the work was on budget and left them extremely satisfied.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" type="button">What if I am early and just planning and researching?</button>
+            <div class="faq-answer">That can still be a good fit. Early-stage homeowners are often the ones who benefit most from a guided process, because they have not yet committed to a fragmented contractor setup. The form is designed to surface that early-stage context instead of forcing everyone into the same follow-up.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" type="button">Why not just collect a few bids and compare them?</button>
+            <div class="faq-answer">Comparing bids can make sense, but the category trap is that the homeowner ends up comparing pieces instead of comparing processes. Yoder's differentiation here is not being the loudest luxury claim. It is being the team that can guide the full job with clearer communication and stronger accountability.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" type="button">What happens after I submit the form?</button>
+            <div class="faq-answer">Yoder reviews the project type, timeline, and investment range first so the follow-up is more useful. If the project looks aligned, the next step is a site visit and a real conversation about scope, fit, and the smartest path forward. That keeps the process specific instead of turning into a generic contact request.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap final-cta">
+        <div class="final-copy">
+          <h2>Schedule your site visit and get clarity on the next step</h2>
+          <p>If you want a calmer process, stronger communication, and one accountable team guiding the work, use the form above to start the conversation with Yoder Homes.</p>
+        </div>
+        <a href="#form" class="btn">Schedule Your Site Visit</a>
+        <p class="cta-note" style="color:var(--text-muted);">Serving SWFL for 20 years with a team of over 18.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Yoder Homes © 2026
+  </footer>
+
+  <div class="mobile-cta">
+    <a href="tel:9419535630" class="cta-call" aria-label="Call Yoder Homes">Call</a>
+    <a href="#form" class="btn">Schedule Your Site Visit</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.parentElement;
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    (function() {
+      var mc = document.querySelector('.mobile-cta');
+      if (!mc) return;
+      var form = document.getElementById('form');
+      if (!form) return;
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+        });
+      }, { threshold: 0.1 });
+      io.observe(form);
+    })();
+  </script>
+</body>
+</html>
