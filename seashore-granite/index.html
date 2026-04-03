@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seashore Marble & Granite | Custom Meta Ads Funnel</title>
+  <meta name="description" content="A custom pitch page for Seashore Marble & Granite showing the image ads, video scripts, and landing page built to drive more Sarasota countertop estimate requests.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #000000;
+      --navy-deep: #111111;
+      --gold: #04b7b7;
+      --gold-light: rgba(4, 183, 183, 0.12);
+      --bg: #ffffff;
+      --off: #f9fafb;
+      --line: #eaecf0;
+      --txt: #1a2332;
+      --sub: #64748b;
+      --sub2: #94a3b8;
+      --shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--txt);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { display: block; max-width: 100%; }
+    iframe { border: 0; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .dm { font-family: 'DM Serif Display', serif; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .wrap-sm { width: min(760px, calc(100% - 32px)); margin: 0 auto; }
+    .section { padding: 96px 0; }
+    .fade { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade.in { opacity: 1; transform: none; }
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 4.8vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 3.5vw, 3.25rem);
+      line-height: 1.04;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+    h3, h4, p { margin: 0; }
+    .lede {
+      color: var(--sub);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+    .center { text-align: center; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      box-shadow: 0 14px 28px rgba(4, 183, 183, 0.22);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--txt);
+      border: 1px solid var(--line);
+    }
+
+    #nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+    #nav.bg {
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-color: rgba(234, 236, 240, 0.92);
+      box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+    }
+    .nav-inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .logo-shell {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.14);
+    }
+    #nav.bg .logo-shell {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: none;
+    }
+    .logo-shell img {
+      height: 30px;
+      width: auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: visible;
+      padding: 144px 0 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(4, 183, 183, 0.18), transparent 30%),
+        radial-gradient(circle at 80% 0%, rgba(4, 183, 183, 0.14), transparent 34%),
+        radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(135deg, #060606 0%, #111111 55%, #151515 100%);
+      background-size: auto, auto, 22px 22px, auto;
+      color: #fff;
+      text-align: center;
+    }
+    .hero .wrap-sm { position: relative; z-index: 1; }
+    .hero-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 26px auto 0;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+    }
+    .hero-logo img { height: 36px; width: auto; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(4, 183, 183, 0.12);
+      border: 1px solid rgba(4, 183, 183, 0.3);
+      color: #dffbfb;
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 0 rgba(4, 183, 183, 0.55);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(4, 183, 183, 0.55); }
+      70% { box-shadow: 0 0 0 12px rgba(4, 183, 183, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(4, 183, 183, 0); }
+    }
+    .hero h1 { max-width: 880px; margin: 0 auto; }
+    .hero-copy {
+      max-width: 700px;
+      margin: 22px auto 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 1.05rem;
+      line-height: 1.78;
+    }
+    .video-shell {
+      margin: 44px auto 0;
+      border-radius: 28px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+      box-shadow: 0 48px 120px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      margin-bottom: -120px;
+    }
+    .video-shell iframe,
+    .video-placeholder {
+      width: 100%;
+      height: 100%;
+    }
+    .video-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 36px;
+      background:
+        linear-gradient(135deg, rgba(4, 183, 183, 0.16), rgba(255, 255, 255, 0.03)),
+        radial-gradient(circle at 50% 50%, rgba(4, 183, 183, 0.14), transparent 38%);
+    }
+    .video-card {
+      width: min(520px, 100%);
+      padding: 32px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      text-align: center;
+    }
+    .play-btn {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 0 0 rgba(4, 183, 183, 0.38);
+      animation: pulse 1.8s infinite;
+    }
+    .play-btn::before {
+      content: '';
+      margin-left: 4px;
+      border-style: solid;
+      border-width: 13px 0 13px 22px;
+      border-color: transparent transparent transparent var(--navy);
+    }
+    .video-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+    .video-card p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.98rem;
+    }
+    .hero-cta {
+      margin-top: 152px;
+      display: inline-flex;
+    }
+    .hero-note {
+      margin-top: 12px;
+      padding-bottom: 78px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.95rem;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 42px;
+    }
+    .card {
+      background: #fff;
+      border: 1.5px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.03);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(4, 183, 183, 0.45);
+      box-shadow: 0 22px 46px rgba(15, 23, 42, 0.08);
+    }
+    .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .card p { color: var(--sub); margin-top: 10px; }
+
+    .matters-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: start;
+      margin-top: 16px;
+    }
+    blockquote {
+      margin: 24px 0 0;
+      padding: 28px;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 18px 18px 0;
+      background: #fff;
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.05);
+      color: var(--txt);
+      font-size: 1.22rem;
+      line-height: 1.6;
+    }
+    .matter-list {
+      display: grid;
+      gap: 18px;
+    }
+    .matter-item {
+      display: grid;
+      grid-template-columns: 12px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .matter-item:last-child { border-bottom: 0; }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-top: 8px;
+      background: var(--gold);
+      box-shadow: 0 0 0 8px var(--gold-light);
+    }
+    .matter-item strong { display: block; margin-bottom: 6px; font-size: 1rem; }
+    .matter-item span { color: var(--sub); }
+
+    .off { background: var(--off); }
+    .phase {
+      margin-top: 54px;
+    }
+    .phase-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .phase-head span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sub2);
+    }
+    .phase-head::after {
+      content: '';
+      height: 1px;
+      background: var(--line);
+    }
+    .ads-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .ad-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+    }
+    .ad-image {
+      min-height: 240px;
+      background: linear-gradient(180deg, rgba(4, 183, 183, 0.08), rgba(255, 255, 255, 0));
+      border-bottom: 1px solid var(--line);
+    }
+    .ad-image img {
+      width: 100%;
+      height: auto;
+      object-fit: initial;
+    }
+    .ad-copy { padding: 22px; }
+    .ad-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: var(--txt);
+    }
+    .ad-label .num {
+      width: 30px;
+      height: 30px;
+      margin: 0;
+      font-size: 0.82rem;
+    }
+    .ad-copy p { color: var(--sub); }
+
+    .accordion-wrap {
+      margin-top: 40px;
+      display: grid;
+      gap: 16px;
+    }
+    .accordion {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.04);
+    }
+    .acc-btn {
+      width: 100%;
+      padding: 24px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      text-align: left;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+    .acc-title strong {
+      display: block;
+      font-size: 1.14rem;
+    }
+    .acc-title span {
+      display: block;
+      margin-top: 6px;
+      color: var(--sub);
+      font-size: 0.95rem;
+    }
+    .acc-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      color: var(--sub);
+      font-size: 1.3rem;
+      transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+    .accordion.open .acc-icon {
+      transform: rotate(45deg);
+      color: var(--gold);
+      border-color: rgba(4, 183, 183, 0.35);
+    }
+    .acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .acc-pad {
+      padding: 0 26px 26px;
+      display: grid;
+      gap: 14px;
+    }
+    .sblock {
+      background: var(--off);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+    }
+    .slabel {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.84rem;
+    }
+    .sblock p + p { margin-top: 10px; }
+    .sblock p { color: var(--sub); }
+
+    .phone-stage {
+      display: flex;
+      justify-content: center;
+      margin-top: 34px;
+    }
+    .phone {
+      width: min(100%, 432px);
+      padding: 16px;
+      border-radius: 38px;
+      background: #0f172a;
+      box-shadow: 0 28px 70px rgba(15, 23, 42, 0.24);
+    }
+    .phone-screen {
+      background: #fff;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .phone-screen iframe {
+      width: 106%;
+      height: 808px;
+      display: block;
+      background: #fff;
+      transform: scale(0.943);
+      transform-origin: top left;
+    }
+    .qa-grid {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .qa-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+    }
+    .qa-card h3 { margin-bottom: 10px; }
+    .qa-card p { color: var(--sub); }
+
+    .flow {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+    .flow-step {
+      position: relative;
+      text-align: center;
+      padding: 0 10px;
+    }
+    .flow-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 21px;
+      left: calc(50% + 30px);
+      width: calc(100% - 16px);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(4, 183, 183, 0.5), rgba(148, 163, 184, 0.35));
+    }
+    .flow-dot {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--gold-light);
+      color: var(--gold);
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+    .flow-step h3 { font-size: 1rem; margin-bottom: 8px; }
+    .flow-step p { color: var(--sub); font-size: 0.94rem; }
+
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      margin-top: 10px;
+      padding: 38px 40px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #050505 0%, #131313 72%, #1d1d1d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+    }
+    .cta-band::after {
+      content: '';
+      position: absolute;
+      inset: -60px -20px auto auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(4, 183, 183, 0.34), rgba(4, 183, 183, 0));
+    }
+    .cta-band > * { position: relative; z-index: 1; }
+    .cta-band p:first-child,
+    .cta-band h2,
+    .cta-band .lede { color: #fff; }
+    .cta-band .lede { color: rgba(255, 255, 255, 0.74); max-width: 560px; }
+
+    .steps-grid,
+    .case-grid {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .step-card {
+      position: relative;
+      padding: 28px;
+      background: var(--off);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+    .step-big {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      color: rgba(4, 183, 183, 0.15);
+      font-size: 3.3rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .step-card h3,
+    .case-card h3 { position: relative; z-index: 1; margin-bottom: 10px; }
+    .step-card p,
+    .case-card p { position: relative; z-index: 1; color: var(--sub); }
+
+    .case-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.05);
+    }
+    .case-card > img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .case-copy { padding: 24px; }
+    .case-logo {
+      width: auto;
+      height: 28px;
+      margin-bottom: 18px;
+    }
+
+    .about-grid {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .about-photo {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .about-copy p {
+      color: var(--sub);
+      margin-top: 14px;
+    }
+    .about-copy .btn { margin-top: 24px; }
+
+    .cal-wrap {
+      width: min(700px, 100%);
+      margin: 36px auto 0;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+      background: #fff;
+    }
+    .cal-wrap iframe {
+      width: 100%;
+      height: 700px;
+      display: block;
+    }
+
+    footer {
+      padding: 26px 0 42px;
+      text-align: center;
+      color: var(--sub2);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 960px) {
+      .section { padding: 64px 0; }
+      .hero { padding-top: 126px; }
+      .nav-inner { min-height: 76px; }
+      .cards-3,
+      .ads-grid,
+      .steps-grid,
+      .case-grid,
+      .qa-grid,
+      .matters-grid,
+      .about-grid,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+      .cta-band {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .flow-step:not(:last-child)::after { display: none; }
+      .flow-step {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 16px;
+        text-align: left;
+        padding: 0;
+      }
+      .flow-dot {
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap,
+      .wrap-sm { width: min(100% - 24px, 1120px); }
+      .nav-inner {
+        min-height: 72px;
+        gap: 10px;
+      }
+      .logo-shell { padding: 9px 14px; }
+      .logo-shell img,
+      .hero-logo img { height: 26px; }
+      .hero-copy,
+      .lede,
+      .card p,
+      .qa-card p,
+      .about-copy p,
+      .step-card p,
+      .case-card p { font-size: 0.98rem; }
+      .video-card {
+        padding: 24px 18px;
+      }
+      .video-shell {
+        border-radius: 22px;
+        margin-bottom: -92px;
+      }
+      .hero-cta {
+        margin-top: 124px;
+      }
+      .hero-note {
+        padding-bottom: 56px;
+      }
+      .card,
+      .ad-copy,
+      .qa-card,
+      .step-card,
+      .case-copy,
+      .acc-btn,
+      .acc-pad,
+      .cta-band { padding-left: 20px; padding-right: 20px; }
+      .cta-band .btn {
+        width: 100%;
+      }
+      .phone {
+        padding: 12px;
+        border-radius: 28px;
+      }
+      .phone-screen {
+        border-radius: 20px;
+      }
+      .phone-screen iframe {
+        width: 103%;
+        height: 646px;
+        transform: scale(0.971);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo-shell" aria-label="Seashore Marble &amp; Granite home">
+        <img src="https://seashoregranite.com/wp-content/uploads/2023/05/cropped-LOGO-318w-1-1-300x86-1.png" alt="Seashore Marble &amp; Granite logo">
+      </a>
+      <a class="btn btn-gold" href="#calendly">Let's get this live</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero fade in">
+      <div class="wrap-sm">
+        <div class="hero-badge">Built exclusively for Seashore Marble &amp; Granite</div>
+        <h1 class="dm">I will help you get 10 new clients within 14 days with this Meta ads funnel I created for you.</h1>
+        <p class="hero-copy">I put this together to show a simple way Seashore could bring in more countertop leads from Meta. Everything below is made around the strengths already on your side: good work, strong reviews, and a showroom people can actually visit.</p>
+        <div class="hero-logo">
+          <img src="https://seashoregranite.com/wp-content/uploads/2023/05/cropped-LOGO-318w-1-1-300x86-1.png" alt="Seashore Marble &amp; Granite logo">
+        </div>
+        <div class="video-shell">
+          <div style="position: relative; padding-bottom: 57.022175290390706%; height: 0;"><iframe src="https://www.loom.com/embed/5284a1095ec346779664203cd6139772" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+        </div>
+        <a class="btn btn-gold hero-cta" href="#calendly">Let's get this live</a>
+        <p class="hero-note">No cost, no obligation - 30 min to see if it fits</p>
+      </div>
+    </section>
+
+    <section class="section fade">
+      <div class="wrap center">
+        <p class="eyebrow">What I Built For Seashore</p>
+        <h2>This is what I built specifically for Seashore Marble &amp; Granite to help bring in more countertop leads.</h2>
+        <p class="lede wrap-sm" style="margin-top:16px;">It starts with ads, sends people to a page made just for them, and gives them a simple way to ask for a free estimate.</p>
+        <div class="cards-3">
+          <article class="card">
+            <div class="num">01</div>
+            <h3>9 image ads</h3>
+            <p>These are the ad images a homeowner would see first. They focus on showroom help, reliable install timelines, and Seashore's local track record.</p>
+          </article>
+          <article class="card">
+            <div class="num">02</div>
+            <h3>3 video scripts</h3>
+            <p>These are simple talking-point videos Seashore could record. They explain why someone should trust the company and take the next step.</p>
+          </article>
+          <article class="card">
+            <div class="num">03</div>
+            <h3>1 dedicated page for new leads</h3>
+            <p>Instead of sending people to the full website, this gives them one clear page with one clear next step: ask for a free estimate.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade">
+      <div class="wrap matters-grid">
+        <div>
+          <p class="eyebrow">Why This Matters</p>
+          <h2>Seashore already has what people want to see. This page just lays it out more clearly.</h2>
+          <blockquote>
+            "No excuses, no delays - just service and great follow-up."
+          </blockquote>
+        </div>
+        <div class="matter-list">
+          <div class="matter-item">
+            <div class="dot"></div>
+            <div><strong>People want to avoid a messy project</strong><span>The biggest worry is not the stone itself. It is delays, poor communication, and not knowing if the job will actually stay on track.</span></div>
+          </div>
+          <div class="matter-item">
+            <div class="dot"></div>
+            <div><strong>The showroom makes choosing easier</strong><span>Being able to walk in, compare materials, and get help in person is a lot easier than trying to make a big decision from a few photos online.</span></div>
+          </div>
+          <div class="matter-item">
+            <div class="dot"></div>
+            <div><strong>Local proof matters</strong><span>Serving Sarasota since 2002, plus reviews that mention fast and on-time work, gives people a reason to trust Seashore before they even call.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section off fade">
+      <div class="wrap">
+        <div class="center wrap-sm">
+          <p class="eyebrow">Image Ads</p>
+          <h2>Nine ad ideas built for different stages of the decision.</h2>
+          <p class="lede" style="margin-top:16px;">Some ads are meant to get attention. Some build trust. Some ask the person to book a free estimate.</p>
+        </div>
+
+        <div class="phase">
+          <div class="phase-head"><span>Phase 1 - Generate interest</span></div>
+          <div class="ads-grid">
+            <article class="ad-card">
+              <div class="ad-image"><img src="./images/1.png" alt="Showroom selection angle ad"></div>
+              <div class="ad-copy">
+                <div class="ad-label"><span class="num">01</span>Showroom selection angle</div>
+                <p>This ad is about choice. It shows that Seashore has a wide range of options and can help people choose in person.</p>
+              </div>
+            </article>
+            <article class="ad-card">
+              <div class="ad-image"><img src="./images/2.png" alt="Premium result without chaos ad"></div>
+              <div class="ad-copy">
+                <div class="ad-label"><span class="num">02</span>Premium result without chaos angle</div>
+                <p>This one speaks directly to a common fear: delays, excuses, and poor follow-up from contractors.</p>
+              </div>
+            </article>
+            <article class="ad-card">
+              <div class="ad-image"><img src="./images/3.png" alt="Before and after kitchen transformation ad"></div>
+              <div class="ad-copy">
+                <div class="ad-label"><span class="num">03</span>Before-and-after kitchen transformation</div>
+                <p>This shows the kind of visible change a homeowner wants to see when thinking about a kitchen update.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="phase">
+          <div class="phase-head"><span>Phase 2 - Build trust</span></div>
+          <div class="ads-grid">
+            <article class="ad-card">
+              <div class="ad-image"><img src="./images/4.png" alt="Since 2002 local proof ad"></div>
+              <div class="ad-copy">
+                <div class="ad-label"><span class="num">04</span>Since 2002 local proof angle</div>
+                <p>This ad keeps the message simple: Seashore has been serving Sarasota for a long time.</p>
+              </div>
+            </article>
+            <article class="ad-card">
+              <div class="ad-image"><img src="./images/5.png" alt="Two week install proof ad"></div>
+              <div class="ad-copy">
+                <div class="ad-label"><span class="num">05</span>Two-week install proof angle</div>
+                <p>This uses a real review point to show that the company can move quickly and still do the job well.</p>
+              </div>
+            </article>
+            <article class="ad-card">
+              <div class="ad-image"><img src="./images/6.png" alt="Review based no delays trust ad"></div>
+              <div class="ad-copy">
+                <div class="ad-label"><span class="num">06</span>Review-based no-delays trust angle</div>
+                <p>This gives people a clear picture of how the process works from first visit to finished install.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="phase">
+          <div class="phase-head"><span>Phase 3 - Convert high intent leads</span></div>
+          <div class="ads-grid">
+            <article class="ad-card">
+              <div class="ad-image"><img src="./images/7.png" alt="Free estimate offer ad"></div>
+              <div class="ad-copy">
+                <div class="ad-label"><span class="num">07</span>Free estimate offer</div>
+                <p>This is a straightforward offer for people who are already interested and just need a reason to reach out.</p>
+              </div>
+            </article>
+            <article class="ad-card">
+              <div class="ad-image"><img src="./images/8.png" alt="Material selection consultation ad"></div>
+              <div class="ad-copy">
+                <div class="ad-label"><span class="num">08</span>Material selection consultation</div>
+                <p>This ad helps people who are stuck choosing between materials and need a little guidance before moving forward.</p>
+              </div>
+            </article>
+            <article class="ad-card">
+              <div class="ad-image"><img src="./images/9.png" alt="Sarasota showroom visit CTA ad"></div>
+              <div class="ad-copy">
+                <div class="ad-label"><span class="num">09</span>Sarasota showroom visit CTA</div>
+                <p>This closes with the clearest next step: visit the showroom and start planning the project.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade">
+      <div class="wrap-sm center">
+        <p class="eyebrow">Video Scripts</p>
+        <h2>Three video scripts Seashore could record.</h2>
+        <p class="lede" style="margin-top:16px;">Each one covers a different reason someone might choose Seashore.</p>
+      </div>
+      <div class="wrap accordion-wrap">
+        <article class="accordion" id="script1">
+          <button class="acc-btn" type="button" onclick="toggle('script1')">
+            <div class="acc-title"><strong>Script 1: Premium Result Without Chaos</strong><span>For homeowners worried about delays, excuses, and poor follow-up.</span></div>
+            <div class="acc-icon">+</div>
+          </button>
+          <div class="acc-body" id="script1-body">
+            <div class="acc-pad">
+              <div class="sblock"><span class="slabel">Central angle</span><p>Premium countertops without the usual contractor headaches.</p></div>
+              <div class="sblock"><span class="slabel">Hook (0-10s)</span><p>If you are worried your countertop project will turn into delays, excuses, and bad follow-up, this is exactly why you should look at Seashore first.</p></div>
+              <div class="sblock"><span class="slabel">Body (11-90s)</span><p>Seashore Marble &amp; Granite has served Sarasota since 2002.</p><p>The reason that matters is not just longevity. It is the service standard behind it.</p><p>Reviews talk about on-time work, competitive pricing, and a seamless process.</p><p>One customer said the team fabricated and installed the project in 2 weeks.</p><p>If you want premium stone and a team that actually follows through, start with the showroom and a free estimate.</p></div>
+              <div class="sblock"><span class="slabel">CTA (90-120s)</span><p>Click below, schedule your free estimate, and see which countertop fits your home best.</p></div>
+              <div class="sblock"><span class="slabel">Filming brief</span><p>Use a polished kitchen backdrop, black or white outfit, teal accent if possible, calm and premium delivery.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="accordion" id="script2">
+          <button class="acc-btn" type="button" onclick="toggle('script2')">
+            <div class="acc-title"><strong>Script 2: Showroom Selection Confidence</strong><span>For buyers overwhelmed by stone, color, and finish decisions.</span></div>
+            <div class="acc-icon">+</div>
+          </button>
+          <div class="acc-body" id="script2-body">
+            <div class="acc-pad">
+              <div class="sblock"><span class="slabel">Central angle</span><p>Make the material decision easier before you spend money.</p></div>
+              <div class="sblock"><span class="slabel">Hook (0-10s)</span><p>The hardest part of a countertop upgrade is not always the install. Sometimes it is figuring out what stone will actually look right in your home.</p></div>
+              <div class="sblock"><span class="slabel">Body (11-90s)</span><p>Seashore solves that by bringing people into a showroom built around color, texture, and pattern selection.</p><p>They offer more than 30 countertop brands and help buyers compare options in person.</p><p>Instead of gambling on a sample photo, you can walk the showroom, get guidance, and move forward with more confidence.</p></div>
+              <div class="sblock"><span class="slabel">CTA (90-120s)</span><p>If you want a free estimate and a smarter starting point, click through and book your estimate.</p></div>
+              <div class="sblock"><span class="slabel">Filming brief</span><p>Stand in front of slab or tile visuals, use a conversational tone, emphasize clarity and confidence.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="accordion" id="script3">
+          <button class="acc-btn" type="button" onclick="toggle('script3')">
+            <div class="acc-title"><strong>Script 3: Local Trust And Speed</strong><span>For buyers who trust reviews and execution more than generic luxury positioning.</span></div>
+            <div class="acc-icon">+</div>
+          </button>
+          <div class="acc-body" id="script3-body">
+            <div class="acc-pad">
+              <div class="sblock"><span class="slabel">Central angle</span><p>Local proof beats generic luxury claims.</p></div>
+              <div class="sblock"><span class="slabel">Hook (0-10s)</span><p>A beautiful countertop means nothing if the company misses deadlines or leaves you chasing updates.</p></div>
+              <div class="sblock"><span class="slabel">Body (11-90s)</span><p>The strongest review language around Seashore is practical: no mistakes, seamless process, on time and budget, no excuses and great follow-up.</p><p>That is the trust stack buyers actually care about.</p><p>Add a Sarasota track record since 2002 and a customer who said the job was fabricated and installed in 2 weeks, and now the offer feels real, not generic.</p></div>
+              <div class="sblock"><span class="slabel">CTA (90-120s)</span><p>Click the button, request your free estimate, and see how Seashore can help with your project.</p></div>
+              <div class="sblock"><span class="slabel">Filming brief</span><p>Use a direct eye-level shot, medium energy, clean production, premium but local feel.</p></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section off fade">
+      <div class="wrap-sm center">
+        <p class="eyebrow">Landing Page</p>
+        <h2>This is the page people would see after clicking the ad.</h2>
+        <p class="lede" style="margin-top:16px;">It is shown in a phone frame below because most people will first see it on their phone.</p>
+      </div>
+      <div class="wrap">
+        <div class="phone-stage">
+          <div class="phone">
+            <div class="phone-screen">
+              <iframe src="./landing-page/index.html" title="Seashore Marble and Granite landing page preview"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="qa-grid">
+          <article class="qa-card">
+            <h3>Why not send them to the main website?</h3>
+            <p>The full website has a lot to look at. For someone coming from an ad, it is usually better to send them to one simple page with one clear next step.</p>
+          </article>
+          <article class="qa-card">
+            <h3>Why this page works better</h3>
+            <p>It keeps the message simple, shows why Seashore is trustworthy, and makes it easy for the person to ask for a free estimate.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade">
+      <div class="wrap center">
+        <p class="eyebrow">System Flow</p>
+        <h2>How someone moves from seeing the ad to speaking with Seashore.</h2>
+        <div class="flow">
+          <div class="flow-step"><div class="flow-dot">1</div><div><h3>Meta ads</h3><p>They see an ad about Seashore.</p></div></div>
+          <div class="flow-step"><div class="flow-dot">2</div><div><h3>Landing page</h3><p>They click through to a page made just for that ad.</p></div></div>
+          <div class="flow-step"><div class="flow-dot">3</div><div><h3>Qualification</h3><p>The page helps serious homeowners take the next step.</p></div></div>
+          <div class="flow-step"><div class="flow-dot">4</div><div><h3>Follow-up</h3><p>Seashore gets the inquiry and replies quickly.</p></div></div>
+          <div class="flow-step"><div class="flow-dot">5</div><div><h3>Sales call</h3><p>The conversation starts with someone who is already interested.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <p class="eyebrow">Ready To Launch</p>
+            <h2>If this looks useful, the next step is just a quick walkthrough.</h2>
+            <p class="lede" style="margin-top:14px;">We can look at the page together, answer questions, and decide what should be built out first.</p>
+          </div>
+          <a class="btn btn-gold" href="#calendly">Let's get this live</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade">
+      <div class="wrap center">
+        <p class="eyebrow">How It Works</p>
+        <h2>Three simple steps to get this live.</h2>
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-big">01</div>
+            <h3>Review it together</h3>
+            <p>We go through the page, the ads, and the videos together and make any changes that need to be made.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-big">02</div>
+            <h3>Connect the pieces</h3>
+            <p>Once approved, the ads and page are connected so new inquiries can come through properly.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-big">03</div>
+            <h3>Launch and improve</h3>
+            <p>After launch, we look at what is working and make small improvements based on the real responses coming in.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section off fade">
+      <div class="wrap center">
+        <p class="eyebrow">Case Studies</p>
+        <h2>Examples of results from similar work.</h2>
+        <div class="case-grid">
+          <article class="case-card">
+            <img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case study">
+            <div class="case-copy">
+              <img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent logo">
+              <h3>145 leads in 2 weeks</h3>
+              <p>A simple offer and a clear page helped turn clicks into real leads quickly.</p>
+            </div>
+          </article>
+          <article class="case-card">
+            <img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case study">
+            <div class="case-copy">
+              <img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen logo">
+              <h3>66 recurring clients in 27 days</h3>
+              <p>The message was clear, the page matched the ad, and the follow-up process was tight.</p>
+            </div>
+          </article>
+          <article class="case-card">
+            <img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case study">
+            <div class="case-copy">
+              <img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner logo">
+              <h3>50 recurring clients in 2 weeks</h3>
+              <p>A local offer can perform very well when the message is clear and the next step is easy to understand.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade">
+      <div class="wrap-sm center">
+        <p class="eyebrow">FAQ</p>
+        <h2>Some simple questions you might have.</h2>
+      </div>
+      <div class="wrap accordion-wrap">
+        <article class="accordion" id="faq1">
+          <button class="acc-btn" type="button" onclick="toggle('faq1')">
+            <div class="acc-title"><strong>Why are you giving this away for free?</strong><span>I would rather show the work first than ask you to guess what it might look like.</span></div>
+            <div class="acc-icon">+</div>
+          </button>
+          <div class="acc-body" id="faq1-body"><div class="acc-pad"><div class="sblock"><p>I would rather show you something real than send a long sales message. This lets you see the idea first. If you like it, we can talk about what it would take to actually use it.</p></div></div></div>
+        </article>
+        <article class="accordion" id="faq2">
+          <button class="acc-btn" type="button" onclick="toggle('faq2')">
+            <div class="acc-title"><strong>Why should I trust you?</strong><span>You can judge it by the actual work on this page.</span></div>
+            <div class="acc-icon">+</div>
+          </button>
+          <div class="acc-body" id="faq2-body"><div class="acc-pad"><div class="sblock"><p>The best way to judge this is to look at what is already here. You can see the ads, the scripts, the page, and the examples. If it feels thoughtful and useful, then it is worth a conversation.</p></div></div></div>
+        </article>
+        <article class="accordion" id="faq3">
+          <button class="acc-btn" type="button" onclick="toggle('faq3')">
+            <div class="acc-title"><strong>How quickly would results show up?</strong><span>That depends on budget, follow-up, and how well the first version performs.</span></div>
+            <div class="acc-icon">+</div>
+          </button>
+          <div class="acc-body" id="faq3-body"><div class="acc-pad"><div class="sblock"><p>You can usually start learning pretty quickly once the ads are live. The early goal is to see which messages get the best response and then improve from there. We can talk through what a realistic timeline would look like.</p></div></div></div>
+        </article>
+        <article class="accordion" id="faq4">
+          <button class="acc-btn" type="button" onclick="toggle('faq4')">
+            <div class="acc-title"><strong>What would you need from our side?</strong><span>Mostly quick feedback and a clear way to handle new inquiries.</span></div>
+            <div class="acc-icon">+</div>
+          </button>
+          <div class="acc-body" id="faq4-body"><div class="acc-pad"><div class="sblock"><p>Mainly your input on the messaging, the right access to launch the ads, and a simple plan for replying when someone reaches out. It does not need to be complicated.</p></div></div></div>
+        </article>
+        <article class="accordion" id="faq5">
+          <button class="acc-btn" type="button" onclick="toggle('faq5')">
+            <div class="acc-title"><strong>How much ad spend would make sense?</strong><span>That depends on how much testing you want to do at the start.</span></div>
+            <div class="acc-icon">+</div>
+          </button>
+          <div class="acc-body" id="faq5-body"><div class="acc-pad"><div class="sblock"><p>I would rather give you a sensible range after a quick conversation than guess here. The right starting budget depends on how fast you want to test and how many leads you want to aim for first.</p></div></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section off fade">
+      <div class="wrap about-grid">
+        <div class="about-photo">
+          <img src="https://preview.relightmarketing.com/assets/relight-team.png" alt="Arthur from Relight Marketing">
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2>Arthur - Relight Marketing</h2>
+          <p>Relight helps businesses turn good work and strong proof into ads and pages that are easier for new customers to understand.</p>
+          <p>The main job is usually not to invent a whole new story. It is to take what is already true about the business and present it more clearly.</p>
+          <p>For Seashore, that means keeping the message centered on trust, showroom help, and a smooth install process.</p>
+          <a class="btn btn-gold" href="#calendly">Let's get this live</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade" id="calendly">
+      <div class="wrap-sm center">
+        <p class="eyebrow">Let's do this</p>
+        <h2>If you want, I can walk you through this in 30 minutes.</h2>
+        <p class="lede" style="margin-top:16px;">If the idea looks useful, pick a time below and I can show you how it would work in plain terms.</p>
+      </div>
+      <div class="cal-wrap">
+        <iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Book a call with Arthur at Relight Marketing"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>Relight Marketing - built for Seashore Marble &amp; Granite</footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('bg', scrollY > 40), { passive: true });
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade:not(.in)').forEach(el => io.observe(el));
+
+    function toggle(id) {
+      const acc = document.getElementById(id);
+      const body = document.getElementById(id + '-body');
+      const open = acc.classList.contains('open');
+      document.querySelectorAll('.accordion.open').forEach(item => {
+        item.classList.remove('open');
+        item.querySelector('.acc-body').style.maxHeight = null;
+      });
+      if (!open) {
+        acc.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    }
+
+    fetch('https://ipapi.co/json/')
+      .then(function(response) { return response.json(); })
+      .then(function(geo) {
+        return fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec', {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify({
+            _subject: '33 Seashore Marble & Granite just opened your pitch page',
+            prospect: 'Seashore Marble & Granite',
+            number: '33',
+            time: new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
+            city: geo.city || '',
+            region: geo.region || '',
+            country: geo.country_name || '',
+            device: navigator.userAgent,
+            screen: screen.width + 'x' + screen.height,
+            referrer: document.referrer || 'direct',
+            url: window.location.href
+          })
+        });
+      })
+      .catch(function() {
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec', {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify({
+            _subject: '33 Seashore Marble & Granite just opened your pitch page',
+            prospect: 'Seashore Marble & Granite',
+            number: '33',
+            time: new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
+            device: navigator.userAgent,
+            screen: screen.width + 'x' + screen.height,
+            referrer: document.referrer || 'direct',
+            url: window.location.href
+          })
+        });
+      });
+  </script>
+</body>
+</html>
