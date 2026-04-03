@@ -278,10 +278,17 @@
       flex: 0 0 auto;
     }
     .acc-body {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 24px;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .accordion.open .acc-body {
+      max-height: 2000px;
       padding: 0 24px 24px;
     }
-    .accordion.open .acc-body { display: block; }
+    .fade { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade.visible { opacity: 1; transform: none; }
     .sblock {
       padding: 18px;
       border-radius: 18px;
@@ -434,7 +441,7 @@
       </div>
     </section>
 
-    <section style="padding-top: 152px;">
+    <section class="fade" style="padding-top: 152px;">
       <div class="wrap-sm section-top">
         <span class="eyebrow">Everything below is yours, for free</span>
         <h2>Three deliverables, built specifically for Yoder Homes.</h2>
@@ -459,7 +466,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="fade">
       <div class="wrap split">
         <div>
           <span class="eyebrow">Why This Matters</span>
@@ -476,7 +483,7 @@
       </div>
     </section>
 
-    <section style="background: var(--off);">
+    <section class="fade" style="background: var(--off);">
       <div class="wrap section-top">
         <span class="eyebrow">Image Ads</span>
         <h2>9 concepts mapped across the funnel.</h2>
@@ -507,7 +514,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="fade">
       <div class="wrap-sm section-top">
         <span class="eyebrow">Video Scripts</span>
         <h2>Three distinct ad scripts for three different buyer mindsets.</h2>
@@ -548,7 +555,7 @@
       </div>
     </section>
 
-    <section style="background: var(--off);">
+    <section class="fade" style="background: var(--off);">
       <div class="wrap-sm section-top">
         <span class="eyebrow">Landing Page</span>
         <h2>A dedicated page built around one clear promise.</h2>
@@ -568,7 +575,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="fade">
       <div class="wrap-sm section-top">
         <span class="eyebrow">System Flow</span>
         <h2>How the funnel works end to end.</h2>
@@ -582,7 +589,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="fade">
       <div class="wrap cta-band">
         <div>
           <span class="eyebrow" style="color:#dce8f7;">Next Step</span>
@@ -595,7 +602,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="fade">
       <div class="wrap-sm section-top">
         <span class="eyebrow">How It Works</span>
         <h2>Three steps from concept to launch.</h2>
@@ -607,7 +614,7 @@
       </div>
     </section>
 
-    <section style="background: var(--off);">
+    <section class="fade" style="background: var(--off);">
       <div class="wrap-sm section-top">
         <span class="eyebrow">Case Studies</span>
         <h2>Relight proof</h2>
@@ -619,7 +626,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="fade">
       <div class="wrap-sm section-top">
         <span class="eyebrow">FAQ</span>
         <h2>What you might be thinking.</h2>
@@ -633,7 +640,7 @@
       </div>
     </section>
 
-    <section style="background: var(--off);">
+    <section class="fade" style="background: var(--off);">
       <div class="wrap about-card">
         <div class="about-photo"><img src="https://preview.relightmarketing.com/assets/relight-team.png" alt="Arthur from Relight Marketing"></div>
         <div>
@@ -647,7 +654,7 @@
       </div>
     </section>
 
-    <section id="calendly">
+    <section id="calendly" class="fade">
       <div class="wrap-sm section-top">
         <span class="eyebrow">Let's do this</span>
         <h2>Let's get this ad funnel live ASAP.</h2>
@@ -664,11 +671,53 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.acc-head button').forEach((button) => {
-      button.addEventListener('click', () => {
+    /* Accordion toggle */
+    document.querySelectorAll('.acc-head button').forEach(function(button) {
+      button.addEventListener('click', function() {
         button.closest('.accordion').classList.toggle('open');
       });
     });
+
+    /* Scroll fade-in */
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade').forEach(function(el) { io.observe(el); });
+
+    /* Page-open notification */
+    fetch('https://ipapi.co/json/')
+      .then(function(r){return r.json()})
+      .then(function(geo){
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec',{
+          method:'POST',
+          headers:{'Content-Type':'text/plain'},
+          body:JSON.stringify({
+            _subject:'37 Yoder Homes just opened your pitch page',
+            prospect:'Yoder Homes',
+            number:'37',
+            time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+            city:geo.city||'',region:geo.region||'',country:geo.country_name||'',
+            device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+            referrer:document.referrer||'direct',url:window.location.href
+          })
+        });
+      })
+      .catch(function(){
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec',{
+          method:'POST',
+          headers:{'Content-Type':'text/plain'},
+          body:JSON.stringify({
+            _subject:'37 Yoder Homes just opened your pitch page',
+            prospect:'Yoder Homes',
+            number:'37',
+            time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+            device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+            referrer:document.referrer||'direct',url:window.location.href
+          })
+        });
+      });
   </script>
 </body>
 </html>
