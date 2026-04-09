@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voor Dima Ecotechnics, een complete Meta ads funnel, op maat gebouwd</title>
+<meta name="description" content="Een volledig op maat gebouwde Meta ads funnel voor Dima Ecotechnics: 9 image ads, 3 video scripts en een live landingspagina. Klaar om te lanceren.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0c2434;
+  --navy-deep: #061421;
+  --blue: #22a2dc;
+  --blue-dark: #1a82b2;
+  --gold: #46b150;
+  --gold-light: rgba(70,177,80,0.12);
+  --bg: #ffffff;
+  --off: #f9fafb;
+  --line: #eaecf0;
+  --txt: #1a2332;
+  --sub: #64748b;
+  --sub2: #94a3b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: hidden; }
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--txt);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+.dm { font-family: "DM Serif Display", serif; font-weight: 400; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.wrap-sm { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+h1.dm { font-size: clamp(2.4rem, 4.8vw, 4rem); line-height: 1.05; letter-spacing: -0.02em; }
+h2.dm { font-size: clamp(2rem, 3.5vw, 3.25rem); line-height: 1.1; letter-spacing: -0.02em; font-family: "Inter"; font-weight: 800; }
+h3 { font-family: "Inter"; font-weight: 700; font-size: 1.2rem; letter-spacing: -0.01em; }
+p { color: var(--sub); line-height: 1.6; }
+.lead { font-size: 1.05rem; color: var(--sub); }
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 80;
+  background: transparent;
+  transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
+}
+.nav.bg {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--line);
+}
+.nav-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px; padding: 0 24px;
+}
+.nav-logo { height: 32px; transition: filter 0.3s; }
+.nav.bg .nav-logo { filter: none; }
+.btn-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px;
+  font-family: "Inter"; font-weight: 600;
+  font-size: 0.9rem;
+  padding: 12px 24px;
+  transition: transform 0.15s, background 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-gold { background: var(--gold); color: #fff; }
+.btn-gold:hover { background: #388f40; transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+.btn-ghost:hover { background: rgba(255,255,255,0.08); }
+.btn-outline { background: transparent; color: var(--txt); border: 1px solid var(--line); }
+.btn-outline:hover { background: var(--off); }
+
+/* HERO */
+.hero {
+  background: linear-gradient(150deg, var(--navy-deep) 0%, var(--navy) 60%, #0f3144 100%);
+  color: #fff;
+  padding: 140px 24px 0;
+  position: relative;
+  overflow: visible;
+  text-align: center;
+}
+.hero::before {
+  content: ""; position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 20%, rgba(34,162,220,0.22), transparent 50%),
+                    radial-gradient(circle at 80% 30%, rgba(70,177,80,0.18), transparent 55%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; }
+.hero-logo { height: 44px; margin: 0 auto 28px; }
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: rgba(70,177,80,0.14);
+  border: 1px solid rgba(70,177,80,0.35);
+  color: #b7e5bc;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+  animation: gentlePulse 3.6s ease-in-out infinite;
+}
+.hero-kicker .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(70,177,80,0.28);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+@keyframes pulseDot { 0%,100% { transform: scale(1); } 50% { transform: scale(1.25); } }
+@keyframes gentlePulse { 0%,100% { box-shadow: 0 0 0 0 rgba(70,177,80,0.0); } 50% { box-shadow: 0 0 0 6px rgba(70,177,80,0.08); } }
+.hero h1 {
+  color: #fff;
+  margin-bottom: 24px;
+  max-width: 920px;
+  margin-left: auto; margin-right: auto;
+}
+.hero h1 .accent { color: var(--blue); }
+.hero p.lead {
+  color: rgba(255,255,255,0.78);
+  max-width: 640px;
+  margin: 0 auto 36px;
+  font-size: 1.08rem;
+}
+
+/* VIDEO PLACEHOLDER */
+.video-shell {
+  max-width: 920px;
+  margin: 0 auto -120px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #000;
+  position: relative;
+}
+.video-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: linear-gradient(135deg, #051727, #0c2434);
+}
+.video-wrap .placeholder {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  background-image: linear-gradient(160deg, rgba(34,162,220,0.18), rgba(70,177,80,0.10) 60%, transparent);
+}
+.video-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.play-btn {
+  width: 92px; height: 92px;
+  border-radius: 999px;
+  background: var(--gold);
+  display: grid; place-items: center;
+  box-shadow: 0 24px 60px rgba(70,177,80,0.45);
+  animation: pulsePlay 2.4s ease-in-out infinite;
+}
+.play-btn::after {
+  content: "";
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 18px 0 18px 28px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 6px;
+}
+@keyframes pulsePlay { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.hero-cta-stack { padding: 56px 0 0; }
+.hero-cta-stack .btn-pill { padding: 17px 34px; font-size: 1rem; }
+.hero-cta-note {
+  font-size: 0.85rem; color: rgba(255,255,255,0.55);
+  margin-top: 14px;
+}
+.hero-bottom-pad { padding-bottom: 32px; }
+
+/* SECTIONS */
+section { padding: 96px 0; }
+section.padded-top { padding-top: 152px; }
+
+.center { text-align: center; }
+.fade { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade.in { opacity: 1; transform: none; }
+
+/* DELIVERABLES */
+.deliverables { background: #fff; }
+.deliverables h2 { margin-bottom: 14px; }
+.deliverables .lead { max-width: 680px; margin: 0 auto 56px; text-align: center; }
+.cards-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+.del-card {
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 20px;
+  padding: 32px 28px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.del-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.del-card .num {
+  font-family: "DM Serif Display", serif;
+  color: var(--blue);
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 14px;
+}
+.del-card h3 { color: var(--txt); margin-bottom: 10px; }
+.del-card p { font-size: 0.95rem; }
+
+/* META ADS EXPLAINER (custom for beginners) */
+.explainer {
+  background: linear-gradient(160deg, var(--navy-deep), var(--navy));
+  color: #fff;
+}
+.explainer h2 { color: #fff; margin-bottom: 14px; }
+.explainer .lead { color: rgba(255,255,255,0.78); max-width: 680px; margin: 0 auto 48px; text-align: center; }
+.explainer .eyebrow { color: var(--blue); }
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  max-width: 920px;
+  margin: 0 auto 48px;
+}
+.compare {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px;
+  padding: 30px 28px;
+}
+.compare .label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.compare h3 { color: #fff; margin-bottom: 10px; font-size: 1.25rem; }
+.compare p { color: rgba(255,255,255,0.72); margin-bottom: 14px; font-size: 0.97rem; }
+.compare .stat {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-top: 12px;
+}
+.compare.now { border-color: rgba(255,255,255,0.18); }
+.compare.next { border-color: rgba(70,177,80,0.4); background: rgba(70,177,80,0.06); }
+
+.explainer-quote {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "DM Serif Display", serif;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: #fff;
+  padding: 28px 22px;
+  border-left: 3px solid var(--gold);
+  background: rgba(255,255,255,0.04);
+  border-radius: 0 14px 14px 0;
+}
+
+/* WHY THIS MATTERS */
+.why { background: #fff; }
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: start;
+}
+.why blockquote {
+  border-left: 3px solid var(--gold);
+  padding: 18px 22px;
+  background: var(--off);
+  border-radius: 0 12px 12px 0;
+  font-family: "DM Serif Display", serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--txt);
+  margin-top: 18px;
+}
+.why-rows { display: flex; flex-direction: column; gap: 22px; }
+.why-row { display: flex; gap: 14px; align-items: flex-start; }
+.why-row .dot {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--gold);
+  margin-top: 7px; flex-shrink: 0;
+}
+.why-row .txt strong { color: var(--txt); display: block; margin-bottom: 4px; font-size: 1rem; }
+.why-row .txt span { color: var(--sub); font-size: 0.95rem; }
+
+/* IMAGE ADS */
+.ads { background: var(--off); }
+.ads h2 { text-align: center; margin-bottom: 14px; }
+.ads .lead { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.phase {
+  margin-bottom: 56px;
+}
+.phase-header {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 24px;
+}
+.phase-header .line { flex: 1; height: 1px; background: var(--line); }
+.phase-header .label {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--sub);
+}
+.ad-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+.ad-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ad-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.ad-img {
+  background: linear-gradient(135deg, var(--off), #eef2f7);
+  min-height: 220px;
+  display: grid; place-items: center;
+}
+.ad-img img { width: 100%; height: auto; display: block; }
+.ad-img .placeholder-text {
+  color: var(--sub2);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.ad-meta {
+  padding: 22px 22px 24px;
+}
+.ad-meta .num-label {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 10px;
+}
+.ad-meta .num-dot {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  color: var(--gold);
+  display: grid; place-items: center;
+  font-size: 0.78rem; font-weight: 700;
+}
+.ad-meta .type {
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--sub);
+}
+.ad-meta .desc { font-size: 0.93rem; color: var(--sub); line-height: 1.55; }
+
+/* VIDEO SCRIPTS (accordions) */
+.scripts { background: #fff; }
+.scripts h2 { text-align: center; margin-bottom: 14px; }
+.scripts .lead { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+.accordion {
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 18px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.accordion.open { border-color: var(--gold); }
+.acc-head {
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 26px 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+}
+.acc-head .left .label {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold);
+  display: block; margin-bottom: 6px;
+}
+.acc-head .left h3 { color: var(--txt); font-size: 1.15rem; }
+.acc-icon {
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  background: var(--off);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  font-size: 1.3rem;
+  color: var(--gold);
+  transition: transform 0.3s;
+  font-weight: 300;
+}
+.accordion.open .acc-icon { transform: rotate(45deg); }
+.acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+.acc-inner { padding: 0 28px 32px; }
+.sblock {
+  background: var(--off);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 12px;
+}
+.sblock .slabel {
+  display: inline-block;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.sblock p { color: var(--txt); font-size: 0.97rem; line-height: 1.65; }
+.sblock p + p { margin-top: 10px; }
+
+/* LANDING PAGE PREVIEW */
+.lpreview { background: var(--off); }
+.lpreview h2 { text-align: center; margin-bottom: 14px; }
+.lpreview .lead { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+.phone-frame {
+  max-width: 400px;
+  margin: 0 auto 56px;
+  background: #1a1a1a;
+  border-radius: 38px;
+  padding: 12px;
+  box-shadow: 0 30px 80px rgba(12,36,52,0.25);
+  border: 1px solid #2a2a2a;
+}
+.phone-screen {
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  height: 700px;
+  position: relative;
+}
+.phone-screen iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.qa-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.qa-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 26px 24px;
+}
+.qa-card h3 { color: var(--txt); margin-bottom: 10px; font-size: 1.05rem; }
+.qa-card p { font-size: 0.95rem; }
+
+/* SYSTEM FLOW */
+.flow { background: #fff; }
+.flow h2 { text-align: center; margin-bottom: 14px; }
+.flow .lead { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.flow-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.flow-step {
+  display: flex; align-items: flex-start; gap: 18px;
+}
+.flow-step .num {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: grid; place-items: center;
+  font-family: "DM Serif Display", serif;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.flow-step .body strong { display: block; color: var(--txt); margin-bottom: 4px; font-size: 1rem; }
+.flow-step .body span { color: var(--sub); font-size: 0.93rem; }
+
+/* CTA BAND */
+.cta-band {
+  padding: 56px 0;
+  background: #fff;
+}
+.cta-band-card {
+  background: linear-gradient(140deg, var(--navy-deep), var(--navy));
+  color: #fff;
+  border-radius: 32px;
+  padding: 48px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band-card::before {
+  content: ""; position: absolute;
+  top: -80px; right: -80px; width: 320px; height: 320px;
+  background: radial-gradient(closest-side, rgba(70,177,80,0.32), transparent 70%);
+  pointer-events: none;
+}
+.cta-band-inner {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 24px;
+  text-align: center; align-items: center;
+}
+.cta-band h2 { color: #fff; margin-bottom: 8px; }
+.cta-band p { color: rgba(255,255,255,0.78); max-width: 540px; }
+.cta-band .btn-pill { padding: 17px 34px; font-size: 1rem; width: 100%; max-width: 360px; }
+
+/* HOW IT WORKS */
+.how { background: #fff; }
+.how h2 { text-align: center; margin-bottom: 14px; }
+.how .lead { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.how-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+.how-card {
+  background: var(--off);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 36px 28px;
+  position: relative;
+}
+.how-card .big {
+  font-family: "DM Serif Display", serif;
+  font-size: 3rem;
+  color: var(--gold);
+  opacity: 0.32;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.how-card h3 { color: var(--txt); margin-bottom: 10px; font-size: 1.15rem; }
+.how-card p { font-size: 0.95rem; }
+
+/* CASES */
+.cases { background: var(--off); }
+.cases h2 { text-align: center; margin-bottom: 14px; }
+.cases .lead { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+.case-card-pp {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.case-card-pp .img {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #f0f4f9, #e1e9f1);
+  display: grid; place-items: center;
+}
+.case-card-pp .img img { width: 100%; height: 100%; object-fit: cover; }
+.case-card-pp .meta {
+  padding: 24px 24px 26px;
+}
+.case-card-pp .meta .label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.case-card-pp .meta h3 { color: var(--txt); margin-bottom: 8px; font-size: 1.1rem; }
+.case-card-pp .meta p { font-size: 0.92rem; }
+
+/* FAQ */
+.faq { background: #fff; }
+.faq h2 { text-align: center; margin-bottom: 14px; }
+.faq .lead { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+.faq .accordion { max-width: 760px; margin-left: auto; margin-right: auto; }
+.faq .accordion h3 { font-size: 1.05rem; }
+.faq-answer { padding-top: 4px; color: var(--sub); font-size: 0.97rem; line-height: 1.65; }
+
+/* ABOUT */
+.about { background: var(--off); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+.about img {
+  border-radius: 18px;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.about p { margin-bottom: 14px; }
+
+/* FINAL CTA */
+.final { background: #fff; padding: 96px 0; text-align: center; }
+.final h2 { margin-bottom: 14px; }
+.final .lead { max-width: 540px; margin: 0 auto 36px; }
+.calendly-shell {
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 80px rgba(12,36,52,0.12);
+  background: #fff;
+}
+.calendly-shell iframe {
+  width: 100%;
+  height: 700px;
+  border: 0;
+  display: block;
+}
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--sub2);
+  font-size: 0.85rem;
+}
+
+/* TABLET (640px+) */
+@media (min-width: 640px) {
+  .cards-3 { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .ad-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .qa-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-grid { grid-template-columns: repeat(3, 1fr); }
+  .how-grid { grid-template-columns: repeat(3, 1fr); }
+  .compare-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1.1fr 1fr; gap: 64px; }
+  .about-grid { grid-template-columns: 1fr 1.2fr; gap: 56px; }
+  .cta-band-card { padding: 56px 56px; }
+  .cta-band-inner {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+  }
+  .cta-band-inner .copy { flex: 1; }
+  .cta-band .btn-pill { width: auto; max-width: none; }
+  .flow-row { gap: 28px; }
+}
+
+/* DESKTOP (960px+) */
+@media (min-width: 960px) {
+  section { padding: 112px 0; }
+  section.padded-top { padding-top: 168px; }
+  .hero { padding-top: 160px; }
+  .ad-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .flow-row {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .flow-step {
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    align-items: center;
+    position: relative;
+  }
+  .flow-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 21px; left: 50%; right: -50%;
+    height: 2px;
+    background: var(--line);
+    z-index: 0;
+  }
+  .flow-step .num { z-index: 1; margin-bottom: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top"><img src="https://dima-ecotechnics.be/images/logo/Logo-Dima.svg" alt="Dima Ecotechnics" class="nav-logo"></a>
+    <a href="#calendly" class="btn-pill btn-gold">Laten we dit live zetten</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <img src="https://dima-ecotechnics.be/images/logo/Logo-Dima.svg" alt="Dima Ecotechnics" class="hero-logo">
+    <span class="hero-kicker"><span class="dot"></span> Exclusief gebouwd voor Dima Ecotechnics</span>
+    <h1 class="dm">Dirk, ik help u <span class="accent">10 nieuwe klanten in 14 dagen</span> binnen te halen met deze Meta ads funnel die ik voor u heb gebouwd.</h1>
+    <p class="lead">Bekijk de korte video, de 9 image ads, de 3 video scripts en de live landingspagina hieronder. Alles staat klaar om morgen te lanceren.</p>
+    <div class="video-shell">
+      <div class="video-wrap">
+        <div class="placeholder">
+          <div class="play-btn"></div>
+          <!-- LOOM: Vervang deze placeholder met de Loom embed iframe.
+               Plak de Loom embed src in /Users/arthur/d100-workspace/Output/41-dima-ecotechnics/loom-url.txt
+               en verander dit blok naar:
+               <iframe src="LOOM_URL_HIER" frameborder="0" allowfullscreen></iframe>
+          -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom-pad"></div>
+</header>
+
+<!-- DELIVERABLES -->
+<section class="deliverables padded-top fade">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Alles hieronder is voor u, gratis</span>
+      <h2 class="dm">Een complete ad funnel, op maat gebouwd voor Dima Ecotechnics.</h2>
+      <p class="lead">9 image ads, 3 video scripts en een live landingspagina, samen één coherente klantreis voor uw warmtepomp, airco, ventilatie en zonnepanelen leads in Limburg.</p>
+    </div>
+    <div class="cards-3" style="margin-top: 56px;">
+      <div class="del-card">
+        <span class="num">01</span>
+        <h3>9 image ads</h3>
+        <p>Op maat gemaakte beeldconcepten in uw blauwe en groene huisstijl. Drie voor cold prospecting, drie voor trust opbouwen en drie voor conversie.</p>
+      </div>
+      <div class="del-card">
+        <span class="num">02</span>
+        <h3>3 video scripts</h3>
+        <p>Drie volledig uitgeschreven scripts, klaar om met uw telefoon op te nemen. Allemaal in uw stem, met de juiste hooks voor de Limburgse markt.</p>
+      </div>
+      <div class="del-card">
+        <span class="num">03</span>
+        <h3>Live landingspagina</h3>
+        <p>Een mobiele lead-pagina die uw realisaties, uw certificeringen en uw verhaal toont, en aanvragen vangt in een eenvoudig formulier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- META ADS EXPLAINER (custom for organic-only client) -->
+<section class="explainer fade">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Voor u die net begint met betaalde ads</span>
+      <h2 class="dm">Wat verandert er als wij paid Meta ads bovenop uw huidige IG en FB zetten?</h2>
+      <p class="lead">U doet vandaag al goed werk op Instagram en Facebook met organische posts. Hier is wat er gebeurt zodra wij daar een paid laag bovenop leggen, in mensentaal uitgelegd.</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare now">
+        <div class="label">Vandaag (alleen organisch)</div>
+        <h3>Uw posts bereiken vooral wie u al volgt</h3>
+        <p>Uw 859 Facebook likes en 299 Instagram volgers zien uw realisaties. Meestal zijn dat klanten die u al kennen, vrienden, leveranciers en collega-installateurs. Onbekenden zien u zelden.</p>
+        <div class="stat">~5 tot 10% bereik per post</div>
+      </div>
+      <div class="compare next">
+        <div class="label">Met paid Meta ads erbovenop</div>
+        <h3>U bereikt mensen in Limburg die u nog niet kennen</h3>
+        <p>Wij tonen uw advertenties aan eigenaars van gezinswoningen in Limburg en aangrenzende provincies, gefilterd op leeftijd, woningtype en interesse. Mensen die nu een warmtepomp of airco overwegen zien u, niet pas wanneer ze toevallig op uw pagina komen.</p>
+        <div class="stat">10.000+ gerichte vertoningen per week</div>
+      </div>
+    </div>
+    <div class="explainer-quote">
+      "Organisch is uw uithangbord. Paid Meta ads is uw straat met passanten. U heeft beide nodig, want zonder passanten ziet niemand uw uithangbord."
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS MATTERS -->
+<section class="why fade">
+  <div class="wrap">
+    <div class="why-grid">
+      <div>
+        <span class="eyebrow">Waarom net deze funnel</span>
+        <h2 class="dm">Geen brochure, geen prijslijst. Een complete klantreis die filtert wie écht klaar is.</h2>
+        <blockquote>"Iedere installateur vertelt iets anders en mijn energiefactuur blijft maar stijgen." Dat is de zin waar uw avatar mee leeft. Deze funnel beantwoordt die zin in elke stap.</blockquote>
+      </div>
+      <div class="why-rows">
+        <div class="why-row">
+          <span class="dot"></span>
+          <div class="txt"><strong>Geen kortingsverhaal</strong><span>Wij vermijden bewust het saturated angle "premie tot €X" dat al uw concurrenten gebruiken. We leiden met afwerking en met Dirk die zelf langskomt.</span></div>
+        </div>
+        <div class="why-row">
+          <span class="dot"></span>
+          <div class="txt"><strong>Uw B2B-referenties als trust signal</strong><span>Maasmechelen Village, Hotel Stayen, Stad Bilzen, Audika en VWR zijn argumenten die geen residentiële concurrent kan claimen. Die spelen wij overal uit.</span></div>
+        </div>
+        <div class="why-row">
+          <span class="dot"></span>
+          <div class="txt"><strong>Eén formulier, gefilterd</strong><span>De landingspagina vraagt naar het type woning, het type oplossing en de postcode. U krijgt geen losse prijsvraag van iemand uit Antwerpen die nooit klant wordt.</span></div>
+        </div>
+        <div class="why-row">
+          <span class="dot"></span>
+          <div class="txt"><strong>Volledig in het Nederlands</strong><span>Elk woord, elke ad, elke FAQ is geschreven voor de Belgische Limburger die uw klant kan worden. Geen vertaalde Amerikaanse template.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE ADS -->
+<section class="ads fade">
+  <div class="wrap">
+    <span class="eyebrow center" style="display:block; text-align:center;">Beelden die de scroll stoppen</span>
+    <h2 class="dm">9 image ads, opgebouwd in 3 funnel-fases.</h2>
+    <p class="lead">Elke fase heeft een ander doel. Samen leiden ze een onbekende uit Limburg van "wie zijn die" naar "ik wil dat Dirk bij mij langskomt".</p>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="label">Fase 1, Aandacht trekken (cold)</span>
+        <div class="line"></div>
+      </div>
+      <div class="ad-grid">
+        <div class="ad-card">
+          <div class="ad-img"><img src="./images/1.png" alt="Ad 1, Pain / Problem"/></div>
+          <div class="ad-meta">
+            <div class="num-label"><span class="num-dot">1</span><span class="type">Pain / Problem</span></div>
+            <p class="desc">Een gezinswoning eettafel met een stapel ongeopende energiefacturen en meerdere offertes naast elkaar. Roept de pijn op van de avatar die geen duidelijk antwoord krijgt.</p>
+          </div>
+        </div>
+        <div class="ad-card">
+          <div class="ad-img"><img src="./images/2.png" alt="Ad 2, Collage"/></div>
+          <div class="ad-meta">
+            <div class="num-label"><span class="num-dot">2</span><span class="type">Collage</span></div>
+            <p class="desc">2x2 grid van uw vijf productlijnen: airco, ventilatie, warmtepomp, warmtepompboiler, zonnepanelen. Toont meteen "alles onder één dak".</p>
+          </div>
+        </div>
+        <div class="ad-card">
+          <div class="ad-img"><img src="./images/3.png" alt="Ad 3, Education / Tip"/></div>
+          <div class="ad-meta">
+            <div class="num-label"><span class="num-dot">3</span><span class="type">Education / Tip</span></div>
+            <p class="desc">Een professionele meting bij een buitenunit met meetinstrumenten in beeld, kop "Een warmtepomp meet je tweemaal". Positioneert Dima als de expert.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="label">Fase 2, Vertrouwen opbouwen</span>
+        <div class="line"></div>
+      </div>
+      <div class="ad-grid">
+        <div class="ad-card">
+          <div class="ad-img"><img src="./images/4.png" alt="Ad 4, Owner / Team"/></div>
+          <div class="ad-meta">
+            <div class="num-label"><span class="num-dot">4</span><span class="type">Owner / Team</span></div>
+            <p class="desc">Dirk Vermeulen in Dima blauwe poloshirt voor een nette werkplaats. "Zaakvoerder, 15+ jaar in de sector, Mitsubishi Diamond Dealer".</p>
+          </div>
+        </div>
+        <div class="ad-card">
+          <div class="ad-img"><img src="./images/5.png" alt="Ad 5, Social Proof"/></div>
+          <div class="ad-meta">
+            <div class="num-label"><span class="num-dot">5</span><span class="type">Social Proof</span></div>
+            <p class="desc">Een lichte gezinswoning interieur met een Mitsubishi binnenunit. Onderaan het verbatim citaat "Piekfijne uitvoering en afwerking. Kwaliteit op elk vlak." van Verjans-Schoefs uit Hoeselt.</p>
+          </div>
+        </div>
+        <div class="ad-card">
+          <div class="ad-img"><img src="./images/6.png" alt="Ad 6, Behind the Scenes"/></div>
+          <div class="ad-meta">
+            <div class="num-label"><span class="num-dot">6</span><span class="type">Behind the Scenes</span></div>
+            <p class="desc">Macro shot van twee handen die een koperleiding aanspannen op een Mitsubishi buitenunit. Vakmanschap zonder gezichten.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="label">Fase 3, Conversie en aanvragen</span>
+        <div class="line"></div>
+      </div>
+      <div class="ad-grid">
+        <div class="ad-card">
+          <div class="ad-img"><img src="./images/7.png" alt="Ad 7, Free Offer"/></div>
+          <div class="ad-meta">
+            <div class="num-label"><span class="num-dot">7</span><span class="type">Free Offer</span></div>
+            <p class="desc">Splitlayout met links een nieuw geplaatste Mitsubishi buitenunit en rechts een witte panel: "Gratis offerte op maat, Dirk komt zelf langs, Mitsubishi Diamond Dealer".</p>
+          </div>
+        </div>
+        <div class="ad-card">
+          <div class="ad-img"><img src="./images/8.png" alt="Ad 8, Urgency"/></div>
+          <div class="ad-meta">
+            <div class="num-label"><span class="num-dot">8</span><span class="type">Urgency</span></div>
+            <p class="desc">Een agenda met enkele dagen omcirkeld in Dima blauw, naast een telefoon met de offerteaanvraag-pagina open. Boodschap: "Beperkt aantal metingen vrij".</p>
+          </div>
+        </div>
+        <div class="ad-card">
+          <div class="ad-img"><img src="./images/9.png" alt="Ad 9, Lead / Hero"/></div>
+          <div class="ad-meta">
+            <div class="num-label"><span class="num-dot">9</span><span class="type">Lead / Hero</span></div>
+            <p class="desc">Architecturale frontale shot van een Belgische rijwoning met een Mitsubishi buitenunit aan de zijgevel. Onderaan: "Piekfijne uitvoering en afwerking" en de groene CTA knop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SCRIPTS -->
+<section class="scripts fade">
+  <div class="wrap">
+    <span class="eyebrow center" style="display:block; text-align:center;">3 video scripts, klaar om vandaag op te nemen</span>
+    <h2 class="dm">U leest het script van uw scherm en filmt het met uw telefoon.</h2>
+    <p class="lead">Geen crew, geen studio. Klap een script open en u ziet de hook, de body, de CTA, en hoe u het filmt. Onder elke video ziet u ook waarom dat angle werkt.</p>
+
+    <div class="accordion" id="acc1">
+      <button class="acc-head" onclick="toggle('acc1')">
+        <div class="left">
+          <span class="label">Script 1, Pain</span>
+          <h3>Iedere installateur vertelt iets anders</h3>
+        </div>
+        <div class="acc-icon">+</div>
+      </button>
+      <div class="acc-body" id="acc1-body">
+        <div class="acc-inner">
+          <div class="sblock">
+            <span class="slabel">Centraal angle</span>
+            <p>Een gezinswoning-eigenaar krijgt drie offertes met drie verschillende oplossingen, niemand legt eerlijk uit wat past, en intussen blijft de energiefactuur stijgen.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">Hook (0 tot 10s)</span>
+            <p>Als jij in Limburg een huis hebt en je hebt al drie installateurs over de vloer gehad voor een warmtepomp of airco, dan ken je dit gevoel. De ene zegt dit, de andere zegt dat, en niemand legt je eerlijk uit welke oplossing nu écht bij jouw woning past. Iedere installateur vertelt iets anders, en jouw energiefactuur blijft maar stijgen. Luister even.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">Body (11 tot 90s)</span>
+            <p>Ik ben Dirk Vermeulen van Dima Eco-Technics in Bilzen. Ik plaats al meer dan vijftien jaar warmtepompen, airco en ventilatie in heel Limburg. En ik weet wat er meestal gebeurt voordat mensen mij bellen. Ze hebben drie of vier offertes opgehaald. Bij de ene komt er iemand vijf minuten kijken, bij de andere komt er niemand en krijg je gewoon een prijs in je mailbox. Bij de derde gaat het meer over premies dan over jouw woning. En daarna mag jij beslissen waar je vijftien jaar mee verder gaat.</p>
+            <p>Daarom werk ik anders. Ik kom zelf bij u langs. Ik meet, ik bekijk uw situatie, en ik zeg eerlijk welke oplossing past en welke niet. Als een warmtepomp niet de juiste keuze is voor uw woning, hoort u dat ook. Wij zijn Mitsubishi Diamond Dealer en Vincotte gecertificeerd, dezelfde installateur die Maasmechelen Village, Hotel Stayen en de Stad Bilzen vertrouwen.</p>
+            <p>Onlangs hebben wij bij een gezin in Hoeselt een warmtepompboiler geplaatst nadat zij eerst drie andere offertes hadden gekregen. Hun reactie achteraf was letterlijk: "Piekfijne uitvoering en afwerking. Kwaliteit op elk vlak." Dat is wat ik wil dat u ook zegt over uw installatie.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">CTA (90 tot 120s)</span>
+            <p>Als u in Limburg woont en u zit met dat hetzelfde verhaal van drie verschillende offertes en geen duidelijk antwoord, klik dan op de knop hieronder. U komt op een korte pagina waar u in twee minuten uw situatie beschrijft. Daarna bel ik u zelf op, plan ik een meting bij u thuis in, en krijgt u een offerte op maat. Niet over de telefoon, niet via mail, ik kom zelf langs. Klik hieronder en vraag uw gratis offerte aan.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">Filming brief</span>
+            <p><strong>Locatie:</strong> Achter het bureau in het Dima kantoor in Bilzen, of staand voor een geïnstalleerde Mitsubishi binnenunit.<br>
+            <strong>Camera:</strong> Telefoon op een mini-statief, ooghoogte, recht in de camera.<br>
+            <strong>Framing:</strong> Medium shot, borst en hoofd, lichte hoofdruimte.<br>
+            <strong>Licht:</strong> Natuurlijk daglicht door een raam links of rechts.<br>
+            <strong>Energie:</strong> Direct, lichtjes geërgerd over de markt, niet agressief, Limburgs nuchter.<br>
+            <strong>Kledij:</strong> Dima blauwe poloshirt of werkjas, vermijd zwart, rood en oranje.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc2">
+      <button class="acc-head" onclick="toggle('acc2')">
+        <div class="left">
+          <span class="label">Script 2, Result</span>
+          <h3>Dezelfde installateur als Maasmechelen Village en Hotel Stayen</h3>
+        </div>
+        <div class="acc-icon">+</div>
+      </button>
+      <div class="acc-body" id="acc2-body">
+        <div class="acc-inner">
+          <div class="sblock">
+            <span class="slabel">Centraal angle</span>
+            <p>De installateur die grote Belgische B2B-namen vertrouwen, plaatst evengoed bij een gewone gezinswoning, en die kennis nemen mensen onbewust niet aan.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">Hook (0 tot 10s)</span>
+            <p>Wist u dat de installateur die de airco van Maasmechelen Village en de klimaatinstallatie van Hotel Stayen onderhoudt, ook gewoon bij u thuis komt installeren? Veel mensen weten dat niet. En dat is precies waarom u nu kijkt.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">Body (11 tot 90s)</span>
+            <p>Ik ben Dirk Vermeulen, zaakvoerder van Dima Eco-Technics in Bilzen. Tien jaar geleden ben ik gestart, na vijftien jaar in de sector. En ja, wij installeren cleanrooms voor VWR in Heverlee, ventilatie in Maasmechelen Village, City Multi-units in Hotel Stayen, airco voor de Stad Bilzen, voor Audika in Brussel, voor Ace en Tate, voor Fagron, voor Nelson Labs.</p>
+            <p>Maar vergeet niet, het zijn dezelfde monteurs, dezelfde Mitsubishi Diamond Dealer certificering en dezelfde Vincotte normen die wij meenemen naar uw rijwoning in Hoeselt of uw vrijstaand huis in Diest. Wij maken geen onderscheid tussen een warmtepomp van vijftienduizend euro voor een gezin en een chiller van vijftigduizend euro voor een industrie. De afwerking is hetzelfde, de service is hetzelfde, en mijn eigen serviceafdeling op 089 24 19 14 is dezelfde voor allebei.</p>
+            <p>Een familie in Voeren zei het als volgt na onze installatie: "Wij vonden bij DIMA het gepaste toestel, de nodige know-how en vakmanschap om aan al deze eisen te voldoen." En dát is waarom mensen die ooit gekozen hebben voor Dima, nooit meer naar een ander gaan. Wij zijn gebeten door techniek, en het toont in de afwerking.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">CTA (90 tot 120s)</span>
+            <p>Als u in Limburg woont en u wil dezelfde installateur die grote Belgische bedrijven vertrouwen, voor uw gezinswoning, klik dan op de knop hieronder. U beschrijft kort uw situatie, ik bel u zelf op, en ik kom langs voor een meting op locatie. Daarna krijgt u een eerlijke offerte op maat. Klik hieronder en vraag uw gratis offerte aan.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">Filming brief</span>
+            <p><strong>Locatie:</strong> Op locatie bij een eerder gerealiseerd project, bij voorkeur de buitenmuur van een rijwoning waar een warmtepomp staat.<br>
+            <strong>Camera:</strong> Telefoon op een mini-statief, ooghoogte, recht in de camera.<br>
+            <strong>Framing:</strong> Medium shot, borst en hoofd.<br>
+            <strong>Licht:</strong> Natuurlijk buitenlicht, gouden uur of bewolkte heldere dag.<br>
+            <strong>Energie:</strong> Rustig, zelfverzekerd, een tikkeltje trots zonder op te scheppen.<br>
+            <strong>Kledij:</strong> Dima groene poloshirt of werkjas, vermijd zwart, oranje en rood.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc3">
+      <button class="acc-head" onclick="toggle('acc3')">
+        <div class="left">
+          <span class="label">Script 3, Contrarian</span>
+          <h3>Stop met meten in 5 minuten</h3>
+        </div>
+        <div class="acc-icon">+</div>
+      </button>
+      <div class="acc-body" id="acc3-body">
+        <div class="acc-inner">
+          <div class="sblock">
+            <span class="slabel">Centraal angle</span>
+            <p>Een warmtepomp die je in vijf minuten "berekent" via een online tool of een snelle inspectie wordt verkeerd geplaatst, en de echte meting moet door iemand met ervaring op locatie gebeuren.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">Hook (0 tot 10s)</span>
+            <p>Als iemand u een warmtepomp aanbiedt na vijf minuten in uw oprit te staan, weet u dan wat dat betekent? Het betekent dat ze gokken. En als ze fout gokken op vijftienduizend euro aan installatie, gokken ze met uw factuur voor de volgende vijftien jaar.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">Body (11 tot 90s)</span>
+            <p>Een warmtepomp meet u tweemaal. Eén keer voor het juiste vermogen op basis van de werkelijke isolatie en het volume van uw woning. En een tweede keer voor de juiste plaats van de buitenunit, want geluid, condensaat en luchttoevoer kunnen u maanden later in de problemen brengen als ze verkeerd zitten.</p>
+            <p>Ik ben Dirk Vermeulen van Dima Eco-Technics. Ik kom zelf bij elke klant langs. Niet een verkoper, niet een commerciële medewerker, ikzelf, met vijftien jaar ervaring in koeltechniek. Wij zijn Mitsubishi Diamond Dealer en Vincotte gecertificeerd, en de monteurs in mijn team zijn allemaal koeltechnisch gecertificeerd. Dat is geen detail. Dat is het verschil tussen een installatie die vijftien jaar zonder problemen draait en een installatie waar u over twee jaar weer iemand voor moet bellen.</p>
+            <p>Een klant in Diest schreef ons: "Dank voor het knappe werk. Respect van beloofde levertermijnen en vakmanschap." Dat respect begint met die twee metingen op locatie. Niet met een tool op uw scherm.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">CTA (90 tot 120s)</span>
+            <p>Als u serieus overweegt om een warmtepomp, airco of ventilatie te plaatsen, en u wil dat de meting goed gebeurt voor de eerste schroef erin gaat, klik dan op de knop hieronder. U beschrijft uw situatie kort, ik bel u zelf op om de afspraak in te plannen, en ik kom de meting bij u thuis doen. Daarna krijgt u een offerte op maat. Klik hieronder en vraag uw gratis offerte aan.</p>
+          </div>
+          <div class="sblock">
+            <span class="slabel">Filming brief</span>
+            <p><strong>Locatie:</strong> Buiten, naast een geïnstalleerde warmtepomp buitenunit op een Belgische gezinswoning.<br>
+            <strong>Camera:</strong> Telefoon op een mini-statief, ooghoogte, recht in de camera.<br>
+            <strong>Framing:</strong> Medium shot, borst en hoofd.<br>
+            <strong>Licht:</strong> Helder daglicht, scherp en contrastrijk.<br>
+            <strong>Energie:</strong> Direct, autoritair zonder arrogant te zijn, een tikkeltje contrair.<br>
+            <strong>Kledij:</strong> Dima blauwe of groene poloshirt, vermijd zwart, oranje en rood.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANDING PAGE PREVIEW -->
+<section class="lpreview fade">
+  <div class="wrap">
+    <span class="eyebrow center" style="display:block; text-align:center;">De landingspagina staat al live</span>
+    <h2 class="dm">Hier landen mensen na het klikken op uw ad.</h2>
+    <p class="lead">Volledig in het Nederlands, mobiel-eerst, met uw blauwe en groene huisstijl, uw verbatim klantgetuigenissen en een formulier dat enkel de juiste leads doorlaat. Bekijk hem hieronder, of swipe in de mockup.</p>
+
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <iframe src="./landing-page/" title="Dima Ecotechnics landingspagina" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="qa-grid">
+      <div class="qa-card">
+        <h3>Waarom geen link naar uw website?</h3>
+        <p>Uw huidige website is een prachtig digitaal uithangbord, maar hij vraagt 7+ klikken voor iemand bij een offerte landt. Een paid ad bezoeker die op zijn telefoon zit, klikt niet 7 keer. Deze pagina beantwoordt zijn vraag in één scroll en leidt naar één duidelijk formulier.</p>
+      </div>
+      <div class="qa-card">
+        <h3>Waarom converteert deze pagina?</h3>
+        <p>Eén belofte (Piekfijne uitvoering en afwerking), één bewijs (Maasmechelen Village + Hotel Stayen + Stad Bilzen + Vincotte + Mitsubishi Diamond Dealer), één persoon (Dirk komt zelf langs), één formulier dat de juiste leads filtert. Geen ruis, geen submenu, geen prijslijst die mensen wegdrijft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM FLOW (the funnel diagram) -->
+<section class="flow fade">
+  <div class="wrap">
+    <span class="eyebrow center" style="display:block; text-align:center;">Hoe een onbekende een Dima klant wordt</span>
+    <h2 class="dm">Het pad van scroll tot meting bij u thuis.</h2>
+    <p class="lead">Vijf eenvoudige stappen. Niets complexer dan dat. U hoeft alleen de meting te doen aan het einde, de rest gaat automatisch.</p>
+    <div class="flow-row">
+      <div class="flow-step">
+        <div class="num">1</div>
+        <div class="body"><strong>Meta ad</strong><span>Een Limburger ziet uw image- of videoad in zijn IG of FB feed.</span></div>
+      </div>
+      <div class="flow-step">
+        <div class="num">2</div>
+        <div class="body"><strong>Landingspagina</strong><span>Hij klikt en komt op uw mobiele lead-pagina met realisaties en bewijs.</span></div>
+      </div>
+      <div class="flow-step">
+        <div class="num">3</div>
+        <div class="body"><strong>Kwalificatie</strong><span>Hij vult het formulier in met type woning, type oplossing en postcode.</span></div>
+      </div>
+      <div class="flow-step">
+        <div class="num">4</div>
+        <div class="body"><strong>Opvolging</strong><span>Anne belt hem binnen één werkdag op om de meting bij hem thuis in te plannen.</span></div>
+      </div>
+      <div class="flow-step">
+        <div class="num">5</div>
+        <div class="body"><strong>Meting door Dirk</strong><span>Dirk komt langs, doet de meting, en geeft daarna een eerlijke offerte op maat.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band fade">
+  <div class="wrap">
+    <div class="cta-band-card">
+      <div class="cta-band-inner">
+        <div class="copy">
+          <span class="eyebrow">Klaar om dit live te zetten</span>
+          <h2 class="dm">Plan een korte call van 30 min, dan zetten we deze funnel deze week nog aan.</h2>
+          <p>Geen verkooppraat. Ik laat zien hoe we uw account opzetten, hoe we uw budget bepalen, en hoe we uw eerste meting binnenhalen.</p>
+        </div>
+        <a href="#calendly" class="btn-pill btn-gold">Laten we dit live zetten</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how fade">
+  <div class="wrap">
+    <span class="eyebrow center" style="display:block; text-align:center;">Hoe werken wij samen</span>
+    <h2 class="dm">Drie eenvoudige stappen, en u bent live.</h2>
+    <p class="lead">Geen ingewikkelde contracten, geen lange opstart. U beslist na de eerste call of het past, en daarna gaan wij het bouwen, testen en lanceren.</p>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="big">01</div>
+        <h3>Strategiegesprek</h3>
+        <p>30 minuten over uw doelen, uw capaciteit en uw ideale klant. Daarna weet u of dit past en wat de eerstvolgende stap is.</p>
+      </div>
+      <div class="how-card">
+        <div class="big">02</div>
+        <h3>Setup en lancering</h3>
+        <p>Wij bouwen uw Meta Ads Manager op, koppelen het formulier, lanceren de 9 image ads en helpen u de 3 video scripts op te nemen.</p>
+      </div>
+      <div class="how-card">
+        <div class="big">03</div>
+        <h3>Optimaliseren en schalen</h3>
+        <p>Wij volgen elke week de cijfers op, zetten de underperformers af, en duwen budget naar de winnende ads. U krijgt enkel goede leads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="cases fade">
+  <div class="wrap">
+    <span class="eyebrow center" style="display:block; text-align:center;">Wat we hiervoor al gedaan hebben</span>
+    <h2 class="dm">Drie Belgische bedrijven die met deze aanpak gegroeid zijn.</h2>
+    <p class="lead">Niet ons grootste verhaal, gewoon drie voorbeelden van wat dezelfde funnel-logica voor andere klanten heeft opgeleverd.</p>
+    <div class="case-grid">
+      <div class="case-card-pp">
+        <div class="img"><img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case"></div>
+        <div class="meta">
+          <div class="label">TechTalent</div>
+          <h3>145 leads in 2 weken</h3>
+          <p>Recruitment funnel die qualified leads bracht voor IT-profielen in Vlaanderen.</p>
+        </div>
+      </div>
+      <div class="case-card-pp">
+        <div class="img"><img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case"></div>
+        <div class="meta">
+          <div class="label">Vossen</div>
+          <h3>66 terugkerende klanten in 27 dagen</h3>
+          <p>Service-funnel voor een Belgisch onderhoudsbedrijf, focus op recurring revenue.</p>
+        </div>
+      </div>
+      <div class="case-card-pp">
+        <div class="img"><img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case"></div>
+        <div class="meta">
+          <div class="label">Container Cleaner</div>
+          <h3>50 terugkerende klanten in 2 weken</h3>
+          <p>Lokale service-funnel voor een nichemarkt, met sterke geo-targeting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq fade">
+  <div class="wrap-sm">
+    <span class="eyebrow center" style="display:block; text-align:center;">Wat u nu waarschijnlijk denkt</span>
+    <h2 class="dm">Zes vragen die elke nieuwe klant stelt.</h2>
+    <p class="lead">Eerlijke antwoorden. Geen verkooppraat.</p>
+
+    <div class="accordion" id="faq1">
+      <button class="acc-head" onclick="toggle('faq1')">
+        <div class="left"><h3>Waarom geeft u dit gratis weg?</h3></div>
+        <div class="acc-icon">+</div>
+      </button>
+      <div class="acc-body" id="faq1-body">
+        <div class="acc-inner faq-answer">Omdat een PowerPoint mij niet bewijst dat ik weet wat ik doe. Een afgewerkte funnel wel. U ziet vandaag al wat u krijgt voor u één euro betaalt. Als u na het bekijken nog steeds wil samenwerken, plannen we een call. Zo niet, dan houdt u toch nog 9 ad concepten en 3 video scripts die u zelf kan gebruiken.</div>
+      </div>
+    </div>
+
+    <div class="accordion" id="faq2">
+      <button class="acc-head" onclick="toggle('faq2')">
+        <div class="left"><h3>Waarom zou ik u vertrouwen?</h3></div>
+        <div class="acc-icon">+</div>
+      </button>
+      <div class="acc-body" id="faq2-body">
+        <div class="acc-inner faq-answer">U hoeft mij niet op mijn woord te geloven. U heeft hierboven de funnel zien staan die ik specifiek voor u heb gebouwd. Niemand bouwt 9 ads, 3 scripts en een live landingspagina voor een prospect die hij niet kent, tenzij hij zeker is van zijn aanpak. Plan een call en stel mij elke vraag die u heeft.</div>
+      </div>
+    </div>
+
+    <div class="accordion" id="faq3">
+      <button class="acc-head" onclick="toggle('faq3')">
+        <div class="left"><h3>Hoe snel zou ik resultaten zien?</h3></div>
+        <div class="acc-icon">+</div>
+      </button>
+      <div class="acc-body" id="faq3-body">
+        <div class="acc-inner faq-answer">Bij goed gefinancierde HVAC-funnels in België zien wij doorgaans de eerste gekwalificeerde aanvragen binnenkomen in week één na de lancering. De échte ritme komt doorgaans rond dag 14 zodra het Meta-algoritme weet welk type Limburger klikt en aanvraagt. Vanaf dan stabiliseert het en kunnen wij beginnen schalen.</div>
+      </div>
+    </div>
+
+    <div class="accordion" id="faq4">
+      <button class="acc-head" onclick="toggle('faq4')">
+        <div class="left"><h3>Wat heeft u van mijn kant nodig?</h3></div>
+        <div class="acc-icon">+</div>
+      </button>
+      <div class="acc-body" id="faq4-body">
+        <div class="acc-inner faq-answer">Drie dingen. Eén: toegang tot uw Meta Business Manager (wij begeleiden u stap per stap als u die nog niet heeft). Twee: een namiddag van Dirk om de drie video scripts in te spreken voor de telefooncamera. Drie: dat Anne het formulier opvolgt zodra de leads binnenkomen, want snelheid bepaalt of een Meta lead converteert of niet.</div>
+      </div>
+    </div>
+
+    <div class="accordion" id="faq5">
+      <button class="acc-head" onclick="toggle('faq5')">
+        <div class="left"><h3>Hoeveel ad spend is er nodig?</h3></div>
+        <div class="acc-icon">+</div>
+      </button>
+      <div class="acc-body" id="faq5-body">
+        <div class="acc-inner faq-answer">Voor de Belgische warmtepomp- en airco-markt in Limburg adviseren wij doorgaans tussen 30 en 50 euro per dag in de eerste maand om de funnel te laten leren. Dat is geen vereiste, het is een richtlijn. Tijdens de call leg ik uit hoe we het budget voor uw situatie bepalen, en hoe we de eerste week voorzichtig opbouwen.</div>
+      </div>
+    </div>
+
+    <div class="accordion" id="faq6">
+      <button class="acc-head" onclick="toggle('faq6')">
+        <div class="left"><h3>Wij doen vooral organische posts, is dat genoeg?</h3></div>
+        <div class="acc-icon">+</div>
+      </button>
+      <div class="acc-body" id="faq6-body">
+        <div class="acc-inner faq-answer">Organische posts zijn waardevol voor wie u al kent. Maar wie u nog niet volgt, ziet ze niet. In Limburg wonen tienduizenden eigenaars die nu een warmtepomp of airco overwegen. Paid Meta ads is hoe wij u voorstellen aan precies die mensen. Uw organische content blijft, maar paid is wat de echte volumegroei brengt.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about fade">
+  <div class="wrap">
+    <div class="about-grid">
+      <img src="https://preview.relightmarketing.com/assets/relight-team.png" alt="Arthur, Relight Marketing">
+      <div>
+        <span class="eyebrow">Over mij</span>
+        <h2 class="dm">Arthur, Relight Marketing</h2>
+        <p>Ik help Belgische en internationale dienstverleners hun beste maand op rij draaien met paid Meta advertenties. Geen agency-jargon, geen lock-in contracten, geen "we testen even".</p>
+        <p>Wij bouwen vooraf de volledige funnel uit zodat u meteen ziet wat u krijgt. U beslist daarna of we samenwerken. En als we samenwerken, bouw ik mee aan de campagne tot ze winstgevend draait, niet tot het rapport mooi staat.</p>
+        <p>Dirk, ik bouwde deze funnel omdat mijn vader mij vertelde dat u openstaat om eens te luisteren naar wat ik zou voorstellen. Dit is mijn voorstel, in zijn meest concrete vorm.</p>
+        <a href="#calendly" class="btn-pill btn-gold" style="margin-top: 8px;">Laten we dit live zetten</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA + CALENDLY -->
+<section class="final fade" id="calendly">
+  <div class="wrap">
+    <span class="eyebrow">Laten we dit doen</span>
+    <h2 class="dm">Laten we deze ad funnel ASAP live zetten.</h2>
+    <p class="lead">30 minuten, geen verplichting. Kies een moment hieronder dat u past.</p>
+    <div class="calendly-shell">
+      <iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Plan een gesprek met Arthur"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Relight Marketing, gebouwd voor Dima Ecotechnics
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('bg', window.scrollY > 40), {passive:true});
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+}, {threshold:0.1});
+document.querySelectorAll('.fade:not(.in)').forEach(el => io.observe(el));
+
+function toggle(id) {
+  const acc = document.getElementById(id);
+  const body = document.getElementById(id+'-body');
+  const open = acc.classList.contains('open');
+  document.querySelectorAll('.accordion.open').forEach(a => {
+    a.classList.remove('open');
+    const b = a.querySelector('.acc-body');
+    if (b) b.style.maxHeight = null;
+  });
+  if(!open) {
+    acc.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+if (window.location.protocol !== 'file:') {
+  var OWNER_TOKEN = 'test';
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('preview') !== OWNER_TOKEN) {
+    fetch('https://ipapi.co/json/')
+      .then(function(r){return r.json()})
+      .then(function(geo){
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec',{
+          method:'POST',
+          headers:{'Content-Type':'text/plain'},
+          body:JSON.stringify({
+            _subject:'41 Dima Ecotechnics just opened your pitch page',
+            prospect:'Dima Ecotechnics',
+            number:'41',
+            time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+            city:geo.city||'',region:geo.region||'',country:geo.country_name||'',
+            device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+            referrer:document.referrer||'direct',url:window.location.href
+          })
+        });
+      })
+      .catch(function(){
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec',{
+          method:'POST',
+          headers:{'Content-Type':'text/plain'},
+          body:JSON.stringify({
+            _subject:'41 Dima Ecotechnics just opened your pitch page',
+            prospect:'Dima Ecotechnics',
+            number:'41',
+            time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+            device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+            referrer:document.referrer||'direct',url:window.location.href
+          })
+        });
+      });
+  }
+}
+</script>
+</body>
+</html>

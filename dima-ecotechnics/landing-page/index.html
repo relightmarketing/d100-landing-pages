@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dima Ecotechnics | Uw ervaren airco en warmtepomp installateur in Limburg</title>
+<meta name="description" content="Dima Ecotechnics plaatst airco, warmtepompen, ventilatie en zonnepanelen in heel Limburg. Mitsubishi Diamond Dealer, Vincotte gecertificeerd, Dirk komt zelf langs voor uw meting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --surface: #f5f8fb;
+  --surface-2: #eaf1f7;
+  --accent: #22a2dc;
+  --accent-dark: #1a82b2;
+  --green: #46b150;
+  --green-dark: #388f40;
+  --navy: #0c2434;
+  --navy-deep: #061421;
+  --text: #1a2332;
+  --text-muted: #5b6a7a;
+  --line: #e0e6ec;
+  --font-head: "Work Sans", system-ui, -apple-system, sans-serif;
+  --font-body: "Work Sans", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  padding-bottom: 76px;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.wrap-narrow { max-width: 800px; margin: 0 auto; padding: 0 16px; }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px; padding: 0 12px; gap: 8px;
+  max-width: 1120px; margin: 0 auto;
+}
+.nav-logo { height: 28px; max-width: 150px; flex-shrink: 1; min-width: 0; }
+.nav-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.nav-phone-icon {
+  width: 38px; height: 38px; border-radius: 8px;
+  background: var(--surface);
+  display: grid; place-items: center;
+  border: 1px solid var(--line);
+}
+.nav-phone-icon svg { width: 18px; height: 18px; color: var(--accent); }
+.nav-phone-text { display: none; align-items: center; gap: 6px; color: var(--text); font-weight: 600; }
+.nav-cta-mobile {
+  background: var(--green); color: #fff;
+  font-family: var(--font-head); font-weight: 700;
+  font-size: 0.72rem; padding: 9px 14px;
+  border-radius: 6px; white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.nav-cta-desktop { display: none; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(140deg, var(--navy-deep) 0%, var(--navy) 65%, #0d3144 100%);
+  color: #fff;
+  padding: 56px 0 64px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: ""; position: absolute;
+  top: -120px; right: -80px; width: 360px; height: 360px;
+  background: radial-gradient(closest-side, rgba(34,162,220,0.28), transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: ""; position: absolute;
+  bottom: -80px; left: -80px; width: 280px; height: 280px;
+  background: radial-gradient(closest-side, rgba(70,177,80,0.18), transparent 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+  position: relative; z-index: 1;
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent);
+  background: rgba(34,162,220,0.12);
+  padding: 7px 14px; border-radius: 999px;
+  border: 1px solid rgba(34,162,220,0.35);
+  margin-bottom: 18px;
+}
+.eyebrow .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px rgba(70,177,80,0.25);
+}
+.hero h1 {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.85rem, 5vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.hero h1 .accent { color: var(--accent); }
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.6;
+  margin-bottom: 22px;
+  max-width: 520px;
+}
+.hero-badges {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 24px;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 0.78rem; font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+}
+.badge .check { color: var(--green); font-weight: 800; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--font-head); font-weight: 700;
+  font-size: 1rem;
+  padding: 16px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 8px 22px rgba(70,177,80,0.35);
+  width: 100%;
+  text-align: center;
+  min-height: 48px;
+}
+.btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+.btn-blue { background: var(--accent); box-shadow: 0 8px 22px rgba(34,162,220,0.35); }
+.btn-blue:hover { background: var(--accent-dark); }
+.hero-image {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.hero-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  display: block;
+}
+
+/* STAT BAR */
+.statbar {
+  background: var(--navy-deep);
+  color: #fff;
+  padding: 28px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.statbar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: 1.7rem; color: var(--accent);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* IMAGE STRIP */
+.image-strip {
+  padding: 36px 0;
+  background: var(--bg);
+}
+.image-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.image-strip-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+/* SECTION GENERIC */
+section { padding: 56px 0; }
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 14px;
+}
+h2.section-title {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+/* PAIN SECTION */
+.pain {
+  background: var(--surface);
+}
+.pain h2.pain-title {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  color: var(--text);
+}
+.icon-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+.icon-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.icon-badge {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: rgba(34,162,220,0.12);
+  color: var(--accent);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.icon-badge svg { width: 22px; height: 22px; }
+.icon-badge.green { background: rgba(70,177,80,0.12); color: var(--green); }
+.icon-content h3 {
+  font-family: var(--font-head); font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.icon-content p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* SOLUTION SECTION */
+.solution { background: var(--bg); }
+.solution-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.solution-image {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+.solution-image img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.result-highlight {
+  background: var(--surface);
+  border-left: 4px solid var(--green);
+  padding: 16px 18px;
+  border-radius: 0 10px 10px 0;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  margin: 18px 0;
+  line-height: 1.5;
+}
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+.mini-stat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+.mini-stat .num {
+  font-family: var(--font-head); font-weight: 800;
+  color: var(--accent);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+.mini-stat .lbl {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+/* PROCESS / OFFER DETAIL */
+.process { background: var(--surface); }
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 12px;
+}
+.step {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  position: relative;
+}
+.step-num {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-head); font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+.step h3 {
+  font-family: var(--font-head); font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.step p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* SOCIAL PROOF */
+.social { background: var(--bg); }
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 12px;
+}
+.case-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+}
+.case-card .stars {
+  color: var(--green);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.case-card .quote {
+  font-family: var(--font-head); font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.case-card .author {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.brands-bar {
+  margin-top: 36px;
+  padding: 22px;
+  background: var(--surface);
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.brands-bar .label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.brands-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 22px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+.brands-list span {
+  padding: 6px 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+/* FOUNDER SECTION */
+.founder {
+  background: var(--navy-deep);
+  color: #fff;
+}
+.founder .section-eyebrow { color: var(--accent); }
+.founder h2 { color: #fff; }
+.founder p {
+  color: rgba(255,255,255,0.78);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.founder-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.founder-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 28px;
+}
+.founder-card .name {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.founder-card .role {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.founder-creds {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.founder-creds li {
+  display: flex; align-items: flex-start; gap: 10px;
+  list-style: none;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+}
+.founder-creds li::before {
+  content: "";
+  width: 14px; height: 14px; flex-shrink: 0;
+  margin-top: 4px;
+  border-radius: 4px;
+  background: var(--green);
+  background-image: linear-gradient(135deg, var(--green) 0%, #5cc065 100%);
+}
+
+/* FORM SECTION */
+.form-section {
+  background: var(--surface);
+}
+.form-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px 22px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.06);
+}
+.form-card h2 {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.form-card .lead {
+  color: var(--text-muted);
+  margin-bottom: 22px;
+  font-size: 0.98rem;
+}
+.form-row {
+  margin-bottom: 16px;
+}
+.form-row label {
+  display: block;
+  font-family: var(--font-head); font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color 0.2s;
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(34,162,220,0.15);
+}
+.form-row select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%2322a2dc' d='M6 8L0 0h12z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 38px;
+}
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.form-row-2 .form-row { margin-bottom: 0; }
+.form-disclaimer {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* FAQ */
+.faq { background: var(--bg); }
+.faq-list { margin-top: 18px; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item:first-child { border-top: 1px solid var(--line); }
+.faq-btn {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 0; text-align: left;
+  font-family: var(--font-head); font-size: 1rem; font-weight: 700;
+  color: var(--text);
+  gap: 16px;
+}
+.faq-btn::after {
+  content: '+';
+  color: var(--accent); font-size: 1.5rem; flex-shrink: 0;
+  font-weight: 400;
+  transition: transform 0.2s;
+}
+.faq-item.open .faq-btn::after {
+  content: '−';
+}
+.faq-answer {
+  display: none;
+  padding-bottom: 20px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+.faq-item.open .faq-answer { display: block; }
+
+/* FINAL CTA */
+.final-cta {
+  background: linear-gradient(140deg, var(--navy-deep), var(--navy));
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: ""; position: absolute;
+  top: -80px; right: -80px; width: 320px; height: 320px;
+  background: radial-gradient(closest-side, rgba(70,177,80,0.22), transparent 70%);
+}
+.final-cta::after {
+  content: ""; position: absolute;
+  bottom: -80px; left: -80px; width: 280px; height: 280px;
+  background: radial-gradient(closest-side, rgba(34,162,220,0.22), transparent 70%);
+}
+.final-cta .wrap-narrow { position: relative; z-index: 1; }
+.final-cta h2 {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+.final-cta p {
+  color: rgba(255,255,255,0.78);
+  margin-bottom: 24px;
+  font-size: 1.02rem;
+}
+.sub-note {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 18px;
+  line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.55);
+  padding: 28px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+footer a { color: rgba(255,255,255,0.85); }
+
+/* MOBILE STICKY CTA */
+.mobile-cta {
+  display: flex;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 99;
+  padding: 10px 12px;
+  gap: 8px;
+  align-items: center;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+  border-top: 1px solid var(--line);
+}
+.mobile-cta .btn {
+  flex: 1;
+  padding: 13px 12px;
+  font-size: 0.85rem;
+  text-align: center;
+  box-shadow: none;
+}
+.mobile-cta .cta-call {
+  width: 48px; height: 48px;
+  border-radius: 8px;
+  background: var(--accent);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.mobile-cta .cta-call svg { width: 22px; height: 22px; color: #fff; }
+
+/* TABLET (641px+) */
+@media (min-width: 641px) {
+  .wrap, .wrap-narrow { padding: 0 24px; }
+  section { padding: 72px 0; }
+  body { padding-bottom: 0; }
+  .mobile-cta { display: none; }
+
+  .nav-inner { height: 64px; padding: 0 24px; gap: 12px; }
+  .nav-logo { height: 32px; max-width: none; flex-shrink: 0; }
+  .nav-phone-icon { display: none; }
+  .nav-phone-text { display: flex; }
+  .nav-cta-mobile { display: none; }
+  .nav-cta-desktop {
+    display: inline-flex;
+    background: var(--green); color: #fff;
+    font-family: var(--font-head); font-weight: 700;
+    font-size: 0.85rem;
+    padding: 11px 22px;
+    border-radius: 8px;
+    align-items: center;
+    letter-spacing: 0.02em;
+  }
+
+  .hero { padding: 84px 0 96px; }
+  .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 48px; }
+  .btn { width: auto; padding: 17px 34px; }
+
+  .statbar-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .stat-num { font-size: 2rem; }
+
+  .image-strip-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+  .icon-list { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .solution-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .case-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .founder-stack { grid-template-columns: 1.2fr 1fr; gap: 36px; }
+  .form-card { padding: 40px 36px; }
+  .form-row-2 { grid-template-columns: 1fr 1fr; gap: 18px; }
+}
+
+/* DESKTOP (961px+) */
+@media (min-width: 961px) {
+  .wrap, .wrap-narrow { padding: 0 32px; }
+  section { padding: 88px 0; }
+  .nav-inner { height: 72px; padding: 0 32px; }
+  .nav-logo { height: 38px; }
+
+  .hero { padding: 100px 0 120px; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .icon-list { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .case-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top"><img src="https://dima-ecotechnics.be/images/logo/Logo-Dima.svg" alt="Dima Ecotechnics" class="nav-logo"></a>
+    <div class="nav-right">
+      <a href="tel:+3289204048" class="nav-phone-icon" aria-label="Bel Dima Ecotechnics">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      </a>
+      <span class="nav-phone-text">089/20 40 48</span>
+      <a href="#form" class="nav-cta-mobile">Gratis offerte</a>
+      <a href="#form" class="nav-cta-desktop">Vraag mijn gratis offerte aan</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">
+          <span class="dot"></span>
+          Mitsubishi Diamond Dealer Limburg
+        </div>
+        <h1>Piekfijne uitvoering en afwerking. <span class="accent">Kwaliteit op elk vlak.</span></h1>
+        <p class="hero-sub">Airco, warmtepompen, ventilatie en zonnepanelen voor uw woning of bedrijf in Limburg. Dirk Vermeulen komt zelf langs voor de meting, geen verkoper, geen gokwerk.</p>
+        <div class="hero-badges">
+          <span class="badge"><span class="check">&#10003;</span> Mitsubishi Diamond Dealer</span>
+          <span class="badge"><span class="check">&#10003;</span> Vincotte gecertificeerd</span>
+          <span class="badge"><span class="check">&#10003;</span> 10+ jaar in Limburg</span>
+        </div>
+        <a href="#form" class="btn">Vraag mijn gratis offerte aan</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://dima-ecotechnics.be/images/Dima/Producten/Dima-Ecotechnics-Warmtepompboilers.jpg" alt="Dima Ecotechnics warmtepompboiler installatie in een Belgische gezinswoning" loading="eager">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STAT BAR -->
+<div class="statbar">
+  <div class="wrap">
+    <div class="statbar-grid">
+      <div>
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Jaar Dima</div>
+      </div>
+      <div>
+        <div class="stat-num">5</div>
+        <div class="stat-label">Productlijnen</div>
+      </div>
+      <div>
+        <div class="stat-num">B2B</div>
+        <div class="stat-label">+ Residentieel</div>
+      </div>
+      <div>
+        <div class="stat-num">089/24</div>
+        <div class="stat-label">Eigen serviceafdeling</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IMAGE STRIP 1 -->
+<div class="image-strip">
+  <div class="wrap">
+    <div class="image-strip-grid">
+      <img src="https://dima-ecotechnics.be/images/Dima/Producten/Dima-Ecotechnics-Airconditioning.jpg" alt="Mitsubishi airco installatie door Dima Ecotechnics" loading="lazy">
+      <img src="https://dima-ecotechnics.be/images/Dima/Producten/Ventilatie-installatie.png" alt="Ventilatie systeem geplaatst door Dima Ecotechnics" loading="lazy">
+      <img src="https://dima-ecotechnics.be/images/Dima/Producten/Dima-Ecotechnics-Warmtepompen.jpg" alt="Warmtepomp installatie aan een Belgische gezinswoning door Dima Ecotechnics" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<!-- PAIN -->
+<section class="pain" id="probleem">
+  <div class="wrap">
+    <span class="section-eyebrow">Het probleem</span>
+    <h2 class="pain-title">Iedere installateur vertelt iets anders en uw energiefactuur blijft maar stijgen.</h2>
+    <p class="section-sub">Klinkt dit bekend? Drie offertes, drie verschillende oplossingen, en niemand die eerlijk uitlegt wat nu écht bij uw woning past. Daarom nemen veel mensen geen beslissing, en blijft dezelfde gasketel staan.</p>
+    <div class="icon-list">
+      <div class="icon-item">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+        <div class="icon-content">
+          <h3>Drie offertes, drie verhalen</h3>
+          <p>Bij de ene komt er iemand vijf minuten kijken, bij de andere komt er niemand en krijgt u gewoon een prijs in uw mailbox.</p>
+        </div>
+      </div>
+      <div class="icon-item">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"></path><path d="M12 22v-6"></path><path d="M4.93 4.93l4.24 4.24"></path><path d="M14.83 14.83l4.24 4.24"></path><path d="M2 12h6"></path><path d="M16 12h6"></path></svg>
+        </div>
+        <div class="icon-content">
+          <h3>Geen meting op locatie</h3>
+          <p>Een warmtepomp die je in vijf minuten op de oprit "berekent" wordt vrijwel altijd verkeerd geplaatst.</p>
+        </div>
+      </div>
+      <div class="icon-item">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div class="icon-content">
+          <h3>Niemand belt nog terug</h3>
+          <p>U hoort het op Trustpilot van anderen: vier maanden na de afspraak wachten zonder antwoord. Dat overkomt u bij Dima nooit.</p>
+        </div>
+      </div>
+      <div class="icon-item">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"></path><path d="M9 9h6v6H9z"></path></svg>
+        </div>
+        <div class="icon-content">
+          <h3>Premies en BTW blijven onduidelijk</h3>
+          <p>Niemand neemt de tijd om uw situatie naast de actuele Belgische premieregels te leggen. Wij wel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE STRIP 2 -->
+<div class="image-strip">
+  <div class="wrap">
+    <div class="image-strip-grid">
+      <img src="https://dima-ecotechnics.be/images/Dima/Inspiratie/gezinswoningen.jpg" alt="Realisatie van Dima Ecotechnics in een Belgische gezinswoning" loading="lazy">
+      <img src="https://dima-ecotechnics.be/images/Dima/Producten/Zonnepanelen.png" alt="Zonnepanelen op een Belgisch dak geïnstalleerd door Dima Ecotechnics" loading="lazy">
+      <img src="https://dima-ecotechnics.be/images/Dima/Producten/Dima-service.png" alt="Dima service en onderhoud team aan het werk" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="wrap">
+    <div class="solution-grid">
+      <div>
+        <span class="section-eyebrow">De oplossing</span>
+        <h2 class="section-title">De installateur die Maasmechelen Village, Hotel Stayen en Stad Bilzen vertrouwen, nu voor uw woning.</h2>
+        <p class="section-sub">Dima Ecotechnics installeert al meer dan 10 jaar HVAC voor grote Belgische namen én voor gezinswoningen in heel Limburg. Dezelfde monteurs, dezelfde Mitsubishi Diamond Dealer certificering, dezelfde Vincotte normen. Of u nu een airco wil voor één slaapkamer of een complete warmtepomp installatie voor uw rijwoning.</p>
+        <p class="result-highlight">"Wij vonden bij DIMA het gepaste toestel, de nodige know-how en vakmanschap om aan al onze eisen te voldoen." Familie Crommelinck, Voeren.</p>
+        <div class="mini-stats">
+          <div class="mini-stat"><div class="num">15+</div><div class="lbl">Jaar ervaring Dirk</div></div>
+          <div class="mini-stat"><div class="num">100%</div><div class="lbl">Eigen monteurs</div></div>
+        </div>
+      </div>
+      <div class="solution-image">
+        <img src="https://dima-ecotechnics.be/images/Dima/Inspiratie/office.jpg" alt="Dima Ecotechnics realisatie in een kantoor van een Limburgs bedrijf" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="wrap">
+    <span class="section-eyebrow">Zo werken wij</span>
+    <h2 class="section-title">In 4 stappen van uw vraag tot een installatie waar u jaren van geniet.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>U vraagt uw offerte aan</h3>
+        <p>U vult onderaan deze pagina het korte formulier in. Het neemt minder dan 2 minuten en wij weten meteen wat u zoekt.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Office Manager Anne belt u</h3>
+        <p>Binnen één werkdag belt Anne u op om uw situatie te bevestigen en een meting bij u thuis in te plannen.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Dirk komt zelf langs</h3>
+        <p>Dirk Vermeulen, zaakvoerder met 15+ jaar in koeltechniek, doet de meting op locatie. Geen verkoper, geen gokwerk.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Offerte op maat en plaatsing</h3>
+        <p>U krijgt een eerlijke offerte op maat. Wordt het een go, dan plaatst ons eigen koeltechnisch gecertificeerd team het netjes af.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social">
+  <div class="wrap">
+    <span class="section-eyebrow">Echte klanten, echte realisaties</span>
+    <h2 class="section-title">Dit zeggen Limburgse gezinnen en bedrijven over Dima.</h2>
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"Piekfijne uitvoering en afwerking. Kwaliteit op elk vlak."</p>
+        <p class="author">Verjans-Schoefs, Hoeselt, vervanging warmtepompboiler</p>
+      </div>
+      <div class="case-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"Wij vonden bij DIMA het gepaste toestel, de nodige know-how en vakmanschap om aan al deze eisen te voldoen."</p>
+        <p class="author">Familie Crommelinck, Voeren</p>
+      </div>
+      <div class="case-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"Dank voor het knappe werk. Respect van beloofde levertermijnen en vakmanschap."</p>
+        <p class="author">Patrick Cools, Diest</p>
+      </div>
+      <div class="case-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"Wij zijn zeer tevreden van de professionaliteit waarmee de firma te werk gaat. Prima werk DIMA, doe zo verder."</p>
+        <p class="author">Nijst Jos, Bilzen</p>
+      </div>
+      <div class="case-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"Wij kiezen steeds weer voor DIMA omwille van de professionele en vlotte afhandeling van de werken."</p>
+        <p class="author">Reyskens Orthopedie, Borgloon</p>
+      </div>
+      <div class="case-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"Zeer professioneel en correct afgewerkt. Gewoonweg een aanrader."</p>
+        <p class="author">Driesen Jessica, Martenslinde</p>
+      </div>
+    </div>
+    <div class="brands-bar">
+      <div class="label">Ook gekozen door</div>
+      <div class="brands-list">
+        <span>Maasmechelen Village</span>
+        <span>Hotel Stayen</span>
+        <span>Stad Bilzen</span>
+        <span>Audika</span>
+        <span>Ace &amp; Tate Brussel</span>
+        <span>VWR Heverlee</span>
+        <span>Fagron Bornem</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder">
+  <div class="wrap">
+    <div class="founder-stack">
+      <div>
+        <span class="section-eyebrow">Wie u bij Dima krijgt</span>
+        <h2 class="section-title">Geen verkoper. De zaakvoerder zelf, met 15+ jaar in koeltechniek.</h2>
+        <p>Dirk Vermeulen richtte Dima Eco-Technics ruim 10 jaar geleden op, na 15+ jaar in de HVAC- en koeltechnische sector. Bij elke nieuwe klant doet Dirk de meting persoonlijk. Hij bekijkt uw woning, uw isolatie, uw gewoontes, en zegt eerlijk welke oplossing past en welke niet.</p>
+        <p>Office Manager Anne is uw vast aanspreekpunt voor afspraken en planning. En als er ooit iets mis is, krijgt u onze eigen serviceafdeling op 089/24 19 14 aan de lijn, niet een callcenter.</p>
+        <p>Wij zijn gebeten door techniek. Het toont in onze afwerking, en het toont in de manier waarop wij na de installatie nog jaren bereikbaar blijven.</p>
+      </div>
+      <div class="founder-card">
+        <div class="name">Dirk Vermeulen</div>
+        <div class="role">Zaakvoerder Dima Ecotechnics</div>
+        <ul class="founder-creds">
+          <li>15+ jaar in HVAC en koeltechniek</li>
+          <li>Doet zelf de meting bij elke klant</li>
+          <li>Mitsubishi Diamond Dealer en Daikin partner</li>
+          <li>Vincotte gecertificeerd bedrijf</li>
+          <li>Eigen koeltechnisch gecertificeerd team</li>
+          <li>Eigen serviceafdeling 089/24 19 14</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="form">
+  <div class="wrap">
+    <div class="form-card">
+      <h2>Vraag uw gratis offerte op maat aan.</h2>
+      <p class="lead">Vul onderstaand formulier in. Anne belt u binnen één werkdag op om de meting met Dirk in te plannen. Geen verkoperspraat, geen vrijblijvende prijslijsten.</p>
+      <form action="https://formspree.io/f/dima-ecotechnics" method="POST">
+        <div class="form-row-2">
+          <div class="form-row">
+            <label for="naam">Voor- en achternaam</label>
+            <input type="text" id="naam" name="naam" required placeholder="Bv. Tom Janssens">
+          </div>
+          <div class="form-row">
+            <label for="telefoon">Telefoonnummer</label>
+            <input type="tel" id="telefoon" name="telefoon" required placeholder="Bv. 0470 12 34 56">
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-row">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" required placeholder="naam@voorbeeld.be">
+          </div>
+          <div class="form-row">
+            <label for="postcode">Postcode</label>
+            <input type="text" id="postcode" name="postcode" required placeholder="Bv. 3740">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="interesse">Waarvoor zoekt u een oplossing?</label>
+          <select id="interesse" name="interesse" required>
+            <option value="">Kies een optie</option>
+            <option>Airconditioning voor mijn woning</option>
+            <option>Warmtepomp lucht of water</option>
+            <option>Warmtepompboiler</option>
+            <option>Ventilatie systeem</option>
+            <option>Zonnepanelen</option>
+            <option>Combinatie van meerdere oplossingen</option>
+            <option>Voor een kantoor of bedrijf</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="type-woning">Type woning of pand</label>
+          <select id="type-woning" name="type-woning" required>
+            <option value="">Kies een optie</option>
+            <option>Vrijstaande woning</option>
+            <option>Halfopen bebouwing</option>
+            <option>Rijwoning</option>
+            <option>Appartement</option>
+            <option>Nieuwbouw in voorbereiding</option>
+            <option>Renovatie</option>
+            <option>Kantoor of bedrijfsgebouw</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="bericht">Korte beschrijving van uw situatie (optioneel)</label>
+          <textarea id="bericht" name="bericht" rows="4" placeholder="Bv. wij willen onze gasketel vervangen door een warmtepomp, woning is uit 2002, ongeveer 180 m²"></textarea>
+        </div>
+        <button type="submit" class="btn">Vraag mijn gratis offerte aan</button>
+        <p class="form-disclaimer">Door dit formulier in te dienen geeft u Dima Ecotechnics toestemming om u te contacteren over uw aanvraag. Wij delen uw gegevens nooit met derden.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap-narrow">
+    <span class="section-eyebrow">Veelgestelde vragen</span>
+    <h2 class="section-title">Wat u nog wil weten voor u het formulier invult.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn">Komt er echt iemand bij mij thuis langs of stuurt u gewoon een prijs?</button>
+        <div class="faq-answer">Bij Dima komt Dirk Vermeulen, de zaakvoerder zelf, bij elke nieuwe klant op locatie. Hij doet de meting, bekijkt uw woning en uw isolatie, en stelt pas daarna een oplossing voor. Dat is hoe wij al meer dan tien jaar werken, en dat is het verschil met installateurs die u alleen een mailtje sturen.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Hoe lang duurt het van mijn aanvraag tot de plaatsing?</button>
+        <div class="faq-answer">Anne belt u meestal binnen één werkdag op. De meting bij u thuis plannen wij doorgaans binnen 5 werkdagen in. De plaatsing zelf hangt af van de complexiteit van uw project en de levertermijnen van Mitsubishi of Daikin. Wij respecteren altijd de afgesproken termijnen.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Welke premies en kortingen kan ik krijgen?</button>
+        <div class="faq-answer">De Belgische premies voor warmtepompen, zonnepanelen en ventilatie veranderen bijna jaarlijks. Tijdens de meting bij u thuis legt Dirk u uit welke premies actueel beschikbaar zijn voor uw type woning, en welke premies wij voor u helpen aanvragen. Wij beloven nooit een bedrag voor wij uw situatie zien.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Wat als er over twee jaar iets stuk gaat?</button>
+        <div class="faq-answer">Dan belt u 089/24 19 14, onze eigen serviceafdeling. Geen callcenter, geen doorverwijzing naar een andere firma. Onze monteurs kennen elke installatie die wij plaatsen, omdat zij ze zelf hebben gezet. Daarom kiezen klanten ons opnieuw.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Doen jullie ook industriële of commerciële installaties?</button>
+        <div class="faq-answer">Ja. Naast gezinswoningen plaatsen wij HVAC en cleanrooms voor bedrijven zoals Maasmechelen Village, Hotel Stayen, Stad Bilzen, Audika, Ace &amp; Tate, VWR, Fagron, Nelson Labs, en vele andere. Voor zakelijke aanvragen kunt u hetzelfde formulier hieronder gebruiken en aangeven dat het om een kantoor of bedrijfsgebouw gaat.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Werkt Dima alleen in Limburg?</button>
+        <div class="faq-answer">Onze hoofdzetel staat in Bilzen en wij bedienen vooral Limburg, maar voor zakelijke projecten en bijzondere residentiële opdrachten werken wij in heel België. Vraag het gewoon na in het formulier.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap-narrow">
+    <h2>Klaar voor een installatie waar u 15 jaar van geniet?</h2>
+    <p>Vraag uw gratis offerte aan, en Anne belt u binnen één werkdag op om de meting met Dirk in te plannen.</p>
+    <a href="#form" class="btn">Vraag mijn gratis offerte aan</a>
+    <p class="sub-note">10+ jaar Dima Ecotechnics, Mitsubishi Diamond Dealer, Vincotte gecertificeerd, eigen koeltechnisch gecertificeerde monteurs, eigen serviceafdeling 089/24 19 14.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Dima Ecotechnics BV &nbsp;·&nbsp; Royerveld 16, 3740 Bilzen &nbsp;·&nbsp; <a href="tel:+3289204048">089/20 40 48</a>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta">
+  <a href="tel:+3289204048" class="cta-call" aria-label="Bel Dima Ecotechnics">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+  </a>
+  <a href="#form" class="btn">Vraag mijn gratis offerte aan</a>
+</div>
+
+<script>
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+(function(){
+  var mc = document.querySelector('.mobile-cta');
+  if (!mc) return;
+  var form = document.getElementById('form');
+  if (!form) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+      mc.style.transition = 'transform 0.3s ease';
+    });
+  }, {threshold: 0.1});
+  io.observe(form);
+})();
+</script>
+
+</body>
+</html>
