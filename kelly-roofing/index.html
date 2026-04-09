@@ -170,6 +170,13 @@ section.fade.in { opacity: 1; transform: none; }
 .case-card h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
 .case-card p { color: var(--sub); font-size: 0.92rem; line-height: 1.6; }
 
+/* SCRIPT BLOCKS (inside accordions) */
+.sblock { background: var(--off); border-radius: 12px; padding: 20px 22px; margin-top: 14px; }
+.sblock:first-child { margin-top: 0; }
+.sblock-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 8px; }
+.sblock p { color: var(--txt); font-size: 0.95rem; line-height: 1.7; }
+.sblock p strong { color: var(--txt); font-weight: 600; }
+
 /* FAQ */
 .faq-list { display: flex; flex-direction: column; gap: 14px; max-width: 760px; margin: 0 auto; }
 .accordion { background: #fff; border: 1.5px solid var(--line); border-radius: 16px; overflow: hidden; transition: border-color 0.25s; }
@@ -234,7 +241,7 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,0.45); text-align
     <div class="section-head">
       <span class="eyebrow">Everything below is yours, for free</span>
       <h2 class="h2">A complete ad funnel, built specifically for Kelly Roofing.</h2>
-      <p class="lead" style="margin: 0 auto;">9 image ad concepts ready for Higgsfield, a high-converting mobile-first landing page already live, and the strategy to put it all together. No video scripts, per your team's preference. Yours to use whether we work together or not.</p>
+      <p class="lead" style="margin: 0 auto;">9 image ad concepts ready for Higgsfield, 3 talking-head video scripts you can film on a phone, and a high-converting mobile-first landing page already live. Yours to use whether we work together or not.</p>
     </div>
     <div class="cards-3">
       <div class="card">
@@ -244,13 +251,13 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,0.45); text-align
       </div>
       <div class="card">
         <div class="card-num">02</div>
-        <h3>Custom Landing Page</h3>
-        <p>One self-contained, mobile-first lead capture page built around your 50+ year hurricane-tested story. Pain section, social proof, founder block, and a 6-question lead filter form. Already live, you can preview it below.</p>
+        <h3>3 Video Ad Scripts</h3>
+        <p>Three distinct talking-head scripts for Ken or any Kelly team member. One pain hook, one proof story, one contrarian insight. Each comes with a phone-camera filming brief. No videos in market today, every one of these is open white space.</p>
       </div>
       <div class="card">
         <div class="card-num">03</div>
-        <h3>Funnel Strategy &amp; Brief</h3>
-        <p>The full Research Brief and Funnel Consistency Blueprint. The angle no other Florida roofer can copy, the avatar pain language pulled from real Reddit threads, and the proof points that matter. Yours to keep.</p>
+        <h3>Custom Landing Page</h3>
+        <p>One self-contained, mobile-first lead capture page built around your 50+ year hurricane-tested story. Pain section, social proof, founder block, and a 6-question lead filter form. Already live, you can preview it below.</p>
       </div>
     </div>
   </div>
@@ -395,11 +402,60 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,0.45); text-align
   </div>
 </section>
 
+<!-- 5. VIDEO SCRIPTS -->
+<section class="fade">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Deliverable 02</span>
+      <h2 class="h2">3 talking-head video scripts, ready to film on a phone.</h2>
+      <p class="lead" style="margin: 0 auto;">Three completely distinct angles for Ken or any Kelly team member. Each one is built for a different type of buyer and written in your family-business voice. No talking-head ads in market today, every one of these is open white space.</p>
+    </div>
+    <div class="faq-list" style="margin-top:48px;">
+      <div class="accordion" id="vid1">
+        <button class="acc-head" onclick="toggle('vid1')">Script 1: "Pretty sure my contractor has no idea" (Pain / Circumstance)<span class="acc-icon">+</span></button>
+        <div class="acc-body" id="vid1-body">
+          <div class="acc-body-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>Calls out the homeowner who has been burned (or fears being burned) by an incompetent contractor, then positions Kelly as the only roofer with a 50-year hurricane-tested receipt.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>If you have ever stood in your driveway, looked up at your roof, and thought "pretty sure my last contractor had no idea what they were doing"... you are not the only one. After Hurricane Ian, half the homeowners in Southwest Florida are thinking the exact same thing right now.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>I am Ken Kelly. My dad started Kelly Roofing in Naples in 1972 and I took it over in 1993. Since then we have replaced or maintained over 50,000 Florida roofs and weathered every hurricane in Southwest Florida along the way. So let me tell you something nobody else will.</p><p style="margin-top:10px;">When you call three roofers and you get three completely different quotes, the cheapest one is almost always using the wrong fasteners for our wind code, the wrong underlayment for our heat, and the wrong flashing for our rainy season. Eight years from now you are paying to replace that exact same roof. The middle quote is sometimes worse, because at least the cheap guy is honest about being cheap. We have seen it on more than 50,000 roofs across this region.</p><p style="margin-top:10px;">If you want a roof that will still be on your house in 2056 instead of in a landfill in 2032, you need a roofer that has been doing this in Naples for fifty years. We have. We are still here. We will still be here when you need warranty service. That is the entire reason my dad started this business and the reason three generations of my family still work in it today.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you want a free, honest estimate from a Kelly Roofing inspector, click the button below this video, fill out the short form on the next page, and a real person from our office will call you within one business day to set up your free on-site inspection. No pressure, no salesman at your kitchen table. Just the number you can actually trust.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><p><strong>Environment:</strong> Standing on a finished tile roof Kelly recently completed, palm trees and Naples residential neighborhood softly visible behind.<br><strong>Camera:</strong> Phone propped on the roof ridge or held by a crew member at eye level.<br><strong>Framing:</strong> Medium shot, chest and above, slight headroom showing the roof line.<br><strong>Lighting:</strong> Late afternoon golden hour Florida sun.<br><strong>Energy:</strong> Direct, slightly frustrated on behalf of homeowners. Calm authority, not aggression.<br><strong>Wardrobe:</strong> Kelly green or dark green polo. Avoid navy, orange, neon green, or purple.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion" id="vid2">
+        <button class="acc-head" onclick="toggle('vid2')">Script 2: "50,000 roofs since 1972" (Result / Case Study)<span class="acc-icon">+</span></button>
+        <div class="acc-body" id="vid2-body">
+          <div class="acc-body-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>The 50,000-roof receipt is the only proof point in Florida roofing that is unmovable, unmatched, and impossible to fake. Lead with the number.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>Fifty thousand. That is how many Florida roofs Kelly Roofing has put on, replaced, or maintained since my dad started this company in Naples in 1972. There is no other roofing contractor in Southwest Florida that can tell you that number, and I think that matters more than any review or rating.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>I am Ken Kelly. Here is the thing about that 50,000 number. It is not a marketing number. It is fifty years of literally being on Florida roofs, weathering every hurricane that has come through Naples, Bonita Springs, Marco Island, Fort Myers, and Sarasota. We have seen what fails, what holds, what insurance actually covers, what lasts ten years versus thirty versus fifty.</p><p style="margin-top:10px;">Most homeowners do not know what to look for, so they get three quotes and pick the one in the middle, hoping it is fair. But none of those quotes will tell you what the materials look like after eight summers in this heat, or what the fasteners do in a 130 mile per hour wind. We have replaced more roofs in this region than anyone, so we know exactly what to put on a Florida home and exactly what to avoid.</p><p style="margin-top:10px;">We treat every roof like it is going on our own house, because for three generations of Kellys, this is our house too. A Kelly roof is a worry-free roof for the next 50 years. That is the entire promise.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you want a free written estimate from a roofer that has actually been here for half a century, click the button below this video, fill out the short form on the next page, and we will call you within one business day to set up your free inspection. No high-pressure sales, no obligation. Just the number from the only roofer in Florida with 50,000 roofs behind them.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><p><strong>Environment:</strong> Inside Kelly Roofing's Naples office or warehouse with company trucks or wall of awards softly visible in background.<br><strong>Camera:</strong> Phone at eye level on a small tripod or propped on a counter, talking directly to the lens.<br><strong>Framing:</strong> Medium shot, chest up.<br><strong>Lighting:</strong> Natural window light, diffused.<br><strong>Energy:</strong> Calm, confident, family-business pride. Slow, measured pace.<br><strong>Wardrobe:</strong> Kelly green or dark green polo. Avoid navy, orange, neon green, or purple.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion" id="vid3">
+        <button class="acc-head" onclick="toggle('vid3')">Script 3: "The cheapest roof is the most expensive" (Contrarian / Insight)<span class="acc-icon">+</span></button>
+        <div class="acc-body" id="vid3-body">
+          <div class="acc-body-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>Contrarian insight that challenges the homeowner's default belief that getting three quotes and picking the middle one is smart. Reveals the 8-year math that nobody explains.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>I am about to say something a lot of Florida homeowners do not want to hear. The cheapest roof you can buy in Southwest Florida right now is the most expensive roof you will ever own. And it is not even close. Here is what happens.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>I am Ken Kelly. I have been running Kelly Roofing since 1993 and my dad started this company back in 1972. After 50 years and more than 50,000 roofs in Southwest Florida, we have seen exactly what happens when a homeowner picks the cheapest quote.</p><p style="margin-top:10px;">Year one looks fine. Year three you start seeing tile cracks the contractor will not warranty because they used the wrong fasteners for our wind code. Year five there is water under the underlayment and you do not know it yet. Year eight your insurance company sends an inspector, tells you the roof is failing, and drops your policy.</p><p style="margin-top:10px;">Now you are paying for the entire roof a second time, plus permit, plus tear-off, plus disposal, plus the water damage to your ceiling that nobody is going to cover. Your "cheap" roof just cost you sixty thousand dollars and an insurance nightmare.</p><p style="margin-top:10px;">A Kelly roof is built to be on your house for the next fifty years, not eight. We are the same family business that put on your neighbor's roof in 1985, and we will still be here in 2056 when your kids inherit the house. That is the entire difference.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you are getting roof quotes right now and you want to know what is actually different between the cheapest one and the right one for Florida, click the button below this video, fill out the short form on the next page, and we will call you within one business day to walk your roof for free and show you exactly what to look for. No pressure, no obligation, just the inside knowledge from 50,000 roofs.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><p><strong>Environment:</strong> Outside in front of an active or recently finished roofing job, palm trees and a Naples-style home in the background.<br><strong>Camera:</strong> Phone propped on the side of a Kelly truck or held by a crew member at eye level.<br><strong>Framing:</strong> Medium shot, chest up, with the roof line and palm trees softly visible behind.<br><strong>Lighting:</strong> Mid-morning daylight, natural shadow on one side.<br><strong>Energy:</strong> Direct, matter-of-fact, slightly contrarian but never preachy. Confident expert sharing inside knowledge with a friend.<br><strong>Wardrobe:</strong> Kelly green or dark green polo. Avoid navy, orange, neon green, or purple.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 6. LANDING PAGE PREVIEW -->
 <section class="off fade">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Deliverable 02</span>
+      <span class="eyebrow">Deliverable 03</span>
       <h2 class="h2">Your custom landing page, already live.</h2>
       <p class="lead" style="margin: 0 auto;">Mobile-first, self-contained, and built around your 50+ year hurricane story. Every section is tied to a specific avatar pain or proof point from the research brief. Scroll the live preview below.</p>
     </div>
