@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Smiles Included: a custom Meta ads funnel built around All-on-4 implant demand in Florida. 9 ad concepts, 3 video scripts, and a dedicated landing page.">
+<title>Smiles Included | Custom Meta Ads Funnel by Relight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #00305A;
+  --navy-deep: #001f3a;
+  --gold: #FDD762;
+  --gold-light: rgba(253,215,98,0.16);
+  --bg: #ffffff;
+  --off: #f7fafc;
+  --line: #e5edf4;
+  --txt: #1a2332;
+  --sub: #5f7388;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Inter', sans-serif; color: var(--txt); background: var(--bg); line-height: 1.6; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.dm { font-family: 'DM Serif Display', serif; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.wrap-sm { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+.eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 14px; display: inline-block; }
+.h2 { font-size: clamp(2rem, 3.4vw, 3.2rem); line-height: 1.08; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 14px; }
+.lead { color: var(--sub); max-width: 700px; margin: 0 auto; }
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.nav-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.nav img { height: 34px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 22px; border-radius: 999px; font-weight: 700; }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-outline { border: 1px solid var(--line); color: var(--txt); }
+.hero { background: linear-gradient(135deg, var(--navy-deep) 0%, #083862 55%, var(--navy) 100%); color: #fff; text-align: center; padding: 92px 0 0; overflow: visible; }
+.hero-logo { height: 52px; margin: 0 auto 24px; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4.3rem); line-height: 1.06; margin: 0 0 18px; }
+.hero p { color: rgba(255,255,255,0.78); max-width: 700px; margin: 0 auto 26px; }
+.kicker { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(253,215,98,0.34); background: rgba(253,215,98,0.12); border-radius: 999px; padding: 10px 18px; margin-bottom: 24px; font-size: 0.8rem; font-weight: 700; color: #fff3b6; }
+.kicker .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.video-wrap { max-width: 920px; aspect-ratio: 16 / 9; border-radius: 24px; overflow: hidden; background: #0c2034; box-shadow: 0 40px 90px rgba(0,0,0,0.34); margin: 0 auto -110px; position: relative; }
+.video-ph { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)), url('https://cdn.dentalcarealliance.net/system/test/TnVKvOEIOUQkbphPT8ab9YSCLMJ1NkDQOEQrUOXP.jpg') center/cover; }
+.play { width: 92px; height: 92px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; box-shadow: 0 0 0 18px rgba(253,215,98,0.12); }
+.play:before { content: ''; margin-left: 5px; border-left: 24px solid var(--navy); border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+.hero-cta { padding: 28px 0 170px; }
+section { padding: 96px 0; }
+.bleed-top { padding-top: 170px; }
+.off { background: var(--off); }
+.center { text-align: center; }
+.cards3, .ads, .steps, .cases { display: grid; gap: 22px; }
+.card, .step, .case, .accordion, .qa, .ad { background: #fff; border: 1px solid var(--line); border-radius: 22px; }
+.card, .step, .case, .qa { padding: 26px; }
+.num { color: var(--gold); font-size: 1.75rem; line-height: 1; margin-bottom: 12px; font-family: 'DM Serif Display', serif; }
+.card h3, .step h3, .case h3 { margin: 0 0 10px; font-size: 1.25rem; }
+.card p, .step p, .case p, .qa p { margin: 0; color: var(--sub); }
+.quote { border-left: 4px solid var(--gold); background: var(--gold-light); border-radius: 0 18px 18px 0; padding: 20px 22px; }
+.quote p { margin: 0; font-size: 1.05rem; }
+.why-grid { display: grid; gap: 36px; align-items: start; }
+.bullets { display: grid; gap: 18px; }
+.bullets div strong { display: block; margin-bottom: 4px; }
+.bullets div span { color: var(--sub); }
+.phase { margin-bottom: 56px; }
+.phase:last-child { margin-bottom: 0; }
+.phase-label { text-align: center; margin-bottom: 22px; color: var(--sub); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.ad img { width: 100%; height: auto; border-bottom: 1px solid var(--line); border-radius: 22px 22px 0 0; }
+.ad-copy { padding: 18px 18px 20px; }
+.ad-copy strong { display: block; margin-bottom: 6px; }
+.ad-copy p { margin: 0; color: var(--sub); font-size: 0.94rem; }
+.accordion { padding: 24px; margin-bottom: 18px; }
+.accordion h3 { margin: 0 0 12px; font-size: 1.2rem; }
+.sblock { background: var(--off); border-radius: 18px; padding: 18px; margin-top: 14px; }
+.slabel { display: inline-block; margin-bottom: 8px; color: var(--gold); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; }
+.sblock p { margin: 0; color: var(--txt); }
+.phone { width: min(100%, 410px); margin: 0 auto; background: #0f1720; padding: 14px; border-radius: 38px; box-shadow: 0 26px 70px rgba(0,48,90,0.16); }
+.phone iframe { width: 100%; height: 740px; border: 0; border-radius: 28px; background: #fff; }
+.qa-grid, .flow, .steps, .cases { grid-template-columns: 1fr; }
+.flow { display: grid; gap: 18px; }
+.flow .step { text-align: center; }
+.cta-band { background: linear-gradient(135deg, var(--navy-deep), var(--navy)); color: #fff; border-radius: 34px; padding: 28px; display: grid; gap: 18px; align-items: center; }
+.cta-band p { margin: 0; color: rgba(255,255,255,0.76); }
+.calendly { border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: #fff; box-shadow: 0 20px 70px rgba(0,48,90,0.08); }
+.calendly iframe { width: 100%; height: 720px; border: 0; }
+footer { padding: 48px 0 80px; color: var(--sub); text-align: center; }
+@media (min-width: 760px) {
+  .cards3, .steps, .cases { grid-template-columns: repeat(3, 1fr); }
+  .ads { grid-template-columns: repeat(2, 1fr); }
+  .qa-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .flow { grid-template-columns: repeat(5, 1fr); }
+  .why-grid, .cta-band { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1040px) {
+  .ads { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <img src="https://cdn.dentalcarealliance.net/system/test/f7fAZucuCHTaAnsCamwwTaYs6ycBKIBCQAQgK6Fv.svg" alt="Smiles Included logo">
+    <a class="btn btn-gold" href="#calendly">Let's get this live</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap-sm">
+    <img class="hero-logo" src="https://cdn.dentalcarealliance.net/system/test/f7fAZucuCHTaAnsCamwwTaYs6ycBKIBCQAQgK6Fv.svg" alt="Smiles Included logo">
+    <div class="kicker"><span class="dot"></span>Built exclusively for Smiles Included</div>
+    <h1 class="dm">I will help you get 10 new implant consults with this Meta ads funnel I created for you.</h1>
+    <p>Your public-site copy already reveals the strongest growth angle: denture frustration and the desire for a fixed smile. I built the funnel around All-on-4, not generic cosmetic messaging, and localized it to the Tampa Bay East office cluster.</p>
+  </div>
+  <div class="wrap">
+    <div class="video-wrap">
+      <div class="video-ph">
+        <!-- Loom recording brief:
+        1. Open by saying the strongest opportunity is All-on-4, not broad cosmetic traffic.
+        2. Call out the public pain phrase: dentures that slip or fall out while you eat.
+        3. Explain that the current ads look generic, angle-light, and not video-led.
+        4. Walk through the 9 image concepts, 3 scripts, and focused landing page.
+        5. Close with the Calendly embed below.
+        -->
+        <div class="play"></div>
+      </div>
+    </div>
+    <div class="hero-cta"><a class="btn btn-gold" href="#calendly">Let's get this live</a></div>
+  </div>
+</header>
+
+<section class="bleed-top">
+  <div class="wrap center">
+    <span class="eyebrow">Everything below is yours, for free</span>
+    <h2 class="h2">A complete implant funnel, built specifically for Smiles Included.</h2>
+    <p class="lead">The deliverables below turn a generic multi-service brand into one focused acquisition path for All-on-4 and implant demand in Tampa, Plant City, Lakeland, Winter Haven, Bartow, and Sun City Center.</p>
+    <div class="cards3" style="margin-top:34px;">
+      <div class="card"><div class="num">01</div><h3>9 image ad concepts</h3><p>Each concept is built around denture pain, fixed-smile education, trust, and consult conversion.</p></div>
+      <div class="card"><div class="num">02</div><h3>3 video scripts</h3><p>Short, founder-agnostic scripts that explain the offer in a calm, trust-first voice.</p></div>
+      <div class="card"><div class="num">03</div><h3>Focused landing page</h3><p>A cleaner conversion path than sending paid traffic to a broad, multi-service homepage.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap why-grid">
+    <div>
+      <span class="eyebrow">Why This Matters</span>
+      <h2 class="h2">The strongest public angle is restorative, not cosmetic.</h2>
+      <div class="quote"><p>"Are you embarrassed or frustrated with traditional dentures that slip or fall out while you eat?"</p></div>
+    </div>
+    <div class="bullets">
+      <div><strong>Your current opportunity is hidden.</strong><span>The public site has stronger implant pain language than the visible ad notes suggest.</span></div>
+      <div><strong>Higher-consideration offers need more trust.</strong><span>That is why this version introduces consult-first messaging and video scripts.</span></div>
+      <div><strong>The landing page should do one job.</strong><span>All-on-4 traffic should not have to navigate a broad site menu before converting or guessing which office to choose.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap center">
+    <span class="eyebrow">Image Ads</span>
+    <h2 class="h2">Nine ad concepts across the full funnel.</h2>
+  </div>
+
+  <div class="wrap phase">
+    <div class="phase-label">Phase 1 - Generate interest</div>
+    <div class="ads">
+      <div class="ad"><img src="./images/1.svg" alt="Pain ad concept"><div class="ad-copy"><strong>Pain / Problem</strong><p>Calls out the moment dentures slip while eating, which is the most emotionally specific pain on the site.</p></div></div>
+      <div class="ad"><img src="./images/2.svg" alt="Education ad concept"><div class="ad-copy"><strong>Education / Tip</strong><p>Separates fixed full-arch support from removable dentures in one clean visual.</p></div></div>
+      <div class="ad"><img src="./images/3.svg" alt="Myth-bust ad concept"><div class="ad-copy"><strong>FAQ / Myth-Bust</strong><p>Handles the common misconception that All-on-4 is just another denture.</p></div></div>
+    </div>
+  </div>
+
+  <div class="wrap phase">
+    <div class="phase-label">Phase 2 - Build trust</div>
+    <div class="ads">
+      <div class="ad"><img src="./images/4.svg" alt="Behind the scenes ad concept"><div class="ad-copy"><strong>Behind the Scenes</strong><p>Shows a calm implant consult environment to reduce perceived treatment fear.</p></div></div>
+      <div class="ad"><img src="./images/5.svg" alt="Social proof ad concept"><div class="ad-copy"><strong>Social Proof</strong><p>Uses the strongest clean proof line available from public copy: fixed, permanent dentures.</p></div></div>
+      <div class="ad"><img src="./images/6.svg" alt="Process ad concept"><div class="ad-copy"><strong>Process</strong><p>Makes the path simple: fit, consult, plan.</p></div></div>
+    </div>
+  </div>
+
+  <div class="wrap phase">
+    <div class="phase-label">Phase 3 - Convert</div>
+    <div class="ads">
+      <div class="ad"><img src="./images/7.svg" alt="Local trust ad concept"><div class="ad-copy"><strong>Community / Local</strong><p>Anchors trust in a tighter Tampa Bay East office cluster instead of broad statewide messaging.</p></div></div>
+      <div class="ad"><img src="./images/8.svg" alt="Free offer ad concept"><div class="ad-copy"><strong>Free Offer</strong><p>Keeps the conversion action simple: book the consult first.</p></div></div>
+      <div class="ad"><img src="./images/9.svg" alt="Lead hero ad concept"><div class="ad-copy"><strong>Lead / Hero</strong><p>Closes on the real emotional payoff: feels like real teeth.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <span class="eyebrow">Video Scripts</span>
+    <h2 class="h2">Three scripts, three different reasons to care.</h2>
+  </div>
+  <div class="wrap-sm">
+    <div class="accordion">
+      <h3>Script 1 - Stop Hiding At Mealtimes</h3>
+      <div class="sblock"><span class="slabel">Hook</span><p>If your dentures slip or fall out while you eat, you already know how exhausting that feels.</p></div>
+      <div class="sblock"><span class="slabel">Body</span><p>This script frames All-on-4 as the answer for people who want to stop thinking about their teeth every time they sit down for a meal.</p></div>
+      <div class="sblock"><span class="slabel">CTA</span><p>Click below, review the page, fill out the short form, and book your implant consult.</p></div>
+    </div>
+    <div class="accordion">
+      <h3>Script 2 - A Smile That Stays Put</h3>
+      <div class="sblock"><span class="slabel">Hook</span><p>The difference between fixed and removable changes how the entire day feels.</p></div>
+      <div class="sblock"><span class="slabel">Body</span><p>This script leans on the public-site promise of permanent dentures that remain fixed in the mouth, plus the 12-office footprint.</p></div>
+      <div class="sblock"><span class="slabel">CTA</span><p>Use the landing page to qualify fit before the office follows up.</p></div>
+    </div>
+    <div class="accordion">
+      <h3>Script 3 - This Is Not Just Another Cosmetic Fix</h3>
+      <div class="sblock"><span class="slabel">Hook</span><p>The real problem is not surface beauty. It is function, comfort, and confidence.</p></div>
+      <div class="sblock"><span class="slabel">Body</span><p>This script reframes implants as a stability conversation, not a vanity conversation, which is where the public copy is stronger.</p></div>
+      <div class="sblock"><span class="slabel">CTA</span><p>Move from curiosity to consult with one clear next step.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap center">
+    <span class="eyebrow">Landing Page</span>
+    <h2 class="h2">A focused page for a focused offer.</h2>
+    <p class="lead">This replaces the generic homepage path with one implant-specific conversion flow for a single local office cluster.</p>
+  </div>
+  <div class="wrap">
+    <div class="phone"><iframe src="./landing-page/" title="Smiles Included landing page preview"></iframe></div>
+    <div class="qa-grid" style="margin-top:28px;">
+      <div class="qa"><h3>Why not send them to the website?</h3><p>Because broad dental navigation weakens paid traffic. The landing page keeps one problem, one treatment, and one CTA in view.</p></div>
+      <div class="qa"><h3>Why this page converts better</h3><p>It matches ad language directly to denture instability pain and makes the next step an implant consult with nearest-office intent built in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <span class="eyebrow">System Flow</span>
+    <h2 class="h2">How the funnel works</h2>
+    <div class="flow">
+      <div class="step"><div class="num">01</div><h3>Meta ads</h3><p>Pain, education, trust</p></div>
+      <div class="step"><div class="num">02</div><h3>Landing page</h3><p>One offer, one argument</p></div>
+      <div class="step"><div class="num">03</div><h3>Qualification</h3><p>Short fit questions</p></div>
+      <div class="step"><div class="num">04</div><h3>Follow-up</h3><p>Nearest office reaches out</p></div>
+      <div class="step"><div class="num">05</div><h3>Consult</h3><p>Implant treatment plan</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <span class="eyebrow" style="color:#fff; opacity:0.78;">Next Step</span>
+        <h2 class="h2" style="color:#fff; margin-bottom:10px;">This can go live as an All-on-4 lead path.</h2>
+        <p>The strategy is simple: stop looking like every other cosmetic dental ad and start speaking to the local patient who is ready for a fixed smile.</p>
+      </div>
+      <div style="text-align:right;"><a class="btn btn-gold" href="#calendly">Let's get this live</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <span class="eyebrow">How It Works</span>
+    <h2 class="h2">Three simple steps from preview to launch.</h2>
+    <div class="steps" style="margin-top:28px;">
+      <div class="step"><div class="num">01</div><h3>Approve the offer focus</h3><p>All-on-4 stays the primary paid-acquisition service.</p></div>
+      <div class="step"><div class="num">02</div><h3>Swap in real case assets</h3><p>Before-and-after imagery and doctor-specific proof will strengthen performance.</p></div>
+      <div class="step"><div class="num">03</div><h3>Launch and test</h3><p>Run the ad set, compare angles, and push budget toward the strongest message.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap center">
+    <span class="eyebrow">Case Logic</span>
+    <h2 class="h2">Why this angle should outperform generic dental creative.</h2>
+    <div class="cases" style="margin-top:28px;">
+      <div class="case"><h3>Specific pain</h3><p>The site already gives us a real-life trigger: dentures slipping while eating.</p></div>
+      <div class="case"><h3>Higher ticket</h3><p>Implant demand is economically stronger than pushing broad cleanings or generic cosmetic interest.</p></div>
+      <div class="case"><h3>Cleaner CTA</h3><p>A consult-first path is more believable than asking cold traffic to explore the whole site.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="calendly">
+  <div class="wrap center">
+    <span class="eyebrow">Book The Call</span>
+    <h2 class="h2">If you want this live, grab a time below.</h2>
+  </div>
+  <div class="wrap">
+    <div class="calendly"><iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Book a 30-minute call with Arthur"></iframe></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Built for Smiles Included from public-site research and ad-review notes.</div>
+</footer>
+</body>
+</html>

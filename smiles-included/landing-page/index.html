@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="See if All-on-4 is the right fit for your smile. Smiles Included, Dental Associates of Florida, built this Florida implant consult funnel for adults tired of dentures that slip.">
+<title>All-on-4 Implant Consult | Smiles Included</title>
+<style>
+:root {
+  --navy: #00305A;
+  --aqua: #6ED7C8;
+  --gold: #FDD762;
+  --bg: #FFFFFF;
+  --surface: #F5F9FC;
+  --line: #DCE6EF;
+  --text: #12324D;
+  --muted: #53708C;
+  --head: Georgia, "Times New Roman", serif;
+  --body: Arial, Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--body); color: var(--text); background: var(--bg); line-height: 1.6; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.nav { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.96); border-bottom: 1px solid var(--line); }
+.nav-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.logo { height: 36px; width: auto; }
+.btn { display: inline-block; background: var(--navy); color: #fff; padding: 15px 24px; border-radius: 999px; font-weight: 700; }
+.btn.alt { background: var(--aqua); color: var(--navy); }
+.hero { background: linear-gradient(135deg, #f7fbfd 0%, #edf7f8 45%, #ffffff 100%); padding: 56px 0 40px; }
+.hero-grid { display: grid; gap: 28px; align-items: center; }
+.eyebrow { display: inline-block; margin-bottom: 12px; color: var(--navy); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+h1, h2, h3 { font-family: var(--head); color: var(--navy); margin: 0 0 12px; }
+h1 { font-size: clamp(2.2rem, 4vw, 4.1rem); line-height: 1.06; }
+.hero-sub { font-size: 1.06rem; color: var(--muted); max-width: 620px; margin-bottom: 20px; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.badge { border: 1px solid rgba(0,48,90,0.16); color: var(--navy); background: #fff; border-radius: 999px; padding: 8px 12px; font-size: 13px; font-weight: 700; }
+.hero-card { background: #fff; border: 1px solid var(--line); border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,48,90,0.08); }
+.hero-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.proof-bar { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
+.proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 18px 0; }
+.proof-item strong { display: block; color: var(--navy); font-size: 1.35rem; }
+.proof-item span { color: var(--muted); font-size: 0.88rem; }
+section { padding: 64px 0; }
+.soft { background: var(--surface); }
+.center { text-align: center; }
+.section-lead { max-width: 700px; margin: 0 auto 28px; color: var(--muted); }
+.icon-grid, .cards, .faq-grid { display: grid; gap: 16px; }
+.icon-card, .card, .faq { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 22px; }
+.icon-row { display: grid; grid-template-columns: 50px 1fr; gap: 14px; align-items: start; }
+.icon { width: 50px; height: 50px; border-radius: 14px; background: rgba(110,215,200,0.18); color: var(--navy); display: grid; place-items: center; font-size: 24px; font-weight: 700; }
+.card p, .icon-card p, .faq p { color: var(--muted); margin: 0; }
+.pull { background: var(--navy); color: #fff; border-radius: 22px; padding: 26px; }
+.pull p { margin: 0; font-size: 1.02rem; }
+.image-row { display: grid; gap: 16px; }
+.image-row img, .placeholder { width: 100%; border-radius: 18px; border: 1px solid var(--line); background: #fff; min-height: 220px; object-fit: cover; }
+.placeholder { display: grid; place-items: center; color: var(--muted); padding: 24px; text-align: center; }
+.form-wrap { display: grid; gap: 24px; align-items: start; }
+form { background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
+label { display: block; font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+input, select, textarea { width: 100%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; font: inherit; color: var(--text); margin-bottom: 16px; }
+textarea { min-height: 120px; resize: vertical; }
+.small { color: var(--muted); font-size: 0.86rem; }
+.cta-band { background: linear-gradient(135deg, var(--navy) 0%, #0d436e 100%); color: #fff; border-radius: 28px; padding: 28px; display: grid; gap: 18px; align-items: center; }
+.footer { padding: 40px 0 56px; border-top: 1px solid var(--line); }
+.footer p { color: var(--muted); margin: 0; }
+@media (min-width: 760px) {
+  .hero-grid, .form-wrap, .cta-band { grid-template-columns: 1.05fr 0.95fr; }
+  .proof-grid { grid-template-columns: repeat(4, 1fr); }
+  .icon-grid, .cards, .faq-grid, .image-row { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <img class="logo" src="https://cdn.dentalcarealliance.net/system/test/f7fAZucuCHTaAnsCamwwTaYs6ycBKIBCQAQgK6Fv.svg" alt="Smiles Included logo">
+    <a class="btn" href="#form">Book My Implant Consult</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">All-on-4 In Tampa Bay East</span>
+      <h1>Stop worrying about dentures that slip.</h1>
+      <p class="hero-sub">This page is built for adults in Tampa, Plant City, Lakeland, Winter Haven, Bartow, and Sun City Center who want a more secure, permanent-feeling solution. All-on-4 is positioned here as the fixed-smile answer, not another generic cosmetic ad.</p>
+      <div class="hero-badges">
+        <span class="badge">Tampa Bay East office cluster</span>
+        <span class="badge">Financing mentioned publicly</span>
+        <span class="badge">Consult-first funnel</span>
+      </div>
+      <a class="btn alt" href="#form">See If I Qualify</a>
+    </div>
+    <div class="hero-card">
+      <img src="https://cdn.dentalcarealliance.net/system/test/TnVKvOEIOUQkbphPT8ab9YSCLMJ1NkDQOEQrUOXP.jpg" alt="Bright Smiles Included hero image">
+    </div>
+  </div>
+</header>
+
+<div class="proof-bar">
+  <div class="wrap proof-grid">
+    <div class="proof-item"><strong>6</strong><span>local offices in this cluster</span></div>
+    <div class="proof-item"><strong>All-on-4</strong><span>Fixed full-arch option</span></div>
+    <div class="proof-item"><strong>1st step</strong><span>Implant consult</span></div>
+    <div class="proof-item"><strong>Flexible</strong><span>Payment options noted</span></div>
+  </div>
+</div>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Why This Page</span>
+      <h2>This is for the person who is tired of managing around the problem.</h2>
+      <p class="section-lead">The strongest public copy on the site is not broad family dentistry or generic cosmetic language. It is the pain of unstable dentures and the promise of a smile that stays fixed. This version localizes the message for the Tampa to Lakeland corridor.</p>
+    </div>
+    <div class="icon-grid">
+      <div class="icon-card"><div class="icon-row"><div class="icon">1</div><div><h3>Eat without hesitation</h3><p>Public copy directly calls out dentures that slip or fall out while you eat. That is the real moment this funnel is built around.</p></div></div></div>
+      <div class="icon-card"><div class="icon-row"><div class="icon">2</div><div><h3>Feel secure again</h3><p>All-on-4 is framed here as a fixed option that does not move around like removable dentures.</p></div></div></div>
+      <div class="icon-card"><div class="icon-row"><div class="icon">3</div><div><h3>Get a clear next step</h3><p>Instead of sending people to a generic website, this page filters for real implant interest and moves them to consult.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pull">
+      <p><strong>Verbatim anchor:</strong> “They give you the natural feel and appearance of having real teeth.”</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">What Makes This Offer Work</span>
+      <h2>Security first, beauty second.</h2>
+      <p class="section-lead">That is the angle competitors often miss. The strongest buyer is not only chasing a prettier smile. They want less stress, better function, and more peace of mind.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>Fixed, not removable</h3><p>The All-on-4 service page frames the treatment as permanent dentures that remain fixed in the mouth.</p></div>
+      <div class="card"><h3>Confident, functional smile</h3><p>The implant copy emphasizes function and confidence, not just appearance.</p></div>
+      <div class="card"><h3>Consult before commitment</h3><p>The conversion action stays simple: find out whether you are a fit, then route the lead to the nearest Tampa Bay East office for follow-up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Available Assets</span>
+      <h2>Recovered site imagery</h2>
+      <p class="section-lead">The scraper missed most images, but the site source exposed a few usable assets. This page uses those first and then falls back to simple placeholders where the source data is thin.</p>
+    </div>
+    <div class="image-row">
+      <img src="https://cdn.dentalcarealliance.net/system/test/3CZuiAiugX0fITPH7JxUATOFVe3igT3ZHUkJsAsS.jpg" alt="Smiles Included office hero asset">
+      <img src="https://cdn.dentalcarealliance.net/system/test/9hKkB1sqw50XaKOT8gP4OckaDd0mTD4c5UEPvOt7.jpg" alt="Smiles Included service page image">
+      <div class="placeholder"><!-- Placeholder: replace with real implant case image if client engages -->Real implant case imagery should go here once the practice shares true before-and-after assets.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions this page answers fast</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq"><h3>Is this just another denture?</h3><p>No. The page reframes All-on-4 as a fixed full-arch option, not a removable workaround.</p></div>
+      <div class="faq"><h3>What if I am worried about cost?</h3><p>The site already references flexible financing and monthly payment options, so the first step is checking fit before worrying about the full plan.</p></div>
+      <div class="faq"><h3>Why not send traffic to the homepage?</h3><p>Because the homepage is broad. This page narrows attention to one treatment, one problem, and one local office-cluster conversion path.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="form">
+  <div class="wrap form-wrap">
+    <div>
+      <span class="eyebrow">Consult Form</span>
+      <h2>See if All-on-4 is the right fit for your smile.</h2>
+      <p class="section-lead" style="margin:0 0 18px; text-align:left;">This form is designed to pre-qualify implant interest before the office follows up. It filters for the right conversation and routes leads to the closest office in the Tampa Bay East cluster.</p>
+      <div class="pull">
+        <p><strong>Current CTA chain:</strong> ad click -> focused landing page -> short qualification form -> implant consult follow-up.</p>
+      </div>
+    </div>
+    <form action="https://smilesincluded.com/dental-appointments-near-me" method="get">
+      <label for="name">Full name</label>
+      <input id="name" name="name" type="text" placeholder="Your name">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="you@example.com">
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" placeholder="Best number">
+      <label for="status">Which feels closest to your situation?</label>
+      <select id="status" name="status">
+        <option>I wear dentures and want something fixed</option>
+        <option>I have missing teeth and want a long-term solution</option>
+        <option>I have implants questions and need guidance</option>
+      </select>
+      <label for="timeframe">When are you hoping to start?</label>
+      <select id="timeframe" name="timeframe">
+        <option>As soon as possible</option>
+        <option>Within 30 days</option>
+        <option>Just researching for now</option>
+      </select>
+      <label for="office">Which office is closest to you?</label>
+      <select id="office" name="office">
+        <option>Tampa</option>
+        <option>Plant City</option>
+        <option>Lakeland</option>
+        <option>Winter Haven</option>
+        <option>Bartow</option>
+        <option>Sun City Center</option>
+      </select>
+      <label for="notes">What is the main problem you want to fix?</label>
+      <textarea id="notes" name="notes" placeholder="Tell us what you are dealing with"></textarea>
+      <button class="btn" type="submit">Book My Implant Consult</button>
+      <p class="small">Form currently routes into the live Smiles Included appointment path. Replace with the exact implant-office intake destination if the client engages.</p>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <span class="eyebrow" style="color:#fff; opacity:0.72;">Final CTA</span>
+        <h2 style="color:#fff;">A better implant funnel starts with a sharper first message.</h2>
+        <p style="color:rgba(255,255,255,0.76); margin:0;">This concept moves away from broad dentistry copy and speaks directly to denture instability, confidence, and fixed-smile outcomes for the Tampa Bay East office cluster.</p>
+      </div>
+      <div style="text-align:right;"><a class="btn alt" href="#form">Book My Implant Consult</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <img class="logo" src="https://cdn.dentalcarealliance.net/system/test/FrfCfqWY6TW2HcV9fp8zFYFP39cv3rdf3tlw2apI.svg" alt="Smiles Included footer logo">
+    <p>Built from public-site research for Smiles Included / Dental Associates of Florida.</p>
+  </div>
+</footer>
+</body>
+</html>
