@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Servicetechnieker HVAC gezocht bij Dima Ecotechnics | Bilzen, Limburg</title>
-<meta name="description" content="Dima Ecotechnics zoekt een ervaren servicetechnieker. Auto van de zaak, Mitsubishi en Daikin opleidingen betaald, directe lijn met Dirk, geen callcenter, grote projecten zoals Hotel Stayen en Maasmechelen Village. Solliciteer in 2 minuten.">
+<meta name="description" content="Dima Ecotechnics in Bilzen zoekt een ervaren servicetechnieker. Eigen bestelwagen, Mitsubishi- en Daikin-opleidingen betaald, werk in Limburg, klein hecht team. Solliciteer in 2 minuten, geen CV nodig.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -73,7 +73,7 @@ a { color: inherit; text-decoration: none; }
 .hero {
   background: linear-gradient(140deg, var(--navy-deep) 0%, var(--navy) 65%, #0d3144 100%);
   color: #fff;
-  padding: 56px 0 64px;
+  padding: 24px 0 44px;
   position: relative;
   overflow: hidden;
 }
@@ -92,10 +92,12 @@ a { color: inherit; text-decoration: none; }
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 36px;
+  gap: 24px;
   align-items: center;
   position: relative; z-index: 1;
 }
+.hero-image { order: -1; }
+.hero-image img { aspect-ratio: 16/9; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
@@ -412,7 +414,88 @@ h2.section-title {
 .compare-col.compare-other li { color: var(--text-muted); }
 .compare-col.compare-dima li { color: rgba(255,255,255,0.9); }
 
-/* FOUNDER */
+/* TEAM */
+.team { background: var(--surface); }
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-top: 24px;
+  align-items: start;
+}
+.team-photo {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+.team-photo img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.team-roles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.team-role {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.team-role h3 {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.team-role p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* PROCES */
+.proces { background: var(--bg); }
+.proces-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+.proces-step {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.proces-num {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 800;
+  font-size: 1rem;
+}
+.proces-step h3 {
+  font-family: var(--font-head); font-weight: 700;
+  font-size: 1.02rem;
+  margin-bottom: 4px;
+}
+.proces-step p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* FOUNDER (legacy, unused) */
 .founder {
   background: var(--navy-deep);
   color: #fff;
@@ -688,6 +771,8 @@ footer a { color: rgba(255,255,255,0.85); }
 
   .hero { padding: 84px 0 96px; }
   .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 48px; }
+  .hero-image { order: 0; }
+  .hero-image img { aspect-ratio: 4/3; }
   .btn { width: auto; padding: 17px 34px; }
 
   .statbar-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
@@ -700,6 +785,8 @@ footer a { color: rgba(255,255,255,0.85); }
   .compare-col { padding: 32px 28px; }
   .founder-stack { grid-template-columns: 1.2fr 1fr; gap: 36px; }
   .founder-photo-wrap { margin-bottom: 0; }
+  .team-grid { grid-template-columns: 1fr 1.2fr; gap: 44px; }
+  .proces-steps { grid-template-columns: 1fr 1fr; gap: 16px; }
   .form-card { padding: 40px 36px; }
   .form-row-2 { grid-template-columns: 1fr 1fr; gap: 18px; }
 }
@@ -736,11 +823,11 @@ footer a { color: rgba(255,255,255,0.85); }
           <span class="dot"></span>
           Vacature servicetechnieker, Bilzen
         </div>
-        <h1>Je hebt je koeltechnisch certificaat. Nu verdien je een <span class="accent">baas die het ook heeft.</span></h1>
-        <p class="hero-sub">Ervaren servicetechnieker gezocht in Limburg. Auto van de zaak, Mitsubishi en Daikin opleidingen betaald, en Dirk die zelf mee op de werf staat. Geen callcenter, geen onderaannemers, geen ritten van 100 km per dag.</p>
+        <h1>Werk als servicetechnieker in een <span class="accent">klein team dat je naam kent.</span></h1>
+        <p class="hero-sub">Dima Ecotechnics in Bilzen zoekt een ervaren servicetechnieker. Je krijgt je eigen bestelwagen, volledig betaalde Mitsubishi- en Daikin-opleidingen, en werk in je eigen regio. 's Avonds op tijd thuis.</p>
         <div class="hero-badges">
-          <span class="badge"><span class="check">&#10003;</span> Auto van de zaak</span>
-          <span class="badge"><span class="check">&#10003;</span> Mitsubishi &amp; Daikin betaald</span>
+          <span class="badge"><span class="check">&#10003;</span> Eigen bestelwagen</span>
+          <span class="badge"><span class="check">&#10003;</span> Opleidingen betaald</span>
           <span class="badge"><span class="check">&#10003;</span> Werk in Limburg</span>
         </div>
         <a href="#form" class="btn">Solliciteer in 2 minuten</a>
@@ -757,9 +844,9 @@ footer a { color: rgba(255,255,255,0.85); }
   <div class="wrap">
     <div class="statbar-grid">
       <div><div class="stat-num">15+</div><div class="stat-label">Jaar Dima</div></div>
-      <div><div class="stat-num">089/24</div><div class="stat-label">Eigen serviceafdeling</div></div>
-      <div><div class="stat-num">0 km</div><div class="stat-label">Naar callcenter</div></div>
-      <div><div class="stat-num">100%</div><div class="stat-label">Opleidingen betaald</div></div>
+      <div><div class="stat-num">Bilzen</div><div class="stat-label">Hoofdkantoor</div></div>
+      <div><div class="stat-num">Limburg</div><div class="stat-label">Werkregio</div></div>
+      <div><div class="stat-num">Diamond</div><div class="stat-label">Mitsubishi Dealer</div></div>
     </div>
   </div>
 </div>
@@ -768,25 +855,34 @@ footer a { color: rgba(255,255,255,0.85); }
 <section class="pain">
   <div class="wrap">
     <span class="section-eyebrow">Herkenbaar?</span>
-    <h2 class="pain-title">Je bent ervaren servicetechnieker, maar je werk voelt als een callcenter met een bestelwagen erbij.</h2>
-    <p class="section-sub">De reden dat servicetechniekers bij ons aankloppen is bijna altijd dezelfde. Dit zijn de vier pijnpunten die wij telkens horen, en hoe Dima hier wél anders in zit.</p>
+    <h2 class="pain-title">Is dit nog het werk waarvoor je servicetechnieker werd?</h2>
+    <p class="section-sub">De meeste servicetechniekers kloppen bij ons aan om dezelfde vier redenen. Misschien herken je er een paar in je huidige job.</p>
     <div class="icon-list">
       <div class="icon-item">
         <div class="icon-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
         </div>
         <div class="icon-content">
-          <h3>Het callcenter beslist je dag</h3>
-          <p>Planners die de installatie nooit hebben gezien, bepalen op welk uur je ergens moet zijn. Foute info van de klant, jij draait ervoor op.</p>
+          <h3>Je baas kent je naam niet, laat staan je sterktes</h3>
+          <p>In een grote keten ben je één van de honderden. Je presteert goed, niemand merkt het. Je hebt een idee, niemand hoort het.</p>
         </div>
       </div>
       <div class="icon-item">
         <div class="icon-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
         </div>
         <div class="icon-content">
-          <h3>Installaties van onderaannemers die er een zootje van maken</h3>
-          <p>Jij mag storingen oplossen die niet jouw werk zijn. Elke dag pleisters plakken op foute plaatsingen, zonder de monteur ooit te spreken.</p>
+          <h3>Je hebt geen vast aanspreekpunt als er iets is</h3>
+          <p>Vraag over een planning, een klant, een factuur? Een ander loket, een andere afdeling, een andere e-mail. Niemand voelt zich verantwoordelijk.</p>
+        </div>
+      </div>
+      <div class="icon-item">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        </div>
+        <div class="icon-content">
+          <h3>Beloofde opleidingen blijven maanden hangen</h3>
+          <p>"We komen er op terug." Ondertussen groeien je collega's uit de bus en jij blijft steken in dezelfde routines.</p>
         </div>
       </div>
       <div class="icon-item">
@@ -794,17 +890,8 @@ footer a { color: rgba(255,255,255,0.85); }
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
         </div>
         <div class="icon-content">
-          <h3>Opleidingen waar het HR team "eens naar kijkt"</h3>
-          <p>Een Mitsubishi Diamond of Daikin certificering kost tijd en geld. Bij de meeste grote ketens blijft dat maanden hangen bij "we zien wel".</p>
-        </div>
-      </div>
-      <div class="icon-item">
-        <div class="icon-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l3-9 6 18 3-9h3"></path></svg>
-        </div>
-        <div class="icon-content">
-          <h3>Ritten van 100 km voor één storing</h3>
-          <p>Elke dag meer tijd in de wagen dan op de werf. Avond thuis om 19 u, kinderen al gegeten. Dat wil jij ook niet.</p>
+          <h3>Je rijdt meer dan je werkt</h3>
+          <p>Elke dag een uur in de wagen naar een andere provincie. Om 18 u nog niet thuis, kinderen al aan tafel.</p>
         </div>
       </div>
     </div>
@@ -814,16 +901,16 @@ footer a { color: rgba(255,255,255,0.85); }
 <!-- OFFER -->
 <section class="offer">
   <div class="wrap">
-    <span class="section-eyebrow">Wat Dima jou concreet biedt</span>
-    <h2 class="section-title">Geen marketingpraat. Dit staat gewoon in je contract.</h2>
-    <p class="section-sub">Andere installateurs noemen dit "bijzondere voordelen". Bij ons is het standaard, want zo trek je goeie servicetechniekers aan.</p>
+    <span class="section-eyebrow">Wat je krijgt</span>
+    <h2 class="section-title">De voordelen van werken bij Dima.</h2>
+    <p class="section-sub">Geen mooie woorden. Gewoon wat er in je pakket zit vanaf dag één.</p>
     <div class="offer-grid">
-      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Auto van de zaak op je naam</strong><span>Bestelwagen gevuld met het juiste gereedschap, niet uit eigen zak of uit een gedeelde pool.</span></div></div>
-      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Mitsubishi en Daikin opleidingen betaald</strong><span>Wij boeken en betalen de certificeringen die jou koeltechnisch doen groeien. Tijdens de werkuren.</span></div></div>
-      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Eigen serviceafdeling op 089/24 19 14</strong><span>Geen callcenter tussen jou en de klant. Anne plant, Dirk adviseert, jij lost op.</span></div></div>
-      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Werk aan projecten met budget</strong><span>Hotel Stayen, Maasmechelen Village, VWR cleanrooms, Fagron, Nelson Labs. Verhalen waar je je vader over vertelt.</span></div></div>
-      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Dirk staat zelf mee op de werf</strong><span>15+ jaar koeltechnische ervaring, elke dag bereikbaar. Geen anonieme HR, geen onbereikbare CEO.</span></div></div>
-      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Werk in je eigen regio</strong><span>Voornamelijk Limburg en aangrenzende provincies. Avondeten met je gezin blijft mogelijk.</span></div></div>
+      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Je eigen bestelwagen</strong><span>Volledig uitgerust met het gereedschap dat jij nodig hebt. Mee naar huis, niet eerst langs de werkplaats.</span></div></div>
+      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Opleidingen volledig betaald</strong><span>Mitsubishi- en Daikin-certificeringen. Geboekt door ons, tijdens je werkuren, niet in je vrije tijd.</span></div></div>
+      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Vast team in Bilzen</strong><span>Een klein team waar iedereen elkaar kent. Korte lijntjes, geen anonieme HR-afdeling tussen jou en de zaakvoerder.</span></div></div>
+      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Werk dichtbij huis</strong><span>Vooral in Limburg en de aangrenzende provincies. Je bent 's avonds op tijd thuis voor het avondeten.</span></div></div>
+      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Mooie projecten in het portfolio</strong><span>Van gewone gezinswoningen tot Hotel Stayen, Maasmechelen Village en VWR cleanrooms.</span></div></div>
+      <div class="offer-row"><span class="offer-check">&#10003;</span><div><strong>Eerlijk loon</strong><span>Loon op maat van je ervaring en certificeringen, eerlijk besproken in het eerste gesprek.</span></div></div>
     </div>
   </div>
 </section>
@@ -836,26 +923,26 @@ footer a { color: rgba(255,255,255,0.85); }
         <img src="../../images/installatie%20image%201.jpg" alt="Servicetechnieker van Dima installeert plafond-unit bij een klant" loading="lazy">
       </div>
       <div>
-        <span class="section-eyebrow">Wat de rol inhoudt</span>
-        <h2 class="section-title">Je bent het gezicht van Dima bij de klant.</h2>
-        <p class="section-sub">Je lost storingen op bij bestaande residentiële en B2B klanten in Limburg, bent eerste aanspreekpunt op locatie en werkt samen met onze eigen serviceafdeling. Je haalt het beste uit koeltechniek én uit je klantcontact.</p>
+        <span class="section-eyebrow">Je taken</span>
+        <h2 class="section-title">Dit is wat je elke dag doet.</h2>
+        <p class="section-sub">Je gaat op pad met je bestelwagen en lost storingen op bij gezinnen en bedrijven in de regio. Je bent het gezicht dat de klant ziet.</p>
 
         <div class="role-block">
-          <h3>Jouw taken</h3>
+          <h3>Dagelijks werk</h3>
           <ul>
-            <li>Storingen diagnosticeren en oplossen op airco, warmtepompen en ventilatie</li>
-            <li>Installatie-advies geven bij de klant tijdens het servicebezoek</li>
-            <li>Rapportering afleveren aan Anne en klanten na elke interventie</li>
-            <li>Samenwerken met onze eigen koeltechnische monteurs in Bilzen</li>
+            <li>Storingen diagnosticeren en herstellen op airco, warmtepompen en ventilatie</li>
+            <li>Klanten adviseren op locatie, in mensentaal</li>
+            <li>Kort rapport afleveren na elke interventie</li>
+            <li>Afstemmen met onze monteurs in Bilzen bij grotere problemen</li>
           </ul>
         </div>
 
         <div class="role-block">
-          <h3>Wat wij zoeken</h3>
+          <h3>Wat wij vragen</h3>
           <ul>
-            <li>Minimum 2 jaar ervaring met HVAC-service</li>
-            <li>Koeltechnisch certificaat of bereidheid om het op korte termijn te halen</li>
-            <li>Klantgerichte communicatie, je kan een storing ook in mensentaal uitleggen</li>
+            <li>Minimum 2 jaar ervaring in HVAC-service</li>
+            <li>Koeltechnisch certificaat, of bereid om het binnenkort te halen (wij betalen)</li>
+            <li>Klantvriendelijk, je kan uitleggen wat er mis was</li>
             <li>Rijbewijs B</li>
           </ul>
         </div>
@@ -867,61 +954,101 @@ footer a { color: rgba(255,255,255,0.85); }
 <!-- COMPARISON -->
 <section class="compare">
   <div class="wrap">
-    <span class="section-eyebrow">Bij Dima vs grote keten</span>
-    <h2 class="section-title">Zelfde werk, hemelsbreed verschil in hoe je je dag beleeft.</h2>
-    <p class="section-sub">Veel van onze servicetechniekers komen van een grotere speler. Dit is precies waarom ze gebleven zijn.</p>
+    <span class="section-eyebrow">Groot bedrijf vs Dima</span>
+    <h2 class="section-title">Zelfde vak. Heel ander werkleven.</h2>
+    <p class="section-sub">Veel van onze servicetechniekers kwamen van een grote installateur. Dit is waarom ze gebleven zijn.</p>
     <div class="compare-grid">
       <div class="compare-col compare-other">
-        <h3>Bij een grote installateur</h3>
+        <h3>Bij een groot bedrijf</h3>
         <ul class="compare-list">
-          <li><span class="compare-icon">&#10007;</span>Callcenter plant je dag, zonder kennis van de installatie</li>
-          <li><span class="compare-icon">&#10007;</span>Je lost storingen op bij plaatsingen van onderaannemers die je nooit spreekt</li>
-          <li><span class="compare-icon">&#10007;</span>Opleidingen "komen er aan" maar worden niet geboekt</li>
-          <li><span class="compare-icon">&#10007;</span>De zaakvoerder kent je naam niet, laat staan je sterktes</li>
-          <li><span class="compare-icon">&#10007;</span>Ritten van 100 km per dag naar een andere provincie</li>
-          <li><span class="compare-icon">&#10007;</span>Je bent een nummer in een dossier, niet een vakman met een gezicht</li>
+          <li><span class="compare-icon">&#10007;</span>Je planning wordt gemaakt door iemand die de werf nooit zag</li>
+          <li><span class="compare-icon">&#10007;</span>Je werkt aan installaties van onderaannemers die je niet kent</li>
+          <li><span class="compare-icon">&#10007;</span>Opleidingen blijven beloftes, jaar na jaar</li>
+          <li><span class="compare-icon">&#10007;</span>Je directeur kent je naam niet, laat staan je sterktes</li>
+          <li><span class="compare-icon">&#10007;</span>Lange ritten naar andere provincies, dagelijks</li>
+          <li><span class="compare-icon">&#10007;</span>Je bent een nummer, geen vakman met een gezicht</li>
         </ul>
       </div>
       <div class="compare-col compare-dima">
-        <h3>Bij Dima Ecotechnics</h3>
+        <h3>Bij Dima</h3>
         <ul class="compare-list">
-          <li><span class="compare-icon">&#10003;</span>Anne plant mee met jou, kent de installatie en de klant</li>
-          <li><span class="compare-icon">&#10003;</span>Je werkt aan installaties die wij zelf hebben geplaatst, samen met de monteurs</li>
-          <li><span class="compare-icon">&#10003;</span>Mitsubishi en Daikin certificeringen worden geboekt en betaald, tijdens werkuren</li>
-          <li><span class="compare-icon">&#10003;</span>Dirk kent jouw naam én jouw sterkte, en staat zelf mee op de werf</li>
-          <li><span class="compare-icon">&#10003;</span>Werk voornamelijk in Limburg en aangrenzende provincies, avondeten thuis</li>
-          <li><span class="compare-icon">&#10003;</span>Je bent de vakman waar de klant naar vraagt, met naam en gezicht</li>
+          <li><span class="compare-icon">&#10003;</span>Anne maakt je planning, kent elke installatie en elke klant</li>
+          <li><span class="compare-icon">&#10003;</span>Je werkt aan installaties die we zelf hebben geplaatst</li>
+          <li><span class="compare-icon">&#10003;</span>Opleidingen staan geboekt in je eerste maand</li>
+          <li><span class="compare-icon">&#10003;</span>Je collega's en je baas kennen je naam én je sterktes</li>
+          <li><span class="compare-icon">&#10003;</span>Werk in Limburg en aangrenzende provincies, geen dagen in de file</li>
+          <li><span class="compare-icon">&#10003;</span>De klant vraagt naar jou, met naam</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOUNDER -->
-<section class="founder">
+<!-- TEAM -->
+<section class="team">
   <div class="wrap">
-    <div class="founder-stack">
-      <div>
-        <span class="section-eyebrow">Je werkt direct met</span>
-        <h2 class="section-title">Dirk. Zaakvoerder, koeltechnisch tot in de vingertoppen.</h2>
-        <p>Dirk Vermeulen richtte Dima Eco-Technics 15 jaar geleden op, na 15+ jaar in de HVAC- en koeltechnische sector. Hij doet nog altijd zelf de metingen en komt geregeld mee op de werf langs bij grote projecten. Geen anonieme CEO.</p>
-        <p>Als servicetechnieker werk je hier met iemand die jouw vak kent en je denken volgt. Niet met een manager die de eerste letter van HVAC niet kan uitspreken.</p>
+    <span class="section-eyebrow">Je collega's</span>
+    <h2 class="section-title">Een klein, hecht team in Bilzen.</h2>
+    <p class="section-sub">Bij Dima werk je in een kleine groep waar iedereen elkaar kent. Korte lijntjes, van zaakvoerder tot planning.</p>
+    <div class="team-grid">
+      <div class="team-photo">
+        <img src="../../images/installatie%20image%204.jpg" alt="Het team van Dima Ecotechnics aan het werk" loading="lazy">
       </div>
-      <div>
-        <div class="founder-photo-wrap">
-          <img src="../../images/testimonial%20image.jpg" alt="Dirk Vermeulen en het team van Dima Ecotechnics" loading="lazy">
+      <div class="team-roles">
+        <div class="team-role">
+          <h3>Anne, Office Manager</h3>
+          <p>Maakt je planning, kent elke klant en elke installatie. Zij is je eerste aanspreekpunt bij vragen of wijzigingen.</p>
         </div>
-        <div class="founder-card">
-          <div class="name">Dirk Vermeulen</div>
-          <div class="role-tag">Zaakvoerder Dima Ecotechnics</div>
-          <ul class="founder-creds">
-            <li>15+ jaar koeltechnische ervaring</li>
-            <li>Mitsubishi Diamond Dealer partner</li>
-            <li>Daikin partner</li>
-            <li>Vincotte gecertificeerd bedrijf</li>
-            <li>Koeltechnisch gecertificeerd team</li>
-            <li>Staat zelf mee op de werf</li>
-          </ul>
+        <div class="team-role">
+          <h3>Koeltechnisch gecertificeerd montageteam</h3>
+          <p>Zij plaatsen de installaties waar jij later langsgaat voor service. Korte lijntjes bij vragen over een specifieke plaatsing.</p>
+        </div>
+        <div class="team-role">
+          <h3>Je collega-servicetechnieker(s)</h3>
+          <p>Jullie wisselen elkaar af, overleggen bij moeilijke storingen en nemen voor elkaar in bij verlof of ziekte.</p>
+        </div>
+        <div class="team-role">
+          <h3>Dirk, zaakvoerder</h3>
+          <p>15+ jaar koeltechnische ervaring, staat zelf mee op de werf bij grote projecten. Iemand uit het vak, geen manager met een spreadsheet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCES -->
+<section class="proces">
+  <div class="wrap">
+    <span class="section-eyebrow">Hoe het verder gaat</span>
+    <h2 class="section-title">Dit gebeurt er nadat je solliciteert.</h2>
+    <p class="section-sub">Geen maandenlange sollicitatieronde. In een paar stappen weet je of Dima bij jou past.</p>
+    <div class="proces-steps">
+      <div class="proces-step">
+        <div class="proces-num">1</div>
+        <div>
+          <h3>Anne belt je binnen één werkdag</h3>
+          <p>Kort telefoontje om je vragen te beantwoorden en een gesprek in te plannen.</p>
+        </div>
+      </div>
+      <div class="proces-step">
+        <div class="proces-num">2</div>
+        <div>
+          <h3>Kennismaking in Bilzen</h3>
+          <p>Je komt langs, we drinken koffie, je ontmoet Dirk en een paar collega's. We bespreken loon en voorwaarden open.</p>
+        </div>
+      </div>
+      <div class="proces-step">
+        <div class="proces-num">3</div>
+        <div>
+          <h3>Meedraaien op een werf</h3>
+          <p>Eén dag met een collega-servicetechnieker op pad. Zo weet jij én weten wij of het klikt.</p>
+        </div>
+      </div>
+      <div class="proces-step">
+        <div class="proces-num">4</div>
+        <div>
+          <h3>Contractvoorstel</h3>
+          <p>Binnen enkele dagen krijg je een concreet voorstel. Geen verrassingen achteraf.</p>
         </div>
       </div>
     </div>
@@ -931,9 +1058,9 @@ footer a { color: rgba(255,255,255,0.85); }
 <!-- PROJECTS -->
 <section class="projects">
   <div class="wrap">
-    <span class="section-eyebrow">Waar je als servicetechnieker komt</span>
-    <h2 class="section-title">Projecten waar je je vader over vertelt.</h2>
-    <p class="section-sub">Niet elke dag een hotel of cleanroom. Maar dit is het soort werk dat je bij ons geregeld aanraakt.</p>
+    <span class="section-eyebrow">Waar je komt als servicetechnieker</span>
+    <h2 class="section-title">Van gezinswoningen tot bekende namen.</h2>
+    <p class="section-sub">De meeste dagen werk je bij particulieren in de regio. Maar je raakt geregeld ook dit soort projecten aan.</p>
     <div class="brands-list">
       <span>Maasmechelen Village</span>
       <span>Hotel Stayen</span>
@@ -1025,31 +1152,47 @@ footer a { color: rgba(255,255,255,0.85); }
 <section class="faq">
   <div class="wrap-narrow">
     <span class="section-eyebrow">Veelgestelde vragen</span>
-    <h2 class="section-title">Wat je nog wilt weten voor je solliciteert.</h2>
+    <h2 class="section-title">Wat je misschien nog wilt weten.</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-btn">Moet ik al een koeltechnisch certificaat hebben?</button>
-        <div class="faq-answer">Voorkeur ja, maar het is niet blokkerend. Ben je bereid om het op korte termijn te halen, dan plannen en betalen wij de opleiding via Mitsubishi of Daikin. We nemen dat mee in het eerste gesprek met Dirk.</div>
+        <button class="faq-btn">Hoeveel ga ik verdienen?</button>
+        <div class="faq-answer">Dat hangt af van je ervaring en certificeringen. We bespreken het open en concreet in het eerste gesprek, zodat je niet maanden later tegen een verrassing aanloopt. Je krijgt ook je eigen bestelwagen bij de functie. De specifieke voordelen leggen we uit tijdens de kennismaking.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn">Hoe ziet een typische werkdag er uit?</button>
-        <div class="faq-answer">Je start meestal thuis met de bestelwagen, krijgt je planning via Anne, en rijdt naar je eerste klant in Limburg of aangrenzend. Per dag 2 tot 5 interventies, afhankelijk van complexiteit. Tussendoor contact met Dirk of een collega als je advies nodig hebt. Einde dag: wagen thuis, rapportering in het systeem, klaar.</div>
+        <button class="faq-btn">Wat als ik nog geen koeltechnisch certificaat heb?</button>
+        <div class="faq-answer">Dat is bespreekbaar, zolang je bereid bent om het op korte termijn te halen. Wij boeken en betalen de opleiding via Mitsubishi of Daikin. De concrete tijdlijn spreken we samen af.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn">Hoeveel verdient een servicetechnieker bij Dima?</button>
-        <div class="faq-answer">Wij werken met loon op maat van je ervaring, certificeringen en verantwoordelijkheid. Concreet bespreken wij dit open tijdens het eerste gesprek. Daarnaast auto van de zaak, maaltijdcheques, en betaalde Mitsubishi/Daikin opleidingen.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">Hoe snel krijg ik antwoord na mijn sollicitatie?</button>
-        <div class="faq-answer">Anne belt je binnen één werkdag op. Wij plannen meestal binnen 5 werkdagen een kennismakingsgesprek met Dirk in Bilzen. Geen CV-drempel, geen motivatiebrief nodig.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">Werk ik alleen of in team?</button>
-        <div class="faq-answer">Service-interventies doe je meestal alleen, maar je bent nooit op een eiland. Je kan altijd bellen met Dirk, Anne of een collega-monteur. Bij grote interventies of complexe storingen pakken wij het samen aan.</div>
+        <button class="faq-btn">Hoe zien mijn werkuren er uit?</button>
+        <div class="faq-answer">Normale werkuren, voltijds. Je start meestal thuis met je bestelwagen en rijdt rechtstreeks naar de eerste klant. De exacte regeling bespreken we tijdens de kennismaking.</div>
       </div>
       <div class="faq-item">
         <button class="faq-btn">Moet ik ook 's nachts of in het weekend werken?</button>
-        <div class="faq-answer">Wij hebben een beperkte wachtdienst voor urgenties bij bestaande klanten, maar die wordt eerlijk onder de servicetechniekers verdeeld en altijd extra vergoed. Normale werkuren staan voorop.</div>
+        <div class="faq-answer">Er kan een wachtdienst zijn voor noodgevallen bij bestaande klanten, maar die wordt eerlijk afgewisseld tussen de servicetechniekers. De exacte afspraken rond wachtdienst en vergoeding bespreken we open tijdens de kennismaking.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Hoe ver moet ik dagelijks rijden?</button>
+        <div class="faq-answer">We werken vooral in Limburg en de aangrenzende provincies. Geen lange ritten naar Antwerpen of Luik. Je bent 's avonds op tijd thuis voor het avondeten.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Hoe verloopt mijn eerste maand?</button>
+        <div class="faq-answer">In het begin rijd je mee met een ervaren collega om onze klanten en installaties te leren kennen. Daarna ga je zelfstandig op pad, maar altijd met Anne of Dirk binnen handbereik voor vragen.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Ik heb nog opzegtermijn bij mijn huidige werkgever, kan ik toch solliciteren?</button>
+        <div class="faq-answer">Zeker. We zijn gewend om te wachten op goede mensen. We plannen alvast een kennismaking en spreken een startdatum af die voor jou werkt.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Kan ik eerst een dag meedraaien voor ik beslis?</button>
+        <div class="faq-answer">Ja, dat vragen wij zelfs. Na het eerste gesprek rij je één dag mee met een collega-servicetechnieker. Pas daarna doen we een contractvoorstel. Zo weten we allebei of het klikt.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Werk ik alleen of in team?</button>
+        <div class="faq-answer">Je rijdt meestal alleen van klant naar klant, maar je bent nooit op een eiland. Dirk en je collega's zijn bereikbaar bij twijfel. Voor grote interventies gaan we samen.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Hoe weet ik of Dima bij mij past?</button>
+        <div class="faq-answer">Na het eerste gesprek en de meedraaidag heb je zelf een goed beeld. Wij houden het ook kort en eerlijk: werkt het niet, dan zeggen we dat ook.</div>
       </div>
     </div>
   </div>
@@ -1058,8 +1201,8 @@ footer a { color: rgba(255,255,255,0.85); }
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="wrap-narrow">
-    <h2>Klaar voor service-werk waar je kennis telt?</h2>
-    <p>Solliciteer in 2 minuten. Anne belt je binnen één werkdag op om een kennismaking met Dirk in te plannen.</p>
+    <h2>Klaar voor een job die wél bij je past?</h2>
+    <p>Solliciteer in 2 minuten. Anne belt je binnen één werkdag op voor een kennismaking in Bilzen.</p>
     <a href="#form" class="btn">Solliciteer als servicetechnieker</a>
   </div>
 </section>
