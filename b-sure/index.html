@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B-sure x Relight Marketing | Meta Ads Funnel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ====================================================
+     B-SURE PITCH PAGE — Relight Marketing
+     Navy  : #01573a (B-sure forest green)
+     Gold  : #c9973a (warm accent)
+     Fonts : DM Serif Display (headings) + Inter (body)
+     ==================================================== */
+  :root {
+    --navy:       #01573a;
+    --navy-deep:  #01432e;
+    --gold:       #c9973a;
+    --gold-light: rgba(201,151,58,0.12);
+    --bg:         #ffffff;
+    --off:        #f9fafb;
+    --line:       #eaecf0;
+    --txt:        #1a2332;
+    --sub:        #64748b;
+    --sub2:       #94a3b8;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--txt); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  .dm { font-family: 'DM Serif Display', Georgia, serif; }
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .wrap-sm { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---- NAV ---- */
+  #nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  #nav.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--line); }
+  .nav-logo img { height: 36px; filter: brightness(0) invert(1); transition: filter 0.3s; }
+  #nav.scrolled .nav-logo img { filter: none; }
+  .btn-gold {
+    background: var(--gold); color: var(--navy);
+    padding: 10px 22px; border-radius: 999px;
+    font-size: 0.875rem; font-weight: 700;
+    transition: opacity 0.15s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-gold:hover { opacity: 0.88; transform: translateY(-1px); }
+  @media (max-width: 500px) { .nav-logo img { height: 28px; } }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 100%);
+    padding: 120px 24px 0;
+    overflow: visible;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 60%),
+                      radial-gradient(circle at 80% 20%, rgba(201,151,58,0.08) 0%, transparent 50%);
+  }
+  .hero-inner {
+    position: relative; z-index: 1;
+    max-width: 800px; margin: 0 auto;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  .hero-logo {
+    display: flex; justify-content: center; margin-bottom: 32px;
+  }
+  .hero-logo img { height: 40px; filter: brightness(0) invert(1); }
+  .kicker {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold-light);
+    border: 1px solid rgba(201,151,58,0.35);
+    color: var(--gold);
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 999px;
+    margin-bottom: 28px;
+  }
+  .kicker-dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 0;
+  }
+
+  /* Video bleed */
+  .video-bleed-wrap {
+    position: relative; z-index: 1;
+    max-width: 840px; margin: 40px auto -120px;
+    padding: 0 24px;
+  }
+  .video-box {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.45);
+    background: #0a2e1f;
+    aspect-ratio: 16/9;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 16px;
+    cursor: pointer; position: relative;
+  }
+  .video-box-bg {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3;
+  }
+  .play-btn {
+    position: relative; z-index: 2;
+    width: 72px; height: 72px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 32px rgba(201,151,58,0.5);
+    animation: pulse-gold 2.5s infinite;
+  }
+  @keyframes pulse-gold {
+    0%,100%{box-shadow:0 8px 32px rgba(201,151,58,0.5)}
+    50%{box-shadow:0 8px 48px rgba(201,151,58,0.7)}
+  }
+  .play-btn svg { margin-left: 4px; }
+  .video-label {
+    position: relative; z-index: 2;
+    color: rgba(255,255,255,0.8); font-size: 0.875rem; font-weight: 500;
+  }
+
+  /* Post-hero padding */
+  .post-hero-pad { padding-top: 176px; }
+
+  /* ---- SECTIONS ---- */
+  .section { padding: 96px 0; }
+  .section-sm { padding: 64px 0; }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  .h2 {
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    font-weight: 800; letter-spacing: -0.03em; line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .section-sub { font-size: 1.0625rem; color: var(--sub); line-height: 1.65; max-width: 600px; }
+
+  /* ---- ADS GRID ---- */
+  .ads-section { background: var(--off); }
+  .ads-phase-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--sub2); margin: 40px 0 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .ads-phase-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .ads-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .ad-card {
+    border-radius: 12px; overflow: hidden;
+    background: var(--bg);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid var(--line);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .ad-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+  .ad-img-wrap {
+    aspect-ratio: 1/1; background: #eef2f7;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
+  }
+  .ad-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .ad-placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    color: var(--sub2); font-size: 0.8rem; text-align: center; padding: 16px;
+  }
+  .ad-placeholder svg { width: 32px; height: 32px; opacity: 0.4; }
+  .ad-num {
+    position: absolute; top: 10px; left: 10px;
+    background: var(--navy); color: white;
+    font-size: 0.7rem; font-weight: 700;
+    padding: 3px 9px; border-radius: 999px;
+  }
+  .ad-phase-dot {
+    position: absolute; top: 10px; right: 10px;
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+  .ad-card-body { padding: 14px 16px; }
+  .ad-type { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 4px; }
+  .ad-name { font-size: 0.9375rem; font-weight: 700; color: var(--txt); margin-bottom: 4px; }
+  .ad-desc { font-size: 0.8125rem; color: var(--sub); line-height: 1.5; }
+  @media (max-width: 760px) { .ads-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .ads-grid { grid-template-columns: 1fr; } }
+
+  /* ---- SCRIPTS ---- */
+  .scripts-section { background: var(--bg); }
+  .script-tabs { display: flex; gap: 12px; margin-top: 40px; margin-bottom: 32px; flex-wrap: wrap; }
+  .script-tab {
+    padding: 10px 22px; border-radius: 999px;
+    font-size: 0.875rem; font-weight: 600;
+    border: 1.5px solid var(--line); color: var(--sub);
+    cursor: pointer; transition: all 0.15s; background: var(--bg);
+  }
+  .script-tab.active { background: var(--navy); color: white; border-color: var(--navy); }
+  .script-panel { display: none; }
+  .script-panel.active { display: block; }
+  .script-card {
+    background: var(--off); border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+  }
+  .script-header {
+    background: var(--navy); padding: 24px 32px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .script-num { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .script-title { font-size: 1.25rem; font-weight: 700; color: white; }
+  .script-angle-pill { background: var(--gold); color: var(--navy); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
+  .script-body { padding: 32px; }
+  .script-section-label {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--gold); margin-bottom: 8px; margin-top: 24px;
+  }
+  .script-section-label:first-child { margin-top: 0; }
+  .script-text { font-size: 0.9375rem; color: var(--txt); line-height: 1.7; white-space: pre-wrap; }
+  .filming-brief {
+    margin-top: 24px; padding: 20px 24px;
+    background: rgba(1,87,58,0.06); border-left: 3px solid var(--navy);
+    border-radius: 0 8px 8px 0;
+  }
+  .filming-row { display: flex; gap: 12px; font-size: 0.875rem; margin-bottom: 6px; }
+  .filming-row:last-child { margin-bottom: 0; }
+  .filming-key { font-weight: 700; color: var(--navy); min-width: 90px; flex-shrink: 0; }
+  .filming-val { color: var(--sub); }
+
+  /* ---- LP PREVIEW ---- */
+  .lp-section { background: var(--off); }
+  .mobile-mockup {
+    max-width: 320px; margin: 48px auto 0;
+    background: #1a2332;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.25);
+  }
+  .mobile-screen {
+    border-radius: 30px; overflow: hidden;
+    height: 580px;
+    background: #f0f0f0;
+  }
+  .mobile-screen iframe {
+    width: 375px; height: 812px;
+    border: none; transform-origin: top left;
+    transform: scale(calc(100% / 375 * 296));
+    display: block;
+  }
+
+  /* ---- FUNNEL DIAGRAM ---- */
+  .funnel-section { background: var(--bg); }
+  .funnel-flow {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; flex-wrap: wrap;
+    margin-top: 48px;
+  }
+  .funnel-step {
+    text-align: center; padding: 28px 24px;
+    background: var(--off); border: 1px solid var(--line);
+    border-radius: 12px; width: 180px;
+  }
+  .funnel-step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--navy); color: white;
+    font-size: 0.875rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+  }
+  .funnel-step-name { font-size: 0.9375rem; font-weight: 700; color: var(--txt); margin-bottom: 4px; }
+  .funnel-step-desc { font-size: 0.8rem; color: var(--sub); }
+  .funnel-arrow {
+    color: var(--gold); font-size: 1.5rem; padding: 0 8px; font-weight: 700;
+    line-height: 1;
+  }
+  @media (max-width: 860px) {
+    .funnel-flow { flex-direction: column; }
+    .funnel-arrow { transform: rotate(90deg); }
+  }
+
+  /* ---- CTA BAND ---- */
+  .cta-band {
+    background: var(--navy);
+    padding: 64px 0;
+  }
+  .cta-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px; flex-wrap: wrap;
+    max-width: 1120px; margin: 0 auto; padding: 0 24px;
+  }
+  .cta-copy h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 800; color: white; margin-bottom: 8px; }
+  .cta-copy p { font-size: 1rem; color: rgba(255,255,255,0.7); }
+  @media (max-width: 640px) {
+    .cta-inner { flex-direction: column; }
+    .btn-gold { width: 100%; text-align: center; padding: 15px 24px; font-size: 1rem; }
+  }
+
+  /* ---- CALENDLY ---- */
+  .calendly-section { background: var(--off); padding: 96px 0; }
+  .calendly-wrap { max-width: 900px; margin: 48px auto 0; padding: 0 24px; }
+  .calendly-placeholder {
+    background: var(--bg); border: 2px dashed var(--line);
+    border-radius: 16px; padding: 64px 32px;
+    text-align: center; color: var(--sub);
+  }
+  .calendly-placeholder p { font-size: 0.9rem; margin-top: 8px; color: var(--sub2); }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--navy-deep); padding: 48px 0 32px;
+    color: rgba(255,255,255,0.5); font-size: 0.8125rem;
+  }
+  .footer-in {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    max-width: 1120px; margin: 0 auto; padding: 0 24px;
+  }
+  .footer-in img { height: 28px; filter: brightness(0) invert(1) opacity(0.4); }
+
+  /* ---- SCROLL FADE ---- */
+  .fade { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .fade.in { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">
+    <a href="https://b-sure.eu/" target="_blank">
+      <img src="https://b-sure.eu/wp-content/uploads/2022/03/b-sure-logo-1.png" alt="B-sure">
+    </a>
+  </div>
+  <a href="#calendly" class="btn-gold">Laten we dit live zetten</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-logo">
+      <img src="https://b-sure.eu/wp-content/uploads/2022/03/b-sure-logo-1.png" alt="B-sure logo">
+    </div>
+    <div class="kicker">
+      <span class="kicker-dot"></span>
+      Exclusief gebouwd voor B-sure
+    </div>
+    <h1 class="dm">Ik help u aan 10 nieuwe klanten in 14 dagen met deze Meta ads funnel die ik voor u heb gebouwd.</h1>
+  </div>
+</div>
+
+<!-- VIDEO BLEED -->
+<div class="video-bleed-wrap">
+  <!-- LOOM: Record a personalized 5-8 min walkthrough for B-sure.
+       Cover: (1) who this funnel is for, (2) the primary angle (zero-cost bank broker),
+       (3) walk through each of the 9 ads, (4) read the video script hooks live,
+       (5) show the landing page preview, (6) close with the Calendly CTA.
+       Upload to Loom > Share > Embed > paste the embed URL here and replace this placeholder.
+  -->
+  <div class="video-box">
+    <img class="video-box-bg" src="https://b-sure.eu/wp-content/uploads/2025/09/DSF8860-1.jpg" alt="B-sure">
+    <div class="play-btn">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="#01573a"/></svg>
+    </div>
+    <span class="video-label">Bekijk mijn persoonlijke video voor B-sure</span>
+  </div>
+</div>
+
+<!-- POST-HERO PADDING -->
+<div class="post-hero-pad"></div>
+
+<!-- ADS SECTION -->
+<section class="section ads-section" id="ads">
+  <div class="wrap">
+    <div class="fade">
+      <p class="eyebrow">Deliverable 1</p>
+      <h2 class="h2">9 Image Ad Prompts</h2>
+      <p class="section-sub">Drie fases, negen advertenties. Van koude doelgroep naar concrete afspraak. Gebouwd op uw positionering als de enige bankmakelaar in Limburg.</p>
+    </div>
+
+    <p class="ads-phase-label fade">Fase 1: Prospecting</p>
+    <div class="ads-grid fade">
+      <div class="ad-card">
+        <div class="ad-img-wrap">
+          <img src="./images/1.png" alt="Ad 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ad-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Drop 1.png hier
+          </div>
+          <span class="ad-num">Ad 1</span>
+          <span class="ad-phase-dot" style="background:#6366f1;"></span>
+        </div>
+        <div class="ad-card-body">
+          <div class="ad-type">Prospecting</div>
+          <div class="ad-name">Pain / Problem</div>
+          <div class="ad-desc">Meerdere banking-apps, stapels documenten, geen overzicht. De pijn van uw avatar in een oogopslag zichtbaar.</div>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap">
+          <img src="./images/2.png" alt="Ad 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ad-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Drop 2.png hier
+          </div>
+          <span class="ad-num">Ad 2</span>
+          <span class="ad-phase-dot" style="background:#6366f1;"></span>
+        </div>
+        <div class="ad-card-body">
+          <div class="ad-type">Prospecting</div>
+          <div class="ad-name">Education / Tip</div>
+          <div class="ad-desc">"Wat is een bankmakelaar precies?" Wekt curiositeit voor een categorie die uw avatar nog nooit heeft gezien.</div>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap">
+          <img src="./images/3.png" alt="Ad 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ad-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Drop 3.png hier
+          </div>
+          <span class="ad-num">Ad 3</span>
+          <span class="ad-phase-dot" style="background:#6366f1;"></span>
+        </div>
+        <div class="ad-card-body">
+          <div class="ad-type">Prospecting</div>
+          <div class="ad-name">Before &amp; After</div>
+          <div class="ad-desc">Voor: chaos van bankrekeningen. Na: Digitale Kluis, alles op een scherm. Visueel contrast dat de transformation onmiddellijk duidelijk maakt.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="ads-phase-label fade">Fase 2: Trust</p>
+    <div class="ads-grid fade">
+      <div class="ad-card">
+        <div class="ad-img-wrap">
+          <img src="./images/4.png" alt="Ad 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ad-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Drop 4.png hier
+          </div>
+          <span class="ad-num">Ad 4</span>
+          <span class="ad-phase-dot" style="background:#f59e0b;"></span>
+        </div>
+        <div class="ad-card-body">
+          <div class="ad-type">Trust</div>
+          <div class="ad-name">Owner / Team</div>
+          <div class="ad-desc">"Uw financiele butler." 16 jaar, de eerste en enige bankmakelaar in Limburg. Een gezicht achter de dienst.</div>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap">
+          <img src="./images/5.png" alt="Ad 5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ad-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Drop 5.png hier
+          </div>
+          <span class="ad-num">Ad 5</span>
+          <span class="ad-phase-dot" style="background:#f59e0b;"></span>
+        </div>
+        <div class="ad-card-body">
+          <div class="ad-type">Trust</div>
+          <div class="ad-name">Process</div>
+          <div class="ad-desc">Kennen. Koers. Paraat. Drie stappen, een volledige service. De "hoe werkt dit?" vraag beantwoord voor ze hem stellen.</div>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap">
+          <img src="./images/6.png" alt="Ad 6" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ad-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Drop 6.png hier
+          </div>
+          <span class="ad-num">Ad 6</span>
+          <span class="ad-phase-dot" style="background:#f59e0b;"></span>
+        </div>
+        <div class="ad-card-body">
+          <div class="ad-type">Trust</div>
+          <div class="ad-name">FAQ / Myth-Bust</div>
+          <div class="ad-desc">"Een bankmakelaar kost extra" doorgestreept. "Wij kosten u niets." in groen. Ruimt de grootste bezwaardrempel weg met een enkel beeld.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="ads-phase-label fade">Fase 3: Conversie</p>
+    <div class="ads-grid fade">
+      <div class="ad-card">
+        <div class="ad-img-wrap">
+          <img src="./images/7.png" alt="Ad 7" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ad-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Drop 7.png hier
+          </div>
+          <span class="ad-num">Ad 7</span>
+          <span class="ad-phase-dot" style="background:#10b981;"></span>
+        </div>
+        <div class="ad-card-body">
+          <div class="ad-type">Conversie</div>
+          <div class="ad-name">Free Offer</div>
+          <div class="ad-desc">Gratis Welfie. Uw volledig financieel overzicht in een gesprek. Laagste drempel, hoogste intentie. "Plan uw gratis gesprek."</div>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap">
+          <img src="./images/8.png" alt="Ad 8" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ad-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Drop 8.png hier
+          </div>
+          <span class="ad-num">Ad 8</span>
+          <span class="ad-phase-dot" style="background:#10b981;"></span>
+        </div>
+        <div class="ad-card-body">
+          <div class="ad-type">Conversie</div>
+          <div class="ad-name">Lead / Hero</div>
+          <div class="ad-desc">"Financieel geluk en gemoedsrust op lange termijn. Voor u en uw familie." De hero phrase als visuele afsluiter. Sterkste CTA-afbeelding van de set.</div>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap">
+          <img src="./images/9.png" alt="Ad 9" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ad-placeholder" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Drop 9.png hier
+          </div>
+          <span class="ad-num">Ad 9</span>
+          <span class="ad-phase-dot" style="background:#10b981;"></span>
+        </div>
+        <div class="ad-card-body">
+          <div class="ad-type">Conversie</div>
+          <div class="ad-name">Urgency</div>
+          <div class="ad-desc">"Pensioensparen voor dit aanslagjaar al in orde?" Fiscale urgentie voor ondernemers. Authentiek en seizoensgebonden.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SCRIPTS SECTION -->
+<section class="section scripts-section" id="scripts">
+  <div class="wrap">
+    <div class="fade">
+      <p class="eyebrow">Deliverable 2</p>
+      <h2 class="h2">3 Video Ad Scripts</h2>
+      <p class="section-sub">Drie scripts, drie invalshoeken. Klaar om te filmen met een telefoon. Elke script spreekt een ander type koper aan.</p>
+    </div>
+
+    <div class="script-tabs fade">
+      <button class="script-tab active" onclick="showScript(0)">Script 1: De Overbelasting</button>
+      <button class="script-tab" onclick="showScript(1)">Script 2: De Verborgen Agenda</button>
+      <button class="script-tab" onclick="showScript(2)">Script 3: De Financiele Butler</button>
+    </div>
+
+    <div class="script-panel active fade" id="script-0">
+      <div class="script-card">
+        <div class="script-header">
+          <div>
+            <div class="script-num">Script 1</div>
+            <div class="script-title">De Overbelasting</div>
+          </div>
+          <div class="script-angle-pill">Pain / Circumstance</div>
+        </div>
+        <div class="script-body">
+          <div class="script-section-label">HOOK (0-10s)</div>
+          <div class="script-text">Als u als ondernemer meerdere bankrekeningen, beleggingen en pensioenplannen hebt bij twee of drie verschillende banken, dan kent u dit: telkens opnieuw uw verhaal doen. Telkens opnieuw tijd vrijmaken. Telkens opnieuw al die documenten ondertekenen.
+
+En toch vraagt u zich af: krijg ik hier eigenlijk wel de beste deal?</div>
+
+          <div class="script-section-label">BODY (11-90s)</div>
+          <div class="script-text">U bent goed in wat u doet. Uw zaak groeit. Maar uw financieel leven is intussen verspreid over drie banken, een boekhouder, misschien een verzekeringsmakelaar en een pensioenplan dat u zelf drie jaar geleden hebt afgesloten en sindsdien niet meer hebt bekeken.
+
+Veel ondernemers proberen dit zelf te beheren. Of ze vertrouwen volledig op de bankadviseur bij hun huisbank. Maar die bankadviseur wordt betaald door zijn bank om u de producten van zijn bank te verkopen. Niet om uw totaalpositie te bewaken.
+
+In de financiele wereld is belangenverstrengeling helaas vaak de norm. Wij geloven dat dat anders kan.
+
+B-sure is een bankmakelaar. Dat betekent: wij vertegenwoordigen u bij de private banken van Belgie, niet de banken bij u. Wij selecteren op basis van uw financieel DNA welke beheerder echt waarde voor u toevoegt. Wij controleren of uw bank zijn beloftes nakomt. Wij rapporteren aan u.
+
+En het enige wat u ons hiervoor betaalt? Niets. Wij worden vergoed door de banken.
+
+Het resultaat: financieel geluk en gemoedsrust op lange termijn. Voor u en uw familie.</div>
+
+          <div class="script-section-label">CTA (90-120s)</div>
+          <div class="script-text">Klik op de knop hieronder. Op de volgende pagina ziet u precies hoe een eerste gesprek met B-sure eruitziet. Vul daarna het formulier in om een gratis gesprek aan te vragen. Geen verplichting. Gewoon een gesprek over uw financiele situatie, en wat beter kan.</div>
+
+          <div class="filming-brief">
+            <div class="filming-row"><span class="filming-key">Omgeving:</span><span class="filming-val">Zittend aan een bureau of tafel. Warme, persoonlijke werkruimte. Een boekenkast of plant op de achtergrond werkt goed.</span></div>
+            <div class="filming-row"><span class="filming-key">Camera:</span><span class="filming-val">Telefoon tegen een boek of op mini-statief, ooghoogte, direct naar camera</span></div>
+            <div class="filming-row"><span class="filming-key">Kadrering:</span><span class="filming-val">Medium shot, borst en hoger, lichte hoofdruimte</span></div>
+            <div class="filming-row"><span class="filming-key">Licht:</span><span class="filming-val">Natuurlijk raamlicht van opzij; ringlicht als fallback</span></div>
+            <div class="filming-row"><span class="filming-key">Energie:</span><span class="filming-val">Rustig en gemeten. De toon van iemand die dit probleem honderd keer heeft gezien. Niet haastig. Niet commercieel.</span></div>
+            <div class="filming-row"><span class="filming-key">Kleding:</span><span class="filming-val">Donkergroen #01573a of donker marine. Vermijd wit alleen, oranje of drukke patronen.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="script-panel fade" id="script-1">
+      <div class="script-card">
+        <div class="script-header">
+          <div>
+            <div class="script-num">Script 2</div>
+            <div class="script-title">De Verborgen Agenda</div>
+          </div>
+          <div class="script-angle-pill">Contrarian / Insight</div>
+        </div>
+        <div class="script-body">
+          <div class="script-section-label">HOOK (0-10s)</div>
+          <div class="script-text">Uw bankadviseur is waarschijnlijk een aardige persoon. Maar er is iets wat hij u nooit zal zeggen.
+
+Hij wordt betaald door zijn bank. Niet door u.
+
+Dat betekent dat elke keer dat hij u een product aanbeveelt, hij een reden heeft om het product van zijn bank aan te bevelen, niet het beste product op de markt.</div>
+
+          <div class="script-section-label">BODY (11-90s)</div>
+          <div class="script-text">Dat is geen aanklacht. Dat is gewoon hoe het systeem werkt. Wie denkt aan een butler, ziet discretie, loyaliteit, een onberispelijk oog voor detail. Maar de belangrijkste waarde van een echte butler is onzichtbaar: het totale gebrek aan een eigen agenda.
+
+In de financiele wereld is die butler amper te vinden.
+
+Veel ondernemers proberen dit op te lossen door zelf research te doen. Of door bij meerdere banken tegelijk te werken, elke bank wat te geven en te hopen dat het klopt. Maar dan hebt u drie adviseurs, elk met hun eigen agenda, en nog altijd geen totaaloverzicht.
+
+Wij zijn bankmakelaar. Niet bankadviseur. Het verschil: wij kopen in bij de banken, namens u. Wij selecteren Degroof Petercam, Puilaetco, of Deutsche Bank afhankelijk van wat uw financieel DNA vraagt, niet wat ons het meeste oplevert.
+
+En we controleren of de bank zijn beloftes nakomt. We checken of de aangerekende kosten correct zijn. We rapporteren aan u. Altijd in functie van uw behoefte, en niet die van de banken.
+
+Wij zijn de eerste en enige bankmakelaar in Limburg. Zestien jaar. FSMA-erkend. En u betaalt ons niets.</div>
+
+          <div class="script-section-label">CTA (90-120s)</div>
+          <div class="script-text">Als dit klinkt als iets wat u eigenlijk al lang nodig had, klik dan op de knop hieronder. Bekijk de korte video op de volgende pagina, en vraag daarna een gratis gesprek aan. We noemen dat een Welfie: een financiele selfie van uw volledige situatie. Kosteloos. Zonder verplichting. Gewoon inzicht.</div>
+
+          <div class="filming-brief">
+            <div class="filming-row"><span class="filming-key">Omgeving:</span><span class="filming-val">Staand of zittend bij een tafel, voor een raam met natuurlijk licht. Iets formeler dan Script 1.</span></div>
+            <div class="filming-row"><span class="filming-key">Camera:</span><span class="filming-val">Telefoon of mini-statief, ooghoogte, direct naar camera</span></div>
+            <div class="filming-row"><span class="filming-key">Kadrering:</span><span class="filming-val">Medium shot, borst en hoger, lichte hoofdruimte</span></div>
+            <div class="filming-row"><span class="filming-key">Licht:</span><span class="filming-val">Helder en licht dramatisch, iets meer presence dan Script 1</span></div>
+            <div class="filming-row"><span class="filming-key">Energie:</span><span class="filming-val">Zelfverzekerd, doordacht, rustig. De toon van iemand die een stille revelatie deelt, geen aanval.</span></div>
+            <div class="filming-row"><span class="filming-key">Kleding:</span><span class="filming-val">Donkergroen of antraciet/donkergrijs. Vermijd oranje, felle kleuren of casual kleding.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="script-panel fade" id="script-2">
+      <div class="script-card">
+        <div class="script-header">
+          <div>
+            <div class="script-num">Script 3</div>
+            <div class="script-title">De Financiele Butler</div>
+          </div>
+          <div class="script-angle-pill">Result / Aspirational</div>
+        </div>
+        <div class="script-body">
+          <div class="script-section-label">HOOK (0-10s)</div>
+          <div class="script-text">Stel u voor: een persoon die al uw bankzaken regelt. Bij Degroof Petercam. Bij Puilaetco. Bij Deutsche Bank. Een centraal overzicht van al uw vermogen, privaat en professioneel. 24 uur op 24.
+
+En u betaalt die persoon niets.
+
+Dat bestaat. En het bestaat al zestien jaar in Limburg.</div>
+
+          <div class="script-section-label">BODY (11-90s)</div>
+          <div class="script-text">Wij zijn B-sure. Bankmakelaar in Hasselt. Wij noemen onszelf uw financiele butler, en dat is geen marketingterm.
+
+Wat is er aan geld dat voor u belangrijk is? Niet de return op uw portefeuille. Maar wat die return u toelaat te doen, te bereiken, te beschermen. Uw zaak. Uw gezin. Uw rust.
+
+Wij beginnen altijd met uw financieel DNA. Uw waarden. Uw doelstellingen. Uw levenssituatie. Daarna selecteren wij op basis van dat DNA de private bank die voor u het meest geschikt is, bemiddelen wij, en bewaken wij uw vermogen. Attent. Discreet. Met zorg en inzicht.
+
+U hoeft zelf niet meer bij drie banken langs te gaan om uw verhaal te doen. Wij doen dat voor u. U hoeft niet meer te vermoeden of u de beste deal krijgt. Wij controleren dat voor u.
+
+En via onze Digitale Kluis hebt u altijd, 24 uur op 24, een actueel en geconsolideerd overzicht van al uw vermogen, over alle banken heen.
+
+Dat is financieel geluk en gemoedsrust op lange termijn. Voor u en uw familie.</div>
+
+          <div class="script-section-label">CTA (90-120s)</div>
+          <div class="script-text">De eerste stap is een Welfie: een gratis gesprek waarbij we een financiele selfie maken van uw volledige situatie. Geen verplichtingen. Gewoon helderheid. Klik op de knop hieronder, bekijk de volgende pagina, en vraag uw gratis gesprek aan.</div>
+
+          <div class="filming-brief">
+            <div class="filming-row"><span class="filming-key">Omgeving:</span><span class="filming-val">Zittend in een comfortabele, elegante omgeving. Een leren stoel of rustige hoek van het kantoor. Meer visionair dan analytisch.</span></div>
+            <div class="filming-row"><span class="filming-key">Camera:</span><span class="filming-val">Telefoon of mini-statief, ooghoogte, lichte hoek toegestaan</span></div>
+            <div class="filming-row"><span class="filming-key">Kadrering:</span><span class="filming-val">Medium shot, borst en hoger, lichte hoofdruimte</span></div>
+            <div class="filming-row"><span class="filming-key">Licht:</span><span class="filming-val">Warm, zacht natuurlijk licht. Dit script heeft warmte en aspiratie, geen kritiek.</span></div>
+            <div class="filming-row"><span class="filming-key">Energie:</span><span class="filming-val">Warm en verhaalgedreven. Oprecht. De toon van iemand die een beeld schetst dat de kijker zichzelf nog niet heeft durven voorstellen.</span></div>
+            <div class="filming-row"><span class="filming-key">Kleding:</span><span class="filming-val">Donkergroen blazer of warme antraciet. Vermijd oranje, informele kleding, drukke patronen.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANDING PAGE PREVIEW -->
+<section class="section lp-section" id="landingpage">
+  <div class="wrap">
+    <div class="fade" style="text-align:center;">
+      <p class="eyebrow">Deliverable 3</p>
+      <h2 class="h2">Uw landingspagina</h2>
+      <p class="section-sub" style="margin:0 auto;">Een volledige, gebruiksklare HTML-pagina. Uw branding, uw foto's, uw verhaal. Klaar om live te zetten.</p>
+    </div>
+    <div class="mobile-mockup fade">
+      <div class="mobile-screen">
+        <iframe src="./landing-page/index.html" title="B-sure landingspagina preview" scrolling="yes"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNNEL DIAGRAM -->
+<section class="section funnel-section" id="funnel">
+  <div class="wrap">
+    <div class="fade" style="text-align:center;max-width:640px;margin:0 auto;">
+      <p class="eyebrow">De funnel</p>
+      <h2 class="h2">Van koude doelgroep naar afspraak.</h2>
+      <p class="section-sub" style="margin:0 auto;">Drie fases. Een coherente reis. Elke stap bouwt verder op de vorige.</p>
+    </div>
+    <div class="funnel-flow fade">
+      <div class="funnel-step">
+        <div class="funnel-step-num">1</div>
+        <div class="funnel-step-name">Image Ad</div>
+        <div class="funnel-step-desc">Stopt het scrollen. Roept de pijn of belofte op.</div>
+      </div>
+      <div class="funnel-arrow">&#8594;</div>
+      <div class="funnel-step">
+        <div class="funnel-step-num">2</div>
+        <div class="funnel-step-name">Video Ad</div>
+        <div class="funnel-step-desc">Verdiept het argument. Bouwt vertrouwen. Beantwoordt bezwaren.</div>
+      </div>
+      <div class="funnel-arrow">&#8594;</div>
+      <div class="funnel-step">
+        <div class="funnel-step-num">3</div>
+        <div class="funnel-step-name">Landingspagina</div>
+        <div class="funnel-step-desc">Bevestigt de boodschap. Filtert de juiste leads.</div>
+      </div>
+      <div class="funnel-arrow">&#8594;</div>
+      <div class="funnel-step">
+        <div class="funnel-step-num">4</div>
+        <div class="funnel-step-name">Welfie-gesprek</div>
+        <div class="funnel-step-desc">Gratis intake. Kwalificatie. Start van de relatie.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-copy">
+      <h2>Klaar om live te gaan?</h2>
+      <p>Plan een gesprek en we zetten de funnel binnen 14 dagen live.</p>
+    </div>
+    <a href="#calendly" class="btn-gold">Laten we dit live zetten</a>
+  </div>
+</div>
+
+<!-- CALENDLY EMBED -->
+<section class="calendly-section" id="calendly">
+  <div class="wrap">
+    <div class="fade" style="text-align:center;">
+      <p class="eyebrow">Volgende stap</p>
+      <h2 class="h2">Plan een gesprek.</h2>
+      <p class="section-sub" style="margin:0 auto;">30 minuten. Geen verplichtingen. Kijk of het past.</p>
+    </div>
+    <div class="calendly-wrap fade">
+      <!-- CALENDLY: Replace this placeholder with an inline Calendly embed widget.
+           Steps: Calendly > Share > Add to website > Inline embed > Copy code > paste here.
+           Example: <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-LINK/30min" style="min-width:320px;height:700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      -->
+      <div class="calendly-placeholder">
+        <strong style="font-size:1rem;color:#64748b;">Calendly embed</strong>
+        <p>Vervang dit blok door uw Calendly inline embed widget.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-in">
+    <img src="https://b-sure.eu/wp-content/uploads/2022/03/b-sure-logo-1.png" alt="B-sure">
+    <span>Gebouwd door Relight Marketing</span>
+    <span>preview.relightmarketing.com/b-sure</span>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Scroll fade
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+  // Script tabs
+  function showScript(idx) {
+    document.querySelectorAll('.script-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+    document.querySelectorAll('.script-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
+  }
+
+  // Mobile mockup scale
+  function scaleMockup() {
+    const screen = document.querySelector('.mobile-screen');
+    if (!screen) return;
+    const w = screen.offsetWidth;
+    const iframe = screen.querySelector('iframe');
+    if (iframe) iframe.style.transform = `scale(${w / 375})`;
+  }
+  window.addEventListener('resize', scaleMockup);
+  window.addEventListener('load', scaleMockup);
+  scaleMockup();
+</script>
+</body>
+</html>
