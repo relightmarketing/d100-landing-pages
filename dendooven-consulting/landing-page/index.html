@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jouw financiële partner voor duurzame groei. | Dendooven Consulting</title>
+<meta name="description" content="Dendooven combineert boutique accountancy met M&A en CFO-diensten voor 700+ groeiende Vlaamse ondernemers. Persoonlijk. Warm. Discreet. Plan je kennismakingsgesprek.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --magenta:      #e32c74;
+    --magenta-dark: #b6235d;
+    --wine:         #22061a;
+    --wine-deep:    #140312;
+    --blush:        #fef4f8;
+    --bg:           #fcfafb;
+    --white:        #ffffff;
+    --txt:          #22061a;
+    --sub:          #3c3c3b;
+    --muted:        #8b7580;
+    --line:         #efe1e9;
+    --max:          1120px;
+    --r:            10px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--txt);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; text-decoration: none; }
+  .pd { font-family: 'Playfair Display', Georgia, serif; }
+  .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .wrap-sm { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(252,250,251,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: var(--max); margin: 0 auto; padding: 0 24px;
+  }
+  .nav-logo { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 1.375rem; color: var(--magenta); letter-spacing: 0.02em; font-style: italic; }
+  .nav-cta {
+    background: var(--magenta); color: var(--white);
+    padding: 10px 22px; border-radius: 999px;
+    font-size: 0.875rem; font-weight: 700;
+    white-space: nowrap; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--magenta-dark); }
+  @media (max-width: 500px) {
+    .nav-logo { font-size: 1.125rem; }
+    .nav-cta { padding: 8px 16px; font-size: 0.8rem; }
+  }
+
+  .hero {
+    padding-top: 120px;
+    background: linear-gradient(180deg, var(--blush) 0%, var(--bg) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    align-items: center; max-width: var(--max); margin: 0 auto;
+    padding: 72px 24px 80px;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--white);
+    border: 1px solid var(--magenta);
+    color: var(--magenta-dark);
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 999px; margin-bottom: 24px;
+  }
+  .hero-eyebrow::before { content: ''; width: 7px; height: 7px; background: var(--magenta); border-radius: 50%; }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800; color: var(--wine);
+    line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-size: 1.0625rem; color: var(--sub);
+    line-height: 1.65; margin-bottom: 32px; max-width: 480px;
+  }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+  .badge {
+    background: var(--white);
+    border: 1px solid var(--line);
+    color: var(--sub);
+    font-size: 0.8rem; font-weight: 600;
+    padding: 6px 14px; border-radius: 999px;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--magenta); color: var(--white);
+    padding: 15px 32px; border-radius: 999px;
+    font-size: 1rem; font-weight: 700;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 20px rgba(227,44,116,0.25);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(227,44,116,0.35); }
+
+  .vsl-wrap {
+    border-radius: var(--r); overflow: hidden;
+    background: var(--wine); aspect-ratio: 16/9;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 16px; cursor: pointer; position: relative;
+    box-shadow: 0 32px 80px rgba(34,6,26,0.3);
+  }
+  .vsl-play {
+    width: 68px; height: 68px; background: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    position: relative; z-index: 1;
+  }
+  .vsl-label { color: rgba(255,255,255,0.85); font-size: 0.875rem; font-weight: 500; position: relative; z-index: 1; font-style: italic; }
+
+  <!-- VSL: Record a 3-5 min talking-head where Ilse Dendooven:
+    1. Names who this is for: groeiende Vlaamse KMO-zaakvoerders die voorbij een klassieke boekhouder willen
+    2. Calls out #1 pain: "Mijn boekhouder levert cijfers, geen advies" + kwartaalrapport-val
+    3. Explains why usual solutions don't work: aparte partijen (accountant+bankier+consultant) leveren versplinterd advies, Big-4 is te duur+generiek, platform-accounting te onpersoonlijk
+    4. Introduces Dendooven: boutique-hotel-aanpak, real-time data, 30+ experts, 700+ klanten, 15+ jaar
+    5. Primary Angle: accountancy met een boutique-hotel-gevoel — persoonlijk + warm + discreet + strategisch
+    6. Tells them exactly what to do: plan een kennismakingsgesprek via het formulier
+    Upload to YouTube (unlisted) and replace this placeholder with the embed.
+  -->
+
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 56px 24px 60px; }
+    .hero h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+  }
+
+  .stats-bar {
+    background: var(--wine); color: var(--white);
+    padding: 40px 0;
+  }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    max-width: var(--max); margin: 0 auto; padding: 0 24px;
+    text-align: center;
+  }
+  .stat-num { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(2rem, 3vw, 2.75rem); font-weight: 800; color: var(--magenta); line-height: 1; margin-bottom: 6px; }
+  .stat-label { font-size: 0.8125rem; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  @media (max-width: 720px) { .stats-grid { grid-template-columns: 1fr 1fr; gap: 32px 16px; } }
+
+  section { padding: 88px 0; }
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--magenta-dark); margin-bottom: 14px;
+  }
+  .pain-title, .h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800; line-height: 1.2; letter-spacing: -0.01em;
+    color: var(--wine); margin-bottom: 20px;
+  }
+  .lead { font-size: 1.125rem; color: var(--sub); line-height: 1.7; max-width: 640px; }
+
+  .pain-section { background: var(--bg); }
+  .pain-list {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; margin-top: 40px;
+  }
+  .pain-card {
+    background: var(--white); border: 1px solid var(--line);
+    padding: 28px; border-radius: var(--r); position: relative;
+  }
+  .pain-card::before {
+    content: ''; width: 32px; height: 2px; background: var(--magenta);
+    display: block; margin-bottom: 16px;
+  }
+  .pain-card h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: 10px; color: var(--wine); }
+  .pain-card p { color: var(--sub); font-size: 0.9375rem; }
+
+  .diff-section { background: var(--blush); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; }
+  .diff-col h3 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.375rem; font-weight: 800; margin-bottom: 16px; color: var(--wine); }
+  .diff-col ul { list-style: none; }
+  .diff-col li {
+    padding: 12px 0 12px 32px; position: relative;
+    border-bottom: 1px solid rgba(34,6,26,0.08); font-size: 0.9375rem; color: var(--sub);
+  }
+  .diff-col li:last-child { border-bottom: none; }
+  .diff-col.typical li::before { content: '✕'; position: absolute; left: 0; top: 12px; color: #c44; font-weight: 700; }
+  .diff-col.dendooven li::before { content: '✓'; position: absolute; left: 0; top: 12px; color: var(--magenta); font-weight: 700; }
+  @media (max-width: 720px) { .diff-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  .proof-section { background: var(--bg); text-align: center; }
+  .result-highlight {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800; color: var(--magenta);
+    margin: 32px 0 12px; letter-spacing: -0.02em; line-height: 1;
+  }
+  .sub-note { font-size: 1.125rem; color: var(--sub); max-width: 560px; margin: 0 auto 40px; }
+
+  .process-section { background: var(--white); border-top: 1px solid var(--line); }
+  .process-list {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px; margin-top: 40px;
+  }
+  .step { border: 1px solid var(--line); border-radius: var(--r); padding: 24px; background: var(--white); }
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--magenta); color: var(--white);
+    font-family: 'Playfair Display', serif; font-weight: 800; font-style: italic;
+    margin-bottom: 14px;
+  }
+  .step h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--wine); }
+  .step p { font-size: 0.875rem; color: var(--sub); line-height: 1.55; }
+
+  .faq-section { background: var(--blush); }
+  .faq-list { max-width: 760px; margin: 40px auto 0; }
+  .faq-item { border-bottom: 1px solid var(--line); padding: 24px 0; }
+  .faq-q {
+    font-size: 1.0625rem; font-weight: 700; color: var(--wine);
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-q::after { content: '+'; color: var(--magenta); font-size: 1.5rem; font-weight: 400; }
+  .faq-item.open .faq-q::after { content: '−'; }
+  .faq-a {
+    font-size: 0.9375rem; color: var(--sub); line-height: 1.65;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease, padding-top 0.3s ease;
+  }
+  .faq-item.open .faq-a { max-height: 500px; padding-top: 14px; }
+
+  .cta-section { background: var(--wine); color: var(--white); text-align: center; }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-style: italic; color: var(--white); font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .cta-section p { color: rgba(255,255,255,0.78); font-size: 1.125rem; max-width: 600px; margin: 0 auto 40px; }
+
+  form#form {
+    background: var(--white); color: var(--txt);
+    max-width: 600px; margin: 0 auto;
+    padding: 40px; border-radius: var(--r);
+    text-align: left;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.25);
+  }
+  form#form h3 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.375rem; font-weight: 800; margin-bottom: 8px; color: var(--wine); }
+  form#form .form-sub { font-size: 0.9375rem; color: var(--sub); margin-bottom: 24px; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 6px; color: var(--wine); }
+  .field input, .field select, .field textarea {
+    width: 100%; padding: 12px 14px;
+    border: 1px solid var(--line); border-radius: 8px;
+    font-size: 0.9375rem; font-family: inherit;
+    background: var(--white); color: var(--txt);
+    transition: border-color 0.15s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--magenta); }
+  .field textarea { min-height: 90px; resize: vertical; }
+  .btn-submit {
+    width: 100%; background: var(--magenta);
+    color: var(--white); border: none;
+    padding: 16px; border-radius: 999px;
+    font-size: 1rem; font-weight: 700;
+    cursor: pointer; transition: background 0.15s;
+    font-family: inherit;
+  }
+  .btn-submit:hover { background: var(--magenta-dark); }
+  .form-note { font-size: 0.8rem; color: var(--muted); margin-top: 14px; text-align: center; }
+
+  footer {
+    background: var(--blush); padding: 40px 0 24px;
+    border-top: 1px solid var(--line);
+    font-size: 0.875rem; color: var(--muted);
+    text-align: center;
+  }
+  footer p { margin-bottom: 6px; }
+  footer a { color: var(--sub); text-decoration: underline; }
+
+  @media (max-width: 720px) {
+    section { padding: 64px 0; }
+    form#form { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">Dendooven</a>
+    <a href="#form" class="nav-cta">Plan je kennismakingsgesprek</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Boutique accountancy · M&A · CFO</div>
+      <h1>Jouw financiële partner voor duurzame groei.</h1>
+      <p class="hero-sub">Mijn boekhouder levert cijfers, geen advies. Klinkt bekend? Dendooven combineert accountancy, fiscaliteit, strategisch bedrijfsadvies en M&A-begeleiding in één persoonlijk team, voor 700+ groeiende Vlaamse ondernemers. Persoonlijk. Warm. Discreet.</p>
+      <div class="hero-badges">
+        <span class="badge">700+ klanten</span>
+        <span class="badge">30+ experts</span>
+        <span class="badge">4 kantoren</span>
+        <span class="badge">15+ jaar</span>
+      </div>
+      <a href="#form" class="btn-primary">Plan je kennismakingsgesprek
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-video">
+      <div class="vsl-wrap">
+        <div class="vsl-play">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#e32c74"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vsl-label">3 min met Ilse Dendooven</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-bar">
+  <div class="stats-grid">
+    <div><div class="stat-num">700+</div><div class="stat-label">Tevreden klanten</div></div>
+    <div><div class="stat-num">30+</div><div class="stat-label">Experts</div></div>
+    <div><div class="stat-num">4</div><div class="stat-label">Kantoren in West-Vlaanderen</div></div>
+    <div><div class="stat-num">3</div><div class="stat-label">Overnames in 2025</div></div>
+  </div>
+</section>
+
+<section class="pain-section">
+  <div class="wrap">
+    <div class="section-label">De realiteit van een ambitieuze ondernemer</div>
+    <h2 class="pain-title">Mijn boekhouder levert cijfers, geen advies.</h2>
+    <p class="lead">Je bent niet slecht bezig. Je boekhouder werkt correct. Je betaalt netjes je belastingen. Maar ondertussen neem je beslissingen over personeel, investeringen, prijzen, allemaal op basis van gevoel, niet op basis van actuele data.</p>
+    <div class="pain-list">
+      <div class="pain-card">
+        <h3>Kwartaalrapporten zijn altijd te laat.</h3>
+        <p>Je krijgt cijfers die drie maanden oud zijn. In drie maanden kan een koers al compleet anders lopen zonder dat iemand het signaleerde.</p>
+      </div>
+      <div class="pain-card">
+        <h3>Aparte partijen, versplinterd advies.</h3>
+        <p>Boekhouder + bankier + occasionele consultant + notaris bij een overname. Vier logica's, één ondernemer die de puzzel zelf moet leggen.</p>
+      </div>
+      <div class="pain-card">
+        <h3>Big-4 is te duur, platform te onpersoonlijk.</h3>
+        <p>Grote kantoren rekenen enterprise-tarieven voor een KMO. Platform-accountants kennen je naam niet eens. Waar zit de boutique-optie?</p>
+      </div>
+      <div class="pain-card">
+        <h3>Overnames plannen zonder partner.</h3>
+        <p>Je denkt aan koop, verkoop of familie-opvolging, maar je boekhouder doet dat niet en een M&A-kantoor apart zoeken voelt zwaar en duur.</p>
+      </div>
+      <div class="pain-card">
+        <h3>Te veel belasting, te weinig uitleg.</h3>
+        <p>Je betaalt, je tekent, en je vraagt je af of er fiscaal structureel beter kan. Maar vragen worden snel afgestopt met "zo werkt het nu eenmaal".</p>
+      </div>
+      <div class="pain-card">
+        <h3>Geen zicht op de volgende stap.</h3>
+        <p>Jouw ambities zitten in jouw hoofd. Jouw cijfers zitten in een rapport. Niemand verbindt beide structureel. Dat voelt als stil-staan terwijl je groeit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="diff-section">
+  <div class="wrap">
+    <div class="section-label">Wat maakt Dendooven anders</div>
+    <h2 class="h2">Accountancy met een boutique-hotel-gevoel.</h2>
+    <p class="lead">We zijn geen grijs kantoor met templates en kwartaalgesprekken. We zijn een persoonlijk team dat je bedrijf door-en-door kent en proactief meedenkt. Accountancy, fiscaliteit, strategie en M&A, allemaal in één team, rond één klant.</p>
+    <div class="diff-grid">
+      <div class="diff-col typical">
+        <h3>De standaard-accountant</h3>
+        <ul>
+          <li>Cijfers achteraf, per kwartaal of jaar</li>
+          <li>Aparte partijen voor boekhouding, fiscaal en advies</li>
+          <li>Reactief: alleen wanneer jij belt</li>
+          <li>Templates en standaard-rapporten</li>
+          <li>Gesprek eens per jaar, als het moet</li>
+          <li>Overname-vraag? Zoek maar een ander kantoor.</li>
+        </ul>
+      </div>
+      <div class="diff-col dendooven">
+        <h3>Dendooven</h3>
+        <ul>
+          <li>Real-time dashboard met jouw KPIs</li>
+          <li>Eén team voor boekhouding, tax, strategie én M&A</li>
+          <li>Proactief: wij bellen jou bij een signaal</li>
+          <li>Advies afgestemd op jouw sector en ambitie</li>
+          <li>Vaste accountmanager die jouw bedrijf echt kent</li>
+          <li>Koop, verkoop of opvolging? We begeleiden van A tot Z.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof-section">
+  <div class="wrap">
+    <div class="section-label">Wat we deden</div>
+    <p class="result-highlight">700+ klanten</p>
+    <p class="sub-note">30+ experts over 4 kantoren in West-Vlaanderen. 15+ jaar boekhouding, fiscaliteit en M&A. Drie overnames alleen al in 2025, omdat andere accountancy-kantoren bewust bij ons aansluiten. Dat is peer-erkenning in een conservatieve sector.</p>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="wrap">
+    <div class="section-label">Hoe het werkt</div>
+    <h2 class="h2">Vijf stappen, helder en persoonlijk.</h2>
+    <p class="lead">Van eerste kennismaking tot een vaste samenwerking die meegroeit met jouw ambities.</p>
+    <div class="process-list">
+      <div class="step"><span class="step-num">1</span><h4>Kennismakingsgesprek</h4><p>30 minuten over jouw bedrijf, jouw ambitie en wat vandaag knelt. Geen verplichting.</p></div>
+      <div class="step"><span class="step-num">2</span><h4>Financiële scan</h4><p>We kijken mee naar cijfers, structuur en fiscale setup. Zien waar winst zit.</p></div>
+      <div class="step"><span class="step-num">3</span><h4>Actieplan met KPIs</h4><p>Concreet voorstel voor boekhouding, advies en, indien relevant, M&A. Transparante prijszetting.</p></div>
+      <div class="step"><span class="step-num">4</span><h4>Real-time dashboard</h4><p>Wij zetten jouw KPI-cockpit op. Jij ziet continu waar je staat, niet per kwartaal.</p></div>
+      <div class="step"><span class="step-num">5</span><h4>Periodiek overleg</h4><p>Vaste accountmanager, proactieve signalen, strategisch sparren. Ook wanneer er niets brandt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="wrap-sm">
+    <div class="section-label" style="text-align: center; display: block;">Veelgestelde vragen</div>
+    <h2 class="h2" style="text-align: center;">Wat klanten vaak vragen.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Moet ik mijn huidige boekhouder verlaten?</div>
+        <div class="faq-a">Niet per se. Veel klanten starten met ons voor strategisch advies, M&A of CFO-services en houden hun bestaande boekhouder. Wanneer het klopt, kan de hele boekhouding overkomen — wij coördineren de transitie discreet, zonder dat jij gedoe hebt.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Zijn jullie niet te duur voor mijn schaal?</div>
+        <div class="faq-a">We werken met transparante pakketten die schalen met jouw omzet en complexiteit. Voor een groeiende KMO van 1-20M omzet zitten we structureel onder de Big-4 tarieven maar met een persoonlijker team. Kosten bespreken we open tijdens het kennismakingsgesprek, vóór je ook maar iets tekent.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hoe snel merk ik resultaat?</div>
+        <div class="faq-a">Real-time dashboard staat binnen 30-60 dagen live. Fiscale optimalisaties kunnen in het lopende boekjaar effect hebben. M&A-trajecten lopen 6-12 maanden. Strategisch advies ervaar je al vanaf het eerste overleg.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Werken jullie ook voor bedrijven buiten West-Vlaanderen?</div>
+        <div class="faq-a">Ja. Onze vier kantoren liggen in West-Vlaanderen (Oostkamp, Tielt, Kanegem, Waardamme) maar we werken hybride voor klanten over heel Vlaanderen. Digitale samenwerking is ons DNA, fysieke meetings plannen we waar je bent.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Wat is het verschil tussen M&A-begeleiding en gewone boekhouding?</div>
+        <div class="faq-a">Boekhouding is doorlopende administratie. M&A is projectwerk: waardebepaling, due diligence, onderhandeling, contractering bij koop, verkoop of familie-overdracht. Bij ons kunnen beide vakken naadloos samenwerken in één team — elders moet je twee partijen aansturen.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Wie is Ilse Dendooven?</div>
+        <div class="faq-a">Onze zaakvoerder, gestart in 2014. Gastprofessor Accounting & Taxation aan Universiteit Gent. Combineert academisch fundament met 15+ jaar praktijkervaring bij Vlaamse KMO's. Ze zette het boutique-hotel-concept bewust in het hart van de firm.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrap">
+    <h2>Jouw financiële partner voor duurzame groei.</h2>
+    <p>30 minuten kennismaking met een senior uit ons team. Bij jou op kantoor, bij ons in Oostkamp, of virtueel. Geen verplichting. Gewoon een duidelijk beeld.</p>
+    <form id="form">
+      <h3>Plan je kennismakingsgesprek</h3>
+      <p class="form-sub">We nemen binnen één werkdag contact op. Jouw gegevens blijven vertrouwelijk.</p>
+      <div class="field">
+        <label for="name">Jouw naam</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="company">Bedrijfsnaam</label>
+        <input type="text" id="company" name="company" required>
+      </div>
+      <div class="field">
+        <label for="interest">Waar wil je over praten?</label>
+        <select id="interest" name="interest" required>
+          <option value="">Kies een thema</option>
+          <option>Strategisch accountancy & fiscaliteit</option>
+          <option>CFO-as-a-service (real-time inzicht & KPIs)</option>
+          <option>M&A-begeleiding (koop of verkoop)</option>
+          <option>Familiale overdracht / opvolging</option>
+          <option>Verschillende zaken, laat maar horen</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="size">Hoeveel medewerkers telt je bedrijf?</label>
+        <select id="size" name="size" required>
+          <option value="">Kies een range</option>
+          <option>1-9</option>
+          <option>10-25</option>
+          <option>26-50</option>
+          <option>51-100</option>
+          <option>100+</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="phone">Telefoonnummer</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="field">
+        <label for="email">E-mailadres</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="message">Kort bericht (optioneel)</label>
+        <textarea id="message" name="message" placeholder="Wat is vandaag je grootste vraag?"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Plan je kennismakingsgesprek</button>
+      <p class="form-note">Door het formulier te versturen geef je Dendooven toestemming om discreet contact op te nemen.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Dendooven Consulting</strong> · Kapellestraat 130.2, 8020 Oostkamp · West-Vlaanderen</p>
+    <p>Oostkamp · Tielt · Kanegem · Waardamme</p>
+    <p><a href="https://www.dendooven.be/">dendooven.be</a> · Boutique accountancy sinds 2014</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => item.classList.toggle('open'));
+  });
+  document.getElementById('form').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Dank je. We nemen binnen één werkdag discreet contact op.');
+  });
+</script>
+</body>
+</html>
