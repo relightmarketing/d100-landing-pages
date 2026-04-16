@@ -88,6 +88,12 @@ section { padding: 88px 0; }
 .diag-row strong { display: block; color: var(--txt); font-size: 1.05rem; margin-bottom: 4px; }
 .diag-row span { color: var(--sub); font-size: 0.95rem; line-height: 1.55; }
 .diag-closer { font-family: "DM Serif Display", serif; font-size: 1.25rem; color: var(--txt); text-align: center; max-width: 680px; margin: 0 auto; line-height: 1.4; border-top: 1px solid var(--line); padding-top: 28px; }
+.diag-solution { margin-top: 40px; background: var(--navy); border-radius: 18px; padding: 32px 28px; }
+.diag-solution-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
+.diag-solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.diag-sol-item { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; padding: 16px 18px; }
+.diag-sol-num { font-family: "DM Serif Display", serif; font-size: 2rem; color: #fff; line-height: 1; flex-shrink: 0; }
+.diag-sol-text { font-size: 0.88rem; color: rgba(255,255,255,0.78); line-height: 1.45; }
 .tracks { background: #fff; }
 .tracks h2 { text-align: center; margin-bottom: 14px; }
 .tracks .lead { text-align: center; max-width: 640px; margin: 0 auto 48px; }
@@ -133,15 +139,6 @@ section { padding: 88px 0; }
 .pillar.green .pn { color: var(--green); }
 .pillar h4 { font-family: "Inter"; font-weight: 700; font-size: 1.02rem; margin-bottom: 6px; color: var(--txt); }
 .pillar p { font-size: 0.93rem; color: var(--sub); line-height: 1.55; }
-.mini-flow { max-width: 1020px; margin: 0 auto 52px; padding: 24px; background: #fff; border: 1px solid var(--line); border-radius: 20px; }
-.mini-flow-title { text-align: center; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sub); margin-bottom: 18px; }
-.mini-flow-row { display: flex; flex-direction: column; gap: 14px; }
-.mini-step { display: flex; align-items: flex-start; gap: 14px; }
-.mini-step .dot { width: 28px; height: 28px; border-radius: 50%; color: #fff; font-family: "DM Serif Display", serif; font-size: 0.82rem; display: grid; place-items: center; flex-shrink: 0; }
-.mini-step.blue .dot { background: var(--blue); }
-.mini-step.green .dot { background: var(--green); }
-.mini-step .body strong { display: block; color: var(--txt); font-size: 0.95rem; margin-bottom: 2px; }
-.mini-step .body span { color: var(--sub); font-size: 0.88rem; }
 .phase { margin-bottom: 36px; }
 .phase-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; max-width: 1020px; margin-left: auto; margin-right: auto; }
 .phase-header .line { flex: 1; height: 1px; background: var(--line); }
@@ -192,6 +189,8 @@ section { padding: 88px 0; }
 .qa-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px 22px; }
 .qa-card h4 { color: var(--txt); margin-bottom: 8px; font-size: 1rem; font-weight: 700; }
 .qa-card p { font-size: 0.92rem; }
+.v1-note { margin-top: 32px; background: rgba(34,162,220,0.07); border: 1px solid rgba(34,162,220,0.25); border-left: 4px solid var(--blue); border-radius: 12px; padding: 20px 24px; font-size: 0.95rem; color: var(--sub); line-height: 1.6; }
+.v1-note strong { color: var(--txt); display: block; margin-bottom: 6px; font-size: 1rem; }
 .synergy { background: #fff; }
 .synergy h2 { text-align: center; margin-bottom: 14px; }
 .synergy .lead { text-align: center; max-width: 680px; margin: 0 auto 48px; }
@@ -270,6 +269,7 @@ footer a { color: var(--sub); }
 footer a + a { margin-left: 10px; }
 @media (min-width: 640px) {
   .ministrip-grid { grid-template-columns: repeat(3, 1fr); }
+  .diag-solution-grid { grid-template-columns: repeat(2, 1fr); }
   .track-split { grid-template-columns: 1fr 1fr; gap: 22px; }
   .compare-grid { grid-template-columns: 1fr 1fr; }
   .pillars { grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -279,10 +279,6 @@ footer a + a { margin-left: 10px; }
   .pillar-partner-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .case-grid { grid-template-columns: repeat(3, 1fr); }
   .about-grid { grid-template-columns: 1fr 1.2fr; gap: 56px; }
-  .mini-flow-row { flex-direction: row; gap: 12px; align-items: stretch; }
-  .mini-step { flex-direction: column; flex: 1; text-align: center; align-items: center; position: relative; }
-  .mini-step:not(:last-child)::after { content: ""; position: absolute; top: 14px; left: 50%; right: -50%; height: 2px; background: var(--line); z-index: 0; }
-  .mini-step .dot { z-index: 1; margin-bottom: 6px; }
 }
 @media (min-width: 960px) {
   section { padding: 108px 0; }
@@ -306,17 +302,13 @@ footer a + a { margin-left: 10px; }
   <div class="hero-inner">
     <img src="https://dima-ecotechnics.be/images/logo/Logo-Dima.svg" alt="Dima Ecotechnics" class="hero-logo">
     <span class="hero-kicker"><span class="dot"></span> Strategisch voorstel voor Dirk Vermeulen</span>
-    <h1 class="dm">Twee groeiuitdagingen. <span class="a-blue">Meer klanten</span> én <span class="a-green">nieuwe techniekers</span>. Eén geïntegreerde Meta-aanpak voor Dima.</h1>
-    <p class="lead">Dima heeft vandaag meer aanvragen nodig voor warmtepomp en airco. Én drie openstaande vacatures die via Meta ads sneller ingevuld worden dan via CV-mails. Op deze pagina leg ik uit hoe we dat oplossen, en u ziet exact wat u krijgt als we samenwerken.</p>
+    <h1 class="dm"><span class="a-blue">Meer klanten</span> en <span class="a-green">nieuwe techniekers aanwerven.</span> Eén aanpak bovenop jullie huidige content.</h1>
+    <p class="lead">Deze strategie is gebaseerd op alles wat ik online kon vinden over Dima Ecotechnics. De strategie is gemaakt om zowel meer klanten als kwalitatieve werknemers aan te trekken. Hieronder staat de volledige aanpak uitgewerkt die ik zou toepassen om deze doelen te behalen.<br><br><strong style="color:#fff;">Let op</strong> <span style="color:rgba(255,255,255,0.85);">— dit is bedoeld om samen met jullie huidige organische content te werken, niet om het te vervangen.</span></p>
     <div class="video-shell">
       <div class="video-wrap">
         <div class="placeholder">
           <div class="play-btn"></div>
-          <!-- LOOM: Vervang deze placeholder met de Loom embed iframe.
-               Plak de Loom embed src in /Users/arthur/d100-workspace/Output/41-dima-ecotechnics/loom-url.txt
-               en verander dit blok naar:
-               <iframe src="LOOM_URL_HIER" frameborder="0" allowfullscreen></iframe>
-          -->
+          <!-- LOOM: Vervang deze placeholder met de Loom embed iframe. -->
         </div>
       </div>
     </div>
@@ -327,12 +319,12 @@ footer a + a { margin-left: 10px; }
 <div class="ministrip">
   <div class="wrap">
     <div class="ministrip-grid">
-      <div class="mini"><div class="n">2</div><div class="l">Funnels opgezet</div></div>
-      <div class="mini"><div class="n">9</div><div class="l">Klanten-ads</div></div>
-      <div class="mini"><div class="n">3</div><div class="l">Klanten-scripts</div></div>
-      <div class="mini"><div class="n">6</div><div class="l">Recruitment-ads</div></div>
-      <div class="mini"><div class="n">2</div><div class="l">Recruitment-scripts</div></div>
-      <div class="mini"><div class="n">2</div><div class="l">Live landingspagina's</div></div>
+      <div class="mini"><div class="n">&#10003;</div><div class="l">Diagnose van jullie situatie</div></div>
+      <div class="mini"><div class="n">&#10003;</div><div class="l">Strategie nieuwe klanten</div></div>
+      <div class="mini"><div class="n">&#10003;</div><div class="l">Strategie nieuwe techniekers</div></div>
+      <div class="mini"><div class="n">&#10003;</div><div class="l">Kant-en-klare advertenties</div></div>
+      <div class="mini"><div class="n">&#10003;</div><div class="l">Video scripts uitgeschreven</div></div>
+      <div class="mini"><div class="n">&#10003;</div><div class="l">2 live pagina's online</div></div>
     </div>
   </div>
 </div>
@@ -341,67 +333,100 @@ footer a + a { margin-left: 10px; }
   <div class="wrap">
     <div class="center">
       <span class="eyebrow">Diagnose</span>
-      <h2 class="dm">Voor ik mijn voorstel doe, eerst wat ik over Dima zie.</h2>
-      <p class="lead">Ik heb uw website, uw IG en FB, uw Trustpilot, uw referentielijsten en uw jobs-pagina gelezen. Dit is wat opvalt.</p>
+      <h2 class="dm">Wat ik zie als ik naar Dima kijk.</h2>
+      <p class="lead">Ik heb jullie website, Instagram, Facebook, Trustpilot en vacaturepagina doorgenomen. Hier is mijn eerlijke analyse.</p>
     </div>
     <div class="diag-rows">
-      <div class="diag-row"><div class="num">1</div><div><strong>Uw B2B-portfolio is goud, maar onzichtbaar voor Limburgse gezinnen.</strong><span>Maasmechelen Village, Hotel Stayen, Stad Bilzen, Audika, VWR, Fagron. Geen enkele residentiële concurrent kan deze lijst claimen. Ze staat diep begraven onder "Inspiratie" in plaats van vooraan als uw sterkste trust signal.</span></div></div>
-      <div class="diag-row"><div class="num">2</div><div><strong>U post actief organisch, maar niemand ziet het die u nog niet kent.</strong><span>859 Facebook likes, 299 Instagram volgers, 89 posts. Waardevol voor bestaande klanten. Maar eigenaars van gezinswoningen in Limburg die nú een warmtepomp overwegen zien u niet, tenzij we ze via paid ads vinden.</span></div></div>
-      <div class="diag-row"><div class="num">3</div><div><strong>Drie openstaande vacatures, maar uw sollicitatieproces vraagt te veel te snel.</strong><span>"Stuur CV, motivatiebrief en foto naar info@dima-ecotechnics.be" is een drempel die een koeltechnieker die u nog niet kent niet neemt. Hij klikt niet. Een formulier van 2 minuten wél.</span></div></div>
+      <div class="diag-row">
+        <div class="num">1</div>
+        <div>
+          <strong>Jullie posten consistent en dat is goed.</strong>
+          <span>De content toont vakmanschap, een hecht team en professionaliteit. Dat is precies wat mensen willen zien van een installateur. Jullie doen dat al goed, en dat hoeft niet te veranderen.</span>
+        </div>
+      </div>
+      <div class="diag-row">
+        <div class="num">2</div>
+        <div>
+          <strong>Maar het probleem is: bijna niemand ziet het.</strong>
+          <span>859 Facebook likes en 299 Instagram volgers zijn vrijwel allemaal mensen die jullie al kennen. De Limburger die volgende week een airco of warmtepomp wil laten plaatsen, of de technieker die op zoek is naar een betere werkplek, die ziet jullie posts niet. Organische content bereikt de mensen die jullie al volgen, niet de mensen die jullie nog nodig hebben.</span>
+        </div>
+      </div>
+      <div class="diag-row">
+        <div class="num">3</div>
+        <div>
+          <strong>Wat ook nog ontbreekt: video's waarin iemand rechtstreeks uitlegt waarom je bij Dima moet zijn.</strong>
+          <span>De huidige content toont realisaties en sfeer. Dat werkt voor vertrouwen. Maar wat nóg beter converteert, zijn video's waarin Dirk of een teamlid direct tegen de camera praat en uitlegt waarom klanten voor Dima kiezen. Dat type content overtuigt twijfelaars, en die bestaan nog nauwelijks in jullie huidige mix.</span>
+        </div>
+      </div>
+      <div class="diag-row">
+        <div class="num">4</div>
+        <div>
+          <strong>Jullie hebben al eens advertenties gedraaid, maar het verkeer ging naar de verkeerde plek.</strong>
+          <span>Ik zag dat jullie eerder betaalde advertenties op Facebook en Instagram hadden. Goed initiatief. Maar het verkeer werd gestuurd naar jullie Instagram- of Facebookpagina. Iemand die op een advertentie klikt en uitkomt op een sociaal profiel, is weg binnen 10 seconden. Grote bedrijven sturen dat verkeer naar een specifieke pagina die gemaakt is om mensen te overtuigen actie te ondernemen. Dat is precies wat ik nu voor jullie heb gebouwd.</span>
+        </div>
+      </div>
     </div>
-    <p class="diag-closer">Alledrie oplosbaar met dezelfde infrastructuur: paid Meta ads, een landingspagina per doelgroep, en een filterformulier dat Anne de juiste contacten als eerste laat terugbellen.</p>
+    <div class="diag-solution">
+      <div class="diag-solution-label">Wat ik heb uitgewerkt als oplossing</div>
+      <div class="diag-solution-grid">
+        <div class="diag-sol-item"><div class="diag-sol-num">9</div><div class="diag-sol-text">afbeeldingadvertenties, klaar om te lanceren</div></div>
+        <div class="diag-sol-item"><div class="diag-sol-num">3</div><div class="diag-sol-text">video scripts volledig uitgeschreven, enkel nog filmen</div></div>
+        <div class="diag-sol-item"><div class="diag-sol-num">6</div><div class="diag-sol-text">recruitment-advertenties voor nieuwe techniekers</div></div>
+        <div class="diag-sol-item"><div class="diag-sol-num">2</div><div class="diag-sol-text">landingspagina's live, voor klanten en werknemers apart</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="tracks fade">
   <div class="wrap">
-    <span class="eyebrow center" style="display:block; text-align:center;">Twee avatars, twee tracks</span>
-    <h2 class="dm">De Limburger die een warmtepomp zoekt is niet dezelfde als de technieker die u zoekt.</h2>
-    <p class="lead">Daarom bouwen we twee parallelle funnels, elk met eigen ads, eigen script-toon en eigen landingspagina. Gedeelde techniek, verschillende verhalen.</p>
+    <span class="eyebrow center" style="display:block; text-align:center;">Twee doelgroepen, twee tracks</span>
+    <h2 class="dm">De Limburger die een warmtepomp zoekt is niet dezelfde als de technieker die je zoekt.</h2>
+    <p class="lead">Daarom bouwen we twee aparte advertentietrajecten, elk met eigen ads, eigen toon en eigen landingspagina. Gedeelde techniek, twee compleet verschillende verhalen.</p>
     <div class="track-split">
       <div class="track blue">
         <span class="tag">Track 1, Klanten</span>
         <h3>Meer aanvragen voor warmtepomp, airco en ventilatie</h3>
-        <div class="line-item"><span class="lbl">Avatar</span><span class="val">Eigenaar gezinswoning in Limburg, 35 tot 65, twijfelt tussen gas vervangen of airco bijplaatsen.</span></div>
+        <div class="line-item"><span class="lbl">Doelgroep</span><span class="val">Eigenaar gezinswoning in Limburg, 35 tot 65, twijfelt tussen gas vervangen of airco bijplaatsen.</span></div>
         <div class="line-item"><span class="lbl">Pijn</span><span class="val">"Iedere installateur vertelt iets anders en mijn energiefactuur blijft maar stijgen."</span></div>
         <div class="line-item"><span class="lbl">Belofte</span><span class="val">"Piekfijne uitvoering en afwerking. Kwaliteit op elk vlak."</span></div>
-        <div class="line-item"><span class="lbl">Gap angle</span><span class="val">Dezelfde installateur die Maasmechelen Village en Hotel Stayen vertrouwen, nu voor uw woning.</span></div>
+        <div class="line-item"><span class="lbl">Invalshoek</span><span class="val">Dezelfde installateur die Maasmechelen Village en Hotel Stayen vertrouwen, nu voor jouw woning.</span></div>
       </div>
       <div class="track green">
         <span class="tag">Track 2, Werknemers</span>
         <h3>Drie vacatures invullen, zonder CV-drempel vooraf</h3>
-        <div class="line-item"><span class="lbl">Avatar</span><span class="val">Technieker 22 tot 40, vandaag bij een algemene installateur of grote keten, zoekt méér inhoud.</span></div>
+        <div class="line-item"><span class="lbl">Doelgroep</span><span class="val">Technieker 22 tot 40, vandaag bij een algemene installateur of grote keten, zoekt meer inhoud.</span></div>
         <div class="line-item"><span class="lbl">Pijn</span><span class="val">"Vastgelopen bij dezelfde drie installaties, week na week, zonder iets bij te leren."</span></div>
         <div class="line-item"><span class="lbl">Belofte</span><span class="val">"Bij Dima ben je geen nummer. Je bent de monteur die Dirk zelf heeft uitgekozen."</span></div>
-        <div class="line-item"><span class="lbl">Gap angle</span><span class="val">Uw B2B-portfolio is ook employer brand. Techniekers willen werken waar kwaliteit telt.</span></div>
+        <div class="line-item"><span class="lbl">Invalshoek</span><span class="val">Jouw B2B-portfolio is ook een sterk argument als werkgever. Techniekers willen werken waar kwaliteit telt.</span></div>
       </div>
     </div>
-    <p class="tracks-closer">Beide tracks delen hetzelfde Meta Ads account, dezelfde Belgische targeting en dezelfde huisstijl. Maar spreken twee compleet verschillende mensen aan.</p>
+    <p class="tracks-closer">Beide tracks lopen parallel en versterken mekaar, maar spreken twee compleet verschillende mensen aan.</p>
   </div>
 </section>
 
 <section class="explainer fade">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">Voor u die net start met paid</span>
-      <h2 class="dm">Wat verandert er als wij paid Meta ads bovenop uw huidige IG en FB zetten?</h2>
-      <p class="lead">U doet vandaag goed werk organisch. Hier is wat er gebeurt zodra wij daar een paid laag bovenop leggen, in mensentaal uitgelegd.</p>
+      <span class="eyebrow">Organisch vs. betaald</span>
+      <h2 class="dm">Wat verandert er als we betaalde advertenties bovenop jouw huidige posts zetten?</h2>
+      <p class="lead">Je doet vandaag al goed werk op Instagram en Facebook. Hier is het verschil in gewone taal.</p>
     </div>
     <div class="compare-grid">
       <div class="compare">
-        <div class="label">Vandaag (alleen organisch)</div>
-        <h3>Uw posts bereiken vooral wie u al volgt</h3>
-        <p>Uw 859 Facebook likes en 299 Instagram volgers zien uw realisaties. Meestal bestaande klanten, vrienden en collega-installateurs. Onbekenden zien u zelden.</p>
+        <div class="label">Vandaag, alleen organisch</div>
+        <h3>Jouw posts bereiken wie je al volgt</h3>
+        <p>Jouw 859 Facebook likes en 299 Instagram volgers zien jouw realisaties. Meestal bestaande klanten en mensen die je al kennen. Onbekenden zien je zelden.</p>
         <div class="stat">~5 tot 10% bereik per post</div>
       </div>
       <div class="compare next">
-        <div class="label">Met paid Meta ads erbovenop</div>
-        <h3>U bereikt mensen die u nog niet kennen</h3>
-        <p>Wij tonen uw ads aan eigenaars van gezinswoningen in Limburg die nu een warmtepomp overwegen, én aan koeltechniekers in Limburg die zoeken naar een nieuwe werkgever. Gefilterd op leeftijd, postcode en interesse.</p>
+        <div class="label">Met betaalde advertenties erbovenop</div>
+        <h3>Je bereikt mensen die je nog niet kennen</h3>
+        <p>Wij tonen jouw advertenties aan eigenaars van gezinswoningen in Limburg die nu een warmtepomp overwegen, én aan koeltechniekers die zoeken naar een nieuwe werkgever. Gefilterd op leeftijd, postcode en interesse.</p>
         <div class="stat">10.000+ gerichte vertoningen per week</div>
       </div>
     </div>
-    <div class="explainer-quote">"Organisch is uw uithangbord. Paid Meta ads is uw straat met passanten. U heeft beide nodig, want zonder passanten ziet niemand uw uithangbord."</div>
+    <div class="explainer-quote">"Organisch is jouw uithangbord. Betaalde advertenties is de straat met passanten. Je hebt beide nodig, want zonder passanten ziet niemand jouw uithangbord."</div>
   </div>
 </section>
 
@@ -410,95 +435,88 @@ footer a + a { margin-left: 10px; }
     <div class="track-block-intro center">
       <span class="track-banner blue"><span class="track-num">01</span> Track 1, Klanten</span>
       <h2 class="dm">Van scroll tot meting bij Dirk thuis aan tafel.</h2>
-      <p class="lead">We nemen uw beste trust-signal (de B2B-portfolio) en we zetten het vooraan. We tonen Dirk in plaats van een verkoper. En we vervangen "Vraag een offerte aan" door een filterformulier dat alleen de juiste Limburgers doorlaat.</p>
+      <p class="lead">We zetten jouw B2B-portfolio vooraan als bewijs van kwaliteit. We tonen Dirk in plaats van een verkoper. En we vervangen "Vraag een offerte aan" door een filterformulier dat alleen de juiste Limburgers doorlaat.</p>
     </div>
 
     <div class="pillars">
-      <div class="pillar blue"><div class="pn">01</div><h4>B2B-referenties als residentieel trust signal</h4><p>Maasmechelen Village, Hotel Stayen, Stad Bilzen. Geen concurrent kan deze lijst claimen.</p></div>
-      <div class="pillar blue"><div class="pn">02</div><h4>Dirk doet zelf de meting</h4><p>Geen verkoper, geen delegatie. 15+ jaar sector-ervaring staat aan uw deur.</p></div>
-      <div class="pillar blue"><div class="pn">03</div><h4>Hero-zin: Piekfijne uitvoering en afwerking</h4><p>Verbatim uit uw klantgetuigenis Verjans-Schoefs, Hoeselt. Kwaliteit op elk vlak.</p></div>
-    </div>
-
-    <div class="mini-flow">
-      <div class="mini-flow-title">Funnelflow klanten</div>
-      <div class="mini-flow-row">
-        <div class="mini-step blue"><div class="dot">1</div><div class="body"><strong>Meta ad</strong><span>Limburger ziet uw ad in feed of stories</span></div></div>
-        <div class="mini-step blue"><div class="dot">2</div><div class="body"><strong>Landingspagina</strong><span>Mobiele LP met portfolio en bewijs</span></div></div>
-        <div class="mini-step blue"><div class="dot">3</div><div class="body"><strong>Kwalificatie</strong><span>2-min formulier, filtert bad-fits eruit</span></div></div>
-        <div class="mini-step blue"><div class="dot">4</div><div class="body"><strong>Anne belt</strong><span>Binnen 1 werkdag, plant meting in</span></div></div>
-        <div class="mini-step blue"><div class="dot">5</div><div class="body"><strong>Meting Dirk</strong><span>Persoonlijk bezoek, offerte op maat</span></div></div>
-      </div>
+      <div class="pillar blue"><div class="pn">01</div><h4>B2B-referenties als bewijs voor gezinnen</h4><p>Maasmechelen Village, Hotel Stayen, Stad Bilzen. Geen concurrent kan deze lijst tonen.</p></div>
+      <div class="pillar blue"><div class="pn">02</div><h4>Dirk doet zelf de meting</h4><p>Geen verkoper, geen delegatie. 15+ jaar sector-ervaring staat aan je deur.</p></div>
+      <div class="pillar blue"><div class="pn">03</div><h4>"Piekfijne uitvoering en afwerking"</h4><p>Letterlijk citaat van klant Verjans-Schoefs uit Hoeselt. Kwaliteit op elk vlak.</p></div>
     </div>
 
     <div class="phase">
-      <div class="phase-header"><span class="label">Fase 1, Aandacht trekken (cold)</span><div class="line"></div></div>
+      <div class="phase-header"><span class="label">Fase 1, Aandacht trekken</span><div class="line"></div></div>
       <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./images/1.png" alt="Klanten-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">1</span><span class="type">Pain / Problem</span></div><p class="desc">Eettafel in een Belgische gezinswoning met stapel energiefacturen en meerdere offertes. Roept de pijn op van de avatar die geen duidelijk antwoord krijgt.</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/2.png" alt="Klanten-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">2</span><span class="type">Collage</span></div><p class="desc">2x2 grid van uw vijf productlijnen (airco, ventilatie, warmtepomp, warmtepompboiler, zonnepanelen). Alles onder één dak.</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/3.png" alt="Klanten-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">3</span><span class="type">Education / Tip</span></div><p class="desc">Professionele meting aan een buitenunit met meetinstrumenten. Kop: "Een warmtepomp meet je tweemaal." Positioneert Dima als de expert.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/1.png" alt="Klanten-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">1</span><span class="type">Probleem</span></div><p class="desc">Eettafel met energiefacturen en meerdere offertes. Roept de frustratie op van de Limburger die geen duidelijk antwoord krijgt.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/2.png" alt="Klanten-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">2</span><span class="type">Overzicht</span></div><p class="desc">Alle vijf productlijnen samen: airco, ventilatie, warmtepomp, warmtepompboiler, zonnepanelen. Alles onder één dak bij Dima.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/3.png" alt="Klanten-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">3</span><span class="type">Expertise</span></div><p class="desc">Meting aan een buitenunit met meetinstrumenten. "Een warmtepomp meet je tweemaal." Dima als de specialist die het goed doet.</p></div></div>
       </div>
     </div>
 
     <div class="phase">
       <div class="phase-header"><span class="label">Fase 2, Vertrouwen opbouwen</span><div class="line"></div></div>
       <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./images/4.png" alt="Klanten-ad 4"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">4</span><span class="type">Owner / Team</span></div><p class="desc">Dirk Vermeulen in blauwe poloshirt voor een propere werkplaats. "Zaakvoerder, 15+ jaar in de sector, Mitsubishi Diamond Dealer."</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/5.png" alt="Klanten-ad 5"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">5</span><span class="type">Social Proof</span></div><p class="desc">Gezinswoning met Mitsubishi binnenunit. Citaat: "Piekfijne uitvoering en afwerking. Kwaliteit op elk vlak." Verjans-Schoefs, Hoeselt.</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/6.png" alt="Klanten-ad 6"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">6</span><span class="type">Behind the Scenes</span></div><p class="desc">Macro shot van handen die een koperleiding aanspannen op een Mitsubishi buitenunit. Vakmanschap zonder gezichten.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/4.png" alt="Klanten-ad 4"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">4</span><span class="type">Zaakvoerder</span></div><p class="desc">Dirk Vermeulen voor een propere werkplaats. "Zaakvoerder, 15+ jaar in de sector, Mitsubishi Diamond Dealer."</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/5.png" alt="Klanten-ad 5"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">5</span><span class="type">Klantgetuigenis</span></div><p class="desc">Gezinswoning met Mitsubishi binnenunit. Citaat: "Piekfijne uitvoering en afwerking. Kwaliteit op elk vlak." Verjans-Schoefs, Hoeselt.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/6.png" alt="Klanten-ad 6"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">6</span><span class="type">Vakmanschap</span></div><p class="desc">Handen die een koperleiding aanspannen op een Mitsubishi buitenunit. Vakmanschap zonder woorden.</p></div></div>
       </div>
     </div>
 
     <div class="phase">
-      <div class="phase-header"><span class="label">Fase 3, Conversie en aanvragen</span><div class="line"></div></div>
+      <div class="phase-header"><span class="label">Fase 3, Aanvraag</span><div class="line"></div></div>
       <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./images/7.png" alt="Klanten-ad 7"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">7</span><span class="type">Free Offer</span></div><p class="desc">Links buitenunit, rechts panel: "Gratis offerte op maat, Dirk komt zelf langs, Mitsubishi Diamond Dealer."</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/8.png" alt="Klanten-ad 8"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">8</span><span class="type">Urgency</span></div><p class="desc">Agenda met enkele dagen omcirkeld, telefoon met offerteaanvraag open. Boodschap: "Beperkt aantal metingen vrij."</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/9.png" alt="Klanten-ad 9"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">9</span><span class="type">Lead / Hero</span></div><p class="desc">Architecturale shot van een Belgische rijwoning met Mitsubishi unit. "Piekfijne uitvoering en afwerking" plus groene CTA.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/7.png" alt="Klanten-ad 7"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">7</span><span class="type">Aanbod</span></div><p class="desc">"Gratis offerte op maat, Dirk komt zelf langs, Mitsubishi Diamond Dealer." Eén duidelijk aanbod.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/8.png" alt="Klanten-ad 8"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">8</span><span class="type">Urgentie</span></div><p class="desc">Agenda met enkele dagen omcirkeld. "Beperkt aantal metingen vrij."</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/9.png" alt="Klanten-ad 9"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">9</span><span class="type">Hero</span></div><p class="desc">Belgische rijwoning met Mitsubishi unit. "Piekfijne uitvoering en afwerking" plus groene knop.</p></div></div>
       </div>
     </div>
 
     <div class="scripts-wrap">
-      <div class="scripts-label">3 volledig uitgeschreven video scripts, klaar om met uw telefoon te filmen</div>
+      <div class="scripts-label">3 volledig uitgeschreven video scripts, klaar om met je telefoon te filmen</div>
       <div class="accordion blue" id="acc1">
-        <button class="acc-head" onclick="toggle('acc1')"><div class="left"><span class="label">Script 1, Pain</span><h3>Iedere installateur vertelt iets anders</h3></div><div class="acc-icon">+</div></button>
+        <button class="acc-head" onclick="toggle('acc1')"><div class="left"><span class="label">Script 1, Probleem</span><h3>Iedere installateur vertelt iets anders</h3></div><div class="acc-icon">+</div></button>
         <div class="acc-body" id="acc1-body"><div class="acc-inner">
-          <div class="sblock"><span class="slabel">Centraal angle</span><p>Een gezinswoning-eigenaar krijgt drie offertes met drie verschillende oplossingen, niemand legt eerlijk uit wat past, en intussen blijft de energiefactuur stijgen.</p></div>
-          <div class="sblock"><span class="slabel">Hook (0 tot 10s)</span><p>Als jij in Limburg een huis hebt en je hebt al drie installateurs over de vloer gehad voor een warmtepomp of airco, dan ken je dit gevoel. De ene zegt dit, de andere zegt dat, en niemand legt je eerlijk uit welke oplossing nu écht bij jouw woning past. Iedere installateur vertelt iets anders, en jouw energiefactuur blijft maar stijgen. Luister even.</p></div>
-          <div class="sblock"><span class="slabel">Body (11 tot 90s)</span><p>Ik ben Dirk Vermeulen van Dima Eco-Technics in Bilzen. Ik plaats al meer dan vijftien jaar warmtepompen, airco en ventilatie in heel Limburg. En ik weet wat er meestal gebeurt voordat mensen mij bellen. Ze hebben drie of vier offertes opgehaald. Bij de ene komt er iemand vijf minuten kijken, bij de andere komt er niemand en krijg je gewoon een prijs in je mailbox. Bij de derde gaat het meer over premies dan over jouw woning.</p><p>Daarom werk ik anders. Ik kom zelf bij u langs. Ik meet, ik bekijk uw situatie, en ik zeg eerlijk welke oplossing past. Wij zijn Mitsubishi Diamond Dealer en Vincotte gecertificeerd, dezelfde installateur die Maasmechelen Village, Hotel Stayen en de Stad Bilzen vertrouwen.</p><p>Onlangs hebben wij bij een gezin in Hoeselt een warmtepompboiler geplaatst nadat zij eerst drie andere offertes hadden gekregen. Hun reactie achteraf was letterlijk: "Piekfijne uitvoering en afwerking. Kwaliteit op elk vlak."</p></div>
-          <div class="sblock"><span class="slabel">CTA (90 tot 120s)</span><p>Klik op de knop hieronder. U komt op een korte pagina waar u in twee minuten uw situatie beschrijft. Daarna bel ik u zelf op, plan ik een meting bij u thuis in, en krijgt u een offerte op maat. Klik hieronder en vraag uw gratis offerte aan.</p></div>
-          <div class="sblock"><span class="slabel">Filming brief</span><p><strong>Locatie:</strong> Dima kantoor Bilzen, of staand voor een Mitsubishi binnenunit.<br><strong>Camera:</strong> Telefoon op mini-statief, ooghoogte.<br><strong>Framing:</strong> Medium shot.<br><strong>Licht:</strong> Natuurlijk daglicht.<br><strong>Energie:</strong> Direct, lichtjes geërgerd, Limburgs nuchter.<br><strong>Kledij:</strong> Dima blauw.</p></div>
+          <div class="sblock"><span class="slabel">Insteek</span><p>Een gezinswoning-eigenaar krijgt drie offertes met drie verschillende oplossingen. Niemand legt eerlijk uit wat past. Intussen blijft de energiefactuur stijgen.</p></div>
+          <div class="sblock"><span class="slabel">Hook (0 tot 10s)</span><p>Als jij in Limburg een huis hebt en je hebt al drie installateurs over de vloer gehad voor een warmtepomp of airco, dan ken je dit gevoel. De ene zegt dit, de andere zegt dat, en niemand legt je eerlijk uit welke oplossing bij jouw woning past. Luister even.</p></div>
+          <div class="sblock"><span class="slabel">Body (11 tot 90s)</span><p>Ik ben Dirk Vermeulen van Dima Eco-Technics in Bilzen. Ik plaats al meer dan vijftien jaar warmtepompen, airco en ventilatie in heel Limburg. En ik weet wat er meestal gebeurt voordat mensen mij bellen. Ze hebben drie of vier offertes opgehaald. Bij de ene komt er iemand vijf minuten kijken, bij de andere krijg je gewoon een prijs in je mailbox.</p><p>Daarom werk ik anders. Ik kom zelf langs. Ik meet, ik bekijk jouw situatie, en ik zeg eerlijk welke oplossing past. Wij zijn Mitsubishi Diamond Dealer en Vincotte gecertificeerd. Dezelfde installateur die Maasmechelen Village, Hotel Stayen en de Stad Bilzen vertrouwen.</p><p>Een gezin in Hoeselt zei achteraf letterlijk: "Piekfijne uitvoering en afwerking. Kwaliteit op elk vlak."</p></div>
+          <div class="sblock"><span class="slabel">CTA (90 tot 120s)</span><p>Klik op de knop hieronder. Je komt op een korte pagina waar je in twee minuten jouw situatie beschrijft. Daarna bel ik je zelf op, plan ik een meting bij je thuis in, en krijg je een offerte op maat.</p></div>
+          <div class="sblock"><span class="slabel">Filmtips</span><p><strong>Locatie:</strong> Dima kantoor Bilzen, of voor een Mitsubishi binnenunit.<br><strong>Camera:</strong> Telefoon op mini-statief, ooghoogte.<br><strong>Energie:</strong> Direct, lichtjes geërgerd, Limburgs nuchter.<br><strong>Kledij:</strong> Dima blauw.</p></div>
         </div></div>
       </div>
       <div class="accordion blue" id="acc2">
-        <button class="acc-head" onclick="toggle('acc2')"><div class="left"><span class="label">Script 2, Result</span><h3>Dezelfde installateur als Maasmechelen Village en Hotel Stayen</h3></div><div class="acc-icon">+</div></button>
+        <button class="acc-head" onclick="toggle('acc2')"><div class="left"><span class="label">Script 2, Referenties</span><h3>Dezelfde installateur als Maasmechelen Village en Hotel Stayen</h3></div><div class="acc-icon">+</div></button>
         <div class="acc-body" id="acc2-body"><div class="acc-inner">
-          <div class="sblock"><span class="slabel">Centraal angle</span><p>De installateur die grote Belgische B2B-namen vertrouwen, plaatst evengoed bij een gewone gezinswoning.</p></div>
-          <div class="sblock"><span class="slabel">Hook (0 tot 10s)</span><p>Wist u dat de installateur die de airco van Maasmechelen Village en de klimaatinstallatie van Hotel Stayen onderhoudt, ook gewoon bij u thuis komt installeren? Veel mensen weten dat niet. En dat is precies waarom u nu kijkt.</p></div>
-          <div class="sblock"><span class="slabel">Body (11 tot 90s)</span><p>Ik ben Dirk Vermeulen, zaakvoerder van Dima Eco-Technics in Bilzen. Tien jaar geleden ben ik gestart, na vijftien jaar in de sector. Wij installeren cleanrooms voor VWR in Heverlee, ventilatie in Maasmechelen Village, City Multi-units in Hotel Stayen, airco voor de Stad Bilzen, voor Audika, Ace en Tate, Fagron, Nelson Labs.</p><p>Maar vergeet niet, het zijn dezelfde monteurs, dezelfde Mitsubishi Diamond Dealer certificering en dezelfde Vincotte normen die wij meenemen naar uw rijwoning in Hoeselt of uw vrijstaand huis in Diest. De afwerking is hetzelfde, de service is hetzelfde.</p><p>Een familie in Voeren schreef ons: "Wij vonden bij DIMA het gepaste toestel, de nodige know-how en vakmanschap om aan al deze eisen te voldoen."</p></div>
-          <div class="sblock"><span class="slabel">CTA (90 tot 120s)</span><p>Klik hieronder, beschrijf uw situatie kort, ik bel u zelf op en kom langs voor de meting. Daarna krijgt u een eerlijke offerte op maat.</p></div>
-          <div class="sblock"><span class="slabel">Filming brief</span><p><strong>Locatie:</strong> Bij een gerealiseerd project, bij voorkeur gevel met Mitsubishi unit.<br><strong>Camera:</strong> Telefoon, ooghoogte.<br><strong>Framing:</strong> Medium shot.<br><strong>Licht:</strong> Natuurlijk buitenlicht.<br><strong>Energie:</strong> Rustig, zelfverzekerd, lichtjes trots.<br><strong>Kledij:</strong> Dima groen.</p></div>
+          <div class="sblock"><span class="slabel">Insteek</span><p>De installateur die grote Belgische namen vertrouwen, plaatst evengoed bij een gewone gezinswoning.</p></div>
+          <div class="sblock"><span class="slabel">Hook (0 tot 10s)</span><p>Wist je dat de installateur die de airco van Maasmechelen Village en de klimaatinstallatie van Hotel Stayen onderhoudt, ook gewoon bij jou thuis komt installeren? Veel mensen weten dat niet.</p></div>
+          <div class="sblock"><span class="slabel">Body (11 tot 90s)</span><p>Ik ben Dirk Vermeulen, zaakvoerder van Dima Eco-Technics in Bilzen. Wij installeren cleanrooms voor VWR, ventilatie in Maasmechelen Village, City Multi-units in Hotel Stayen, airco voor de Stad Bilzen en Fagron.</p><p>Maar dezelfde monteurs, dezelfde certificeringen en dezelfde normen nemen wij mee naar jouw rijwoning in Hoeselt of jouw huis in Diest. Een familie in Voeren schreef: "Wij vonden bij DIMA het gepaste toestel, de nodige know-how en vakmanschap."</p></div>
+          <div class="sblock"><span class="slabel">CTA (90 tot 120s)</span><p>Klik hieronder, beschrijf jouw situatie kort, ik bel je zelf op en kom langs voor de meting.</p></div>
+          <div class="sblock"><span class="slabel">Filmtips</span><p><strong>Locatie:</strong> Bij een gerealiseerd project, gevel met Mitsubishi unit.<br><strong>Energie:</strong> Rustig, zelfverzekerd, lichtjes trots.<br><strong>Kledij:</strong> Dima groen.</p></div>
         </div></div>
       </div>
       <div class="accordion blue" id="acc3">
-        <button class="acc-head" onclick="toggle('acc3')"><div class="left"><span class="label">Script 3, Contrarian</span><h3>Stop met meten in 5 minuten</h3></div><div class="acc-icon">+</div></button>
+        <button class="acc-head" onclick="toggle('acc3')"><div class="left"><span class="label">Script 3, Tegendraads</span><h3>Stop met meten in 5 minuten</h3></div><div class="acc-icon">+</div></button>
         <div class="acc-body" id="acc3-body"><div class="acc-inner">
-          <div class="sblock"><span class="slabel">Centraal angle</span><p>Een warmtepomp die je in vijf minuten "berekent" wordt verkeerd geplaatst. De echte meting moet door iemand met ervaring op locatie gebeuren.</p></div>
-          <div class="sblock"><span class="slabel">Hook (0 tot 10s)</span><p>Als iemand u een warmtepomp aanbiedt na vijf minuten in uw oprit te staan, weet u dan wat dat betekent? Het betekent dat ze gokken. En als ze fout gokken op vijftienduizend euro, gokken ze met uw factuur voor de volgende vijftien jaar.</p></div>
-          <div class="sblock"><span class="slabel">Body (11 tot 90s)</span><p>Een warmtepomp meet u tweemaal. Eén keer voor het juiste vermogen op basis van de werkelijke isolatie en het volume van uw woning. En een tweede keer voor de juiste plaats van de buitenunit, want geluid, condensaat en luchttoevoer kunnen u maanden later in de problemen brengen.</p><p>Ik ben Dirk Vermeulen van Dima Eco-Technics. Ik kom zelf bij elke klant langs. Niet een verkoper, niet een commerciële medewerker, ikzelf, met vijftien jaar ervaring in koeltechniek. Wij zijn Mitsubishi Diamond Dealer en Vincotte gecertificeerd.</p><p>Een klant in Diest schreef: "Dank voor het knappe werk. Respect van beloofde levertermijnen en vakmanschap."</p></div>
-          <div class="sblock"><span class="slabel">CTA (90 tot 120s)</span><p>Als u serieus overweegt om een warmtepomp, airco of ventilatie te plaatsen, en u wil dat de meting goed gebeurt voor de eerste schroef erin gaat, klik dan hieronder.</p></div>
-          <div class="sblock"><span class="slabel">Filming brief</span><p><strong>Locatie:</strong> Buiten, naast een geïnstalleerde buitenunit.<br><strong>Camera:</strong> Telefoon, ooghoogte.<br><strong>Framing:</strong> Medium shot.<br><strong>Licht:</strong> Helder daglicht.<br><strong>Energie:</strong> Direct, autoritair, contrair.<br><strong>Kledij:</strong> Dima blauw of groen.</p></div>
+          <div class="sblock"><span class="slabel">Insteek</span><p>Een warmtepomp die je in vijf minuten "berekent" wordt verkeerd geplaatst. De echte meting moet door iemand met ervaring op locatie gebeuren.</p></div>
+          <div class="sblock"><span class="slabel">Hook (0 tot 10s)</span><p>Als iemand je een warmtepomp aanbiedt na vijf minuten in jouw oprit te staan, weet je wat dat betekent? Ze gokken. En als ze fout gokken op vijftienduizend euro, gokken ze met jouw factuur voor de volgende vijftien jaar.</p></div>
+          <div class="sblock"><span class="slabel">Body (11 tot 90s)</span><p>Een warmtepomp meet je tweemaal. Eén keer voor het juiste vermogen, op basis van de werkelijke isolatie van jouw woning. En een tweede keer voor de juiste plaats van de buitenunit.</p><p>Ik ben Dirk Vermeulen van Dima Eco-Technics. Ik kom zelf bij elke klant langs, met vijftien jaar ervaring in koeltechniek. Een klant in Diest schreef: "Dank voor het knappe werk. Respect van beloofde levertermijnen en vakmanschap."</p></div>
+          <div class="sblock"><span class="slabel">CTA (90 tot 120s)</span><p>Als je serieus overweegt om een warmtepomp, airco of ventilatie te plaatsen en de meting goed wil doen voor de eerste schroef erin gaat, klik dan hieronder.</p></div>
+          <div class="sblock"><span class="slabel">Filmtips</span><p><strong>Locatie:</strong> Buiten, naast een geïnstalleerde buitenunit.<br><strong>Energie:</strong> Direct, autoritair, contrair.<br><strong>Kledij:</strong> Dima blauw of groen.</p></div>
         </div></div>
       </div>
     </div>
 
     <div class="mockup-wrap">
       <div class="lead-sm">Live landingspagina voor klanten</div>
-      <h3>Bekijk ze nu al, ze staat online.</h3>
+      <h3>Staat online. Bekijk ze nu al.</h3>
       <div class="phone-frame"><div class="phone-screen"><iframe src="./landing-page/" title="Dima klanten landingspagina" loading="lazy"></iframe></div></div>
       <div class="qa-grid">
-        <div class="qa-card"><h4>Waarom geen link naar uw website?</h4><p>Uw website vraagt 7+ klikken tot een offerte-aanvraag. Een paid ad bezoeker op zijn telefoon klikt niet 7 keer. Deze pagina beantwoordt zijn vraag in één scroll.</p></div>
-        <div class="qa-card"><h4>Waarom converteert deze pagina?</h4><p>Eén belofte (Piekfijne uitvoering), één bewijs (Maasmechelen Village + Hotel Stayen + Vincotte), één persoon (Dirk), één formulier dat filtert.</p></div>
+        <div class="qa-card"><h4>Waarom geen link naar de website?</h4><p>De website vraagt 7+ klikken tot een aanvraag. Iemand op zijn telefoon klikt niet 7 keer. Deze pagina beantwoordt zijn vraag in één scroll en eindigt met één formulier.</p></div>
+        <div class="qa-card"><h4>Waarom werkt dit beter?</h4><p>Eén belofte, één bewijs (Maasmechelen Village + Vincotte), één persoon (Dirk), één formulier dat filtert. Geen afleiding.</p></div>
       </div>
+    </div>
+    <div class="v1-note">
+      <strong>Dit is versie 1, en ze is klaar om te lanceren.</strong>
+      Daarna kunnen we specifieker gaan: een aparte advertentie puur voor airco bij bedrijven, één voor warmtepompen bij renovaties, één gecombineerd met zonnepanelen. Met de zomer die eraan komt, is airconditioning nu het meest voor de hand liggende startpunt.
     </div>
   </div>
 </section>
@@ -507,71 +525,60 @@ footer a + a { margin-left: 10px; }
   <div class="wrap">
     <div class="track-block-intro center">
       <span class="track-banner green"><span class="track-num">02</span> Track 2, Werknemers</span>
-      <h2 class="dm">Van koeltechnieker die zich verveelt tot kennismaking met Dirk.</h2>
-      <p class="lead">Dezelfde B2B-portfolio is uw sterkste employer brand. Techniekers willen werken waar kwaliteit telt. We bouwen een sollicitatiepagina zonder CV-drempel en laten Meta ads de juiste mensen naar u toe brengen.</p>
+      <h2 class="dm">Van technieker die zich verveelt tot kennismaking met Dirk.</h2>
+      <p class="lead">Dezelfde B2B-portfolio is jouw sterkste argument als werkgever. We bouwen een sollicitatiepagina zonder CV-drempel en laten advertenties de juiste mensen vinden.</p>
     </div>
 
     <div class="pillars">
-      <div class="pillar green"><div class="pn">01</div><h4>B2B-portfolio als employer brand signal</h4><p>Hotel Stayen, VWR cleanrooms, Maasmechelen Village. Geen lokale concurrent biedt zulke projecten.</p></div>
-      <div class="pillar green"><div class="pn">02</div><h4>Geen CV vooraf</h4><p>2-minuten formulier ipv mail met CV, motivatie en foto. Drempel weg, volume omhoog.</p></div>
-      <div class="pillar green"><div class="pn">03</div><h4>Hero-zin: Geen nummer</h4><p>"Bij Dima ben je geen nummer. Je bent de monteur die Dirk zelf heeft uitgekozen."</p></div>
-    </div>
-
-    <div class="mini-flow">
-      <div class="mini-flow-title">Funnelflow werknemers</div>
-      <div class="mini-flow-row">
-        <div class="mini-step green"><div class="dot">1</div><div class="body"><strong>Meta ad</strong><span>Koeltechnieker ziet ad in feed of stories</span></div></div>
-        <div class="mini-step green"><div class="dot">2</div><div class="body"><strong>Sollicitatiepagina</strong><span>Mobiele LP met rollen en projecten</span></div></div>
-        <div class="mini-step green"><div class="dot">3</div><div class="body"><strong>Kort formulier</strong><span>Rol, ervaring, rijbewijs, geen CV</span></div></div>
-        <div class="mini-step green"><div class="dot">4</div><div class="body"><strong>Anne belt</strong><span>Binnen 1 werkdag, kort voorgesprek</span></div></div>
-        <div class="mini-step green"><div class="dot">5</div><div class="body"><strong>Gesprek Dirk</strong><span>Kennismaking op kantoor Bilzen</span></div></div>
-      </div>
+      <div class="pillar green"><div class="pn">01</div><h4>B2B-portfolio als werkgeversmerk</h4><p>Hotel Stayen, VWR cleanrooms, Maasmechelen Village. Geen lokale concurrent biedt zulke projecten.</p></div>
+      <div class="pillar green"><div class="pn">02</div><h4>Geen CV vooraf</h4><p>2-minuten formulier in plaats van een mail met CV, motivatie en foto. Drempel weg, meer reacties.</p></div>
+      <div class="pillar green"><div class="pn">03</div><h4>"Je bent geen nummer"</h4><p>"Bij Dima ben je geen nummer. Je bent de monteur die Dirk zelf heeft uitgekozen."</p></div>
     </div>
 
     <div class="phase">
-      <div class="phase-header"><span class="label">Fase 1, Aandacht trekken (cold)</span><div class="line"></div></div>
+      <div class="phase-header"><span class="label">Fase 1, Aandacht trekken</span><div class="line"></div></div>
       <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/1.png" alt="Recruitment-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">1</span><span class="type">Pain / Problem</span></div><p class="desc">Vermoeide technieker in grijze werkkledij achterin een versleten bestelwagen. Kop: "Nog zo'n dag achter de rug?"</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/2.png" alt="Recruitment-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">2</span><span class="type">Status / Result</span></div><p class="desc">Strak architecturaal hotel interieur met Mitsubishi City Multi unit. Kop: "Hier werkt onze airco. Wil jij mee installeren?"</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/1.png" alt="Recruitment-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">1</span><span class="type">Probleem</span></div><p class="desc">Vermoeide technieker achterin een versleten bestelwagen. "Nog zo'n dag achter de rug?" Herkent de frustratie direct.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/2.png" alt="Recruitment-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">2</span><span class="type">Ambitie</span></div><p class="desc">Hotel interieur met Mitsubishi City Multi unit. "Hier werkt onze airco. Wil jij mee installeren?"</p></div></div>
       </div>
     </div>
 
     <div class="phase">
       <div class="phase-header"><span class="label">Fase 2, Vertrouwen opbouwen</span><div class="line"></div></div>
       <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/3.png" alt="Recruitment-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">3</span><span class="type">Owner / Team</span></div><p class="desc">Dirk in blauwe werkjas naast jongere technieker aan een Mitsubishi buitenunit. "Dirk staat zelf mee op de werf."</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/4.png" alt="Recruitment-ad 4"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">4</span><span class="type">Certifications / Growth</span></div><p class="desc">Opengeslagen Mitsubishi opleidingsboek, Daikin en Vincotte certificaat. Kop: "Mitsubishi, Daikin, Vincotte. Door ons betaald."</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/3.png" alt="Recruitment-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">3</span><span class="type">Zaakvoerder</span></div><p class="desc">Dirk naast een jongere technieker aan een Mitsubishi buitenunit. "Dirk staat zelf mee op de werf."</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/4.png" alt="Recruitment-ad 4"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">4</span><span class="type">Groei</span></div><p class="desc">Mitsubishi opleidingsboek en Vincotte certificaat. "Mitsubishi, Daikin, Vincotte. Door ons betaald."</p></div></div>
       </div>
     </div>
 
     <div class="phase">
-      <div class="phase-header"><span class="label">Fase 3, Conversie en sollicitaties</span><div class="line"></div></div>
+      <div class="phase-header"><span class="label">Fase 3, Sollicitatie</span><div class="line"></div></div>
       <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/5.png" alt="Recruitment-ad 5"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">5</span><span class="type">Easy Apply</span></div><p class="desc">Smartphone met sollicitatiepagina en groene "Solliciteer bij Dima" knop. "Geen CV nodig. 2 minuten formulier."</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/6.png" alt="Recruitment-ad 6"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">6</span><span class="type">Urgency</span></div><p class="desc">Werkbord met drie papieren: hulpmonteur, servicetechnieker, onderhoudstechnieker. Kop: "3 rollen. Bilzen, Limburg."</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/5.png" alt="Recruitment-ad 5"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">5</span><span class="type">Makkelijk reageren</span></div><p class="desc">Smartphone met sollicitatiepagina en groene knop. "Geen CV nodig. 2 minuten formulier."</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/6.png" alt="Recruitment-ad 6"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">6</span><span class="type">Rollen</span></div><p class="desc">Werkbord met drie papieren: hulpmonteur, servicetechnieker, onderhoudstechnieker. "3 rollen. Bilzen, Limburg."</p></div></div>
       </div>
     </div>
 
     <div class="scripts-wrap">
       <div class="scripts-label">2 recruitment video scripts, klaar om te filmen</div>
       <div class="accordion green" id="rec1">
-        <button class="acc-head" onclick="toggle('rec1')"><div class="left"><span class="label">Script R1, Pain</span><h3>Ben jij technieker bij een grote keten?</h3></div><div class="acc-icon">+</div></button>
+        <button class="acc-head" onclick="toggle('rec1')"><div class="left"><span class="label">Script R1, Probleem</span><h3>Ben jij technieker bij een grote keten?</h3></div><div class="acc-icon">+</div></button>
         <div class="acc-body" id="rec1-body"><div class="acc-inner">
-          <div class="sblock"><span class="slabel">Centraal angle</span><p>De Limburgse technieker die vastzit bij een algemene installateur of grote keten, dezelfde installaties draait en niets bijleert.</p></div>
+          <div class="sblock"><span class="slabel">Insteek</span><p>De Limburgse technieker die vastzit bij een algemene installateur, dezelfde installaties draait en niets bijleert.</p></div>
           <div class="sblock"><span class="slabel">Hook (0 tot 10s)</span><p>Ben jij koeltechnieker of monteur in Limburg en heb je weer zo'n dag gehad waarbij je drie keer dezelfde installatie hebt gedraaid en niets bijgeleerd? Luister even.</p></div>
-          <div class="sblock"><span class="slabel">Body (11 tot 90s)</span><p>Ik ben Dirk Vermeulen van Dima Eco-Technics in Bilzen. Als je bij een algemene installateur werkt, dan is HVAC een nevenactiviteit. Ze nemen alles aan, en jij mag overal wat van doen maar nergens echt goed in worden.</p><p>Bij Dima werkt het omgekeerd. Wij doen één ding, klimaattechniek, en wij doen het voor bedrijven die kwaliteit eisen. Cleanrooms voor VWR, City Multi's bij Hotel Stayen, chillers voor Fagron, ventilatie in Maasmechelen Village.</p><p>En omdat wij Mitsubishi Diamond Dealer zijn en Daikin partner, krijg je bij ons de opleidingen die je groeien laten. Concrete certificeringen die wij voor jou betalen. Ik sta zelf mee op de werf, ik ken je naam.</p></div>
-          <div class="sblock"><span class="slabel">CTA (90 tot 120s)</span><p>Klik op de knop hieronder. Je landt op een korte pagina waarin je in twee minuten aangeeft welke rol je interesseert. Geen CV nodig. Anne belt jou binnen één werkdag op.</p></div>
-          <div class="sblock"><span class="slabel">Filming brief</span><p><strong>Locatie:</strong> Dima werkplaats met Mitsubishi unit op achtergrond.<br><strong>Camera:</strong> Telefoon op mini-statief.<br><strong>Framing:</strong> Medium shot.<br><strong>Licht:</strong> Raamlicht of plafondlamp.<br><strong>Energie:</strong> Direct, ploegbaas-toon.<br><strong>Kledij:</strong> Dima blauw.</p></div>
+          <div class="sblock"><span class="slabel">Body (11 tot 90s)</span><p>Ik ben Dirk Vermeulen van Dima Eco-Technics in Bilzen. Als je bij een algemene installateur werkt, is HVAC een nevenactiviteit. Jij mag overal wat van doen maar nergens echt goed in worden.</p><p>Bij Dima werkt het omgekeerd. Wij doen één ding, klimaattechniek, voor bedrijven die kwaliteit eisen. Cleanrooms voor VWR, City Multi's bij Hotel Stayen, ventilatie in Maasmechelen Village. En omdat wij Mitsubishi Diamond Dealer zijn en Daikin partner, krijg je bij ons opleidingen die wij voor jou betalen.</p></div>
+          <div class="sblock"><span class="slabel">CTA (90 tot 120s)</span><p>Klik hieronder. Je landt op een korte pagina, vult in twee minuten aan welke rol je interesseert. Geen CV nodig. Anne belt je binnen één werkdag op.</p></div>
+          <div class="sblock"><span class="slabel">Filmtips</span><p><strong>Locatie:</strong> Dima werkplaats met Mitsubishi unit op achtergrond.<br><strong>Energie:</strong> Direct, ploegbaas-toon.<br><strong>Kledij:</strong> Dima blauw.</p></div>
         </div></div>
       </div>
       <div class="accordion green" id="rec2">
-        <button class="acc-head" onclick="toggle('rec2')"><div class="left"><span class="label">Script R2, Vision</span><h3>Wist je dat ons team kleiner is dan je denkt?</h3></div><div class="acc-icon">+</div></button>
+        <button class="acc-head" onclick="toggle('rec2')"><div class="left"><span class="label">Script R2, Visie</span><h3>Wist je dat ons team kleiner is dan je denkt?</h3></div><div class="acc-icon">+</div></button>
         <div class="acc-body" id="rec2-body"><div class="acc-inner">
-          <div class="sblock"><span class="slabel">Centraal angle</span><p>Bij Dima werk je aan projecten waar je trots op bent, en je groeit naar een echte koeltechnische specialisatie onder leiding van een zaakvoerder die mee op de werf staat.</p></div>
+          <div class="sblock"><span class="slabel">Insteek</span><p>Bij Dima werk je aan projecten waar je trots op bent, en je groeit naar een echte specialisatie onder leiding van een zaakvoerder die mee op de werf staat.</p></div>
           <div class="sblock"><span class="slabel">Hook (0 tot 10s)</span><p>Wist je dat de airco van Hotel Stayen, de ventilatie van Maasmechelen Village en de cleanrooms van VWR in Heverlee door hetzelfde Limburgse team geïnstalleerd zijn? En dat dat team kleiner is dan je denkt?</p></div>
-          <div class="sblock"><span class="slabel">Body (11 tot 90s)</span><p>Wij zijn Dima Eco-Technics in Bilzen. Mitsubishi Diamond Dealer, Daikin partner, Vincotte gecertificeerd. De monteurs die bij ons werken staan aan dezelfde projecten waar grote bedrijven voor kiezen.</p><p>Wij zoeken drie mensen. Een hulpmonteur airconditioning die nog alles wil leren. Een servicetechnieker die na-service in de vingers heeft. Een onderhoudstechnieker die vakkundig werkt.</p><p>Wat je krijgt: auto van de zaak, echt gereedschap, Mitsubishi en Daikin opleidingen, en een zaakvoerder die jouw naam kent.</p></div>
+          <div class="sblock"><span class="slabel">Body (11 tot 90s)</span><p>Wij zijn Dima Eco-Technics in Bilzen. Mitsubishi Diamond Dealer, Daikin partner, Vincotte gecertificeerd. Wij zoeken drie mensen: een hulpmonteur airconditioning, een servicetechnieker en een onderhoudstechnieker.</p><p>Wat je krijgt: auto van de zaak, echt gereedschap, Mitsubishi en Daikin opleidingen, en een zaakvoerder die jouw naam kent.</p></div>
           <div class="sblock"><span class="slabel">CTA (90 tot 120s)</span><p>Klik hieronder. In twee minuten geef je de rol aan die je interesseert. Geen CV nodig. Anne belt je binnen één werkdag op.</p></div>
-          <div class="sblock"><span class="slabel">Filming brief</span><p><strong>Locatie:</strong> Buiten op een B2B realisatie.<br><strong>Camera:</strong> Telefoon, ooghoogte.<br><strong>Framing:</strong> Medium shot.<br><strong>Licht:</strong> Helder buitenlicht of gouden uur.<br><strong>Energie:</strong> Rustig, zelfverzekerd, lichtjes trots.<br><strong>Kledij:</strong> Dima groen.</p></div>
+          <div class="sblock"><span class="slabel">Filmtips</span><p><strong>Locatie:</strong> Buiten op een B2B realisatie.<br><strong>Energie:</strong> Rustig, zelfverzekerd, lichtjes trots.<br><strong>Kledij:</strong> Dima groen.</p></div>
         </div></div>
       </div>
     </div>
@@ -581,8 +588,8 @@ footer a + a { margin-left: 10px; }
       <h3>Staat online, klaar om morgen te testen.</h3>
       <div class="phone-frame"><div class="phone-screen"><iframe src="./jobs/" title="Dima sollicitatiepagina" loading="lazy"></iframe></div></div>
       <div class="qa-grid">
-        <div class="qa-card"><h4>Waarom geen CV vooraf?</h4><p>Een koeltechnieker die u nog niet kent stuurt geen CV naar een vreemde inbox. Pas na het gesprek bekijken we de papieren. Zo verliest niemand tijd en solliciteren er veel meer mensen.</p></div>
-        <div class="qa-card"><h4>Waarom converteert deze pagina?</h4><p>Pain-erkenning ("Vastgelopen bij dezelfde drie installaties?"), concrete voordelen (auto, opleidingen, Dirk op de werf), drie duidelijke rollen, een filterformulier.</p></div>
+        <div class="qa-card"><h4>Waarom geen CV vooraf?</h4><p>Een technieker die je nog niet kent stuurt geen CV naar een vreemde inbox. Pas na het eerste gesprek bekijken we de papieren. Zo solliciteren er veel meer mensen.</p></div>
+        <div class="qa-card"><h4>Wat staat er op de pagina?</h4><p>Erkenning van de frustratie ("Vastgelopen bij dezelfde installaties?"), concrete voordelen (auto, opleidingen, Dirk op de werf), drie duidelijke rollen en een kort formulier.</p></div>
       </div>
     </div>
   </div>
@@ -591,20 +598,14 @@ footer a + a { margin-left: 10px; }
 <section class="synergy fade">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">Beide tracks samen</span>
-      <h2 class="dm">Waarom twee funnels tegelijk sterker zijn dan twee aparte.</h2>
-      <p class="lead">Dezelfde infrastructuur, twee avatars. Het Meta-algoritme leert over Dima als merk, niet als losse campagnes. Dat versnelt alles.</p>
-    </div>
-    <div class="synergy-grid">
-      <div class="syn-row"><span class="sq"></span><div><strong>Kruisbestuiving klanten naar werknemers</strong><span>De Limburger die uw klanten-ads ziet en ooit bij een bekende zou aanbevelen, of zelf ooit solliciteert omdat uw merk herkenbaar wordt.</span></div></div>
-      <div class="syn-row"><span class="sq"></span><div><strong>Kruisbestuiving werknemers naar klanten</strong><span>De technieker die uw recruitment-ads ziet heeft familie en vrienden die ooit een warmtepomp kopen. Uw merk gaat in zijn hoofd zitten als "echte HVAC specialist".</span></div></div>
-      <div class="syn-row"><span class="sq"></span><div><strong>Eén pixel, één leercurve</strong><span>Meta's algoritme leert uw doelgroep sneller wanneer beide tracks tegelijk draaien. Eén geïntegreerde account ipv twee losse wolken.</span></div></div>
-      <div class="syn-row"><span class="sq"></span><div><strong>Gedeelde creative en huisstijl</strong><span>Werk voor track 1 (B2B-referenties visueel, Dirk op camera) is meteen bruikbaar voor track 2. Geen dubbel productiewerk.</span></div></div>
+      <span class="eyebrow">Budget</span>
+      <h2 class="dm">Wat kost de advertentie-investering?</h2>
+      <p class="lead">Een realistisch startpunt voor beide tracks samen.</p>
     </div>
     <div class="budget-card">
-      <div class="label">Realistisch budgetscenario</div>
-      <h3>60 euro per dag, circa 1.800 euro per maand ad spend.</h3>
-      <p>30 euro per dag op track 1 en 30 euro per dag op track 2. Dit is een startpunt, geen belofte. Na de eerste maand ziet u welke track sneller rendeert en schuiven we het budget naar de winner.</p>
+      <div class="label">Realistisch startscenario</div>
+      <h3>60 euro per dag, circa 1.800 euro per maand aan advertentiebudget.</h3>
+      <p>30 euro per dag op klanten, 30 euro per dag op werknemers. Na de eerste maand zien we welke track het snelst rendeert en schuiven we het budget naar wat werkt.</p>
       <div class="numbers">
         <div><div class="n">30€</div><div class="l">Track 1 per dag</div></div>
         <div><div class="n">30€</div><div class="l">Track 2 per dag</div></div>
@@ -614,36 +615,20 @@ footer a + a { margin-left: 10px; }
   </div>
 </section>
 
-<section class="why-dima fade">
-  <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">Waarom Dima</span>
-      <h2 class="dm">Deze aanpak werkt bij u beter dan bij de gemiddelde HVAC-klant.</h2>
-      <p class="lead">Vier eigenschappen die Dima boven de concurrentie duwen zodra we de ads aanzetten.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card"><h3><span class="mark"></span>B2B-portfolio is niet-repliceerbaar</h3><p>Maasmechelen Village, Hotel Stayen, VWR Heverlee, Audika, Ace en Tate. Geen residentiële concurrent kan zulke namen tonen. Uw grootste permanente voorsprong.</p></div>
-      <div class="why-card"><h3><span class="mark"></span>Dirk is op camera zonder acteren</h3><p>Veel zaakvoerders voelen zich ongemakkelijk voor de lens. U heeft al organische posts, dus uw team is eraan gewoon. Geen gehuurde acteurs, Dirk zelf.</p></div>
-      <div class="why-card"><h3><span class="mark"></span>Limburgse geografie is targetbaar</h3><p>Niet te groot (we vermorsen geen budget aan Brussel), niet te klein (genoeg warmtepomp-kopers en koeltechniekers om te schalen).</p></div>
-      <div class="why-card"><h3><span class="mark"></span>Kwaliteitsniche in een prijzenmarkt</h3><p>Concurrenten roepen over premies en goedkoopste prijs. U heeft de credibility om kwaliteit centraal te zetten. Dat is de witte plek waar niemand anders durft te staan.</p></div>
-    </div>
-  </div>
-</section>
-
 <section class="partnership fade">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">Waarom Relight de juiste partner is</span>
-      <h2 class="dm">Drie redenen om hiermee samen te werken, concreet.</h2>
-      <p class="lead">Geen agency-jargon. Geen lock-in. Geen "we testen even". Hier is wat u wel krijgt.</p>
+      <span class="eyebrow">Waarom Relight</span>
+      <h2 class="dm">Drie redenen om hiermee samen te werken.</h2>
+      <p class="lead">Geen verkooppraat. Gewoon wat je concreet krijgt.</p>
     </div>
     <div class="pillar-partner-grid">
-      <div class="pillar-partner"><div class="big">01</div><h3>Wij hebben het werk al gedaan voor we iets vroegen</h3><p>Twee landing pages live. Twee strategieën geschreven. 15 ad concepten. 5 video scripts. U kan alles zien, testen en lezen, voor één euro op tafel komt.</p></div>
-      <div class="pillar-partner"><div class="big">02</div><h3>Wij spreken uw taal, letterlijk</h3><p>Dit voorstel, uw landing pages, uw scripts, uw FAQ. Alles in het Nederlands, in de Limburgse nuchterheid waarmee u klanten overtuigt. Geen vertaalde Amerikaanse template.</p></div>
-      <div class="pillar-partner"><div class="big">03</div><h3>Geen lock-in, Arthur direct bereikbaar</h3><p>Maandelijks opzegbaar. Eerlijke weekcijfers. Arthur direct op WhatsApp voor wat urgent is. Geen account manager die niet weet hoe uw campagne loopt.</p></div>
+      <div class="pillar-partner"><div class="big">01</div><h3>Het werk is al gedaan voor we iets vroegen</h3><p>Twee landingspagina's live. Twee strategieën geschreven. 15 advertentie-concepten. 5 video scripts. Je kan alles zien, testen en lezen voor één euro op tafel komt.</p></div>
+      <div class="pillar-partner"><div class="big">02</div><h3>Wij vullen jouw contentmaker aan, we vervangen hem niet</h3><p>Je post al actief op Instagram en Facebook. Dat blijft. Ik zet de betaalde advertenties technisch op en schrijf uit welke video's en beelden daarvoor nodig zijn. Jouw organische werk en onze betaalde laag versterken elkaar.</p></div>
+      <div class="pillar-partner"><div class="big">03</div><h3>Geen lock-in, Arthur direct bereikbaar</h3><p>Maandelijks opzegbaar. Eerlijke weekcijfers. Arthur direct op WhatsApp. Geen accountmanager die niet weet hoe jouw campagne loopt.</p></div>
     </div>
     <div class="personal-note">
-      Dirk, ik bouwde dit omdat mijn vader me vertelde dat u openstaat voor een gesprek. Wat u op deze pagina ziet is geen sjabloon. Het is het antwoord dat ik zou geven als ik uw zoon was en u het aan mij vroeg. Plan gerust een call, stel mij elke vraag, en als u achteraf beslist dat het niet past, geen probleem. Dan weet u tenminste exact wat u laat liggen.
+      Dirk, ik bouwde dit omdat mijn vader me vertelde dat je openstaat voor een gesprek. Wat je op deze pagina ziet is geen sjabloon. Het is het antwoord dat ik zou geven als ik jouw zoon was en je het aan mij vroeg. Plan gerust een call, stel me elke vraag, en als je achteraf beslist dat het niet past, geen probleem.
     </div>
   </div>
 </section>
@@ -651,14 +636,14 @@ footer a + a { margin-left: 10px; }
 <section class="cases fade">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">Wat we hiervoor al gedaan hebben</span>
+      <span class="eyebrow">Wat we eerder deden</span>
       <h2 class="dm">Drie Belgische bedrijven die met deze aanpak gegroeid zijn.</h2>
-      <p class="lead">Niet ons grootste verhaal. Gewoon drie voorbeelden van wat dezelfde funnel-logica voor andere klanten heeft opgeleverd.</p>
+      <p class="lead">Gewoon drie voorbeelden van wat dezelfde logica voor andere klanten heeft opgeleverd.</p>
     </div>
     <div class="case-grid">
-      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case"></div><div class="meta"><div class="label">TechTalent</div><h3>145 leads in 2 weken</h3><p>Recruitment funnel voor IT-profielen in Vlaanderen.</p></div></div>
-      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case"></div><div class="meta"><div class="label">Vossen</div><h3>66 terugkerende klanten in 27 dagen</h3><p>Service-funnel voor een Belgisch onderhoudsbedrijf.</p></div></div>
-      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case"></div><div class="meta"><div class="label">Container Cleaner</div><h3>50 terugkerende klanten in 2 weken</h3><p>Lokale service-funnel met sterke geo-targeting.</p></div></div>
+      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case"></div><div class="meta"><div class="label">TechTalent</div><h3>200 aanvragen in de eerste 14 dagen</h3><p>Recruitment advertenties voor IT-profielen in Vlaanderen. Het filterformulier zorgde ervoor dat enkel de meest gemotiveerde kandidaten als eerste werden teruggebeld.</p></div></div>
+      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case"></div><div class="meta"><div class="label">Vossen</div><h3>66 terugkerende klanten in 27 dagen</h3><p>Advertenties voor een Belgisch onderhoudsbedrijf gericht op bestaande klanten in de regio.</p></div></div>
+      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case"></div><div class="meta"><div class="label">Container Cleaner</div><h3>50 terugkerende klanten in 2 weken</h3><p>Lokale advertenties gericht op een specifieke regio in België.</p></div></div>
     </div>
   </div>
 </section>
@@ -668,21 +653,21 @@ footer a + a { margin-left: 10px; }
     <div class="center">
       <span class="eyebrow">Hoe samenwerken</span>
       <h2 class="dm">Week per week. Concreet.</h2>
-      <p class="lead">Geen vage "we optimaliseren" beloftes. Zo ziet een typische maand met Dima er vanuit Relight uit.</p>
+      <p class="lead">Zo ziet een typische eerste maand eruit.</p>
     </div>
     <div class="cadence-grid">
-      <div class="cadence-row"><div class="when">Week 0</div><div class="what"><strong>Setup</strong><span>Meta Business Manager koppelen, pixel op de landing pages, eerste ads geladen in Ads Manager, geo-targeting op Limburg, beide tracks parallel gelanceerd.</span></div></div>
-      <div class="cadence-row"><div class="when">Week 1</div><div class="what"><strong>Data en leercurve</strong><span>Eerste clicks en leads komen binnen, Meta leert uw publiek. We kijken naar CTR, cost per lead en welke ads er doorkomen.</span></div></div>
-      <div class="cadence-row"><div class="when">Week 2 tot 3</div><div class="what"><strong>Winners bovenzetten</strong><span>Ads die niet presteren pauzeren, budget schuiven naar de ads die qualified leads brengen. Wekelijkse loom-updates.</span></div></div>
-      <div class="cadence-row"><div class="when">Maand 2+</div><div class="what"><strong>Schalen en vernieuwen</strong><span>Budget verhogen waar het rendeert, nieuwe creatives, seizoensgebonden hooks (premies, winterkou, airco zomer). Nieuwe video's filmen indien nodig.</span></div></div>
+      <div class="cadence-row"><div class="when">Week 0</div><div class="what"><strong>Opstarten</strong><span>Meta advertentieaccount koppelen, advertenties laden, beide tracks parallel lanceren op Limburg.</span></div></div>
+      <div class="cadence-row"><div class="when">Week 1</div><div class="what"><strong>Eerste resultaten</strong><span>Eerste klikken en aanvragen komen binnen. We kijken welke advertenties het beste doorkomen.</span></div></div>
+      <div class="cadence-row"><div class="when">Week 2 tot 3</div><div class="what"><strong>Bijsturen</strong><span>Advertenties die minder presteren pauzeren, budget schuiven naar wat werkt. Wekelijkse update via video.</span></div></div>
+      <div class="cadence-row"><div class="when">Maand 2+</div><div class="what"><strong>Opschalen</strong><span>Budget verhogen waar het rendeert. Nieuwe advertenties voor seizoensgebonden momenten, zoals airco in de zomer.</span></div></div>
     </div>
     <div class="need-card">
-      <div class="label">Wat wij van Dima nodig hebben</div>
+      <div class="label">Wat we van Dima nodig hebben</div>
       <h3>Drie dingen, niet meer.</h3>
       <ul>
-        <li>Eén namiddag van Dirk om de 5 video scripts in te spreken voor de telefooncamera, bij voorkeur in de eerste twee weken.</li>
-        <li>Anne die binnenkomende leads en sollicitanten binnen één werkdag terugbelt. Snelheid bepaalt bij Meta of een lead converteert.</li>
-        <li>Akkoord op het ad spend-budget. 60 euro per dag is een startpunt, we bespreken samen of we later hoger of lager gaan.</li>
+        <li>Eén namiddag van Dirk om de 5 video scripts in te spreken voor de telefoon, bij voorkeur in de eerste twee weken.</li>
+        <li>Anne die binnenkomende aanvragen en sollicitanten binnen één werkdag terugbelt. Snelheid bepaalt of een lead converteert.</li>
+        <li>Akkoord op het advertentiebudget. 60 euro per dag is een startpunt, we bespreken samen of we later hoger of lager gaan.</li>
       </ul>
     </div>
   </div>
@@ -692,15 +677,13 @@ footer a + a { margin-left: 10px; }
   <div class="wrap-sm">
     <div class="center">
       <span class="eyebrow">Veelgestelde vragen</span>
-      <h2 class="dm">Zes vragen die elke nieuwe klant stelt.</h2>
-      <p class="lead">Eerlijke antwoorden, geen verkooppraat.</p>
+      <h2 class="dm">Vier vragen die elke nieuwe klant stelt.</h2>
+      <p class="lead">Eerlijke antwoorden.</p>
     </div>
-    <div class="accordion" id="faq1"><button class="acc-head" onclick="toggle('faq1')"><div class="left"><h3>Waarom geven jullie dit gratis weg?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq1-body"><div class="acc-inner faq-answer">Omdat een PowerPoint niet bewijst dat ik weet wat ik doe. Een afgewerkte funnel wél. U ziet vandaag exact wat u krijgt voor u één euro betaalt. Als u na het gesprek toch niet wil samenwerken, houdt u 15 ad concepten en 5 scripts die u zelf kunt gebruiken.</div></div></div>
-    <div class="accordion" id="faq2"><button class="acc-head" onclick="toggle('faq2')"><div class="left"><h3>Moeten we met beide tracks tegelijk starten?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq2-body"><div class="acc-inner faq-answer">Nee. U kan prima starten met track 1 (klanten) en track 2 (werknemers) een maand later aanzetten, of andersom. Beide liggen klaar. We bespreken tijdens de call wat uw prioriteit is.</div></div></div>
-    <div class="accordion" id="faq3"><button class="acc-head" onclick="toggle('faq3')"><div class="left"><h3>Kunnen we enkel met track 2 starten?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq3-body"><div class="acc-inner faq-answer">Ja. Als uw grootste knelpunt vandaag de vacatures zijn, focussen we eerst daarop. Recruitment-funnels hebben typisch een langere cyclus dan klanten-funnels, maar werken prima stand-alone.</div></div></div>
-    <div class="accordion" id="faq4"><button class="acc-head" onclick="toggle('faq4')"><div class="left"><h3>Wat kost dit naast de ad spend?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq4-body"><div class="acc-inner faq-answer">De maandelijkse Relight fee bespreken we tijdens de strategiecall. Geen lock-in, maandelijks opzegbaar. Wat ik nu al kan zeggen: de fee is een fractie van wat een gemiddeld agency hiervoor aanrekent, omdat wij geen lagen tussen u en de campagne zetten.</div></div></div>
-    <div class="accordion" id="faq5"><button class="acc-head" onclick="toggle('faq5')"><div class="left"><h3>Hoe snel zien we resultaten?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq5-body"><div class="acc-inner faq-answer">Bij goed opgezette HVAC-funnels in België komen de eerste leads doorgaans in week één binnen. Het échte ritme komt rond dag 14 zodra Meta weet welk type Limburger klikt. Recruitment-leads komen typisch iets trager binnen, binnen 2 tot 3 weken.</div></div></div>
-    <div class="accordion" id="faq6"><button class="acc-head" onclick="toggle('faq6')"><div class="left"><h3>Wat als het niet werkt?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq6-body"><div class="acc-inner faq-answer">Dan stoppen we. Geen verborgen verlenging, geen boete. Wij verdienen pas op lange termijn als uw campagne rendeert, dus onze belangen liggen gelijk. Mocht iets niet werken, dan is het aan ons om eerst te tweaken en als het écht niet past, eerlijk dat te zeggen.</div></div></div>
+    <div class="accordion" id="faq1"><button class="acc-head" onclick="toggle('faq1')"><div class="left"><h3>Waarom geven jullie dit gratis weg?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq1-body"><div class="acc-inner faq-answer">Omdat een PowerPoint niet bewijst dat ik weet wat ik doe. Een afgewerkte funnel wél. Je ziet vandaag exact wat je krijgt voor je één euro betaalt. Als je na het gesprek toch niet wil samenwerken, houd je 15 advertentie-concepten en 5 scripts die je zelf kunt gebruiken.</div></div></div>
+    <div class="accordion" id="faq2"><button class="acc-head" onclick="toggle('faq2')"><div class="left"><h3>Moeten we met beide tracks tegelijk starten?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq2-body"><div class="acc-inner faq-answer">Nee. Je kan prima starten met track 1 (klanten) en track 2 (werknemers) een maand later aanzetten, of andersom. Beide liggen klaar. We bespreken tijdens de call wat jouw prioriteit is.</div></div></div>
+    <div class="accordion" id="faq3"><button class="acc-head" onclick="toggle('faq3')"><div class="left"><h3>Wat kost dit naast het advertentiebudget?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq3-body"><div class="acc-inner faq-answer">De maandelijkse Relight fee bespreken we tijdens de strategiecall. Geen lock-in, maandelijks opzegbaar. De fee is een fractie van wat een gemiddeld bureau hiervoor aanrekent, omdat er geen lagen tussen jou en de campagne zitten.</div></div></div>
+    <div class="accordion" id="faq4"><button class="acc-head" onclick="toggle('faq4')"><div class="left"><h3>Hoe snel zien we resultaten?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq4-body"><div class="acc-inner faq-answer">Bij goed opgezette advertenties voor HVAC-bedrijven in België komen de eerste aanvragen doorgaans in week één binnen. Het echte ritme komt rond dag 14. Sollicitaties voor vacatures komen typisch iets trager binnen, binnen 2 tot 3 weken.</div></div></div>
   </div>
 </section>
 
@@ -711,9 +694,9 @@ footer a + a { margin-left: 10px; }
       <div>
         <span class="eyebrow">Over mij</span>
         <h2 class="dm">Arthur, Relight Marketing.</h2>
-        <p>Ik help Belgische dienstverleners hun beste maand op rij draaien met paid Meta ads. Geen agency-jargon, geen lock-in, geen "we testen even".</p>
-        <p>Wij bouwen vooraf de volledige funnel uit zodat u meteen ziet wat u krijgt. U beslist daarna of we samenwerken. En als we samenwerken, bouw ik mee aan de campagne tot ze winstgevend draait, niet tot het rapport mooi staat.</p>
-        <p>Dirk, dit voorstel is mijn meest concrete vorm. Plan de call, stel uw vragen, en we zien na 30 minuten of het past.</p>
+        <p>Ik help Belgische dienstverleners hun beste maand op rij draaien met betaalde advertenties op Meta. Geen bureau-jargon, geen lock-in.</p>
+        <p>Ik bouw vooraf de volledige funnel uit zodat je meteen ziet wat je krijgt. Je beslist daarna of we samenwerken. En als we samenwerken, bouw ik mee aan de campagne tot ze winstgevend draait, niet tot het rapport mooi staat.</p>
+        <p>Dirk, plan de call, stel je vragen, en we zien na 30 minuten of het past.</p>
         <a href="#calendly" class="btn-pill btn-gold" style="margin-top: 8px;">Plan de strategiecall</a>
       </div>
     </div>
@@ -724,7 +707,7 @@ footer a + a { margin-left: 10px; }
   <div class="wrap">
     <span class="eyebrow">Laten we dit doen</span>
     <h2 class="dm">30 minuten, geen verplichting.</h2>
-    <p class="lead">Kies een moment dat u past. Ik ga elke vraag over de strategie, het budget en de planning beantwoorden.</p>
+    <p class="lead">Kies een moment dat je past. Ik beantwoord elke vraag over de strategie, het budget en de planning.</p>
     <div class="calendly-shell"><iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Plan een gesprek met Arthur"></iframe></div>
   </div>
 </section>
