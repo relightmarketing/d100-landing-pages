@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reyns Advocaten - Een advocaat die uw bedrijf begrijpt</title>
+<meta name="description" content="Reyns Advocaten: 35+ jaar ervaring, 25 advocaten, 3 kantoren. Uw juridisch verlengstuk in Antwerpen, Melsele en Gent. Plan uw gratis gesprek.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+body{font-family:'Heebo',sans-serif;font-weight:400;color:#2A2A2A;background:#FFFFFF;line-height:1.6;padding-bottom:72px}
+h1,h2,h3,h4,h5,h6{font-weight:600;line-height:1.25}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#083050}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:12px 20px;gap:8px}
+.nav-logo img{height:36px;width:auto}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-phone{color:#fff;display:flex;align-items:center;gap:6px;font-size:14px;white-space:nowrap}
+.nav-phone-text{display:none}
+.nav-phone svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+.nav-cta{background:#fff;color:#083050;font-weight:600;font-size:14px;padding:10px 18px;border-radius:6px;white-space:nowrap;transition:opacity .2s}
+.nav-cta:hover{opacity:.88}
+.nav-cta-full{display:none}
+.nav-cta-short{display:inline}
+
+/* ── HERO ── */
+.hero{padding:100px 0 48px;background:#fff}
+.hero-grid{display:flex;flex-direction:column;gap:32px}
+.hero-text{order:1}
+.hero-image{order:0;border-radius:12px;overflow:hidden}
+.hero-image img{width:100%;height:auto;object-fit:cover;border-radius:12px}
+.hero-pre{font-size:14px;color:#54595F;margin-bottom:12px;letter-spacing:.02em}
+.hero h1{font-size:28px;color:#083050;margin-bottom:16px}
+.hero-sub{font-size:16px;color:#54595F;margin-bottom:24px;line-height:1.65}
+.hero-cta{display:inline-block;background:#083050;color:#fff;font-weight:600;font-size:16px;padding:16px 32px;border-radius:8px;width:100%;text-align:center;min-height:48px;transition:opacity .2s}
+.hero-cta:hover{opacity:.88}
+.hero-risk{font-size:13px;color:#54595F;margin-top:12px;text-align:center}
+.hero-stats{display:flex;gap:0;margin-top:28px;border-top:1px solid #E8ECF0;padding-top:20px}
+.hero-stat{flex:1;text-align:center}
+.hero-stat:not(:last-child){border-right:1px solid #E8ECF0}
+.hero-stat-num{font-size:22px;font-weight:600;color:#083050}
+.hero-stat-label{font-size:12px;color:#54595F;margin-top:2px}
+
+/* ── SOCIAL PROOF BAR ── */
+.proof-bar{background:#083050;padding:28px 0}
+.proof-bar-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;text-align:center}
+.proof-bar-item-num{font-size:26px;font-weight:600;color:#fff}
+.proof-bar-item-label{font-size:13px;color:rgba(255,255,255,.75);margin-top:2px}
+
+/* ── IMAGE STRIP ── */
+.image-strip{padding:0;overflow-x:auto;-webkit-overflow-scrolling:touch;display:flex;gap:12px;padding:32px 20px;scroll-snap-type:x mandatory}
+.image-strip img{width:280px;height:280px;object-fit:cover;border-radius:10px;flex-shrink:0;scroll-snap-align:start}
+
+/* ── SECTION 2 - PROBLEM ── */
+.problem{padding:56px 0;background:#F5F7FA}
+.problem-grid{display:flex;flex-direction:column;gap:32px}
+.problem-content{order:1}
+.problem-image{display:none}
+.problem-pre{font-size:13px;font-weight:600;color:#083050;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.problem h2{font-size:26px;color:#083050;margin-bottom:24px;font-weight:400;font-family:'Heebo',sans-serif;line-height:1.35}
+.pain-cards{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.pain-card{background:#fff;border-radius:10px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.pain-dot{width:10px;height:10px;border-radius:50%;background:#083050;flex-shrink:0;margin-top:7px}
+.pain-card p{font-size:15px;color:#2A2A2A;line-height:1.55}
+.bridge{background:#083050;border-radius:12px;padding:28px 24px;color:#fff;font-size:16px;line-height:1.65}
+.bridge strong{font-weight:600}
+
+/* ── SECTION 3 - SOLUTION ── */
+.solution{padding:56px 0;background:#fff}
+.solution-pre{font-size:13px;font-weight:600;color:#083050;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.solution h2{font-size:28px;color:#083050;margin-bottom:20px}
+.solution p{font-size:16px;color:#54595F;line-height:1.65;margin-bottom:16px}
+.solution-stats{background:#083050;border-radius:12px;padding:28px 20px;margin-top:32px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;text-align:center}
+.solution-stat-num{font-size:24px;font-weight:600;color:#fff}
+.solution-stat-label{font-size:13px;color:rgba(255,255,255,.75);margin-top:2px}
+
+/* ── SECTION 4 - OFFER ── */
+.offer{padding:56px 0;background:#F5F7FA}
+.offer h2{font-size:28px;color:#083050;margin-bottom:8px;text-align:center}
+.offer-subtitle{text-align:center;font-size:16px;color:#54595F;margin-bottom:36px}
+.steps{display:flex;flex-direction:column;gap:24px;margin-bottom:40px}
+.step-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.step-img{height:220px;overflow:hidden}
+.step-img img{width:100%;height:100%;object-fit:cover}
+.step-body{padding:24px}
+.step-num{font-size:13px;font-weight:600;color:#083050;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.step-body h3{font-size:20px;color:#083050;margin-bottom:10px}
+.step-body p{font-size:15px;color:#54595F;line-height:1.6}
+.inclusions{margin-bottom:32px}
+.inclusions h3{font-size:20px;color:#083050;margin-bottom:16px;text-align:center}
+.inclusions-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.inclusion-item{display:flex;align-items:center;gap:10px;font-size:15px;color:#2A2A2A;background:#fff;padding:14px 16px;border-radius:8px}
+.inclusion-check{color:#083050;flex-shrink:0}
+.offer-cta-wrap{text-align:center}
+.offer-cta{display:inline-block;background:#083050;color:#fff;font-weight:600;font-size:16px;padding:16px 32px;border-radius:8px;width:100%;min-height:48px;transition:opacity .2s}
+.offer-cta:hover{opacity:.88}
+
+/* ── SECTION 5 - CREDIBILITY ── */
+.credibility{padding:56px 0;background:#fff}
+.credibility h2{font-size:28px;color:#083050;margin-bottom:32px;text-align:center}
+.cred-cards{display:flex;flex-direction:column;gap:20px}
+.cred-card{background:#F5F7FA;border-radius:12px;padding:28px 24px;text-align:center}
+.cred-stars{display:flex;justify-content:center;gap:4px;margin-bottom:14px}
+.cred-stars svg{width:22px;height:22px;fill:#E8A317}
+.cred-card h3{font-size:20px;color:#083050;margin-bottom:10px}
+.cred-card p{font-size:15px;color:#54595F;line-height:1.6}
+
+/* ── FORM ── */
+.form-section{padding:56px 0;background:#F5F7FA}
+.form-section h2{font-size:28px;color:#083050;margin-bottom:8px;text-align:center}
+.form-sub{text-align:center;font-size:15px;color:#54595F;margin-bottom:32px}
+.form-wrap{max-width:640px;margin:0 auto;background:#fff;border-radius:14px;padding:28px 24px;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:14px;font-weight:600;color:#2A2A2A;margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;font-family:'Heebo',sans-serif;font-size:16px;padding:14px 16px;border:1px solid #D1D5DB;border-radius:8px;background:#fff;color:#2A2A2A;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:#083050}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-group select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%2354595F'%3E%3Cpath d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.form-row-2{display:flex;flex-direction:column;gap:0}
+.form-submit{display:block;width:100%;background:#083050;color:#fff;font-family:'Heebo',sans-serif;font-weight:600;font-size:16px;padding:16px;border:none;border-radius:8px;cursor:pointer;min-height:48px;transition:opacity .2s}
+.form-submit:hover{opacity:.88}
+.form-privacy{font-size:12px;color:#54595F;text-align:center;margin-top:14px;line-height:1.5}
+
+/* ── FAQ ── */
+.faq{padding:56px 0;background:#fff}
+.faq h2{font-size:28px;color:#083050;margin-bottom:28px;text-align:center}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:1px solid #E8ECF0}
+.faq-q{width:100%;background:none;border:none;font-family:'Heebo',sans-serif;font-size:16px;font-weight:600;color:#083050;padding:20px 40px 20px 0;text-align:left;cursor:pointer;position:relative;line-height:1.4}
+.faq-q::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:22px;font-weight:400;color:#083050;transition:transform .25s}
+.faq-item.open .faq-q::after{content:'\2212'}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-inner{padding:0 0 20px;font-size:15px;color:#54595F;line-height:1.65}
+
+/* ── FINAL CTA ── */
+.final-cta{padding:56px 0;background:#083050;text-align:center}
+.final-cta h2{font-size:28px;color:#fff;margin-bottom:20px}
+.final-cta-btn{display:inline-block;background:#fff;color:#083050;font-weight:600;font-size:16px;padding:16px 40px;border-radius:8px;min-height:48px;transition:opacity .2s}
+.final-cta-btn:hover{opacity:.88}
+.final-cta-sub{font-size:14px;color:rgba(255,255,255,.7);margin-top:16px}
+
+/* ── FOOTER ── */
+.footer{padding:28px 0;background:#0a1e30;text-align:center;font-size:13px;color:rgba(255,255,255,.5)}
+
+/* ── STICKY MOBILE CTA ── */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:999;background:#fff;border-top:1px solid #E8ECF0;padding:12px 20px;display:flex;justify-content:center;transition:transform .3s}
+.sticky-cta.hidden{transform:translateY(100%)}
+.sticky-cta a{display:block;width:100%;max-width:400px;background:#083050;color:#fff;font-weight:600;font-size:15px;padding:14px 0;border-radius:8px;text-align:center;min-height:48px}
+
+/* ── TABLET (641px+) ── */
+@media(min-width:641px){
+  .nav-inner{padding:14px 28px}
+  .nav-logo img{height:40px}
+  .nav-phone-text{display:inline}
+  .nav-cta{padding:10px 22px;font-size:15px}
+  .nav-cta-full{display:inline}
+  .nav-cta-short{display:none}
+  .hero{padding:110px 0 56px}
+  .hero h1{font-size:34px}
+  .hero-cta{width:auto}
+  .hero-risk{text-align:left}
+  .proof-bar-grid{grid-template-columns:repeat(4,1fr)}
+  .image-strip img{width:320px;height:320px}
+  .problem h2{font-size:30px}
+  .form-row-2{flex-direction:row;gap:16px}
+  .form-row-2 .form-group{flex:1}
+  .inclusions-grid{grid-template-columns:1fr 1fr}
+  .solution-stats{grid-template-columns:repeat(4,1fr)}
+  .cred-cards{flex-direction:row}
+  .cred-card{flex:1}
+  .steps{flex-direction:row}
+  .step-card{flex:1;display:flex;flex-direction:column}
+  .step-img{height:200px}
+  .step-body{flex:1}
+  .sticky-cta{display:none}
+  body{padding-bottom:0}
+}
+
+/* ── DESKTOP (961px+) ── */
+@media(min-width:961px){
+  .container{padding:0 40px}
+  .nav-inner{padding:16px 40px}
+  .nav-logo img{height:44px}
+  .nav-cta{padding:12px 28px;font-size:16px}
+  .hero{padding:120px 0 64px}
+  .hero-grid{flex-direction:row;align-items:center;gap:48px}
+  .hero-text{order:0;flex:1}
+  .hero-image{order:1;flex:1;max-width:480px}
+  .hero h1{font-size:40px}
+  .hero-sub{font-size:17px}
+  .problem{padding:72px 0}
+  .problem-grid{flex-direction:row;align-items:flex-start;gap:48px}
+  .problem-content{flex:1.2;order:0}
+  .problem-image{display:block;flex:0.8;order:1;position:sticky;top:120px}
+  .problem-image img{border-radius:12px;width:100%}
+  .solution{padding:72px 0}
+  .offer{padding:72px 0}
+  .offer-cta{width:auto;min-width:280px}
+  .credibility{padding:72px 0}
+  .form-section{padding:72px 0}
+  .faq{padding:72px 0}
+  .image-strip img{width:360px;height:360px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="https://reyns-advocaten.be/wp-content/uploads/2025/02/logo-white-1500x382.png" alt="Reyns Advocaten" loading="eager">
+    </a>
+    <div class="nav-right">
+      <a href="tel:+3237509450" class="nav-phone">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.66.59 1 1 0 011 1v3.59a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.59a1 1 0 011 1 11.72 11.72 0 00.59 3.66 1 1 0 01-.24 1.01l-2.32 2.12z"/></svg>
+        <span class="nav-phone-text">+32-(0)3 750 94 50</span>
+      </a>
+      <a href="#form" class="nav-cta">
+        <span class="nav-cta-short">Gratis gesprek</span>
+        <span class="nav-cta-full">Plan uw gratis gesprek</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="hero-pre">Voor ondernemers en bedrijfsleiders in Antwerpen, het Waasland en Gent</p>
+        <h1>Een advocaat die uw bedrijf begrijpt, niet alleen de wet</h1>
+        <p class="hero-sub">Reyns Advocaten is uw juridische verlengstuk. Wij combineren 35 jaar ervaring met een no-nonsense aanpak: snel, helder en pragmatisch.</p>
+        <a href="#form" class="hero-cta">Plan uw gratis gesprek</a>
+        <p class="hero-risk">Geen kosten. Geen verplichtingen.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">35+</div>
+            <div class="hero-stat-label">Jaar</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">25</div>
+            <div class="hero-stat-label">Advocaten</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">3</div>
+            <div class="hero-stat-label">Kantoren</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://reyns-advocaten.be/wp-content/uploads/2023/09/FotoHildeCollier-Bedrijfsportret-Reyns-12-1500x1500.jpg" alt="Team Reyns Advocaten" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOCIAL PROOF BAR ═══ -->
+<section class="proof-bar">
+  <div class="container">
+    <div class="proof-bar-grid">
+      <div class="proof-bar-item">
+        <div class="proof-bar-item-num">35+</div>
+        <div class="proof-bar-item-label">Jaar ervaring</div>
+      </div>
+      <div class="proof-bar-item">
+        <div class="proof-bar-item-num">25</div>
+        <div class="proof-bar-item-label">Advocaten</div>
+      </div>
+      <div class="proof-bar-item">
+        <div class="proof-bar-item-num">3</div>
+        <div class="proof-bar-item-label">Kantoren</div>
+      </div>
+      <div class="proof-bar-item">
+        <div class="proof-bar-item-num">1000+</div>
+        <div class="proof-bar-item-label">Bomen geplant</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMAGE STRIP 1 ═══ -->
+<div class="image-strip">
+  <img src="https://reyns-advocaten.be/wp-content/uploads/2023/09/IvanReyns.jpg" alt="Ivan Reyns" loading="lazy">
+  <img src="https://reyns-advocaten.be/wp-content/uploads/2023/09/FotoHildeCollier-Bedrijfsportret-Reyns-4-1500x1500.jpg" alt="Team Reyns Advocaten" loading="lazy">
+  <img src="https://reyns-advocaten.be/wp-content/uploads/2024/03/FotoHildeCollier-Bedrijfsportret-ReynsMaart24-50-2-min-1500x1500.jpg" alt="Kantoor Reyns Advocaten" loading="lazy">
+</div>
+
+<!-- ═══ SECTION 2 - PROBLEM ═══ -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div class="problem-content">
+        <p class="problem-pre">Herkenbaar?</p>
+        <h2>Weken wachten op een antwoord van uw advocaat?</h2>
+        <div class="pain-cards">
+          <div class="pain-card">
+            <span class="pain-dot"></span>
+            <p>U stuurt een e-mail over een dringende kwestie en hoort dagenlang niets</p>
+          </div>
+          <div class="pain-card">
+            <span class="pain-dot"></span>
+            <p>Juridisch advies vol jargon dat meer vragen oproept dan het beantwoordt</p>
+          </div>
+          <div class="pain-card">
+            <span class="pain-dot"></span>
+            <p>Bij elk nieuw dossier moet u uw hele situatie opnieuw uitleggen</p>
+          </div>
+          <div class="pain-card">
+            <span class="pain-dot"></span>
+            <p>U betaalt hoge facturen zonder duidelijk overzicht van wat er is gedaan</p>
+          </div>
+          <div class="pain-card">
+            <span class="pain-dot"></span>
+            <p>Belangrijke beslissingen worden uitgesteld omdat u wacht op juridisch licht</p>
+          </div>
+          <div class="pain-card">
+            <span class="pain-dot"></span>
+            <p>U voelt zich een dossiernummer, geen ondernemer met een dringend probleem</p>
+          </div>
+        </div>
+        <div class="bridge">
+          Als ondernemer kunt u zich niet veroorloven om te wachten op uw advocaat. <strong>Elke dag zonder antwoord kost u geld, tijd en gemoedsrust.</strong>
+        </div>
+      </div>
+      <div class="problem-image">
+        <img src="https://reyns-advocaten.be/wp-content/uploads/2025/02/FotoHildeCollier-Bedrijfsportret-Reyns-8b-1500x1500.jpg" alt="Reyns Advocaten kantoor" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 - SOLUTION ═══ -->
+<section class="solution">
+  <div class="container">
+    <p class="solution-pre">Een andere aanpak</p>
+    <h2>Uw juridisch verlengstuk</h2>
+    <p>Bij Reyns Advocaten werken wij niet als een externe dienstverlener die van op afstand advies geeft. Wij worden een verlengstuk van uw organisatie. Dat betekent: proactieve communicatie, korte reactietijden en advies dat niet alleen juridisch klopt, maar ook commercieel hout snijdt.</p>
+    <p>Onze 25 advocaten dekken 8 expertisedomeinen, zodat u voor elke juridische vraag bij hetzelfde team terechtkomt. Geen uitleg meer van nul, geen dossiers die tussen kantoren verloren gaan. Wij denken mee als ondernemer, niet alleen als jurist.</p>
+    <div class="solution-stats">
+      <div>
+        <div class="solution-stat-num">35+</div>
+        <div class="solution-stat-label">Jaar</div>
+      </div>
+      <div>
+        <div class="solution-stat-num">25</div>
+        <div class="solution-stat-label">Advocaten</div>
+      </div>
+      <div>
+        <div class="solution-stat-num">3</div>
+        <div class="solution-stat-label">Kantoren</div>
+      </div>
+      <div>
+        <div class="solution-stat-num">8</div>
+        <div class="solution-stat-label">Expertises</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 - OFFER ═══ -->
+<section class="offer">
+  <div class="container">
+    <h2>Hoe werkt het?</h2>
+    <p class="offer-subtitle">In drie stappen naar juridische zekerheid</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-img">
+          <img src="https://reyns-advocaten.be/wp-content/uploads/2023/09/AlexandreBastenier-1.jpg" alt="Kennismaking" loading="lazy">
+        </div>
+        <div class="step-body">
+          <p class="step-num">Stap 1</p>
+          <h3>Kennismaking</h3>
+          <p>Een gratis eerste gesprek waarin wij luisteren naar uw situatie, uw doelen en uw zorgen. Zonder kosten, zonder verplichtingen.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-img">
+          <img src="https://reyns-advocaten.be/wp-content/uploads/2023/09/TomCielen.jpg" alt="Strategie" loading="lazy">
+        </div>
+        <div class="step-body">
+          <p class="step-num">Stap 2</p>
+          <h3>Strategie</h3>
+          <p>Wij stellen een pragmatisch plan op met een heldere kosten-batenanalyse. U weet vooraf exact waar u aan toe bent.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-img">
+          <img src="https://reyns-advocaten.be/wp-content/uploads/2025/02/FotoHildeCollier-Bedrijfsportret-Reyns-5-1500x1500.jpg" alt="Actie" loading="lazy">
+        </div>
+        <div class="step-body">
+          <p class="step-num">Stap 3</p>
+          <h3>Actie</h3>
+          <p>Snelle uitvoering met proactieve communicatie. U wordt op elk moment op de hoogte gehouden, zonder dat u erachteraan moet bellen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="inclusions">
+      <h3>Onze expertisedomeinen</h3>
+      <div class="inclusions-grid">
+        <div class="inclusion-item">
+          <svg class="inclusion-check" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#083050"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ondernemingsrecht
+        </div>
+        <div class="inclusion-item">
+          <svg class="inclusion-check" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#083050"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Vennootschappen &amp; M&amp;A
+        </div>
+        <div class="inclusion-item">
+          <svg class="inclusion-check" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#083050"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Insolventie
+        </div>
+        <div class="inclusion-item">
+          <svg class="inclusion-check" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#083050"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Vastgoed
+        </div>
+        <div class="inclusion-item">
+          <svg class="inclusion-check" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#083050"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          IP / ICT / GDPR
+        </div>
+        <div class="inclusion-item">
+          <svg class="inclusion-check" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#083050"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Fiscaliteit
+        </div>
+        <div class="inclusion-item">
+          <svg class="inclusion-check" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#083050"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Familiale belangen
+        </div>
+        <div class="inclusion-item">
+          <svg class="inclusion-check" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#083050"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Strafrecht
+        </div>
+      </div>
+    </div>
+
+    <div class="offer-cta-wrap">
+      <a href="#form" class="offer-cta">Plan uw gratis gesprek</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMAGE STRIP 2 ═══ -->
+<div class="image-strip">
+  <img src="https://reyns-advocaten.be/wp-content/uploads/2023/09/ChristianStoop-1.jpg" alt="Christian Stoop" loading="lazy">
+  <img src="https://reyns-advocaten.be/wp-content/uploads/2023/09/DaisyDaggelinckx-1.jpg" alt="Daisy Daggelinckx" loading="lazy">
+  <img src="https://reyns-advocaten.be/wp-content/uploads/2023/09/SteffiVanhulle.jpg" alt="Steffi Vanhulle" loading="lazy">
+</div>
+
+<!-- ═══ SECTION 5 - CREDIBILITY ═══ -->
+<section class="credibility">
+  <div class="container">
+    <h2>Waarom Reyns Advocaten?</h2>
+    <div class="cred-cards">
+      <div class="cred-card">
+        <div class="cred-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3>35+ jaar ononderbroken groei</h3>
+        <p>Opgericht in 1990 door Ivan Reyns. Van een solo-praktijk uitgegroeid tot een kantoor met 25 advocaten over 3 vestigingen. Dat doe je niet zonder tevreden clienten.</p>
+      </div>
+      <div class="cred-card">
+        <div class="cred-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3>5 vennoten, 25 professionals</h3>
+        <p>Een breed partnerschap met elk hun eigen specialisatie. Zo krijgt u altijd een advocaat die uw domein door en door kent, met de slagkracht van een heel team achter zich.</p>
+      </div>
+      <div class="cred-card">
+        <div class="cred-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3>1.000+ bomen per jaar</h3>
+        <p>Reyns Advocaten investeert actief in duurzaamheid. Elk jaar planten wij meer dan 1.000 bomen, omdat maatschappelijke verantwoordelijkheid niet stopt bij juridisch advies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 7 - FORM ═══ -->
+<section class="form-section" id="form">
+  <div class="container">
+    <h2>Plan uw gratis eerste gesprek</h2>
+    <p class="form-sub">Duurt minder dan 60 seconden. Wij nemen binnen 24 uur contact met u op.</p>
+    <div class="form-wrap">
+      <form action="https://formspree.io/f/xpznqkdl" method="POST">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="name">Naam</label>
+            <input type="text" id="name" name="name" placeholder="Uw volledige naam" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="uw@email.be" required>
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="phone">Telefoon</label>
+            <input type="tel" id="phone" name="phone" placeholder="+32 ..." required>
+          </div>
+          <div class="form-group">
+            <label for="company">Bedrijfsnaam</label>
+            <input type="text" id="company" name="company" placeholder="Uw bedrijf">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="matter">Type juridische kwestie</label>
+          <select id="matter" name="matter" required>
+            <option value="" disabled selected>Selecteer een optie</option>
+            <option value="Ondernemingsrecht">Ondernemingsrecht</option>
+            <option value="Vennootschappen & M&A">Vennootschappen &amp; M&amp;A</option>
+            <option value="Insolventie">Insolventie</option>
+            <option value="Vastgoed">Vastgoed</option>
+            <option value="IP/ICT/GDPR">IP / ICT / GDPR</option>
+            <option value="Fiscaliteit">Fiscaliteit</option>
+            <option value="Familiale belangen">Familiale belangen</option>
+            <option value="Strafrecht">Strafrecht</option>
+            <option value="Anders">Anders</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget">Budgetindicatie</label>
+          <select id="budget" name="budget" required>
+            <option value="" disabled selected>Selecteer een optie</option>
+            <option value="Onder €5.000">Onder &euro;5.000</option>
+            <option value="€5.000 - €15.000">&euro;5.000 - &euro;15.000</option>
+            <option value="€15.000 - €50.000">&euro;15.000 - &euro;50.000</option>
+            <option value="€50.000 - €100.000">&euro;50.000 - &euro;100.000</option>
+            <option value="€100.000+">&euro;100.000+</option>
+            <option value="Nog niet bekend">Nog niet bekend</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="timeline">Timing</label>
+          <select id="timeline" name="timeline" required>
+            <option value="" disabled selected>Selecteer een optie</option>
+            <option value="Zo snel mogelijk">Zo snel mogelijk</option>
+            <option value="Binnen 1-3 maanden">Binnen 1-3 maanden</option>
+            <option value="Binnen 3-6 maanden">Binnen 3-6 maanden</option>
+            <option value="Ik orienteer mij">Ik orienteer mij</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Korte beschrijving</label>
+          <textarea id="description" name="description" placeholder="Beschrijf kort uw situatie of juridische vraag..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Plan uw gratis gesprek</button>
+        <p class="form-privacy">Uw gegevens worden vertrouwelijk behandeld en enkel gebruikt om contact met u op te nemen. Wij delen uw informatie nooit met derden.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq">
+  <div class="container">
+    <h2>Veelgestelde vragen</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Hoeveel kost een advocaat bij Reyns Advocaten?</button>
+        <div class="faq-a"><div class="faq-a-inner">Onze tarieven hangen af van de complexiteit van uw dossier. Tijdens het gratis eerste gesprek bespreken wij uw situatie en geven wij een transparante inschatting van de kosten. Wij werken met heldere facturen zodat u altijd weet waarvoor u betaalt.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Hoe snel kan ik een antwoord verwachten?</button>
+        <div class="faq-a"><div class="faq-a-inner">Wij streven ernaar om binnen 24 uur te reageren op elke vraag. Voor dringende zaken schakelen wij dezelfde dag nog. Snelle communicatie is een van onze kernwaarden.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Wat als mijn zaak meerdere rechtsgebieden raakt?</button>
+        <div class="faq-a"><div class="faq-a-inner">Dat is precies waar onze structuur het verschil maakt. Met 25 advocaten over 8 expertisedomeinen stellen wij intern een team samen dat alle aspecten van uw dossier dekt. U houdt een vast aanspreekpunt, terwijl de juiste specialisten meewerken op de achtergrond.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Werkt Reyns Advocaten ook voor particulieren?</button>
+        <div class="faq-a"><div class="faq-a-inner">Ja. Hoewel onze focus ligt op ondernemers en bedrijven, staan wij ook particulieren bij in onder meer vastgoedrecht, familiale belangen en strafrecht. Neem gerust contact op om te bespreken hoe wij u kunnen helpen.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Hoe verloopt een eerste gesprek?</button>
+        <div class="faq-a"><div class="faq-a-inner">U vult het formulier in en wij nemen binnen 24 uur contact met u op om een afspraak in te plannen. Tijdens het gesprek luisteren wij naar uw situatie, stellen wij gerichte vragen en geven wij een eerste inschatting van de mogelijkheden. Dit gesprek is gratis en vrijblijvend.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Neem vandaag nog de eerste stap</h2>
+    <a href="#form" class="final-cta-btn">Plan uw gratis gesprek</a>
+    <p class="final-cta-sub">35+ jaar ervaring. 25 advocaten. 3 kantoren in Antwerpen, Melsele en Gent.</p>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    Reyns Advocaten 2026. Alle rechten voorbehouden.
+  </div>
+</footer>
+
+<!-- ═══ STICKY MOBILE CTA ═══ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#form">Plan uw gratis gesprek</a>
+</div>
+
+<script>
+/* FAQ Accordion */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=this.parentElement;
+    var answer=item.querySelector('.faq-a');
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(openItem){
+      openItem.classList.remove('open');
+      openItem.querySelector('.faq-a').style.maxHeight=null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      answer.style.maxHeight=answer.scrollHeight+'px';
+    }
+  });
+});
+
+/* Sticky CTA - hide when form is visible */
+(function(){
+  var stickyCta=document.getElementById('stickyCta');
+  var formSection=document.getElementById('form');
+  if(!stickyCta||!formSection||!('IntersectionObserver' in window))return;
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        stickyCta.classList.add('hidden');
+      }else{
+        stickyCta.classList.remove('hidden');
+      }
+    });
+  },{threshold:0.1});
+  observer.observe(formSection);
+})();
+</script>
+</body>
+</html>

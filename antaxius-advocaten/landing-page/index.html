@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antaxius Advocaten - Een helder antwoord, geen dossier vol voorbehoud</title>
+<meta name="description" content="Antaxius Advocaten: sinds 1995, 15+ advocaten in Antwerpen. Fiscaal recht, ondernemingsrecht en internationale expertise. Contacteer ons vandaag.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #777777;
+  background: #FFFFFF;
+  line-height: 1.6;
+  font-size: 16px;
+}
+h1, h2, h3, h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: #212529;
+  line-height: 1.25;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+/* ========== BUTTONS ========== */
+.btn-primary {
+  display: inline-block;
+  background: #B90000;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.15s;
+  text-align: center;
+}
+.btn-primary:hover { background: #9a0000; transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+/* ========== NAV ========== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: #343A40;
+}
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.nav-logo img {
+  height: 30px;
+  width: auto;
+}
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-phone {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-phone-text { display: none; }
+.nav-phone svg { width: 20px; height: 20px; fill: #fff; }
+.nav-cta {
+  background: #B90000;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: background 0.25s;
+}
+.nav-cta:hover { background: #9a0000; }
+
+/* ========== HERO ========== */
+.hero {
+  padding: 100px 0 60px;
+  background: #FFFFFF;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.hero-pre {
+  font-size: 14px;
+  font-weight: 700;
+  color: #B90000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.hero h1 {
+  font-size: 30px;
+  color: #212529;
+  margin-bottom: 16px;
+}
+.hero-sub {
+  font-size: 17px;
+  color: #777;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+.hero-cta-wrap { margin-bottom: 12px; }
+.hero-risk {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 28px;
+}
+.hero-stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hero-stat { display: flex; flex-direction: column; }
+.hero-stat-num {
+  font-weight: 700;
+  font-size: 22px;
+  color: #B90000;
+}
+.hero-stat-label {
+  font-size: 13px;
+  color: #999;
+}
+.hero-image {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 280px;
+  border-radius: 12px;
+}
+
+/* ========== PROOF BAR ========== */
+.proof-bar {
+  background: #B90000;
+  padding: 28px 0;
+}
+.proof-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+.proof-item-num {
+  font-weight: 700;
+  font-size: 26px;
+  color: #fff;
+}
+.proof-item-label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+}
+
+/* ========== IMAGE STRIP ========== */
+.image-strip {
+  padding: 0;
+  background: #FFFFFF;
+}
+.image-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.image-strip-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ========== PROBLEM SECTION ========== */
+.section-problem {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+.section-problem h2 {
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #212529;
+}
+.section-problem .section-sub {
+  text-align: center;
+  color: #777;
+  margin-bottom: 40px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+}
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.problem-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.problem-card svg {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  color: #B90000;
+}
+.problem-card h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.problem-card p {
+  font-size: 14px;
+  color: #777;
+}
+.bridge-card {
+  background: #343A40;
+  color: #fff;
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+}
+.bridge-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.bridge-card p {
+  font-size: 15px;
+  opacity: 0.85;
+  max-width: 560px;
+  margin: 0 auto 20px;
+  color: #fff;
+}
+
+/* ========== SOLUTION SECTION ========== */
+.section-solution {
+  padding: 60px 0;
+  background: #fff;
+}
+.section-solution h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.section-solution .section-sub {
+  text-align: center;
+  color: #777;
+  margin-bottom: 40px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.solution-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.solution-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.solution-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #fdf0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.solution-icon svg { width: 24px; height: 24px; color: #B90000; }
+.solution-item h4 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+.solution-item p { font-size: 15px; color: #777; }
+.mini-stat-bar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #eee;
+}
+.mini-stat { text-align: center; }
+.mini-stat-num {
+  font-weight: 700;
+  font-size: 24px;
+  color: #B90000;
+}
+.mini-stat-label { font-size: 13px; color: #999; }
+
+/* ========== OFFER SECTION ========== */
+.section-offer {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+.section-offer h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.section-offer .section-sub {
+  text-align: center;
+  color: #777;
+  margin-bottom: 40px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 48px;
+}
+.step-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.step-num {
+  width: 40px;
+  height: 40px;
+  background: #B90000;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 auto 16px;
+}
+.step-card .step-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  margin: 0 auto 16px;
+}
+.step-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.step-card p { font-size: 15px; color: #777; }
+.inclusions-label {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #212529;
+}
+.inclusions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+.inclusion-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #212529;
+}
+.inclusion-item svg { flex-shrink: 0; width: 20px; height: 20px; color: #B90000; }
+.offer-cta { text-align: center; }
+
+/* ========== SOCIAL PROOF ========== */
+.section-proof {
+  padding: 60px 0;
+  background: #fff;
+}
+.section-proof h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.proof-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.credibility-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+}
+.credibility-card .card-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  background: #B90000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.credibility-card .card-icon svg { width: 24px; height: 24px; fill: #fff; color: #fff; }
+.credibility-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.credibility-card p { font-size: 15px; color: #777; }
+.stars { display: flex; justify-content: center; gap: 4px; margin-bottom: 12px; }
+.stars svg { width: 20px; height: 20px; fill: #B90000; }
+
+/* ========== FORM ========== */
+.section-form {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+.form-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 40px 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.form-wrapper h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.form-sub {
+  text-align: center;
+  color: #777;
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #212529;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #B90000;
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-submit {
+  text-align: center;
+  margin-top: 8px;
+}
+.form-submit .btn-primary {
+  width: 100%;
+  padding: 16px 32px;
+  font-size: 17px;
+}
+.form-privacy {
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  margin-top: 12px;
+}
+
+/* ========== FAQ ========== */
+.section-faq {
+  padding: 60px 0;
+  background: #fff;
+}
+.section-faq h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid #eee;
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #212529;
+  text-align: left;
+}
+.faq-question svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: #B90000;
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-question svg { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.faq-answer p {
+  padding-bottom: 20px;
+  font-size: 15px;
+  color: #777;
+}
+
+/* ========== FINAL CTA ========== */
+.section-final-cta {
+  padding: 60px 0;
+  background: #B90000;
+  text-align: center;
+}
+.section-final-cta h2 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.section-final-cta p {
+  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+  max-width: 520px;
+  margin: 0 auto 28px;
+}
+.btn-white {
+  display: inline-block;
+  background: #fff;
+  color: #B90000;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 36px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.15s;
+}
+.btn-white:hover { background: #f2f2f2; transform: translateY(-1px); }
+
+/* ========== FOOTER ========== */
+.footer {
+  background: #343A40;
+  padding: 40px 0 100px;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+.footer-logo img {
+  height: 28px;
+  width: auto;
+}
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.footer-links a { transition: color 0.2s; }
+.footer-links a:hover { color: #fff; }
+
+/* ========== STICKY MOBILE CTA ========== */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #fff;
+  padding: 12px 20px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+  z-index: 999;
+  display: none;
+}
+.sticky-cta.visible { display: block; }
+.sticky-cta .btn-primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+}
+
+/* ========== RESPONSIVE: 641px ========== */
+@media (min-width: 641px) {
+  .nav-phone-text { display: inline; }
+  .hero h1 { font-size: 36px; }
+  .proof-bar-grid { grid-template-columns: repeat(4, 1fr); }
+  .image-strip-grid img { height: 280px; }
+  .problem-grid { grid-template-columns: 1fr 1fr; }
+  .section-problem h2 { font-size: 26px; }
+  .steps-grid { grid-template-columns: repeat(3, 1fr); }
+  .proof-cards { grid-template-columns: repeat(3, 1fr); }
+  .form-row-2 { grid-template-columns: 1fr 1fr; }
+  .form-submit .btn-primary { width: auto; padding: 16px 48px; }
+  .footer-inner { flex-direction: row; justify-content: space-between; }
+  .footer { padding-bottom: 40px; }
+  .sticky-cta { display: none !important; }
+}
+
+/* ========== RESPONSIVE: 961px ========== */
+@media (min-width: 961px) {
+  .hero-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .hero h1 { font-size: 40px; }
+  .hero { padding: 120px 0 80px; }
+  .image-strip-grid img { height: 340px; }
+  .section-problem h2 { font-size: 28px; }
+  .problem-grid { grid-template-columns: repeat(3, 1fr); }
+  .section-problem, .section-solution, .section-offer, .section-proof, .section-form, .section-faq { padding: 80px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><img src="https://antaxius.be/images/antaxius-logo.png" alt="Antaxius Advocaten"></a>
+    <div class="nav-right">
+      <a href="tel:+3232485599" class="nav-phone">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25 1.02l-2.2 2.2z"/></svg>
+        <span class="nav-phone-text">+32 3 248 55 99</span>
+      </a>
+      <a href="#form" class="nav-cta">Contacteer ons</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-pre">Uw eerste rechter</div>
+        <h1>Een helder antwoord, geen dossier vol voorbehoud</h1>
+        <p class="hero-sub">Wij analyseren uw zaak vanuit alle invalshoeken, precies zoals een rechter dat doet. Zo krijgt u een objectief beeld voordat we samen een strategie bepalen.</p>
+        <div class="hero-cta-wrap">
+          <a href="#form" class="btn-primary">Contacteer ons</a>
+        </div>
+        <p class="hero-risk">Eerste analyse zonder verplichtingen. Discreet en vertrouwelijk.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">1995</span>
+            <span class="hero-stat-label">Opgericht</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">15+</span>
+            <span class="hero-stat-label">Advocaten</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">155+</span>
+            <span class="hero-stat-label">Landen via IR Global</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://antaxius.be/images/2025/05/16/jan-slider.jpg" alt="Antaxius Advocaten - fiscaal en ondernemingsrecht">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROOF BAR ===== -->
+<section class="proof-bar">
+  <div class="container">
+    <div class="proof-bar-grid">
+      <div class="proof-item">
+        <div class="proof-item-num">Sinds 1995</div>
+        <div class="proof-item-label">Gevestigd in Antwerpen</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-item-num">15+</div>
+        <div class="proof-item-label">Advocaten</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-item-num">155+</div>
+        <div class="proof-item-label">Landen via IR Global</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-item-num">EU Hof</div>
+        <div class="proof-item-label">van Justitie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IMAGE STRIP 1 ===== -->
+<section class="image-strip">
+  <div class="image-strip-grid">
+    <img src="https://antaxius.be/images/team/frank_vandewalle-4.jpg" alt="Frank Vandewalle - Antaxius Advocaten">
+    <img src="https://antaxius.be/images/team/erik_gevers-2.jpg" alt="Erik Gevers - Antaxius Advocaten">
+    <img src="https://antaxius.be/images/team/marian_vanden_broeck-2.jpg" alt="Marian Vanden Broeck - Antaxius Advocaten">
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="section-problem">
+  <div class="container">
+    <h2>Een belastingcontrole en uw boekhouder zegt gewoon mee te werken?</h2>
+    <p class="section-sub">Veel ondernemers ontdekken te laat dat braaf meewerken niet altijd de beste strategie is. Herkenbaar?</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div>
+          <h4>Onduidelijke fiscale positie</h4>
+          <p>U weet niet precies waar u staat en of uw structuur nog optimaal is na recente wetswijzigingen.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div>
+          <h4>Boekhouder zonder verdedigingsstrategie</h4>
+          <p>Uw boekhouder is uitstekend in cijfers, maar niet getraind om u te verdedigen bij een controle.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div>
+          <h4>Internationale complexiteit</h4>
+          <p>Activiteiten in meerdere landen maken uw fiscale situatie onvoorspelbaar zonder specialistisch advies.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div>
+          <h4>Fusie of overname zonder fiscale screening</h4>
+          <p>Een deal sluiten zonder de fiscale gevolgen volledig in kaart te brengen kan duizenden euro's kosten.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div>
+          <h4>Vermogensplanning uitgesteld</h4>
+          <p>U weet dat u uw vermogen moet structureren, maar het blijft op de lange baan door de complexiteit.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div>
+          <h4>Angst voor strafrechtelijke gevolgen</h4>
+          <p>Een fout in uw aangifte kan escaleren naar fiscaal strafrecht. Zonder gespecialiseerde bijstand staat u kwetsbaar.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bridge-card">
+      <h3>Er is een betere aanpak</h3>
+      <p>Bij Antaxius analyseren wij uw zaak zoals een rechter dat doet: objectief, vanuit alle invalshoeken. Pas daarna bouwen we samen een strategie.</p>
+      <a href="#form" class="btn-primary">Contacteer ons</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section class="section-solution">
+  <div class="container">
+    <h2>Uw eerste rechter</h2>
+    <p class="section-sub">Wij nemen de rol van uw eerste rechter aan: een objectieve, kritische analyse vanuit meerdere invalshoeken voordat er een strategie wordt gekozen.</p>
+    <div class="solution-content">
+      <div class="solution-item">
+        <div class="solution-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>Objectieve multi-angle analyse</h4>
+          <p>Wij bekijken uw dossier vanuit het standpunt van de fiscus, de rechter en uzelf. Zo ontdekken we zwakke plekken voordat de tegenpartij dat doet.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <h4>Proactief in plaats van reactief</h4>
+          <p>In plaats van te wachten op problemen, identificeren wij risico's en kansen op voorhand. Zo houdt u de controle over uw fiscale positie.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <h4>Internationaal netwerk</h4>
+          <p>Via IR Global hebben wij directe toegang tot specialisten in 155+ landen. Grensoverschrijdende fiscale vraagstukken lossen wij efficienter op.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div>
+          <h4>Ervaring bij het EU Hof van Justitie</h4>
+          <p>Wij hebben zaken bepleit tot op het hoogste Europese niveau. Die ervaring zetten we in voor elke zaak, groot of klein.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mini-stat-bar">
+      <div class="mini-stat">
+        <div class="mini-stat-num">Sinds 1995</div>
+        <div class="mini-stat-label">Ervaring in fiscaal recht</div>
+      </div>
+      <div class="mini-stat">
+        <div class="mini-stat-num">15+</div>
+        <div class="mini-stat-label">Gespecialiseerde advocaten</div>
+      </div>
+      <div class="mini-stat">
+        <div class="mini-stat-num">155+</div>
+        <div class="mini-stat-label">Landen via IR Global</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFFER ===== -->
+<section class="section-offer">
+  <div class="container">
+    <h2>Hoe wij te werk gaan</h2>
+    <p class="section-sub">Drie stappen naar een heldere fiscale strategie, zonder verrassingen.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <img class="step-photo" src="https://antaxius.be/images/team/filip_deruyck-3.jpg" alt="Filip Deruyck - Antaxius">
+        <h3>Analyse</h3>
+        <p>Wij brengen uw volledige fiscale situatie in kaart. Elk risico en elke kans wordt objectief beoordeeld.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <img class="step-photo" src="https://antaxius.be/images/team/erhard_vermeulen-5.jpg" alt="Erhard Vermeulen - Antaxius">
+        <h3>Strategie</h3>
+        <p>Op basis van de analyse bouwen wij samen een strategie die juridisch stevig onderbouwd is en past bij uw doelen.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <img class="step-photo" src="https://antaxius.be/images/team/bart-engelen-2.jpg" alt="Bart Engelen - Antaxius">
+        <h3>Resultaat</h3>
+        <p>Wij voeren de strategie uit en begeleiden u bij elke stap, van onderhandeling tot en met het resultaat.</p>
+      </div>
+    </div>
+    <div class="inclusions-label">Onze expertisedomeinen</div>
+    <div class="inclusions-grid">
+      <div class="inclusion-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Fiscaal recht
+      </div>
+      <div class="inclusion-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Fusies &amp; overnames
+      </div>
+      <div class="inclusion-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Ondernemingsrecht
+      </div>
+      <div class="inclusion-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Fiscaal strafrecht
+      </div>
+      <div class="inclusion-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Vermogensplanning
+      </div>
+      <div class="inclusion-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Regularisatie
+      </div>
+      <div class="inclusion-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Internationaal fiscaal recht
+      </div>
+      <div class="inclusion-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        EU-recht
+      </div>
+    </div>
+    <div class="offer-cta">
+      <a href="#form" class="btn-primary">Contacteer ons</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IMAGE STRIP 2 ===== -->
+<section class="image-strip">
+  <div class="image-strip-grid">
+    <img src="https://antaxius.be/images/team/wim_herreman-4.jpg" alt="Wim Herreman - Antaxius Advocaten">
+    <img src="https://antaxius.be/images/team/stefan-geluyckens.jpg" alt="Stefan Geluyckens - Antaxius Advocaten">
+    <img src="https://antaxius.be/images/team/pascal_faes-3.jpg" alt="Pascal Faes - Antaxius Advocaten">
+  </div>
+</section>
+
+<!-- ===== SOCIAL PROOF ===== -->
+<section class="section-proof">
+  <div class="container">
+    <h2>Waarom Antaxius Advocaten</h2>
+    <div class="proof-cards">
+      <div class="credibility-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Sinds 1995</h3>
+        <p>Bijna 30 jaar ervaring in fiscaal en ondernemingsrecht. Een track record opgebouwd over tientallen jaren praktijk.</p>
+      </div>
+      <div class="credibility-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3>IR Global 155+ landen</h3>
+        <p>Lid van IR Global, een internationaal netwerk van topkantoren in meer dan 155 landen. Grensoverschrijdend advies zonder tussenschakels.</p>
+      </div>
+      <div class="credibility-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>EU Hof van Justitie</h3>
+        <p>Ervaring met procedures bij het Europees Hof van Justitie. Dat niveau van expertise zetten wij in voor elk dossier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM ===== -->
+<section class="section-form" id="form">
+  <div class="container">
+    <div class="form-wrapper">
+      <h2>Contacteer ons</h2>
+      <p class="form-sub">Vertel ons over uw situatie. Wij nemen discreet en vrijblijvend contact met u op.</p>
+      <form action="#" method="POST" onsubmit="return false;">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="name">Naam</label>
+            <input type="text" id="name" name="name" placeholder="Uw volledige naam" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="naam@bedrijf.be" required>
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="phone">Telefoon</label>
+            <input type="tel" id="phone" name="phone" placeholder="+32 ...">
+          </div>
+          <div class="form-group">
+            <label for="company">Bedrijf</label>
+            <input type="text" id="company" name="company" placeholder="Bedrijfsnaam">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="matter">Type dossier</label>
+          <select id="matter" name="matter" required>
+            <option value="" disabled selected>Selecteer een optie</option>
+            <option value="fiscaal-advies">Fiscaal advies</option>
+            <option value="belastingcontrole">Belastingcontrole</option>
+            <option value="fusies-overnames">Fusies &amp; overnames</option>
+            <option value="ondernemingsrecht">Ondernemingsrecht</option>
+            <option value="fiscaal-strafrecht">Fiscaal strafrecht</option>
+            <option value="vermogensplanning">Vermogensplanning</option>
+            <option value="regularisatie">Regularisatie</option>
+            <option value="anders">Anders</option>
+          </select>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="budget">Verwacht budget</label>
+            <select id="budget" name="budget">
+              <option value="" disabled selected>Selecteer een optie</option>
+              <option value="onder-5k">Onder 5.000 EUR</option>
+              <option value="5-15k">5.000 - 15.000 EUR</option>
+              <option value="15-50k">15.000 - 50.000 EUR</option>
+              <option value="50-100k">50.000 - 100.000 EUR</option>
+              <option value="100k-plus">100.000 EUR+</option>
+              <option value="onbekend">Nog niet bekend</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="timeline">Tijdslijn</label>
+            <select id="timeline" name="timeline">
+              <option value="" disabled selected>Selecteer een optie</option>
+              <option value="dringend">Dringend (binnen 1 week)</option>
+              <option value="binnenkort">Binnenkort (1-4 weken)</option>
+              <option value="plannen">Aan het plannen (1-3 maanden)</option>
+              <option value="orienteren">Orienteren</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">Beschrijving</label>
+          <textarea id="description" name="description" placeholder="Beschrijf kort uw situatie of vraag..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">Contacteer ons</button>
+        </div>
+        <p class="form-privacy">Uw gegevens worden vertrouwelijk behandeld en enkel gebruikt om contact met u op te nemen.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section-faq">
+  <div class="container">
+    <h2>Veelgestelde vragen</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); var a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+          Wat kost een eerste gesprek bij Antaxius?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Wij bespreken graag vrijblijvend uw situatie. Neem contact met ons op en wij geven u een helder beeld van de kosten voordat we van start gaan. Geen verrassingen achteraf.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); var a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+          Kan ik ook terecht voor een lopende belastingcontrole?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Absoluut. Wij nemen regelmatig dossiers over die al lopen. Hoe sneller u ons inschakelt, hoe meer opties we hebben om uw belangen te beschermen.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); var a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+          Werken jullie ook voor bedrijven buiten Belgie?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Ja. Via ons lidmaatschap bij IR Global hebben wij directe toegang tot gespecialiseerde kantoren in meer dan 155 landen. Wij begeleiden regelmatig internationale dossiers.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); var a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+          Wat betekent "uw eerste rechter" precies?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Wij analyseren uw zaak vanuit alle invalshoeken, net zoals een rechter dat doet. Door uw dossier objectief en kritisch te beoordelen voordat we een strategie kiezen, vermijden we blinde vlekken en bouwen we een sterker verweer of advies op.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); var a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+          Hoe snel kan ik een antwoord verwachten na mijn aanvraag?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Wij streven ernaar om binnen 24 uur contact met u op te nemen. Bij dringende zaken kunt u ons ook rechtstreeks bellen op +32 3 248 55 99.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="section-final-cta">
+  <div class="container">
+    <h2>Klaar voor een helder antwoord?</h2>
+    <p>Neem vandaag nog contact op met Antaxius Advocaten. Wij analyseren uw situatie objectief en bouwen samen een strategie die werkt.</p>
+    <a href="#form" class="btn-white">Contacteer ons</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#" class="footer-logo"><img src="https://antaxius.be/images/antaxius-logo.png" alt="Antaxius Advocaten"></a>
+      <div class="footer-links">
+        <a href="tel:+3232485599">+32 3 248 55 99</a>
+        <a href="https://antaxius.be" target="_blank" rel="noopener">antaxius.be</a>
+        <span>Antwerpen, Belgie</span>
+      </div>
+      <div>&copy; 2026 Antaxius Advocaten. Alle rechten voorbehouden.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== STICKY MOBILE CTA ===== -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#form" class="btn-primary">Contacteer ons</a>
+</div>
+
+<script>
+// Sticky mobile CTA with IntersectionObserver
+(function() {
+  var sticky = document.getElementById('stickyCta');
+  var hero = document.querySelector('.hero');
+  var form = document.getElementById('form');
+  var heroVisible = true;
+  var formVisible = false;
+
+  if (!sticky || !hero || !form) return;
+
+  function updateSticky() {
+    if (window.innerWidth >= 641) {
+      sticky.classList.remove('visible');
+      return;
+    }
+    if (!heroVisible && !formVisible) {
+      sticky.classList.add('visible');
+    } else {
+      sticky.classList.remove('visible');
+    }
+  }
+
+  var heroObs = new IntersectionObserver(function(entries) {
+    heroVisible = entries[0].isIntersecting;
+    updateSticky();
+  }, { threshold: 0 });
+
+  var formObs = new IntersectionObserver(function(entries) {
+    formVisible = entries[0].isIntersecting;
+    updateSticky();
+  }, { threshold: 0 });
+
+  heroObs.observe(hero);
+  formObs.observe(form);
+
+  window.addEventListener('resize', updateSticky);
+})();
+</script>
+
+</body>
+</html>

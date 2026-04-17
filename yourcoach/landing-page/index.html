@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YourCoach - Werk dat voelt als iets van jou</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --coral:#E8724A;
+  --coral-dark:#D4603B;
+  --charcoal:#2D2D2D;
+  --offwhite:#FFF9F5;
+  --text:#444444;
+  --bg:#FFFFFF;
+  --radius:10px;
+  --max-w:1140px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',sans-serif;font-weight:400;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-weight:700;line-height:1.2;color:var(--charcoal)}
+h1{font-size:clamp(1.8rem,4.5vw,3rem)}
+h2{font-size:clamp(1.4rem,3vw,2.2rem)}
+h3{font-size:clamp(1.1rem,2vw,1.4rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 20px}
+section{padding:60px 0}
+
+/* ===== BUTTONS ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--coral);color:#fff;font-weight:600;font-size:1rem;padding:14px 32px;border-radius:var(--radius);border:none;cursor:pointer;transition:background .25s,transform .15s;text-align:center}
+.btn:hover{background:var(--coral-dark);transform:translateY(-1px)}
+.btn-outline{background:transparent;border:2px solid var(--coral);color:var(--coral)}
+.btn-outline:hover{background:var(--coral);color:#fff}
+.btn-sm{padding:10px 22px;font-size:.9rem}
+.btn-white{background:#fff;color:var(--coral)}
+.btn-white:hover{background:var(--offwhite)}
+
+/* ===== 1. NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--charcoal)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-logo img{height:38px;width:auto}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-phone{color:#fff;font-weight:500;font-size:.95rem;white-space:nowrap}
+.nav-phone svg{width:16px;height:16px;margin-right:4px;vertical-align:middle;fill:#fff}
+
+/* ===== 2. HERO ===== */
+.hero{padding-top:108px;padding-bottom:60px;background:var(--offwhite)}
+.hero .wrap{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+.hero-text .tag{display:inline-block;background:var(--coral);color:#fff;font-size:.8rem;font-weight:600;padding:5px 14px;border-radius:50px;margin-bottom:16px;letter-spacing:.5px}
+.hero-text h1{margin-bottom:16px}
+.hero-text p{font-size:1.1rem;margin-bottom:24px;max-width:520px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.hero-risk{font-size:.85rem;color:#777;margin-bottom:24px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:24px}
+.hero-stats span{font-size:.85rem;font-weight:600;color:var(--charcoal);display:flex;align-items:center;gap:6px}
+.hero-stats span::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--coral)}
+.hero-img{border-radius:var(--radius);overflow:hidden}
+.hero-img img{width:100%;object-fit:cover;border-radius:var(--radius)}
+
+/* ===== 3. PROOF BAR ===== */
+.proof-bar{background:var(--coral);color:#fff;padding:18px 0}
+.proof-bar .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 32px}
+.proof-bar span{font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.proof-bar span svg{width:18px;height:18px;fill:#fff;flex-shrink:0}
+
+/* ===== 4. IMAGE STRIP ===== */
+.img-strip{padding:40px 0;background:var(--bg)}
+.img-strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.img-strip img{width:100%;height:220px;object-fit:cover;border-radius:var(--radius)}
+
+/* ===== 5. PROBLEM ===== */
+.problem{background:var(--offwhite)}
+.problem h2{text-align:center;margin-bottom:12px}
+.problem .sub{text-align:center;max-width:620px;margin:0 auto 40px;font-size:1.05rem}
+.problem-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px}
+.problem-card{background:#fff;border-radius:var(--radius);padding:22px 24px;display:flex;align-items:flex-start;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.problem-card .icon{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--offwhite);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.problem-card p{font-size:.95rem}
+.bridge-card{background:var(--coral);color:#fff;border-radius:var(--radius);padding:28px 32px;text-align:center}
+.bridge-card h3{color:#fff;margin-bottom:8px;font-size:1.2rem}
+.bridge-card p{font-size:1rem;opacity:.92}
+
+/* ===== 6. SOLUTION ===== */
+.solution{background:var(--bg)}
+.solution h2{text-align:center;margin-bottom:12px}
+.solution .sub{text-align:center;max-width:600px;margin:0 auto 40px;font-size:1.05rem}
+.solution-grid{display:grid;grid-template-columns:1fr;gap:20px}
+.sol-card{background:var(--offwhite);border-radius:var(--radius);padding:28px 24px;text-align:center}
+.sol-icon{width:56px;height:56px;border-radius:50%;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem}
+.sol-card h3{margin-bottom:8px}
+.sol-card p{font-size:.93rem}
+
+/* ===== 7. OFFER ===== */
+.offer{background:var(--offwhite)}
+.offer h2{text-align:center;margin-bottom:12px}
+.offer .sub{text-align:center;max-width:600px;margin:0 auto 44px;font-size:1.05rem}
+.steps{display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:48px}
+.step{position:relative;background:#fff;border-radius:var(--radius);padding:28px 24px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--coral);color:#fff;font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.step h3{margin-bottom:6px}
+.step p{font-size:.93rem}
+.inclusions h3{text-align:center;margin-bottom:24px;font-size:1.2rem}
+.inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.inc-item{background:#fff;border-radius:var(--radius);padding:16px 18px;font-size:.93rem;font-weight:500;display:flex;align-items:center;gap:10px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.inc-item svg{width:20px;height:20px;fill:var(--coral);flex-shrink:0}
+
+/* ===== 8. IMAGE STRIP 2 ===== */
+.img-strip-2{padding:40px 0;background:var(--bg)}
+.img-strip-2 .wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.img-strip-2 img{width:100%;height:260px;object-fit:cover;border-radius:var(--radius)}
+
+/* ===== 9. SOCIAL PROOF ===== */
+.social-proof{background:var(--offwhite)}
+.social-proof h2{text-align:center;margin-bottom:40px}
+.sp-grid{display:grid;grid-template-columns:1fr;gap:20px}
+.sp-card{background:#fff;border-radius:var(--radius);padding:28px 24px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.sp-card .stars{color:#f5a623;font-size:1.1rem;margin-bottom:12px}
+.sp-card blockquote{font-style:italic;font-size:.95rem;margin-bottom:14px;line-height:1.7}
+.sp-card .author{font-weight:600;font-size:.85rem;color:var(--charcoal)}
+.sp-badge{display:flex;align-items:center;gap:14px;background:var(--coral);color:#fff;border-radius:var(--radius);padding:24px}
+.sp-badge .badge-icon{flex-shrink:0;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.sp-badge h3{color:#fff;margin-bottom:4px}
+.sp-badge p{font-size:.9rem;opacity:.92}
+
+/* ===== 10. FORM ===== */
+.form-section{background:var(--bg)}
+.form-section h2{text-align:center;margin-bottom:8px}
+.form-section .sub{text-align:center;max-width:560px;margin:0 auto 36px;font-size:1.05rem}
+.form-wrap{max-width:640px;margin:0 auto;background:var(--offwhite);border-radius:var(--radius);padding:32px 24px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.form-row{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-weight:600;font-size:.88rem;color:var(--charcoal)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:8px;font-family:inherit;font-size:.95rem;background:#fff;color:var(--text);transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--coral)}
+.form-group textarea{min-height:100px;resize:vertical}
+.form-wrap .btn{width:100%;margin-top:8px;font-size:1.05rem;padding:16px}
+.form-privacy{text-align:center;font-size:.8rem;color:#999;margin-top:12px}
+
+/* ===== 11. FAQ ===== */
+.faq{background:var(--offwhite)}
+.faq h2{text-align:center;margin-bottom:36px}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{background:#fff;border-radius:var(--radius);margin-bottom:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.faq-q{padding:18px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.97rem;color:var(--charcoal);user-select:none}
+.faq-q::after{content:'+';font-size:1.3rem;color:var(--coral);transition:transform .25s}
+.faq-item.open .faq-q::after{content:'\2212'}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 24px}
+.faq-item.open .faq-a{max-height:300px;padding:0 24px 18px}
+.faq-a p{font-size:.93rem;line-height:1.7}
+
+/* ===== 12. FINAL CTA ===== */
+.final-cta{background:var(--coral);color:#fff;text-align:center;padding:60px 0}
+.final-cta h2{color:#fff;margin-bottom:12px}
+.final-cta p{font-size:1.05rem;margin-bottom:28px;opacity:.92;max-width:520px;margin-left:auto;margin-right:auto}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:36px 0;text-align:center;font-size:.85rem}
+.footer a{color:#fff;text-decoration:underline}
+.footer-row{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-bottom:10px}
+
+/* ===== STICKY MOBILE CTA ===== */
+.sticky-cta{display:block;position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--charcoal);padding:10px 16px;text-align:center}
+.sticky-cta .btn{width:100%;font-size:1rem;padding:14px}
+
+/* ===== DESKTOP BREAKPOINTS ===== */
+@media(min-width:640px){
+  .hero .wrap{grid-template-columns:1fr 1fr}
+  .problem-grid{grid-template-columns:1fr 1fr}
+  .solution-grid{grid-template-columns:1fr 1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr 1fr}
+  .sp-grid{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr 1fr}
+  .img-strip img{height:260px}
+}
+
+@media(min-width:900px){
+  section{padding:80px 0}
+  .problem-grid{grid-template-columns:repeat(3,1fr)}
+  .inc-grid{grid-template-columns:repeat(4,1fr)}
+  .sp-grid{grid-template-columns:repeat(3,1fr)}
+  .img-strip img{height:300px}
+  .img-strip-2 img{height:320px}
+  .sticky-cta{display:none}
+}
+
+@media(max-width:639px){
+  .nav-phone{display:none}
+  .nav-logo img{height:30px}
+  body{padding-bottom:64px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 1. NAV ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><img src="https://www.yourcoach.be/wp-content/themes/yourcoach/img/logo_YourCoach.png" alt="YourCoach logo" loading="eager"></a>
+    <div class="nav-right">
+      <a href="tel:093356204" class="nav-phone"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2a1 1 0 011-.2 11.4 11.4 0 003.6.6 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.3.2 2.4.6 3.6a1 1 0 01-.3 1L6.6 10.8z"/></svg>09 335 62 04</a>
+      <a href="#form" class="btn btn-sm">Boek een gesprek</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 2. HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="tag">Coaching &amp; Opleidingen in Gent</span>
+      <h1>Werk dat voelt als iets van jou</h1>
+      <p>Bij YourCoach geloven we dat verandering begint bij jezelf. Geen standaardformules, wel creatieve en lichaamsgerichte coaching die je in beweging brengt. Ontdek wat je echt wil en zet de stap.</p>
+      <div class="hero-actions">
+        <a href="#form" class="btn">Boek een gesprek</a>
+        <a href="#aanbod" class="btn btn-outline">Bekijk het aanbod</a>
+      </div>
+      <p class="hero-risk">Vrijblijvend kennismakingsgesprek, geen verplichtingen.</p>
+      <div class="hero-stats">
+        <span>ICF-gecertificeerd</span>
+        <span>Heel Vlaanderen</span>
+        <span>Coach &amp; opleiding</span>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://www.yourcoach.be/wp-content/uploads/2019/03/k2.png" alt="Coaching sessie bij YourCoach" loading="eager" width="560" height="400">
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. PROOF BAR ===== -->
+<div class="proof-bar">
+  <div class="wrap">
+    <span><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>ICF-gecertificeerd</span>
+    <span><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>Loopbaan &amp; Life coaching</span>
+    <span><svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>Erkende opleidingen</span>
+    <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 7a2.5 2.5 0 010 5z"/></svg>Gent</span>
+  </div>
+</div>
+
+<!-- ===== 4. IMAGE STRIP ===== -->
+<div class="img-strip">
+  <div class="wrap">
+    <img src="https://www.yourcoach.be/wp-content/uploads/2019/08/1.png" alt="YourCoach coaching sfeerbeeld" loading="lazy" width="370" height="260">
+    <img src="https://www.yourcoach.be/wp-content/uploads/2019/08/2.png" alt="YourCoach opleiding sfeerbeeld" loading="lazy" width="370" height="260">
+    <img src="https://www.yourcoach.be/wp-content/uploads/2019/08/3.png" alt="YourCoach team sfeerbeeld" loading="lazy" width="370" height="260">
+  </div>
+</div>
+
+<!-- ===== 5. PROBLEM ===== -->
+<section class="problem">
+  <div class="wrap">
+    <h2>Vastgelopen in je job maar geen idee wat je echt wil?</h2>
+    <p class="sub">Je bent niet alleen. Veel professionals voelen dat er meer is, maar weten niet waar te beginnen. Herken je dit?</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="icon">😶</div>
+        <div><p>Je doet je werk op automatische piloot, maar het vuur is al lang gedoofd.</p></div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🔄</div>
+        <div><p>Je hebt al vaker gedacht aan verandering, maar elke keer blijf je hangen in dezelfde twijfels.</p></div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">😰</div>
+        <div><p>De stress en druk stapelen zich op. Je merkt het aan je lijf, je slaap, je humeur.</p></div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🤷</div>
+        <div><p>Je weet niet meer wat je talenten zijn of waar je energie van krijgt.</p></div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🧱</div>
+        <div><p>Je voelt je gevangen tussen financiele verplichtingen en het verlangen naar iets anders.</p></div>
+      </div>
+      <div class="problem-card">
+        <div class="icon">💬</div>
+        <div><p>Praten met vrienden of familie helpt niet echt, je hebt iemand nodig die de juiste vragen stelt.</p></div>
+      </div>
+    </div>
+    <div class="bridge-card">
+      <h3>Het goede nieuws? Je hoeft dit niet alleen uit te zoeken.</h3>
+      <p>Met de juiste begeleiding ontdek je stap voor stap wat bij jou past. Geen grote sprongen, wel duidelijke richting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. SOLUTION ===== -->
+<section class="solution">
+  <div class="wrap">
+    <h2>Meer dan praten</h2>
+    <p class="sub">Onze aanpak combineert gesprek met creatieve en lichaamsgerichte technieken. Zo kom je niet alleen tot inzicht, maar ook echt in beweging.</p>
+    <div class="solution-grid">
+      <div class="sol-card">
+        <div class="sol-icon">
+          <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 6v4l3 3"/></svg>
+        </div>
+        <h3>Lichaamsgerichte coaching</h3>
+        <p>Je lichaam weet meer dan je denkt. Via ademwerk, beweging en lichamelijke oefeningen verdiepen we het inzicht dat tijdens het gesprek ontstaat.</p>
+      </div>
+      <div class="sol-card">
+        <div class="sol-icon">
+          <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <h3>Creatieve werkvormen</h3>
+        <p>Beeldcoaching, metaforen en NLP-technieken openen perspectieven die je met woorden alleen niet bereikt. Je ontdekt patronen en doorbreekt ze.</p>
+      </div>
+      <div class="sol-card">
+        <div class="sol-icon">
+          <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Individueel op maat</h3>
+        <p>Geen standaardprogramma. Elke sessie wordt afgestemd op jouw tempo, jouw thema en jouw manier van leren. Jij bepaalt het ritme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. OFFER ===== -->
+<section class="offer" id="aanbod">
+  <div class="wrap">
+    <h2>Zo werken we samen</h2>
+    <p class="sub">Van eerste kennismaking tot blijvende groei: een helder traject in drie stappen.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Kennismaking</h3>
+        <p>Een vrijblijvend gesprek waarin we samen verkennen wat je nodig hebt en of er een klik is. Geen verplichtingen.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Jouw traject</h3>
+        <p>Op basis van je doelen stellen we een persoonlijk coachingtraject samen. Kort of langlopend, altijd op jouw maat.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Groei</h3>
+        <p>Je merkt verandering in je denken, voelen en doen. Je krijgt tools mee die je ook na de coaching blijft gebruiken.</p>
+      </div>
+    </div>
+    <div class="inclusions">
+      <h3>Ons volledige aanbod</h3>
+      <div class="inc-grid">
+        <div class="inc-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Loopbaancoaching</div>
+        <div class="inc-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Life coaching</div>
+        <div class="inc-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Stress &amp; burn-out</div>
+        <div class="inc-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>NLP coaching</div>
+        <div class="inc-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Business coaching</div>
+        <div class="inc-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Coachopleidingen</div>
+        <div class="inc-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Team coaching</div>
+        <div class="inc-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Leiderschapstraining</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. IMAGE STRIP 2 ===== -->
+<div class="img-strip-2">
+  <div class="wrap">
+    <img src="https://www.yourcoach.be/wp-content/uploads/2019/03/k1.png" alt="YourCoach coaching sessie" loading="lazy" width="560" height="320">
+    <img src="https://www.yourcoach.be/wp-content/uploads/2019/03/k3.png" alt="YourCoach groepssessie" loading="lazy" width="560" height="320">
+  </div>
+</div>
+
+<!-- ===== 9. SOCIAL PROOF ===== -->
+<section class="social-proof">
+  <div class="wrap">
+    <h2>Waarom YourCoach?</h2>
+    <div class="sp-grid">
+      <div class="sp-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Na jaren twijfelen heb ik eindelijk duidelijkheid over wat ik wil. De creatieve aanpak van YourCoach heeft me geholpen om voorbij mijn hoofd te komen en echt te voelen wat goed zit."</blockquote>
+        <div class="author">Sarah V., loopbaancoaching</div>
+      </div>
+      <div class="sp-badge">
+        <div class="badge-icon">
+          <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+        </div>
+        <div>
+          <h3>ICF-gecertificeerd</h3>
+          <p>Onze coaches voldoen aan de internationale standaarden van de International Coaching Federation.</p>
+        </div>
+      </div>
+      <div class="sp-badge" style="background:var(--charcoal)">
+        <div class="badge-icon">
+          <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1z"/></svg>
+        </div>
+        <div>
+          <h3>Gepubliceerde coaching auteurs</h3>
+          <p>Ons team deelt actief kennis via boeken en publicaties over coaching en persoonlijke ontwikkeling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10. FORM ===== -->
+<section class="form-section" id="form">
+  <div class="wrap">
+    <h2>Boek een gesprek</h2>
+    <p class="sub">Laat je gegevens achter en we nemen binnen 2 werkdagen contact met je op voor een vrijblijvende kennismaking.</p>
+    <div class="form-wrap">
+      <form action="#" method="POST" onsubmit="return handleSubmit(event)">
+        <div class="form-row" style="grid-template-columns:1fr 1fr">
+          <div class="form-group">
+            <label for="naam">Naam</label>
+            <input type="text" id="naam" name="naam" placeholder="Je volledige naam" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="naam@voorbeeld.be" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefoon">Telefoon</label>
+            <input type="tel" id="telefoon" name="telefoon" placeholder="0470 00 00 00">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="interesse">Waar heb je interesse in?</label>
+            <select id="interesse" name="interesse" required>
+              <option value="" disabled selected>Kies een optie</option>
+              <option value="Individuele coaching">Individuele coaching</option>
+              <option value="Loopbaancoaching">Loopbaancoaching</option>
+              <option value="Coachopleiding">Coachopleiding</option>
+              <option value="Team coaching">Team coaching</option>
+              <option value="Organisatie training">Organisatie training</option>
+              <option value="Stress & burn-out coaching">Stress &amp; burn-out coaching</option>
+              <option value="Anders">Anders</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bron">Hoe heb je ons gevonden?</label>
+            <select id="bron" name="bron">
+              <option value="" disabled selected>Kies een optie</option>
+              <option value="Google">Google</option>
+              <option value="Social media">Social media</option>
+              <option value="Doorverwijzing">Doorverwijzing</option>
+              <option value="Evenement">Evenement</option>
+              <option value="Mond-tot-mond">Mond-tot-mond</option>
+              <option value="Anders">Anders</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bericht">Vertel kort wat je bezighoudt</label>
+            <textarea id="bericht" name="bericht" placeholder="Waar loop je tegenaan? Wat hoop je te bereiken?"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn">Boek een gesprek</button>
+        <p class="form-privacy">Je gegevens worden vertrouwelijk behandeld en nooit gedeeld met derden.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 11. FAQ ===== -->
+<section class="faq">
+  <div class="wrap">
+    <h2>Veelgestelde vragen</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Wat is het verschil tussen coaching en therapie?</div>
+        <div class="faq-a"><p>Therapie richt zich vaak op het verwerken van het verleden, terwijl coaching gericht is op de toekomst. Bij coaching werken we aan concrete doelen: wat wil je bereiken en hoe kom je daar? We gaan uit van jouw kracht en mogelijkheden.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hoeveel tijd moet ik investeren?</div>
+        <div class="faq-a"><p>Een coachingsessie duurt gemiddeld 60 tot 90 minuten. De meeste trajecten bestaan uit 6 tot 10 sessies, verspreid over enkele maanden. De frequentie bepalen we samen op basis van jouw noden en tempo.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Voor wie is coaching geschikt?</div>
+        <div class="faq-a"><p>Voor iedereen die op een keerpunt staat, vastloopt of gewoon meer uit het leven wil halen. Of je nu een carrierewisseling overweegt, kampt met stress, of als organisatie wil groeien: coaching biedt een helder kader.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Zijn jullie gecertificeerd?</div>
+        <div class="faq-a"><p>Ja. Onze coaches zijn ICF-gecertificeerd (International Coaching Federation). Onze opleidingen voldoen aan de erkende standaarden en geven recht op een ICF-certificaat bij voldoende praktijkuren.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Kan coaching ook online?</div>
+        <div class="faq-a"><p>Absoluut. We bieden zowel sessies op locatie in Gent als online coaching via videobellen. Online coaching werkt even effectief en biedt meer flexibiliteit qua planning. Je kiest zelf wat het best bij je past.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 12. FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Klaar voor de volgende stap?</h2>
+    <p>Begin met een vrijblijvend gesprek. Samen bekijken we wat coaching voor jou kan betekenen.</p>
+    <a href="#form" class="btn btn-white">Boek een gesprek</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <span>YourCoach, Gent</span>
+      <a href="tel:093356204">09 335 62 04</a>
+      <a href="https://www.yourcoach.be" target="_blank" rel="noopener">yourcoach.be</a>
+    </div>
+    <p>&copy; 2026 YourCoach. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
+
+<!-- ===== STICKY MOBILE CTA ===== -->
+<div class="sticky-cta">
+  <a href="#form" class="btn">Boek een gesprek</a>
+</div>
+
+<!-- ===== JS ===== -->
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=this.parentElement;
+    document.querySelectorAll('.faq-item').forEach(function(i){
+      if(i!==item)i.classList.remove('open');
+    });
+    item.classList.toggle('open');
+  });
+});
+
+// Form handler
+function handleSubmit(e){
+  e.preventDefault();
+  var form=e.target;
+  var btn=form.querySelector('button[type="submit"]');
+  btn.textContent='Verzonden!';
+  btn.style.background='#2D2D2D';
+  setTimeout(function(){
+    btn.textContent='Boek een gesprek';
+    btn.style.background='';
+    form.reset();
+  },3000);
+  return false;
+}
+
+// Hide sticky CTA when form is visible
+var stickyCta=document.querySelector('.sticky-cta');
+if(stickyCta){
+  var formSection=document.getElementById('form');
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      stickyCta.style.transform=entry.isIntersecting?'translateY(100%)':'translateY(0)';
+      stickyCta.style.transition='transform .3s ease';
+    });
+  },{threshold:0.1});
+  observer.observe(formSection);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Antaxius Advocaten - Your Complete Ad Funnel</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#343A40;
+  --navy-deep:#212529;
+  --gold:#B90000;
+  --gold-light:rgba(185,0,0,0.08);
+  --bg:#ffffff;
+  --off:#f9fafb;
+  --line:#eaecf0;
+  --txt:#1a2332;
+  --sub:#64748b;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--txt);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.2}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* Layout */
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap-sm{max-width:760px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0}
+.section--off{background:var(--off)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:999px;font-family:'Inter',sans-serif;font-size:16px;font-weight:600;cursor:pointer;transition:all .3s ease;border:none}
+.btn--gold{background:var(--gold);color:#fff}
+.btn--gold:hover{background:#9a0000;transform:translateY(-1px);box-shadow:0 4px 20px rgba(185,0,0,0.3)}
+.btn--outline{background:transparent;border:1.5px solid var(--gold);color:var(--gold)}
+.btn--outline:hover{background:var(--gold-light)}
+
+/* Eyebrow */
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+
+/* Fade animation */
+.fade{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+
+/* --- NAV --- */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:100;transition:background .3s ease,box-shadow .3s ease}
+.nav-inner{max-width:1120px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{height:32px;transition:filter .3s ease}
+.nav:not(.bg) .nav-logo{filter:brightness(0) invert(1)}
+.nav.bg{background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav.bg .nav-logo{filter:none}
+.nav .btn{padding:10px 24px;font-size:14px}
+.nav:not(.bg) .btn--gold{background:var(--gold);color:#fff}
+
+/* --- HERO --- */
+.hero{background:linear-gradient(170deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;text-align:center;padding:160px 0 80px;position:relative;overflow:visible}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.hero-logo{height:36px;margin:0 auto 32px;filter:brightness(0) invert(1)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(185,0,0,0.15);border:1px solid rgba(185,0,0,0.4);border-radius:999px;padding:8px 20px;font-size:13px;font-weight:500;color:#ff6b6b;margin-bottom:32px}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(0.8)}}
+.hero h1{font-size:clamp(32px,4.5vw,52px);max-width:780px;margin:0 auto 48px;line-height:1.15}
+.hero-video{position:relative;max-width:800px;margin:0 auto -120px;border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.45);aspect-ratio:16/9;background:var(--navy-deep);z-index:2}
+.hero-video-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(33,37,41,0.6);cursor:pointer}
+.play-btn{width:72px;height:72px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;animation:pulse-play 2.5s infinite;transition:transform .2s ease}
+.play-btn:hover{transform:scale(1.08)}
+.play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px}
+@keyframes pulse-play{0%,100%{box-shadow:0 0 0 0 rgba(185,0,0,0.5)}50%{box-shadow:0 0 0 20px rgba(185,0,0,0)}}
+.hero-cta-row{margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.hero-cta-row .muted{font-size:14px;color:rgba(255,255,255,0.5)}
+
+/* --- DELIVERABLES --- */
+.deliverables{padding:200px 0 100px;text-align:center}
+.deliverables h2{font-size:clamp(28px,3.5vw,42px);margin-bottom:60px}
+.del-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.del-card{background:var(--off);border:1px solid var(--line);border-radius:16px;padding:40px 28px;text-align:left;transition:transform .3s ease,box-shadow .3s ease}
+.del-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.06)}
+.del-num{font-family:'DM Serif Display',serif;font-size:28px;color:var(--gold);margin-bottom:12px}
+.del-card h3{font-size:20px;margin-bottom:8px}
+.del-card p{color:var(--sub);font-size:15px}
+
+/* --- WHY THIS MATTERS --- */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.why-left blockquote{border-left:3px solid var(--gold);padding:20px 24px;margin-top:24px;background:var(--gold-light);border-radius:0 12px 12px 0;font-size:15px;color:var(--sub);line-height:1.7}
+.why-left h2{font-size:clamp(26px,3vw,38px)}
+.why-right{display:flex;flex-direction:column;gap:24px;padding-top:12px}
+.why-row{display:flex;align-items:flex-start;gap:16px}
+.why-dot{width:10px;height:10px;min-width:10px;border-radius:50%;background:var(--gold);margin-top:6px}
+.why-row p{font-size:16px;line-height:1.6}
+
+/* --- AD CARDS --- */
+.ads-heading{text-align:center;margin-bottom:48px}
+.ads-heading h2{font-size:clamp(28px,3.5vw,42px)}
+.phase-label{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin:48px 0 20px;padding-left:4px}
+.phase-label:first-of-type{margin-top:0}
+.ad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+.ad-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.ad-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+.ad-card img{width:100%;height:auto;display:block}
+.ad-card-body{padding:16px 20px}
+.ad-card-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.ad-dot{width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ad-type{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold)}
+.ad-card-body p{font-size:14px;color:var(--sub);line-height:1.5}
+
+/* --- VIDEO SCRIPTS --- */
+.scripts-heading{text-align:center;margin-bottom:48px}
+.scripts-heading h2{font-size:clamp(28px,3.5vw,42px)}
+.accordion{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:16px;background:#fff}
+.accordion-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-weight:600;font-size:16px;gap:16px;transition:background .2s ease}
+.accordion-header:hover{background:var(--off)}
+.accordion-icon{width:24px;height:24px;min-width:24px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;transition:transform .3s ease,border-color .3s ease}
+.accordion.open .accordion-icon{transform:rotate(180deg);border-color:var(--gold)}
+.accordion-icon svg{width:12px;height:12px;fill:none;stroke:var(--sub);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.accordion-body-inner{padding:0 24px 24px}
+.script-section{margin-bottom:16px}
+.script-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold);margin-bottom:6px}
+.script-text{font-size:15px;color:var(--sub);line-height:1.7}
+.filming-note{background:var(--gold-light);border-radius:10px;padding:14px 18px;font-size:14px;color:var(--txt)}
+
+/* --- LANDING PAGE PREVIEW --- */
+.lp-section{text-align:center}
+.lp-heading{margin-bottom:48px}
+.lp-heading h2{font-size:clamp(28px,3.5vw,42px)}
+.phone-mock{width:400px;margin:0 auto;background:#fff;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,0.12);overflow:hidden;border:8px solid var(--navy-deep)}
+.phone-mock iframe{width:100%;height:700px;border:none;display:block}
+
+/* --- SYSTEM FLOW --- */
+.flow-heading{text-align:center;margin-bottom:48px}
+.flow-heading h2{font-size:clamp(28px,3.5vw,42px)}
+.flow-steps{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
+.flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 20px;flex:1;min-width:140px;max-width:200px}
+.flow-num{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.flow-step h4{font-size:15px;margin-bottom:4px}
+.flow-step p{font-size:13px;color:var(--sub)}
+.flow-arrow{font-size:20px;color:var(--gold);margin:0 -4px;align-self:center}
+
+/* --- CTA BAND --- */
+.cta-band{padding:80px 0}
+.cta-band-inner{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);border-radius:24px;padding:64px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.cta-band-inner h2{color:#fff;font-size:clamp(24px,3vw,36px);max-width:560px}
+.cta-band-inner .btn--gold{padding:16px 36px;font-size:16px}
+
+/* --- HOW IT WORKS --- */
+.hiw-heading{text-align:center;margin-bottom:48px}
+.hiw-heading h2{font-size:clamp(28px,3.5vw,42px)}
+.hiw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.hiw-card{background:var(--off);border:1px solid var(--line);border-radius:16px;padding:40px 28px}
+.hiw-num{font-family:'DM Serif Display',serif;font-size:28px;color:var(--gold);margin-bottom:12px}
+.hiw-card h3{font-size:20px;margin-bottom:8px}
+.hiw-card p{font-size:15px;color:var(--sub);line-height:1.6}
+
+/* --- CASE STUDIES --- */
+.cases-heading{text-align:center;margin-bottom:48px}
+.cases-heading h2{font-size:clamp(28px,3.5vw,42px)}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.case-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.case-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+.case-img{width:100%;height:200px;object-fit:cover}
+.case-body{padding:24px}
+.case-logo{height:28px;margin-bottom:16px}
+.case-body h3{font-size:20px;margin-bottom:6px}
+.case-body p{font-size:14px;color:var(--sub)}
+
+/* --- FAQ --- */
+.faq-heading{text-align:center;margin-bottom:48px}
+.faq-heading h2{font-size:clamp(28px,3.5vw,42px)}
+
+/* --- ABOUT --- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-img{border-radius:16px;width:100%;object-fit:cover}
+.about-text h2{font-size:clamp(26px,3vw,38px);margin-bottom:16px}
+.about-text p{font-size:16px;color:var(--sub);line-height:1.7;margin-bottom:16px}
+
+/* --- FINAL CTA / CALENDLY --- */
+.final-cta{text-align:center}
+.final-cta h2{font-size:clamp(28px,3.5vw,42px);margin-bottom:8px}
+.final-cta .sub{color:var(--sub);font-size:16px;margin-bottom:40px}
+.calendly-wrap{max-width:700px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.08)}
+.calendly-wrap iframe{width:100%;height:700px;border:none;display:block}
+
+/* --- FOOTER --- */
+.footer{padding:32px 0;text-align:center;color:var(--sub);font-size:14px;border-top:1px solid var(--line)}
+
+/* --- RESPONSIVE --- */
+@media(max-width:900px){
+  .del-grid,.ad-grid,.hiw-grid,.case-grid{grid-template-columns:1fr}
+  .why-grid,.about-grid{grid-template-columns:1fr}
+  .flow-steps{flex-direction:column}
+  .flow-arrow{transform:rotate(90deg)}
+  .cta-band-inner{flex-direction:column;text-align:center;padding:40px 28px}
+  .cta-band-inner .btn{width:100%}
+  .phone-mock{width:100%;max-width:360px}
+  .hero h1{font-size:28px}
+  .section{padding:64px 0}
+  .deliverables{padding:140px 0 64px}
+}
+@media(max-width:600px){
+  .nav-logo{height:24px}
+  .nav .btn{padding:8px 16px;font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<!-- --- NAV --- -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <img src="https://antaxius.be/images/antaxius-logo.png" alt="Antaxius Advocaten" class="nav-logo"/>
+    <a href="#calendly" class="btn btn--gold">Let's get this live</a>
+  </div>
+</nav>
+
+<!-- --- HERO --- -->
+<section class="hero">
+  <div class="wrap-sm">
+    <img src="https://antaxius.be/images/antaxius-logo.png" alt="Antaxius Advocaten" class="hero-logo"/>
+    <div class="hero-badge"><span class="dot"></span> Built exclusively for Antaxius Advocaten</div>
+    <h1>I will help you get 10 new clients within 14 days with this Meta ads funnel I created for you.</h1>
+    <div class="hero-video">
+      <div class="hero-video-overlay" id="videoOverlay">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg>
+        </div>
+      </div>
+      <!-- Replace this div with your Loom embed after recording.
+           Recording instructions:
+           1. Open Loom and start a screen + camera recording
+           2. Have this pitch page open in your browser
+           3. Introduce yourself, explain why you built this funnel for Antaxius Advocaten
+           4. Scroll through the page showing each deliverable
+           5. End with a CTA to book the call via Calendly at the bottom
+           6. Keep it under 3 minutes
+      -->
+    </div>
+    <div class="hero-cta-row">
+      <a href="#calendly" class="btn btn--gold">Let's get this live</a>
+      <span class="muted">No cost, no obligation - 30 min to see if it fits</span>
+    </div>
+  </div>
+</section>
+
+<!-- --- DELIVERABLES OVERVIEW --- -->
+<section class="deliverables" id="deliverables">
+  <div class="wrap">
+    <div class="fade">
+      <p class="eyebrow">Everything below is yours, for free</p>
+      <h2>A complete ad funnel, built specifically for Antaxius Advocaten.</h2>
+    </div>
+    <div class="del-grid">
+      <div class="del-card fade">
+        <div class="del-num">01</div>
+        <h3>Image Ads</h3>
+        <p>9 scroll-stopping ad concepts across three funnel phases: prospecting, trust-building, and conversion. Each one tailored to how Belgian business owners think about choosing a tax lawyer.</p>
+      </div>
+      <div class="del-card fade">
+        <div class="del-num">02</div>
+        <h3>Video Scripts</h3>
+        <p>3 ready-to-film scripts with different angles: pain, credibility, and contrarian insight. Includes filming briefs so your team can record them in an afternoon.</p>
+      </div>
+      <div class="del-card fade">
+        <div class="del-num">03</div>
+        <h3>Landing Page</h3>
+        <p>A custom-built, conversion-optimised landing page that qualifies leads before they ever reach your inbox. Mobile-first, fast-loading, and ready to go live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- WHY THIS MATTERS --- -->
+<section class="section">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-left fade">
+        <p class="eyebrow">The opportunity</p>
+        <h2>Why most tax law firms waste money on marketing</h2>
+        <blockquote>Most tax and corporate law firms rely entirely on referrals or invest in generic marketing that does not speak to how business owners actually choose their legal advisor. A targeted funnel changes that by meeting prospects where they already spend their time, with a message that addresses their real concerns, and a system that qualifies them before they ever pick up the phone.</blockquote>
+      </div>
+      <div class="why-right fade">
+        <div class="why-row">
+          <span class="why-dot"></span>
+          <p><strong>No existing ad funnel</strong> - Antaxius has nearly 30 years of tax expertise and 15+ lawyers, but no system to turn that authority into a predictable stream of new clients online.</p>
+        </div>
+        <div class="why-row">
+          <span class="why-dot"></span>
+          <p><strong>No structured lead capture</strong> - Your current website introduces the firm well, but it does not filter or qualify incoming enquiries before they reach your team.</p>
+        </div>
+        <div class="why-row">
+          <span class="why-dot"></span>
+          <p><strong>Zero video content</strong> - Business owners trust faces and stories. Without video, you are leaving the strongest trust-building tool on the table.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- IMAGE ADS --- -->
+<section class="section section--off" id="ads">
+  <div class="wrap">
+    <div class="ads-heading fade">
+      <p class="eyebrow">Deliverable 1</p>
+      <h2>9 image ad concepts, three funnel phases</h2>
+    </div>
+
+    <p class="phase-label fade">Phase 1: Prospecting</p>
+    <div class="ad-grid">
+      <div class="ad-card fade">
+        <img src="./images/1.png" alt="Ad 1 - Pain/Problem"/>
+        <div class="ad-card-body">
+          <div class="ad-card-top"><span class="ad-dot">01</span><span class="ad-type">Pain / Problem</span></div>
+          <p>Targets the anxiety of receiving a letter from the tax authority. Speaks directly to business owners who feel blindsided and unsure where to turn for proper tax defence.</p>
+        </div>
+      </div>
+      <div class="ad-card fade">
+        <img src="./images/2.png" alt="Ad 2 - Collage"/>
+        <div class="ad-card-body">
+          <div class="ad-card-top"><span class="ad-dot">02</span><span class="ad-type">Collage</span></div>
+          <p>A visual mosaic showing the breadth of Antaxius: tax advisory, corporate structuring, international disputes. Positions the firm as a full-spectrum tax and corporate partner.</p>
+        </div>
+      </div>
+      <div class="ad-card fade">
+        <img src="./images/3.png" alt="Ad 3 - Education/Tip"/>
+        <div class="ad-card-body">
+          <div class="ad-card-top"><span class="ad-dot">03</span><span class="ad-type">Education / Tip</span></div>
+          <p>A value-first ad offering a practical insight on recent Belgian tax changes. Positions Antaxius as the knowledgeable advisor worth following, not just hiring.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="phase-label fade">Phase 2: Trust</p>
+    <div class="ad-grid">
+      <div class="ad-card fade">
+        <img src="./images/4.png" alt="Ad 4 - Owner/Team"/>
+        <div class="ad-card-body">
+          <div class="ad-card-top"><span class="ad-dot">04</span><span class="ad-type">Owner / Team</span></div>
+          <p>Puts the Antaxius team front and centre. 15+ lawyers, Antwerp-based since 1995, IR Global network across 155+ jurisdictions. Builds personal trust at scale.</p>
+        </div>
+      </div>
+      <div class="ad-card fade">
+        <img src="./images/5.png" alt="Ad 5 - Social Proof"/>
+        <div class="ad-card-body">
+          <div class="ad-card-top"><span class="ad-dot">05</span><span class="ad-type">Social Proof</span></div>
+          <p>Highlights nearly 30 years of tax-only expertise. Reinforces that Belgian business owners and international clients trust Antaxius with their most sensitive fiscal matters.</p>
+        </div>
+      </div>
+      <div class="ad-card fade">
+        <img src="./images/6.png" alt="Ad 6 - Process"/>
+        <div class="ad-card-body">
+          <div class="ad-card-top"><span class="ad-dot">06</span><span class="ad-type">Process</span></div>
+          <p>Shows how Antaxius works: resultaatgericht maatwerk, understanding your business first, then building a strategy. Demystifies what working with a specialised tax lawyer looks like.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="phase-label fade">Phase 3: Conversion</p>
+    <div class="ad-grid">
+      <div class="ad-card fade">
+        <img src="./images/7.png" alt="Ad 7 - Free Offer"/>
+        <div class="ad-card-body">
+          <div class="ad-card-top"><span class="ad-dot">07</span><span class="ad-type">Free Offer</span></div>
+          <p>Leads with a free initial conversation. Lowers the barrier for business owners dealing with tax problems who have not yet committed to getting proper legal help.</p>
+        </div>
+      </div>
+      <div class="ad-card fade">
+        <img src="./images/8.png" alt="Ad 8 - Urgency"/>
+        <div class="ad-card-body">
+          <div class="ad-card-top"><span class="ad-dot">08</span><span class="ad-type">Urgency</span></div>
+          <p>Creates time pressure around tax deadlines and the cost of inaction. Every day without specialised tax guidance is a day your position weakens against the authority.</p>
+        </div>
+      </div>
+      <div class="ad-card fade">
+        <img src="./images/9.png" alt="Ad 9 - Lead/Hero"/>
+        <div class="ad-card-body">
+          <div class="ad-card-top"><span class="ad-dot">09</span><span class="ad-type">Lead / Hero</span></div>
+          <p>A high-impact closing ad that positions the business owner as someone who takes tax protection seriously. Direct CTA to the landing page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- VIDEO SCRIPTS --- -->
+<section class="section" id="scripts">
+  <div class="wrap">
+    <div class="scripts-heading fade">
+      <p class="eyebrow">Deliverable 2</p>
+      <h2>3 video scripts, ready to film</h2>
+    </div>
+
+    <div class="accordion fade" id="script1">
+      <div class="accordion-header" onclick="toggleAccordion('script1')">
+        <span>Script 1 - "The Letter You Cannot Ignore" (Pain)</span>
+        <span class="accordion-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <div class="script-section">
+            <p class="script-label">Hook</p>
+            <p class="script-text">Your accountant just told you to cooperate with the tax authority. To answer every question. To hand over whatever they ask for. It sounds reasonable. But what your accountant is not telling you is that cooperation without a strategy is not cooperation. It is surrender. If you are in this situation right now, keep watching.</p>
+          </div>
+          <div class="script-section">
+            <p class="script-label">Body</p>
+            <p class="script-text">Most business owners do the same thing when a tax audit escalates. They lean on their accountant. And their accountant does their best, but compliance and defence are two completely different disciplines. Your accountant files your returns. We fight your corner when the tax authority challenges them. Antaxius has been doing exactly this since 1995. Nearly 30 years, one focus: tax and corporate law. 15+ lawyers, all specialists. Not generalists who dabble in tax between contract disputes and family cases. We are uw eerste rechter. That means we step in before the courtroom ever comes into view. We negotiate, we strategise, and we resolve. Because every case deserves resultaatgericht maatwerk, a tailored approach built around your specific situation, your specific numbers, your specific risk. And when the case does require the courtroom, we have argued before the EU Court of Justice and work through IR Global in 155+ jurisdictions. You are not just hiring a local firm. You are hiring a local firm with a global network.</p>
+          </div>
+          <div class="script-section">
+            <p class="script-label">Call to action</p>
+            <p class="script-text">Here is what to do next. Click the link below this video. You will see a short page that explains how we work. Fill out the form at the bottom to book a free conversation with our team. No cost, no obligation. Just a clear assessment of your situation and what your options are.</p>
+          </div>
+          <div class="filming-note">
+            <strong>Filming brief:</strong> Seated at desk in the office, natural light, professional attire. Open with empathy about the accountant situation, then shift to authority when delivering the credentials. Steady eye contact with the lens. Keep the pace measured but confident throughout.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion fade" id="script2">
+      <div class="accordion-header" onclick="toggleAccordion('script2')">
+        <span>Script 2 - "Nearly 30 Years, One Focus" (Result)</span>
+        <span class="accordion-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <div class="script-section">
+            <p class="script-label">Hook</p>
+            <p class="script-text">Since 1995 we have done one thing. Tax and corporate law. Nothing else. No family law on the side. No criminal defence between meetings. Just tax. Just corporate. For nearly 30 years. Here is why that matters for you.</p>
+          </div>
+          <div class="script-section">
+            <p class="script-label">Body</p>
+            <p class="script-text">When a business owner comes to us with a tax dispute or a corporate restructuring, the first thing we do is understand their business. Not just the numbers, not just the legal position, but the full picture: what is at stake commercially, what the timeline looks like, and what a good outcome actually means for them. We have 15+ lawyers working under one roof in Antwerp, all of them specialists in tax and corporate law. That depth means we do not need to outsource, we do not need to call a friend at another firm for a second opinion. The knowledge is here. We gaan doelgericht te werk. Every strategy is built to get results, not to bill hours. And when a matter crosses borders, we work through IR Global, a network of independent firms in 155+ jurisdictions. We have argued before the EU Court of Justice. We handle international tax disputes, cross-border restructurings, and transfer pricing challenges every week. That is not a brochure claim. That is Tuesday.</p>
+          </div>
+          <div class="script-section">
+            <p class="script-label">Call to action</p>
+            <p class="script-text">If you are dealing with a tax situation or planning a corporate move and want to know where you stand, click the link below. Watch the short explanation on the next page. Then fill out the form to book a free conversation with our team. No cost, no strings attached.</p>
+          </div>
+          <div class="filming-note">
+            <strong>Filming brief:</strong> Standing in a meeting room or reception area, calm and measured energy. Let the numbers and track record speak for themselves. Slight pauses between key credentials for emphasis. Warm but authoritative tone throughout.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion fade" id="script3">
+      <div class="accordion-header" onclick="toggleAccordion('script3')">
+        <span>Script 3 - "Why a Generalist Lawyer Will Cost You More" (Contrarian)</span>
+        <span class="accordion-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <div class="script-section">
+            <p class="script-label">Hook</p>
+            <p class="script-text">Your generalist lawyer is handling your tax case. The same person who reviewed your lease last month and drafted a shareholders agreement the month before. They are smart. They work hard. But here is what they will never tell you: generalists handling tax matters miss things that specialists catch on day one.</p>
+          </div>
+          <div class="script-section">
+            <p class="script-label">Body</p>
+            <p class="script-text">Tax law in Belgium is not a side practice. It is a world of its own: constantly changing regulations, new rulings, shifting interpretations at every level from local tax offices to the EU Court of Justice. A generalist cannot keep up. Not because they are not capable, but because they are spread too thin. Missed deadlines, overlooked rulings, a strategy that sounds right but crumbles under scrutiny. We see it every week. Business owners come to us after their generalist has already made the first move, and that first move has cost them leverage they can never get back. Antaxius has been tax-only since 1995. That is nearly 30 years of doing nothing but tax and corporate law. 15+ lawyers, all specialists. When you sit down with us, you are not getting someone who read up on your issue the night before. You are getting someone who has handled dozens of cases exactly like yours. That is the difference between a firm that does tax and a firm that is tax.</p>
+          </div>
+          <div class="script-section">
+            <p class="script-label">Call to action</p>
+            <p class="script-text">If you want to find out whether your current legal setup has blind spots, click the link below. Fill out the short form on the next page to schedule a free conversation with our team. We will take a look at your situation and tell you honestly whether we can help.</p>
+          </div>
+          <div class="filming-note">
+            <strong>Filming brief:</strong> Seated casually, conversational energy. Think podcast guest, not presenter. Lean into the contrarian angle with a knowing expression when challenging the assumption about generalists. Keep it warm and non-confrontational. The tone is educational, not adversarial.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- LANDING PAGE PREVIEW --- -->
+<section class="section section--off lp-section" id="landing-page">
+  <div class="wrap">
+    <div class="lp-heading fade">
+      <p class="eyebrow">Deliverable 3</p>
+      <h2>A landing page that qualifies leads for you</h2>
+    </div>
+    <div class="phone-mock fade">
+      <iframe src="./landing-page/" title="Antaxius Advocaten Landing Page"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- --- SYSTEM FLOW --- -->
+<section class="section">
+  <div class="wrap">
+    <div class="flow-heading fade">
+      <p class="eyebrow">The system</p>
+      <h2>How the funnel works, end to end</h2>
+    </div>
+    <div class="flow-steps fade">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <h4>Meta Ads</h4>
+        <p>Targeted ads reach business owners in Belgium</p>
+      </div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <h4>Landing Page</h4>
+        <p>Visitors learn about your firm and approach</p>
+      </div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <h4>Qualification</h4>
+        <p>The form filters serious enquiries from tyre-kickers</p>
+      </div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <h4>Follow-up</h4>
+        <p>Automated emails nurture and confirm appointments</p>
+      </div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <h4>Consultation</h4>
+        <p>You speak with pre-qualified prospects ready to engage</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- CTA BAND --- -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-band-inner fade">
+      <h2>This entire funnel is ready to go live. All it needs is your green light.</h2>
+      <a href="#calendly" class="btn btn--gold">Book your 30-min call</a>
+    </div>
+  </div>
+</section>
+
+<!-- --- HOW IT WORKS --- -->
+<section class="section">
+  <div class="wrap">
+    <div class="hiw-heading fade">
+      <p class="eyebrow">What happens next</p>
+      <h2>Three steps to your first new clients</h2>
+    </div>
+    <div class="hiw-grid">
+      <div class="hiw-card fade">
+        <div class="hiw-num">01</div>
+        <h3>We launch your ads</h3>
+        <p>Once you approve the creatives, we set up the campaigns in Meta, configure targeting for Belgian business owners and international prospects, and go live. You do not have to touch a thing.</p>
+      </div>
+      <div class="hiw-card fade">
+        <div class="hiw-num">02</div>
+        <h3>Leads come to you pre-qualified</h3>
+        <p>The landing page does the heavy lifting. By the time someone fills out the form, they already understand your approach and have identified their tax or corporate situation.</p>
+      </div>
+      <div class="hiw-card fade">
+        <div class="hiw-num">03</div>
+        <h3>You close deals</h3>
+        <p>Your team receives qualified enquiries with context. No cold calls, no tyre-kickers. Just business owners who are ready to have a serious conversation about their tax needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- CASE STUDIES --- -->
+<section class="section section--off" id="cases">
+  <div class="wrap">
+    <div class="cases-heading fade">
+      <p class="eyebrow">Proof it works</p>
+      <h2>Results from other funnels we have built</h2>
+    </div>
+    <div class="case-grid">
+      <div class="case-card fade">
+        <img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case study" class="case-img"/>
+        <div class="case-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent logo" class="case-logo"/>
+          <h3>145 leads in 2 weeks</h3>
+          <p>Tech recruitment firm. We built their ad funnel from scratch and launched in under a week. The pipeline filled faster than their sales team could handle.</p>
+        </div>
+      </div>
+      <div class="case-card fade">
+        <img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case study" class="case-img"/>
+        <div class="case-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen logo" class="case-logo"/>
+          <h3>66 recurring clients in 27 days</h3>
+          <p>Home services company. Went from word-of-mouth only to a full funnel generating qualified appointments every single day.</p>
+        </div>
+      </div>
+      <div class="case-card fade">
+        <img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case study" class="case-img"/>
+        <div class="case-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner logo" class="case-logo"/>
+          <h3>50 recurring clients in 2 weeks</h3>
+          <p>Niche cleaning service. Precise targeting and a strong landing page turned a local business into the go-to provider in their region.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- FAQ --- -->
+<section class="section" id="faq">
+  <div class="wrap-sm">
+    <div class="faq-heading fade">
+      <p class="eyebrow">Common questions</p>
+      <h2>You are probably wondering a few things</h2>
+    </div>
+
+    <div class="accordion fade" id="faq1">
+      <div class="accordion-header" onclick="toggleAccordion('faq1')">
+        <span>Why are you giving this away for free?</span>
+        <span class="accordion-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <p class="script-text">Because building the funnel is the easy part for us. We do it every week. The hard part is finding the right clients to work with, businesses that have a real service, a real reputation, and the ambition to grow. Antaxius Advocaten fits that profile perfectly. Nearly 30 years of tax and corporate expertise, 15+ specialist lawyers, and an international network through IR Global. If you like what you see and want us to run it, great. If not, you keep everything on this page and we part as friends. Either way, you win.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion fade" id="faq2">
+      <div class="accordion-header" onclick="toggleAccordion('faq2')">
+        <span>Why should I trust you?</span>
+        <span class="accordion-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <p class="script-text">Fair question. The work on this page speaks for itself. You can see the ads, read the scripts, and preview the landing page. Nothing is hidden behind a sales call. Beyond that, you can check the case studies above. TechTalent, Vossen, and Container Cleaner are real companies with real results. We do not ask for trust upfront. We earn it by doing the work first.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion fade" id="faq3">
+      <div class="accordion-header" onclick="toggleAccordion('faq3')">
+        <span>How quickly would results show up?</span>
+        <span class="accordion-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <p class="script-text">Most of our funnels generate the first qualified leads within 48 to 72 hours of going live. The first two weeks are about testing and optimising, finding the best-performing ads and audiences. By week three, you typically have a reliable, predictable flow of enquiries coming in every day.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion fade" id="faq4">
+      <div class="accordion-header" onclick="toggleAccordion('faq4')">
+        <span>What would you need from our side?</span>
+        <span class="accordion-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <p class="script-text">Very little. We need access to your Meta Business Suite (or we create a new ad account for you), someone to record the video scripts (we provide full filming briefs), and a point of contact who can respond to incoming leads within 24 hours. Everything else, the ads, the landing page, the targeting, the optimisation, that is all on us.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion fade" id="faq5">
+      <div class="accordion-header" onclick="toggleAccordion('faq5')">
+        <span>How much ad spend would make sense?</span>
+        <span class="accordion-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-body-inner">
+          <p class="script-text">For a specialised tax law firm targeting business owners in Belgium, we typically recommend starting at 30 to 50 euros per day. That gives Meta enough data to optimise while keeping your cost per lead manageable. Once we find the winning combinations, you can scale up as much as your team can handle. The beauty of this system is that you control the volume.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- ABOUT --- -->
+<section class="section section--off" id="about">
+  <div class="wrap">
+    <div class="about-grid fade">
+      <img src="https://preview.relightmarketing.com/assets/relight-team.png" alt="Arthur - Relight Marketing" class="about-img"/>
+      <div class="about-text">
+        <p class="eyebrow">Who built this</p>
+        <h2>Arthur, Relight Marketing</h2>
+        <p>I build ad funnels for businesses that are great at what they do but have not yet tapped into the power of systematic online advertising. Every funnel I create is bespoke: researched, written, designed, and built specifically for the business it is made for.</p>
+        <p>Antaxius Advocaten caught my attention because the firm has something most competitors do not: deep specialisation in tax and corporate law since 1995, a team of 15+ specialist lawyers in Antwerp, membership in IR Global across 155+ jurisdictions, and experience at the EU Court of Justice. That is a story worth telling, and a funnel worth building.</p>
+        <p>If you like what you see on this page, I would love to get it live for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- FINAL CTA + CALENDLY --- -->
+<section class="section final-cta" id="calendly">
+  <div class="wrap">
+    <div class="fade">
+      <p class="eyebrow">Ready to move forward?</p>
+      <h2>Book your free 30-minute call</h2>
+      <p class="sub">No cost, no obligation. We will walk through the funnel together and see if it is a fit.</p>
+    </div>
+    <div class="calendly-wrap fade">
+      <iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Book a call with Arthur" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- --- FOOTER --- -->
+<footer class="footer">
+  <div class="wrap">
+    <p>Relight Marketing - built for Antaxius Advocaten</p>
+  </div>
+</footer>
+
+<script>
+/* --- NAV SCROLL --- */
+(function(){
+  var nav=document.getElementById('nav');
+  var threshold=40;
+  function check(){
+    if(window.scrollY>threshold){nav.classList.add('bg')}
+    else{nav.classList.remove('bg')}
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  check();
+})();
+
+/* --- FADE IN --- */
+(function(){
+  var els=document.querySelectorAll('.fade');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.classList.add('in')});
+    return;
+  }
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target)}
+    });
+  },{threshold:0.12});
+  els.forEach(function(el){observer.observe(el)});
+})();
+
+/* --- ACCORDION --- */
+function toggleAccordion(id){
+  var el=document.getElementById(id);
+  var body=el.querySelector('.accordion-body');
+  var inner=el.querySelector('.accordion-body-inner');
+  if(el.classList.contains('open')){
+    el.classList.remove('open');
+    body.style.maxHeight='0';
+  }else{
+    el.classList.add('open');
+    body.style.maxHeight=inner.scrollHeight+'px';
+  }
+}
+
+/* --- PAGE-OPEN NOTIFICATION --- */
+(function(){
+  if(window.location.protocol==='file:') return;
+  if(window.location.search.indexOf('preview=test')>-1) return;
+  var endpoint='https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec';
+  fetch('https://ipapi.co/json/')
+    .then(function(r){return r.json()})
+    .then(function(geo){
+      var payload={
+        subject:'[52] Antaxius Advocaten just opened your pitch page',
+        prospect:'Antaxius Advocaten',
+        number:52,
+        time:new Date().toISOString(),
+        city:geo.city||'',
+        region:geo.region||'',
+        country:geo.country_name||'',
+        ip:geo.ip||'',
+        device:navigator.userAgent,
+        referrer:document.referrer||'direct',
+        url:window.location.href
+      };
+      return fetch(endpoint,{
+        method:'POST',
+        mode:'no-cors',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payload)
+      });
+    })
+    .catch(function(){});
+})();
+</script>
+</body>
+</html>
