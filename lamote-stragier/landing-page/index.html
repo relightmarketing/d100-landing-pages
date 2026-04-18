@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Op het tempo van de ondernemer. | Lamote Stragier Advocaten</title>
+<meta name="description" content="Lamote Stragier: one-stop overnameteam. Fiscaal recht + ondernemingsrecht onder één dak. 25 jaar. Kortrijk + Roeselare. Plan een overname-gesprek.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--burg:#af272f;--burg-dark:#8c1f26;--black:#212529;--bg:#fafafa;--white:#fff;--sub:#5a6570;--muted:#96a0aa;--line:#e2e0db;--max:1120px;--r:10px}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}
+  body{font-family:'Montserrat',sans-serif;color:var(--black);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}.wrap-sm{width:100%;max-width:760px;margin:0 auto;padding:0 24px}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;padding:0 24px}
+  .nav-logo{font-weight:800;font-size:1.125rem;letter-spacing:.06em;color:var(--black)}
+  .nav-logo span{color:var(--burg)}
+  .nav-cta{background:var(--burg);color:var(--white);padding:10px 22px;border-radius:999px;font-size:.875rem;font-weight:700;white-space:nowrap;transition:background .2s}
+  .nav-cta:hover{background:var(--burg-dark)}
+
+  .hero{padding-top:120px;background:linear-gradient(180deg,#fdf5f5 0%,var(--bg) 100%)}
+  .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;max-width:var(--max);margin:0 auto;padding:72px 24px 80px}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--burg);color:var(--burg);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:24px}
+  .hero-eyebrow::before{content:'';width:7px;height:7px;background:var(--burg);border-radius:50%}
+  .hero h1{font-size:clamp(2rem,4vw,3.25rem);font-weight:800;color:var(--black);line-height:1.15;letter-spacing:-.02em;margin-bottom:20px}
+  .hero-sub{font-size:1.0625rem;color:var(--sub);line-height:1.7;margin-bottom:32px;max-width:500px}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+  .badge{background:var(--white);border:1px solid var(--line);color:var(--sub);font-size:.8rem;font-weight:600;padding:6px 14px;border-radius:999px}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--burg);color:var(--white);padding:15px 32px;border-radius:999px;font-size:1rem;font-weight:700;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 20px rgba(175,39,47,.2)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(175,39,47,.3)}
+
+  .vsl-wrap{border-radius:var(--r);overflow:hidden;background:#2a0a0c;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;cursor:pointer;box-shadow:0 32px 80px rgba(0,0,0,.3)}
+  .vsl-play{width:68px;height:68px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,.3);z-index:1;position:relative}
+  .vsl-label{color:rgba(255,255,255,.85);font-size:.875rem;font-weight:500;z-index:1;position:relative}
+
+  @media(max-width:860px){.hero-inner{grid-template-columns:1fr;gap:40px;padding:56px 24px 60px}.hero h1{font-size:clamp(1.75rem,6vw,2.5rem)}}
+
+  section{padding:88px 0}
+  .section-label{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--burg);margin-bottom:14px}
+  .pain-title,.h2{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;line-height:1.2;letter-spacing:-.02em;color:var(--black);margin-bottom:20px}
+  .lead{font-size:1.125rem;color:var(--sub);line-height:1.7;max-width:640px}
+
+  .pain-section{background:var(--bg)}
+  .pain-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px}
+  .pain-card{background:var(--white);border:1px solid var(--line);padding:28px;border-radius:var(--r)}
+  .pain-card::before{content:'';width:32px;height:2px;background:var(--burg);display:block;margin-bottom:16px}
+  .pain-card h3{font-size:1.125rem;font-weight:700;margin-bottom:10px;color:var(--black)}
+  .pain-card p{color:var(--sub);font-size:.9375rem}
+
+  .diff-section{background:#fdf5f5;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:32px}
+  .diff-col h3{font-size:1.25rem;font-weight:700;margin-bottom:16px;color:var(--black)}
+  .diff-col ul{list-style:none}
+  .diff-col li{padding:12px 0 12px 32px;position:relative;border-bottom:1px solid rgba(0,0,0,.06);font-size:.9375rem;color:var(--sub)}
+  .diff-col li:last-child{border-bottom:none}
+  .diff-col.typical li::before{content:'✕';position:absolute;left:0;top:12px;color:#c44;font-weight:700}
+  .diff-col.ls li::before{content:'✓';position:absolute;left:0;top:12px;color:var(--burg);font-weight:700}
+  @media(max-width:720px){.diff-grid{grid-template-columns:1fr;gap:32px}}
+
+  .proof-section{background:var(--bg);text-align:center}
+  .result-highlight{font-size:clamp(2.5rem,6vw,4rem);font-weight:800;color:var(--burg);margin:32px 0 12px;letter-spacing:-.03em;line-height:1}
+  .sub-note{font-size:1.125rem;color:var(--sub);max-width:560px;margin:0 auto 40px}
+
+  .process-section{background:var(--white);border-top:1px solid var(--line)}
+  .process-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-top:40px}
+  .step{border:1px solid var(--line);border-radius:var(--r);padding:24px;background:var(--white)}
+  .step-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--burg);color:var(--white);font-size:.875rem;font-weight:700;margin-bottom:14px}
+  .step h4{font-size:1rem;font-weight:700;margin-bottom:6px;color:var(--black)}.step p{font-size:.875rem;color:var(--sub);line-height:1.55}
+
+  .faq-section{background:#fdf5f5}
+  .faq-list{max-width:760px;margin:40px auto 0}
+  .faq-item{border-bottom:1px solid var(--line);padding:24px 0}
+  .faq-q{font-size:1.0625rem;font-weight:700;color:var(--black);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+  .faq-q::after{content:'+';color:var(--burg);font-size:1.5rem;font-weight:400}
+  .faq-item.open .faq-q::after{content:'−'}
+  .faq-a{font-size:.9375rem;color:var(--sub);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s ease,padding-top .3s ease}
+  .faq-item.open .faq-a{max-height:500px;padding-top:14px}
+
+  .cta-section{background:var(--black);color:var(--white);text-align:center}
+  .cta-section h2{color:var(--white);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;margin-bottom:16px}
+  .cta-section p{color:rgba(255,255,255,.82);font-size:1.125rem;max-width:600px;margin:0 auto 40px}
+
+  form#form{background:var(--white);color:var(--black);max-width:600px;margin:0 auto;padding:40px;border-radius:var(--r);text-align:left;box-shadow:0 32px 80px rgba(0,0,0,.25)}
+  form#form h3{font-size:1.25rem;font-weight:700;margin-bottom:8px;color:var(--black)}
+  form#form .form-sub{font-size:.9375rem;color:var(--sub);margin-bottom:24px}
+  .field{margin-bottom:16px}.field label{display:block;font-size:.875rem;font-weight:600;margin-bottom:6px;color:var(--black)}
+  .field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:.9375rem;font-family:inherit;background:var(--white);transition:border-color .15s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--burg)}
+  .field textarea{min-height:90px;resize:vertical}
+  .btn-submit{width:100%;background:var(--burg);color:var(--white);border:none;padding:16px;border-radius:999px;font-size:1rem;font-weight:700;cursor:pointer;transition:background .15s;font-family:inherit}
+  .btn-submit:hover{background:var(--burg-dark)}
+  .form-note{font-size:.8rem;color:var(--muted);margin-top:14px;text-align:center}
+
+  footer{background:var(--bg);padding:40px 0 24px;border-top:1px solid var(--line);font-size:.875rem;color:var(--muted);text-align:center}
+  footer p{margin-bottom:6px}footer a{color:var(--sub);text-decoration:underline}
+  @media(max-width:720px){section{padding:64px 0}form#form{padding:28px 20px}}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-inner">
+  <a href="#top" class="nav-logo">LAMOTE <span>STRAGIER</span></a>
+  <a href="#form" class="nav-cta">Plan een overname-gesprek</a>
+</div></nav>
+
+<section class="hero" id="top"><div class="hero-inner">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Fiscaal + Corporate · Kortrijk · Roeselare</div>
+    <h1>Op het tempo van de ondernemer.</h1>
+    <p class="hero-sub">Uw fiscalist en uw advocaat praten niet met elkaar? Bij Lamote Stragier zitten ze in hetzelfde team. Fiscaal recht, ondernemingsrecht en overnames onder één dak. 25 jaar. 26 professionals. Kortrijk en Roeselare.</p>
+    <div class="hero-badges">
+      <span class="badge">Sinds 2001</span>
+      <span class="badge">26 professionals</span>
+      <span class="badge">One-stop overnameteam</span>
+      <span class="badge">Kortrijk + Roeselare</span>
+    </div>
+    <a href="#form" class="btn-primary">Plan een overname-gesprek <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="hero-video">
+    <div class="vsl-wrap">
+      <div class="vsl-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="#af272f"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="vsl-label">Stijn Lamote + Bram Stragier · 3 min</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="pain-section"><div class="wrap">
+  <div class="section-label">De realiteit bij een overname</div>
+  <h2 class="pain-title">"Mijn fiscalist en mijn advocaat praten niet met elkaar."</h2>
+  <p class="lead">Fiscaal en juridisch horen samen. Toch worden ze bij 9 op 10 overnames apart behandeld. Dat kost u tijd, geld en soms 20% van de deal-waarde.</p>
+  <div class="pain-list">
+    <div class="pain-card"><h3>Twee kantoren, geen coordinatie.</h3><p>Uw fiscalist optimaliseert de structuur. Uw advocaat schrijft de contracten. Ze werken apart. U coördineert.</p></div>
+    <div class="pain-card"><h3>Fiscale verrassingen bij closing.</h3><p>De juridische structuur staat, maar de fiscale impact is niet meegenomen. Dat kost u reëel geld.</p></div>
+    <div class="pain-card"><h3>Successieplanning uitgesteld.</h3><p>Familie-overdracht is emotioneel + fiscaal complex. Niemand biedt beide samen aan.</p></div>
+    <div class="pain-card"><h3>Generalist-advocaat kent geen M&A-fiscaliteit.</h3><p>Uw standaard-advocaat doet contracten, maar kent de holding-structuur niet.</p></div>
+  </div>
+</div></section>
+
+<section class="diff-section"><div class="wrap">
+  <div class="section-label">Wat maakt Lamote Stragier anders</div>
+  <h2 class="h2">Uw fiscalist EN uw advocaat. In één team.</h2>
+  <p class="lead">Stijn Lamote (fiscaal) en Bram Stragier (corporate) hebben 25 jaar geleden bewust gekozen om samen te werken. Elk overname-dossier wordt van dag één door beide disciplines begeleid.</p>
+  <div class="diff-grid">
+    <div class="diff-col typical"><h3>De standaard-aanpak</h3><ul>
+      <li>Fiscalist apart, advocaat apart</li>
+      <li>Coordinatie is uw probleem</li>
+      <li>Fiscale scan pas op het einde</li>
+      <li>Generalist mist M&A-specifieke kennis</li>
+      <li>Successie los van overname</li>
+    </ul></div>
+    <div class="diff-col ls"><h3>Lamote Stragier</h3><ul>
+      <li>Fiscaal + corporate in één team</li>
+      <li>Intern gecoordineerd, u merkt er niets van</li>
+      <li>Fiscale scan vanaf dag één</li>
+      <li>26 professionals, niche M&A + fiscaliteit</li>
+      <li>Successie, overname en vermogensrecht geïntegreerd</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="proof-section"><div class="wrap">
+  <div class="section-label">Bewezen structuur</div>
+  <p class="result-highlight">25 jaar</p>
+  <p class="sub-note">Sinds 2001. 26 professionals. Kortrijk + Roeselare. Fiscaal recht, ondernemingsrecht, overnames en familiaal vermogensrecht. Eén one-stop overnameteam.</p>
+</div></section>
+
+<section class="process-section"><div class="wrap">
+  <div class="section-label">Hoe het werkt</div>
+  <h2 class="h2">Van kennismaking tot closing. Fiscaal + juridisch geïntegreerd.</h2>
+  <div class="process-list">
+    <div class="step"><span class="step-num">1</span><h4>Kennismaking</h4><p>30 min met Stijn en/of Bram. Uw situatie, uw tempo.</p></div>
+    <div class="step"><span class="step-num">2</span><h4>Fiscale scan</h4><p>Impact-analyse: wat kost de huidige structuur u bij een verkoop?</p></div>
+    <div class="step"><span class="step-num">3</span><h4>Juridische structuur</h4><p>Vennootschap, holding, herstructurering waar nodig.</p></div>
+    <div class="step"><span class="step-num">4</span><h4>Due diligence</h4><p>Fiscaal + juridisch tegelijk, geen dubbel werk.</p></div>
+    <div class="step"><span class="step-num">5</span><h4>LOI + SPA</h4><p>Contracten met geïntegreerde fiscale clausules.</p></div>
+    <div class="step"><span class="step-num">6</span><h4>Closing</h4><p>Handtekening. Fiscaal optimaal. Juridisch waterdicht.</p></div>
+  </div>
+</div></section>
+
+<section class="faq-section"><div class="wrap-sm">
+  <div class="section-label" style="text-align:center;display:block">Veelgestelde vragen</div>
+  <h2 class="h2" style="text-align:center">Wat ondernemers vragen.</h2>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q">Moet ik mijn huidige accountant verlaten?</div><div class="faq-a">Nee. Wij werken samen met uw bestaande accountant. Zij leveren de cijfers, wij de fiscale + juridische structuur. Coordinatie doen wij.</div></div>
+    <div class="faq-item"><div class="faq-q">Hoeveel kost een overname-begeleiding?</div><div class="faq-a">Afhankelijk van de complexiteit. Na het eerste gesprek krijgt u een transparant voorstel. Geen verrassingen.</div></div>
+    <div class="faq-item"><div class="faq-q">Werken jullie ook voor kopers?</div><div class="faq-a">Ja. Ons overnameteam begeleidt zowel verkopers als kopers. Fiscale due diligence + contracten voor beide zijden.</div></div>
+    <div class="faq-item"><div class="faq-q">Wat als ik nog niet weet of ik wil verkopen?</div><div class="faq-a">Dan is ons eerste gesprek net geschikt. Wij evalueren samen of de timing en de structuur klaar zijn. Geen druk.</div></div>
+    <div class="faq-item"><div class="faq-q">Helpen jullie ook bij successieplanning?</div><div class="faq-a">Ja. Familiaal vermogensrecht is een van onze vier kernpijlers. Overdracht aan kinderen, schenking, testament, huwelijkscontract, alles fiscaal + juridisch gecoordineerd.</div></div>
+  </div>
+</div></section>
+
+<section class="cta-section"><div class="wrap">
+  <h2>Op het tempo van de ondernemer.</h2>
+  <p>Plan een overname-gesprek. 30 minuten met Stijn of Bram, bij u of bij ons in Kortrijk of Roeselare. Geen verplichting.</p>
+  <form id="form">
+    <h3>Plan een overname-gesprek</h3>
+    <p class="form-sub">We reageren binnen 1 werkdag. Discreet.</p>
+    <div class="field"><label for="name">Uw naam</label><input type="text" id="name" name="name" required></div>
+    <div class="field"><label for="company">Bedrijfsnaam</label><input type="text" id="company" name="company" required></div>
+    <div class="field"><label for="interest">Waar gaat het over?</label><select id="interest" name="interest" required><option value="">Kies een thema</option><option>Verkoop van mijn bedrijf</option><option>Aankoop / overname</option><option>Fiscale herstructurering</option><option>Successieplanning / familiale overdracht</option><option>Ondernemingsrecht algemeen</option><option>Andere</option></select></div>
+    <div class="field"><label for="phone">Telefoonnummer</label><input type="tel" id="phone" name="phone" required></div>
+    <div class="field"><label for="email">E-mailadres</label><input type="email" id="email" name="email" required></div>
+    <div class="field"><label for="message">Kort bericht (optioneel)</label><textarea id="message" name="message" placeholder="Wat is uw situatie?"></textarea></div>
+    <button type="submit" class="btn-submit">Plan een overname-gesprek</button>
+    <p class="form-note">Uw gegevens worden vertrouwelijk behandeld.</p>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <p><strong>Lamote Stragier Advocaten</strong></p>
+  <p>Kortrijk: Waterhoennest 67 · +32 56 897 601</p>
+  <p>Roeselare: Meensesteenweg 315 · +32 51 79 55 97</p>
+  <p><a href="https://www.lamotestragier.be/nl">lamotestragier.be</a> · Fiscaal + ondernemingsrecht + overnames · Sinds 2001</p>
+</div></footer>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(i=>i.querySelector('.faq-q').addEventListener('click',()=>i.classList.toggle('open')));
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();alert('Dank u. Lamote Stragier reageert binnen 1 werkdag.');});
+</script>
+</body>
+</html>

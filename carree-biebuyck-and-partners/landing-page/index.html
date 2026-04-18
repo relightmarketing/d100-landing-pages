@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Search That Stays | Carree, Biebuyck &amp; Partners</title>
+<meta name="description" content="90% of placed executives stay and succeed. Carree, Biebuyck and Partners is Belgium's trusted executive search partner since 1991. Book your confidential briefing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFFFFF;
+  --surface: #F5F3F2;
+  --accent: #B88C65;
+  --accent-dark: #9C7452;
+  --navy: #003164;
+  --navy-deep: #0057B0;
+  --text: #161E21;
+  --text-muted: #6B7280;
+  --font-head: 'Montserrat', sans-serif;
+  --font-body: 'Noto Sans', sans-serif;
+  --r: 12px;
+  --nav-h: 56px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+  padding-bottom: 76px;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); text-decoration: none; }
+
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+.pre-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-weight: 700;
+  font-family: var(--font-head);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  width: 100%;
+  text-align: center;
+  min-height: 48px;
+}
+.btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+.btn-sm {
+  font-size: 0.72rem;
+  padding: 8px 12px;
+  white-space: nowrap;
+  width: auto;
+  min-height: 0;
+  border-radius: 4px;
+}
+
+.risk-line {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.5rem;
+}
+.risk-line--dark {
+  color: var(--text-muted);
+}
+
+/* ============ NAV ============ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--navy);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 12px;
+  gap: 8px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.nav-logo {
+  height: 24px;
+  max-width: 140px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.nav-cta-mobile { }
+.nav-cta-desktop { display: none; }
+
+@media (min-width: 641px) {
+  :root { --nav-h: 64px; }
+  .nav-inner { height: 64px; padding: 0 24px; gap: 12px; }
+  .nav-logo { height: 32px; max-width: none; flex-shrink: 0; }
+  .nav-cta-mobile { display: none; }
+  .nav-cta-desktop { display: inline-flex; }
+}
+@media (min-width: 961px) {
+  :root { --nav-h: 72px; }
+  .nav-inner { height: 72px; padding: 0 32px; }
+  .nav-logo { height: 40px; }
+}
+
+/* ============ HERO ============ */
+.hero {
+  background: var(--navy);
+  color: #fff;
+  padding: 100px 0 48px;
+}
+.hero-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.hero-content { text-align: left; }
+.hero-content h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1.5rem;
+  max-width: 540px;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+.hero-badge svg { width: 14px; height: 14px; fill: var(--accent); flex-shrink: 0; }
+
+.hero-image {
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  display: block;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.hero-stat__num {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+.hero-stat__label {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (min-width: 641px) {
+  .hero { padding: 120px 0 64px; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+}
+@media (min-width: 961px) {
+  .hero { padding: 140px 0 80px; }
+}
+
+/* ============ PROOF BAR ============ */
+.proof-bar {
+  background: var(--bg);
+  border-bottom: 1px solid var(--surface);
+  padding: 16px 0;
+}
+.proof-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: center;
+}
+.proof-num {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+  font-family: var(--font-head);
+}
+.proof-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (min-width: 641px) {
+  .proof-items { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .proof-num { font-size: 1.5rem; }
+}
+
+/* ============ IMAGE STRIP ============ */
+.img-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px 16px;
+}
+.img-strip::-webkit-scrollbar { display: none; }
+.img-strip img {
+  height: 200px;
+  width: 280px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@media (min-width: 641px) { .img-strip img { height: 240px; width: 340px; } .img-strip { padding: 32px 24px; } }
+@media (min-width: 961px) { .img-strip img { height: 280px; width: 400px; } }
+
+/* ============ SECTION BASE ============ */
+.section { padding: 48px 0; }
+.section--surface { background: var(--surface); }
+.section--navy { background: var(--navy); color: #fff; }
+.section--navy-deep { background: var(--navy-deep); color: #fff; }
+
+@media (min-width: 641px) { .section { padding: 64px 0; } }
+@media (min-width: 961px) { .section { padding: 80px 0; } }
+
+.section h2 {
+  font-family: var(--font-head);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+/* ============ PAIN SECTION ============ */
+.pain-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.pain-grid__img { display: none; }
+
+.pain-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+
+.pain-list {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+.pain-list li {
+  background: #fff;
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem 1.1rem 3.2rem;
+  position: relative;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.pain-list li::before {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  top: 1.35rem;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.bridge {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 6px;
+  padding: 1.5rem 1.75rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+.bridge strong { color: var(--accent); }
+
+@media (min-width: 641px) {
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .pain-grid__img {
+    display: block;
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+    position: sticky;
+    top: calc(var(--nav-h) + 2rem);
+  }
+}
+
+/* ============ SOLUTION ============ */
+.solution-copy { margin-bottom: 2rem; }
+.solution-copy p { margin-bottom: 1rem; color: var(--text-muted); }
+
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  background: var(--navy);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.mini-stat {
+  padding: 1rem 0.75rem;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.mini-stat:nth-child(2n) { border-right: none; }
+.mini-stat__num {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+.mini-stat__label {
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 641px) {
+  .mini-stats { grid-template-columns: repeat(4, 1fr); }
+  .mini-stat { border-bottom: none; }
+  .mini-stat:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.1); }
+  .mini-stat:last-child { border-right: none; }
+  .mini-stat__num { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
+}
+
+/* ============ OFFER / STEPS ============ */
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.step-card {
+  background: #fff;
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.step-card img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+.step__body { padding: 1.25rem; }
+.step__num {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+}
+.step__name {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.step__desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.inclusions {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.inclusions li {
+  padding: 0.6rem 0 0.6rem 2rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+.inclusions li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.85rem;
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.15;
+}
+.inclusions li::after {
+  content: '\2713';
+  position: absolute;
+  left: 3px;
+  top: 0.55rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.timeline-callout {
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 641px) {
+  .steps { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ============ SOCIAL PROOF ============ */
+.stat-bar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.stat-bar__num {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+.stat-bar__label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.case-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.case-card {
+  background: #fff;
+  border-radius: var(--r);
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.case-card__stars { margin-bottom: 0.75rem; }
+.case-card__stars svg { display: inline-block; width: 18px; height: 18px; fill: #f59e0b; margin-right: 2px; }
+.case-card__quote {
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.case-card__result {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+}
+.case-card__attr {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.creds-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+.creds-bar img { height: 48px; }
+
+@media (min-width: 641px) {
+  .stat-bar { grid-template-columns: repeat(4, 1fr); }
+  .case-cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ============ FORM ============ */
+.form-section { background: var(--surface); }
+.form-box {
+  background: #fff;
+  border-radius: var(--r);
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.form-box h3 {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+.form-friction {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+.form-bullets {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+.form-bullets li {
+  padding: 0.35rem 0 0.35rem 1.5rem;
+  position: relative;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+.form-bullets li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.form-group { margin-bottom: 1rem; }
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 16px;
+  padding: 14px 16px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.form-group textarea { resize: vertical; min-height: 80px; }
+
+.form-row-2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+@media (min-width: 641px) { .form-row-2 { grid-template-columns: 1fr 1fr; } }
+
+.form-privacy {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.form-submit {
+  display: block;
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 48px;
+  transition: background 0.2s;
+}
+.form-submit:hover { background: var(--accent-dark); }
+
+/* ============ FAQ ============ */
+.faq-item { border-bottom: 1px solid var(--surface); }
+.faq-item:first-child { border-top: 1px solid var(--surface); }
+.faq-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  text-align: left;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  gap: 1rem;
+}
+.faq-btn::after {
+  content: '+';
+  color: var(--accent);
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-btn::after { content: '\2212'; }
+.faq-answer {
+  display: none;
+  padding-bottom: 16px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
+.faq-item.open .faq-answer { display: block; }
+
+/* ============ FINAL CTA ============ */
+.final-cta {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 48px 0;
+}
+.final-cta h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.final-cta p {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1.5rem;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sub-note {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 1rem;
+}
+
+@media (min-width: 641px) { .final-cta { padding: 64px 0; } }
+@media (min-width: 961px) { .final-cta { padding: 80px 0; } }
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.78rem;
+}
+
+/* ============ MOBILE CTA BAR ============ */
+.mobile-cta {
+  display: flex;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 99;
+  padding: 10px 12px;
+  gap: 8px;
+  align-items: center;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+  border-top: 1px solid #eee;
+}
+.mobile-cta .btn {
+  flex: 1;
+  padding: 13px 12px;
+  font-size: 0.85rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+@media (min-width: 641px) {
+  .mobile-cta { display: none; }
+  body { padding-bottom: 0; }
+}
+
+@media (min-width: 641px) {
+  .wrap { padding: 0 24px; }
+  .btn { width: auto; border-radius: 4px; }
+}
+@media (min-width: 961px) {
+  .wrap { padding: 0 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== NAV ==================== -->
+<nav>
+  <div class="nav-inner">
+    <a href="#">
+      <img src="https://cbp.be/media/member_logo_white/Belgium-white.png" alt="Carree, Biebuyck and Partners" class="nav-logo">
+    </a>
+    <div class="nav-right">
+      <a href="#form" class="btn btn-sm nav-cta-mobile">Briefing</a>
+      <a href="#form" class="btn btn-sm nav-cta-desktop" style="font-size:.82rem;padding:10px 20px;">Book Your Confidential Briefing</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO (Image Variant) ==================== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="pre-label">For CEOs and CHROs filling critical leadership roles</span>
+        <h1>A leader who hits the ground running and stays for the long term</h1>
+        <p>9 out of 10 executives we place stay and succeed. No junior consultants. No recycled candidates. Just senior partners who know your industry, your culture, and who will thrive in it.</p>
+        <div class="hero-badges">
+          <span class="hero-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            35 Years Since 1991
+          </span>
+          <span class="hero-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            98% Completion Rate
+          </span>
+          <span class="hero-badge">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            Kestria Member, 40+ Countries
+          </span>
+        </div>
+        <a href="#form" class="btn">Book Your Confidential Briefing</a>
+        <p class="risk-line">No obligation. No pressure. Completely confidential.</p>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat__num">90%</div>
+            <div class="hero-stat__label">Stick Rate</div>
+          </div>
+          <div>
+            <div class="hero-stat__num">40%</div>
+            <div class="hero-stat__label">Get Promoted</div>
+          </div>
+          <div>
+            <div class="hero-stat__num">80%</div>
+            <div class="hero-stat__label">Repeat Clients</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://cbp.be/media/cache/2b/a6/2ba62c63a405344edb45427a09dea897/kestria20team209.webp" alt="Carree Biebuyck and Partners executive search team in Brussels" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROOF BAR ==================== -->
+<section class="proof-bar">
+  <div class="wrap">
+    <div class="proof-items">
+      <div>
+        <div class="proof-num">35</div>
+        <div class="proof-label">Years in Executive Search</div>
+      </div>
+      <div>
+        <div class="proof-num">90%</div>
+        <div class="proof-label">Stick Rate</div>
+      </div>
+      <div>
+        <div class="proof-num">5</div>
+        <div class="proof-label">Senior Partners</div>
+      </div>
+      <div>
+        <div class="proof-num">3</div>
+        <div class="proof-label">Belgian Offices</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== IMAGE STRIP 1 ==================== -->
+<div class="img-strip">
+  <img src="https://cbp.be/media/cache/b4/15/b415b96e0ddb1f1390d69307d2b7fef3/kestria20team.webp" alt="CBP team meeting in boardroom" loading="lazy">
+  <img src="https://cbp.be/media/cache/31/6e/316edeab13f8c0b059cbc6d4a86d3415/cbp222.webp" alt="Carree Biebuyck Partners offices" loading="lazy">
+  <img src="https://cbp.be/media/cache/f8/15/f815ee825e7d4562e6b35f4b1c2c981c/cbp222.webp" alt="CBP executive search insights" loading="lazy">
+</div>
+
+<!-- ==================== SECTION 2: PROBLEM AGITATION ==================== -->
+<section class="section section--surface">
+  <div class="wrap">
+    <div class="pain-grid">
+      <div>
+        <span class="pre-label">Sound familiar?</span>
+        <h2 class="pain-title">Bad hires at leadership level cost us more than money. They cost us trust, momentum, and good people who leave because of them.</h2>
+        <ul class="pain-list">
+          <li>You spent months on a search and ended up back at square one when the candidate withdrew or failed to deliver in the first year.</li>
+          <li>The recruitment agency kept sending profiles that looked good on paper but had zero cultural fit with your organization.</li>
+          <li>Your CEO is still doing two jobs because you have not been able to find the right COO or senior leader.</li>
+          <li>You promoted someone internally and it did not work out. Now you have lost a good specialist and still have no leader.</li>
+          <li>Every headhunter promises the same thing: extensive network, tailored approach, confidential process. But none of them actually delivered lasting results.</li>
+          <li>The last search firm treated you like a transaction. They filled the role and disappeared before the ink was dry.</li>
+        </ul>
+        <div class="bridge">
+          If you have been through any of this, you already know the real cost of a wrong hire at leadership level. It is not the search fee. It is <strong>the 12 to 18 months of lost progress, the good people who leave, and the trust that takes years to rebuild</strong>. There is a better way.
+        </div>
+      </div>
+      <img class="pain-grid__img" src="https://cbp.be/media/cache/15/ba/15ba20f9ecf8144683207fdcd2c85792/kestria20belgium202.webp" alt="CBP executive search Belgium team at work" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 3: SOLUTION INTRO ==================== -->
+<section class="section">
+  <div class="wrap">
+    <span class="pre-label">A different kind of search firm</span>
+    <h2>The hire that stays and grows</h2>
+    <div class="solution-copy">
+      <p>You have tried recruitment agencies that sent volume instead of quality. You have tried LinkedIn posts that attracted active job seekers while the best candidates stayed hidden. You have tried internal promotion before the person was ready. None of it solved the core problem: finding a leader who fits your culture, delivers in year one, and stays to build something lasting.</p>
+      <p>Carree, Biebuyck and Partners operates a senior-partner-only model. No junior researchers running your mandate behind the scenes. Every conversation, every assessment, every shortlist presentation is led by the same experienced partner who understood your business from day one. That is why 9 out of 10 executives we place stay and succeed, and 40% earn a promotion within two years.</p>
+    </div>
+    <div class="mini-stats">
+      <div class="mini-stat">
+        <div class="mini-stat__num">90%</div>
+        <div class="mini-stat__label">Stick Rate</div>
+      </div>
+      <div class="mini-stat">
+        <div class="mini-stat__num">40%</div>
+        <div class="mini-stat__label">Promoted Within 2 Years</div>
+      </div>
+      <div class="mini-stat">
+        <div class="mini-stat__num">98%</div>
+        <div class="mini-stat__label">Completion Rate</div>
+      </div>
+      <div class="mini-stat">
+        <div class="mini-stat__num">80%</div>
+        <div class="mini-stat__label">Repeat Business</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 4: OFFER DETAIL ==================== -->
+<section class="section section--surface">
+  <div class="wrap">
+    <span class="pre-label">How it works</span>
+    <h2>Three steps to your next great leader</h2>
+    <div class="steps">
+      <div class="step-card">
+        <img src="https://cbp.be/media/cache/85/d2/85d2fd277b795e647d9c6d9360574d96/kestria20team209.webp" alt="CBP partner conducting client briefing" loading="lazy">
+        <div class="step__body">
+          <div class="step__num">Step 01</div>
+          <div class="step__name">Profile and Map</div>
+          <p class="step__desc">A senior partner works directly with you to define the leadership profile your business needs. Then we map the market across Belgium and, through Kestria's network in 40+ countries, identify candidates who are not actively looking but are the right fit.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <img src="https://cbp.be/media/cache/e1/29/e129ddb6045a880d62a243cb2796a62d/kestria20team209.webp" alt="CBP assessment and shortlisting process" loading="lazy">
+        <div class="step__body">
+          <div class="step__num">Step 02</div>
+          <div class="step__name">Assess and Shortlist</div>
+          <p class="step__desc">Every candidate goes through a deep evaluation using tailored assessment tools. We do not just match skills on paper. We assess cultural fit, leadership style, and long-term potential. Your senior partner leads every step personally.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <img src="https://cbp.be/media/cache/47/56/4756b0a23a967eb7d12f501fd663e3ce/kestria20team.webp" alt="CBP partner presenting final candidate shortlist" loading="lazy">
+        <div class="step__body">
+          <div class="step__num">Step 03</div>
+          <div class="step__name">Place and Support</div>
+          <p class="step__desc">We manage offer negotiations, support the onboarding process, and stay involved as a trusted partner long after placement. This is why our clients come back, and why 80% of our business is from repeat clients.</p>
+        </div>
+      </div>
+    </div>
+
+    <ul class="inclusions">
+      <li>Dedicated senior partner on every mandate, from briefing to placement</li>
+      <li>Global candidate access through Kestria (90+ offices, 40+ countries)</li>
+      <li>Tailored candidate assessment tools for leadership and cultural fit</li>
+      <li>Market intelligence and compensation benchmarking</li>
+      <li>Offer negotiation and structured onboarding support</li>
+      <li>Ongoing partnership and follow-up after placement</li>
+    </ul>
+
+    <div class="timeline-callout">
+      Most searches are completed within 8 to 16 weeks from initial briefing to signed offer, depending on role seniority and market complexity.
+    </div>
+
+    <a href="#form" class="btn">Book Your Confidential Briefing</a>
+    <p class="risk-line risk-line--dark">No obligation. Completely confidential.</p>
+  </div>
+</section>
+
+<!-- ==================== IMAGE STRIP 2 ==================== -->
+<div class="img-strip">
+  <img src="https://cbp.be/media/cache/71/32/7132bb6eafcbcb33ca5bd18445aaab97/kestria20belgium203png.webp" alt="Kestria Belgium executive search network" loading="lazy">
+  <img src="https://cbp.be/media/cache/b5/9e/b59eb738963b2d403153ac7cdef50b86/evk_9752.webp" alt="CBP team professional portrait" loading="lazy">
+  <img src="https://cbp.be/media/cache/98/4f/984f7ec64980c8c6c8359c8504a3575d/sustainable_growth_at_scale_circularity_responsible_sourcing__the_green_consumer_gpt.webp" alt="CBP sustainable leadership insights" loading="lazy">
+</div>
+
+<!-- ==================== SECTION 5: SOCIAL PROOF ==================== -->
+<section class="section">
+  <div class="wrap">
+    <span class="pre-label">Proven results</span>
+    <h2>Leaders placed. Businesses transformed.</h2>
+
+    <div class="stat-bar">
+      <div>
+        <div class="stat-bar__num">35</div>
+        <div class="stat-bar__label">Years in Executive Search</div>
+      </div>
+      <div>
+        <div class="stat-bar__num">98%</div>
+        <div class="stat-bar__label">Mandates Completed</div>
+      </div>
+      <div>
+        <div class="stat-bar__num">90%</div>
+        <div class="stat-bar__label">Placed Executives Who Stay</div>
+      </div>
+      <div>
+        <div class="stat-bar__num">40%</div>
+        <div class="stat-bar__label">Promoted Within 2 Years</div>
+      </div>
+    </div>
+
+    <div class="case-cards">
+      <div class="case-card">
+        <div class="case-card__stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        </div>
+        <p class="case-card__result">General Manager placed. Stayed 5+ years. Led full post-acquisition integration.</p>
+        <p class="case-card__quote">"We needed a leader who could bridge two corporate cultures after the acquisition. CBP found someone who did not just manage the transition but shaped the combined company's identity."</p>
+        <p class="case-card__attr">Belgian industrial company, post-acquisition integration. Search completed in 10 weeks.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-card__stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        </div>
+        <p class="case-card__result">Country Manager placed. Exceeded year-one targets. Promoted within 24 months.</p>
+        <p class="case-card__quote">"Kestria team helped us fill an executive C-suite position at our company. We were amazed by the level of backing they provided and the team's understanding of the market and its demands."</p>
+        <p class="case-card__attr">Healthcare and life sciences multinational, Belgian operations. Search completed in 12 weeks.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-card__stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        </div>
+        <p class="case-card__result">Non-family CEO placed. Successful transition to professional management without cultural disruption.</p>
+        <p class="case-card__quote">"We are a family business and were skeptical that an outsider could lead us through this transition. CBP took the time to understand what makes our company tick before presenting a single candidate."</p>
+        <p class="case-card__attr">Family-owned consumer business, leadership professionalization. 14-week search with extended cultural assessment.</p>
+      </div>
+    </div>
+
+    <div class="creds-bar">
+      <img src="https://cbp.be/media/member_logo/Belgium.png" alt="Carree Biebuyck and Partners - Kestria Belgium" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 7: FORM ==================== -->
+<section class="section form-section" id="form">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <span class="pre-label">Take the first step</span>
+      <h2>Book Your Confidential Briefing</h2>
+      <ul class="form-bullets" style="display:inline-block;text-align:left;">
+        <li>A senior partner reviews your leadership need within 1 business day</li>
+        <li>You receive an honest assessment of whether executive search is right for your situation</li>
+        <li>Completely confidential. No obligation. No cost for the initial conversation.</li>
+      </ul>
+    </div>
+    <div class="form-box">
+      <h3>Tell us about your leadership need</h3>
+      <p class="form-friction">Takes less than 60 seconds. A senior partner responds within 1 business day.</p>
+      <!--
+        FORMSPREE SETUP:
+        1. Go to formspree.io - create a free account
+        2. Create a new form - copy the form ID (e.g. "xabcdefg")
+        3. Replace YOUR_FORM_ID below with that ID
+        Submissions will be emailed to you automatically.
+      -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Business Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" placeholder="Your company" required>
+          </div>
+          <div class="form-group">
+            <label for="title">Your Role / Title</label>
+            <select id="title" name="title" required>
+              <option value="" disabled selected>Select your role</option>
+              <option value="CEO / Managing Director">CEO / Managing Director</option>
+              <option value="CHRO / HR Director">CHRO / HR Director</option>
+              <option value="Board Chair / Board Member">Board Chair / Board Member</option>
+              <option value="COO / CFO / Other C-suite">COO / CFO / Other C-suite</option>
+              <option value="VP / Senior Director">VP / Senior Director</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="role-needed">What leadership role are you looking to fill?</label>
+          <input type="text" id="role-needed" name="role_needed" placeholder="e.g. Chief Financial Officer, Country Manager, VP Operations" required>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="compensation">Annual compensation of the role</label>
+            <select id="compensation" name="compensation" required>
+              <option value="" disabled selected>Select range</option>
+              <option value="Under EUR 100,000">Under EUR 100,000</option>
+              <option value="EUR 100,000-150,000">EUR 100,000 - 150,000</option>
+              <option value="EUR 150,000-250,000">EUR 150,000 - 250,000</option>
+              <option value="EUR 250,000-400,000">EUR 250,000 - 400,000</option>
+              <option value="EUR 400,000+">EUR 400,000+</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="timeline">How soon do you need this person in place?</label>
+            <select id="timeline" name="timeline" required>
+              <option value="" disabled selected>Select timeline</option>
+              <option value="As soon as possible">As soon as possible</option>
+              <option value="Within 1-3 months">Within 1-3 months</option>
+              <option value="Within 3-6 months">Within 3-6 months</option>
+              <option value="Within 6-12 months">Within 6-12 months</option>
+              <option value="Just planning and researching">Just planning and researching</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="context">What has made this hire difficult so far? (optional)</label>
+          <textarea id="context" name="context" placeholder="Tell us about previous attempts, specific challenges, or what matters most in the right candidate."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Book Your Confidential Briefing</button>
+        <p class="form-privacy">No spam. No obligation. Your information is kept strictly confidential.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 8: FAQ ==================== -->
+<section class="section">
+  <div class="wrap">
+    <h2 style="text-align:center;">Common questions before your first briefing</h2>
+
+    <div class="faq-item">
+      <button class="faq-btn">Executive search fees are too high for our size of company. Is this really for us?</button>
+      <div class="faq-answer">
+        <p>We understand the concern. The real question is: what did the last failed hire cost you? When you factor in severance, lost productivity, the 12 to 18 months of stalled progress, and the cost of restarting the search, a wrong hire at leadership level typically costs 3 to 5 times the search fee. Our 90% stick rate means the investment pays for itself through retention alone. We work with Belgian mid-market companies from 50 employees up. If executive search is not the right fit for your situation, we will tell you in the first conversation.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn">How is executive search different from what a recruitment agency does?</button>
+      <div class="faq-answer">
+        <p>A recruitment agency works from a database of active job seekers and sends you volume. Executive search is the opposite. We go into the market and identify the best candidates for your specific role, including people who are not actively looking. Every mandate at CBP is led by a senior partner who conducts the interviews, assessments, and shortlisting personally. There are no junior researchers doing the work behind the scenes. That is why 98% of our mandates are completed successfully and 80% of our clients come back for their next hire.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn">We tried a headhunter before and the candidate did not last. How do we know this will be different?</button>
+      <div class="faq-answer">
+        <p>That is exactly why we lead with our stick rate: 9 out of 10 executives we place stay and succeed, and 40% earn a promotion within two years. The difference comes from how we assess candidates. We do not just match skills on a CV. We evaluate cultural fit, leadership style, and long-term alignment with your business direction. Every assessment is conducted by the same senior partner who has been working with you from day one, not handed off to a junior consultant. We also stay involved after placement to support the onboarding process.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn">We are a family business, not a multinational. Will an executive search firm understand our culture?</button>
+      <div class="faq-answer">
+        <p>Belgium has one of Europe's highest concentrations of family-owned mid-market companies. It is a segment we know deeply. The transition from family-led to professional management, or from one generation to the next, is one of the highest-stakes leadership decisions a business faces. Getting it wrong can destroy decades of family legacy. Our extended cultural assessment process is specifically designed for these situations. We take the time to understand what makes your company tick before presenting a single candidate.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn">We need someone fast. Can the process really take 8 to 16 weeks?</button>
+      <div class="faq-answer">
+        <p>Speed matters, and we have completed searches in as few as 10 weeks. But here is the reality: rushing an executive hire to save a few weeks often leads to the wrong person in the role, which costs you 12 to 18 months when you have to start over. Our process is designed to be thorough without being slow. Through Kestria's global network of 90+ offices in 40+ countries, we can map the market quickly and access candidates that a local-only search would miss entirely. We will give you an honest timeline in the initial briefing based on the specific role and market conditions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 9: FINAL CTA ==================== -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Stop carrying the vacancy. Start finding the leader who stays.</h2>
+    <p>One confidential conversation with a senior partner. No cost. No obligation. Just an honest assessment of your situation and whether executive search is the right path forward.</p>
+    <a href="#form" class="btn" style="background:#fff;color:var(--navy);">Book Your Confidential Briefing</a>
+    <p class="risk-line">No obligation. Completely confidential.</p>
+    <p class="sub-note">90% stick rate. 9 out of 10 placed executives stay and succeed, with 40% earning a promotion within 2 years.</p>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Carree, Biebuyck &amp; Partners. Belgium's exclusive Kestria member. Brussels, Antwerp, Namur.</p>
+  </div>
+</footer>
+
+<!-- ==================== MOBILE CTA BAR ==================== -->
+<div class="mobile-cta">
+  <a href="#form" class="btn">Book Your Confidential Briefing</a>
+</div>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+  // FAQ Accordion
+  document.querySelectorAll('.faq-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Hide sticky CTA when form is visible
+  (function(){
+    var mc = document.querySelector('.mobile-cta');
+    if (!mc) return;
+    var form = document.getElementById('form');
+    if (!form) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+        mc.style.transition = 'transform 0.3s ease';
+      });
+    }, {threshold: 0.1});
+    io.observe(form);
+  })();
+</script>
+</body>
+</html>

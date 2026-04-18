@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KORA HR | Your HR Department Without the Full-Time Hire</title>
+<meta name="description" content="KORA HR provides outsourced HR expertise for Belgian SMEs. Payroll, recruitment, onboarding, and HR advisory from a dedicated consultant. Book your free consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFFFFF;
+  --surface: #F1F0E8;
+  --accent: #AC806A;
+  --accent-dark: #926B57;
+  --accent-light: #E39879;
+  --navy: #4A2E26;
+  --navy-deep: #3A2019;
+  --text: #4A2E26;
+  --text-muted: rgba(74,46,38,0.6);
+  --font-head: 'Sora', sans-serif;
+  --font-body: 'Sora', sans-serif;
+  --r: 12px;
+  --nav-h: 56px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+  padding-bottom: 76px;
+}
+img { max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--navy); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 56px; padding: 0 12px; gap: 8px; max-width: 960px; margin: 0 auto; }
+.nav-logo { height: 24px; max-width: 140px; flex-shrink: 1; min-width: 0; }
+.nav-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.nav-phone-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.1); display: grid; place-items: center; flex-shrink: 0; }
+.nav-phone-icon svg { width: 18px; height: 18px; fill: #fff; }
+.nav-phone-text { display: none; color: #fff; font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
+.nav-cta-mobile { display: inline-flex; align-items: center; background: var(--accent); color: #fff; font-family: var(--font-head); font-weight: 700; font-size: 0.72rem; padding: 8px 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+.nav-cta-desktop { display: none; }
+.btn { display: inline-block; background: var(--accent); color: #fff; font-family: var(--font-head); font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 16px 32px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; width: 100%; text-align: center; min-height: 48px; }
+.btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.btn-risk { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 8px; }
+
+@media (min-width: 641px) {
+  :root { --nav-h: 64px; }
+  .nav-inner { height: 64px; padding: 0 24px; gap: 12px; }
+  .nav-logo { height: 32px; max-width: none; flex-shrink: 0; }
+  .nav-phone-icon { display: none; }
+  .nav-phone-text { display: flex; align-items: center; }
+  .nav-cta-mobile { display: none; }
+  .nav-cta-desktop { display: inline-flex; align-items: center; background: var(--accent); color: #fff; font-family: var(--font-head); font-weight: 700; font-size: 0.82rem; padding: 10px 20px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+  body { padding-bottom: 0; }
+}
+@media (min-width: 961px) {
+  :root { --nav-h: 72px; }
+  .nav-inner { height: 72px; padding: 0 32px; }
+  .nav-logo { height: 40px; }
+}
+
+/* SECTIONS */
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+section { padding: 48px 0; }
+.pre-label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+.section-h2 { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 1.25rem; }
+@media (min-width: 641px) { section { padding: 64px 0; } .wrap { padding: 0 24px; } }
+@media (min-width: 961px) { section { padding: 80px 0; } .wrap { padding: 0 32px; } }
+
+/* HERO */
+.hero { background: var(--navy); color: #fff; padding: 96px 0 48px; }
+.hero-grid { display: flex; flex-direction: column; gap: 2rem; }
+.hero-content { text-align: left; }
+.hero h1 { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.15; margin-bottom: 1rem; color: #fff; }
+.hero-sub { font-size: 1.0625rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 1.5rem; max-width: 520px; }
+.hero .btn { width: auto; }
+.hero .btn-risk { color: rgba(255,255,255,0.5); }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 6px 14px; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.9); }
+.hero-badge svg { width: 14px; height: 14px; fill: var(--accent-light); flex-shrink: 0; }
+.hero-image { border-radius: var(--r); overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.4); }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; display: block; }
+@media (min-width: 641px) {
+  .hero { padding: 120px 0 64px; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+}
+@media (min-width: 961px) { .hero { padding: 140px 0 80px; } }
+
+/* PROOF BAR */
+.proof-bar { background: var(--bg); border-bottom: 1px solid var(--surface); padding: 16px 0; }
+.proof-items { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: center; }
+.proof-num { font-size: 1.2rem; font-weight: 700; color: var(--accent); line-height: 1.2; font-family: var(--font-head); }
+.proof-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+@media (min-width: 641px) { .proof-items { grid-template-columns: repeat(4, 1fr); gap: 20px; } .proof-num { font-size: 1.5rem; } }
+
+/* IMAGE STRIP */
+.img-strip { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 24px 16px; }
+.img-strip::-webkit-scrollbar { display: none; }
+.img-strip img { height: 200px; width: 280px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+@media (min-width: 641px) { .img-strip img { height: 240px; width: 340px; } .img-strip { padding: 32px 24px; } }
+@media (min-width: 961px) { .img-strip img { height: 280px; width: 400px; } }
+
+/* PAIN */
+.pain-section { background: var(--surface); }
+.pain-grid { display: flex; flex-direction: column; gap: 2rem; }
+.pain-grid__img { display: none; }
+.pain-title { font-family: var(--font-body); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 2rem; }
+.pain-list { list-style: none; display: grid; gap: 0.85rem; margin-bottom: 2rem; }
+.pain-list li { background: #fff; border-radius: 6px; padding: 1.1rem 1.25rem 1.1rem 3.2rem; position: relative; color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.pain-list li::before { content: ''; position: absolute; left: 1.25rem; top: 1.35rem; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; opacity: 0.6; }
+.bridge { background: var(--navy); color: #fff; border-radius: 6px; padding: 1.5rem 1.75rem; font-size: 0.98rem; line-height: 1.7; }
+.bridge strong { color: var(--accent-light); }
+@media (min-width: 641px) {
+  .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .pain-grid__img { display: block; width: 100%; border-radius: 6px; object-fit: cover; aspect-ratio: 3/4; position: sticky; top: calc(var(--nav-h) + 2rem); }
+}
+
+/* SOLUTION */
+.solution-section { background: var(--bg); }
+.solution-grid { display: flex; flex-direction: column; gap: 2rem; }
+@media (min-width: 641px) { .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; } }
+.solution-img { border-radius: var(--r); object-fit: cover; width: 100%; aspect-ratio: 4/3; }
+.mini-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; background: var(--navy); border-radius: 6px; overflow: hidden; margin-top: 1.5rem; }
+.mini-stat { padding: 1rem 0.75rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.mini-stat:nth-child(2n) { border-right: none; }
+.mini-stat__num { font-family: var(--font-head); font-size: 1.2rem; color: #fff; line-height: 1; margin-bottom: 0.2rem; font-weight: 700; }
+.mini-stat__label { font-size: 0.6rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; }
+@media (min-width: 641px) {
+  .mini-stats { grid-template-columns: repeat(4, 1fr); }
+  .mini-stat { border-bottom: none; }
+  .mini-stat:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.1); }
+  .mini-stat:last-child { border-right: none; }
+  .mini-stat__num { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
+}
+
+/* OFFER DETAIL */
+.offer-section { background: var(--surface); }
+.steps { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 2rem 0; }
+.step-card { background: #fff; border-radius: var(--r); overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.step-card__img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; }
+.step__body { padding: 1.25rem; }
+.step__num { font-family: var(--font-head); font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
+.step__name { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+.inclusions { list-style: none; margin: 2rem 0; }
+.inclusions li { padding: 0.6rem 0 0.6rem 2rem; position: relative; font-size: 0.95rem; color: var(--text); }
+.inclusions li::before { content: '\2713'; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 1.1rem; }
+.timeline-callout { border: 2px solid var(--accent); border-radius: 6px; padding: 1.25rem 1.5rem; font-size: 0.95rem; color: var(--text); margin-bottom: 1.5rem; }
+.timeline-callout strong { color: var(--accent); }
+@media (min-width: 641px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+
+/* SOCIAL PROOF */
+.social-section { background: var(--bg); }
+.cred-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; }
+.cred-stat { text-align: center; padding: 1rem; }
+.cred-stat__num { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.25rem; }
+.cred-stat__label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+@media (min-width: 641px) { .cred-stats { grid-template-columns: repeat(4, 1fr); } }
+.testimonial-cards { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (min-width: 641px) { .testimonial-cards { grid-template-columns: 1fr 1fr; } }
+.test-card { background: var(--surface); border-radius: var(--r); padding: 1.5rem; }
+.test-stars { display: flex; gap: 2px; margin-bottom: 0.75rem; }
+.test-stars svg { width: 18px; height: 18px; fill: #f59e0b; }
+.test-quote { font-style: italic; font-size: 0.95rem; line-height: 1.7; color: var(--text); margin-bottom: 1rem; }
+.test-name { font-weight: 700; font-size: 0.85rem; color: var(--navy); }
+.test-role { font-size: 0.78rem; color: var(--text-muted); }
+.logos-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; padding: 2rem 0; }
+.logos-bar img { height: 32px; opacity: 0.6; filter: grayscale(100%); transition: opacity 0.2s, filter 0.2s; }
+.logos-bar img:hover { opacity: 1; filter: none; }
+
+/* FOUNDER */
+.founder-section { background: var(--surface); }
+.founder-grid { display: flex; flex-direction: column; gap: 2rem; }
+.founder-img { border-radius: var(--r); object-fit: cover; width: 100%; aspect-ratio: 3/4; }
+.founder-creds { list-style: none; margin-top: 1rem; }
+.founder-creds li { padding: 0.5rem 0 0.5rem 1.75rem; position: relative; font-size: 0.92rem; }
+.founder-creds li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+@media (min-width: 641px) { .founder-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; } }
+
+/* FORM */
+.form-section { background: var(--navy); color: #fff; }
+.form-section .pre-label { color: var(--accent-light); }
+.form-section .section-h2 { color: #fff; }
+.form-bullets { list-style: none; margin-bottom: 2rem; }
+.form-bullets li { padding: 0.5rem 0 0.5rem 1.75rem; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.85); }
+.form-bullets li::before { content: '\2713'; position: absolute; left: 0; color: var(--accent-light); font-weight: 700; }
+.form-box { background: #fff; border-radius: var(--r); padding: 1.5rem; color: var(--text); }
+.form-box h3 { font-family: var(--font-head); font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+.form-sub { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+.form-row-2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+@media (min-width: 641px) { .form-row-2 { grid-template-columns: 1fr 1fr; } }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.35rem; }
+.form-group input,
+.form-group select,
+.form-group textarea { width: 100%; font-family: var(--font-body); font-size: 16px; padding: 14px 16px; border: 1px solid #ddd; border-radius: 8px; background: #fafafa; color: var(--text); -webkit-appearance: none; appearance: none; transition: border-color 0.2s; }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { outline: none; border-color: var(--accent); }
+.form-group textarea { resize: vertical; min-height: 80px; }
+.form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234A2E26' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.form-submit { width: 100%; min-height: 48px; border-radius: 8px; }
+.form-privacy { font-size: 0.72rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem; }
+@media (min-width: 641px) { .form-box { padding: 2rem; } }
+
+/* FAQ */
+.faq-section { background: var(--bg); }
+.faq-item { border-bottom: 1px solid var(--surface); }
+.faq-item:first-child { border-top: 1px solid var(--surface); }
+.faq-btn { width: 100%; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; text-align: left; font-family: var(--font-head); font-size: 1rem; font-weight: 600; color: var(--text); gap: 1rem; }
+.faq-btn::after { content: '+'; color: var(--accent); font-size: 1.4rem; flex-shrink: 0; }
+.faq-item.open .faq-btn::after { content: '\2212'; }
+.faq-answer { display: none; padding-bottom: 16px; color: var(--text-muted); line-height: 1.75; font-size: 0.95rem; }
+.faq-item.open .faq-answer { display: block; }
+
+/* FINAL CTA */
+.final-cta { background: var(--navy); color: #fff; text-align: center; }
+.final-cta .section-h2 { color: #fff; }
+.final-cta p { color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 1.5rem; }
+.final-cta .btn { width: auto; }
+.final-cta .btn-risk { color: rgba(255,255,255,0.5); }
+.sub-note { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 1rem; }
+
+/* FOOTER */
+.footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 24px 0; text-align: center; font-size: 0.78rem; }
+.footer img { height: 28px; margin-bottom: 8px; }
+
+/* MOBILE CTA BAR */
+.mobile-cta { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; padding: 10px 12px; gap: 8px; align-items: center; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 -4px 20px rgba(0,0,0,0.12); border-top: 1px solid #eee; }
+.mobile-cta .btn { flex: 1; padding: 13px 12px; font-size: 0.85rem; text-align: center; width: auto; }
+.mobile-cta .cta-call { width: 48px; height: 48px; border-radius: 8px; background: var(--navy); display: grid; place-items: center; flex-shrink: 0; }
+.mobile-cta .cta-call svg { width: 20px; height: 20px; fill: #fff; }
+@media (min-width: 641px) { .mobile-cta { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#"><img src="https://www.kora-hr.be/wp-content/uploads/2023/09/Kora-HR-logo-white.png" alt="KORA HR" class="nav-logo"></a>
+    <div class="nav-right">
+      <a href="tel:+32478236466" class="nav-phone-icon" aria-label="Call KORA HR">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+      </a>
+      <a href="tel:+32478236466" class="nav-phone-text">+32 478 23 64 66</a>
+      <a href="#form" class="nav-cta-mobile">Free Consult</a>
+      <a href="#form" class="nav-cta-desktop">Book Free Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- SECTION 1: HERO (Image variant, two-column) -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="pre-label">For Belgian SME owners handling HR themselves</span>
+        <h1>A Professional HR Department Without the Full-Time Hire</h1>
+        <div class="hero-badges">
+          <span class="hero-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+            20+ Years HR Experience
+          </span>
+          <span class="hero-badge">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            25+ Client Partnerships
+          </span>
+          <span class="hero-badge">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Pay Only for Hours Worked
+          </span>
+        </div>
+        <p class="hero-sub">Stop spending your evenings on payroll regulations and compliance questions. Get a dedicated HR consultant who knows your business, starting from just a half-day per week.</p>
+        <a href="#form" class="btn" style="width:auto;">Book Your Free HR Consultation</a>
+        <span class="btn-risk">No obligation. No commitment required.</span>
+      </div>
+      <div class="hero-image">
+        <img src="https://www.kora-hr.be/wp-content/uploads/2025/10/20251017-155727-kora-IneDehandschutter-1024x682.jpg" alt="KORA HR team member providing professional HR consultation" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="proof-bar">
+  <div class="wrap">
+    <div class="proof-items">
+      <div>
+        <div class="proof-num">20+</div>
+        <div class="proof-label">Years HR Experience</div>
+      </div>
+      <div>
+        <div class="proof-num">25+</div>
+        <div class="proof-label">Client Partnerships</div>
+      </div>
+      <div>
+        <div class="proof-num">8+</div>
+        <div class="proof-label">HR Professionals</div>
+      </div>
+      <div>
+        <div class="proof-num">7+</div>
+        <div class="proof-label">Years in Business</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IMAGE STRIP 1 -->
+<div class="img-strip">
+  <img src="https://www.kora-hr.be/wp-content/uploads/2023/10/DSC_4827-500x500.jpg" alt="KORA HR team collaboration" loading="lazy">
+  <img src="https://www.kora-hr.be/wp-content/uploads/2026/03/Ontwerp-zonder-titel-22.png" alt="KORA HR professional services" loading="lazy">
+  <img src="https://www.kora-hr.be/wp-content/uploads/2026/02/Zonder-titel-750-x-550-px-1-e1770130885720.png" alt="KORA HR consulting work" loading="lazy">
+</div>
+
+<!-- SECTION 2: PROBLEM AGITATION -->
+<section class="pain-section">
+  <div class="wrap">
+    <div class="pain-grid">
+      <div class="pain-copy">
+        <span class="pre-label">Sound familiar?</span>
+        <h2 class="pain-title">You spend your evenings trying to figure out payroll regulations instead of running your business</h2>
+        <ul class="pain-list">
+          <li>You keep making the same hiring mistakes because nobody on your team really understands recruitment and onboarding.</li>
+          <li>Every time Belgian labor law changes, you have no idea if your business is still compliant, and the worry keeps you up at night.</li>
+          <li>HR always falls to the bottom of your priority list, even though you know it could cost you dearly if something goes wrong.</li>
+          <li>Your social secretariat handles payroll processing, but when you have a real HR question, they cannot give you strategic advice.</li>
+          <li>You tried delegating HR to your office manager, but they lack the breadth of expertise to handle complex situations.</li>
+          <li>You Google every HR question and piece together answers from templates, hoping you are not missing something critical.</li>
+        </ul>
+        <div class="bridge">
+          The problem is not that you are bad at HR. The problem is that <strong>HR is a full-time profession being squeezed into the margins of your already full schedule</strong>. You do not need another tool or template. You need a dedicated HR expert who actually knows your business.
+        </div>
+      </div>
+      <img class="pain-grid__img" src="https://www.kora-hr.be/wp-content/uploads/2025/11/download.jpg" alt="Professional HR support for growing businesses" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: SOLUTION INTRODUCTION -->
+<section class="solution-section">
+  <div class="wrap">
+    <span class="pre-label">A different approach</span>
+    <h2 class="section-h2">Your Own HR Department, Without the Full-Time Salary</h2>
+    <div class="solution-grid">
+      <div>
+        <p style="margin-bottom:1rem;">Other HR providers rotate your contact person every few months, leave you waiting in ticket queues, and offer one-size-fits-all solutions designed for enterprises. You end up paying for a massive platform when all you needed was someone to pick up the phone and give you a straight answer.</p>
+        <p style="margin-bottom:1rem;">KORA HR works differently. You get one dedicated HR consultant who learns your business inside out. They work on-site or remotely, as little as a half-day per week, and you only pay for the hours actually performed. No charges for leave, sick time, or training. It is like having your own HR team member who happens to work flexibly.</p>
+        <div class="mini-stats">
+          <div class="mini-stat">
+            <div class="mini-stat__num">20+</div>
+            <div class="mini-stat__label">Years Experience</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-stat__num">25+</div>
+            <div class="mini-stat__label">Client Partners</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-stat__num">8-9</div>
+            <div class="mini-stat__label">HR Professionals</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-stat__num">1 to 100+</div>
+            <div class="mini-stat__label">Employees Served</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Partner logos showing trusted brands -->
+        <div style="background:var(--surface);border-radius:var(--r);padding:1.5rem;text-align:center;">
+          <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem;font-weight:600;">Trusted by companies like</p>
+          <div class="logos-bar" style="padding:0;">
+            <img src="https://www.kora-hr.be/wp-content/uploads/2023/09/tvh-e1695134540887.png" alt="TVH" loading="lazy">
+            <img src="https://www.kora-hr.be/wp-content/uploads/2023/09/kbc-e1695134575388.png" alt="KBC" loading="lazy">
+          </div>
+          <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.75rem;">Plus Komatsu, Dematic, Helan, AGP, Forax, Revimaxx, and more</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: OFFER DETAIL -->
+<section class="offer-section">
+  <div class="wrap">
+    <span class="pre-label">How it works</span>
+    <h2 class="section-h2">Three Steps to Professional HR Support</h2>
+    <div class="steps">
+      <div class="step-card">
+        <div style="background:var(--navy);padding:2rem;display:grid;place-items:center;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E39879" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div class="step__body">
+          <div class="step__num">Step 01</div>
+          <div class="step__name">Free HR Consultation</div>
+          <p style="font-size:0.92rem;color:var(--text-muted);">Book a free, no-obligation consultation where we assess your HR needs, identify gaps, and outline exactly how we can help. You get 1 hour of expert HR advice at zero cost.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div style="background:var(--navy);padding:2rem;display:grid;place-items:center;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E39879" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="step__body">
+          <div class="step__num">Step 02</div>
+          <div class="step__name">Meet Your Dedicated Consultant</div>
+          <p style="font-size:0.92rem;color:var(--text-muted);">We match you with a dedicated HR consultant based on the expertise your business requires. This is your fixed contact person who will learn your company culture and operations.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div style="background:var(--navy);padding:2rem;display:grid;place-items:center;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E39879" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="step__body">
+          <div class="step__num">Step 03</div>
+          <div class="step__name">Flexible Ongoing Support</div>
+          <p style="font-size:0.92rem;color:var(--text-muted);">Your consultant works on-site or remotely, starting from a half-day per week. Scale up or down as your needs change. You only pay for hours actually worked.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:1rem;">What you get</h3>
+    <ul class="inclusions">
+      <li>Payroll administration and compliance management</li>
+      <li>Recruitment and onboarding handled by experienced HR professionals</li>
+      <li>Strategic HR advisory for growth decisions</li>
+      <li>Access to a complete HR document library</li>
+      <li>Temporary consultant placement for special projects or staff replacement</li>
+      <li>One fixed contact person who knows your business</li>
+    </ul>
+
+    <div class="timeline-callout">
+      <strong>Start immediately.</strong> Your dedicated HR consultant can begin within days of your first consultation. Support is flexible from a half-day per week to full-time placement, adjustable at any point.
+    </div>
+
+    <div style="text-align:center;">
+      <a href="#form" class="btn" style="width:auto;">Book Your Free HR Consultation</a>
+      <span class="btn-risk">No obligation. No commitment required.</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: SOCIAL PROOF -->
+<section class="social-section">
+  <div class="wrap">
+    <span class="pre-label">What clients say</span>
+    <h2 class="section-h2">Trusted by 25+ Belgian Businesses</h2>
+
+    <div class="cred-stats">
+      <div class="cred-stat">
+        <div class="cred-stat__num">20+</div>
+        <div class="cred-stat__label">Years HR Experience</div>
+      </div>
+      <div class="cred-stat">
+        <div class="cred-stat__num">25+</div>
+        <div class="cred-stat__label">Client Partnerships</div>
+      </div>
+      <div class="cred-stat">
+        <div class="cred-stat__num">8-9</div>
+        <div class="cred-stat__label">Dedicated HR Pros</div>
+      </div>
+      <div class="cred-stat">
+        <div class="cred-stat__num">Since 2018</div>
+        <div class="cred-stat__label">Serving Belgian SMEs</div>
+      </div>
+    </div>
+
+    <div class="testimonial-cards">
+      <div class="test-card">
+        <div class="test-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <p class="test-quote">"De ruime ervaring van Kora en haar team hebben ons overtuigd en ik moet bekennen dat we het ons zeker niet beklaagd hebben."</p>
+        <p class="test-name">Koen Vanden Broecke</p>
+        <p class="test-role">Operations Director, STEULER-CTI n.v.</p>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <p class="test-quote">"Since partnering with KORA HR, virtually everything is automated and runs faster and error-free."</p>
+        <p class="test-name">Alain Bracq</p>
+        <p class="test-role">Bracq Alain &amp; Co</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: FOUNDER -->
+<section class="founder-section">
+  <div class="wrap">
+    <div class="founder-grid">
+      <div>
+        <!-- No founder photo in asset inventory; using styled placeholder -->
+        <div style="background:var(--navy);border-radius:var(--r);aspect-ratio:3/4;display:grid;place-items:center;padding:2rem;text-align:center;">
+          <!-- Founder headshot: Kora De Wulf, professional portrait, warm lighting, approachable expression -->
+          <div>
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+            <p style="color:rgba(255,255,255,0.4);font-size:0.78rem;margin-top:0.5rem;">Photo: Kora De Wulf</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="pre-label">The person behind KORA HR</span>
+        <h2 class="section-h2">Meet Kora De Wulf</h2>
+        <p style="margin-bottom:1rem;">With a Master's degree in business psychology and experience as a judge in social affairs, Kora has spent over 20 years working across strategic and operational HR roles. She founded KORA HR in 2018 with a clear conviction: every business, no matter the size, deserves professional HR support.</p>
+        <p style="margin-bottom:1rem;">Kora remains actively involved with every client and personally coaches each team member's professional development. When you work with KORA HR, you are working with a team that is built on expertise, personal attention, and the belief that people are the core of every business.</p>
+        <ul class="founder-creds">
+          <li>Master's degree in business psychology</li>
+          <li>Former judge in social affairs</li>
+          <li>20+ years in strategic and operational HR</li>
+          <li>Personally involved with every client relationship</li>
+          <li>Built a team of 8-9 dedicated HR professionals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: LEAD FILTER FORM -->
+<section class="form-section" id="form">
+  <div class="wrap">
+    <span class="pre-label">Get started</span>
+    <h2 class="section-h2">Book Your Free HR Consultation</h2>
+    <ul class="form-bullets">
+      <li>A 1-hour free consultation to assess your HR needs and identify gaps</li>
+      <li>A clear recommendation on how KORA HR can support your business</li>
+      <li>Zero obligation, zero pressure. If we are not the right fit, we will tell you</li>
+    </ul>
+
+    <div class="form-box">
+      <h3>Tell us about your business</h3>
+      <p class="form-sub">Takes less than 60 seconds. We respond within 1 business day.</p>
+
+      <!--
+        FORMSPREE SETUP:
+        1. Go to formspree.io - create a free account
+        2. Create a new form - copy the form ID (e.g. "xabcdefg")
+        3. Replace YOUR_FORM_ID below with that ID
+        Submissions will be emailed to you automatically.
+      -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name *</label>
+            <input type="text" id="company" name="company" required placeholder="Your company">
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="you@company.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+32 ...">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="employees">How many employees does your company have? *</label>
+          <select id="employees" name="employees" required>
+            <option value="" disabled selected>Select a range</option>
+            <option value="1-5">1 to 5 employees</option>
+            <option value="6-15">6 to 15 employees</option>
+            <option value="16-30">16 to 30 employees</option>
+            <option value="31-50">31 to 50 employees</option>
+            <option value="51-100">51 to 100 employees</option>
+            <option value="100+">More than 100 employees</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="services">Which HR services are you most interested in? *</label>
+          <select id="services" name="services" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="payroll">Payroll administration and compliance</option>
+            <option value="recruitment">Recruitment and onboarding</option>
+            <option value="advisory">HR advisory and strategy</option>
+            <option value="outsourcing">Full HR outsourcing (consultant placement)</option>
+            <option value="temporary">Temporary replacement for HR staff</option>
+            <option value="multiple">Multiple services / not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget">Monthly HR support budget *</label>
+          <select id="budget" name="budget" required>
+            <option value="" disabled selected>Select a range</option>
+            <option value="under-500">Under 500 EUR / month</option>
+            <option value="500-1000">500 - 1,000 EUR / month</option>
+            <option value="1000-2500">1,000 - 2,500 EUR / month</option>
+            <option value="2500-5000">2,500 - 5,000 EUR / month</option>
+            <option value="5000+">5,000+ EUR / month</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="timeline">How soon do you need HR support? *</label>
+          <select id="timeline" name="timeline" required>
+            <option value="" disabled selected>Select a timeframe</option>
+            <option value="asap">As soon as possible</option>
+            <option value="1-3-months">Within 1 to 3 months</option>
+            <option value="3-6-months">Within 3 to 6 months</option>
+            <option value="exploring">Just exploring options</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="situation">What is your biggest HR challenge right now?</label>
+          <textarea id="situation" name="situation" rows="3" placeholder="Tell us briefly what prompted you to look for HR support..."></textarea>
+        </div>
+        <button type="submit" class="btn form-submit">Book Your Free HR Consultation</button>
+        <p class="form-privacy">No spam. No obligation. Your information is kept private.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: FAQ -->
+<section class="faq-section">
+  <div class="wrap">
+    <h2 class="section-h2" style="text-align:center;">Frequently Asked Questions</h2>
+    <div style="max-width:720px;margin:0 auto;">
+      <div class="faq-item">
+        <button class="faq-btn">Is professional HR support going to be too expensive for my small company?</button>
+        <div class="faq-answer">
+          This is the most common concern we hear, and it is a fair one. The truth is that KORA HR costs a fraction of a full-time HR hire. You start from as little as a half-day per week, and you only pay for hours actually performed. There are no hidden charges for leave, sick time, or training. Many of our clients with 5 to 15 employees find that the investment pays for itself quickly when you factor in the cost of recruitment mistakes, compliance fines, and the hours you currently spend on HR yourself.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Will an external consultant really understand our company culture?</button>
+        <div class="faq-answer">
+          This is exactly why we assign you one dedicated consultant who stays with your business long-term. Unlike large HR providers that rotate contacts, your KORA HR consultant learns your team dynamics, your values, and how your business actually operates. They can work on-site or remotely, and over time they become an extension of your team. As Koen Vanden Broecke from STEULER-CTI put it: "De ruime ervaring van Kora en haar team hebben ons overtuigd en ik moet bekennen dat we het ons zeker niet beklaagd hebben."
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">We are too small for professional HR. Is that not something for big companies?</button>
+        <div class="faq-answer">
+          This is one of the biggest misconceptions in the Belgian SME market. Every company with employees faces the same labor law obligations, whether you have 3 people or 300. The difference is that larger companies have dedicated HR staff to handle it. KORA HR was founded specifically to bridge that gap. We serve businesses from 1 employee onwards, and our flexible model means you get enterprise-level HR expertise scaled to your actual needs and budget.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">I only need a few hours per week. Is that really worth it?</button>
+        <div class="faq-answer">
+          Absolutely. Our minimum engagement is a half-day per week, and many of our clients start exactly there. A few focused hours with an experienced HR professional accomplishes more than weeks of figuring it out yourself. As your business grows, you can easily scale up the hours. And if you have a specific project like a recruitment drive or policy overhaul, we can temporarily increase support and scale back down afterward.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">I do not want to commit to a long contract. What if it does not work out?</button>
+        <div class="faq-answer">
+          We understand. That is why we start with a free, non-binding consultation. There is no long-term lock-in. Our pay-per-hour model means you have full flexibility to adjust or pause support as your needs change. We earn your continued partnership through results, not contractual obligation. Most of our clients stay because they experience the value firsthand, not because they have to.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2 class="section-h2">Stop Handling HR Alone. Get a Dedicated Expert This Week.</h2>
+    <p>Book your free 1-hour HR consultation. We will assess your needs, outline a plan, and you decide if KORA HR is the right fit. No pressure, no obligation.</p>
+    <a href="#form" class="btn" style="width:auto;">Book Your Free HR Consultation</a>
+    <span class="btn-risk" style="color:rgba(255,255,255,0.5);">No obligation. No commitment required.</span>
+    <p class="sub-note">20+ years of HR experience. 25+ client partnerships including TVH, KBC, Komatsu, and Dematic.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <img src="https://www.kora-hr.be/wp-content/uploads/2023/09/Kora-HR-logo-white.png" alt="KORA HR" loading="lazy">
+    <p>&copy; 2026 KORA HR. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- MOBILE CTA BAR -->
+<div class="mobile-cta">
+  <a href="#form" class="btn">Book Your Free HR Consultation</a>
+  <a href="tel:+32478236466" class="cta-call" aria-label="Call KORA HR">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+  </a>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+  // FAQ Accordion
+  document.querySelectorAll('.faq-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Hide sticky CTA when form is visible
+  (function(){
+    var mc = document.querySelector('.mobile-cta');
+    if (!mc) return;
+    var form = document.getElementById('form');
+    if (!form) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+        mc.style.transition = 'transform 0.3s ease';
+      });
+    }, {threshold: 0.1});
+    io.observe(form);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KORA HR - Your Complete Ad Funnel by Relight Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#4A2E26;
+  --navy-deep:#3a2018;
+  --gold:#E39879;
+  --gold-light:rgba(227,152,121,0.12);
+  --bg:#ffffff;
+  --off:#f9fafb;
+  --line:#eaecf0;
+  --txt:#1a2332;
+  --sub:#64748b;
+  --sub2:#94a3b8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--txt);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+.dm{font-family:'DM Serif Display',serif;font-weight:400}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap-sm{max-width:760px;margin:0 auto;padding:0 24px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s,backdrop-filter .35s}
+#nav.bg{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{height:30px;transition:filter .35s}
+#nav:not(.bg) .nav-logo{filter:none}
+#nav.bg .nav-logo{filter:brightness(0)}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:700;font-size:.85rem;padding:10px 24px;border-radius:999px;border:none;cursor:pointer;transition:opacity .2s}
+.btn-gold:hover{opacity:.88}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-weight:700;font-size:.85rem;padding:10px 24px;border-radius:999px;border:1.5px solid rgba(255,255,255,.3);cursor:pointer;transition:opacity .2s}
+.btn-ghost:hover{opacity:.8}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--txt);font-weight:700;font-size:.85rem;padding:10px 24px;border-radius:999px;border:1.5px solid var(--line);cursor:pointer;transition:border-color .2s}
+.btn-outline:hover{border-color:var(--gold)}
+.eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--gold)}
+
+/* FADE */
+.fade{opacity:0;transform:translateY(22px);transition:.65s ease}
+.fade.in{opacity:1;transform:none}
+
+/* HERO */
+.hero{background:linear-gradient(165deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;text-align:center;padding:160px 0 0;overflow:visible;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.hero-logo{height:36px;margin:0 auto 28px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(227,152,121,.14);border:1px solid rgba(227,152,121,.25);border-radius:999px;padding:7px 18px;font-size:.78rem;font-weight:600;color:var(--gold);margin-bottom:28px}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-size:clamp(2.4rem,4.8vw,4rem);line-height:1.12;max-width:820px;margin:0 auto 48px;font-weight:400}
+.hero-video{position:relative;max-width:880px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.35);margin-bottom:-120px;aspect-ratio:16/9;background:var(--navy-deep)}
+.hero-video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:rgba(255,255,255,.7);font-size:.9rem}
+.play-btn{width:72px;height:72px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;animation:pulse 2s infinite;cursor:pointer}
+.play-btn svg{margin-left:4px}
+.hero-cta-wrap{margin-top:40px;padding-bottom:48px}
+.hero-sub{color:rgba(255,255,255,.5);font-size:.82rem;margin-top:12px}
+
+/* SECTION SPACING */
+.section{padding:96px 0}
+.section-top-extra{padding-top:152px}
+
+/* DELIVERABLES OVERVIEW */
+.del-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.del-card{border:1.5px solid var(--line);border-radius:20px;padding:36px 28px;transition:border-color .3s}
+.del-card:hover{border-color:var(--gold)}
+.del-card .num{font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:12px}
+.del-card h3{font-size:1.15rem;font-weight:800;margin-bottom:8px;letter-spacing:-.01em}
+.del-card p{color:var(--sub);font-size:.9rem}
+
+/* WHY THIS MATTERS */
+.wtm-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.wtm-quote{border-left:3px solid var(--gold);padding-left:20px;color:var(--sub);font-size:1rem;line-height:1.7;margin-top:20px;font-style:italic}
+.wtm-row{display:flex;gap:16px;align-items:start;padding:20px 0;border-bottom:1px solid var(--line)}
+.wtm-row:last-child{border-bottom:none}
+.wtm-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
+.wtm-label{font-weight:700;font-size:.95rem;margin-bottom:2px}
+.wtm-desc{color:var(--sub);font-size:.88rem}
+
+/* IMAGE ADS */
+.phase-divider{display:flex;align-items:center;gap:16px;margin:48px 0 28px}
+.phase-divider::before,.phase-divider::after{content:'';flex:1;height:1px;background:var(--line)}
+.phase-divider span{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--sub2);white-space:nowrap}
+.ads-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ad-card{border:1.5px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;transition:border-color .3s}
+.ad-card:hover{border-color:var(--gold)}
+.ad-card-img{background:linear-gradient(135deg,var(--off),#eee);min-height:200px;position:relative}
+.ad-card-img img{width:100%;height:auto;display:block}
+.ad-card-body{padding:20px}
+.ad-card-body .ad-label{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.ad-card-body .ad-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.ad-card-body .ad-type{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold)}
+.ad-card-body p{color:var(--sub);font-size:.85rem;line-height:1.5}
+
+/* ACCORDION */
+.accordion{border:1.5px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:border-color .3s}
+.accordion:hover{border-color:var(--gold)}
+.acc-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;gap:16px}
+.acc-head-left{flex:1}
+.acc-head-left h3{font-size:1.05rem;font-weight:700;margin-bottom:2px}
+.acc-head-left p{font-size:.82rem;color:var(--sub)}
+.acc-icon{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--sub);transition:transform .3s,border-color .3s;flex-shrink:0}
+.accordion.open .acc-icon{transform:rotate(45deg);border-color:var(--gold);color:var(--gold)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc-content{padding:0 24px 24px}
+.sblock{background:var(--off);border-radius:12px;padding:20px;margin-bottom:10px}
+.sblock .sblock-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:8px}
+.sblock p{color:var(--sub);font-size:.9rem;line-height:1.65}
+
+/* LANDING PAGE PREVIEW */
+.phone-frame{width:400px;max-width:100%;margin:40px auto 0;border-radius:32px;border:8px solid var(--txt);background:var(--txt);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.12)}
+.phone-frame iframe{width:100%;height:720px;border:none;display:block;border-radius:24px;background:#fff}
+.qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.qa-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:28px}
+.qa-card h3{font-size:1rem;font-weight:700;margin-bottom:8px}
+.qa-card p{color:var(--sub);font-size:.88rem}
+
+/* SYSTEM FLOW */
+.flow{display:flex;align-items:center;justify-content:center;gap:0;margin-top:48px;flex-wrap:wrap}
+.flow-step{display:flex;align-items:center;gap:0}
+.flow-dot{width:48px;height:48px;border-radius:50%;background:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:800;color:var(--gold);flex-shrink:0}
+.flow-label{margin-left:12px;font-size:.88rem;font-weight:600;white-space:nowrap}
+.flow-line{width:48px;height:2px;background:var(--line);margin:0 8px;flex-shrink:0}
+
+/* CTA BAND */
+.cta-band{border-radius:32px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);padding:64px;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(227,152,121,.18),transparent 70%);pointer-events:none}
+.cta-band-copy{flex:1;color:#fff}
+.cta-band-copy .eyebrow{margin-bottom:12px}
+.cta-band-copy h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:12px;color:#fff}
+.cta-band-copy p{color:rgba(255,255,255,.6);font-size:.92rem}
+
+/* HOW IT WORKS */
+.hiw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.hiw-card{background:var(--off);border:1.5px solid var(--line);border-radius:20px;padding:36px 28px}
+.hiw-card .hiw-num{font-size:3.5rem;font-weight:800;color:var(--gold-light);line-height:1;margin-bottom:16px;-webkit-text-stroke:1.5px var(--gold)}
+.hiw-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.hiw-card p{color:var(--sub);font-size:.88rem}
+
+/* CASE STUDIES */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.case-card{background:#fff;border-radius:20px;overflow:hidden;border:1.5px solid var(--line);transition:border-color .3s}
+.case-card:hover{border-color:var(--gold)}
+.case-card-img{height:200px;overflow:hidden}
+.case-card-img img{width:100%;height:100%;object-fit:cover}
+.case-card-body{padding:24px}
+.case-card-body .case-logo{height:24px;margin-bottom:12px;opacity:.7}
+.case-card-body h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.case-card-body p{color:var(--sub);font-size:.85rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-img{border-radius:20px;overflow:hidden}
+.about-img img{width:100%;height:auto}
+.about-copy p{color:var(--sub);font-size:.92rem;margin-bottom:14px}
+
+/* CALENDLY */
+.calendly-wrap{max-width:700px;margin:32px auto 0;border-radius:16px;border:1.5px solid var(--line);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.06)}
+.calendly-wrap iframe{width:100%;height:700px;border:none;display:block}
+
+/* FOOTER */
+.footer{text-align:center;padding:40px 24px;color:var(--sub2);font-size:.82rem}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .section{padding:64px 0}
+  .section-top-extra{padding-top:100px}
+  .del-grid,.ads-grid,.hiw-grid,.case-grid{grid-template-columns:1fr 1fr}
+  .wtm-grid,.about-grid,.qa-grid{grid-template-columns:1fr}
+  .cta-band{flex-direction:column;text-align:center;padding:48px 32px}
+  .flow-line{width:24px}
+}
+@media(max-width:640px){
+  .del-grid,.ads-grid,.hiw-grid,.case-grid{grid-template-columns:1fr}
+  .hero{padding-top:120px}
+  .hero h1{font-size:clamp(1.8rem,6vw,2.6rem)}
+  .hero-video{margin-bottom:-60px}
+  .section-top-extra{padding-top:80px}
+  .cta-band{padding:36px 24px}
+  .cta-band .btn-gold{width:100%;justify-content:center}
+  .phone-frame{width:100%}
+  .flow{flex-direction:column;align-items:flex-start;gap:16px}
+  .flow-step{flex-direction:row}
+  .flow-line{width:2px;height:24px;margin:0}
+  .flow-step{gap:0}
+  .nav-logo{height:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#"><img src="https://www.kora-hr.be/wp-content/uploads/2023/09/Kora-HR-logo-white.png" alt="KORA HR" class="nav-logo"></a>
+    <a href="#calendly" class="btn-gold">Let's get this live</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <img src="https://www.kora-hr.be/wp-content/uploads/2023/09/Kora-HR-logo-white.png" alt="KORA HR" class="hero-logo">
+    <div class="hero-badge"><span class="dot"></span> Built exclusively for KORA HR</div>
+    <h1 class="dm">I will help you get 10 new clients within 14 days with this Meta ads funnel I created for you.</h1>
+    <div class="hero-video">
+      <!-- LOOM EMBED: Replace this placeholder with the Loom embed once recorded.
+           Recording instructions:
+           1. Open Loom and record a walkthrough of this pitch page
+           2. Walk through each section: ads, video scripts, landing page
+           3. Keep it under 5 minutes
+           4. Replace this div's contents with the Loom iframe embed code
+      -->
+      <div class="hero-video-placeholder">
+        <div class="play-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="#4A2E26"/></svg>
+        </div>
+        <span>Personal video walkthrough - coming soon</span>
+      </div>
+    </div>
+    <div class="hero-cta-wrap">
+      <a href="#calendly" class="btn-gold" style="font-size:.95rem;padding:14px 32px">Let's get this live</a>
+      <p class="hero-sub">No cost, no obligation - 30 min to see if it fits</p>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES OVERVIEW -->
+<section class="section section-top-extra fade" style="background:var(--bg)">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Everything below is yours, for free</p>
+    <h2 style="font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;margin-top:12px">A complete ad funnel, built specifically for KORA HR.</h2>
+    <p style="color:var(--sub);max-width:620px;margin:16px auto 0;font-size:.95rem">9 ready-to-run image ads, 3 video scripts with filming briefs, and a custom landing page designed to convert leads into booked consultations.</p>
+    <div class="del-grid">
+      <div class="del-card">
+        <div class="num">01</div>
+        <h3>Image Ads</h3>
+        <p>9 ad creatives across three funnel stages: prospecting, trust building, and conversion. Each designed around KORA HR's brand identity and positioning.</p>
+      </div>
+      <div class="del-card">
+        <div class="num">02</div>
+        <h3>Video Scripts</h3>
+        <p>3 complete scripts with hooks, body copy, CTAs, and filming briefs. Written in Kora De Wulf's voice, ready to record with just a phone and natural light.</p>
+      </div>
+      <div class="del-card">
+        <div class="num">03</div>
+        <h3>Landing Page</h3>
+        <p>A dedicated lead capture page built for KORA HR with brand colors, trust signals, and a clear path from visitor to booked consultation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS MATTERS -->
+<section class="section fade" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="wtm-grid">
+      <div>
+        <p class="eyebrow">Why this matters</p>
+        <h2 style="font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;margin-top:12px">Your ideal clients are on Meta. They just need a reason to reach out.</h2>
+        <blockquote class="wtm-quote">"De ruime ervaring van Kora en haar team hebben ons overtuigd en ik moet bekennen dat we het ons zeker niet beklaagd hebben." - Koen Vanden Broecke, STEULER-CTI</blockquote>
+      </div>
+      <div>
+        <div class="wtm-row">
+          <div class="wtm-dot"></div>
+          <div>
+            <div class="wtm-label">Minimal to no paid ads currently</div>
+            <div class="wtm-desc">Based on the Meta Ad Library, KORA HR has little to no active paid social advertising. That is white space waiting to be filled.</div>
+          </div>
+        </div>
+        <div class="wtm-row">
+          <div class="wtm-dot"></div>
+          <div>
+            <div class="wtm-label">Competitors lead with tech and scale</div>
+            <div class="wtm-desc">SD Worx, Acerta, and Partena dominate with automation messaging. KORA HR's personal, fixed-contact approach is the gap nobody is advertising.</div>
+          </div>
+        </div>
+        <div class="wtm-row">
+          <div class="wtm-dot"></div>
+          <div>
+            <div class="wtm-label">Strong proof, not yet amplified</div>
+            <div class="wtm-desc">20+ years of experience, 25+ client partnerships including TVH, KBC, and Komatsu. These credentials belong in front of SME owners, not buried on a website.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE ADS -->
+<section class="section fade" style="background:var(--off)">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Deliverable 1</p>
+    <h2 style="font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;margin-top:12px">9 image ads, three funnel stages.</h2>
+    <p style="color:var(--sub);max-width:620px;margin:16px auto 0;font-size:.95rem">Each ad type was selected based on KORA HR's strengths, proof points, and market positioning. The algorithm shows each ad to the people most likely to respond to that angle.</p>
+
+    <!-- Phase 1 -->
+    <div class="phase-divider"><span>Phase 1 - Generate interest</span></div>
+    <div class="ads-grid">
+      <div class="ad-card">
+        <div class="ad-card-img"><img src="./images/1.png" alt="Ad 1 - Collage"></div>
+        <div class="ad-card-body">
+          <div class="ad-label"><span class="ad-dot"></span><span class="ad-type">Ad 01 - Collage</span></div>
+          <p>A visual grid of KORA HR's five service categories: payroll, recruitment, HR advisory, document library, and outsourcing. Establishes breadth at a glance.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-card-img"><img src="./images/2.png" alt="Ad 2 - Pain / Problem"></div>
+        <div class="ad-card-body">
+          <div class="ad-label"><span class="ad-dot"></span><span class="ad-type">Ad 02 - Pain / Problem</span></div>
+          <p>The SME owner at 9 PM, surrounded by payroll spreadsheets and legislation. Calls out the exact moment when doing HR alone stops working.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-card-img"><img src="./images/3.png" alt="Ad 3 - Education / Tip"></div>
+        <div class="ad-card-body">
+          <div class="ad-label"><span class="ad-dot"></span><span class="ad-type">Ad 03 - Education / Tip</span></div>
+          <p>A single HR contract with a critical clause highlighted. Positions KORA HR as the authority who catches the details others miss.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase-divider"><span>Phase 2 - Build trust</span></div>
+    <div class="ads-grid">
+      <div class="ad-card">
+        <div class="ad-card-img"><img src="./images/4.png" alt="Ad 4 - Owner / Team"></div>
+        <div class="ad-card-body">
+          <div class="ad-label"><span class="ad-dot"></span><span class="ad-type">Ad 04 - Owner / Team</span></div>
+          <p>Kora De Wulf with her credentials front and center: 20+ years in HR, Master in business psychology, 25+ client partnerships.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-card-img"><img src="./images/5.png" alt="Ad 5 - Process"></div>
+        <div class="ad-card-body">
+          <div class="ad-label"><span class="ad-dot"></span><span class="ad-type">Ad 05 - Process</span></div>
+          <p>Three clear steps: free consultation, matched with a dedicated HR partner, flexible ongoing support. Removes the mystery of getting started.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-card-img"><img src="./images/6.png" alt="Ad 6 - Social Proof"></div>
+        <div class="ad-card-body">
+          <div class="ad-label"><span class="ad-dot"></span><span class="ad-type">Ad 06 - Social Proof</span></div>
+          <p>Client testimonial from Alain Bracq: "Sneller en foutloos." Real words from a real client, backed by a professional office setting.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase-divider"><span>Phase 3 - Convert leads</span></div>
+    <div class="ads-grid">
+      <div class="ad-card">
+        <div class="ad-card-img"><img src="./images/7.png" alt="Ad 7 - Free Offer"></div>
+        <div class="ad-card-body">
+          <div class="ad-label"><span class="ad-dot"></span><span class="ad-type">Ad 07 - Free Offer</span></div>
+          <p>The free, no-obligation HR consultation. One hour of expert advice with zero commitment. The lowest-risk first step a prospect can take.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-card-img"><img src="./images/8.png" alt="Ad 8 - FAQ / Myth-Bust"></div>
+        <div class="ad-card-body">
+          <div class="ad-label"><span class="ad-dot"></span><span class="ad-type">Ad 08 - FAQ / Myth-Bust</span></div>
+          <p>Busts the myth that professional HR is only for big companies. KORA HR works with businesses from one employee onwards.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-card-img"><img src="./images/9.png" alt="Ad 9 - Lead / Hero"></div>
+        <div class="ad-card-body">
+          <div class="ad-label"><span class="ad-dot"></span><span class="ad-type">Ad 09 - Lead / Hero</span></div>
+          <p>Brand hero visual with the tagline "Jouw HR, onze focus." Warm, professional, and inviting. Reinforces the core positioning across every touchpoint.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SCRIPTS -->
+<section class="section fade" style="background:var(--bg)">
+  <div class="wrap-sm" style="text-align:center">
+    <p class="eyebrow">Deliverable 2</p>
+    <h2 style="font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;margin-top:12px">3 video scripts, ready to film.</h2>
+    <p style="color:var(--sub);max-width:560px;margin:16px auto 0;font-size:.95rem">Each script targets a different type of buyer. The algorithm shows each video to the people most likely to respond to that angle.</p>
+  </div>
+  <div class="wrap-sm" style="margin-top:40px">
+
+    <!-- Script 1 -->
+    <div class="accordion" id="vs1">
+      <div class="acc-head" onclick="toggle('vs1')">
+        <div class="acc-head-left">
+          <h3>Script 1 - The Lonely HR Juggle</h3>
+          <p>Pain / Circumstance</p>
+        </div>
+        <div class="acc-icon">+</div>
+      </div>
+      <div class="acc-body" id="vs1-body">
+        <div class="acc-content">
+          <div class="sblock">
+            <div class="sblock-label">Central Angle</div>
+            <p>The SME owner is drowning in HR tasks they were never trained for, and it is costing them their evenings, their focus, and their business growth.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">Hook (0-10s)</div>
+            <p>If you are running a KMO and you find yourself at 9 PM trying to figure out whether your employment contracts are still compliant with the latest social legislation... you are not alone. But you are losing time you will never get back. Let me explain why that matters more than you think.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">Body (11-90s)</div>
+            <p>I have spent more than 20 years in HR. Strategic roles, operational roles, social legislation, tribunal work. And the pattern I see with SME owners is always the same.</p>
+            <p style="margin-top:10px">You started a business because you are good at what you do. Not because you love payroll administration. Not because you wanted to decode Belgian labor law every time something changes. But somewhere along the way, HR landed on your desk. Maybe you gave it to your office manager. Maybe you handle it yourself between meetings.</p>
+            <p style="margin-top:10px">And it works. Until it does not. A recruitment mistake that costs you six months. A payroll error that frustrates your best employee. A compliance gap you did not even know existed.</p>
+            <p style="margin-top:10px">What if, instead of all that, you had someone you could call? A dedicated HR professional who knows your company, knows your people, and handles everything from payroll to recruitment to policy. Not a call center. Not a ticketing system. A real person, available when you need them.</p>
+            <p style="margin-top:10px">That is what we do at KORA HR. We are actively involved with every client. We do not push you into a box. We work alongside you, from a few hours a week, on your terms.</p>
+            <p style="margin-top:10px">One of our clients told us that since working with us, everything runs faster and error-free. That is what happens when HR is handled by someone who does this every day, not someone who squeezes it in between their real job.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">CTA (90-120s)</div>
+            <p>If that sounds like the kind of support your business needs, here is what to do. Click the button below and book a free, no-obligation consultation. It is one hour. We will look at your HR situation together and tell you exactly where you stand. No commitment, no pressure. Just clarity.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">Filming Brief</div>
+            <p><strong>Environment:</strong> Seated at a clean desk in a bright office, laptop visible but closed to the side</p>
+            <p style="margin-top:10px"><strong>Camera:</strong> Phone propped on a mini-tripod, eye-level, direct to camera</p>
+            <p style="margin-top:10px"><strong>Framing:</strong> Medium shot, chest and above, slight headroom</p>
+            <p style="margin-top:10px"><strong>Lighting:</strong> Natural window light from the left, warm and soft</p>
+            <p style="margin-top:10px"><strong>Energy:</strong> Warm but direct. Empathetic in the first half, confident and solution-oriented in the second half. Not aggressive, not pitchy.</p>
+            <p style="margin-top:10px"><strong>Visual note:</strong> A few professional binders or folders visible in the background reinforces the HR context</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script 2 -->
+    <div class="accordion" id="vs2">
+      <div class="acc-head" onclick="toggle('vs2')">
+        <div class="acc-head-left">
+          <h3>Script 2 - From Chaos to Foutloos</h3>
+          <p>Result / Case Study</p>
+        </div>
+        <div class="acc-icon">+</div>
+      </div>
+      <div class="acc-body" id="vs2-body">
+        <div class="acc-content">
+          <div class="sblock">
+            <div class="sblock-label">Central Angle</div>
+            <p>A real client's HR administration went from manual and error-prone to automated, fast, and flawless after partnering with KORA HR.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">Hook (0-10s)</div>
+            <p>One of our clients recently told me something that stuck with me. He said: since we started working together, virtually everything is automated and runs faster and error-free. That was not always the case. Let me tell you what changed.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">Body (11-90s)</div>
+            <p>When this client first came to us, his HR administration was like most small businesses. Payroll processed through the social secretariat, but nobody really checking the details. Employee questions going unanswered for days. New hires onboarded with a handshake and a hope that it would work out.</p>
+            <p style="margin-top:10px">The social secretariat handles payroll calculations. That is their job. But they do not call you to say your contract templates are outdated. They do not flag that your onboarding process is losing you good people in the first three months. They do not sit with you to build an HR policy that actually supports your growth.</p>
+            <p style="margin-top:10px">That is the gap we fill. We assigned a dedicated HR professional to this client. Someone who learned their business, their team, their culture. Within weeks, processes were streamlined. Documents were updated. Recruitment became structured instead of reactive.</p>
+            <p style="margin-top:10px">The result? His words, not mine: everything runs faster and error-free. And he is back to focusing on his actual business, which is what he should have been doing all along.</p>
+            <p style="margin-top:10px">We have been doing this for over 7 years now, with more than 25 companies. From startups with 3 people to established KMOs with 80. The approach is always the same: one dedicated contact, flexible hours, real expertise. Mensen zijn de kern van jouw business. We make sure they are treated that way.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">CTA (90-120s)</div>
+            <p>If your HR is still running on good intentions instead of solid processes, click the button below. Book a free consultation. One hour, no strings attached. We will look at your current setup and show you exactly what a professional HR partner can do for your business.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">Filming Brief</div>
+            <p><strong>Environment:</strong> Standing near a window in a modern, light-filled office or meeting room</p>
+            <p style="margin-top:10px"><strong>Camera:</strong> Phone propped on a mini-tripod, eye-level, direct to camera</p>
+            <p style="margin-top:10px"><strong>Framing:</strong> Medium shot, chest and above, slight headroom</p>
+            <p style="margin-top:10px"><strong>Lighting:</strong> Natural window light, bright and warm</p>
+            <p style="margin-top:10px"><strong>Energy:</strong> Story-driven and genuine. Start reflective (sharing the client's words), build to confident and practical. Conversational pace.</p>
+            <p style="margin-top:10px"><strong>Visual note:</strong> A meeting table or whiteboard in the background suggests collaboration</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script 3 -->
+    <div class="accordion" id="vs3">
+      <div class="acc-head" onclick="toggle('vs3')">
+        <div class="acc-head-left">
+          <h3>Script 3 - HR Is Not Just for Big Companies</h3>
+          <p>Contrarian / Insight</p>
+        </div>
+        <div class="acc-icon">+</div>
+      </div>
+      <div class="acc-body" id="vs3-body">
+        <div class="acc-content">
+          <div class="sblock">
+            <div class="sblock-label">Central Angle</div>
+            <p>Belgian SME owners believe professional HR support is only for large corporations, and that belief is costing them compliance, talent, and growth.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">Hook (0-10s)</div>
+            <p>If you run a KMO with 5, 10, maybe 20 people, you have probably told yourself: we are too small for professional HR. That is one of the most expensive assumptions a business owner can make. Here is why.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">Body (11-90s)</div>
+            <p>I have been working in HR for more than 20 years. I have seen companies with 500 employees and companies with 5. And I can tell you this: the HR challenges are the same. The only difference is that the small company has nobody dedicated to handling them.</p>
+            <p style="margin-top:10px">You still need compliant contracts. You still need a proper onboarding process so new hires actually stay. You still need someone who understands social legislation when a difficult situation comes up. You still need a payroll process that does not create frustration every month.</p>
+            <p style="margin-top:10px">The big companies have an HR department for all of that. You have... yourself. Maybe an office manager who does their best. Maybe a stack of templates you downloaded three years ago.</p>
+            <p style="margin-top:10px">And every month, you are one compliance gap away from a problem you did not see coming.</p>
+            <p style="margin-top:10px">We started KORA HR because we believe every company, from one employee onwards, deserves professional HR. We do not push you into a box. You do not need to hire a full-time HR manager. You do not need a big budget. You need the right expertise, available when you need it, for the hours that make sense.</p>
+            <p style="margin-top:10px">That is exactly what we offer. A dedicated HR professional who knows your business. From half a day per week. You pay only for the hours worked. No contract for leave or sick days. No hidden costs.</p>
+            <p style="margin-top:10px">Over 25 companies work with us this way already. Some are startups. Some have been around for decades. All of them decided their people deserved better than improvised HR.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">CTA (90-120s)</div>
+            <p>If you want to see what professional HR support actually looks like for a business your size, click the button below. Book a free, no-obligation consultation. One hour, and you will know exactly where your HR stands and what needs attention. No commitment required.</p>
+          </div>
+          <div class="sblock">
+            <div class="sblock-label">Filming Brief</div>
+            <p><strong>Environment:</strong> Seated at a meeting table or standing casually in a bright co-working space</p>
+            <p style="margin-top:10px"><strong>Camera:</strong> Phone propped on a mini-tripod, eye-level, direct to camera</p>
+            <p style="margin-top:10px"><strong>Framing:</strong> Medium shot, chest and above, slight headroom</p>
+            <p style="margin-top:10px"><strong>Lighting:</strong> Natural window light or ring light, bright and clean</p>
+            <p style="margin-top:10px"><strong>Energy:</strong> Calm and confident, with a slight edge of "I have seen this mistake too many times." Not preachy, but authoritative. The tone of someone sharing hard-won insight.</p>
+            <p style="margin-top:10px"><strong>Visual note:</strong> Minimal background. A plant or bookshelf works. Nothing distracting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LANDING PAGE PREVIEW -->
+<section class="section fade" style="background:var(--off)">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Deliverable 3</p>
+    <h2 style="font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;margin-top:12px">A landing page built to convert.</h2>
+    <p style="color:var(--sub);max-width:620px;margin:16px auto 0;font-size:.95rem">Every ad points here. The page is designed with one goal: turn a warm click into a booked consultation for KORA HR.</p>
+
+    <div class="phone-frame">
+      <iframe src="./landing-page/" title="KORA HR Landing Page Preview"></iframe>
+    </div>
+
+    <div class="qa-grid" style="text-align:left">
+      <div class="qa-card">
+        <h3>Why not send them to your website?</h3>
+        <p>Your website serves many audiences: potential clients, existing clients, job seekers, partners. A landing page has one job and one audience. It matches the ad that brought the visitor there and gives them exactly one action to take. That focus is what drives conversion rates up.</p>
+      </div>
+      <div class="qa-card">
+        <h3>Why this page converts</h3>
+        <p>It mirrors the ad messaging the visitor just saw. It uses proof points from real KORA HR clients. It has a single, clear call to action: book a free consultation. No navigation menu, no distractions, no competing links. Every element on the page moves toward that one goal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM FLOW -->
+<section class="section fade" style="background:var(--bg)">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">The system</p>
+    <h2 style="font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;margin-top:12px">How it all connects.</h2>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-dot">1</div>
+        <span class="flow-label">Meta ads</span>
+      </div>
+      <div class="flow-line"></div>
+      <div class="flow-step">
+        <div class="flow-dot">2</div>
+        <span class="flow-label">Landing page</span>
+      </div>
+      <div class="flow-line"></div>
+      <div class="flow-step">
+        <div class="flow-dot">3</div>
+        <span class="flow-label">Qualification</span>
+      </div>
+      <div class="flow-line"></div>
+      <div class="flow-step">
+        <div class="flow-dot">4</div>
+        <span class="flow-label">Follow-up</span>
+      </div>
+      <div class="flow-line"></div>
+      <div class="flow-step">
+        <div class="flow-dot">5</div>
+        <span class="flow-label">Sales call</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="section fade" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="cta-band-copy">
+        <p class="eyebrow" style="color:var(--gold)">Ready to start?</p>
+        <h2>Let's get this ad funnel live for KORA HR.</h2>
+        <p>Everything on this page is built and ready to go. Pick a time, and we will walk through it together.</p>
+      </div>
+      <a href="#calendly" class="btn-gold" style="font-size:.95rem;padding:14px 32px;white-space:nowrap">Let's get this live</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section fade" style="background:var(--bg)">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Next steps</p>
+    <h2 style="font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;margin-top:12px">Three steps to launch.</h2>
+    <div class="hiw-grid">
+      <div class="hiw-card">
+        <div class="hiw-num">01</div>
+        <h3>Book a 30-minute call</h3>
+        <p>We walk through this funnel together. You ask questions, we refine anything that needs adjusting. No commitment required.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num">02</div>
+        <h3>We finalize and launch</h3>
+        <p>We set up the Meta campaigns, connect the landing page, and configure the lead flow. You record the video scripts on your phone.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num">03</div>
+        <h3>Leads start coming in</h3>
+        <p>Your ads go live. Qualified SME owners see KORA HR, land on the page, and book consultations. We optimize weekly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section fade" style="background:var(--off)">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Results we have driven</p>
+    <h2 style="font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;margin-top:12px">This system works. Here is the proof.</h2>
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-card-img"><img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case study"></div>
+        <div class="case-card-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent" class="case-logo">
+          <h3>145 leads in 2 weeks</h3>
+          <p>TechTalent went from zero paid advertising to 145 qualified leads in 14 days using the same funnel system.</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-img"><img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case study"></div>
+        <div class="case-card-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen" class="case-logo">
+          <h3>66 recurring clients in 27 days</h3>
+          <p>Vossen signed 66 recurring clients in under a month with targeted Meta ads and a dedicated landing page.</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-img"><img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case study"></div>
+        <div class="case-card-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner" class="case-logo">
+          <h3>50 recurring clients in 2 weeks</h3>
+          <p>Container Cleaner booked 50 recurring clients in just two weeks after launching their ad funnel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section fade" style="background:var(--bg)">
+  <div class="wrap-sm" style="text-align:center">
+    <p class="eyebrow">Common questions</p>
+    <h2 style="font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;margin-top:12px">Questions you probably have.</h2>
+  </div>
+  <div class="wrap-sm" style="margin-top:40px">
+
+    <div class="accordion" id="faq1">
+      <div class="acc-head" onclick="toggle('faq1')">
+        <div class="acc-head-left"><h3>Why are you giving this away for free?</h3></div>
+        <div class="acc-icon">+</div>
+      </div>
+      <div class="acc-body" id="faq1-body">
+        <div class="acc-content">
+          <p style="color:var(--sub);font-size:.92rem;line-height:1.7">Because building the funnel is the easy part for us. We do this every day. The hard part is proving to a business owner that this approach actually works before they commit to anything. So we build it, show it, and let the quality of the work speak for itself. If you like what you see, we talk about running it together. If not, you keep everything and we part ways. No invoice, no strings.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="faq2">
+      <div class="acc-head" onclick="toggle('faq2')">
+        <div class="acc-head-left"><h3>Why should I trust you?</h3></div>
+        <div class="acc-icon">+</div>
+      </div>
+      <div class="acc-body" id="faq2-body">
+        <div class="acc-content">
+          <p style="color:var(--sub);font-size:.92rem;line-height:1.7">Fair question. The work on this page is the answer. We did not send you a generic pitch deck or a templated proposal. We researched your business, studied your market, and built a complete ad funnel specifically for KORA HR. That is the level of effort we bring to everything we do. The case studies on this page are real clients with real results. We are happy to connect you with any of them.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="faq3">
+      <div class="acc-head" onclick="toggle('faq3')">
+        <div class="acc-head-left"><h3>How quickly would results show up?</h3></div>
+        <div class="acc-icon">+</div>
+      </div>
+      <div class="acc-body" id="faq3-body">
+        <div class="acc-content">
+          <p style="color:var(--sub);font-size:.92rem;line-height:1.7">Most of our clients see their first leads within the first week of going live. The Meta algorithm needs a few days to learn who responds best to each ad, and then it starts optimizing. By week two, you typically have a steady flow of qualified leads booking calls or filling out forms. Results compound from there as we refine targeting and creative based on real data.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="faq4">
+      <div class="acc-head" onclick="toggle('faq4')">
+        <div class="acc-head-left"><h3>What would you need from our side?</h3></div>
+        <div class="acc-icon">+</div>
+      </div>
+      <div class="acc-body" id="faq4-body">
+        <div class="acc-content">
+          <p style="color:var(--sub);font-size:.92rem;line-height:1.7">Very little. Access to your Meta Business account (or we help you set one up). The video scripts on this page are ready to film on your phone, no crew needed. Beyond that, we handle the ad setup, landing page hosting, tracking, and ongoing optimization. A 30-minute call each week to review performance is all we ask.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="faq5">
+      <div class="acc-head" onclick="toggle('faq5')">
+        <div class="acc-head-left"><h3>How much ad spend would make sense?</h3></div>
+        <div class="acc-icon">+</div>
+      </div>
+      <div class="acc-body" id="faq5-body">
+        <div class="acc-content">
+          <p style="color:var(--sub);font-size:.92rem;line-height:1.7">For a B2B service like KORA HR, we typically recommend starting with 20 to 40 euros per day. That is enough to generate consistent data and leads without overcommitting. As we see what works, we scale what performs and cut what does not. The budget is always in your control, and we review it together weekly to make sure every euro is working.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section fade" style="background:var(--off)">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://preview.relightmarketing.com/assets/relight-team.png" alt="Arthur - Relight Marketing">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">About</p>
+        <h2 style="font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;margin-top:12px;margin-bottom:20px">Arthur - Relight Marketing</h2>
+        <p>Relight Marketing builds ad funnels for service businesses that want to grow through Meta advertising. We handle strategy, creative, landing pages, and campaign management so you can focus on what you do best: running your business.</p>
+        <p>Every funnel we build starts with deep research into the business, the market, and the customer. No templates, no shortcuts. The result is a system that feels native to your brand and speaks directly to the people you want to reach.</p>
+        <p>We work with a small number of clients at a time because that is the only way to deliver work at this level. If what you see on this page resonates, let's talk about making it real.</p>
+        <a href="#calendly" class="btn-gold" style="margin-top:20px;font-size:.95rem;padding:14px 32px">Let's get this live</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDLY -->
+<section class="section fade" style="background:var(--bg)" id="calendly">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Let's do this</p>
+    <h2 class="dm" style="font-size:clamp(2rem,3.5vw,3.25rem);margin-top:12px">Let's get this ad funnel live ASAP.</h2>
+    <p style="color:var(--sub);max-width:560px;margin:16px auto 0;font-size:.95rem">Everything on this page is built for KORA HR and ready to launch. The only step left is a 30-minute conversation to walk through it together. Pick a time below.</p>
+    <div class="calendly-wrap">
+      <iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Book a call with Arthur"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  Relight Marketing - built for KORA HR
+</footer>
+
+<script>
+// 1. Nav scroll detection
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('bg',scrollY>40)},{passive:true});
+
+// 2. Scroll fade-in
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.fade:not(.in)').forEach(function(el){io.observe(el)});
+
+// 3. Accordion toggle
+function toggle(id){
+  var acc=document.getElementById(id);
+  var body=document.getElementById(id+'-body');
+  var open=acc.classList.contains('open');
+  document.querySelectorAll('.accordion.open').forEach(function(a){
+    a.classList.remove('open');
+    a.querySelector('.acc-body').style.maxHeight=null;
+  });
+  if(!open){
+    acc.classList.add('open');
+    body.style.maxHeight=body.scrollHeight+'px';
+  }
+}
+
+// 4. Page-open notification
+if(window.location.protocol!=='file:'){
+  var OWNER_TOKEN='test';
+  var params=new URLSearchParams(window.location.search);
+  if(params.get('preview')!==OWNER_TOKEN){
+    fetch('https://ipapi.co/json/')
+      .then(function(r){return r.json()})
+      .then(function(geo){
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec',{
+          method:'POST',
+          headers:{'Content-Type':'text/plain'},
+          body:JSON.stringify({
+            _subject:'58 KORA HR just opened your pitch page',
+            prospect:'KORA HR',
+            number:'58',
+            time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+            city:geo.city||'',region:geo.region||'',country:geo.country_name||'',
+            device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+            referrer:document.referrer||'direct',url:window.location.href
+          })
+        });
+      })
+      .catch(function(){
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec',{
+          method:'POST',
+          headers:{'Content-Type':'text/plain'},
+          body:JSON.stringify({
+            _subject:'58 KORA HR just opened your pitch page',
+            prospect:'KORA HR',
+            number:'58',
+            time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+            device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+            referrer:document.referrer||'direct',url:window.location.href
+          })
+        });
+      });
+  }
+}
+</script>
+</body>
+</html>

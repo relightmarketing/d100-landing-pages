@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OBA x Relight Marketing | Meta Ads Funnel Voorstel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --black:#000; --ink:#1a1a1a; --gold:#8a6d3b; --gold-light:#c4a66d; --cream:#f5efe4; --paper:#faf6ed; --white:#fff; --sub:#4a4640; --sub2:#8a8680; --line:#e8e2d3; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  .pd { font-family: 'Playfair Display', Georgia, serif; font-style: italic; }
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .wrap-sm { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; transition: background 0.3s, box-shadow 0.3s; }
+  #nav.scrolled { background: rgba(250,246,237,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--line); }
+  .nav-logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.5rem; letter-spacing: 0.18em; color: var(--cream); transition: color 0.3s; }
+  #nav.scrolled .nav-logo { color: var(--black); }
+  .btn-gold { background: var(--gold); color: var(--cream); padding: 10px 22px; border-radius: 6px; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; transition: opacity 0.15s, transform 0.15s; display: inline-block; }
+  .btn-gold:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  .hero { background: linear-gradient(160deg, #000 0%, #1a1a1a 100%); padding: 120px 24px 0; position: relative; overflow: hidden; color: var(--cream); }
+  .hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 50%, rgba(245,239,228,0.04) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(138,109,59,0.18) 0%, transparent 55%); }
+  .hero-inner { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; text-align: center; }
+  .kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 28px; }
+  .kicker::before { content: ''; width: 24px; height: 1px; background: var(--gold-light); }
+  .kicker::after { content: ''; width: 24px; height: 1px; background: var(--gold-light); }
+  .hero h1 { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(2.25rem, 4.5vw, 3.75rem); font-weight: 800; color: var(--cream); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 24px; }
+  .hero-sub { font-size: 1.125rem; color: rgba(245,239,228,0.78); max-width: 640px; margin: 0 auto 40px; line-height: 1.7; }
+  .hero-meta { display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; padding: 32px 0 48px; border-top: 1px solid rgba(245,239,228,0.14); margin-top: 48px; }
+  .meta-item { text-align: left; }
+  .meta-label { font-size: 0.7rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 4px; }
+  .meta-value { color: var(--cream); font-size: 0.9375rem; font-weight: 600; }
+
+  .intro { background: var(--cream); padding: 80px 0; }
+  .intro-block { background: var(--white); border: 1px solid var(--gold-light); padding: 48px; max-width: 820px; margin: 0 auto; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+  .intro-block h2 { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.75rem, 2.5vw, 2.125rem); color: var(--black); margin-bottom: 20px; font-weight: 800; }
+  .intro-block p { font-size: 1rem; color: var(--sub); margin-bottom: 14px; line-height: 1.75; }
+  .intro-block p:last-child { margin-bottom: 0; }
+  .sig { display: flex; align-items: center; gap: 14px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .sig-img { width: 48px; height: 48px; border-radius: 50%; background: var(--black); color: var(--cream); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 800; }
+  .sig-name { font-weight: 700; color: var(--black); font-size: 0.9375rem; }
+  .sig-role { font-size: 0.825rem; color: var(--sub2); }
+
+  section { padding: 80px 0; }
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  .eyebrow::after { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  .section-head h2 { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(2rem, 3vw, 2.75rem); font-weight: 800; color: var(--black); letter-spacing: -0.01em; line-height: 1.2; }
+  .section-head p { max-width: 620px; margin: 14px auto 0; color: var(--sub); font-size: 1.0625rem; }
+
+  .deliverables { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .deliv { background: var(--paper); border: 1px solid var(--line); padding: 32px 28px; transition: transform 0.15s, box-shadow 0.15s; }
+  .deliv:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  .deliv-num { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold); font-size: 1rem; font-weight: 800; margin-bottom: 10px; }
+  .deliv h3 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; color: var(--black); }
+  .deliv p { font-size: 0.9rem; color: var(--sub); line-height: 1.65; }
+
+  .ads-preview { background: var(--cream); }
+  .ads-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+  .ad-card { background: var(--white); border: 1px solid var(--gold-light); aspect-ratio: 1/1; display: flex; flex-direction: column; padding: 28px; }
+  .ad-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .ad-headline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.125rem; font-weight: 800; color: var(--black); margin-bottom: auto; line-height: 1.3; }
+  .ad-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--line); font-size: 0.8125rem; }
+  .ad-cta { color: var(--gold); font-weight: 700; }
+  .ad-brand { color: var(--black); font-weight: 800; font-family: 'Playfair Display', serif; letter-spacing: 0.18em; }
+  @media (max-width: 820px) { .ads-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 500px) { .ads-grid { grid-template-columns: 1fr; } .ad-card { aspect-ratio: auto; } }
+
+  .scripts { background: var(--paper); }
+  .script-card { border: 1px solid var(--line); padding: 36px; margin-bottom: 20px; background: var(--white); }
+  .script-num { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold); font-weight: 800; font-size: 1rem; margin-bottom: 8px; }
+  .script-card h3 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; color: var(--black); margin-bottom: 14px; font-weight: 800; }
+  .script-hook { background: var(--cream); border-left: 3px solid var(--gold); padding: 20px; font-size: 0.9375rem; color: var(--ink); line-height: 1.7; font-style: italic; }
+
+  .lp-preview { background: var(--cream); text-align: center; }
+  .lp-link-btn { display: inline-block; background: var(--black); color: var(--cream); padding: 16px 32px; border-radius: 6px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 32px; transition: background 0.15s; font-size: 0.875rem; }
+  .lp-link-btn:hover { background: var(--gold); }
+
+  .investment { background: var(--black); color: var(--cream); }
+  .investment .section-head h2 { color: var(--cream); }
+  .investment .section-head p { color: rgba(245,239,228,0.78); }
+  .invest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 0 auto; }
+  .invest-card { background: rgba(245,239,228,0.06); border: 1px solid rgba(245,239,228,0.18); padding: 36px 28px; }
+  .invest-card.featured { background: var(--gold); border-color: var(--gold); color: var(--black); }
+  .invest-card h3 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+  .invest-price { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.25rem; font-weight: 800; margin: 18px 0 6px; letter-spacing: -0.02em; }
+  .invest-sub { font-size: 0.8125rem; opacity: 0.8; margin-bottom: 20px; }
+  .invest-list { list-style: none; }
+  .invest-list li { padding: 8px 0; font-size: 0.9375rem; padding-left: 26px; position: relative; }
+  .invest-list li::before { content: '✓'; position: absolute; left: 0; font-weight: 700; }
+  .invest-card:not(.featured) .invest-list li::before { color: var(--gold); }
+  @media (max-width: 720px) { .invest-grid { grid-template-columns: 1fr; } }
+
+  .next-steps { background: var(--cream); text-align: center; padding: 100px 0; }
+  .next-steps h2 { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(2.25rem, 3.5vw, 3rem); color: var(--black); margin-bottom: 20px; font-weight: 800; letter-spacing: -0.01em; }
+  .next-steps p { color: var(--sub); font-size: 1.0625rem; max-width: 600px; margin: 0 auto 32px; }
+  .steps-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 48px auto 0; text-align: left; }
+  .stepx { background: var(--white); border: 1px solid var(--line); padding: 28px; }
+  .stepx-num { width: 36px; height: 36px; border: 1px solid var(--gold); color: var(--gold); font-family: 'Playfair Display', serif; font-style: italic; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 16px; border-radius: 50%; }
+  .stepx h4 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.125rem; margin-bottom: 8px; color: var(--black); font-weight: 800; }
+  .stepx p { font-size: 0.9rem; color: var(--sub); line-height: 1.65; margin: 0; }
+  @media (max-width: 720px) { .steps-list { grid-template-columns: 1fr; } }
+
+  .cta-final { background: var(--black); color: var(--cream); text-align: center; padding: 80px 0; }
+  .cta-final h2 { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(2rem, 3vw, 2.5rem); color: var(--cream); margin-bottom: 14px; font-weight: 800; }
+  .cta-final p { color: rgba(245,239,228,0.78); margin-bottom: 32px; font-size: 1.0625rem; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .btn-big { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--cream); padding: 18px 36px; border-radius: 6px; font-weight: 700; font-size: 0.9375rem; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity 0.15s, transform 0.15s; }
+  .btn-big:hover { opacity: 0.9; transform: translateY(-2px); }
+
+  footer { background: #0a0a0a; color: rgba(245,239,228,0.5); padding: 40px 0 24px; font-size: 0.8125rem; text-align: center; }
+  footer a { color: rgba(245,239,228,0.75); text-decoration: underline; }
+
+  @media (max-width: 720px) { section { padding: 60px 0; } }
+</style>
+</head>
+<body>
+
+<div id="nav">
+  <div class="nav-logo">OBA · Relight</div>
+  <a href="#next" class="btn-gold">Akkoord → kick-off</a>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Voorstel voor OBA</div>
+    <h1>Uw 35 jaar autoriteit. Eindelijk in Meta Ads.</h1>
+    <p class="hero-sub">Een volledige Meta Ads funnel voor OBA: 9 image ads, 3 video scripts, landing page en deze pitch page, allemaal ontworpen rond de Vlaamse zaakvoerder die na decennia bouwen klaar is om stil naar een verkoop te kijken.</p>
+    <div class="hero-meta">
+      <div class="meta-item"><div class="meta-label">Client</div><div class="meta-value">OBA · Kortrijk · Ranst</div></div>
+      <div class="meta-item"><div class="meta-label">Studio</div><div class="meta-value">Relight Marketing</div></div>
+      <div class="meta-item"><div class="meta-label">Doel</div><div class="meta-value">Structurele instroom verkoopklare zaakvoerders</div></div>
+      <div class="meta-item"><div class="meta-label">Timeline</div><div class="meta-value">14 dagen tot live</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="intro-block">
+      <h2>Beste Johan, beste Martijn,</h2>
+      <p>OBA heeft een asset die vandaag onderbenut wordt: 35 jaar autoriteit, 750+ afgeronde dossiers, founding-member status in BCFA en de Vlaamse beroepsvereniging. Die expertise zit in hoofden, dossiermappen en LinkedIn-announcements. Maar ze bereikt de 60-plus Vlaamse zaakvoerder die nu in stilte denkt aan exit meestal niet op het moment waarop de vraag in zijn hoofd zit.</p>
+      <p>Meta Ads zijn daar precies sterk in. De zaakvoerder die 's avonds op Facebook een expertise-ad ziet over "wat 750 verkopers ons geleerd hebben" wordt niet onmiddellijk klant, maar begint u te onthouden. Wanneer de beslissing drie, zes of twaalf maanden later serieus wordt, bent u top-of-mind. Dat is wat longevity + digitale aanwezigheid samen opleveren.</p>
+      <p>Op deze pagina ziet u exact wat we voor OBA zouden bouwen. Het visuele register volgt uw positioning (editorial, didot-serif, paper-cream, antique gold, black), de copy volgt uw stem (gemeten, feitelijk, peer-vocabulaire), en het verhaal volgt uw anchor: verkopen op uw voorwaarden.</p>
+      <div class="sig"><div class="sig-img">A</div><div><div class="sig-name">Arthur · Relight Marketing</div><div class="sig-role">Meta Ads Funnel Studio · arthur@relightmarketing.com</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Wat u krijgt</div>
+      <h2>Vijf deliverables, één verhaal.</h2>
+      <p>Research brief, image ads, video scripts, landing page, pitch page. Geen losse stukken die toevallig over OBA gaan. Eén doorlopende reis van eerste scroll tot ingepland kennismakingsgesprek.</p>
+    </div>
+    <div class="deliverables">
+      <div class="deliv"><div class="deliv-num">01</div><h3>Research Brief</h3><p>11-sectie document: avatar-taal, gap-analyse tegen Aquis/Atkinson/Dendooven, ad-selectie, brand-anchors, specifiek voor OBA's 35-jaar autoriteit.</p></div>
+      <div class="deliv"><div class="deliv-num">02</div><h3>9 Image Ad Prompts</h3><p>Editorial didot-serif esthetiek, paper-cream + antique gold palet. 3 prospecting, 4 trust, 2 conversion. Higgsfield.ai klaar.</p></div>
+      <div class="deliv"><div class="deliv-num">03</div><h3>3 Video Ad Scripts</h3><p>Volledige talking-head scripts voor Johan of Martijn. Hook, body, CTA + filming brief (wardrobe: marineblauw zonder das).</p></div>
+      <div class="deliv"><div class="deliv-num">04</div><h3>Landing Page</h3><p>Live HTML met 750+-proof-bar, 7-staps process, 6 FAQ's. Responsive, form-tracked, klaar voor Meta pixel.</p></div>
+      <div class="deliv"><div class="deliv-num">05</div><h3>Deze Pitch Page</h3><p>Deze pagina zelf. Deelbaar, publiceerbaar, geschreven in OBA-stem zodat het ook als brand-asset werkt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ads-preview">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sample creatives</div>
+      <h2>Zes van de negen ads.</h2>
+      <p>Elk ad hangt aan één moment in de journey van de senior zaakvoerder: pain, trust, conversion.</p>
+    </div>
+    <div class="ads-grid">
+      <div class="ad-card"><div class="ad-tag">Ad 1 · Education</div><div class="ad-headline">Wat 750 verkopers ons geleerd hebben.</div><div class="ad-footer"><span class="ad-cta">Ontdek hoe</span><span class="ad-brand">OBA</span></div></div>
+      <div class="ad-card"><div class="ad-tag">Ad 2 · Pain</div><div class="ad-headline">35 jaar gewerkt. En nu?</div><div class="ad-footer"><span class="ad-cta">Discreet gesprek</span><span class="ad-brand">OBA</span></div></div>
+      <div class="ad-card"><div class="ad-tag">Ad 3 · Owner</div><div class="ad-headline">Johan Coucke · Oprichter OBA · Sinds 1988.</div><div class="ad-footer"><span class="ad-cta">Discreet gesprek</span><span class="ad-brand">OBA</span></div></div>
+      <div class="ad-card"><div class="ad-tag">Ad 4 · Social Proof</div><div class="ad-headline">750+ afgeronde transacties · Founding member BCFA.</div><div class="ad-footer"><span class="ad-cta">Discreet gesprek</span><span class="ad-brand">OBA</span></div></div>
+      <div class="ad-card"><div class="ad-tag">Ad 8 · Free Offer</div><div class="ad-headline">Gratis Exit-Check. 10 vragen, 10 minuten.</div><div class="ad-footer"><span class="ad-cta">Discreet gesprek</span><span class="ad-brand">OBA</span></div></div>
+      <div class="ad-card"><div class="ad-tag">Ad 9 · Hero</div><div class="ad-headline">Verkopen op uw voorwaarden.</div><div class="ad-footer"><span class="ad-cta">Discreet gesprek</span><span class="ad-brand">OBA</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="scripts">
+  <div class="wrap-sm">
+    <div class="section-head">
+      <div class="eyebrow">Video scripts</div>
+      <h2>Drie scripts, drie invalshoeken.</h2>
+      <p>60-120 seconden elk. Talking-head door Johan of Martijn. Filming brief inclusief kleurenwardrobe en camera-setup.</p>
+    </div>
+    <div class="script-card"><div class="script-num">Script 01 · De Generatiewissel</div><h3>Pain-hook voor cold traffic</h3><p class="script-hook">U bent 62. Uw bedrijf loopt al 35 jaar. Uw kinderen willen of kunnen niet overnemen. Er is al eens iemand langsgekomen, maar u vertrouwde het niet. En u denkt: "Hoe stap ik hier eerlijk uit zonder dat half Vlaanderen het weet voor het rond is?"</p></div>
+    <div class="script-card"><div class="script-num">Script 02 · Wat 750 Verkopers Ons Leerden</div><h3>Authority-reframe voor middle-funnel</h3><p class="script-hook">In 35 jaar hebben wij 750 zaakvoerders begeleid bij de verkoop van hun bedrijf. Drie dingen komen telkens terug. Ik deel ze hier zonder reserve, want onze autoriteit ligt niet in het verzwijgen.</p></div>
+    <div class="script-card"><div class="script-num">Script 03 · Uw Voorwaarden, Onze Expertise</div><h3>Aspirational close voor conversie</h3><p class="script-hook">De meeste overname-adviseurs zullen u vertellen hoe u moet verkopen. Wij keren het om. Ú beslist. Wij leveren de expertise om uw beslissing waar te maken.</p></div>
+  </div>
+</section>
+
+<section class="lp-preview">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Landing page</div>
+      <h2>Uw live landing page.</h2>
+      <p>Volledige kopie die de ads sluit, inclusief 750+-authority strip, 6-pains agitation, diff-section, 7-staps process, 6 FAQ's en form.</p>
+    </div>
+    <a href="https://preview.relightmarketing.com/oba/landing-page" class="lp-link-btn">Open live landing page →</a>
+  </div>
+</section>
+
+<section class="investment">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Investering</div>
+      <h2>Eén prijs. Alles inbegrepen.</h2>
+      <p>Beide pakketten inclusief alle vijf deliverables. Kies hoe snel u live wilt.</p>
+    </div>
+    <div class="invest-grid">
+      <div class="invest-card"><h3>Lite</h3><div class="invest-price">€ 2.850</div><div class="invest-sub">Eenmalig, levertermijn 14 dagen</div><ul class="invest-list"><li>Research Brief (11 secties)</li><li>9 image ad prompts + 1 revisie</li><li>3 video scripts + filming brief</li><li>Landing page + pitch page live</li><li>Handover voor uw media buyer</li></ul></div>
+      <div class="invest-card featured"><h3>Full Launch</h3><div class="invest-price">€ 4.450</div><div class="invest-sub">Eenmalig, levertermijn 21 dagen</div><ul class="invest-list"><li>Alles in Lite</li><li>Meta Ads pixel setup op beide pages</li><li>Eerste maand campaign monitoring</li><li>Weekly reporting + A/B test voorstellen</li><li>Loom-feedback op eerste creatives</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="next-steps" id="next">
+  <div class="wrap">
+    <h2>Volgende stap.</h2>
+    <p>Drie stappen om OBA's funnel live te krijgen.</p>
+    <div class="steps-list">
+      <div class="stepx"><div class="stepx-num">1</div><h4>Akkoord per e-mail</h4><p>Antwoord op dit voorstel met "akkoord" en uw pakketkeuze. Kick-off formulier dezelfde dag in uw mailbox.</p></div>
+      <div class="stepx"><div class="stepx-num">2</div><h4>30 min brand call</h4><p>Korte afstemming met Johan of Martijn over tone, wardrobe, filming-locaties Kortrijk of Ranst.</p></div>
+      <div class="stepx"><div class="stepx-num">3</div><h4>14 dagen tot live</h4><p>Fasegewijze oplevering: Research Brief dag 3, ad prompts dag 7, scripts dag 10, live pages dag 14.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Eén gesprek.</h2>
+    <p>30 minuten. Geen druk. Gewoon een duidelijk beeld van wat deze funnel OBA oplevert.</p>
+    <a href="mailto:arthur@relightmarketing.com?subject=OBA%20Funnel%20Voorstel" class="btn-big">Plan een gesprek met Arthur →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Relight Marketing · Meta Ads Funnel Studio · <a href="mailto:arthur@relightmarketing.com">arthur@relightmarketing.com</a></p>
+    <p>Deze pagina is speciaal voor OBA opgesteld. Inhoud vertrouwelijk.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { if (window.scrollY > 80) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); });
+</script>
+</body>
+</html>
