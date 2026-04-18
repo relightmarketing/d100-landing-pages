@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Certifin biedt externe CFO-diensten en M&A-advies voor Vlaamse KMO's. Big4-expertise, flexibel vanaf 1 dag per maand. Plan een vrijblijvend gesprek." />
+  <title>Certifin — Externe CFO en M&A-advies voor Vlaamse KMO's</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES
+    ============================================================ */
+    :root {
+      --bg:          #ffffff;
+      --surface:     #fcf5f3;
+      --accent:      #ea5b13;
+      --accent-dark: #c74c0e;
+      --navy:        #191825;
+      --navy-deep:   #0a090f;
+      --text:        #818080;
+      --text-muted:  rgba(129,128,128,0.7);
+      --line:        #e8e8e8;
+      --font-head:   'Open Sans', sans-serif;
+      --font-body:   'Open Sans', sans-serif;
+      --r:           10px;
+      --nav-h:       56px;
+    }
+
+    /* ============================================================
+       RESET + BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font-body); font-size: 1.0625rem; color: var(--text); background: var(--bg); line-height: 1.7; overflow-x: hidden; padding-bottom: 76px; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       LAYOUT HELPERS
+    ============================================================ */
+    .container { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 16px; }
+    .section { padding: 48px 0; }
+    .section--surface { background: var(--surface); }
+    .section--navy { background: var(--navy); }
+    .pre-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ============================================================
+       BUTTON
+    ============================================================ */
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+      text-align: center;
+      min-height: 48px;
+    }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn--sm { width: auto; padding: 8px 14px; font-size: 0.72rem; min-height: 36px; white-space: nowrap; }
+    .btn--sm-desk { display: none; }
+    .micro-copy { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 0.6rem; text-align: center; }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      padding: 0 12px;
+      gap: 8px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .nav-logo {
+      height: 24px;
+      max-width: 140px;
+      flex-shrink: 1;
+      min-width: 0;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .nav-cta-desktop { display: none; }
+
+    /* ============================================================
+       HERO — IMAGE VARIANT (two-column)
+    ============================================================ */
+    .hero {
+      background: var(--navy-deep);
+      padding: 80px 0 48px;
+      margin-top: var(--nav-h);
+    }
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .hero-content {}
+    .hero-pretitle {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      background: rgba(234,91,19,0.12);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-bottom: 1.1rem;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(1.75rem, 5.5vw, 3.25rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 1.1rem;
+    }
+    .hero h1 .accent-word { color: var(--accent); }
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1.75rem;
+      line-height: 1.7;
+      max-width: 520px;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 1.75rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 5px 12px;
+    }
+    .badge svg { flex-shrink: 0; }
+    .hero-cta { display: flex; flex-direction: column; }
+    .hero-image {
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      display: block;
+    }
+
+    /* ============================================================
+       PROOF BAR (below hero)
+    ============================================================ */
+    .proof-bar {
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0;
+    }
+    .proof-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      text-align: center;
+    }
+    .proof-num {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+      font-family: var(--font-head);
+    }
+    .proof-label {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin-top: 2px;
+    }
+
+    /* ============================================================
+       CLIENT LOGOS STRIP
+    ============================================================ */
+    .logos-section {
+      padding: 28px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+    .logos-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+    .logos-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .logos-row img {
+      height: 38px;
+      opacity: 0.6;
+      filter: grayscale(100%);
+      transition: opacity 0.2s, filter 0.2s;
+      object-fit: contain;
+    }
+    .logos-row img:hover { opacity: 1; filter: none; }
+
+    /* ============================================================
+       SECTION 2 — PAIN AGITATION
+    ============================================================ */
+    .pain-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .pain-grid__img { display: none; }
+    .pain-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 1.75rem;
+    }
+    .pain-list {
+      list-style: none;
+      display: grid;
+      gap: 0.8rem;
+      margin-bottom: 1.75rem;
+    }
+    .pain-list li {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem 1.25rem 1rem 3rem;
+      position: relative;
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+    .pain-list li::before {
+      content: '';
+      position: absolute;
+      left: 1.2rem;
+      top: 1.25rem;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+    .pain-list li strong { color: var(--navy); }
+    .bridge {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      font-size: 0.98rem;
+      line-height: 1.75;
+    }
+    .bridge strong { color: var(--accent); }
+
+    /* ============================================================
+       ICON-STRIP (visual break with icons)
+    ============================================================ */
+    .icon-strip {
+      padding: 32px 0;
+      background: var(--navy);
+    }
+    .icon-strip__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .icon-strip__item {
+      text-align: center;
+    }
+    .icon-strip__icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(234,91,19,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.6rem;
+    }
+    .icon-strip__icon svg { width: 22px; height: 22px; }
+    .icon-strip__label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ============================================================
+       SECTION 3 — SOLUTION INTRO
+    ============================================================ */
+    .solution-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .solution-text {}
+    .solution-image {
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+    }
+    .solution-image img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      display: block;
+    }
+
+    /* ============================================================
+       MINI STAT BAR
+    ============================================================ */
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      background: var(--navy);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+    .mini-stat {
+      padding: 1rem 0.75rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .mini-stat:nth-child(2n) { border-right: none; }
+    .mini-stat__num {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .mini-stat__label {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ============================================================
+       SECTION 4 — OFFER DETAIL (services)
+    ============================================================ */
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .step-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+    }
+    .step-card__img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .step-card__img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-card__img-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.3;
+    }
+    .step-card__body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .step-num {
+      font-family: var(--font-head);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+    .step-name {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+    .step-desc {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .inclusions {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      margin: 1.5rem 0;
+    }
+    .inclusions li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.93rem;
+      color: var(--text);
+    }
+    .inclusions li::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.5 9l3 3 6-6' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-top: 2px;
+    }
+    .timeline-callout {
+      border-left: 3px solid var(--accent);
+      padding: 0.85rem 1.25rem;
+      background: var(--surface);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.93rem;
+      color: var(--navy);
+      font-weight: 600;
+      margin: 1.5rem 0;
+    }
+
+    /* ============================================================
+       SECTION 5 — SOCIAL PROOF
+    ============================================================ */
+    .case-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .case-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-top: 3px solid var(--accent);
+    }
+    .stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 0.85rem;
+    }
+    .stars svg { width: 16px; height: 16px; }
+    .case-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .case-result {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .case-desc {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .creds-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      padding: 1.5rem 0;
+    }
+    .creds-bar img {
+      height: 44px;
+      opacity: 0.7;
+      filter: grayscale(100%);
+      transition: opacity 0.2s, filter 0.2s;
+      object-fit: contain;
+    }
+    .creds-bar img:hover { opacity: 1; filter: none; }
+
+    /* ============================================================
+       TEAM SECTION
+    ============================================================ */
+    .team-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .team-image {
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+    }
+    .team-image img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      display: block;
+    }
+    .team-copy {}
+    .team-bullets {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 1.25rem;
+    }
+    .team-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.93rem;
+      color: var(--text);
+    }
+    .team-bullets li::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.5 9l3 3 6-6' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-top: 2px;
+    }
+
+    /* ============================================================
+       SECTION 7 — FORM
+    ============================================================ */
+    .form-section {
+      background: var(--surface);
+    }
+    .form-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .form-what-happens {
+      display: grid;
+      gap: 0.65rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .form-what-happens li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .form-what-happens li::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.5 9l3 3 6-6' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-top: 2px;
+    }
+    .form-friction { font-size: 0.76rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--navy);
+      background: #fff;
+      border: 1.5px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 16px;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .form-submit-wrap { margin-top: 1.5rem; }
+    .form-submit-wrap .btn { min-height: 52px; font-size: 1.05rem; }
+    .form-privacy {
+      font-size: 0.71rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    /* ============================================================
+       SECTION 8 — FAQ
+    ============================================================ */
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item:first-child { border-top: 1px solid var(--line); }
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      text-align: left;
+      font-family: var(--font-head);
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--navy);
+      gap: 12px;
+    }
+    .faq-btn::after { content: '+'; color: var(--accent); font-size: 1.5rem; flex-shrink: 0; }
+    .faq-item.open .faq-btn::after { content: '−'; }
+    .faq-answer { display: none; padding-bottom: 18px; color: var(--text); line-height: 1.75; font-size: 0.95rem; }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ============================================================
+       SECTION 9 — FINAL CTA
+    ============================================================ */
+    .final-cta {
+      background: var(--navy-deep);
+      text-align: center;
+      padding: 60px 0;
+    }
+    .final-cta h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .final-cta p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 540px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .final-cta .btn { max-width: 400px; }
+    .sub-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 1.25rem;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--navy);
+      padding: 28px 16px;
+      text-align: center;
+    }
+    .footer-logo { height: 28px; margin: 0 auto 1rem; }
+    .footer p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+    /* ============================================================
+       MOBILE STICKY CTA BAR
+    ============================================================ */
+    .mobile-cta {
+      display: flex;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 99;
+      padding: 10px 12px;
+      gap: 0;
+      align-items: center;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+      border-top: 1px solid var(--line);
+    }
+    .mobile-cta .btn { flex: 1; padding: 13px 12px; font-size: 0.83rem; text-align: center; }
+
+    /* ============================================================
+       DIVIDER ICON ROW
+    ============================================================ */
+    .divider-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 1.75rem 0;
+    }
+    .divider-row hr { flex: 1; border: none; border-top: 1px solid var(--line); }
+    .divider-row span { font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* ============================================================
+       TABLET+ (min-width: 641px)
+    ============================================================ */
+    @media (min-width: 641px) {
+      :root { --nav-h: 64px; }
+      body { padding-bottom: 0; }
+
+      .container { padding: 0 24px; }
+      .section { padding: 64px 0; }
+
+      .btn { width: auto; }
+      .btn--sm-desk { display: inline-flex; align-items: center; }
+
+      .nav-inner { height: 64px; padding: 0 24px; gap: 12px; }
+      .nav-logo { height: 32px; max-width: none; flex-shrink: 0; }
+      .nav-cta-mobile { display: none; }
+      .nav-cta-desktop { display: inline-flex; align-items: center; padding: 10px 20px; font-size: 0.82rem; }
+
+      .hero { padding: 96px 0 64px; }
+      .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
+      .hero h1 { font-size: clamp(2rem, 4vw, 3rem); }
+      .micro-copy { text-align: left; }
+
+      .proof-items { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+      .proof-num { font-size: 1.5rem; }
+
+      .pain-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      .pain-grid__img {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        aspect-ratio: 3/4;
+        position: sticky;
+        top: calc(var(--nav-h) + 2rem);
+      }
+
+      .solution-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .mini-stats {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .mini-stat { border-bottom: none; }
+      .mini-stat:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.1); }
+      .mini-stat:last-child { border-right: none; }
+      .mini-stat__num { font-size: clamp(1.3rem, 2.5vw, 1.7rem); }
+
+      .steps { grid-template-columns: repeat(2, 1fr); }
+
+      .case-cards { grid-template-columns: repeat(2, 1fr); }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .form-row-2 { grid-template-columns: 1fr 1fr; }
+
+      .icon-strip__grid { grid-template-columns: repeat(4, 1fr); }
+
+      .mobile-cta { display: none; }
+    }
+
+    /* ============================================================
+       DESKTOP (min-width: 961px)
+    ============================================================ */
+    @media (min-width: 961px) {
+      :root { --nav-h: 72px; }
+      .container { padding: 0 32px; }
+      .section { padding: 80px 0; }
+
+      .nav-inner { height: 72px; padding: 0 32px; }
+      .nav-logo { height: 40px; }
+
+      .hero { padding: 110px 0 80px; }
+
+      .steps { grid-template-columns: repeat(4, 1fr); }
+      .case-cards { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV BAR
+  ============================================================ -->
+  <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
+    <div class="nav-inner">
+      <a href="#" aria-label="Certifin homepage">
+        <!-- Logo has brand colors — display as-is, no filter -->
+        <img
+          class="nav-logo"
+          src="https://www.certifin.be/wp-content/uploads/2023/11/newlogo.svg"
+          alt="Certifin"
+          loading="eager"
+        />
+      </a>
+      <div class="nav-right">
+        <!-- Mobile: short label -->
+        <a href="#form" class="btn btn--sm nav-cta-mobile">Gesprek plannen</a>
+        <!-- Tablet+: full label -->
+        <a href="#form" class="btn btn--sm nav-cta-desktop">Plan een vrijblijvend gesprek</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       SECTION 1 — HERO (Image Variant)
+  ============================================================ -->
+  <section class="hero" aria-label="Hero sectie">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left: copy -->
+        <div class="hero-content">
+          <span class="hero-pretitle">Externe CFO en M&amp;A-advies voor Vlaamse KMO's</span>
+          <h1>
+            Maximale waardecreatie<br />
+            voor u en <span class="accent-word">uw KMO</span>
+          </h1>
+          <p class="hero-sub">
+            Een Big4-partner aan uw tafel, flexibel vanaf 1 dag per maand. Van dagelijkse financiele sturing tot de verkoop of overdracht van uw bedrijf.
+          </p>
+
+          <!-- Trust badges -->
+          <div class="hero-badges">
+            <span class="badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              10 ex-Big4 partners
+            </span>
+            <span class="badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              8 kantoren in Vlaanderen
+            </span>
+            <span class="badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              50+ referentieklanten
+            </span>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#form" class="btn">Plan een vrijblijvend gesprek</a>
+            <p class="micro-copy">Geen verplichtingen. Geen verkoopgesprek.</p>
+          </div>
+        </div>
+
+        <!-- Right: team image -->
+        <div class="hero-image">
+          <!-- Team photo from certifin.be -->
+          <img
+            src="https://www.certifin.be/wp-content/uploads/2026/04/team-certifin.jpg"
+            alt="Het Certifin team van 10 ex-Big4 partners"
+            loading="eager"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROOF BAR (immediately below hero)
+  ============================================================ -->
+  <div class="proof-bar">
+    <div class="container">
+      <div class="proof-items">
+        <div>
+          <div class="proof-num">50+</div>
+          <div class="proof-label">Referentieklanten</div>
+        </div>
+        <div>
+          <div class="proof-num">8</div>
+          <div class="proof-label">Kantoren in Vlaanderen</div>
+        </div>
+        <div>
+          <div class="proof-num">10</div>
+          <div class="proof-label">Ex-Big4 partners</div>
+        </div>
+        <div>
+          <div class="proof-num">1 dag</div>
+          <div class="proof-label">Per maand, flexibel op maat</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CLIENT LOGOS STRIP
+  ============================================================ -->
+  <div class="logos-section">
+    <div class="container">
+      <p class="logos-label">Vertrouwd door Vlaamse KMO's waaronder</p>
+      <div class="logos-row">
+        <img
+          src="https://www.certifin.be/wp-content/uploads/2023/11/checkmade.png"
+          alt="Checkmade"
+          loading="lazy"
+        />
+        <img
+          src="https://www.certifin.be/wp-content/uploads/2023/11/balls-and-glory.png"
+          alt="Balls &amp; Glory"
+          loading="lazy"
+        />
+        <img
+          src="https://www.certifin.be/wp-content/uploads/2023/11/davo.png"
+          alt="Davo"
+          loading="lazy"
+        />
+        <img
+          src="https://www.certifin.be/wp-content/uploads/2023/11/iusj25iyu1c-jpg.webp"
+          alt="Certifin referentieklant"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION 2 — PAIN AGITATION
+  ============================================================ -->
+  <section class="section section--surface" aria-label="Herkent u dit?">
+    <div class="container">
+      <div class="pain-grid">
+
+        <!-- Left: copy -->
+        <div class="pain-copy">
+          <span class="pre-label">Klinkt dit bekend?</span>
+          <h2 class="pain-title">"Ik neem strategische beslissingen op buikgevoel"</h2>
+
+          <ul class="pain-list">
+            <li><strong>Mijn boekhouder geeft me de cijfers</strong>, maar ik weet niet wat ik ermee moet doen in de praktijk.</li>
+            <li><strong>We groeien te snel</strong> en ik heb geen zicht meer op de cashflow of de financiele structuur.</li>
+            <li><strong>Een voltijdse CFO is te duur</strong> voor een bedrijf van onze omvang, maar ik heb wel CFO-niveau expertise nodig.</li>
+            <li><strong>Ik wil mijn bedrijf verkopen of overnemen</strong>, maar ik heb geen idee wat het waard is of hoe ik het aanpak.</li>
+            <li><strong>Ik lig wakker van de financiele structuur</strong> van mijn bedrijf: is die wel fiscaal optimaal?</li>
+            <li><strong>Bij de Big4 ben je een nummer</strong>: te groot voor persoonlijke aandacht, te duur voor een KMO.</li>
+          </ul>
+
+          <div class="bridge">
+            U bouwt een bedrijf met tientallen of honderden mensen. De grootste financiele beslissingen neemt u alleen, zonder iemand aan tafel die uw situatie al tientallen keren heeft meegemaakt. <strong>Dat is niet hoe het hoeft te zijn.</strong>
+          </div>
+        </div>
+
+        <!-- Right: image (hidden on mobile, shown tablet+) -->
+        <img
+          class="pain-grid__img"
+          src="https://www.certifin.be/wp-content/uploads/2026/02/1771863226692.jpeg"
+          alt="Certifin M&A advies aan tafel"
+          loading="lazy"
+        />
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ICON STRIP — VISUAL BREAK
+  ============================================================ -->
+  <div class="icon-strip" aria-hidden="true">
+    <div class="container">
+      <div class="icon-strip__grid">
+        <div class="icon-strip__item">
+          <div class="icon-strip__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="icon-strip__label">Externe CFO</div>
+        </div>
+        <div class="icon-strip__item">
+          <div class="icon-strip__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          </div>
+          <div class="icon-strip__label">Overnames</div>
+        </div>
+        <div class="icon-strip__item">
+          <div class="icon-strip__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div class="icon-strip__label">Verkoop en exit</div>
+        </div>
+        <div class="icon-strip__item">
+          <div class="icon-strip__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="icon-strip__label">Familiale overdracht</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION 3 — SOLUTION INTRO
+  ============================================================ -->
+  <section class="section" aria-label="De oplossing">
+    <div class="container">
+      <div class="solution-grid">
+
+        <!-- Left: copy -->
+        <div class="solution-text">
+          <span class="pre-label">Hoe Certifin het aanpakt</span>
+          <h2 class="section-title">Uw Big4 CFO, vanaf 1 dag per maand</h2>
+          <p>
+            Uw accountant doet zijn werk goed: hij sluit de boeken, verwerkt uw belastingen en houdt u compliant. Maar een accountant kijkt achteruit. Wie kijkt vooruit met u? Wie modelleert wat er met uw cashflow gebeurt als u die nieuwe opdracht aanneemt? Wie zit tegenover een potentiele koper en weet precies wat uw bedrijf waard is?
+          </p>
+          <p style="margin-top: 1rem;">
+            Dat is wat een CFO doet. Bij Certifin brengen we 10 partners met een Big4- en bankachtergrond rechtstreeks naar Vlaamse KMO's. On-site, aan uw tafel, op maat van uw bedrijf en uw budget. Geen interim-manager die na drie maanden vertrekt. Geen consultant die een rapport aflevert en verdwijnt. Een onafhankelijk financieel klankbord dat naast u staat, doorheen de volledige levenscyclus van uw KMO.
+          </p>
+
+          <!-- Mini stat bar -->
+          <div class="mini-stats" role="list">
+            <div class="mini-stat" role="listitem">
+              <div class="mini-stat__num">50+</div>
+              <div class="mini-stat__label">Referentieklanten</div>
+            </div>
+            <div class="mini-stat" role="listitem">
+              <div class="mini-stat__num">8</div>
+              <div class="mini-stat__label">Kantoren</div>
+            </div>
+            <div class="mini-stat" role="listitem">
+              <div class="mini-stat__num">10</div>
+              <div class="mini-stat__label">Ex-Big4 partners</div>
+            </div>
+            <div class="mini-stat" role="listitem">
+              <div class="mini-stat__num">1 dag</div>
+              <div class="mini-stat__label">Flexibel per maand</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: image -->
+        <div class="solution-image">
+          <img
+            src="https://www.certifin.be/wp-content/uploads/2026/02/1770201112041.jpeg"
+            alt="Certifin partner in gesprek met KMO-ondernemer"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4 — OFFER DETAIL (Services)
+  ============================================================ -->
+  <section class="section section--surface" aria-label="Onze diensten">
+    <div class="container">
+      <span class="pre-label">Wat we doen</span>
+      <h2 class="section-title">Vier diensten, een partner aan uw tafel</h2>
+      <p style="max-width:600px; margin-bottom:2rem;">
+        Of u nu financiele rust zoekt in uw dagelijkse werking, een overname begeleidt, uw bedrijf verkoopt of de volgende generatie klaarmaakt: wij zijn er op elk moment van de levenscyclus van uw KMO.
+      </p>
+
+      <!-- Service cards -->
+      <div class="steps">
+
+        <!-- Service 1: Externe CFO -->
+        <article class="step-card">
+          <div class="step-card__img-placeholder">
+            <!-- Image: Certifin partner werkt on-site bij klant, moderne kantooromgeving -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="step-card__body">
+            <div class="step-num">Dienst 01</div>
+            <h3 class="step-name">Externe CFO</h3>
+            <p class="step-desc">
+              Een toegewezen Big4-partner werkt on-site bij u, flexibel vanaf 1 dag per maand. Cashflowplanning, financiele rapportering, fiscale optimalisatie: uw bedrijf krijgt het zelfde CFO-niveau als een beursgenoteerde onderneming.
+            </p>
+          </div>
+        </article>
+
+        <!-- Service 2: Overname -->
+        <article class="step-card">
+          <div class="step-card__img-placeholder">
+            <!-- Image: Handdruk na succesvolle overnamedeals, boardroom sfeer -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          </div>
+          <div class="step-card__body">
+            <div class="step-num">Dienst 02</div>
+            <h3 class="step-name">Overname (M&amp;A)</h3>
+            <p class="step-desc">
+              Van targetidentificatie tot closing: wij begeleiden u door het volledige overnameproces. Grondige due diligence, een sterke onderhandelingspositie en een gestructureerde deal. Zoals we deden bij de overname van Kennedy TTS door Kuijpers Group.
+            </p>
+          </div>
+        </article>
+
+        <!-- Service 3: Verkoop / exit -->
+        <article class="step-card">
+          <div class="step-card__img-placeholder">
+            <!-- Image: Ondernemer tekent dealcontract, boardroom met ramen -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div class="step-card__body">
+            <div class="step-num">Dienst 03</div>
+            <h3 class="step-name">Verkoop en exit</h3>
+            <p class="step-desc">
+              De verkoop van uw bedrijf is de belangrijkste deal van uw leven. Wij bereiden u voor lang voor het eerste gesprek met een koper: juiste waardering, een schone financiele structuur en maximale onderhandelingsruimte. Zoals we begeleidden bij de verkoop van Groep Acropol aan het Duitse Meva.
+            </p>
+          </div>
+        </article>
+
+        <!-- Service 4: Familiale overdracht -->
+        <article class="step-card">
+          <div class="step-card__img-placeholder">
+            <!-- Image: Familiegesprek over bedrijfsoverdracht, warm kantoor -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="step-card__body">
+            <div class="step-num">Dienst 04</div>
+            <h3 class="step-name">Familiale overdracht</h3>
+            <p class="step-desc">
+              Generaties werk overdragen aan de volgende generatie vraagt meer dan een juridisch document. Wij begeleiden het volledige successieproces: fiscale planning, aandeelhoudersstructuur en een overdracht die de familierelaties intact houdt. Zoals bij SPRINGPRESS in 2026.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- What's included -->
+      <div class="divider-row"><hr /><span>Wat u krijgt</span><hr /></div>
+      <ul class="inclusions">
+        <li>Een vaste partner met Big4-achtergrond die uw bedrijf door en door kent</li>
+        <li>On-site aanwezigheid: flexibel inzetbaar vanaf 1 dag per maand</li>
+        <li>Financiele rapportering, cashflowbeheer en fiscale optimalisatie</li>
+        <li>M&amp;A-ondersteuning van eerste analyse tot ondertekening</li>
+        <li>Waardebepaling van uw bedrijf op elk moment</li>
+        <li>Kruisbestuiving: uw partner brengt inzichten mee van 50+ andere KMO-engagementen</li>
+        <li>Geen vaste kosten van een full-time CFO: u betaalt alleen voor de tijd die u nodig heeft</li>
+      </ul>
+
+      <div class="timeline-callout">
+        Vanaf het eerste gesprek wordt u gekoppeld aan een toegewezen partner. Flexibel op te schalen of af te bouwen naargelang de behoeften van uw bedrijf.
+      </div>
+
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="#form" class="btn" style="max-width:400px; display:inline-block;">Plan een vrijblijvend gesprek</a>
+        <p class="micro-copy" style="color:var(--text-muted); margin-top:0.5rem;">Geen verplichtingen. Geen verkoopgesprek.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5 — SOCIAL PROOF
+  ============================================================ -->
+  <section class="section" aria-label="Referenties en klanten">
+    <div class="container">
+      <span class="pre-label">Bewezen resultaten</span>
+      <h2 class="section-title">50+ KMO's in Vlaanderen gingen u voor</h2>
+
+      <!-- Case cards -->
+      <div class="case-cards">
+
+        <article class="case-card">
+          <div class="stars" aria-label="5 van 5 sterren">
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <div class="case-label">Familiale overdracht</div>
+          <div class="case-result">SPRINGPRESS — succesvolle familiale opvolging</div>
+          <p class="case-desc">
+            Een familiedrukkeriij met generaties geschiedenis. Certifin begeleidde het volledige overdrachtsproces: van aandeelhoudersstructuur tot fiscale optimalisatie. Aangekondigd februari 2026.
+          </p>
+        </article>
+
+        <article class="case-card">
+          <div class="stars" aria-label="5 van 5 sterren">
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <div class="case-label">Overname (M&A)</div>
+          <div class="case-result">Kennedy TTS — overname door Kuijpers Group</div>
+          <p class="case-desc">
+            Certifin begeleidde Kuijpers Group bij de volledige overname van Kennedy TTS: due diligence, structurering en closing. Transactie afgerond in februari 2026.
+          </p>
+        </article>
+
+        <article class="case-card">
+          <div class="stars" aria-label="5 van 5 sterren">
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#f59e0b"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <div class="case-label">Verkoop / exit</div>
+          <div class="case-result">Groep Acropol — cross-border verkoop aan Duits Meva</div>
+          <p class="case-desc">
+            Certifin begeleide de Belgische Groep Acropol bij haar verkoop aan het Duitse Meva: grensoverschrijdende due diligence, waardering en successvolle closing.
+          </p>
+        </article>
+
+      </div>
+
+      <!-- Advisory board mentions -->
+      <div style="background:var(--surface); border-radius:10px; padding:1.5rem 1.75rem; margin:2rem 0;">
+        <p class="pre-label" style="margin-bottom:0.5rem;">Bestuursmandaten</p>
+        <p style="font-size:0.93rem; color:var(--text);">
+          Certifin-partners zetelen als onafhankelijk bestuurder bij Trafiroad Groep, Graphius Groep en Just a Stone Groep, naast klanten als Hof Van Cleve, Balls &amp; Glory, Gosselin Group en Volvo Willaert.
+        </p>
+      </div>
+
+      <!-- Credential logos bar -->
+      <div class="creds-bar">
+        <img
+          src="https://www.certifin.be/wp-content/uploads/2023/11/checkmade.png"
+          alt="Checkmade"
+          loading="lazy"
+        />
+        <img
+          src="https://www.certifin.be/wp-content/uploads/2023/11/balls-and-glory.png"
+          alt="Balls &amp; Glory"
+          loading="lazy"
+        />
+        <img
+          src="https://www.certifin.be/wp-content/uploads/2023/11/davo.png"
+          alt="Davo"
+          loading="lazy"
+        />
+        <img
+          src="https://www.certifin.be/wp-content/uploads/2026/02/certifin.jpeg"
+          alt="Certifin transactiereferentie"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TEAM SECTION (Founder / Brand)
+  ============================================================ -->
+  <section class="section section--surface" aria-label="Het Certifin team">
+    <div class="container">
+      <div class="team-grid">
+
+        <!-- Image -->
+        <div class="team-image">
+          <img
+            src="https://www.certifin.be/wp-content/uploads/2026/04/team-certifin.jpg"
+            alt="Het Certifin team van 10 ex-Big4 partners en senior managers"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Copy -->
+        <div class="team-copy">
+          <span class="pre-label">Over Certifin</span>
+          <h2 class="section-title">10 partners. Big4-achtergrond. Vlaamse KMO-focus.</h2>
+          <p>
+            Jan Moens richtte Certifin op vanuit een eenvoudige overtuiging: Vlaamse KMO-ondernemers verdienen dezelfde kwaliteit van financieel partnerschap als grote multinationals. Niet via een duur Big4-kantoor waar u een nummer bent. Maar via een onafhankelijk, flexibel team dat on-site bij u werkt en uw taal spreekt.
+          </p>
+          <p style="margin-top: 0.85rem;">
+            Elk Certifin-teamlid bouwde zijn expertise op bij gerenommeerde Big4-firma's, investeringsfondsen of banken. Vandaag werken zij exclusief voor Vlaamse KMO's, vanuit 8 kantoren verspreid over Vlaanderen.
+          </p>
+          <ul class="team-bullets" style="margin-top:1.5rem;">
+            <li>10 partners en senior managers, allemaal ex-Big4 of bank</li>
+            <li>8 kantoren verspreid over Vlaanderen</li>
+            <li>50+ actieve referentieklanten in alle sectoren</li>
+            <li>Volledig onafhankelijk: geen productverkoop, geen bijbedoelingen</li>
+            <li>Actief in alle fasen van de KMO-levenscyclus: groei, M&amp;A en overdracht</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 7 — LEAD FILTER FORM
+  ============================================================ -->
+  <section class="section form-section" id="form" aria-label="Plan een gesprek">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:2rem;">
+        <span class="pre-label">Klaar om het gesprek aan te gaan?</span>
+        <h2 class="section-title" style="margin:0 auto 0.75rem; max-width:600px;">Plan een vrijblijvend gesprek met een Certifin-partner</h2>
+        <p style="max-width:520px; margin:0 auto; font-size:0.97rem;">
+          Geen verkoopgesprek. Geen verplichtingen. Een eerlijk gesprek over uw situatie en of wij daar meerwaarde kunnen bieden.
+        </p>
+      </div>
+
+      <div class="form-box">
+        <ul class="form-what-happens">
+          <li>U ontvangt een bevestiging binnen 1 werkdag</li>
+          <li>Een toegewezen Certifin-partner neemt contact op voor een kennismaking van 30 minuten</li>
+          <li>We bekijken uw situatie en vertellen u eerlijk of en hoe we kunnen helpen</li>
+        </ul>
+
+        <p class="form-friction">Duurt minder dan 2 minuten om in te vullen.</p>
+
+        <!--
+          TALLY SETUP:
+          1. Ga naar tally.so en maak een gratis account aan.
+          2. Maak een nieuw formulier en kopieer de embed-URL.
+          3. Vervang "placeholder" hieronder door uw Tally formulier-ID.
+        -->
+        <iframe
+          data-tally-src="https://tally.so/embed/placeholder"
+          width="100%"
+          height="420"
+          frameborder="0"
+          title="Contactformulier Certifin"
+          style="border-radius:8px; display:block;"
+        ></iframe>
+        <script>
+          var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+        </script>
+
+        <!-- Fallback native form (shown when Tally embed is not configured) -->
+        <noscript>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="margin-top:1rem;">
+            <div class="form-group">
+              <label for="name">Naam en voornaam</label>
+              <input type="text" id="name" name="name" placeholder="Jan Peeters" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" placeholder="jan@bedrijf.be" required />
+            </div>
+            <div class="form-group">
+              <label for="bedrijf">Bedrijfsnaam</label>
+              <input type="text" id="bedrijf" name="bedrijf" placeholder="Naam van uw bedrijf" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Waarvoor zoekt u advies?</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Kies een dienst</option>
+                <option value="externe-cfo">Externe CFO (financieel management)</option>
+                <option value="overname">Overname begeleiden (M&amp;A)</option>
+                <option value="verkoop">Verkoop of exit van mijn bedrijf</option>
+                <option value="familiale-overdracht">Familiale overdracht</option>
+                <option value="weet-nog-niet">Nog niet zeker, wil eerst praten</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="timing">Wanneer wilt u starten?</label>
+              <select id="timing" name="timing" required>
+                <option value="" disabled selected>Selecteer een optie</option>
+                <option value="zo-snel-mogelijk">Zo snel mogelijk</option>
+                <option value="1-3-maanden">Binnen 1-3 maanden</option>
+                <option value="3-6-maanden">Binnen 3-6 maanden</option>
+                <option value="6-12-maanden">Binnen 6-12 maanden</option>
+                <option value="orienterend">Alleen orienteren voor nu</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="omzet">Jaarlijkse omzet van uw bedrijf</label>
+              <select id="omzet" name="omzet" required>
+                <option value="" disabled selected>Selecteer een omzetklasse</option>
+                <option value="under-1m">Minder dan 1 miljoen euro</option>
+                <option value="1-5m">1 tot 5 miljoen euro</option>
+                <option value="5-20m">5 tot 20 miljoen euro</option>
+                <option value="20-50m">20 tot 50 miljoen euro</option>
+                <option value="50m-plus">Meer dan 50 miljoen euro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="vraag">Wat is uw voornaamste financiele uitdaging op dit moment?</label>
+              <textarea id="vraag" name="vraag" placeholder="Beschrijf kort uw situatie..."></textarea>
+            </div>
+            <div class="form-submit-wrap">
+              <button type="submit" class="btn">Plan een vrijblijvend gesprek</button>
+            </div>
+            <p class="form-privacy">Geen spam. Geen verplichtingen. Uw gegevens worden vertrouwelijk behandeld.</p>
+          </form>
+        </noscript>
+
+        <p class="form-privacy" style="margin-top:1.25rem;">Geen spam. Geen verplichtingen. Uw gegevens worden vertrouwelijk behandeld.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 8 — FAQ
+  ============================================================ -->
+  <section class="section" aria-label="Veelgestelde vragen">
+    <div class="container">
+      <span class="pre-label">Veelgestelde vragen</span>
+      <h2 class="section-title" style="text-align:center; margin-bottom:2.5rem;">Wat ondernemers ons vragen voor ze starten</h2>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-btn" aria-expanded="false">
+            Wat als die externe CFO mijn bedrijf niet goed genoeg kent?
+          </button>
+          <div class="faq-answer">
+            Dat is de meest gestelde vraag. En terecht. Daarom werkt uw toegewezen Certifin-partner on-site bij u: niet vanop afstand, niet via videoconferentie, maar aan uw tafel. Na de eerste maanden kent uw partner uw business, uw sector en uw team net zo goed als een interne medewerker. Het verschil: hij brengt ook de inzichten mee van 50+ andere KMO-engagementen.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-btn" aria-expanded="false">
+            Mijn boekhouder doet zijn werk goed. Waarom heb ik nog iemand nodig?
+          </button>
+          <div class="faq-answer">
+            Uw boekhouder doet inderdaad waardevol werk: afsluiten, belastingen, compliance. Maar dat is achteruitkijken. Een CFO kijkt vooruit: cashflowmodellering, investeringsbeslissingen, fiscale optimalisatie van uw structuur, voorbereiding voor verkoop of overname. Die twee rollen vullen elkaar aan. Ze vervangen elkaar niet.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-btn" aria-expanded="false">
+            Consultants verkopen lucht. Hoe is Certifin anders?
+          </button>
+          <div class="faq-answer">
+            Terechte scepsis. Certifin levert geen rapporten en verdwijnt niet. Uw partner zit on-site aan uw tafel, neemt deel aan uw directievergaderingen en is aanspreekbaar wanneer u een beslissing moet nemen. Onze 50+ referentieklanten zijn openbaar op onze website vermeld: namen, sectoren, resultaten. U kunt er rechtstreeks navraag over doen.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-btn" aria-expanded="false">
+            Ik wil niet de Big4-tarieven betalen voor een KMO-dossier.
+          </button>
+          <div class="faq-answer">
+            Dat hoeft ook niet. Bij Certifin betaalt u alleen voor de tijd die u effectief nodig heeft: flexibel vanaf 1 dag per maand. U krijgt Big4-expertise zonder het Big4-prijskaartje van een full-time of semi-full-time opdracht. De kostprijs is een fractie van een interne CFO en betaalbaar voor een groeiende KMO.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-btn" aria-expanded="false">
+            Deelt u vertrouwelijke informatie tussen uw klanten?
+          </button>
+          <div class="faq-answer">
+            Nooit. Certifin werkt volledig onafhankelijk en onderhoudt strikte vertrouwelijkheid per klant. Uw financiele data, strategie en transactiedossiers blijven bij u. Wat uw partner meeneemt van andere engagementen zijn generieke inzichten en best practices, geen concurrentieel gevoelige informatie.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 9 — FINAL CTA
+  ============================================================ -->
+  <section class="final-cta" aria-label="Slotcall to action">
+    <div class="container">
+      <h2>Klaar voor maximale waardecreatie in uw KMO?</h2>
+      <p>
+        50+ Vlaamse KMO-ondernemers kozen al voor een Certifin-partner aan hun tafel. Plan een vrijblijvend gesprek en ontdek wat wij voor uw bedrijf kunnen betekenen.
+      </p>
+      <a href="#form" class="btn" style="max-width:420px; display:inline-block;">Plan een vrijblijvend gesprek</a>
+      <p class="micro-copy">Geen verplichtingen. Geen verkoopgesprek. Uw gegevens blijven vertrouwelijk.</p>
+      <p class="sub-note">50+ referentieklanten. 8 kantoren in Vlaanderen. Big4-team van 10 partners.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <img
+      class="footer-logo"
+      src="https://www.certifin.be/wp-content/uploads/2023/11/newlogo.svg"
+      alt="Certifin"
+      loading="lazy"
+    />
+    <p>&copy; 2026 Certifin. Alle rechten voorbehouden.</p>
+    <p style="margin-top:0.35rem;">Lokeren, Vlaanderen &mdash; <a href="https://www.certifin.be" style="color:rgba(255,255,255,0.35);">certifin.be</a></p>
+  </footer>
+
+  <!-- ============================================================
+       MOBILE STICKY CTA BAR
+  ============================================================ -->
+  <div class="mobile-cta" role="complementary" aria-label="Mobiele CTA">
+    <a href="#form" class="btn">Plan een vrijblijvend gesprek</a>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.parentElement;
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // Hide sticky CTA when form is visible
+    (function() {
+      var mc = document.querySelector('.mobile-cta');
+      if (!mc) return;
+      var form = document.getElementById('form');
+      if (!form) return;
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+          mc.style.transition = 'transform 0.3s ease';
+        });
+      }, { threshold: 0.1 });
+      io.observe(form);
+    })();
+  </script>
+
+</body>
+</html>

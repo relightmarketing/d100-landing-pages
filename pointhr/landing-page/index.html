@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PointHR biedt outsourced HR, payroll en HR-audits voor Vlaamse KMO's. Vaste aanspreekpersoon. 8-uur respons garantie. Maandelijks opzegbaar." />
+  <title>HR voor ondernemers | PointHR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== CSS CUSTOM PROPERTIES ===== */
+    :root {
+      --bg:          #FFFFFF;
+      --surface:     #F4F7FB;
+      --accent:      #F06543;
+      --accent-dark: #D44D2D;
+      --primary:     #1A6EB8;
+      --primary-dark:#155A98;
+      --cyan:        #32CBE7;
+      --navy:        #10436F;
+      --navy-deep:   #0A2D4D;
+      --text:        #333333;
+      --text-muted:  #6B7280;
+      --font-head:   'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      --font-body:   'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      --nav-h:       56px;
+      --r:           10px;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
+    }
+    body {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+      padding-bottom: 76px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy-deep);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      padding: 0 12px;
+      gap: 8px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .nav-logo {
+      height: 24px;
+      max-width: 140px;
+      flex-shrink: 1;
+      min-width: 0;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .nav-phone-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .nav-phone-icon svg { width: 16px; height: 16px; }
+    .nav-phone-text { display: none; }
+    .nav-cta-desktop { display: none; }
+    .nav-cta-mobile {
+      display: inline-flex;
+      align-items: center;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .nav-cta-mobile:hover { background: var(--accent-dark); }
+
+    @media (min-width: 641px) {
+      .nav-inner { height: 64px; padding: 0 24px; gap: 12px; }
+      .nav-logo { height: 32px; max-width: none; flex-shrink: 0; }
+      .nav-phone-icon { display: none; }
+      .nav-phone-text {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: rgba(255,255,255,0.85);
+        font-family: var(--font-body);
+        font-size: 0.875rem;
+        white-space: nowrap;
+      }
+      .nav-phone-text svg { width: 14px; height: 14px; flex-shrink: 0; }
+      .nav-cta-mobile { display: none; }
+      .nav-cta-desktop {
+        display: inline-flex;
+        align-items: center;
+        background: var(--accent);
+        color: #fff;
+        font-family: var(--font-head);
+        font-weight: 700;
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        border-radius: 4px;
+        white-space: nowrap;
+        transition: background 0.2s;
+      }
+      .nav-cta-desktop:hover { background: var(--accent-dark); }
+    }
+
+    @media (min-width: 961px) {
+      .nav-inner { height: 72px; padding: 0 32px; }
+      .nav-logo { height: 40px; }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--primary);
+      padding: calc(var(--nav-h) + 48px) 0 48px;
+    }
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .pre-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(1.75rem, 5vw, 3rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.65;
+      max-width: 520px;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .badge svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      text-align: center;
+      width: 100%;
+    }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-sm {
+      width: auto;
+      padding: 13px 24px;
+      font-size: 0.9rem;
+    }
+    .risk-note {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+    }
+    .hero-image-wrap {
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      display: block;
+    }
+
+    @media (min-width: 641px) {
+      .hero { padding: calc(var(--nav-h) + 64px) 0 64px; --nav-h: 64px; }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .btn { width: auto; }
+      .risk-note { text-align: left; }
+    }
+
+    @media (min-width: 961px) {
+      .hero { padding: calc(var(--nav-h) + 80px) 0 80px; --nav-h: 72px; }
+    }
+
+    /* ===== PROOF BAR ===== */
+    .proof-bar {
+      background: var(--bg);
+      border-bottom: 1px solid var(--surface);
+      padding: 20px 0;
+    }
+    .proof-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      text-align: center;
+    }
+    .proof-item { padding: 8px 4px; }
+    .proof-num {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .proof-label {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 3px;
+    }
+
+    @media (min-width: 641px) {
+      .proof-items { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+      .proof-num { font-size: 1.6rem; }
+    }
+
+    /* ===== IMAGE STRIP ===== */
+    .img-strip {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px 16px;
+    }
+    .img-strip::-webkit-scrollbar { display: none; }
+    .img-strip img {
+      height: 200px;
+      width: 280px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .img-strip .img-placeholder-strip {
+      height: 200px;
+      width: 280px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border: 1px dashed #c8d6e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    @media (min-width: 641px) {
+      .img-strip img { height: 240px; width: 340px; }
+      .img-strip .img-placeholder-strip { height: 240px; width: 340px; }
+      .img-strip { padding: 32px 24px; }
+    }
+    @media (min-width: 961px) {
+      .img-strip img { height: 280px; width: 400px; }
+      .img-strip .img-placeholder-strip { height: 280px; width: 400px; }
+    }
+
+    /* ===== SECTION DEFAULTS ===== */
+    section { padding: 48px 0; }
+    @media (min-width: 641px) { section { padding: 64px 0; } }
+    @media (min-width: 961px) { section { padding: 80px 0; } }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-family: var(--font-head);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .section-label--light { color: var(--cyan); }
+
+    h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--navy);
+    }
+    h2.light { color: #fff; }
+
+    /* ===== SECTION 2: PAIN ===== */
+    .pain-section { background: var(--surface); }
+    .pain-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .pain-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+    .pain-list {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .pain-list li {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem 1.25rem 1rem 3rem;
+      position: relative;
+      color: var(--text);
+      font-size: 0.93rem;
+      line-height: 1.6;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+    .pain-list li::before {
+      content: '';
+      position: absolute;
+      left: 1.2rem;
+      top: 1.2rem;
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+    .bridge {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .bridge strong { color: var(--cyan); }
+    .pain-grid__img { display: none; }
+
+    @media (min-width: 641px) {
+      .pain-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      .pain-grid__img {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        aspect-ratio: 3/4;
+        position: sticky;
+        top: calc(64px + 2rem);
+      }
+    }
+    @media (min-width: 961px) {
+      .pain-grid__img { top: calc(72px + 2rem); }
+    }
+
+    /* ===== SECTION 3: SOLUTION ===== */
+    .solution-section { background: var(--bg); }
+    .solution-inner p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      background: var(--navy);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+    .mini-stat {
+      padding: 1.1rem 0.75rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .mini-stat:nth-child(2n) { border-right: none; }
+    .mini-stat__num {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .mini-stat__label {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    @media (min-width: 641px) {
+      .mini-stats { grid-template-columns: repeat(4, 1fr); }
+      .mini-stat { border-bottom: none; }
+      .mini-stat:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.1); }
+      .mini-stat:last-child { border-right: none; }
+      .mini-stat__num { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
+    }
+
+    /* ===== SECTION 4: OFFER DETAIL ===== */
+    .offer-section { background: var(--surface); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .service-card__icon {
+      background: var(--primary);
+      padding: 1.75rem 1.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .service-icon-circle {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .service-icon-circle svg { width: 24px; height: 24px; }
+    .service-card__icon-label {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .service-card__icon-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 2px;
+    }
+    .service-card__body { padding: 1.5rem; }
+    .service-card__body p {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .service-checklist {
+      display: grid;
+      gap: 0.5rem;
+    }
+    .service-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .service-checklist li::before {
+      content: '';
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+      margin-top: 1px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%23fff' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .guarantee-box {
+      margin-top: 2rem;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .guarantee-box strong { color: var(--cyan); }
+    .offer-cta { margin-top: 2rem; }
+
+    @media (min-width: 641px) {
+      .services-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    }
+
+    /* ===== SECTION 5: SOCIAL PROOF ===== */
+    .proof-section { background: var(--bg); }
+    .stat-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--surface);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+    .stat-cell {
+      background: #fff;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+    .stat-cell__num {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .stat-cell__label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+
+    @media (min-width: 641px) {
+      .stat-bar { grid-template-columns: repeat(4, 1fr); }
+      .stat-cell__num { font-size: 1.8rem; }
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .testimonial-card {
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .stars {
+      display: flex;
+      gap: 3px;
+    }
+    .stars svg { width: 16px; height: 16px; fill: #f59e0b; }
+    .testimonial-card blockquote {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+      border-left: 3px solid var(--primary);
+      padding-left: 1rem;
+    }
+    .testimonial-card cite {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary);
+      font-style: normal;
+    }
+    .testimonial-card cite span {
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 641px) {
+      .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ===== PULL QUOTES STRIP ===== */
+    .pullquote-strip {
+      background: var(--primary);
+      padding: 40px 0;
+    }
+    .pullquote-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .pq {
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .pq__text {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .pq__cite {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.65);
+    }
+
+    @media (min-width: 641px) {
+      .pullquote-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 961px) {
+      .pullquote-inner { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* ===== SECTION 7: FORM ===== */
+    .form-section {
+      background: var(--surface);
+    }
+    .form-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .form-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      margin-top: 2rem;
+    }
+    .form-friction {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 641px) {
+      .form-row-2 { grid-template-columns: 1fr 1fr; }
+      .form-box { padding: 2.5rem 2rem; }
+    }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      font-size: 16px;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--surface);
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      padding: 14px 16px;
+      -webkit-appearance: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit-btn {
+      display: block;
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 18px 32px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      min-height: 48px;
+      transition: background 0.2s;
+      margin-top: 1.25rem;
+    }
+    .form-submit-btn:hover { background: var(--accent-dark); }
+    .privacy-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+    .form-bullets {
+      display: grid;
+      gap: 0.65rem;
+      margin: 1.5rem 0;
+    }
+    .form-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .form-bullets li::before {
+      content: '';
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+      margin-top: 1px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%23fff' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* ===== SECTION 8: FAQ ===== */
+    .faq-section { background: var(--bg); }
+    .faq-list { margin-top: 2rem; }
+    .faq-item { border-bottom: 1px solid var(--surface); }
+    .faq-item:first-child { border-top: 1px solid var(--surface); }
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      text-align: left;
+      font-family: var(--font-head);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      gap: 1rem;
+    }
+    .faq-btn::after {
+      content: '+';
+      color: var(--accent);
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .faq-item.open .faq-btn::after { content: '−'; }
+    .faq-answer {
+      display: none;
+      padding-bottom: 20px;
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ===== SECTION 9: FINAL CTA ===== */
+    .final-cta-section {
+      background: var(--navy-deep);
+      text-align: center;
+    }
+    .final-cta-section h2 { color: #fff; margin-bottom: 1rem; }
+    .final-cta-section p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      max-width: 540px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+    .sub-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 1rem;
+    }
+    .final-cta-section .btn { width: auto; display: inline-block; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy-deep);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 24px 0;
+      text-align: center;
+    }
+    footer .footer-logo {
+      height: 28px;
+      margin: 0 auto 12px;
+    }
+    footer p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ===== MOBILE STICKY CTA ===== */
+    .mobile-cta {
+      display: flex;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 99;
+      padding: 10px 12px;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+      border-top: 1px solid #eee;
+    }
+    .mobile-cta .btn {
+      flex: 1;
+      padding: 13px 12px;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+    .mobile-cta .cta-call {
+      width: 48px; height: 48px;
+      border-radius: 8px;
+      background: var(--navy);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .mobile-cta .cta-call svg { width: 20px; height: 20px; }
+
+    @media (min-width: 641px) {
+      .mobile-cta { display: none; }
+      body { padding-bottom: 0; }
+    }
+
+    /* ===== UTILITY ===== */
+    .text-center { text-align: center; }
+    .mt-1 { margin-top: 0.75rem; }
+    .mt-2 { margin-top: 1.5rem; }
+    .mt-3 { margin-top: 2rem; }
+    .mb-1 { margin-bottom: 0.75rem; }
+    .mb-2 { margin-bottom: 1.5rem; }
+
+    /* ===== IMG PLACEHOLDER ===== */
+    .img-placeholder {
+      background: var(--surface);
+      border: 1px dashed #c8d6e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      min-height: 260px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
+    <div class="nav-inner">
+      <a href="#" aria-label="PointHR home">
+        <!-- White logo on dark nav -->
+        <img
+          src="https://pointhr.be/wp-content/uploads/2020/07/logo-white.png"
+          alt="PointHR logo"
+          class="nav-logo"
+          loading="eager"
+        />
+      </a>
+      <div class="nav-right">
+        <!-- Mobile: icon-only phone button -->
+        <a href="tel:+3293969000" class="nav-phone-icon" aria-label="Bel PointHR">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+        <!-- Tablet+: phone text link -->
+        <a href="tel:+3293969000" class="nav-phone-text" aria-label="Bel PointHR">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +32 9 396 90 00
+        </a>
+        <!-- Mobile CTA -->
+        <a href="#form" class="nav-cta-mobile">Afspraak</a>
+        <!-- Desktop CTA -->
+        <a href="#form" class="nav-cta-desktop">Plan een kennismaking</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== SECTION 1: HERO (Image Variant) ===== -->
+  <section class="hero" aria-labelledby="hero-headline">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left: copy -->
+        <div class="hero-content">
+          <span class="pre-label">HR voor Vlaamse KMO's</span>
+          <h1 id="hero-headline">Proactief werk en snelle opvolging</h1>
+          <p class="hero-sub">Uw HR en payroll, afgehandeld door een vaste HR-partner die uw dossier door en door kent. Geen wachttijden, geen wisselende contacten, geen verrassingen op de loonbrief.</p>
+          <div class="hero-badges">
+            <span class="badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              8-uur respons garantie
+            </span>
+            <span class="badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Vaste aanspreekpersoon
+            </span>
+            <span class="badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Maandelijks opzegbaar
+            </span>
+          </div>
+          <a href="#form" class="btn">Plan een kennismaking</a>
+          <p class="risk-note">Geen opstartkosten. Geen verbintenis. Gratis kennismaking.</p>
+        </div>
+        <!-- Right: hero image -->
+        <div class="hero-image-wrap">
+          <img
+            src="https://pointhr.be/wp-content/uploads/2021/11/Valerie-De-Bleecker.jpg"
+            alt="Tevreden ondernemer die werkt met PointHR HR-diensten"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROOF BAR ===== -->
+  <div class="proof-bar" role="region" aria-label="Kerncijfers">
+    <div class="container">
+      <div class="proof-items">
+        <div class="proof-item">
+          <div class="proof-num">20+</div>
+          <div class="proof-label">Jaar sociale secretariaat-ervaring</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-num">4</div>
+          <div class="proof-label">Kantoren in Vlaanderen</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-num">8 uur</div>
+          <div class="proof-label">Maximale responstijd</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-num">5</div>
+          <div class="proof-label">Sectoren met diepgaande expertise</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== IMAGE STRIP 1 ===== -->
+  <div class="img-strip" role="presentation">
+    <img
+      src="https://pointhr.be/wp-content/uploads/2021/09/HR-structuur-boom.jpg"
+      alt="HR-structuur en organisatieschema bij PointHR"
+      loading="lazy"
+    />
+    <img
+      src="https://pointhr.be/wp-content/uploads/2021/09/high-five-pointhr-1024x695.jpg"
+      alt="PointHR team high-five, samenwerking en teamspirit"
+      loading="lazy"
+    />
+    <!-- Only 3 usable real images remain after hero; third slot is a styled placeholder -->
+    <div class="img-placeholder-strip">
+      <!-- Team at work: PointHR consultant in overleg met ondernemer aan vergadertafel -->
+      Foto: PointHR-consultant in overleg met ondernemer
+    </div>
+  </div>
+
+  <!-- ===== SECTION 2: PAIN ===== -->
+  <section class="pain-section" aria-labelledby="pain-headline">
+    <div class="container">
+      <div class="pain-grid">
+        <!-- Copy column -->
+        <div>
+          <span class="section-label">Herkenbaar?</span>
+          <h2 class="pain-title" id="pain-headline">"Ik besteed meer tijd aan administratie dan aan mijn zaak"</h2>
+          <ul class="pain-list">
+            <li>Elke maand is het een race tegen de klok om de lonen op tijd te verwerken, en toch maakt u fouten.</li>
+            <li>Uw huidig sociaal secretariaat neemt dagen de tijd om te antwoorden, en u spreekt telkens een andere persoon.</li>
+            <li>U weet niet of uw werknemers het juiste loon krijgen: functieclassificaties, indexeringen, sectorale verhogingen.</li>
+            <li>U hebt ooit een boete gekregen na een sociale inspectie omdat de regels waren veranderd zonder dat iemand u waarschuwde.</li>
+            <li>U verliest goede mensen en begrijpt niet waarom. U heeft geen HR-beleid om dat te keren.</li>
+            <li>Een full-time HR-medewerker intern aanwerven is te duur. Maar het zo verder doen kost ook geld, en slaap.</li>
+          </ul>
+          <div class="bridge">
+            Grote sociale secretariaten (Securex, SD Worx, Acerta) zijn gebouwd voor grote bedrijven. Als KMO bent u voor hen <strong>een dossier, geen ondernemer</strong>. U krijgt een callcenter, geen partner. PointHR is anders gebouwd: ondernemer tot ondernemer, met korte communicatielijnen en een vaste aanspreekpersoon die uw zaak kent.
+          </div>
+        </div>
+        <!-- Image column: shown tablet+ only -->
+        <img
+          class="pain-grid__img"
+          src="https://pointhr.be/wp-content/uploads/2021/09/getuigenis-nele.jpg"
+          alt="Ondernemer die getuigt over de samenwerking met PointHR"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: SOLUTION ===== -->
+  <section class="solution-section" aria-labelledby="solution-headline">
+    <div class="container solution-inner">
+      <span class="section-label">De PointHR aanpak</span>
+      <h2 id="solution-headline">Uw groot sociaal secretariaat behandelt u als een nummer. Wij behandelen u als ondernemer.</h2>
+      <p class="mt-2">
+        De meeste KMO-zaakvoerders hebben al geprobeerd: zelf HR beheren (tijdrovend, fouten), bij de boekhouder terecht gaan (niet hun specialisatie), of overstappen naar een grote speler (meer van hetzelfde). Geen van die pistes geeft u wat u echt nodig hebt: ijzersterke expertise gecombineerd met persoonlijk contact.
+      </p>
+      <p>
+        PointHR is opgericht door HR-professionals met 20+ jaar ervaring in sociale secretariaten, die precies wisten wat er fout liep in het grote model. Het resultaat: een firm die 100% gefocust is op KMO's, met vaste contactpersonen, transparante all-in prijzen, en een 8-uur respons garantie die we effectief nakomen of uw loonadministratie gratis verwerken.
+      </p>
+
+      <!-- Mini stat bar: proof point -->
+      <div class="mini-stats" role="region" aria-label="Resultaten in cijfers">
+        <div class="mini-stat">
+          <div class="mini-stat__num">20+</div>
+          <div class="mini-stat__label">Jaar expertise</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat__num">8 uur</div>
+          <div class="mini-stat__label">Respons garantie</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat__num">4</div>
+          <div class="mini-stat__label">Vlaamse kantoren</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat__num">100%</div>
+          <div class="mini-stat__label">KMO focus</div>
+        </div>
+      </div>
+
+      <p class="mt-2" style="font-size:0.88rem;color:var(--text-muted);">
+        <em>"We achieved cost savings, enhanced HR quality, and gained valuable business-driven insight."</em><br>
+        <strong style="color:var(--primary);">Philippe Sollie, Flen Health</strong> | <em>"Immediate cost savings through expertise and excellent team compatibility."</em><br>
+        <strong style="color:var(--primary);">Bram Peeters, Control Union Belgium</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: OFFER DETAIL ===== -->
+  <section class="offer-section" aria-labelledby="offer-headline">
+    <div class="container">
+      <span class="section-label">Onze diensten</span>
+      <h2 id="offer-headline">Drie manieren waarop PointHR uw HR van u overneemt</h2>
+
+      <div class="services-grid">
+
+        <!-- Service 1: SharedHR -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <div class="service-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="service-card__icon-label">SharedHR</div>
+              <div class="service-card__icon-sub">Deeltijdse HR-consultant, fulltime beschikbaar</div>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <p>Een ervaren HR-consultant die deeltijds op uw maat wordt ingezet, maar fulltime bereikbaar is als uw dossier dat vraagt. U krijgt professioneel HR-niveau zonder de kost van een volledige aanwerving.</p>
+            <ul class="service-checklist">
+              <li>Vaste HR-consultant toegewezen aan uw bedrijf</li>
+              <li>Rekrutering, contracten en onboarding</li>
+              <li>HR-beleid, functieclassificaties en arbeidsreglement</li>
+              <li>Begeleiding bij moeilijke personeelsdossiers</li>
+              <li>Maandelijkse alignmentsgesprekken met uw team</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 2: Sociaal Kantoor -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <div class="service-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+              <div class="service-card__icon-label">Sociaal Kantoor</div>
+              <div class="service-card__icon-sub">Payroll met persoonlijk contact</div>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <p>Geen callcenter, geen wisselende contacten. Uw loonadministratie wordt verwerkt door een vast aanspreekpersoon die uw dossier door en door kent, en die u binnen 8 uur terugbelt, of uw verwerking is gratis.</p>
+            <ul class="service-checklist">
+              <li>Vaste contactpersoon voor al uw vragen</li>
+              <li>8-uur respons garantie (of gratis verwerking)</li>
+              <li>All-in prijs per werknemer per maand, geen verborgen kosten</li>
+              <li>Maandelijks opzegbaar, geen lock-in</li>
+              <li>Volledige compliance opvolging inclusief</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 3: HR Audit -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <div class="service-icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div>
+              <div class="service-card__icon-label">HR Audit</div>
+              <div class="service-card__icon-sub">Halve dag, vier perspectieven</div>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <p>Een grondige analyse van uw HR-situatie in een halve dag. Vier invalshoeken tegelijk: juridische compliance, medewerkerstevredenheid, loonkostenoptimalisatie, en HR-afdelingefficiëntie.</p>
+            <ul class="service-checklist">
+              <li>Juridische naleving: arbeidsreglement, contracten, GDPR</li>
+              <li>Medewerkerstevredenheid en retentierisico</li>
+              <li>Loonkostenoptimalisatie zonder in te boeten op kwaliteit</li>
+              <li>Efficiëntie van uw HR-processen en workflows</li>
+              <li>Concreet actieplan na afloop</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Process steps -->
+      <div style="margin-top:3rem;">
+        <span class="section-label">Zo werkt het</span>
+        <div style="display:grid;gap:1rem;margin-top:1.25rem;">
+          <div style="display:flex;align-items:flex-start;gap:1.25rem;background:#fff;border-radius:10px;padding:1.25rem 1.5rem;box-shadow:0 1px 8px rgba(0,0,0,0.05);">
+            <div style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--accent);line-height:1;flex-shrink:0;min-width:2rem;">01</div>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;color:var(--navy);margin-bottom:0.3rem;">Kennismaking</div>
+              <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.6;">U plant een gratis kennismakingsgesprek. Wij luisteren naar uw situatie en stellen de juiste vragen over uw bedrijf, sector en personeelssituatie.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1.25rem;background:#fff;border-radius:10px;padding:1.25rem 1.5rem;box-shadow:0 1px 8px rgba(0,0,0,0.05);">
+            <div style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--accent);line-height:1;flex-shrink:0;min-width:2rem;">02</div>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;color:var(--navy);margin-bottom:0.3rem;">HR-plan op maat</div>
+              <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.6;">Op basis van uw behoeften stellen wij een concreet voorstel op: welke diensten, welke contactpersoon, en wat u kunt verwachten in de eerste maand.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1.25rem;background:#fff;border-radius:10px;padding:1.25rem 1.5rem;box-shadow:0 1px 8px rgba(0,0,0,0.05);">
+            <div style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--accent);line-height:1;flex-shrink:0;min-width:2rem;">03</div>
+            <div>
+              <div style="font-family:var(--font-head);font-weight:700;color:var(--navy);margin-bottom:0.3rem;">Vaste HR-partner</div>
+              <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.6;">Uw toegewezen HR-consultant neemt het over. Maandelijkse afstemming, proactieve opvolging van wijzigingen in de wetgeving, en een directe lijn als u vragen hebt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guarantee box -->
+      <div class="guarantee-box mt-3">
+        <strong>8-uur respons garantie:</strong> Reageert uw PointHR-contactpersoon niet binnen 8 uur op uw vraag, dan verwerken wij uw loonadministratie die maand gratis. Maandelijks opzegbaar: geen opstartkosten, geen minimumcontract, geen verbrekingsvergoeding.
+      </div>
+
+      <div class="offer-cta text-center">
+        <a href="#form" class="btn btn-sm" style="display:inline-block;width:auto;">Plan een kennismaking</a>
+        <p class="risk-note mt-1" style="color:var(--text-muted);">Gratis en vrijblijvend. Geen verplichtingen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IMAGE STRIP 2 ===== -->
+  <div class="img-strip" role="presentation">
+    <!-- Avoid duplicating images already used; these three slots use placeholders since usable portfolio images are exhausted -->
+    <div class="img-placeholder-strip">
+      <!-- HR audit in vergaderzaal: consultant met rapport en checklist -->
+      Foto: HR-audit overleg in vergaderzaal
+    </div>
+    <div class="img-placeholder-strip">
+      <!-- Ondernemer aan telefoon, ontspannen op kantoor, na overdracht HR aan PointHR -->
+      Foto: Ondernemer ontspannen op kantoor
+    </div>
+    <div class="img-placeholder-strip">
+      <!-- PointHR kantoor in Zele, professionele omgeving -->
+      Foto: PointHR kantoor in Vlaanderen
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5: SOCIAL PROOF ===== -->
+  <section class="proof-section" aria-labelledby="proof-headline">
+    <div class="container">
+      <span class="section-label">Wat klanten zeggen</span>
+      <h2 id="proof-headline">Ondernemers die de overstap maakten</h2>
+
+      <!-- Credibility stat bar -->
+      <div class="stat-bar mt-2" role="region" aria-label="Geloofwaardigheidscijfers">
+        <div class="stat-cell">
+          <div class="stat-cell__num">20+</div>
+          <div class="stat-cell__label">Jaar ervaring</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell__num">4</div>
+          <div class="stat-cell__label">Vlaamse kantoren</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell__num">5</div>
+          <div class="stat-cell__label">Sectoren</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell__num">100%</div>
+          <div class="stat-cell__label">KMO focus</div>
+        </div>
+      </div>
+
+      <!-- Testimonial cards -->
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 sterren">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <blockquote>"We achieved cost savings, enhanced HR quality, and gained valuable business-driven insight."</blockquote>
+          <cite>Philippe Sollie <span>— Flen Health</span></cite>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 sterren">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <blockquote>"Immediate cost savings through expertise and excellent team compatibility."</blockquote>
+          <cite>Bram Peeters <span>— Control Union Belgium</span></cite>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 sterren">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <blockquote>"Proactief werk en snelle opvolging."</blockquote>
+          <cite>Nele Vekemans <span>— In Den Olifant</span></cite>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 sterren">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <blockquote>"Stipt, persoonlijk, punctueel."</blockquote>
+          <cite>Valerie De Bleecker <span>— De Bosdreef</span></cite>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PULL QUOTE STRIP ===== -->
+  <div class="pullquote-strip" role="region" aria-label="Klantencitaten">
+    <div class="container">
+      <div class="pullquote-inner">
+        <div class="pq">
+          <div class="pq__text">"Proactief werk en snelle opvolging"</div>
+          <div class="pq__cite">Nele Vekemans, In Den Olifant</div>
+        </div>
+        <div class="pq">
+          <div class="pq__text">"Stipt, persoonlijk, punctueel"</div>
+          <div class="pq__cite">Valerie De Bleecker, De Bosdreef</div>
+        </div>
+        <div class="pq">
+          <div class="pq__text">"Cost savings, enhanced HR quality"</div>
+          <div class="pq__cite">Philippe Sollie, Flen Health</div>
+        </div>
+        <div class="pq">
+          <div class="pq__text">"Immediate cost savings through expertise"</div>
+          <div class="pq__cite">Bram Peeters, Control Union Belgium</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 7: FORM ===== -->
+  <section class="form-section" id="form" aria-labelledby="form-headline">
+    <div class="container">
+      <div class="form-wrap">
+        <span class="section-label">Plan een kennismaking</span>
+        <h2 id="form-headline">Vraag uw gratis kennismakingsgesprek aan</h2>
+
+        <ul class="form-bullets mt-2">
+          <li>Wij bellen u terug binnen 1 werkdag voor een gratis intakegesprek van 20 minuten.</li>
+          <li>Uw toegewezen HR-consultant stelt een concreet voorstel op, afgestemd op uw sector en bedrijfsgrootte.</li>
+          <li>Geen opstartkosten, geen verplichtingen. Maandelijks opzegbaar vanaf dag 1.</li>
+        </ul>
+
+        <div class="form-box">
+          <p class="form-friction">Duurt minder dan 2 minuten. Wij antwoorden binnen 1 werkdag.</p>
+
+          <!--
+            FORMSPREE SETUP:
+            1. Ga naar formspree.io en maak een gratis account aan.
+            2. Maak een nieuw formulier aan en kopieer het formulier-ID (bijv. "xabcdefg").
+            3. Vervang YOUR_FORM_ID hieronder door dat ID.
+            Inzendingen worden automatisch naar u gemaild.
+          -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="voornaam">Voornaam *</label>
+                <input type="text" id="voornaam" name="voornaam" placeholder="Jan" required />
+              </div>
+              <div class="form-group">
+                <label for="achternaam">Achternaam *</label>
+                <input type="text" id="achternaam" name="achternaam" placeholder="Janssen" required />
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="email">E-mailadres *</label>
+                <input type="email" id="email" name="email" placeholder="jan@bedrijf.be" required />
+              </div>
+              <div class="form-group">
+                <label for="telefoon">Telefoonnummer *</label>
+                <input type="tel" id="telefoon" name="telefoon" placeholder="+32 ..." required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="bedrijf">Bedrijfsnaam *</label>
+              <input type="text" id="bedrijf" name="bedrijf" placeholder="Mijn Bedrijf BV" required />
+            </div>
+
+            <div class="form-group">
+              <label for="werknemers">Hoeveel werknemers heeft uw bedrijf? *</label>
+              <select id="werknemers" name="werknemers" required>
+                <option value="" disabled selected>Selecteer een optie</option>
+                <option value="1">1 (eerste werknemer aanwerven)</option>
+                <option value="2-10">2 tot 10 werknemers</option>
+                <option value="11-25">11 tot 25 werknemers</option>
+                <option value="26-50">26 tot 50 werknemers</option>
+                <option value="51-100">51 tot 100 werknemers</option>
+                <option value="101-150">101 tot 150 werknemers</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="sector">In welke sector is uw bedrijf actief? *</label>
+              <select id="sector" name="sector" required>
+                <option value="" disabled selected>Selecteer een sector</option>
+                <option value="horeca">Horeca</option>
+                <option value="bouw">Bouw en aanverwante sectoren</option>
+                <option value="marketing-it">Marketing of IT/agentuur</option>
+                <option value="retail">Zelfstandige retail / handel</option>
+                <option value="zorg">Zorg</option>
+                <option value="andere">Andere sector</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="dienst">Welke dienst interesseert u het meest? *</label>
+              <select id="dienst" name="dienst" required>
+                <option value="" disabled selected>Selecteer een optie</option>
+                <option value="sociaal-kantoor">Sociaal Kantoor (payroll en loonadministratie)</option>
+                <option value="sharedhr">SharedHR (deeltijdse HR-consultant)</option>
+                <option value="hr-audit">HR Audit (halve dag analyse)</option>
+                <option value="combinatie">Combinatie van diensten</option>
+                <option value="nog-niet-zeker">Nog niet zeker, graag advies</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="huidig-secretariaat">Werkt u momenteel met een sociaal secretariaat of intern? *</label>
+              <select id="huidig-secretariaat" name="huidig_secretariaat" required>
+                <option value="" disabled selected>Selecteer een optie</option>
+                <option value="groot-secretariaat">Ja, groot sociaal secretariaat (Securex, SD Worx, Acerta, ...)</option>
+                <option value="intern">Ja, intern HR-beheer (zelf of boekhouder)</option>
+                <option value="kleiner-kantoor">Ja, kleiner kantoor</option>
+                <option value="eerste-werknemer">Nee, ik neem mijn eerste werknemer aan</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="wanneer">Wanneer wilt u starten? *</label>
+              <select id="wanneer" name="wanneer" required>
+                <option value="" disabled selected>Selecteer een optie</option>
+                <option value="zo-snel-mogelijk">Zo snel mogelijk</option>
+                <option value="1-3-maanden">Binnen 1 tot 3 maanden</option>
+                <option value="3-6-maanden">Binnen 3 tot 6 maanden</option>
+                <option value="orienteren">Ik oriënteer mij nog</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="vraag">Heeft u een specifieke vraag of situatie die u wil toelichten? (optioneel)</label>
+              <textarea id="vraag" name="vraag" placeholder="Bijv.: We hebben een inspectie gehad en willen onze situatie laten nalezen..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn">Plan een kennismaking</button>
+            <p class="privacy-note">Geen spam. Geen verplichtingen. Uw gegevens worden vertrouwelijk behandeld.</p>
+          </form>
+        </div>
+
+        <!-- Tally embed alternative (optional) -->
+        <!--
+        <iframe data-tally-src="https://tally.so/embed/placeholder" width="100%" height="400" frameborder="0"></iframe>
+        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+        -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 8: FAQ ===== -->
+  <section class="faq-section" aria-labelledby="faq-headline">
+    <div class="container" style="max-width:720px;">
+      <span class="section-label">Veelgestelde vragen</span>
+      <h2 id="faq-headline">Uw vragen, eerlijk beantwoord</h2>
+
+      <div class="faq-list mt-2">
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Hoe is dit anders dan gewoon overstappen naar een ander sociaal secretariaat?
+          </button>
+          <div class="faq-answer">
+            Een klassiek sociaal secretariaat verwerkt uw lonen en dat is het. U krijgt een callcenter, een ticketsysteem, en een andere medewerker elke keer u belt. Bij PointHR krijgt u een vaste aanspreekpersoon die uw dossier door en door kent, proactief wijzigingen in de wetgeving signaleert, en u terugbelt binnen 8 uur, gegarandeerd. En anders verwerken wij uw loonadministratie die maand gratis. Dat niveau van persoonlijke service biedt geen enkel groot secretariaat.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            We hebben maar 12 werknemers. Is PointHR echt voor ons?
+          </button>
+          <div class="faq-answer">
+            Precies voor u. PointHR is 100% gefocust op KMO's met 5 tot 150 werknemers. Grote sociale secretariaten zijn gebouwd voor grote volumes, niet voor de uitdagingen van een groeibedrijf of een KMO in een niche-sector. Wij werken met horeca-uitbaters, bouwbedrijven, kleine IT-agenturen en eerste werkgevers. Hoe kleiner het team, hoe meer elk dossier telt.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Ik zit al jaren bij mijn huidig secretariaat. Is overstappen niet veel gedoe?
+          </button>
+          <div class="faq-answer">
+            De overgangsperiode regelen wij volledig. Wij nemen contact op met uw huidig secretariaat, zorgen voor de overdracht van dossiers, en begeleiden uw werknemers door de transitie. De meeste klanten zijn operationeel binnen vier weken, zonder onderbreking van de loonadministratie. Bovendien heeft u geen lock-in: onze contracten zijn maandelijks opzegbaar, wat betekent dat u altijd de controle houdt.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Wat als mijn werknemers niet gewend zijn aan een externe HR-persoon?
+          </button>
+          <div class="faq-answer">
+            Dat is een terechte bekommernis. Ons SharedHR-model is precies ontworpen om die weerstand weg te nemen. Uw PointHR-consultant is een herkenbaar gezicht dat regelmatig aanwezig is en de namen en situaties van uw teamleden kent. Wij bouwen een relatie op met uw team, geen afstandelijke papierverwerking. Klanten als Bram Peeters (Control Union Belgium) benadrukten specifiek de "excellent team compatibility" na de overstap.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            Mijn boekhouder doet de lonen al. Waarom zou ik een specialist inschakelen?
+          </button>
+          <div class="faq-answer">
+            Loonadministratie en HR zijn een specialisatie apart. Uw boekhouder verwerkt de cijfers, maar signaleert hij proactief een sectorale loonverhoging die per 1 januari ingaat? Kent hij de cao's die voor uw sector gelden? Volgt hij een sociale inspectie bij u op? HR-expertise gaat verder dan de verwerking van loonfiches. PointHR combineert de technische correctheid van een sociaal secretariaat met strategisch HR-advies dat uw boekhouder eenvoudigweg niet kan bieden.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 9: FINAL CTA ===== -->
+  <section class="final-cta-section" aria-labelledby="final-cta-headline">
+    <div class="container">
+      <span class="section-label section-label--light">Klaar om te starten?</span>
+      <h2 class="light" id="final-cta-headline">Stop met HR zelf uitzoeken. Bel iemand die het voor u regelt.</h2>
+      <p>
+        Gratis kennismakingsgesprek van 20 minuten. Wij luisteren, stellen de juiste vragen, en stellen een concreet voorstel op. Geen opstartkosten, geen verbintenis, maandelijks opzegbaar.
+      </p>
+      <a href="#form" class="btn btn-sm">Plan een kennismaking</a>
+      <p class="sub-note">Onmiddellijke kostenbesparingen via expertise: resultaat geciteerd door meerdere PointHR-klanten waaronder Philippe Sollie (Flen Health) en Bram Peeters (Control Union Belgium).</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <img
+        src="https://pointhr.be/wp-content/uploads/2020/07/logo-white.png"
+        alt="PointHR"
+        class="footer-logo"
+        loading="lazy"
+      />
+      <p>&copy; 2026 PointHR. HR voor ondernemers.</p>
+      <p style="margin-top:6px;">Zele | Brecht | Kortrijk | Schepdaal &nbsp;|&nbsp; <a href="tel:+3293969000" style="color:rgba(255,255,255,0.5);">+32 9 396 90 00</a></p>
+    </div>
+  </footer>
+
+  <!-- ===== MOBILE STICKY CTA ===== -->
+  <div class="mobile-cta" role="complementary" aria-label="Snelkoppeling naar aanvraagformulier">
+    <a href="#form" class="btn">Plan een kennismaking</a>
+    <a href="tel:+3293969000" class="cta-call" aria-label="Bel PointHR">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.parentElement;
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Hide sticky CTA when form is visible
+    (function() {
+      var mc = document.querySelector('.mobile-cta');
+      if (!mc) return;
+      var form = document.getElementById('form');
+      if (!form) return;
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+          mc.style.transition = 'transform 0.3s ease';
+        });
+      }, { threshold: 0.1 });
+      io.observe(form);
+    })();
+  </script>
+
+</body>
+</html>

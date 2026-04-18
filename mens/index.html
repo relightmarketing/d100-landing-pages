@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mens: Your Complete Meta Ads Funnel by Relight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#38405B;
+  --navy-deep:#282f45;
+  --gold:#F25526;
+  --gold-light:rgba(242,85,38,0.12);
+  --bg:#ffffff;
+  --off:#f9fafb;
+  --line:#eaecf0;
+  --txt:#1a2332;
+  --sub:#64748b;
+  --sub2:#94a3b8;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',sans-serif;color:var(--txt);background:var(--bg);-webkit-font-smoothing:antialiased;}
+.dm{font-family:'DM Serif Display',serif;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+
+/* Utility */
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+.wrap-sm{max-width:760px;margin:0 auto;padding:0 24px;}
+.eyebrow{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);}
+.section{padding:96px 0;}
+.section-off{background:var(--off);}
+
+/* Fade-in animation */
+.fade{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.fade.in{opacity:1;transform:none;}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;border:none;transition:opacity 0.2s,transform 0.15s;}
+.btn:hover{opacity:0.88;transform:translateY(-1px);}
+.btn-gold{background:var(--gold);color:#fff;}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.45);}
+.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--line);}
+
+/* ===== NAV ===== */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.3s,box-shadow 0.3s;padding:0 24px;}
+#nav.bg{background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav-logo img{height:32px;width:auto;}
+#nav.bg .nav-logo img{filter:invert(1) sepia(1) saturate(2) hue-rotate(180deg) brightness(0.3);}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(145deg,var(--navy-deep) 0%,var(--navy) 60%,#4a536e 100%);
+  padding:120px 0 0;
+  text-align:center;
+  position:relative;
+  overflow:visible;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,0.06) 1px,transparent 1px);
+  background-size:28px 28px;
+  pointer-events:none;
+}
+.hero-logo{margin:0 auto 32px;display:flex;justify-content:center;}
+.hero-logo img{height:36px;width:auto;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(242,85,38,0.18);border:1px solid rgba(242,85,38,0.35);
+  padding:8px 18px;border-radius:999px;
+  font-size:0.8rem;font-weight:600;color:#fff;
+  margin-bottom:28px;
+}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 1.6s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.75);}}
+.hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2.2rem,4.5vw,3.6rem);
+  color:#fff;
+  line-height:1.18;
+  max-width:760px;
+  margin:0 auto 48px;
+}
+.hero-video{
+  max-width:820px;
+  margin:0 auto -120px;
+  position:relative;
+  z-index:2;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 40px 100px rgba(0,0,0,0.45),0 8px 24px rgba(0,0,0,0.3);
+}
+.hero-video iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  display:block;
+  border:none;
+}
+.hero-video-placeholder{
+  width:100%;
+  aspect-ratio:16/9;
+  background:linear-gradient(135deg,#1a2030 0%,#2a3148 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  cursor:pointer;
+}
+.play-btn{
+  width:80px;height:80px;border-radius:50%;
+  background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  animation:pulse 1.8s infinite;
+  box-shadow:0 0 0 16px rgba(242,85,38,0.18);
+}
+.play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px;}
+.hero-video-placeholder p{color:rgba(255,255,255,0.7);font-size:0.9rem;}
+.hero-cta-wrap{padding-top:160px;padding-bottom:64px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.hero-cta-wrap .sub-note{color:rgba(255,255,255,0.55);font-size:0.82rem;}
+
+/* ===== SECTION 2: DELIVERABLES ===== */
+.deliverables{padding-top:152px;}
+.deliverables-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+.del-card{border:1.5px solid var(--line);border-radius:20px;padding:36px 28px;transition:border-color 0.2s;}
+.del-card:hover{border-color:var(--gold);}
+.del-num{font-size:0.75rem;font-weight:700;letter-spacing:0.12em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
+.del-card h3{font-size:1.15rem;font-weight:700;color:var(--txt);margin-bottom:10px;line-height:1.3;}
+.del-card p{font-size:0.9rem;color:var(--sub);line-height:1.6;}
+.section-head{text-align:center;max-width:680px;margin:0 auto;}
+.section-head h2{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-0.03em;color:var(--txt);margin:12px 0 18px;line-height:1.2;}
+.section-head p{font-size:1rem;color:var(--sub);line-height:1.6;}
+
+/* ===== SECTION 3: WHY THIS MATTERS ===== */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:0;}
+.why-left h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;letter-spacing:-0.03em;color:var(--txt);margin:12px 0 28px;line-height:1.25;}
+.why-quote{border-left:3px solid var(--gold);padding:20px 24px;background:var(--gold-light);border-radius:0 12px 12px 0;font-size:1rem;font-style:italic;color:var(--txt);line-height:1.6;}
+.why-rows{display:flex;flex-direction:column;gap:32px;padding-top:16px;}
+.why-row{display:grid;grid-template-columns:14px 1fr;gap:18px;align-items:start;}
+.why-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);margin-top:6px;flex-shrink:0;}
+.why-row-label{font-weight:700;color:var(--txt);margin-bottom:6px;font-size:0.95rem;}
+.why-row-desc{font-size:0.88rem;color:var(--sub);line-height:1.6;}
+
+/* ===== SECTION 4: IMAGE ADS ===== */
+.phase-divider{display:flex;align-items:center;gap:16px;margin:48px 0 28px;}
+.phase-divider::before,.phase-divider::after{content:'';flex:1;height:1px;background:var(--line);}
+.phase-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--sub2);white-space:nowrap;}
+.ads-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.ad-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;}
+.ad-card:hover{box-shadow:0 8px 28px rgba(0,0,0,0.1);transform:translateY(-3px);}
+.ad-img-wrap{width:100%;background:var(--off);}
+.ad-img-wrap img{width:100%;height:auto;display:block;}
+.ad-card-body{padding:20px;}
+.ad-tag{font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.ad-card-body p{font-size:0.82rem;color:var(--sub);line-height:1.55;}
+
+/* ===== SECTION 5: VIDEO SCRIPTS ===== */
+.accordion{border:1.5px solid var(--line);border-radius:16px;margin-bottom:16px;overflow:hidden;transition:border-color 0.2s;}
+.accordion.open{border-color:var(--gold);}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;cursor:pointer;gap:16px;}
+.acc-header:hover{background:var(--off);}
+.acc-title{font-weight:700;font-size:1rem;color:var(--txt);}
+.acc-sub{font-size:0.82rem;color:var(--sub);margin-top:4px;}
+.acc-icon{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.3s,background 0.2s,border-color 0.2s;}
+.accordion.open .acc-icon{transform:rotate(45deg);background:var(--gold);border-color:var(--gold);}
+.acc-icon svg{width:14px;height:14px;stroke:var(--sub);stroke-width:2;}
+.accordion.open .acc-icon svg{stroke:#fff;}
+.acc-body{max-height:0;overflow:hidden;transition:max-height 0.45s ease;}
+.acc-body-inner{padding:0 28px 28px;}
+.sblock{background:var(--off);border-radius:12px;padding:20px;margin-bottom:12px;}
+.sblock:last-child{margin-bottom:0;}
+.sblock-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.sblock p{font-size:0.88rem;color:var(--sub);line-height:1.65;}
+.sblock p+p{margin-top:10px;}
+
+/* ===== SECTION 6: LANDING PAGE PREVIEW ===== */
+.lp-preview-wrap{display:flex;justify-content:center;margin-top:48px;}
+.phone-frame{
+  width:400px;max-width:100%;
+  border:8px solid #1a2332;
+  border-radius:40px;
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.22),0 4px 16px rgba(0,0,0,0.12);
+  position:relative;
+  background:#fff;
+}
+.phone-frame iframe{
+  width:390px;
+  height:640px;
+  max-width:100%;
+  display:block;
+  border:none;
+  transform-origin:top left;
+}
+.lp-qa{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;}
+.qa-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:28px;}
+.qa-card h4{font-weight:700;font-size:0.95rem;color:var(--txt);margin-bottom:12px;line-height:1.3;}
+.qa-card p{font-size:0.88rem;color:var(--sub);line-height:1.6;}
+
+/* ===== SECTION 7: SYSTEM FLOW ===== */
+.flow-wrap{display:flex;align-items:flex-start;justify-content:center;gap:0;margin-top:56px;position:relative;}
+.flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;max-width:200px;position:relative;}
+.flow-dot{width:52px;height:52px;border-radius:50%;background:var(--gold);color:#fff;font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;position:relative;}
+.flow-connector{flex:1;height:2px;background:var(--line);margin-top:26px;align-self:flex-start;}
+.flow-step-label{font-weight:700;font-size:0.88rem;color:var(--txt);margin-top:14px;}
+.flow-step-desc{font-size:0.78rem;color:var(--sub);margin-top:6px;line-height:1.5;}
+.flow-row{display:flex;align-items:center;width:100%;max-width:1000px;}
+
+/* ===== SECTION 8: CTA BAND ===== */
+.cta-band-wrap{padding:0 24px;}
+.cta-band{
+  max-width:1120px;margin:0 auto;
+  border-radius:32px;
+  background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 70%,#4a536e 100%);
+  padding:64px 64px;
+  display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.cta-band::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,85,38,0.3) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-band h2{font-size:clamp(1.6rem,2.8vw,2.5rem);font-weight:800;letter-spacing:-0.025em;color:#fff;margin:10px 0 14px;line-height:1.2;}
+.cta-band .eyebrow{color:rgba(242,85,38,0.9);}
+.cta-band p{font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.6;}
+.cta-band-right{flex-shrink:0;}
+
+/* ===== SECTION 9: HOW IT WORKS ===== */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+.how-card{background:var(--off);border:1.5px solid var(--line);border-radius:20px;padding:36px 28px;}
+.how-num{font-size:3.5rem;font-weight:800;color:var(--gold);opacity:0.18;line-height:1;margin-bottom:16px;}
+.how-card h3{font-weight:700;font-size:1rem;color:var(--txt);margin-bottom:10px;line-height:1.35;}
+.how-card p{font-size:0.88rem;color:var(--sub);line-height:1.6;}
+
+/* ===== SECTION 10: CASE STUDIES ===== */
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+.case-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;overflow:hidden;transition:box-shadow 0.2s;}
+.case-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.09);}
+.case-img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.case-body{padding:24px;}
+.case-logo{height:24px;width:auto;margin-bottom:14px;}
+.case-stat{font-size:1.3rem;font-weight:800;color:var(--gold);margin-bottom:6px;}
+.case-desc{font-size:0.82rem;color:var(--sub);line-height:1.55;}
+
+/* ===== SECTION 11: FAQ ===== */
+
+/* ===== SECTION 12: ABOUT ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.about-img{border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.12);}
+.about-img img{width:100%;height:auto;display:block;}
+.about-copy .eyebrow{margin-bottom:10px;display:block;}
+.about-copy h2{font-size:clamp(1.8rem,2.8vw,2.6rem);font-weight:800;letter-spacing:-0.025em;color:var(--txt);margin:0 0 24px;line-height:1.2;}
+.about-copy p{font-size:0.92rem;color:var(--sub);line-height:1.7;margin-bottom:16px;}
+.about-copy p:last-of-type{margin-bottom:28px;}
+
+/* ===== SECTION 13: CALENDLY ===== */
+.calendly-wrap{max-width:700px;margin:48px auto 0;border:1.5px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.07);}
+.calendly-wrap iframe{width:100%;height:700px;border:none;display:block;}
+
+/* ===== FOOTER ===== */
+footer{text-align:center;padding:32px 24px;font-size:0.8rem;color:var(--sub2);border-top:1px solid var(--line);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:960px){
+  .deliverables-grid,.how-grid,.cases-grid{grid-template-columns:1fr 1fr;}
+  .why-grid,.about-grid{grid-template-columns:1fr;gap:40px;}
+  .cta-band{grid-template-columns:1fr;gap:28px;padding:48px 36px;}
+  .cta-band-right{display:flex;}
+  .flow-step-label{font-size:0.78rem;}
+  .lp-qa{grid-template-columns:1fr;}
+}
+@media(max-width:640px){
+  .section{padding:64px 0;}
+  .hero{padding-top:100px;}
+  .deliverables{padding-top:132px;}
+  .deliverables-grid,.how-grid,.cases-grid,.ads-grid{grid-template-columns:1fr;}
+  .cta-band{padding:36px 24px;}
+  .cta-band-right .btn{width:100%;justify-content:center;}
+  .flow-wrap,.flow-row{flex-direction:column;gap:0;}
+  .flow-step{flex-direction:row;text-align:left;max-width:100%;width:100%;padding-bottom:24px;align-items:flex-start;}
+  .flow-dot{flex-shrink:0;margin-right:16px;}
+  .flow-connector{display:none;}
+  .flow-step-content{padding-top:4px;}
+  .hero-video{margin-bottom:-80px;}
+  .hero-cta-wrap{padding-top:120px;}
+  .phone-frame{width:100%;}
+  .phone-frame iframe{width:100%;}
+  .nav-logo img{height:24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="#"><img src="https://www.mens.be/themes/custom/mens/logo.svg" alt="Mens"/></a>
+    </div>
+    <a href="#calendly" class="btn btn-gold" style="font-size:0.88rem;padding:11px 22px;">Let's get this live</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-logo">
+      <img src="https://www.mens.be/themes/custom/mens/logo.svg" alt="Mens" style="height:36px;"/>
+    </div>
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Built exclusively for Mens
+    </div>
+    <h1 class="dm">I will help you get 10 new clients within 14 days with this Meta ads funnel I created for you.</h1>
+    <!-- Video embed -->
+    <div class="hero-video">
+      <!-- LOOM URL: loom-url.txt is empty. Replace the placeholder below with the Loom embed URL once recorded. -->
+      <!-- Example: <iframe src="https://www.loom.com/embed/YOUR_LOOM_ID" allowfullscreen></iframe> -->
+      <div class="hero-video-placeholder">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p>Personalized video walkthrough: coming soon</p>
+      </div>
+    </div>
+    <div class="hero-cta-wrap">
+      <a href="#calendly" class="btn btn-gold" style="font-size:1rem;padding:16px 36px;">Let's get this live</a>
+      <span class="sub-note">No cost, no obligation. 30 min to see if it fits.</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: DELIVERABLES -->
+<section class="section deliverables fade">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Everything below is yours, for free</span>
+      <h2>A complete ad funnel, built specifically for Mens.</h2>
+      <p>Nine image ad concepts, three ready-to-film video scripts, and a custom landing page built to convert. All you need to do is decide to run it.</p>
+    </div>
+    <div class="deliverables-grid">
+      <div class="del-card">
+        <div class="del-num">01</div>
+        <h3>9 Image Ad Concepts</h3>
+        <p>Three prospecting ads to generate awareness, three trust-building ads to earn credibility, and three conversion ads to drive action. Each concept is tailored to Mens's brand and the Belgian HR market.</p>
+      </div>
+      <div class="del-card">
+        <div class="del-num">02</div>
+        <h3>3 Video Ad Scripts</h3>
+        <p>Full word-for-word scripts in Mens's voice, covering three distinct angles: the eternal firefighting problem, a 5-year enterprise partnership case study, and a contrarian take on the consulting industry. Filming briefs included.</p>
+      </div>
+      <div class="del-card">
+        <div class="del-num">03</div>
+        <h3>Custom Landing Page</h3>
+        <p>A dedicated page built to receive ad traffic from Belgians looking for embedded HR support. Designed around Mens's brand, messaging, and the specific objections your prospects have before they book a call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: WHY THIS MATTERS -->
+<section class="section fade">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-left">
+        <span class="eyebrow">Why this matters</span>
+        <h2>Mens has no Meta ads presence. That is a white-space opportunity.</h2>
+        <blockquote class="why-quote">
+          "The absence of social media profiles and Meta ads suggests Mens acquires clients primarily through referrals and direct outreach, making paid social a completely untapped channel."
+        </blockquote>
+      </div>
+      <div class="why-rows">
+        <div class="why-row">
+          <div class="why-dot"></div>
+          <div>
+            <div class="why-row-label">Zero competitors running this angle</div>
+            <div class="why-row-desc">SD Worx, Hudson, and Acerta all lead with technology, payroll, or generic talent management. Nobody is running the "embedded copilot, not a report that disappears" angle at scale in Belgium.</div>
+          </div>
+        </div>
+        <div class="why-row">
+          <div class="why-dot"></div>
+          <div>
+            <div class="why-row-label">Your proof is already there</div>
+            <div class="why-row-desc">Five-year partnerships with Oleon, Signpost, and Lidl. 15+ specialists with 100+ years of combined experience. That is more credibility than most HR firms can put in front of a prospect on day one.</div>
+          </div>
+        </div>
+        <div class="why-row">
+          <div class="why-dot"></div>
+          <div>
+            <div class="why-row-label">Your buyer is scrolling Meta right now</div>
+            <div class="why-row-desc">HR managers, CEOs, and business owners at Belgian SMEs and enterprises are on LinkedIn and Facebook. The question is whether Mens shows up when they are feeling the pain.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: IMAGE ADS -->
+<section class="section section-off fade">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Image Ad Concepts</span>
+      <h2>9 ads covering every stage of the funnel.</h2>
+      <p>From the first scroll-stop moment to the final push to book a conversation. Each ad is designed around a specific moment in your prospect's decision journey.</p>
+    </div>
+
+    <!-- Phase 1: Prospecting -->
+    <div class="phase-divider"><span class="phase-label">Phase 1: Generate interest</span></div>
+    <div class="ads-grid">
+      <div class="ad-card">
+        <div class="ad-img-wrap"><img src="./images/1.png" alt="Ad 1 Collage"/></div>
+        <div class="ad-card-body">
+          <div class="ad-tag">Ad 01: Collage</div>
+          <p>A four-quadrant grid visualizing all four HR pillars: Attract, Select, Develop, Retain. Communicates the full breadth of Mens's embedded expertise at a glance before a prospect knows anything about the firm.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap"><img src="./images/2.png" alt="Ad 2 Pain / Problem"/></div>
+        <div class="ad-card-body">
+          <div class="ad-tag">Ad 02: Pain / Problem</div>
+          <p>The cluttered desk, the overflowing inbox, the abandoned coffee cup. The visual of the exhausted HR manager who is still putting out fires and never getting ahead of the problem. Hook: "Nog steeds brandjes aan het blussen?"</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap"><img src="./images/3.png" alt="Ad 3 Education / Tip"/></div>
+        <div class="ad-card-body">
+          <div class="ad-tag">Ad 03: Education / Tip</div>
+          <p>An architect's blueprint on a clean desk positions Mens as the firm that builds HR structure instead of just responding to crises. Copy: "Bouw je HR, blus geen branden." Differentiates from transactional competitors without a single sales line.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2: Trust -->
+    <div class="phase-divider"><span class="phase-label">Phase 2: Build trust</span></div>
+    <div class="ads-grid">
+      <div class="ad-card">
+        <div class="ad-img-wrap"><img src="./images/4.png" alt="Ad 4 Owner / Team"/></div>
+        <div class="ad-card-body">
+          <div class="ad-tag">Ad 04: Owner / Team</div>
+          <p>A confident founder portrait in a modern open-plan office, paired with a navy panel showing "100+ jaar HR-expertise" and "15+ specialisten." Turns the team's depth of experience into a visual credibility statement.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap"><img src="./images/5.png" alt="Ad 5 Social Proof"/></div>
+        <div class="ad-card-body">
+          <div class="ad-tag">Ad 05: Social Proof</div>
+          <p>A thriving modern office scene anchored by a navy panel with five stars, a verbatim quote from Tom Loosvelt at Oleon, and the headline: "5 jaar. Uitstekende ondersteuning." Proof that is specific, named, and measurable.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap"><img src="./images/6.png" alt="Ad 6 Process"/></div>
+        <div class="ad-card-body">
+          <div class="ad-tag">Ad 06: Process</div>
+          <p>A clean three-step process on a navy field: Diagnose en plan, Embedded aan de slag, Autonomie opbouwen. Makes the Mens method visible and understandable before a prospect ever speaks to anyone.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3: Conversion -->
+    <div class="phase-divider"><span class="phase-label">Phase 3: Drive action</span></div>
+    <div class="ads-grid">
+      <div class="ad-card">
+        <div class="ad-img-wrap"><img src="./images/7.png" alt="Ad 7 Free Offer"/></div>
+        <div class="ad-card-body">
+          <div class="ad-tag">Ad 07: Free Offer</div>
+          <p>A warm meeting room on the left, a navy panel on the right offering a "Gratis HR-scan" with the CTA: "Ontdek het zelf." Turns the diagnostic intake into an attractive, low-friction entry point for new prospects.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap"><img src="./images/8.png" alt="Ad 8 Lead / Hero"/></div>
+        <div class="ad-card-body">
+          <div class="ad-tag">Ad 08: Lead / Hero</div>
+          <p>A golden-hour wide shot of a well-organized open-plan office. The "after state" in a single image. Overlay text: "Jouw copiloot naar HR Excellence." The Hero Phrase applied at the moment the prospect is closest to converting.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap"><img src="./images/9.png" alt="Ad 9 FAQ / Myth-Bust"/></div>
+        <div class="ad-card-body">
+          <div class="ad-tag">Ad 09: FAQ / Myth-Bust</div>
+          <p>A split-screen contrast: a thick dusty report (struck through in orange) versus an active video call at a clean desk. Left label: "Dikke rapporten." Right label: "Echte handen aan het werk." Directly dismantles the #1 objection to HR consulting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: VIDEO SCRIPTS -->
+<section class="section fade">
+  <div class="wrap-sm">
+    <div class="section-head">
+      <span class="eyebrow">Video Ad Scripts</span>
+      <h2>Three scripts. Three different buyers.</h2>
+      <p>Each script speaks to a different type of decision-maker. The algorithm shows each to the people most likely to respond. Together they cover every mindset in the market.</p>
+    </div>
+    <div style="margin-top:48px;">
+
+      <!-- Script 1 -->
+      <div class="accordion" id="acc1">
+        <div class="acc-header" onclick="toggle('acc1')">
+          <div>
+            <div class="acc-title">Script 1: The Eternal Firefighter</div>
+            <div class="acc-sub">Pain / Circumstance: for the CEO or HR manager stuck in permanent crisis mode</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="acc-body" id="acc1-body">
+          <div class="acc-body-inner">
+            <div class="sblock">
+              <div class="sblock-label">Central Angle</div>
+              <p>You are stuck in permanent HR crisis mode, and every week brings another fire to put out.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">Hook (0-10s)</div>
+              <p>If you are running a growing company in Belgium and your week looks like this: Monday, someone hands in their notice. Wednesday, the candidate you liked ghosts you. Friday, you realize nobody has done a proper performance review in over a year. That is not bad luck. That is a structural problem. And I can tell you exactly why it keeps happening.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">Body (11-90s)</div>
+              <p>Most companies end up here because they treat HR like an afterthought. You hired a generalist, gave them too much to handle, and now they are drowning. Or you are doing it yourself, the CEO who somehow also became the head of recruitment. You have probably tried a few things already. Maybe you posted on job boards and got a pile of mismatched CVs. Maybe you brought in an interim HR person who stayed for six months and left without transferring anything useful. So the fires keep coming.</p>
+              <p style="margin-top:10px;">Here is what we do differently. At Mens, we do not send you a report and disappear. We put one of our HR specialists in your office, multiple days a week, working alongside your team. Not as a temp. As an architect. We set up the systems, the processes, the structure, so that recruitment works, onboarding runs smoothly, and people actually stay.</p>
+              <p style="margin-top:10px;">One of our clients, Oleon, has been working with us for 5 years now. Their HR manager says our consultants delivered "uitstekende ondersteuning op diverse HR gebieden." Five years. That is not a quick fix. That is building something that lasts.</p>
+              <p style="margin-top:10px;">The goal is not to make you dependent on us. We give your organization the oxygen to run its own HR, structurally, not just when the fires are already burning.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">CTA (90-120s)</div>
+              <p>If you are tired of putting out fires and you want to actually build an HR operation that works, click the link below. You will find a short overview of how we work, and you can book a free HR scan to see where you stand. No thick reports. No obligations. Just a clear picture of what needs to happen first.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">Filming Brief</div>
+              <p><strong>Environment:</strong> Seated at a desk in a bright office, or standing near a whiteboard. The setting should feel like an actual workplace, not a studio.</p>
+              <p style="margin-top:10px;"><strong>Camera:</strong> Phone propped or mini-tripod, eye-level, direct to camera.</p>
+              <p style="margin-top:10px;"><strong>Framing:</strong> Medium shot, chest and above, slight headroom.</p>
+              <p style="margin-top:10px;"><strong>Lighting:</strong> Natural window light or ring light, no studio setup needed.</p>
+              <p style="margin-top:10px;"><strong>Energy:</strong> Direct and slightly frustrated on behalf of the viewer. Not aggressive. More like a knowledgeable friend who has seen this pattern a hundred times and finally wants to explain the real cause.</p>
+              <p style="margin-top:10px;"><strong>Visual note:</strong> A whiteboard or laptop in the background reinforces the "this is a real workplace" feel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 2 -->
+      <div class="accordion" id="acc2">
+        <div class="acc-header" onclick="toggle('acc2')">
+          <div>
+            <div class="acc-title">Script 2: Five Years and Counting</div>
+            <div class="acc-sub">Result / Case Study: for prospects who need proof before they believe</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="acc-body" id="acc2-body">
+          <div class="acc-body-inner">
+            <div class="sblock">
+              <div class="sblock-label">Central Angle</div>
+              <p>A 5-year enterprise partnership proves that embedded HR consulting produces lasting results, not temporary fixes.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">Hook (0-10s)</div>
+              <p>Five years ago, a large company in Belgium came to us because their HR team was stretched too thin. They had the ambition to grow, but they could not fill roles fast enough and they kept losing good people in the first year. I want to tell you what happened next, because it is the opposite of what most consulting firms deliver.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">Body (11-90s)</div>
+              <p>When Oleon first reached out, they were in a familiar spot. Growing fast, hiring constantly, but the processes behind it were not keeping up. Recruitment felt reactive. Onboarding was inconsistent. And the HR team was doing everything themselves with no time to think strategically.</p>
+              <p style="margin-top:10px;">What we did was place one of our specialists inside their organization. Not someone who sits in our office writing recommendations. Someone who showed up at their office, multiple days a week, and worked as part of their team. We helped them build an employer branding strategy so the right candidates came to them instead of the other way around. We structured their interview process so hiring decisions were faster and more accurate. And we set up a real onboarding flow so new hires actually felt welcome and stayed.</p>
+              <p style="margin-top:10px;">Five years later, their HR manager Tom Loosvelt says the consultants deliver "uitstekende ondersteuning op diverse HR gebieden" with a high degree of flexibility and expertise. He describes it as a true partnership.</p>
+              <p style="margin-top:10px;">And here is the part that matters: Oleon's HR is stronger today than it was before we arrived. Not because they are dependent on us. Because we built the structure they needed, and now they can run it.</p>
+              <p style="margin-top:10px;">That is what we mean when we say we are your copilot, not your crutch.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">CTA (90-120s)</div>
+              <p>If your company is growing and your HR cannot keep up, click the link below. You will see exactly how we work and you can book a free conversation to talk about where you are. No pressure, no thick reports. Just a clear starting point.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">Filming Brief</div>
+              <p><strong>Environment:</strong> Standing near a window in a bright, modern space. A slightly more relaxed, storytelling posture. Could also be seated on a couch or at a small table.</p>
+              <p style="margin-top:10px;"><strong>Camera:</strong> Phone propped or mini-tripod, eye-level, direct to camera.</p>
+              <p style="margin-top:10px;"><strong>Framing:</strong> Medium shot, chest and above, slight headroom.</p>
+              <p style="margin-top:10px;"><strong>Lighting:</strong> Natural window light or ring light, no studio setup needed.</p>
+              <p style="margin-top:10px;"><strong>Energy:</strong> Calm, measured, proud. This is a success story being told by someone who was there. The tone is warm and confident, not salesy.</p>
+              <p style="margin-top:10px;"><strong>Visual note:</strong> A plant or bookshelf in the background adds warmth. Avoid blank walls.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 3 -->
+      <div class="accordion" id="acc3">
+        <div class="acc-header" onclick="toggle('acc3')">
+          <div>
+            <div class="acc-title">Script 3: You Should Not Need Us Forever</div>
+            <div class="acc-sub">Contrarian / Insight: for the skeptic who has been burned by consultants before</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="acc-body" id="acc3-body">
+          <div class="acc-body-inner">
+            <div class="sblock">
+              <div class="sblock-label">Central Angle</div>
+              <p>Most HR consultants create dependency. Mens builds your internal capability and aims to make itself unnecessary.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">Hook (0-10s)</div>
+              <p>Here is something that most HR consulting firms will never tell you. A good consultant should eventually make themselves unnecessary. If you have been working with someone for years and your team still cannot function without them, that is not a partnership. That is a dependency.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">Body (11-90s)</div>
+              <p>I know this sounds strange coming from someone who runs a consulting firm. But at Mens, this is what we actually believe. When we place an HR specialist inside your organization, their job is not just to do the work. It is to build the systems and transfer the knowledge so your people can handle it themselves.</p>
+              <p style="margin-top:10px;">You have probably experienced the alternative. You bring in an external recruiter, they fill a few roles, and the moment they leave, you are back to square one. Or you hire an interim HR manager who keeps everything in their own head, and when their contract ends, all the expertise walks out the door. That is the model the industry runs on, and it works great for the consulting firms. Not so great for you.</p>
+              <p style="margin-top:10px;">We do it differently. We call ourselves architects and firefighters. Yes, we handle the urgent stuff, the open vacancies, the onboarding chaos, the compliance gaps. But while we are doing that, we are also building something: a performance cycle, a recruitment process, an employer brand. Tangible, documented, yours to keep.</p>
+              <p style="margin-top:10px;">Christophe Vandecasteele from Vandecasteele Group put it simply: "Heel wat expertise op andere vlakken binnen HR, ideaal voor KMO. Wij zijn fan." That is the reaction we aim for: not "we need them to survive" but "they made us better."</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">CTA (90-120s)</div>
+              <p>If you want an HR partner who actually builds your capability instead of renting it out indefinitely, click the link below. Take a look at how we work. And if it makes sense, book a free HR scan so we can show you exactly where to start.</p>
+            </div>
+            <div class="sblock">
+              <div class="sblock-label">Filming Brief</div>
+              <p><strong>Environment:</strong> Standing or seated in a slightly more informal setting. A kitchen counter, a casual meeting corner, or an outdoor terrace. The environment should feel honest and unconventional, matching the contrarian angle.</p>
+              <p style="margin-top:10px;"><strong>Camera:</strong> Phone propped or mini-tripod, eye-level, direct to camera.</p>
+              <p style="margin-top:10px;"><strong>Framing:</strong> Medium shot, chest and above, slight headroom.</p>
+              <p style="margin-top:10px;"><strong>Lighting:</strong> Natural window light or ring light, no studio setup needed.</p>
+              <p style="margin-top:10px;"><strong>Energy:</strong> Thoughtful and confident. Almost conspiratorial, like sharing an industry secret. Not angry or confrontational. More like a smart observation delivered with a slight smile.</p>
+              <p style="margin-top:10px;"><strong>Visual note:</strong> A slightly less corporate background helps. A bookshelf, a coffee in hand, or standing outside all work.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: LANDING PAGE PREVIEW -->
+<section class="section section-off fade">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Custom Landing Page</span>
+      <h2>A page built to convert Belgian HR buyers.</h2>
+      <p>Not a generic template. Every line of copy, every section, and every call to action was written specifically for Mens's prospects: HR managers, CEOs, and business owners at Belgian companies feeling the pain of understaffed or underperforming HR.</p>
+    </div>
+    <div class="lp-preview-wrap">
+      <div class="phone-frame">
+        <iframe src="../landing-page/" title="Mens Landing Page Preview" scrolling="yes"></iframe>
+      </div>
+    </div>
+    <div class="lp-qa">
+      <div class="qa-card">
+        <h4>Why not send them to your website?</h4>
+        <p>Your website is built for everyone: current clients, job seekers, partners. A dedicated landing page removes every distraction and focuses the visitor on one decision: book a conversation with Mens. No navigation, no other services, no exit routes.</p>
+      </div>
+      <div class="qa-card">
+        <h4>Why this page converts</h4>
+        <p>It opens with the pain your prospect is already feeling, validates it with proof they can recognize (Oleon, Signpost, Lidl), and gives them a single, low-friction action to take. The form asks for the minimum needed to start a conversation, not a full application.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: SYSTEM FLOW -->
+<section class="section fade">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How the funnel works</span>
+      <h2>Five steps from cold scroll to booked call.</h2>
+      <p>Each step has one job. Together they take someone who has never heard of Mens to a qualified sales conversation.</p>
+    </div>
+    <div class="flow-row" style="max-width:1000px;margin:56px auto 0;display:flex;align-items:center;">
+      <div class="flow-step">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div class="flow-dot">1</div>
+          <div style="margin-top:14px;text-align:center;max-width:160px;">
+            <div class="flow-step-label">Meta Ads</div>
+            <div class="flow-step-desc">9 creatives stop the scroll and match the pain your prospect is already feeling</div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1;height:2px;background:var(--line);"></div>
+      <div class="flow-step">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div class="flow-dot">2</div>
+          <div style="margin-top:14px;text-align:center;max-width:160px;">
+            <div class="flow-step-label">Landing Page</div>
+            <div class="flow-step-desc">Dedicated page handles objections and builds enough trust for the visitor to raise their hand</div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1;height:2px;background:var(--line);"></div>
+      <div class="flow-step">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div class="flow-dot">3</div>
+          <div style="margin-top:14px;text-align:center;max-width:160px;">
+            <div class="flow-step-label">Qualification</div>
+            <div class="flow-step-desc">The form captures company size and context so you go into every call already knowing who you are talking to</div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1;height:2px;background:var(--line);"></div>
+      <div class="flow-step">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div class="flow-dot">4</div>
+          <div style="margin-top:14px;text-align:center;max-width:160px;">
+            <div class="flow-step-label">Follow-up</div>
+            <div class="flow-step-desc">Automated confirmation and reminder sequence keeps the lead warm between submission and the call</div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1;height:2px;background:var(--line);"></div>
+      <div class="flow-step">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div class="flow-dot">5</div>
+          <div style="margin-top:14px;text-align:center;max-width:160px;">
+            <div class="flow-step-label">Sales Call</div>
+            <div class="flow-step-desc">A warm, pre-qualified prospect who has already seen your proof and decided to raise their hand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: CTA BAND -->
+<section class="section" style="background:var(--bg);">
+  <div class="cta-band-wrap">
+    <div class="cta-band fade">
+      <div>
+        <span class="eyebrow">Ready to move?</span>
+        <h2>Everything is built. You just need to say go.</h2>
+        <p>The ads are written. The scripts are ready. The landing page is live. The only thing missing is a 30-minute conversation to confirm it fits your goals.</p>
+      </div>
+      <div class="cta-band-right">
+        <a href="#calendly" class="btn btn-gold" style="font-size:1rem;padding:16px 32px;white-space:nowrap;">Let's get this live</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: HOW IT WORKS -->
+<section class="section fade">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Working with Relight</span>
+      <h2>Three steps to getting this live.</h2>
+      <p>From first call to running ads, the process is straightforward. No lengthy proposals, no retainer commitments before you see results.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <h3>We review the funnel together</h3>
+        <p>In a 30-minute call we walk through every deliverable, answer your questions, and confirm the strategy fits Mens's goals for this quarter. If anything needs adjusting, we handle it.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <h3>We set up the campaigns</h3>
+        <p>We handle the technical setup: Business Manager access, campaign structure, audience targeting for Belgian HR decision-makers, and ad delivery. You film the video scripts on your side and we take care of everything else.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <h3>Leads start coming in</h3>
+        <p>Once the ads are live, the landing page captures and qualifies leads for Mens. We monitor performance in the first weeks, optimize based on what the data shows, and keep you updated on results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10: CASE STUDIES -->
+<section class="section section-off fade">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What this looks like in practice</span>
+      <h2>Real results from real campaigns.</h2>
+      <p>These are the types of outcomes we build toward. Different industries, same approach: targeted Meta ads, a dedicated landing page, and a qualified lead flow.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card">
+        <img class="case-img" src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case study"/>
+        <div class="case-body">
+          <img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent"/>
+          <div class="case-stat">145 leads in 2 weeks</div>
+          <div class="case-desc">A targeted Meta campaign for a recruitment firm generated 145 qualified leads in 14 days, building a pipeline that would have taken months through referrals alone.</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <img class="case-img" src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case study"/>
+        <div class="case-body">
+          <img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen"/>
+          <div class="case-stat">66 recurring clients in 27 days</div>
+          <div class="case-desc">A conversion-focused funnel turned cold scroll traffic into 66 recurring clients in under a month. The landing page did the qualification work before any sales call was made.</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <img class="case-img" src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case study"/>
+        <div class="case-body">
+          <img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner"/>
+          <div class="case-stat">50 recurring clients in 2 weeks</div>
+          <div class="case-desc">A niche B2B service used Meta ads for the first time and converted 50 recurring clients in 14 days. The funnel was built in the same format as the one prepared for Mens.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 11: FAQ -->
+<section class="section fade">
+  <div class="wrap-sm">
+    <div class="section-head">
+      <span class="eyebrow">Common questions</span>
+      <h2>Before you book, here are the honest answers.</h2>
+    </div>
+    <div style="margin-top:48px;">
+
+      <div class="accordion" id="faq1">
+        <div class="acc-header" onclick="toggle('faq1')">
+          <div>
+            <div class="acc-title">Why are you giving this away for free?</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="acc-body" id="faq1-body">
+          <div class="acc-body-inner">
+            <div class="sblock">
+              <p>Because we want you to see the quality of the work before you decide anything. Most agencies pitch you a slide deck. We build you the actual funnel first. If you look at what we have produced for Mens and it does not impress you, there is no reason to book a call. If it does, then we have already demonstrated what we can do. The free work is also the pitch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" id="faq2">
+        <div class="acc-header" onclick="toggle('faq2')">
+          <div>
+            <div class="acc-title">Why should I trust you?</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="acc-body" id="faq2-body">
+          <div class="acc-body-inner">
+            <div class="sblock">
+              <p>Look at the case studies above. 145 leads in 2 weeks for TechTalent. 66 recurring clients in 27 days for Vossen. 50 recurring clients in 2 weeks for Container Cleaner. These are documented results from real campaigns. Beyond that, you are looking at a complete funnel we built for Mens specifically: real research, real copy, real ads. That is not something you can fake. Talk to us on the call and judge from the conversation itself.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" id="faq3">
+        <div class="acc-header" onclick="toggle('faq3')">
+          <div>
+            <div class="acc-title">How quickly would results show up?</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="acc-body" id="faq3-body">
+          <div class="acc-body-inner">
+            <div class="sblock">
+              <p>Meta campaigns typically enter a learning phase in the first 7 to 14 days while the algorithm finds your best audience. Most clients start seeing qualified leads within the first two weeks. Volume and cost per lead stabilize after roughly 30 days of optimization. The timeline depends on your daily budget, your market size, and how competitive the Belgian HR space is during the period you run. We will give you a realistic projection on the call based on your specific situation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" id="faq4">
+        <div class="acc-header" onclick="toggle('faq4')">
+          <div>
+            <div class="acc-title">What would you need from our side?</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="acc-body" id="faq4-body">
+          <div class="acc-body-inner">
+            <div class="sblock">
+              <p>Three things. First, access to a Facebook Business Manager account so we can set up the campaigns properly. Second, someone at Mens to film the three video scripts, which are already written and ready to record: a phone, a bright window, and 30 minutes is all it takes. Third, a small daily ad budget, which we will discuss on the call. Everything else, the setup, the targeting, the optimization, the reporting, we handle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion" id="faq5">
+        <div class="acc-header" onclick="toggle('faq5')">
+          <div>
+            <div class="acc-title">How much ad spend would make sense?</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="acc-body" id="faq5-body">
+          <div class="acc-body-inner">
+            <div class="sblock">
+              <p>For the Belgian B2B market, a starting budget of 20 to 40 euros per day gives the algorithm enough data to optimize meaningfully without burning through budget in the learning phase. That is 600 to 1200 euros per month in ad spend. Given that a single embedded HR consulting client from Mens represents a multi-month, high-value retainer, the economics work clearly in favor of paid social at almost any reasonable budget level. We will model this out specifically for Mens on the call.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 12: ABOUT -->
+<section class="section section-off fade">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://preview.relightmarketing.com/assets/relight-team.png" alt="Arthur, Relight Marketing"/>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">About</span>
+        <h2>Arthur, Relight Marketing</h2>
+        <p>Relight is a Meta ads agency built for B2B and service businesses that are tired of referral-only growth. We build complete funnels: the ads, the scripts, and the landing pages, and we run them. Not deck by deck. Campaign by campaign.</p>
+        <p>We focus on businesses where the client value justifies a real paid acquisition strategy. Embedded HR consulting fits that profile exactly. One client relationship from a well-run Meta campaign covers the cost of the entire funnel many times over.</p>
+        <p>We built this entire funnel for Mens before the first conversation because we believe the work should speak first. If it does not meet the bar, there is no reason to take the next step. If it does, we would like to talk about getting it live.</p>
+        <a href="#calendly" class="btn btn-gold">Let's get this live</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 13: CALENDLY EMBED -->
+<section class="section fade" id="calendly">
+  <div class="wrap-sm">
+    <div class="section-head">
+      <span class="eyebrow">Let's do this</span>
+      <h2>Let's get this ad funnel live ASAP.</h2>
+      <p>The funnel is built. The scripts are ready. The landing page is live. Pick a time below and we will spend 30 minutes walking through it together, answering your questions, and deciding whether to run it.</p>
+    </div>
+    <div class="calendly-wrap">
+      <iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Book a call with Relight Marketing"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Relight Marketing, built for Mens
+</footer>
+
+<script>
+// 1. Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('bg',scrollY>40),{passive:true});
+
+// 2. Scroll fade-in
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.fade:not(.in)').forEach(el=>io.observe(el));
+
+// 3. Accordion toggle
+function toggle(id){
+  const acc=document.getElementById(id);
+  const body=document.getElementById(id+'-body');
+  const open=acc.classList.contains('open');
+  document.querySelectorAll('.accordion.open').forEach(a=>{
+    a.classList.remove('open');
+    a.querySelector('.acc-body').style.maxHeight=null;
+  });
+  if(!open){
+    acc.classList.add('open');
+    body.style.maxHeight=body.scrollHeight+'px';
+  }
+}
+
+// 4. Page-open notification
+if(window.location.protocol!=='file:'){
+  var OWNER_TOKEN='test';
+  var params=new URLSearchParams(window.location.search);
+  if(params.get('preview')!==OWNER_TOKEN){
+    fetch('https://ipapi.co/json/')
+      .then(function(r){return r.json();})
+      .then(function(geo){
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec',{
+          method:'POST',
+          headers:{'Content-Type':'text/plain'},
+          body:JSON.stringify({
+            _subject:'57 Mens just opened your pitch page',
+            prospect:'Mens',
+            number:'57',
+            time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+            city:geo.city||'',region:geo.region||'',country:geo.country_name||'',
+            device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+            referrer:document.referrer||'direct',url:window.location.href
+          })
+        });
+      })
+      .catch(function(){
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec',{
+          method:'POST',
+          headers:{'Content-Type':'text/plain'},
+          body:JSON.stringify({
+            _subject:'57 Mens just opened your pitch page',
+            prospect:'Mens',
+            number:'57',
+            time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+            device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+            referrer:document.referrer||'direct',url:window.location.href
+          })
+        });
+      });
+  }
+}
+</script>
+</body>
+</html>

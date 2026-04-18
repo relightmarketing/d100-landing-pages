@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mens is jouw embedded HR-copiloot. Geen dikke rapporten, geen tijdelijke oplossingen. Echte HR-expertise, op locatie, naast jou. Boek een gratis HR-scan." />
+  <title>Jouw copiloot naar HR Excellence | Mens</title>
+  <style>
+    /* =============================================
+       CSS CUSTOM PROPERTIES — Mens brand colors
+    ============================================= */
+    :root {
+      --bg:           #ffffff;
+      --surface:      #f4f5f7;
+      --accent:       #F25526;
+      --accent-dark:  #d94418;
+      --navy:         #38405B;
+      --navy-deep:    #2b3149;
+      --text:         #212529;
+      --text-muted:   #6c757d;
+      --font-head:    'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      --font-body:    'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      --r:            12px;
+      --nav-h:        56px;
+      --line:         #e5e7eb;
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+    body {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+      padding-bottom: 76px; /* sticky CTA bar clearance on mobile */
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* =============================================
+       UTILITY
+    ============================================= */
+    .container { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 16px; }
+    .pre-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    /* =============================================
+       BUTTON
+    ============================================= */
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+      text-align: center;
+      min-height: 48px;
+    }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-sm {
+      width: auto;
+      padding: 8px 14px;
+      font-size: 0.72rem;
+      border-radius: 4px;
+      min-height: auto;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+    .btn-outline:hover { background: var(--accent); color: #fff; }
+    .risk-note {
+      display: block;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    /* =============================================
+       NAV
+    ============================================= */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--nav-h);
+      padding: 0 12px;
+      gap: 8px;
+    }
+    .nav-logo {
+      height: 24px;
+      max-width: 140px;
+      flex-shrink: 1;
+      min-width: 0;
+      object-fit: contain;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    /* Phone icon — mobile */
+    .nav-phone-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.12);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+    .nav-phone-icon svg { width: 16px; height: 16px; fill: #fff; }
+    /* Phone text — desktop */
+    .nav-phone-text {
+      display: none;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+      white-space: nowrap;
+      gap: 6px;
+      align-items: center;
+      text-decoration: none;
+    }
+    .nav-cta-mobile { /* short label for mobile */ }
+    .nav-cta-desktop { display: none; }
+
+    @media (min-width: 641px) {
+      :root { --nav-h: 64px; }
+      .nav-inner { height: 64px; padding: 0 24px; gap: 12px; }
+      .nav-logo { height: 32px; max-width: none; flex-shrink: 0; }
+      .nav-phone-icon { display: none; }
+      .nav-phone-text { display: flex; }
+      .nav-cta-mobile { display: none; }
+      .nav-cta-desktop { display: inline-flex; align-items: center; }
+      body { padding-bottom: 0; }
+    }
+    @media (min-width: 961px) {
+      :root { --nav-h: 72px; }
+      .nav-inner { height: 72px; padding: 0 32px; }
+      .nav-logo { height: 40px; }
+    }
+
+    /* =============================================
+       HERO — Image Variant (two-column)
+    ============================================= */
+    .hero {
+      background: var(--navy);
+      padding-top: calc(var(--nav-h) + 40px);
+      padding-bottom: 48px;
+    }
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .hero-content {}
+    .hero-content h1 {
+      font-family: var(--font-head);
+      font-size: clamp(1.75rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 520px;
+    }
+    /* Trust badges */
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 1.5rem;
+    }
+    .badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.85);
+      white-space: nowrap;
+    }
+    .hero-image {
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      display: block;
+    }
+    @media (min-width: 641px) {
+      .hero { padding-top: calc(var(--nav-h) + 56px); padding-bottom: 64px; }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+    }
+    @media (min-width: 961px) {
+      .hero { padding-top: calc(var(--nav-h) + 72px); padding-bottom: 80px; }
+      .hero-grid { grid-template-columns: 55% 45%; gap: 4rem; }
+    }
+
+    /* =============================================
+       SOCIAL PROOF BAR
+    ============================================= */
+    .proof-bar {
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0;
+    }
+    .proof-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      text-align: center;
+    }
+    .proof-num {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+    .proof-label {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    @media (min-width: 641px) {
+      .proof-items { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+      .proof-num { font-size: 1.6rem; }
+    }
+
+    /* =============================================
+       CLIENT LOGOS BAR
+    ============================================= */
+    .logos-section {
+      background: var(--surface);
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .logos-label {
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .logos-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem 1.75rem;
+    }
+    .logos-bar img {
+      height: 32px;
+      max-width: 90px;
+      opacity: 0.6;
+      filter: grayscale(100%);
+      transition: opacity 0.2s, filter 0.2s;
+      object-fit: contain;
+    }
+    .logos-bar img:hover { opacity: 1; filter: none; }
+    @media (min-width: 641px) {
+      .logos-bar img { height: 36px; max-width: 110px; }
+    }
+
+    /* =============================================
+       IMAGE STRIP
+    ============================================= */
+    .img-strip {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px 16px;
+    }
+    .img-strip::-webkit-scrollbar { display: none; }
+    .img-strip img {
+      height: 200px;
+      width: 280px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    @media (min-width: 641px) {
+      .img-strip img { height: 240px; width: 340px; }
+      .img-strip { padding: 32px 24px; }
+    }
+    @media (min-width: 961px) {
+      .img-strip img { height: 280px; width: 400px; }
+    }
+
+    /* =============================================
+       SECTION PADDING
+    ============================================= */
+    .section { padding: 48px 0; }
+    @media (min-width: 641px) { .section { padding: 64px 0; } }
+    @media (min-width: 961px) { .section { padding: 80px 0; } }
+
+    /* =============================================
+       SECTION 2 — PROBLEM AGITATION
+    ============================================= */
+    .section-pain { background: var(--surface); }
+    .pain-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .pain-grid__img { display: none; }
+
+    .pain-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+    .pain-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .pain-list li {
+      background: #fff;
+      border-radius: 6px;
+      padding: 1rem 1.1rem 1rem 3rem;
+      position: relative;
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .pain-list li::before {
+      content: '';
+      position: absolute;
+      left: 1.1rem;
+      top: 1.2rem;
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+    .bridge {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 8px;
+      padding: 1.4rem 1.6rem;
+      font-size: 0.98rem;
+      line-height: 1.75;
+    }
+    .bridge strong { color: var(--accent); }
+
+    @media (min-width: 641px) {
+      .pain-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      .pain-grid__img {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        aspect-ratio: 3/4;
+        position: sticky;
+        top: calc(var(--nav-h) + 2rem);
+      }
+    }
+
+    /* =============================================
+       SECTION 3 — SOLUTION INTRO
+    ============================================= */
+    .section-solution { background: var(--bg); }
+    .solution-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .solution-copy h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    .solution-copy p {
+      color: var(--text);
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+      line-height: 1.75;
+    }
+
+    /* Mini stats */
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      background: var(--navy);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+    }
+    .mini-stat {
+      padding: 1rem 0.75rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .mini-stat:nth-child(2n) { border-right: none; }
+    .mini-stat:nth-last-child(-n+2) { border-bottom: none; }
+    .mini-stat__num {
+      font-family: var(--font-head);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .mini-stat__label {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .solution-image {
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    }
+    .solution-image img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      display: block;
+    }
+
+    @media (min-width: 641px) {
+      .solution-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .mini-stats { grid-template-columns: repeat(4, 1fr); }
+      .mini-stat { border-bottom: none; }
+      .mini-stat:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.1); }
+      .mini-stat:last-child { border-right: none; }
+      .mini-stat__num { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+    }
+
+    /* =============================================
+       SECTION 4 — OFFER DETAIL / HOW IT WORKS
+    ============================================= */
+    .section-offer { background: var(--surface); }
+    .section-offer h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .step-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .step-card__img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .step-card__body { padding: 1.25rem 1.4rem 1.5rem; }
+    .step-card__num {
+      font-family: var(--font-head);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .step-card__title {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .step-card__desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    /* Inclusions */
+    .inclusions {
+      margin-top: 2.5rem;
+      padding: 1.75rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .inclusions h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .inclusions ul {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+    }
+    .inclusions ul li {
+      padding-left: 1.75rem;
+      position: relative;
+      font-size: 0.93rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .inclusions ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 2px;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+    .section-offer .btn-wrap {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 641px) {
+      .steps { grid-template-columns: repeat(3, 1fr); }
+      .step-card__img { height: 200px; }
+      .section-offer .btn-wrap { margin-top: 2.5rem; }
+    }
+
+    /* =============================================
+       SECTION 5 — SOCIAL PROOF
+    ============================================= */
+    .section-proof { background: var(--bg); }
+    .section-proof h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .section-proof .section-sub {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .testimonial-card {
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 0.75rem;
+    }
+    .stars svg { width: 16px; height: 16px; fill: #f59e0b; }
+    .testimonial-card blockquote {
+      font-style: italic;
+      color: var(--text);
+      font-size: 0.93rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .testimonial-card blockquote::before { content: '\201C'; color: var(--accent); font-size: 1.4rem; line-height: 1; }
+    .testimonial-meta { font-size: 0.82rem; font-weight: 700; color: var(--navy); }
+    .testimonial-company { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
+    .testimonial-card .result-pill {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 0.85rem;
+    }
+    @media (min-width: 641px) {
+      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* Creds bar */
+    .creds-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+    .creds-label {
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .creds-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem 1.75rem;
+    }
+    .creds-bar img {
+      height: 40px;
+      max-width: 100px;
+      opacity: 0.65;
+      filter: grayscale(100%);
+      transition: opacity 0.2s, filter 0.2s;
+      object-fit: contain;
+    }
+    .creds-bar img:hover { opacity: 1; filter: none; }
+
+    /* =============================================
+       DARK CALLOUT BANNER
+    ============================================= */
+    .callout-banner {
+      background: var(--navy-deep);
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .callout-banner p {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      line-height: 1.4;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .callout-banner strong { color: var(--accent); }
+
+    /* =============================================
+       SECTION 7 — FORM
+    ============================================= */
+    .section-form {
+      background: var(--surface);
+    }
+    .section-form h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .form-intro {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+    .form-next-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+    .form-next-steps li {
+      padding-left: 1.6rem;
+      position: relative;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .form-next-steps li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 2px;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+    .form-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      max-width: 660px;
+      margin: 0 auto;
+    }
+    .form-box-heading {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .form-friction {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 16px; /* prevents iOS auto-zoom */
+      padding: 14px 16px;
+      border: 1.5px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      margin-bottom: 1rem;
+      -webkit-appearance: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    textarea { resize: vertical; min-height: 96px; }
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    @media (min-width: 641px) {
+      .form-row-2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+    }
+    .form-submit-wrap { text-align: center; margin-top: 0.5rem; }
+    .form-submit-wrap .btn { max-width: 340px; }
+    .form-privacy {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    /* =============================================
+       SECTION 8 — FAQ
+    ============================================= */
+    .section-faq { background: var(--bg); }
+    .section-faq h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item:first-child { border-top: 1px solid var(--line); }
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      text-align: left;
+      font-family: var(--font-head);
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text);
+      gap: 1rem;
+    }
+    .faq-btn::after {
+      content: '+';
+      color: var(--accent);
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .faq-item.open .faq-btn::after { content: '\2212'; }
+    .faq-answer {
+      display: none;
+      padding-bottom: 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* =============================================
+       SECTION 9 — FINAL CTA
+    ============================================= */
+    .section-final {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 56px 0;
+    }
+    .section-final h2 {
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+    .section-final p {
+      color: rgba(255,255,255,0.75);
+      max-width: 500px;
+      margin: 0 auto 1.75rem;
+      font-size: 0.98rem;
+    }
+    .section-final .btn { max-width: 320px; margin: 0 auto; display: block; }
+    .sub-note {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      background: var(--navy-deep);
+      padding: 28px 0 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: center;
+    }
+    .footer-logo { height: 28px; object-fit: contain; }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+    }
+    @media (min-width: 641px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    /* =============================================
+       STICKY MOBILE CTA BAR
+    ============================================= */
+    .mobile-cta {
+      display: flex;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 99;
+      padding: 10px 12px;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+      border-top: 1px solid var(--line);
+    }
+    .mobile-cta .btn {
+      flex: 1;
+      padding: 13px 12px;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+    .mobile-cta .cta-call {
+      width: 48px; height: 48px;
+      border-radius: 8px;
+      background: var(--navy);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      color: #fff;
+      text-decoration: none;
+    }
+    .mobile-cta .cta-call svg { width: 18px; height: 18px; fill: #fff; }
+    @media (min-width: 641px) {
+      .mobile-cta { display: none; }
+    }
+
+    /* =============================================
+       SECTION HEADINGS SHARED
+    ============================================= */
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section-header h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Img placeholder fallback */
+    .img-placeholder {
+      background: var(--surface);
+      border: 1px dashed rgba(56,64,91,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      min-height: 260px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================
+       NAV
+  ============================================= -->
+  <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
+    <div class="nav-inner">
+      <a href="#" aria-label="Mens — terug naar boven">
+        <img
+          src="https://www.mens.be/themes/custom/mens/logo.svg"
+          alt="Mens HR Partners"
+          class="nav-logo"
+          width="140" height="40"
+        />
+      </a>
+      <div class="nav-right">
+        <!-- Phone icon — mobile only -->
+        <a href="tel:+3256255123" class="nav-phone-icon" aria-label="Bel Mens">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.59 1 1 0 01-.24 1.01l-2.21 2.19z"/></svg>
+        </a>
+        <!-- Phone text — tablet+ -->
+        <a href="tel:+3256255123" class="nav-phone-text" aria-label="Bel ons">
+          <svg viewBox="0 0 24 24" width="14" height="14" style="fill:rgba(255,255,255,0.7)" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.59 1 1 0 01-.24 1.01l-2.21 2.19z"/></svg>
+          056 25 51 23
+        </a>
+        <!-- CTA short — mobile -->
+        <a href="#form" class="btn btn-sm nav-cta-mobile">HR-scan</a>
+        <!-- CTA full — tablet+ -->
+        <a href="#form" class="btn btn-sm nav-cta-desktop">Boek je gratis HR-scan</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =============================================
+       HERO — Image Variant
+       Two-column: headline/badges left, image right
+  ============================================= -->
+  <section class="hero" aria-label="Hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left: copy -->
+        <div class="hero-content">
+          <p class="pre-label">Embedded HR voor Belgische ondernemingen</p>
+          <h1>Jouw copiloot naar HR Excellence</h1>
+          <p>
+            Mens zit naast jou aan tafel, niet in een kantoor op afstand.
+            Wij helpen je HR-operatie structureel versterken, van talent aantrekken tot mensen laten groeien, zodat jij je kan focussen op je business.
+          </p>
+          <div class="hero-badges">
+            <span class="badge">15+ HR-specialisten</span>
+            <span class="badge">100+ jaar ervaring</span>
+            <span class="badge">5 jaar partnerships</span>
+          </div>
+          <a href="#form" class="btn">Boek je gratis HR-scan</a>
+          <span class="risk-note">Geen verplichtingen. Geen verkoopsgesprek. Gewoon eerlijk advies.</span>
+        </div>
+        <!-- Right: showcase image -->
+        <div class="hero-image">
+          <img
+            src="https://www.mens.be/wp-content/uploads/2023/08/DSC_3491-scaled.jpg"
+            alt="Mens HR-team in overleg met een klant in een modern kantoor in Kortrijk"
+            loading="eager"
+            width="640" height="480"
+            onerror="this.onerror=null;this.src='https://www.mens.be/sites/default/files/styles/width_1200/public/uploads/media/images/media_image/afbeelding-header-mensen-laptop.png?itok=FkjHLB_R';"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SOCIAL PROOF BAR
+  ============================================= -->
+  <div class="proof-bar" aria-label="Kernfeiten">
+    <div class="container">
+      <div class="proof-items">
+        <div>
+          <p class="proof-num">15+</p>
+          <p class="proof-label">HR-specialisten</p>
+        </div>
+        <div>
+          <p class="proof-num">100+</p>
+          <p class="proof-label">Jaar gecombineerde ervaring</p>
+        </div>
+        <div>
+          <p class="proof-num">5 jaar</p>
+          <p class="proof-label">Gemiddelde partnership</p>
+        </div>
+        <div>
+          <p class="proof-num">Heel BE</p>
+          <p class="proof-label">Van Gent tot Luik</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       CLIENT LOGOS BAR
+  ============================================= -->
+  <div class="logos-section" aria-label="Onze klanten">
+    <div class="container">
+      <p class="logos-label">Ze vertrouwen op Mens</p>
+      <div class="logos-bar">
+        <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/oleon.png?itok=ypSyp_7J" alt="Oleon" loading="lazy" />
+        <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/signpost.png?itok=JBxncC-6" alt="Signpost Group" loading="lazy" />
+        <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/lidl.png?itok=gzwR2qka" alt="Lidl" loading="lazy" />
+        <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/engie.png?itok=xFhX56ZQ" alt="Engie" loading="lazy" />
+        <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/picanol_2.png?itok=1vedj6r5" alt="Picanol Group" loading="lazy" />
+        <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/westvlees.png?itok=yRwJso_W" alt="Westvlees" loading="lazy" />
+        <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/poppies-bakeries.png?itok=gPuQJBO0" alt="Poppies Bakeries" loading="lazy" />
+        <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/tropicana.png?itok=Ztmy2MGA" alt="Tropicana" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       IMAGE STRIP 1 — team / office photos
+  ============================================= -->
+  <div class="img-strip" aria-label="Beeldgalerij Mens team">
+    <img src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/media_image/4k9a2634.jpg?itok=sCu_wLk7" alt="Mens consultant in overleg met klantteam" loading="lazy" />
+    <img src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/media_image/4k9a0168lr.jpg?itok=CQfChOAQ" alt="HR-gesprek in een moderne kantooromgeving" loading="lazy" />
+    <img src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/media_image/4k9a5385_b_1.png?itok=0BKZufrs" alt="Mens HR-expert werkt samen met een klantorganisatie" loading="lazy" />
+    <img src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/blog_delphine_1020.jpg?itok=kih0nNtT" alt="Delphine Vantomme, zaakvoerder van Mens" loading="lazy" />
+  </div>
+
+  <!-- =============================================
+       SECTION 2 — PROBLEM AGITATION
+  ============================================= -->
+  <section class="section section-pain" aria-label="Herken jij dit?">
+    <div class="container">
+      <div class="pain-grid">
+        <!-- Left: copy -->
+        <div class="pain-copy">
+          <span class="pre-label">Herken jij dit?</span>
+          <h2 class="pain-title">We helpen brandjes blussen, maar liever nog: ze voorkomen</h2>
+          <ul class="pain-list">
+            <li><strong>Rekrutering duurt maanden.</strong> Vacatures staan open, de druk op het team stijgt, en de geschikte kandidaat is nergens te vinden.</li>
+            <li><strong>Je doet HR erbij.</strong> De CEO of operationeel manager neemt HR-taken over omdat er niemand anders is. Dat is niet houdbaar.</li>
+            <li><strong>Mensen vertrekken te snel.</strong> Onboarding loopt niet goed, nieuwe medewerkers voelen zich niet thuis en zijn na een jaar alweer weg.</li>
+            <li><strong>Je werkte al met externe hulp, maar er bleef niets over.</strong> Interim-medewerkers deden hun job, maar namen alle kennis mee toen ze vertrokken.</li>
+            <li><strong>Geen zicht op HR-maturiteit.</strong> Je weet dat er hiaten zijn in beleid, employer branding en retentie, maar niet waar te beginnen.</li>
+          </ul>
+          <div class="bridge">
+            <p>De meeste HR-oplossingen pakken <strong>symptomen</strong> aan. Wij bouwen de <strong>fundering</strong>. Een embedded consultant van Mens werkt op locatie, leert je organisatie van binnen kennen, en zorgt dat je team de tools en kennis heeft om de meeste zaken daarna zelf te doen.</p>
+          </div>
+        </div>
+        <!-- Right: image (hidden mobile, sticky desktop) -->
+        <img
+          src="https://www.mens.be/sites/default/files/styles/width_1200/public/uploads/media/images/media_image/afbeelding-strategische-partner.png?itok=W2OxreY4"
+          alt="Mens als strategische HR-partner naast de klant"
+          class="pain-grid__img"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SECTION 3 — SOLUTION INTRO
+  ============================================= -->
+  <section class="section section-solution" aria-label="Onze aanpak">
+    <div class="container">
+      <div class="solution-grid">
+        <!-- Left: copy -->
+        <div class="solution-copy">
+          <span class="pre-label">De aanpak van Mens</span>
+          <h2>Embedded copiloot, geen consultant die een rapport achterlaat</h2>
+          <p>
+            Grote HR-kantoren sturen een rapport en verdwijnen. Recruitmentbureaus sturen kandidaten, maar bouwen niets op. Mens werkt anders: onze consultant zit 2 tot 4 dagen per week bij jou op kantoor, wordt deel van je team, en draagt kennis over zodat jij daarna niet meer van ons afhankelijk bent.
+          </p>
+          <p>
+            We zijn tegelijk <strong>architect en brandweerman</strong>. Op korte termijn lossen we de dringende HR-problemen op. Op lange termijn bouwen we de HR-structuur die jouw organisatie duurzaam sterker maakt.
+          </p>
+          <div class="mini-stats" role="list" aria-label="Kernresultaten">
+            <div class="mini-stat" role="listitem">
+              <p class="mini-stat__num">5 jaar</p>
+              <p class="mini-stat__label">Oleon partnership</p>
+            </div>
+            <div class="mini-stat" role="listitem">
+              <p class="mini-stat__num">5 jaar</p>
+              <p class="mini-stat__label">Signpost partnership</p>
+            </div>
+            <div class="mini-stat" role="listitem">
+              <p class="mini-stat__num">15+</p>
+              <p class="mini-stat__label">HR-specialisten</p>
+            </div>
+            <div class="mini-stat" role="listitem">
+              <p class="mini-stat__num">100+</p>
+              <p class="mini-stat__label">Jaar ervaring</p>
+            </div>
+          </div>
+        </div>
+        <!-- Right: image -->
+        <div class="solution-image">
+          <img
+            src="https://www.mens.be/sites/default/files/styles/width_1200/public/uploads/media/images/media_image/afbeelding-header-mensen-laptop.png?itok=FkjHLB_R"
+            alt="Mens HR-consultant werkt op locatie naast klant aan laptop"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SECTION 4 — OFFER DETAIL / HOW IT WORKS
+  ============================================= -->
+  <section class="section section-offer" aria-label="Hoe we werken">
+    <div class="container">
+      <div class="section-header">
+        <span class="pre-label">Hoe we werken</span>
+        <h2>Drie stappen van brandjes blussen naar HR-maturiteit</h2>
+      </div>
+      <div class="steps">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <img
+            src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/media_image/istock-1864644435.jpg?itok=ivcDb3Tb"
+            alt="Diagnose: Mens analyseert de HR-situatie van jouw organisatie"
+            class="step-card__img"
+            loading="lazy"
+          />
+          <div class="step-card__body">
+            <p class="step-card__num">Stap 01</p>
+            <h3 class="step-card__title">Diagnose en plan</h3>
+            <p class="step-card__desc">
+              We starten met een grondige intake: waar staat je HR vandaag, wat zijn de dringendste pijnpunten, en wat wil je over 12 maanden bereikt hebben? Dat wordt de basis voor ons samenwerking.
+            </p>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="step-card">
+          <img
+            src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/media_image/energie-man-duurzaam-inzetbaar-blij-deal1.jpg?itok=VYZtUgaK"
+            alt="Embedded aan de slag: Mens consultant werkt on-site bij de klant"
+            class="step-card__img"
+            loading="lazy"
+          />
+          <div class="step-card__body">
+            <p class="step-card__num">Stap 02</p>
+            <h3 class="step-card__title">Embedded aan de slag</h3>
+            <p class="step-card__desc">
+              Jouw toegewezen HR-consultant werkt meerdere dagen per week op jouw locatie. Geen afstand, geen verslagen die eenzaam in een lade belanden. Echte handen aan het werk, naast jouw team.
+            </p>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="step-card">
+          <img
+            src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/media_image/wenite-mens.png?itok=UYE_W9Gs"
+            alt="Autonomie opbouwen: Mens transfers kennis zodat de klant zelfstandig kan werken"
+            class="step-card__img"
+            loading="lazy"
+          />
+          <div class="step-card__body">
+            <p class="step-card__num">Stap 03</p>
+            <h3 class="step-card__title">Autonomie opbouwen</h3>
+            <p class="step-card__desc">
+              We geven je organisatie de kennis, tools en processen om de meeste HR-zaken daarna zelf aan te pakken. Ons doel: je zuurstof geven zodat je onafhankelijk kan werken. Geen eeuwige afhankelijkheid.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- What's included -->
+      <div class="inclusions">
+        <h3>Wat je krijgt als embedded HR-partner van Mens</h3>
+        <ul>
+          <li>Een dedicated HR-consultant die meerdere dagen per week on-site werkt bij jouw organisatie</li>
+          <li>Volledige dekking van de talentcyclus: aantrekken, selecteren, doen groeien en verbinden</li>
+          <li>Langetermijn HR-beleid en roadmaps op maat van jouw sector en groeidoelstellingen</li>
+          <li>Operationele HR-ondersteuning: rekrutering, onboarding, performance management, employer branding</li>
+          <li>Kennisoverdracht zodat je interne team de volgende stap zelfstandig kan zetten</li>
+          <li>Flexibele opschaling of afschaling naargelang de behoeften van je organisatie</li>
+          <li>Directe toegang tot het volledige Mens-team van 15+ HR-specialisten</li>
+        </ul>
+      </div>
+
+      <div class="btn-wrap">
+        <a href="#form" class="btn">Boek je gratis HR-scan</a>
+        <span style="display:block;font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;text-align:center;">
+          Geen verplichtingen. We luisteren eerst.
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       IMAGE STRIP 2 — team/office variety
+  ============================================= -->
+  <div class="img-strip" aria-label="Sfeerbeelden Mens">
+    <img src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/media_image/blog_dagmar.jpg?itok=it_XmWbU" alt="Mens HR-consultant Dagmar in een klantgesprek" loading="lazy" />
+    <img src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/nathalie_blog.jpg?itok=I6Cj_IjE" alt="Nathalie van het Mens-team aan het werk" loading="lazy" />
+    <img src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/img_8949.jpg?itok=MtD89DDE" alt="HR-teamoverleg bij een Belgische onderneming" loading="lazy" />
+    <img src="https://www.mens.be/sites/default/files/styles/image_blog/public/uploads/media/images/media_image/MENS-quote-4_8b0c014f6b1b0600e3b8a5091b9d9677.jpeg?itok=Coukybzi" alt="Quote van een tevreden Mens-klant" loading="lazy" />
+  </div>
+
+  <!-- =============================================
+       SECTION 5 — SOCIAL PROOF
+  ============================================= -->
+  <section class="section section-proof" aria-label="Wat klanten zeggen">
+    <div class="container">
+      <span class="pre-label" style="display:block;text-align:center;">Tevreden klanten</span>
+      <h2 style="font-family:var(--font-head);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:700;color:var(--navy);margin-bottom:0.5rem;text-align:center;">
+        Organisaties die op Mens vertrouwen
+      </h2>
+      <p class="section-sub">Van KMO tot multinational: partnerships die blijven.</p>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 — Oleon / Signpost -->
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 sterren">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <span class="result-pill">5 jaar samenwerking</span>
+          <blockquote>
+            De afgelopen 5 jaar werken we nauw samen met MENS en hun consultants, en ik ben zeer tevreden over deze ervaring. De consultants bieden uitstekende ondersteuning op diverse HR gebieden, waarbij ze blijk geven van een hoge mate van flexibiliteit en expertise. Hun betrokkenheid heeft duidelijk bijgedragen aan de uitbouw van HR binnen onze Signpost Group.
+          </blockquote>
+          <p class="testimonial-meta">Annelies Berlaen</p>
+          <p class="testimonial-company">HR Director, Signpost Group</p>
+        </div>
+
+        <!-- Testimonial 2 — Lidl -->
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 sterren">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <span class="result-pill">Strategische sparringpartner</span>
+          <blockquote>
+            Jasper bleek echt een schot in de roos. Hij werd onze ideale strategische sparringpartner.
+          </blockquote>
+          <p class="testimonial-meta">Mellissa Buys</p>
+          <p class="testimonial-company">Teamleader Talent Attraction, Lidl</p>
+        </div>
+
+        <!-- Testimonial 3 — Vandecasteele -->
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 sterren">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <span class="result-pill">Ideaal voor KMO</span>
+          <blockquote>
+            MENS heeft heel wat expertise op andere vlakken binnen HR, ideaal voor KMO. Wij zijn fan!
+          </blockquote>
+          <p class="testimonial-meta">Christophe Vandecasteele</p>
+          <p class="testimonial-company">Zaakvoerder, Vandecasteele Group</p>
+        </div>
+      </div>
+
+      <!-- Credential logos — full client list -->
+      <div class="creds-section">
+        <p class="creds-label">Ook deze organisaties werken met Mens</p>
+        <div class="creds-bar">
+          <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/devagro.png?itok=04wi3JQE" alt="Devagro" loading="lazy" />
+          <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/molymet.png?itok=zkUs_AEu" alt="Molymet" loading="lazy" />
+          <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/claerhout.png?itok=UgjbXLv-" alt="Claerhout" loading="lazy" />
+          <img src="https://www.mens.be/sites/default/files/styles/entity_browser_thumbnail/public/uploads/media/images/media_image/soenen.png?itok=1QHxl8GF" alt="Soenen" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       DARK CALLOUT BANNER
+  ============================================= -->
+  <div class="callout-banner" role="complementary" aria-label="Ons doel">
+    <div class="container">
+      <p>
+        "Je business en context begrijpen."<br>
+        <strong>We hebben dit bij MENS zeker gevonden.</strong>
+      </p>
+      <p style="font-size:0.85rem;font-weight:400;color:rgba(255,255,255,0.5);margin-top:0.75rem;">
+        Jelle Lipkens, Team WAUW
+      </p>
+    </div>
+  </div>
+
+  <!-- =============================================
+       SECTION 7 — LEAD FILTER FORM
+  ============================================= -->
+  <section class="section section-form" id="form" aria-label="Boek je gratis HR-scan">
+    <div class="container">
+      <span class="pre-label" style="display:block;text-align:center;">Gratis HR-scan</span>
+      <h2 style="font-family:var(--font-head);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:700;color:var(--navy);margin-bottom:0.5rem;text-align:center;">
+        Ontdek waar je HR-organisatie staat
+      </h2>
+      <p class="form-intro">
+        Vul het formulier in. Wij nemen contact op voor een vrijblijvend gesprek van 30 minuten om te zien of en hoe we kunnen helpen.
+      </p>
+
+      <ul class="form-next-steps">
+        <li>Je ontvangt een bevestiging binnen 1 werkdag</li>
+        <li>We plannen een 30 minuten intakegesprek zonder verkoopspitch</li>
+        <li>Je krijgt een eerlijke beoordeling van je huidige HR-maturiteit, gratis</li>
+      </ul>
+
+      <div class="form-box">
+        <p class="form-box-heading">Vertel ons over jouw organisatie</p>
+        <p class="form-friction">Duurt minder dan 2 minuten. We reageren binnen 1 werkdag.</p>
+
+        <!--
+          TALLY FORM SETUP:
+          1. Ga naar tally.so en maak een gratis account aan.
+          2. Maak een nieuw formulier aan en kopieer de form ID (bv. "mYaBcD").
+          3. Vervang "placeholder" hieronder door jouw Tally form ID.
+          De antwoorden worden automatisch doorgestuurd naar jouw inbox.
+
+          FORMSPREE ALTERNATIEF:
+          Vervang de Tally embed door:
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> ... </form>
+        -->
+
+        <!--
+        TALLY EMBED (uncomment and replace placeholder with real form ID):
+        <iframe data-tally-src="https://tally.so/embed/placeholder" loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="Gratis HR-scan aanvragen"></iframe>
+        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+        -->
+
+        <!-- Native form (active until Tally is configured) -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Nieuwe HR-scan aanvraag via landing page" />
+
+          <div class="form-row-2">
+            <div>
+              <label for="voornaam">Voornaam</label>
+              <input type="text" id="voornaam" name="voornaam" placeholder="Jan" required />
+            </div>
+            <div>
+              <label for="achternaam">Achternaam</label>
+              <input type="text" id="achternaam" name="achternaam" placeholder="Peeters" required />
+            </div>
+          </div>
+
+          <label for="email">Professioneel e-mailadres</label>
+          <input type="email" id="email" name="email" placeholder="jan.peeters@bedrijf.be" required />
+
+          <label for="bedrijf">Bedrijfsnaam</label>
+          <input type="text" id="bedrijf" name="bedrijf" placeholder="Naam van jouw organisatie" required />
+
+          <label for="grootte">Hoeveel medewerkers telt jouw organisatie?</label>
+          <select id="grootte" name="grootte" required>
+            <option value="" disabled selected>Selecteer een optie</option>
+            <option value="1-25">1 tot 25 medewerkers</option>
+            <option value="25-100">25 tot 100 medewerkers</option>
+            <option value="100-500">100 tot 500 medewerkers</option>
+            <option value="500+">Meer dan 500 medewerkers</option>
+          </select>
+
+          <label for="pijnpunt">Wat is vandaag het grootste HR-knelpunt in jouw organisatie?</label>
+          <select id="pijnpunt" name="pijnpunt" required>
+            <option value="" disabled selected>Selecteer een optie</option>
+            <option value="rekrutering">Rekrutering duurt te lang of levert de verkeerde profielen</option>
+            <option value="retentie">Medewerkers verlaten ons te snel</option>
+            <option value="geen-hr-team">We hebben geen dedicated HR-persoon of -team</option>
+            <option value="onboarding">Onboarding verloopt niet goed</option>
+            <option value="beleid">HR-beleid is verouderd of ontbreekt volledig</option>
+            <option value="employer-branding">We vinden geen kandidaten omdat onze employer brand zwak is</option>
+            <option value="groei">We groeien snel en HR kan het tempo niet bijhouden</option>
+          </select>
+
+          <label for="geprobeerd">Heb je al externe HR-hulp geprobeerd? Zo ja, wat werkte niet?</label>
+          <textarea id="geprobeerd" name="geprobeerd" placeholder="Bv. 'We werkten met een interimkantoor maar er bleef niets achter...' (optioneel)"></textarea>
+
+          <label for="timing">Wanneer wil je dit aanpakken?</label>
+          <select id="timing" name="timing" required>
+            <option value="" disabled selected>Selecteer een optie</option>
+            <option value="direct">Zo snel mogelijk, het is urgent</option>
+            <option value="1-3m">Binnen 1 tot 3 maanden</option>
+            <option value="3-6m">Binnen 3 tot 6 maanden</option>
+            <option value="orientatie">Ik oriënteer mij nog, geen acute nood</option>
+          </select>
+
+          <div class="form-submit-wrap">
+            <button type="submit" class="btn">Boek je gratis HR-scan</button>
+          </div>
+          <p class="form-privacy">
+            Geen spam. Geen verkoopsgesprek. Jouw gegevens worden vertrouwelijk behandeld.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SECTION 8 — FAQ ACCORDION
+  ============================================= -->
+  <section class="section section-faq" aria-label="Veelgestelde vragen">
+    <div class="container">
+      <h2>Veelgestelde vragen</h2>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq1">
+            Wat als jullie consultant onze sector of cultuur niet begrijpt?
+          </button>
+          <div class="faq-answer" id="faq1" role="region">
+            Dat is precies waarom we starten met een grondige intake. In de eerste weken verdiepen we ons in jouw bedrijfscontext, sector, teamdynamiek en waarden voordat we actie ondernemen. Bovendien werkt jouw consultant meerdere dagen per week on-site, niet vanuit ons kantoor op afstand. Na een paar weken is hij of zij geen externe partij meer, maar deel van jouw team. Klanten als Oleon en Lidl, die opereren in heel andere sectoren, bevestigen dat deze aanpak werkt.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq2">
+            We probeerden al externe HR-hulp. Die leverde een dik rapport op en daarna hoorden we niets meer.
+          </button>
+          <div class="faq-answer" id="faq2" role="region">
+            We begrijpen die frustratie. Rapporten en presentaties zijn makkelijk te maken. Echte verandering vergt aanwezigheid. Onze aanpak is precies het tegenovergestelde van de consultantbureau-aanpak: geen dikke rapporten of opgeblazen beloftes, maar een consultant die de mouwen opstroopt en naast jou werkt. En we bouwen actief aan kennisoverdracht zodat jouw team zelfstandig verder kan, ook als we er niet meer zijn.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq3">
+            Wat als de consultant weggaat? Dan valt alles weer in elkaar.
+          </button>
+          <div class="faq-answer" id="faq3" role="region">
+            Dat is een terechte zorg, en precies waarom kennisoverdracht en het opbouwen van autonomie een expliciet onderdeel zijn van elke Mens-opdracht. We documenteren processen, trainen jouw interne team, en bouwen HR-systemen op die blijven werken onafhankelijk van ons. Bovendien staan het volledige Mens-team van 15+ specialisten achter elke consultant voor opvang bij overgang.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq4">
+            Wij zijn een KMO. Is Mens ook voor kleinere bedrijven?
+          </button>
+          <div class="faq-answer" id="faq4" role="region">
+            Absoluut. We werken zowel met grote ondernemingen (Oleon, Lidl, Engie) als met KMO's en snelle groeiers. Christophe Vandecasteele van Vandecasteele Group zegt het zelf: "MENS heeft heel wat expertise op andere vlakken binnen HR, ideaal voor KMO." De scope en het ritme van onze ondersteuning passen we aan op de grootte en de noden van jouw organisatie.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq5">
+            Hoeveel kost dit en hoe lang duurt zo'n samenwerking?
+          </button>
+          <div class="faq-answer" id="faq5" role="region">
+            We werken op maat: de prijs hangt af van het aantal dagen per week, de duur en de scope van de opdracht. Er is geen standaardpakket, want elke organisatie is anders. Wat we wel weten: klanten die kiezen voor een embedded aanpak, werken gemiddeld 5 jaar met ons samen, niet omdat ze moeten, maar omdat het werkt. De gratis HR-scan is de beste manier om te zien wat past bij jouw situatie, zonder enige verplichting.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SECTION 9 — FINAL CTA
+  ============================================= -->
+  <section class="section-final" aria-label="Laatste oproep">
+    <div class="container">
+      <h2>Klaar om van brandjes blussen naar HR-maturiteit te gaan?</h2>
+      <p>
+        Boek een gratis HR-scan. In 30 minuten weet je waar je staat, en wat de volgende stap is. Zonder verkoopsgesprek, zonder verplichtingen.
+      </p>
+      <a href="#form" class="btn">Boek je gratis HR-scan</a>
+      <p class="sub-note">5 jaar samenwerking met Oleon, Signpost Group en Lidl. 100+ jaar gecombineerde HR-expertise.</p>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <img
+          src="https://www.mens.be/themes/custom/mens/logo.svg"
+          alt="Mens HR Partners"
+          class="footer-logo"
+          loading="lazy"
+          width="120" height="30"
+        />
+        <p class="footer-copy">
+          &copy; 2026 Mens HR Partners. Kortrijk, Belgie. <a href="tel:+3256255123" style="color:rgba(255,255,255,0.4);text-decoration:underline;">056 25 51 23</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       STICKY MOBILE CTA BAR
+  ============================================= -->
+  <div class="mobile-cta" role="complementary" aria-label="Snelle actie balk">
+    <a href="#form" class="btn">Boek je gratis HR-scan</a>
+    <a href="tel:+3256255123" class="cta-call" aria-label="Bel Mens">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.57 3.59 1 1 0 01-.24 1.01l-2.21 2.19z"/></svg>
+    </a>
+  </div>
+
+  <!-- =============================================
+       JAVASCRIPT
+  ============================================= -->
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.parentElement;
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Hide sticky CTA when form is in view
+    (function() {
+      var mc = document.querySelector('.mobile-cta');
+      if (!mc) return;
+      var form = document.getElementById('form');
+      if (!form) return;
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+          mc.style.transition = 'transform 0.3s ease';
+        });
+      }, { threshold: 0.1 });
+      io.observe(form);
+    })();
+  </script>
+
+</body>
+</html>
