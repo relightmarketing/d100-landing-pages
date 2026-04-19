@@ -53,7 +53,7 @@ p { color: var(--sub); line-height: 1.6; }
 .btn-gold:hover { background: var(--green-dark); transform: translateY(-1px); }
 .hero { background: linear-gradient(150deg, var(--navy-deep) 0%, var(--navy) 55%, #0f3144 100%); color: #fff; padding: 140px 24px 0; position: relative; overflow: visible; text-align: center; }
 .hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 20%, rgba(34,162,220,0.22), transparent 50%), radial-gradient(circle at 80% 30%, rgba(70,177,80,0.20), transparent 55%); pointer-events: none; }
-.hero-inner { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; }
+.hero-inner { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
 .hero-logo { height: 44px; margin: 0 auto 28px; }
 .hero-kicker { display: inline-flex; align-items: center; gap: 9px; background: rgba(70,177,80,0.14); border: 1px solid rgba(70,177,80,0.35); color: #b7e5bc; padding: 9px 18px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 24px; }
 .hero-kicker .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(70,177,80,0.28); animation: pulseDot 2s ease-in-out infinite; }
@@ -90,7 +90,7 @@ section { padding: 88px 0; }
 .diag-closer { font-family: "DM Serif Display", serif; font-size: 1.25rem; color: var(--txt); text-align: center; max-width: 680px; margin: 0 auto; line-height: 1.4; border-top: 1px solid var(--line); padding-top: 28px; }
 .diag-solution { margin-top: 40px; background: var(--navy); border-radius: 18px; padding: 32px 28px; }
 .diag-solution-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
-.diag-solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.diag-solution-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
 .diag-sol-item { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; padding: 16px 18px; }
 .diag-sol-num { font-family: "DM Serif Display", serif; font-size: 2rem; color: #fff; line-height: 1; flex-shrink: 0; }
 .diag-sol-text { font-size: 0.88rem; color: rgba(255,255,255,0.78); line-height: 1.45; }
@@ -186,15 +186,58 @@ section { padding: 88px 0; }
 .phone-screen { background: #fff; border-radius: 28px; overflow: hidden; height: 660px; position: relative; }
 .phone-screen iframe { width: 100%; height: 100%; border: 0; display: block; }
 .qa-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 880px; margin: 0 auto; }
-.qa-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px 22px; }
-.qa-card h4 { color: var(--txt); margin-bottom: 8px; font-size: 1rem; font-weight: 700; }
-.qa-card p { font-size: 0.92rem; }
+.qa-card { background: var(--navy); border-radius: 16px; padding: 26px 26px; border-left: 4px solid var(--gold); }
+.qa-card h4 { color: #fff; margin-bottom: 10px; font-size: 1.02rem; font-weight: 700; }
+.qa-card p { font-size: 0.93rem; color: rgba(255,255,255,0.78); line-height: 1.6; }
 .v1-note { margin-top: 32px; background: rgba(34,162,220,0.07); border: 1px solid rgba(34,162,220,0.25); border-left: 4px solid var(--blue); border-radius: 12px; padding: 20px 24px; font-size: 0.95rem; color: var(--sub); line-height: 1.6; }
 .v1-note strong { color: var(--txt); display: block; margin-bottom: 6px; font-size: 1rem; }
-.synergy { background: #fff; }
+.synergy { background: var(--off); }
 .synergy h2 { text-align: center; margin-bottom: 14px; }
-.synergy .lead { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+.synergy .lead { text-align: center; max-width: 680px; margin: 0 auto 40px; }
 .synergy-grid { display: grid; grid-template-columns: 1fr; gap: 18px; max-width: 880px; margin: 0 auto 48px; }
+.funnel-wrap { max-width: 960px; margin: 0 auto 40px; }
+.funnel-steps { display: flex; flex-direction: column; gap: 0; }
+.funnel-row { display: flex; align-items: stretch; gap: 0; }
+.funnel-step { flex: 1; background: var(--navy); border-radius: 14px; padding: 20px 16px; text-align: center; }
+.funnel-step.final { background: var(--green); }
+.funnel-step .fs-num { font-family: "DM Serif Display", serif; font-size: 2.2rem; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+.funnel-step.final .fs-num { color: #fff; font-size: 2.8rem; }
+.funnel-step .fs-label { font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.funnel-step .fs-rate { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.funnel-step.final .fs-rate { color: rgba(255,255,255,0.75); }
+.funnel-arrow { display: flex; align-items: center; justify-content: center; padding: 0 6px; color: var(--sub2); font-size: 1.1rem; flex-shrink: 0; }
+.roi-card-full { max-width: 960px; margin: 0 auto 40px; background: var(--navy); border-radius: 18px; padding: 30px 28px; }
+.roi-card-full .rc-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.roi-rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.roi-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.roi-row:last-child { border-bottom: none; }
+.roi-row .rr-label { font-size: 0.93rem; color: rgba(255,255,255,0.7); }
+.roi-row .rr-val { font-family: "DM Serif Display", serif; font-size: 1.2rem; color: #fff; }
+.roi-row .rr-val.positive { color: #6dd176; }
+.roi-row .rr-val.negative { color: rgba(255,255,255,0.55); }
+.roi-total { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 18px; display: flex; justify-content: space-between; align-items: baseline; }
+.roi-total .rt-label { font-size: 1rem; font-weight: 700; color: #fff; }
+.roi-total .rt-val { font-family: "DM Serif Display", serif; font-size: 2rem; color: #6dd176; }
+.budget-opts { display: grid; grid-template-columns: 1fr; gap: 12px; max-width: 960px; margin: 0 auto; }
+.budget-opt { background: #fff; border: 1.5px solid var(--line); border-radius: 14px; padding: 18px 20px; text-align: center; }
+.budget-opt.highlight { border-color: var(--green); background: var(--green-soft); }
+.budget-opt .opt-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sub); margin-bottom: 6px; }
+.budget-opt h4 { color: var(--txt); font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.budget-opt p { font-size: 0.88rem; color: var(--sub); }
+.process-steps { max-width: 720px; margin: 0 auto 40px; }
+.pstep { display: flex; gap: 18px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.pstep:last-child { border-bottom: none; }
+.pstep .pnum { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-family: "DM Serif Display", serif; font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; }
+.pstep.key .pnum { background: var(--green); }
+.pstep strong { display: block; color: var(--txt); font-size: 0.97rem; margin-bottom: 3px; }
+.pstep span { color: var(--sub); font-size: 0.9rem; line-height: 1.5; }
+.timeline-note { max-width: 720px; margin: 0 auto; background: var(--navy); border-radius: 16px; padding: 26px 28px; }
+.timeline-note .tl-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.tline { display: flex; flex-direction: column; gap: 10px; }
+.tline-row { display: flex; gap: 14px; }
+.tline-row .tw { flex-shrink: 0; font-family: "DM Serif Display", serif; font-size: 0.9rem; color: var(--blue); width: 100px; }
+.tline-row .td { font-size: 0.9rem; color: rgba(255,255,255,0.78); line-height: 1.5; }
+.diag-2col { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 820px; margin: 0 auto 32px; }
 .syn-row { background: var(--off); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: flex; gap: 14px; align-items: flex-start; }
 .syn-row .sq { width: 14px; height: 14px; flex-shrink: 0; margin-top: 6px; border-radius: 4px; background: linear-gradient(135deg, var(--blue) 0%, var(--green) 100%); }
 .syn-row strong { color: var(--txt); display: block; margin-bottom: 4px; font-size: 1rem; }
@@ -233,6 +276,7 @@ section { padding: 88px 0; }
 .case-card-pp .img img { width: 100%; height: 100%; object-fit: cover; }
 .case-card-pp .meta { padding: 22px 22px 24px; }
 .case-card-pp .meta .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+.case-card-pp .meta .case-logo { width: 200px; height: 100px; display: block; object-fit: contain; object-position: left center; margin-bottom: 14px; }
 .case-card-pp .meta h3 { color: var(--txt); margin-bottom: 8px; font-size: 1.1rem; }
 .case-card-pp .meta p { font-size: 0.92rem; }
 .cadence { background: #fff; }
@@ -267,9 +311,15 @@ section { padding: 88px 0; }
 footer { padding: 32px 0; background: #fff; border-top: 1px solid var(--line); text-align: center; color: var(--sub2); font-size: 0.85rem; }
 footer a { color: var(--sub); }
 footer a + a { margin-left: 10px; }
+@media (max-width: 639px) {
+  .video-shell { order: 1; width: 100%; margin-bottom: 0; }
+  .hero-inner p.lead { order: 2; }
+  .ministrip { padding-top: 40px; }
+}
 @media (min-width: 640px) {
   .ministrip-grid { grid-template-columns: repeat(3, 1fr); }
   .diag-solution-grid { grid-template-columns: repeat(2, 1fr); }
+  .diag-2col { grid-template-columns: 1fr 1fr; }
   .track-split { grid-template-columns: 1fr 1fr; gap: 22px; }
   .compare-grid { grid-template-columns: 1fr 1fr; }
   .pillars { grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -279,6 +329,10 @@ footer a + a { margin-left: 10px; }
   .pillar-partner-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .case-grid { grid-template-columns: repeat(3, 1fr); }
   .about-grid { grid-template-columns: 1fr 1.2fr; gap: 56px; }
+  .budget-opts { grid-template-columns: repeat(3, 1fr); }
+  .funnel-steps { flex-direction: row; align-items: stretch; }
+  .funnel-row { flex-direction: row; }
+  .funnel-arrow { padding: 0 4px; }
 }
 @media (min-width: 960px) {
   section { padding: 108px 0; }
@@ -302,8 +356,8 @@ footer a + a { margin-left: 10px; }
   <div class="hero-inner">
     <img src="https://dima-ecotechnics.be/images/logo/Logo-Dima.svg" alt="Dima Ecotechnics" class="hero-logo">
     <span class="hero-kicker"><span class="dot"></span> Strategisch voorstel voor Dirk Vermeulen</span>
-    <h1 class="dm"><span class="a-blue">Meer klanten</span> en <span class="a-green">nieuwe techniekers aanwerven.</span> Eén aanpak bovenop jullie huidige content.</h1>
-    <p class="lead">Deze strategie is gebaseerd op alles wat ik online kon vinden over Dima Ecotechnics. De strategie is gemaakt om zowel meer klanten als kwalitatieve werknemers aan te trekken. Hieronder staat de volledige aanpak uitgewerkt die ik zou toepassen om deze doelen te behalen.<br><br><strong style="color:#fff;">Let op</strong> <span style="color:rgba(255,255,255,0.85);">— dit is bedoeld om samen met jullie huidige organische content te werken, niet om het te vervangen.</span></p>
+    <h1 class="dm"><span class="a-blue">3 Extra projecten per maand</span> en <span class="a-green">nieuwe techniekers aanwerven.</span></h1>
+    <p class="lead">Hieronder de volledige strategie uitgewerkt om meer projecten binnen te halen en nieuwe werknemers aan te werven.<br><br><strong style="color:#fff;">Let op</strong> <span style="color:rgba(255,255,255,0.85);">— dit is bedoeld om samen met jullie huidige organische content te werken, niet om het te vervangen.</span></p>
     <div class="video-shell">
       <div class="video-wrap">
         <div class="placeholder">
@@ -333,36 +387,36 @@ footer a + a { margin-left: 10px; }
   <div class="wrap">
     <div class="center">
       <span class="eyebrow">Diagnose</span>
-      <h2 class="dm">Wat ik zie als ik naar Dima kijk.</h2>
-      <p class="lead">Ik heb jullie website, Instagram, Facebook, Trustpilot en vacaturepagina doorgenomen. Hier is mijn eerlijke analyse.</p>
+      <h2 class="dm">De huidige situatie geanalyseerd.</h2>
+      <p class="lead">Jullie zijn heel actief op Facebook en Instagram. Goed voor mensen die jullie kennen of opzoeken. Maar organisch bereik heeft een limiet, zeker voor potentiële nieuwe klanten en werknemers.</p>
     </div>
-    <div class="diag-rows">
+    <div class="diag-2col">
       <div class="diag-row">
         <div class="num">1</div>
         <div>
-          <strong>Jullie posten consistent en dat is goed.</strong>
-          <span>De content toont vakmanschap, een hecht team en professionaliteit. Dat is precies wat mensen willen zien van een installateur. Jullie doen dat al goed, en dat hoeft niet te veranderen.</span>
+          <strong>Consistent aanwezig op Facebook en Instagram.</strong>
+          <span>Vakmanschap zichtbaar, hecht team, professioneel. Dat doen jullie al goed en dat hoeft niet te veranderen.</span>
         </div>
       </div>
       <div class="diag-row">
         <div class="num">2</div>
         <div>
-          <strong>Maar het probleem is: bijna niemand ziet het.</strong>
-          <span>859 Facebook likes en 299 Instagram volgers zijn vrijwel allemaal mensen die jullie al kennen. De Limburger die volgende week een airco of warmtepomp wil laten plaatsen, of de technieker die op zoek is naar een betere werkplek, die ziet jullie posts niet. Organische content bereikt de mensen die jullie al volgen, niet de mensen die jullie nog nodig hebben.</span>
+          <strong>Organisch bereik stopt bij wie jullie al volgt.</strong>
+          <span>859 Facebook likes en 299 Instagram volgers zijn bijna allemaal mensen die jullie al kennen. Nieuwe klanten en techniekers zien jullie niet.</span>
         </div>
       </div>
       <div class="diag-row">
         <div class="num">3</div>
         <div>
-          <strong>Wat ook nog ontbreekt: video's waarin iemand rechtstreeks uitlegt waarom je bij Dima moet zijn.</strong>
-          <span>De huidige content toont realisaties en sfeer. Dat werkt voor vertrouwen. Maar wat nóg beter converteert, zijn video's waarin Dirk of een teamlid direct tegen de camera praat en uitlegt waarom klanten voor Dima kiezen. Dat type content overtuigt twijfelaars, en die bestaan nog nauwelijks in jullie huidige mix.</span>
+          <strong>Geen video's van Dirk die rechtstreeks overtuigt.</strong>
+          <span>Realisaties wekken vertrouwen. Maar een video waarin Dirk direct spreekt converteert twijfelaars. Dat type content ontbreekt.</span>
         </div>
       </div>
       <div class="diag-row">
         <div class="num">4</div>
         <div>
-          <strong>Jullie hebben al eens advertenties gedraaid, maar het verkeer ging naar de verkeerde plek.</strong>
-          <span>Ik zag dat jullie eerder betaalde advertenties op Facebook en Instagram hadden. Goed initiatief. Maar het verkeer werd gestuurd naar jullie Instagram- of Facebookpagina. Iemand die op een advertentie klikt en uitkomt op een sociaal profiel, is weg binnen 10 seconden. Grote bedrijven sturen dat verkeer naar een specifieke pagina die gemaakt is om mensen te overtuigen actie te ondernemen. Dat is precies wat ik nu voor jullie heb gebouwd.</span>
+          <strong>Vorige advertenties stuurden naar het verkeerde doel.</strong>
+          <span>Jullie hebben eerder geadverteerd. Maar traffic naar een social profiel verliest mensen in 10 seconden. We sturen dat naar een pagina die actie uitlokt.</span>
         </div>
       </div>
     </div>
@@ -380,28 +434,27 @@ footer a + a { margin-left: 10px; }
 
 <section class="tracks fade">
   <div class="wrap">
-    <span class="eyebrow center" style="display:block; text-align:center;">Twee doelgroepen, twee tracks</span>
-    <h2 class="dm">De Limburger die een warmtepomp zoekt is niet dezelfde als de technieker die je zoekt.</h2>
-    <p class="lead">Daarom bouwen we twee aparte advertentietrajecten, elk met eigen ads, eigen toon en eigen landingspagina. Gedeelde techniek, twee compleet verschillende verhalen.</p>
+    <span class="eyebrow center" style="display:block; text-align:center;">Twee funnels</span>
+    <h2 class="dm">Hieronder zijn 2 advertentie funnels uitgewerkt.</h2>
+    <p class="lead">Eén om nieuwe projecten binnen te halen, één om werknemers aan te trekken.</p>
     <div class="track-split">
       <div class="track blue">
         <span class="tag">Track 1, Klanten</span>
-        <h3>Meer aanvragen voor warmtepomp, airco en ventilatie</h3>
-        <div class="line-item"><span class="lbl">Doelgroep</span><span class="val">Eigenaar gezinswoning in Limburg, 35 tot 65, twijfelt tussen gas vervangen of airco bijplaatsen.</span></div>
-        <div class="line-item"><span class="lbl">Pijn</span><span class="val">"Iedere installateur vertelt iets anders en mijn energiefactuur blijft maar stijgen."</span></div>
-        <div class="line-item"><span class="lbl">Belofte</span><span class="val">"Piekfijne uitvoering en afwerking. Kwaliteit op elk vlak."</span></div>
-        <div class="line-item"><span class="lbl">Invalshoek</span><span class="val">Dezelfde installateur die Maasmechelen Village en Hotel Stayen vertrouwen, nu voor jouw woning.</span></div>
+        <h3>Nr. 1 om nieuwe projecten binnen te halen.</h3>
+        <p style="color:var(--sub); font-size:0.95rem; margin-top:8px;">Kan verder aangepast worden met meer focus op B2C of B2B.</p>
+        <div class="line-item"><span class="lbl">Doelgroep</span><span class="val">Eigenaar gezinswoning in Limburg, 35-65, overweegt warmtepomp, airco of zonnepanelen.</span></div>
+        <div class="line-item"><span class="lbl">Pijn</span><span class="val">"Iedere installateur vertelt iets anders."</span></div>
+        <div class="line-item"><span class="lbl">Belofte</span><span class="val">Dirk meet zelf. Mitsubishi Diamond Dealer. Vincotte gecertificeerd.</span></div>
       </div>
       <div class="track green">
         <span class="tag">Track 2, Werknemers</span>
-        <h3>Drie vacatures invullen, zonder CV-drempel vooraf</h3>
-        <div class="line-item"><span class="lbl">Doelgroep</span><span class="val">Technieker 22 tot 40, vandaag bij een algemene installateur of grote keten, zoekt meer inhoud.</span></div>
-        <div class="line-item"><span class="lbl">Pijn</span><span class="val">"Vastgelopen bij dezelfde drie installaties, week na week, zonder iets bij te leren."</span></div>
-        <div class="line-item"><span class="lbl">Belofte</span><span class="val">"Bij Dima ben je geen nummer. Je bent de monteur die Dirk zelf heeft uitgekozen."</span></div>
-        <div class="line-item"><span class="lbl">Invalshoek</span><span class="val">Jouw B2B-portfolio is ook een sterk argument als werkgever. Techniekers willen werken waar kwaliteit telt.</span></div>
+        <h3>Nr. 2 om werknemers aan te trekken.</h3>
+        <p style="color:var(--sub); font-size:0.95rem; margin-top:8px;">Gebaseerd op de vacatures op de website.</p>
+        <div class="line-item"><span class="lbl">Doelgroep</span><span class="val">Technieker 22-40, vandaag bij een grote keten, zoekt meer inhoud en uitdaging.</span></div>
+        <div class="line-item"><span class="lbl">Pijn</span><span class="val">"Vastgelopen bij dezelfde installaties, week na week."</span></div>
+        <div class="line-item"><span class="lbl">Belofte</span><span class="val">Echte projecten. Opleidingen betaald. Dirk kent jouw naam.</span></div>
       </div>
     </div>
-    <p class="tracks-closer">Beide tracks lopen parallel en versterken mekaar, maar spreken twee compleet verschillende mensen aan.</p>
   </div>
 </section>
 
@@ -444,33 +497,6 @@ footer a + a { margin-left: 10px; }
       <div class="pillar blue"><div class="pn">03</div><h4>"Piekfijne uitvoering en afwerking"</h4><p>Letterlijk citaat van klant Verjans-Schoefs uit Hoeselt. Kwaliteit op elk vlak.</p></div>
     </div>
 
-    <div class="phase">
-      <div class="phase-header"><span class="label">Warmtepomp</span><div class="line"></div></div>
-      <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./images/1.webp" alt="Warmtepomp-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">1</span><span class="type">Lokale meting</span></div><p class="desc">Buitenunit netjes tegen een bakstenen rijwoning. "Laat uw warmtepomp plaatsen in Limburg, Dirk komt deze week meten." CTA: Plan uw gratis meting.</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/2.webp" alt="Warmtepomp-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">2</span><span class="type">Certificering</span></div><p class="desc">Studio-productshot van de warmtepomp. "Warmtepomp laten plaatsen door een Mitsubishi Diamond Dealer." Offerte binnen 5 werkdagen, Vincotte gecertificeerd.</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/3.webp" alt="Warmtepomp-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">3</span><span class="type">Familiebedrijf</span></div><p class="desc">Limburgse rijwoning met Mitsubishi unit aan de zijgevel. "Uw warmtepomp geïnstalleerd door Dima Ecotechnics." 10+ jaar, Dirk meet zelf, Mitsubishi Diamond Dealer.</p></div></div>
-      </div>
-    </div>
-
-    <div class="phase">
-      <div class="phase-header"><span class="label">Airco</span><div class="line"></div></div>
-      <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./images/4.webp" alt="Airco-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">4</span><span class="type">Zomer-ready</span></div><p class="desc">Lichte Belgische woonkamer met Mitsubishi binnenunit boven de zitbank. "Laat uw airco plaatsen voor de zomer." Offerte binnen 5 werkdagen.</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/5.webp" alt="Airco-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">5</span><span class="type">Product + spec</span></div><p class="desc">Close-up van de Mitsubishi binnenunit. "Mitsubishi airco geplaatst door Dima." Fluisterstille plaatsing, koeltechnisch gecertificeerd, Vincotte.</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/6.webp" alt="Airco-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">6</span><span class="type">B2B bewijs</span></div><p class="desc">Hospitality-interieur met airco-installatie in het plafond. "De airco installateur van Hotel Stayen, nu voor uw woning." Citaat Verjans-Schoefs uit Hoeselt.</p></div></div>
-      </div>
-    </div>
-
-    <div class="phase">
-      <div class="phase-header"><span class="label">Zonnepanelen</span><div class="line"></div></div>
-      <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./images/7.webp" alt="Zonnepanelen-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">7</span><span class="type">Lokale plaatsing</span></div><p class="desc">Full-black panelen op een rood dak. "Laat zonnepanelen plaatsen in Limburg." Meting en offerte op maat door Dima.</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/8.webp" alt="Zonnepanelen-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">8</span><span class="type">Eigen team</span></div><p class="desc">Limburgse halfopen bebouwing met panelen op het schuine dak. "Zonnepanelen geplaatst door uw Limburgs familiebedrijf." Meting door Dirk, plaatsing door eigen team.</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./images/9.webp" alt="Zonnepanelen-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">9</span><span class="type">Cross-sell</span></div><p class="desc">Woning met zowel panelen op het dak als een warmtepomp aan de gevel. "Zonnepanelen en warmtepomp in één installatie." Eén installateur, één aanspreekpunt.</p></div></div>
-      </div>
-    </div>
-
     <div class="scripts-wrap">
       <div class="scripts-label">3 volledig uitgeschreven video scripts, klaar om met je telefoon te filmen</div>
       <div class="accordion blue" id="acc1">
@@ -505,6 +531,33 @@ footer a + a { margin-left: 10px; }
       </div>
     </div>
 
+    <div class="phase">
+      <div class="phase-header"><span class="label">Warmtepomp</span><div class="line"></div></div>
+      <div class="ad-grid">
+        <div class="ad-card"><div class="ad-img"><img src="./images/1.webp" alt="Warmtepomp-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">1</span><span class="type">Lokale meting</span></div><p class="desc">Buitenunit netjes tegen een bakstenen rijwoning. "Laat uw warmtepomp plaatsen in Limburg, Dirk komt deze week meten." CTA: Plan uw gratis meting.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/2.webp" alt="Warmtepomp-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">2</span><span class="type">Certificering</span></div><p class="desc">Studio-productshot van de warmtepomp. "Warmtepomp laten plaatsen door een Mitsubishi Diamond Dealer." Offerte binnen 5 werkdagen, Vincotte gecertificeerd.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/3.webp" alt="Warmtepomp-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">3</span><span class="type">Familiebedrijf</span></div><p class="desc">Limburgse rijwoning met Mitsubishi unit aan de zijgevel. "Uw warmtepomp geïnstalleerd door Dima Ecotechnics." 10+ jaar, Dirk meet zelf, Mitsubishi Diamond Dealer.</p></div></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header"><span class="label">Airco</span><div class="line"></div></div>
+      <div class="ad-grid">
+        <div class="ad-card"><div class="ad-img"><img src="./images/4.webp" alt="Airco-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">4</span><span class="type">Zomer-ready</span></div><p class="desc">Lichte Belgische woonkamer met Mitsubishi binnenunit boven de zitbank. "Laat uw airco plaatsen voor de zomer." Offerte binnen 5 werkdagen.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/5.webp" alt="Airco-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">5</span><span class="type">Product + spec</span></div><p class="desc">Close-up van de Mitsubishi binnenunit. "Mitsubishi airco geplaatst door Dima." Fluisterstille plaatsing, koeltechnisch gecertificeerd, Vincotte.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/6.webp" alt="Airco-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">6</span><span class="type">B2B bewijs</span></div><p class="desc">Modern kantoorinterieur met plafondairco's en kanaalventilatie. "De airco installateur van Hotel Stayen, nu voor uw woning." Piekfijne uitvoering, kwaliteit op elk vlak, nu beschikbaar in heel Limburg.</p></div></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header"><span class="label">Zonnepanelen</span><div class="line"></div></div>
+      <div class="ad-grid">
+        <div class="ad-card"><div class="ad-img"><img src="./images/7.webp" alt="Zonnepanelen-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">7</span><span class="type">Lokale plaatsing</span></div><p class="desc">Full-black panelen op een rood dak. "Laat zonnepanelen plaatsen in Limburg." Meting en offerte op maat door Dima.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/8.webp" alt="Zonnepanelen-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">8</span><span class="type">Eigen team</span></div><p class="desc">Limburgse halfopen bebouwing met panelen op het schuine dak. "Zonnepanelen geplaatst door uw Limburgs familiebedrijf." Meting door Dirk, plaatsing door eigen team.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./images/9.webp" alt="Zonnepanelen-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">9</span><span class="type">Cross-sell</span></div><p class="desc">Woning met zowel panelen op het dak als een warmtepomp aan de gevel. "Zonnepanelen en warmtepomp in één installatie." Eén installateur, één aanspreekpunt.</p></div></div>
+      </div>
+    </div>
+
     <div class="mockup-wrap">
       <div class="lead-sm">Live landingspagina voor klanten</div>
       <h3>Staat online. Bekijk ze nu al.</h3>
@@ -514,9 +567,85 @@ footer a + a { margin-left: 10px; }
         <div class="qa-card"><h4>Waarom werkt dit beter?</h4><p>Eén belofte, één bewijs (Maasmechelen Village + Vincotte), één persoon (Dirk), één formulier dat filtert. Geen afleiding.</p></div>
       </div>
     </div>
-    <div class="v1-note">
-      <strong>Dit is versie 1, en ze is klaar om te lanceren.</strong>
-      Drie advertenties per dienst, klaar om meteen de juiste mensen aan te spreken: warmtepomp voor wie weg wil van gas, airco voor de zomer die eraan komt, zonnepanelen voor wie zijn energiefactuur wil terugdringen. Met de zomer in zicht is airco het meest voor de hand liggende startpunt, en schalen we van daaruit op.
+  </div>
+</section>
+
+<section class="synergy fade">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Advertentiebudget</span>
+      <h2 class="dm">Wat €1.000/maand advertentiebudget oplevert.</h2>
+      <p class="lead">Realistische cijfers voor de HVAC-sector in Limburg.</p>
+    </div>
+
+    <div class="funnel-wrap">
+      <div class="funnel-steps">
+        <div class="funnel-step">
+          <div class="fs-num">44.000</div>
+          <div class="fs-label">Vertoningen</div>
+          <div class="fs-rate">€1.000/maand bereikt 44k mensen in Limburg</div>
+        </div>
+        <div class="funnel-arrow">›</div>
+        <div class="funnel-step">
+          <div class="fs-num">660</div>
+          <div class="fs-label">Bezoekers</div>
+          <div class="fs-rate">1,5% klikt op de advertentie</div>
+        </div>
+        <div class="funnel-arrow">›</div>
+        <div class="funnel-step">
+          <div class="fs-num">13</div>
+          <div class="fs-label">Aanvragen</div>
+          <div class="fs-rate">2% vult het formulier in</div>
+        </div>
+        <div class="funnel-arrow">›</div>
+        <div class="funnel-step">
+          <div class="fs-num">9</div>
+          <div class="fs-label">Afspraken</div>
+          <div class="fs-rate">65% gaat door</div>
+        </div>
+        <div class="funnel-arrow">›</div>
+        <div class="funnel-step final">
+          <div class="fs-num">3</div>
+          <div class="fs-label">Nieuwe projecten</div>
+          <div class="fs-rate">30% sluitingsratio</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roi-card-full">
+      <div class="rc-title">Rendement bij 3 nieuwe klanten</div>
+      <div class="roi-rows">
+        <div class="roi-row">
+          <span class="rr-label">3 projecten × €15.000</span>
+          <span class="rr-val positive">+ €45.000</span>
+        </div>
+        <div class="roi-row">
+          <span class="rr-label">Advertentiebudget</span>
+          <span class="rr-val negative">- €1.000</span>
+        </div>
+      </div>
+      <div class="roi-total">
+        <span class="rt-label">Extra omzet</span>
+        <span class="rt-val">€44.000</span>
+      </div>
+    </div>
+
+    <div class="budget-opts">
+      <div class="budget-opt">
+        <div class="opt-eyebrow">Optie 1</div>
+        <h4>Klantencampagne</h4>
+        <p>Meer projecten binnenhalen.</p>
+      </div>
+      <div class="budget-opt">
+        <div class="opt-eyebrow">Optie 2</div>
+        <h4>Werknemerscampagne</h4>
+        <p>Nieuwe techniekers aanwerven.</p>
+      </div>
+      <div class="budget-opt highlight">
+        <div class="opt-eyebrow">Optie 3</div>
+        <h4>Beide tegelijk</h4>
+        <p>Klanten en techniekers parallel.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -533,30 +662,6 @@ footer a + a { margin-left: 10px; }
       <div class="pillar green"><div class="pn">01</div><h4>B2B-portfolio als werkgeversmerk</h4><p>Hotel Stayen, VWR cleanrooms, Maasmechelen Village. Geen lokale concurrent biedt zulke projecten.</p></div>
       <div class="pillar green"><div class="pn">02</div><h4>Geen CV vooraf</h4><p>2-minuten formulier in plaats van een mail met CV, motivatie en foto. Drempel weg, meer reacties.</p></div>
       <div class="pillar green"><div class="pn">03</div><h4>"Je bent geen nummer"</h4><p>"Bij Dima ben je geen nummer. Je bent de monteur die Dirk zelf heeft uitgekozen."</p></div>
-    </div>
-
-    <div class="phase">
-      <div class="phase-header"><span class="label">Fase 1, Aandacht trekken</span><div class="line"></div></div>
-      <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/1.png" alt="Recruitment-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">1</span><span class="type">Probleem</span></div><p class="desc">Vermoeide technieker achterin een versleten bestelwagen. "Nog zo'n dag achter de rug?" Herkent de frustratie direct.</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/2.png" alt="Recruitment-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">2</span><span class="type">Ambitie</span></div><p class="desc">Hotel interieur met Mitsubishi City Multi unit. "Hier werkt onze airco. Wil jij mee installeren?"</p></div></div>
-      </div>
-    </div>
-
-    <div class="phase">
-      <div class="phase-header"><span class="label">Fase 2, Vertrouwen opbouwen</span><div class="line"></div></div>
-      <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/3.png" alt="Recruitment-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">3</span><span class="type">Zaakvoerder</span></div><p class="desc">Dirk naast een jongere technieker aan een Mitsubishi buitenunit. "Dirk staat zelf mee op de werf."</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/4.png" alt="Recruitment-ad 4"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">4</span><span class="type">Groei</span></div><p class="desc">Mitsubishi opleidingsboek en Vincotte certificaat. "Mitsubishi, Daikin, Vincotte. Door ons betaald."</p></div></div>
-      </div>
-    </div>
-
-    <div class="phase">
-      <div class="phase-header"><span class="label">Fase 3, Sollicitatie</span><div class="line"></div></div>
-      <div class="ad-grid">
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/5.png" alt="Recruitment-ad 5"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">5</span><span class="type">Makkelijk reageren</span></div><p class="desc">Smartphone met sollicitatiepagina en groene knop. "Geen CV nodig. 2 minuten formulier."</p></div></div>
-        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/6.png" alt="Recruitment-ad 6"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">6</span><span class="type">Rollen</span></div><p class="desc">Werkbord met drie papieren: hulpmonteur, servicetechnieker, onderhoudstechnieker. "3 rollen. Bilzen, Limburg."</p></div></div>
-      </div>
     </div>
 
     <div class="scripts-wrap">
@@ -583,6 +688,33 @@ footer a + a { margin-left: 10px; }
       </div>
     </div>
 
+    <div class="phase">
+      <div class="phase-header"><span class="label">Hulpmonteur Airco</span><div class="line"></div></div>
+      <div class="ad-grid">
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/1.png" alt="Recruitment-ad 1"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">1</span><span class="type">Actieshot</span></div><p class="desc">Technicien installeert Mitsubishi airco op locatie. "Hulpmonteur Airco Gezocht." Mitsubishi Diamond Dealer, opleidingen betaald. Dirk leert je het vak op locatie. Familiebedrijf in Bilzen, Limburg.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/2.png" alt="Recruitment-ad 2"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">2</span><span class="type">Werksfeer collage</span></div><p class="desc">Drie werkfoto's van monteurs op locatie. "Hulpmonteur Airco Gezocht." Mitsubishi Diamond Dealer, opleidingen betaald. Dirk leert je het vak op locatie. Familiebedrijf in Bilzen, Limburg.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/3.png" alt="Recruitment-ad 3"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">3</span><span class="type">Teamshot</span></div><p class="desc">Twee Dima-techniekers voor een bakstenen gebouw. "Hulpmonteur Airco Gezocht." Mitsubishi Diamond Dealer, opleidingen betaald. Dirk leert je het vak op locatie. Familiebedrijf in Bilzen, Limburg.</p></div></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header"><span class="label">Servicetechnieker</span><div class="line"></div></div>
+      <div class="ad-grid">
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/4.png" alt="Recruitment-ad 4"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">4</span><span class="type">Werksfeer collage</span></div><p class="desc">Drie werkfoto's van servicetechniekers op locatie. "Servicetechnieker Gezocht!" Mitsubishi Diamond Dealer, opleidingen betaald. Dirk leert je het vak op locatie. Familiebedrijf in Bilzen, Limburg.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/5.png" alt="Recruitment-ad 5"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">5</span><span class="type">Actieshot</span></div><p class="desc">Servicetechnieker aan het werk op leidingen/installatie. "Servicetechnieker Gezocht!" Mitsubishi Diamond Dealer, opleidingen betaald. Dirk leert je het vak op locatie. Familiebedrijf in Bilzen, Limburg.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/6.png" alt="Recruitment-ad 6"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">6</span><span class="type">Werksfeer collage</span></div><p class="desc">Collage van servicetechniekers in actie op verschillende locaties. "Servicetechnieker Gezocht!" Mitsubishi Diamond Dealer, opleidingen betaald. Dirk leert je het vak op locatie. Familiebedrijf in Bilzen, Limburg.</p></div></div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header"><span class="label">Onderhoudstechnieker</span><div class="line"></div></div>
+      <div class="ad-grid">
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/7.png" alt="Recruitment-ad 7"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">7</span><span class="type">Werksfeer collage</span></div><p class="desc">Drie werkfoto's van onderhoudstechniekers op locatie. "Onderhoudstechnieker Gezocht!" Mitsubishi Diamond Dealer, opleidingen betaald. Dirk leert je het vak op locatie. Familiebedrijf in Bilzen, Limburg.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/8.png" alt="Recruitment-ad 8"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">8</span><span class="type">Werksfeer collage</span></div><p class="desc">Onderhoudstechniekers aan het werk bij installaties. "Onderhoudstechnieker Gezocht!" Mitsubishi Diamond Dealer, opleidingen betaald. Dirk leert je het vak op locatie. Familiebedrijf in Bilzen, Limburg.</p></div></div>
+        <div class="ad-card"><div class="ad-img"><img src="./jobs-images/9.png" alt="Recruitment-ad 9"/></div><div class="ad-meta"><div class="num-label"><span class="num-dot">9</span><span class="type">Teamshot</span></div><p class="desc">Team van Dima-techniekers in werkkleding. "Onderhoudstechnieker Gezocht!" Mitsubishi Diamond Dealer, opleidingen betaald. Dirk leert je het vak op locatie. Familiebedrijf in Bilzen, Limburg.</p></div></div>
+      </div>
+    </div>
+
     <div class="mockup-wrap">
       <div class="lead-sm">Live sollicitatiepagina</div>
       <h3>Staat online, klaar om morgen te testen.</h3>
@@ -595,44 +727,6 @@ footer a + a { margin-left: 10px; }
   </div>
 </section>
 
-<section class="synergy fade">
-  <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">Budget</span>
-      <h2 class="dm">Wat kost de advertentie-investering?</h2>
-      <p class="lead">Een realistisch startpunt voor beide tracks samen.</p>
-    </div>
-    <div class="budget-card">
-      <div class="label">Realistisch startscenario</div>
-      <h3>60 euro per dag, circa 1.800 euro per maand aan advertentiebudget.</h3>
-      <p>30 euro per dag op klanten, 30 euro per dag op werknemers. Na de eerste maand zien we welke track het snelst rendeert en schuiven we het budget naar wat werkt.</p>
-      <div class="numbers">
-        <div><div class="n">30€</div><div class="l">Track 1 per dag</div></div>
-        <div><div class="n">30€</div><div class="l">Track 2 per dag</div></div>
-        <div><div class="n">1.800€</div><div class="l">Totaal per maand</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="partnership fade">
-  <div class="wrap">
-    <div class="center">
-      <span class="eyebrow">Waarom Relight</span>
-      <h2 class="dm">Drie redenen om hiermee samen te werken.</h2>
-      <p class="lead">Geen verkooppraat. Gewoon wat je concreet krijgt.</p>
-    </div>
-    <div class="pillar-partner-grid">
-      <div class="pillar-partner"><div class="big">01</div><h3>Het werk is al gedaan voor we iets vroegen</h3><p>Twee landingspagina's live. Twee strategieën geschreven. 15 advertentie-concepten. 5 video scripts. Je kan alles zien, testen en lezen voor één euro op tafel komt.</p></div>
-      <div class="pillar-partner"><div class="big">02</div><h3>Wij vullen jouw contentmaker aan, we vervangen hem niet</h3><p>Je post al actief op Instagram en Facebook. Dat blijft. Ik zet de betaalde advertenties technisch op en schrijf uit welke video's en beelden daarvoor nodig zijn. Jouw organische werk en onze betaalde laag versterken elkaar.</p></div>
-      <div class="pillar-partner"><div class="big">03</div><h3>Geen lock-in, Arthur direct bereikbaar</h3><p>Maandelijks opzegbaar. Eerlijke weekcijfers. Arthur direct op WhatsApp. Geen accountmanager die niet weet hoe jouw campagne loopt.</p></div>
-    </div>
-    <div class="personal-note">
-      Dirk, ik bouwde dit omdat mijn vader me vertelde dat je openstaat voor een gesprek. Wat je op deze pagina ziet is geen sjabloon. Het is het antwoord dat ik zou geven als ik jouw zoon was en je het aan mij vroeg. Plan gerust een call, stel me elke vraag, en als je achteraf beslist dat het niet past, geen probleem.
-    </div>
-  </div>
-</section>
-
 <section class="cases fade">
   <div class="wrap">
     <div class="center">
@@ -641,9 +735,9 @@ footer a + a { margin-left: 10px; }
       <p class="lead">Gewoon drie voorbeelden van wat dezelfde logica voor andere klanten heeft opgeleverd.</p>
     </div>
     <div class="case-grid">
-      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case"></div><div class="meta"><div class="label">TechTalent</div><h3>200 aanvragen in de eerste 14 dagen</h3><p>Recruitment advertenties voor IT-profielen in Vlaanderen. Het filterformulier zorgde ervoor dat enkel de meest gemotiveerde kandidaten als eerste werden teruggebeld.</p></div></div>
-      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case"></div><div class="meta"><div class="label">Vossen</div><h3>66 terugkerende klanten in 27 dagen</h3><p>Advertenties voor een Belgisch onderhoudsbedrijf gericht op bestaande klanten in de regio.</p></div></div>
-      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case"></div><div class="meta"><div class="label">Container Cleaner</div><h3>50 terugkerende klanten in 2 weken</h3><p>Lokale advertenties gericht op een specifieke regio in België.</p></div></div>
+      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case"></div><div class="meta"><img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent"><h3>200 aanvragen in de eerste 14 dagen</h3><p>Recruitment advertenties voor technische profielen in Vlaanderen. Het filterformulier zorgde ervoor dat enkel de meest gemotiveerde kandidaten als eerste werden teruggebeld.</p></div></div>
+      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case"></div><div class="meta"><img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen"><h3>66 terugkerende klanten in 27 dagen</h3><p>Advertenties voor een Belgische webshop gericht op bestaande klanten in de regio.</p></div></div>
+      <div class="case-card-pp"><div class="img"><img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case"></div><div class="meta"><img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner"><h3>50 terugkerende klanten in 2 weken</h3><p>Lokale advertenties gericht op een specifieke regio in België.</p></div></div>
     </div>
   </div>
 </section>
@@ -651,24 +745,47 @@ footer a + a { margin-left: 10px; }
 <section class="cadence fade">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">Hoe samenwerken</span>
-      <h2 class="dm">Week per week. Concreet.</h2>
-      <p class="lead">Zo ziet een typische eerste maand eruit.</p>
+      <span class="eyebrow">Hoe het werkt</span>
+      <h2 class="dm">Van gesprek tot eerste aanvragen.</h2>
+      <p class="lead">Opgezet in 2-3 weken. Live in week 4.</p>
     </div>
-    <div class="cadence-grid">
-      <div class="cadence-row"><div class="when">Week 0</div><div class="what"><strong>Opstarten</strong><span>Meta advertentieaccount koppelen, advertenties laden, beide tracks parallel lanceren op Limburg.</span></div></div>
-      <div class="cadence-row"><div class="when">Week 1</div><div class="what"><strong>Eerste resultaten</strong><span>Eerste klikken en aanvragen komen binnen. We kijken welke advertenties het beste doorkomen.</span></div></div>
-      <div class="cadence-row"><div class="when">Week 2 tot 3</div><div class="what"><strong>Bijsturen</strong><span>Advertenties die minder presteren pauzeren, budget schuiven naar wat werkt. Wekelijkse update via video.</span></div></div>
-      <div class="cadence-row"><div class="when">Maand 2+</div><div class="what"><strong>Opschalen</strong><span>Budget verhogen waar het rendeert. Nieuwe advertenties voor seizoensgebonden momenten, zoals airco in de zomer.</span></div></div>
+    <div class="process-steps">
+      <div class="pstep">
+        <div class="pnum">1</div>
+        <div><strong>Gesprek om alles te overlopen</strong><span>We bespreken de aanpak, het budget en de planning.</span></div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">2</div>
+        <div><strong>Video's filmen, afbeeldingen bijwerken, landingspagina's online</strong><span>Jullie filmen de video scripts. Wij zetten alles klaar.</span></div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">3</div>
+        <div><strong>Mensen zien de advertenties</strong><span>Meta toont de advertenties aan de juiste mensen in Limburg.</span></div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">4</div>
+        <div><strong>Ze klikken door naar de landingspagina</strong><span>Eén specifieke pagina per funnel, gemaakt om te converteren.</span></div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">5</div>
+        <div><strong>Ze laten hun gegevens achter</strong><span>Naam, telefoonnummer, en een korte omschrijving van hun vraag.</span></div>
+      </div>
+      <div class="pstep key">
+        <div class="pnum">6</div>
+        <div><strong>Ze worden zo snel mogelijk gebeld. Snelheid is hier van essentieel belang.</strong><span>Hoe sneller je terugbelt, hoe hoger de kans op een afspraak.</span></div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">7</div>
+        <div><strong>Er wordt een afspraak gemaakt om langs te gaan</strong><span>Voor klanten: meting bij hen thuis. Voor techniekers: kennismaking met Dirk.</span></div>
+      </div>
     </div>
-    <div class="need-card">
-      <div class="label">Wat we van Dima nodig hebben</div>
-      <h3>Drie dingen, niet meer.</h3>
-      <ul>
-        <li>Eén namiddag van Dirk om de 5 video scripts in te spreken voor de telefoon, bij voorkeur in de eerste twee weken.</li>
-        <li>Anne die binnenkomende aanvragen en sollicitanten binnen één werkdag terugbelt. Snelheid bepaalt of een lead converteert.</li>
-        <li>Akkoord op het advertentiebudget. 60 euro per dag is een startpunt, we bespreken samen of we later hoger of lager gaan.</li>
-      </ul>
+    <div class="timeline-note">
+      <div class="tl-eyebrow">Planning</div>
+      <div class="tline">
+        <div class="tline-row"><span class="tw">Week 1-3</span><span class="td">Opzetten: gesprek, video's filmen, advertenties bouwen, landingspagina's live.</span></div>
+        <div class="tline-row"><span class="tw">Week 4</span><span class="td">Start campagne. Eerste aanvragen kunnen al in week 1 binnenkomen.</span></div>
+        <div class="tline-row"><span class="tw">Daarna</span><span class="td">Continu bijsturen op basis van het aantal aanvragen en de planning van het bedrijf.</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -677,13 +794,13 @@ footer a + a { margin-left: 10px; }
   <div class="wrap-sm">
     <div class="center">
       <span class="eyebrow">Veelgestelde vragen</span>
-      <h2 class="dm">Vier vragen die elke nieuwe klant stelt.</h2>
+      <h2 class="dm">Veelgestelde vragen.</h2>
       <p class="lead">Eerlijke antwoorden.</p>
     </div>
-    <div class="accordion" id="faq1"><button class="acc-head" onclick="toggle('faq1')"><div class="left"><h3>Waarom geven jullie dit gratis weg?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq1-body"><div class="acc-inner faq-answer">Omdat een PowerPoint niet bewijst dat ik weet wat ik doe. Een afgewerkte funnel wél. Je ziet vandaag exact wat je krijgt voor je één euro betaalt. Als je na het gesprek toch niet wil samenwerken, houd je 15 advertentie-concepten en 5 scripts die je zelf kunt gebruiken.</div></div></div>
-    <div class="accordion" id="faq2"><button class="acc-head" onclick="toggle('faq2')"><div class="left"><h3>Moeten we met beide tracks tegelijk starten?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq2-body"><div class="acc-inner faq-answer">Nee. Je kan prima starten met track 1 (klanten) en track 2 (werknemers) een maand later aanzetten, of andersom. Beide liggen klaar. We bespreken tijdens de call wat jouw prioriteit is.</div></div></div>
-    <div class="accordion" id="faq3"><button class="acc-head" onclick="toggle('faq3')"><div class="left"><h3>Wat kost dit naast het advertentiebudget?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq3-body"><div class="acc-inner faq-answer">De maandelijkse Relight fee bespreken we tijdens de strategiecall. Geen lock-in, maandelijks opzegbaar. De fee is een fractie van wat een gemiddeld bureau hiervoor aanrekent, omdat er geen lagen tussen jou en de campagne zitten.</div></div></div>
-    <div class="accordion" id="faq4"><button class="acc-head" onclick="toggle('faq4')"><div class="left"><h3>Hoe snel zien we resultaten?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq4-body"><div class="acc-inner faq-answer">Bij goed opgezette advertenties voor HVAC-bedrijven in België komen de eerste aanvragen doorgaans in week één binnen. Het echte ritme komt rond dag 14. Sollicitaties voor vacatures komen typisch iets trager binnen, binnen 2 tot 3 weken.</div></div></div>
+    <div class="accordion" id="faq1"><button class="acc-head" onclick="toggle('faq1')"><div class="left"><h3>Wat als het niet werkt?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq1-body"><div class="acc-inner faq-answer">Omdat we zo sterk geloven in deze strategie en gebaseerd op resultaten bij vorige klanten, werken we met performance-based pricing. Je kan bovendien testen voor 1 maand. Vallen de resultaten mee, zetten we het verder. Zo niet, stop je zonder verdere verplichtingen.</div></div></div>
+    <div class="accordion" id="faq2"><button class="acc-head" onclick="toggle('faq2')"><div class="left"><h3>Moeten we met beide tracks tegelijk starten?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq2-body"><div class="acc-inner faq-answer">Nee. Klantencampagne, werknemerscampagne, of beide tegelijk. Jullie kiezen zelf. Beide liggen klaar. We bespreken tijdens de call wat de prioriteit is.</div></div></div>
+    <div class="accordion" id="faq3"><button class="acc-head" onclick="toggle('faq3')"><div class="left"><h3>Hoe snel zien we resultaten?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq3-body"><div class="acc-inner faq-answer">De eerste aanvragen kunnen in week 1 binnenkomen. Soms heeft de machine wat meer tijd nodig. Rond dag 14 komt het echte ritme. Daarna is het continu bijsturen in functie van het aantal aanvragen en de planning van het bedrijf.</div></div></div>
+    <div class="accordion" id="faq4"><button class="acc-head" onclick="toggle('faq4')"><div class="left"><h3>Wat als we beslissen om niet samen te werken?</h3></div><div class="acc-icon">+</div></button><div class="acc-body" id="faq4-body"><div class="acc-inner faq-answer">Zelfs als jullie beslissen om niet met Relight samen te werken, zijn jullie vrij om alles wat hier staat te gebruiken: de advertenties, de video scripts, de landingspagina's. Geen voorwaarden.</div></div></div>
   </div>
 </section>
 

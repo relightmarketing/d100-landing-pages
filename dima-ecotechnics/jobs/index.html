@@ -414,6 +414,53 @@ h2.section-title {
   background: linear-gradient(135deg, var(--green) 0%, #5cc065 100%);
 }
 
+/* IMAGE STRIP */
+.image-strip {
+  padding: 32px 0;
+  background: var(--bg);
+}
+.image-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.image-strip-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+/* ROLE IMAGE */
+.role-img {
+  border-radius: 10px;
+  overflow: hidden;
+  margin: -4px -4px 8px;
+}
+.role-img img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+/* FOUNDER PHOTO */
+.founder-photo {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.10);
+  margin-bottom: 16px;
+}
+.founder-photo img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
 /* PROJECTS STRIP */
 .projects { background: #fff; }
 .brands-list {
@@ -661,6 +708,7 @@ footer a { color: rgba(255,255,255,0.85); }
   .icon-list { grid-template-columns: 1fr 1fr; gap: 20px; }
   .offer-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
   .roles-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .image-strip-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .founder-stack { grid-template-columns: 1.2fr 1fr; gap: 36px; }
   .form-card { padding: 40px 36px; }
   .form-row-2 { grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -785,6 +833,17 @@ footer a { color: rgba(255,255,255,0.85); }
   </div>
 </section>
 
+<!-- IMAGE STRIP 1 -->
+<div class="image-strip">
+  <div class="wrap">
+    <div class="image-strip-grid">
+      <img src="../jobs-images/2.png" alt="Dima Ecotechnics techniekers aan het werk op de werf" loading="lazy">
+      <img src="../jobs-images/5.png" alt="Airco installatie bij een Limburgse klant door Dima Ecotechnics" loading="lazy">
+      <img src="../jobs-images/8.png" alt="Dima monteur met gereedschap klaar voor een installatie" loading="lazy">
+    </div>
+  </div>
+</div>
+
 <!-- ROLES -->
 <section class="roles">
   <div class="wrap">
@@ -792,18 +851,21 @@ footer a { color: rgba(255,255,255,0.85); }
     <h2 class="section-title">Kies de rol die past, dan filteren wij de rest samen.</h2>
     <div class="roles-grid">
       <div class="role-card">
+        <div class="role-img"><img src="../jobs-images/Hulp Monteur Airco 1.png" alt="Hulpmonteur airconditioning bij Dima Ecotechnics" loading="lazy"></div>
         <span class="pill">Junior, groei mee</span>
         <h3>Hulpmonteur airconditioning</h3>
         <p class="taken">Je werkt mee bij installaties van airco en warmtepompen bij gezinswoningen en kleine kantoren. Je leert elke dag bij van onze ervaren monteurs en van Dirk zelf. Je draait de week mee tussen werkplaats en werf.</p>
         <div class="profiel"><strong>Wij zoeken:</strong> een technische opleiding (koeltechniek, HVAC, elektromechanica) of gelijkwaardige ervaring. Rijbewijs B. Geen certificering nodig, die halen wij voor jou.</div>
       </div>
       <div class="role-card">
+        <div class="role-img"><img src="../jobs-images/Service technieker 1.png" alt="Servicetechnieker bij Dima Ecotechnics" loading="lazy"></div>
         <span class="pill">Ervaren, zelfstandig</span>
         <h3>Servicetechnieker</h3>
         <p class="taken">Je lost storingen op bij bestaande klanten, bent eerste aanspreekpunt op locatie en werkt samen met onze eigen serviceafdeling (089/24 19 14). Je haalt het beste uit koeltechniek en communicatie.</p>
         <div class="profiel"><strong>Wij zoeken:</strong> minimum 2 jaar ervaring met HVAC-service, koeltechnisch certificaat of bereidheid om het op korte termijn te halen, klantgerichte communicatie, rijbewijs B.</div>
       </div>
       <div class="role-card">
+        <div class="role-img"><img src="../jobs-images/Onderhoudstechnieker 1.png" alt="Onderhoudstechnieker bij Dima Ecotechnics" loading="lazy"></div>
         <span class="pill">Ervaren, planmatig</span>
         <h3>Onderhoudstechnieker</h3>
         <p class="taken">Je voert gepland onderhoud uit bij residentiële en B2B klanten, werkt systematisch en levert een propere rapportering af. Je bent de ambassadeur van de afspraak "respect van beloofde levertermijnen".</p>
@@ -824,7 +886,11 @@ footer a { color: rgba(255,255,255,0.85); }
         <p>Office Manager Anne regelt de planning en is jouw vast aanspreekpunt voor afspraken. En als er ooit iets is, bel je onze eigen serviceafdeling, niet een callcenter. Dat is ook hoe wij onze klanten behandelen, en hoe wij onze monteurs behandelen.</p>
         <p>Wij zijn gebeten door techniek. Als jij dat ook bent, past Dima. Als je liever vanuit een cubicle naar Excel staart, zit je hier fout.</p>
       </div>
-      <div class="founder-card">
+      <div>
+        <div class="founder-photo">
+          <img src="../images/afbeelding%20Dirk.jpeg" alt="Dirk Vermeulen, zaakvoerder Dima Ecotechnics" loading="lazy">
+        </div>
+        <div class="founder-card">
         <div class="name">Dirk Vermeulen</div>
         <div class="role-tag">Zaakvoerder Dima Ecotechnics</div>
         <ul class="founder-creds">
@@ -835,10 +901,22 @@ footer a { color: rgba(255,255,255,0.85); }
           <li>Koeltechnisch gecertificeerd team</li>
           <li>Staat zelf mee op de werf</li>
         </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- IMAGE STRIP 2 -->
+<div class="image-strip" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="image-strip-grid">
+      <img src="../jobs-images/3.png" alt="Dima Ecotechnics monteur bezig met een installatie in een Limburgse woning" loading="lazy">
+      <img src="../jobs-images/6.png" alt="Vakkundig geplaatste airco-unit door Dima Ecotechnics" loading="lazy">
+      <img src="../jobs-images/9.png" alt="Dima technieker op de werf in Limburg" loading="lazy">
+    </div>
+  </div>
+</div>
 
 <!-- PROJECTS -->
 <section class="projects">
