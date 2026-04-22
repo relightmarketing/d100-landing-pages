@@ -330,6 +330,79 @@
   /* ---- SCROLL FADE ---- */
   .fade { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .fade.in { opacity: 1; transform: none; }
+
+  /* ---- INTRO SECTION ---- */
+  .intro-section { background: var(--bg); padding: 48px 0 0; }
+  .intro-sub { font-size: 1.125rem; color: var(--sub); line-height: 1.75; text-align: center; }
+
+  /* ---- SITUATION SECTION ---- */
+  .situation-section { background: var(--off); }
+  .table-wrap { overflow-x: auto; margin-top: 40px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid var(--line); }
+  .situation-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .situation-table th { text-align: left; padding: 12px 20px; background: var(--bg); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sub2); border-bottom: 2px solid var(--line); }
+  .situation-table td { padding: 16px 20px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--txt); line-height: 1.55; }
+  .situation-table tr:last-child td { border-bottom: none; }
+  .prob-badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
+  .prob-very-high { background: rgba(16,185,129,0.12); color: #059669; }
+  .prob-high { background: rgba(16,185,129,0.08); color: #10b981; }
+  .prob-medium { background: rgba(201,151,58,0.12); color: #c9973a; }
+  .prob-unclear { background: rgba(100,116,139,0.12); color: #64748b; }
+  .prob-pr { background: rgba(99,102,241,0.12); color: #6366f1; }
+  .situation-callout { margin-top: 48px; display: flex; flex-direction: column; gap: 14px; }
+  .situation-callout p { font-size: 1.0625rem; color: var(--txt); line-height: 1.7; }
+
+  /* ---- SYSTEM SECTION ---- */
+  .system-section { background: var(--bg); }
+  .system-steps { display: flex; align-items: flex-start; justify-content: center; gap: 0; margin-top: 48px; flex-wrap: wrap; }
+  .system-step { flex: 1; min-width: 200px; max-width: 280px; background: var(--off); border: 1px solid var(--line); border-radius: 12px; padding: 32px 24px; text-align: center; }
+  .system-arrow { color: var(--gold); font-size: 1.75rem; padding: 0 16px; align-self: center; line-height: 1; font-weight: 700; flex-shrink: 0; }
+  .system-step-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .system-step-icon { font-size: 2rem; margin-bottom: 12px; }
+  .system-step-name { font-size: 1rem; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
+  .system-step-desc { font-size: 0.875rem; color: var(--sub); line-height: 1.6; }
+  .system-note { max-width: 640px; margin: 40px auto 0; text-align: center; font-size: 1rem; color: var(--sub); line-height: 1.7; font-style: italic; }
+  .organic-diff { max-width: 680px; margin: 32px auto 0; background: var(--gold-light); border: 1px solid rgba(201,151,58,0.25); border-radius: 12px; padding: 24px 28px; font-size: 0.9375rem; color: var(--txt); line-height: 1.7; }
+  .organic-diff strong { color: var(--navy); }
+  @media (max-width: 760px) { .system-steps { flex-direction: column; align-items: center; } .system-arrow { transform: rotate(90deg); padding: 12px 0; } }
+
+  /* ---- ROI SECTION ---- */
+  .roi-section { background: var(--off); }
+  .funnel-calc { background: #1a2332; border-radius: 16px; padding: 32px; color: white; max-width: 700px; margin: 48px auto 0; }
+  .fc-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); display: block; margin-bottom: 8px; }
+  .fc-goal-row { margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .fc-goal-line { font-size: 1.125rem; color: white; }
+  .fc-edit { display: inline-block; background: rgba(201,151,58,0.2); border: 1px solid rgba(201,151,58,0.5); color: var(--gold); font-weight: 800; padding: 2px 14px; border-radius: 6px; }
+  .fc-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .fc-metric-header { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+  .fc-metric-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin-bottom: 10px; gap: 12px; }
+  .fc-metric-row span:last-child { color: white; font-weight: 700; }
+  .fc-spend-box { text-align: center; padding: 24px; background: rgba(201,151,58,0.1); border: 1px solid rgba(201,151,58,0.25); border-radius: 12px; margin-bottom: 28px; }
+  .fc-spend-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .fc-spend-num { font-size: 2.75rem; font-weight: 800; color: white; line-height: 1.1; }
+  .fc-spend-sub { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 4px; }
+  .fc-stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .fc-stat { text-align: center; }
+  .fc-stat-num { font-size: 1.375rem; font-weight: 800; color: white; }
+  .fc-stat-label { font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); line-height: 1.4; margin-top: 4px; }
+  .fc-breakdown { text-align: center; }
+  .fc-breakdown-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+  .fc-breakdown-flow { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
+  .fc-br-item { display: flex; flex-direction: column; align-items: center; }
+  .fc-br-num { font-size: 0.9375rem; font-weight: 700; color: rgba(255,255,255,0.7); }
+  .fc-br-final { color: var(--gold) !important; font-size: 1.125rem; }
+  .fc-br-sub { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.3); margin-top: 2px; }
+  .fc-br-arrow { color: rgba(201,151,58,0.5); font-size: 1.25rem; padding: 0 2px; margin-bottom: 14px; }
+  @media (max-width: 600px) { .fc-metrics { grid-template-columns: 1fr; gap: 20px; } .fc-stats-row { grid-template-columns: repeat(3, 1fr); } }
+
+  /* ---- SOCIAL PROOF SECTION ---- */
+  .sp-section { background: var(--bg); }
+  .sp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+  .sp-card { background: var(--off); border: 1px solid var(--line); border-radius: 12px; padding: 28px 20px; text-align: center; }
+  .sp-client { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sub2); margin-bottom: 10px; }
+  .sp-result { font-size: 1.75rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin-bottom: 6px; }
+  .sp-period { font-size: 0.8125rem; color: var(--sub); }
+  @media (max-width: 860px) { .sp-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .sp-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -354,7 +427,7 @@
       <span class="kicker-dot"></span>
       Exclusief gebouwd voor B-sure
     </div>
-    <h1 class="dm">Ik help u aan 10 nieuwe klanten in 14 dagen met deze Meta ads funnel die ik voor u heb gebouwd.</h1>
+    <h1 class="dm">15 nieuwe klanten met deze volledige reeds uitgewerkte strategie voor B-Sure</h1>
   </div>
 </div>
 
@@ -378,11 +451,215 @@
 <!-- POST-HERO PADDING -->
 <div class="post-hero-pad"></div>
 
+<!-- INTRO SUBTEXT -->
+<section class="intro-section">
+  <div class="wrap-sm">
+    <p class="intro-sub fade">Deze strategie is gemaakt om B-sure te verbinden met high net worth individuals, en sluit perfect aan met de organische posts die jullie momenteel al via social media plaatsen.</p>
+  </div>
+</section>
+
+<!-- HUIDIGE SITUATIE -->
+<section class="section situation-section" id="situatie">
+  <div class="wrap">
+    <div class="fade">
+      <h2 class="h2">Maar eerst, jullie huidige situatie.</h2>
+      <p class="section-sub">Klanten komen waarschijnlijk vooral via netwerk en mond-tot-mondreclame. Goede aanwezigheid op social media, maar nog geen groot bereik.</p>
+    </div>
+    <div class="table-wrap fade">
+      <table class="situation-table">
+        <thead>
+          <tr>
+            <th>Kanaal</th>
+            <th>Waarschijnlijkheid</th>
+            <th>Redenering</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mond-tot-mondreclame / referrals</strong></td>
+            <td><span class="prob-badge prob-very-high">Zeer hoog</span></td>
+            <td>Private banking doelgroep (vermogende ondernemers) vertrouwt primair op aanbevelingen van peers. 16 jaar actief, dus groot alumni-netwerk.</td>
+          </tr>
+          <tr>
+            <td><strong>Netwerkevenementen / business clubs</strong></td>
+            <td><span class="prob-badge prob-high">Hoog</span></td>
+            <td>VOKA, Unizo, lokale ondernemerskringen in Limburg. "Rebels" toon past bij een bedrijf dat pitcht op events.</td>
+          </tr>
+          <tr>
+            <td><strong>FSMA-registratie / verwijzingen</strong></td>
+            <td><span class="prob-badge prob-medium">Middelhoog</span></td>
+            <td>Enige bankmakelaar in Limburg. Mensen die actief zoeken naar een bankmakelaar vinden hen via regulatoire lijsten op Google.</td>
+          </tr>
+          <tr>
+            <td><strong>SEO / organisch zoeken</strong></td>
+            <td><span class="prob-badge prob-unclear">Onduidelijk</span></td>
+            <td>Website bestaat, maar beperkt SEO-geoptimaliseerd. Waarschijnlijk beperkt organisch bereik via zoekopdrachten.</td>
+          </tr>
+          <tr>
+            <td><strong>UHasselt onderzoekspartnerschap</strong></td>
+            <td><span class="prob-badge prob-pr">PR-kanaal</span></td>
+            <td>Genereert naamsbekendheid bij academici en ondernemers in de regio.</td>
+          </tr>
+          <tr>
+            <td><strong>Accountants / notarissen / advocaten</strong></td>
+            <td><span class="prob-badge prob-medium">Middelhoog</span></td>
+            <td>Klassiek doorverwijsnetwerk in vermogensbeheer. Niet bevestigd, maar industrie-standaard.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="situation-callout fade">
+      <p>Als jullie nieuwe klanten willen binnenhalen is het belangrijk om <strong>nieuwe oogballen op het bedrijf te richten</strong>.</p>
+      <p>De meest schaalbare en efficiente manier hiervoor is <strong>betaald adverteren</strong>.</p>
+      <p>De juiste content is al aanwezig. Dat is ideaal. Wat we bij Relight voor onze klanten doen is exact dat.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HET BEWEZEN SYSTEEM -->
+<section class="section system-section" id="systeem">
+  <div class="wrap">
+    <div class="fade" style="text-align:center;max-width:640px;margin:0 auto;">
+      <p class="eyebrow">De strategie</p>
+      <h2 class="h2">Het bewezen systeem dat werkt.</h2>
+    </div>
+    <div class="system-steps fade">
+      <div class="system-step">
+        <div class="system-step-num">Stap 1</div>
+        <div class="system-step-icon">&#128247;</div>
+        <div class="system-step-name">Facebook &amp; Instagram Advertenties</div>
+        <div class="system-step-desc">Content creatie: video's en afbeeldingen die de juiste doelgroep stoppen in hun feed en naar jullie sturen.</div>
+      </div>
+      <div class="system-arrow">&#8594;</div>
+      <div class="system-step">
+        <div class="system-step-num">Stap 2</div>
+        <div class="system-step-icon">&#128196;</div>
+        <div class="system-step-name">Specifieke landingspagina</div>
+        <div class="system-step-desc">Een aparte webpagina buiten jullie huidige website. Puur gebouwd om bezoekers te converteren naar een welfie of kennismakingsgesprek.</div>
+      </div>
+      <div class="system-arrow">&#8594;</div>
+      <div class="system-step">
+        <div class="system-step-num">Stap 3</div>
+        <div class="system-step-icon">&#9993;</div>
+        <div class="system-step-name">Automatische e-mailreeks</div>
+        <div class="system-step-desc">Na de boeking ontvangt elke prospect automatisch e-mails die de meerwaarde van B-sure uitleggen. Struikelblokken worden op voorhand weggenomen.</div>
+      </div>
+    </div>
+    <div class="organic-diff fade">
+      <strong>Wat is het verschil met gewoon organisch posten?</strong> Organisch betekent dat je content de wereld instuurt zonder controle over wie, wat, wanneer of waar ze worden bekeken. Met betaalde advertenties sturen we gericht: precies voor wie deze content bedoeld is.
+    </div>
+    <p class="system-note fade">Dit is het exacte systeem, ook wel een "funnel" genoemd, dat we gebruiken om hoogwaardige gesprekken in de agenda te plannen van onze klanten.</p>
+  </div>
+</section>
+
+<!-- IS ADVERTEREN NIET DUUR? -->
+<section class="section roi-section" id="roi">
+  <div class="wrap">
+    <div class="fade" style="max-width:620px;">
+      <h2 class="h2">Oke, maar is adverteren niet duur?</h2>
+      <p class="section-sub">Adverteren is zeker en vast een investering. Maar als je voor elke euro die je in advertenties steekt er vijf terugverdient, is dat meestal een makkelijke beslissing.</p>
+    </div>
+    <div class="funnel-calc fade">
+      <div class="fc-goal-row">
+        <span class="fc-label">Stap 1: stel uw doel</span>
+        <div class="fc-goal-line">Ik wil <span class="fc-edit">15</span> nieuwe klanten per maand.</div>
+      </div>
+      <div class="fc-metrics">
+        <div>
+          <div class="fc-metric-header">Ad Performance</div>
+          <div class="fc-metric-row"><span>CPM</span><span>$50</span></div>
+          <div class="fc-metric-row"><span>$ per % imp</span><span>50</span></div>
+          <div class="fc-metric-row"><span>Ad CTR</span><span>1.5%</span></div>
+        </div>
+        <div>
+          <div class="fc-metric-header">Funnel Rates</div>
+          <div class="fc-metric-row"><span>Landing Page CVR</span><span>2.0%</span></div>
+          <div class="fc-metric-row"><span>Call Show Rate</span><span>75%</span></div>
+          <div class="fc-metric-row"><span>Sales Closing Rate</span><span>30%</span></div>
+        </div>
+      </div>
+      <div class="fc-spend-box">
+        <div class="fc-spend-label">Required Monthly Ad Spend</div>
+        <div class="fc-spend-num">$9.5k</div>
+        <div class="fc-spend-sub">$317 per dag</div>
+      </div>
+      <div class="fc-stats-row">
+        <div class="fc-stat">
+          <div class="fc-stat-num">190.5k</div>
+          <div class="fc-stat-label">Impressions<br>needed</div>
+        </div>
+        <div class="fc-stat">
+          <div class="fc-stat-num">2.9k</div>
+          <div class="fc-stat-label">Clicks to<br>landing page</div>
+        </div>
+        <div class="fc-stat">
+          <div class="fc-stat-num">57</div>
+          <div class="fc-stat-label">Leads Booked<br>calls scheduled</div>
+        </div>
+        <div class="fc-stat">
+          <div class="fc-stat-num">43</div>
+          <div class="fc-stat-label">Calls Held<br>after-show rate</div>
+        </div>
+        <div class="fc-stat">
+          <div class="fc-stat-num">$635</div>
+          <div class="fc-stat-label">Cost Per Sale<br>per client</div>
+        </div>
+      </div>
+      <div class="fc-breakdown">
+        <div class="fc-breakdown-label">Funnel Breakdown</div>
+        <div class="fc-breakdown-flow">
+          <div class="fc-br-item"><span class="fc-br-num">190.5k</span><span class="fc-br-sub">impressions</span></div>
+          <span class="fc-br-arrow">&#8250;</span>
+          <div class="fc-br-item"><span class="fc-br-num">2.9k</span><span class="fc-br-sub">clicks</span></div>
+          <span class="fc-br-arrow">&#8250;</span>
+          <div class="fc-br-item"><span class="fc-br-num">57</span><span class="fc-br-sub">leads</span></div>
+          <span class="fc-br-arrow">&#8250;</span>
+          <div class="fc-br-item"><span class="fc-br-num">43</span><span class="fc-br-sub">calls</span></div>
+          <span class="fc-br-arrow">&#8250;</span>
+          <div class="fc-br-item"><span class="fc-br-num fc-br-final">15</span><span class="fc-br-sub">sales</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="section sp-section" id="proof">
+  <div class="wrap">
+    <div class="fade" style="text-align:center;max-width:640px;margin:0 auto;">
+      <p class="eyebrow">Resultaten van klanten</p>
+      <h2 class="h2">Social Proof</h2>
+    </div>
+    <div class="sp-grid fade">
+      <div class="sp-card">
+        <div class="sp-client">Graco (NYSE)</div>
+        <div class="sp-result">240 leads</div>
+        <div class="sp-period">in de eerste 30 dagen</div>
+      </div>
+      <div class="sp-card">
+        <div class="sp-client">VOSSEN</div>
+        <div class="sp-result">X omzet</div>
+        <div class="sp-period">in de eerste 2 maanden</div>
+      </div>
+      <div class="sp-card">
+        <div class="sp-client">TECH TALENT</div>
+        <div class="sp-result">X aanvragen</div>
+        <div class="sp-period">na 16 dagen</div>
+      </div>
+      <div class="sp-card">
+        <div class="sp-client">Container Cleaner</div>
+        <div class="sp-result">X nieuwe klanten</div>
+        <div class="sp-period">na 14 dagen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ADS SECTION -->
 <section class="section ads-section" id="ads">
   <div class="wrap">
     <div class="fade">
-      <p class="eyebrow">Deliverable 1</p>
+      <p class="eyebrow">Jullie strategie, volledig uitgewerkt</p>
       <h2 class="h2">9 Image Ad Prompts</h2>
       <p class="section-sub">Drie fases, negen advertenties. Van koude doelgroep naar concrete afspraak. Gebouwd op uw positionering als de enige bankmakelaar in Limburg.</p>
     </div>
