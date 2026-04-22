@@ -95,11 +95,14 @@
     position: relative; z-index: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-rows: auto 1fr;
+    column-gap: 60px;
+    row-gap: 0;
     max-width: var(--max); margin: 0 auto; padding: 72px 24px 80px;
   }
-  .hero-text {}
+  .hero-text-top { grid-column: 1; grid-row: 1; padding-bottom: 0; }
+  .hero-text-bottom { grid-column: 1; grid-row: 2; padding-top: 20px; }
+  .hero-inner .hero-image { grid-column: 2; grid-row: 1 / 3; align-self: center; }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
     background: rgba(255,255,255,0.12);
@@ -127,7 +130,7 @@
     color: rgba(255,255,255,0.82);
     line-height: 1.65;
     margin-bottom: 32px;
-    max-width: 480px;
+    max-width: 100%;
   }
   .hero-badges {
     display: flex; flex-wrap: wrap; gap: 10px;
@@ -194,18 +197,16 @@
     color: rgba(255,255,255,0.85); font-size: 0.875rem; font-weight: 500;
   }
 
-  <!-- VSL: Record a 3-5 min talking-head video where a B-sure financial butler:
-    1. Names exactly who this is for: ondernemers en vermogende particulieren in Limburg en Vlaanderen die meerdere bankrelaties beheren en geen totaaloverzicht hebben
-    2. Calls out the #1 pain: "Telkens weer uw verhaal doen bij een nieuwe bank. Telkens weer tijd vrijmaken. Telkens weer al die documenten ondertekenen."
-    3. Explains why usual solutions don't work: bankadviseurs werken voor hun bank, niet voor u; klassieke vermogensplanners adviseren maar voeren niet uit
-    4. Introduces B-sure as the zero-cost bank broker: wij kopen in bij de banken namens u, FSMA-erkend, eerste en enige bankmakelaar in Limburg, 16 jaar
-    5. Tells them exactly what to do next: vul het formulier in hieronder voor een gratis Welfie-gesprek
-    Primary Angle: We work for you, not for the banks, at zero cost to you.
-    Upload to YouTube (unlisted) and replace this placeholder with the embed.
-  -->
-
   @media (max-width: 860px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 56px 24px 60px; }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 24px;
+      padding: 40px 24px 56px;
+    }
+    .hero-text-top { grid-column: 1; grid-row: 1; }
+    .hero-inner .hero-image { grid-column: 1; grid-row: 2; }
+    .hero-text-bottom { grid-column: 1; grid-row: 3; padding-top: 0; }
     .hero h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); }
     .hero-sub { max-width: 100%; }
   }
@@ -265,7 +266,7 @@
     overflow: hidden;
     box-shadow: 0 16px 48px rgba(0,0,0,0.1);
   }
-  .pain-image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .pain-image img { width: 100%; aspect-ratio: 1/1; object-fit: contain; background: #0d1a14; }
   .pain-title {
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     font-weight: 800; letter-spacing: -0.02em; line-height: 1.2;
@@ -336,7 +337,7 @@
     overflow: hidden;
     box-shadow: 0 16px 48px rgba(0,0,0,0.1);
   }
-  .solution-img-main img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .solution-img-main img { width: 100%; aspect-ratio: 1/1; object-fit: contain; background: #1a1209; }
   .solution-img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .solution-img-sm {
     border-radius: var(--r);
@@ -428,13 +429,24 @@
   /* ---- FAQ SECTION ---- */
   .faq { background: var(--off); }
   .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 48px; }
-  .faq-item {
-    border-bottom: 1px solid var(--line);
-    padding: 24px 0;
-  }
+  .faq-item { border-bottom: 1px solid var(--line); }
   .faq-item:first-child { border-top: 1px solid var(--line); }
-  .faq-q { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
-  .faq-a { font-size: 0.9375rem; color: var(--sub); line-height: 1.65; }
+  .faq-item summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    list-style: none; cursor: pointer;
+    font-size: 1rem; font-weight: 700; color: var(--text);
+    padding: 20px 0;
+    user-select: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--green); }
+  .faq-chevron {
+    width: 20px; height: 20px; flex-shrink: 0;
+    color: var(--green);
+    transition: transform 0.25s ease;
+  }
+  .faq-item[open] .faq-chevron { transform: rotate(180deg); }
+  .faq-a { font-size: 0.9375rem; color: var(--sub); line-height: 1.65; padding-bottom: 20px; }
   .faq-a strong { color: var(--green); }
 
   /* ---- FORM SECTION ---- */
@@ -515,7 +527,7 @@
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0,0,0,0.08);
   }
-  .form-side-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .form-side-img img { width: 100%; aspect-ratio: 1/1; object-fit: contain; background: #01573a; }
 
   @media (max-width: 860px) {
     .form-section-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -552,9 +564,63 @@
     font-size: 0.8rem; color: rgba(255,255,255,0.5);
   }
 
-  /* ---- SCROLL FADE ---- */
+/* ---- SCROLL FADE ---- */
   .fade { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .fade.in { opacity: 1; transform: none; }
+
+  /* ---- MOBILE ---- */
+
+  /* Prevent iOS auto-zoom on form inputs */
+  @media (max-width: 768px) {
+    .form-group input,
+    .form-group select,
+    .form-group textarea { font-size: 16px; }
+  }
+
+  /* Prevent grid-child overflow on all screens */
+  .pain-grid > *,
+  .solution-grid > *,
+  .proof-stats > *,
+  .team-row > *,
+  .process-steps > *,
+  .form-section-inner > * { min-width: 0; }
+
+  /* Small screens: tighter spacing + full-width CTA */
+  @media (max-width: 480px) {
+    .wrap, .wrap-sm { padding: 0 16px; }
+    section { padding: 52px 0; }
+    .process { padding: 52px 0; }
+
+    .hero-inner { padding: 36px 16px 44px; gap: 28px; }
+    .hero-eyebrow { font-size: 0.7rem; padding: 5px 12px; }
+    .hero-badges { gap: 8px; }
+    .badge { font-size: 0.75rem; padding: 5px 11px; }
+    .btn-primary { width: 100%; justify-content: center; padding: 16px 24px; }
+
+    .logos-bar-inner { gap: 10px 16px; }
+    .bank-name { font-size: 0.8rem; padding: 5px 12px; }
+
+    .section-h2 { font-size: clamp(1.5rem, 7vw, 2rem); }
+
+    .stat-num { font-size: 2.25rem; }
+    .stat-card { padding: 24px 16px; }
+
+    .process-step { padding: 22px 18px; }
+    .step-num { font-size: 2rem; margin-bottom: 14px; }
+
+    .result-highlight { padding: 16px 18px; font-size: 0.9375rem; }
+
+    .solution-img-row { grid-template-columns: 1fr 1fr; }
+
+    .form-card { padding: 24px 16px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+
+    .vsl-wrap { aspect-ratio: 4/3; }
+    .vsl-play { width: 56px; height: 56px; }
+
+    .footer-inner { padding: 0 16px; }
+    .footer-top { gap: 24px; }
+  }
 </style>
 </head>
 <body>
@@ -575,19 +641,9 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <div class="hero-text">
+    <div class="hero-text-top">
       <div class="hero-eyebrow">De eerste en enige bankmakelaar in Limburg</div>
       <h1>Financieel geluk en gemoedsrust op lange termijn. Voor u en uw familie.</h1>
-      <p class="hero-sub">Wij behartigen uw belangen bij de beste private banken van Belgie. Volledig gratis voor u. Omdat uw bankadviseur voor u moet werken, niet voor zijn bank.</p>
-      <div class="hero-badges">
-        <span class="badge">16 jaar ervaring</span>
-        <span class="badge">FSMA-erkend</span>
-        <span class="badge">Gratis voor u</span>
-      </div>
-      <a href="#form" class="btn-primary">
-        Plan uw gratis gesprek
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
     </div>
     <div class="hero-image">
       <!-- VSL: Record a 3-5 min talking-head video where a B-sure financial butler:
@@ -600,12 +656,24 @@
         Upload to YouTube (unlisted) and replace this placeholder img tag with the embed iframe.
       -->
       <div class="vsl-wrap">
-        <img class="vsl-bg" src="https://b-sure.eu/wp-content/uploads/2022/01/MicrosoftTeams-image-scaled.jpg" alt="B-sure team" loading="eager">
+        <img class="vsl-bg" src="../images/1.png" alt="B-sure financiele butler" loading="eager">
         <div class="vsl-play">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="#01573a"/></svg>
         </div>
         <span class="vsl-label">Bekijk de korte video</span>
       </div>
+    </div>
+    <div class="hero-text-bottom">
+      <p class="hero-sub">Wij behartigen uw belangen bij de beste private banken van Belgie. Volledig gratis voor u. Omdat uw bankadviseur voor u moet werken, niet voor zijn bank.</p>
+      <div class="hero-badges">
+        <span class="badge">16 jaar ervaring</span>
+        <span class="badge">FSMA-erkend</span>
+        <span class="badge">Gratis voor u</span>
+      </div>
+      <a href="#form" class="btn-primary">
+        Plan uw gratis gesprek
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -626,7 +694,7 @@
   <div class="wrap">
     <div class="pain-grid fade">
       <div class="pain-image">
-        <img src="https://b-sure.eu/wp-content/uploads/2022/01/Art09_PrescriptionBeforeProblem_NL-scaled-e1642362439908.jpg" alt="Financieel overzicht probleem" loading="lazy">
+        <img src="../images/2.png" alt="Uw vermogen verspreid over meerdere banken" loading="lazy">
       </div>
       <div class="pain-content">
         <p class="section-eyebrow">Herkent u dit?</p>
@@ -702,14 +770,14 @@
       </div>
       <div class="solution-visual">
         <div class="solution-img-main">
-          <img src="https://b-sure.eu/wp-content/uploads/2025/06/B-sure-by-Night-2.jpg" alt="B-sure kantoor" loading="lazy">
+          <img src="../images/8.png" alt="Financieel geluk en gemoedsrust op lange termijn" loading="lazy">
         </div>
         <div class="solution-img-row">
           <div class="solution-img-sm">
-            <img src="https://b-sure.eu/wp-content/uploads/2022/01/concept3-opti-1.png" alt="Financieel plan" loading="lazy">
+            <img src="../images/4.png" alt="Uw financiele butler" loading="lazy">
           </div>
           <div class="solution-img-sm">
-            <img src="https://b-sure.eu/wp-content/uploads/2022/03/kluis-e1646926077661.png" alt="Digitale Kluis" loading="lazy" style="background:#f8f9fa;padding:16px;">
+            <img src="../images/5.png" alt="Het B-sure team" loading="lazy">
           </div>
         </div>
       </div>
@@ -813,26 +881,36 @@
         <h2 class="section-h2">Antwoorden op uw vragen.</h2>
       </div>
       <div class="faq-list fade">
-        <div class="faq-item">
-          <div class="faq-q">Kost een bankmakelaar mij extra geld?</div>
+        <details class="faq-item" open>
+          <summary>Kost een bankmakelaar mij extra geld?
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
           <div class="faq-a"><strong>Neen. Wij kosten u niets.</strong> B-sure wordt vergoed door de private banken, niet door u. Er zijn geen consultancy fees, geen advieskosten en geen verborgen commissies ten laste van uw vermogen.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Moet ik mijn huidige bankrelaties verbreken?</div>
+        </details>
+        <details class="faq-item">
+          <summary>Moet ik mijn huidige bankrelaties verbreken?
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
           <div class="faq-a">Niet per se. Wij analyseren uw volledige situatie en bepalen samen welke stap het meest zinvol is. In veel gevallen werken wij naast uw bestaande bankrelaties, als uw vertegenwoordiger en bewaker.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Wat is een Welfie?</div>
+        </details>
+        <details class="faq-item">
+          <summary>Wat is een Welfie?
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
           <div class="faq-a">Een Welfie is een financiele selfie: een gedetailleerd totaaloverzicht van uw vermogen, levensstandaard, gezinssituatie, doelstellingen en financieel DNA. Het is de basis van alles wat wij voor u doen. Het eerste gesprek is gratis en vrijblijvend.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Voor wie is B-sure?</div>
+        </details>
+        <details class="faq-item">
+          <summary>Voor wie is B-sure?
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
           <div class="faq-a">B-sure werkt voor succesvolle ondernemers, zelfstandigen en vermogende particulieren die hun vermogen willen uitbouwen, beheren of overdragen, en die geloven dat hun financieel adviseur voor <em>hen</em> moet werken, niet voor de bank.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Wat is het verschil tussen een bankmakelaar en een bankadviseur?</div>
+        </details>
+        <details class="faq-item">
+          <summary>Wat is het verschil tussen een bankmakelaar en een bankadviseur?
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
           <div class="faq-a">Een bankadviseur is in dienst van een bank en verkoopt de producten van die bank. Een bankmakelaar is onafhankelijk en vertegenwoordigt u bij meerdere private banken. <strong>B-sure is de eerste en enige bankmakelaar in Limburg.</strong></div>
-        </div>
+        </details>
       </div>
     </div>
   </div>
@@ -853,7 +931,7 @@
           <div class="form-trust-item">Hasselt of Waregem, of online</div>
         </div>
         <div class="form-side-img">
-          <img src="https://b-sure.eu/wp-content/uploads/2023/09/DSF0867-scaled.jpg" alt="B-sure kantoor gesprek" loading="lazy">
+          <img src="../images/7.png" alt="Gratis Welfie gesprek" loading="lazy">
         </div>
       </div>
       <div class="form-card fade">
@@ -899,6 +977,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- FOOTER -->
 <footer>
