@@ -331,6 +331,18 @@
   .fade { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .fade.in { opacity: 1; transform: none; }
 
+  /* ---- HERO ENHANCEMENTS ---- */
+  .h1-highlight { color: var(--gold); }
+  .hero-sub {
+    font-size: 1.0625rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.65;
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   /* ---- INTRO SECTION ---- */
   .intro-section { background: var(--bg); padding: 48px 0 0; }
   .intro-sub { font-size: 1.125rem; color: var(--sub); line-height: 1.75; text-align: center; }
@@ -396,13 +408,15 @@
 
   /* ---- SOCIAL PROOF SECTION ---- */
   .sp-section { background: var(--bg); }
-  .sp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
-  .sp-card { background: var(--off); border: 1px solid var(--line); border-radius: 12px; padding: 28px 20px; text-align: center; }
-  .sp-client { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sub2); margin-bottom: 10px; }
-  .sp-result { font-size: 1.75rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin-bottom: 6px; }
-  .sp-period { font-size: 0.8125rem; color: var(--sub); }
-  @media (max-width: 860px) { .sp-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 480px) { .sp-grid { grid-template-columns: 1fr; } }
+  .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .case-card { background: var(--off); border: 1.5px solid var(--line); border-radius: 20px; overflow: hidden; transition: transform 0.25s, border-color 0.25s; }
+  .case-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+  .case-img { width: 100%; aspect-ratio: 16 / 10; background: var(--off); object-fit: cover; display: block; }
+  .case-body { padding: 24px 24px 28px; }
+  .case-logo { height: 30px; width: auto; max-width: 130px; margin-bottom: 14px; object-fit: contain; display: block; }
+  .case-card h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
+  .case-card p { color: var(--sub); font-size: 0.92rem; line-height: 1.6; }
+  @media (max-width: 860px) { .case-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -427,7 +441,8 @@
       <span class="kicker-dot"></span>
       Exclusief gebouwd voor B-sure
     </div>
-    <h1 class="dm">15 nieuwe klanten met deze volledige reeds uitgewerkte strategie voor B-Sure</h1>
+    <h1 class="dm"><span class="h1-highlight">15 nieuwe klanten</span> per maand: hier is de volledige Meta Ads strategie voor B-sure</h1>
+    <p class="hero-sub">Advertenties, scripts, landingspagina en funnel. Volledig op maat gebouwd. Klaar om live te zetten.</p>
   </div>
 </div>
 
@@ -627,29 +642,33 @@
 <section class="section sp-section" id="proof">
   <div class="wrap">
     <div class="fade" style="text-align:center;max-width:640px;margin:0 auto;">
-      <p class="eyebrow">Resultaten van klanten</p>
-      <h2 class="h2">Social Proof</h2>
+      <p class="eyebrow">Bewezen resultaten</p>
+      <h2 class="h2">Resultaten van onze klanten</h2>
     </div>
-    <div class="sp-grid fade">
-      <div class="sp-card">
-        <div class="sp-client">Graco (NYSE)</div>
-        <div class="sp-result">240 leads</div>
-        <div class="sp-period">in de eerste 30 dagen</div>
+    <div class="case-grid fade">
+      <div class="case-card">
+        <img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case" class="case-img">
+        <div class="case-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent" class="case-logo">
+          <h3>145 leads in 2 weken</h3>
+          <p>Niche B2B-recruitingbedrijf. Koude Meta-funnel van nul naar 145 gekwalificeerde leads in de eerste 14 dagen.</p>
+        </div>
       </div>
-      <div class="sp-card">
-        <div class="sp-client">VOSSEN</div>
-        <div class="sp-result">X omzet</div>
-        <div class="sp-period">in de eerste 2 maanden</div>
+      <div class="case-card">
+        <img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case" class="case-img">
+        <div class="case-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen" class="case-logo">
+          <h3>66 vaste klanten in 27 dagen</h3>
+          <p>Servicebedrijf met seizoensvraag. Agenda gevuld met betalende vaste klanten in minder dan een maand.</p>
+        </div>
       </div>
-      <div class="sp-card">
-        <div class="sp-client">TECH TALENT</div>
-        <div class="sp-result">X aanvragen</div>
-        <div class="sp-period">na 16 dagen</div>
-      </div>
-      <div class="sp-card">
-        <div class="sp-client">Container Cleaner</div>
-        <div class="sp-result">X nieuwe klanten</div>
-        <div class="sp-period">na 14 dagen</div>
+      <div class="case-card">
+        <img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case" class="case-img">
+        <div class="case-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner" class="case-logo">
+          <h3>50 vaste klanten in 2 weken</h3>
+          <p>Lokale thuisservice. Op maat gebouwde funnel die 50 terugkerende servicecontracten boekte in 14 dagen.</p>
+        </div>
       </div>
     </div>
   </div>
