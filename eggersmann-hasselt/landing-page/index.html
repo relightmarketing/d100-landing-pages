@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Eggersmann Hasselt -- Bespoke keukens, badkamers en dressings. Ervaar echte woonomgevingen in onze showroom. Persoonlijk begeleid door Tom Geuns.">
+<title>Eggersmann Hasselt | Maatwerk Keukens, Badkamers en Dressings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --bg:          #121212;
+  --surface:     #1a1a1a;
+  --card:        #222222;
+  --accent:      #F4F3F1;
+  --accent-dark: #d6d5d3;
+  --navy:        #0a0a0a;
+  --navy-deep:   #000000;
+  --text:        #ffffff;
+  --text-muted:  rgba(255,255,255,0.55);
+  --line:        rgba(255,255,255,0.1);
+  --font-head:   'Quicksand', sans-serif;
+  --font-body:   'Quicksand', sans-serif;
+  --r:           6px;
+  --max:         960px;
+  --nav-h:       56px;
+}
+
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-weight:300;font-size:1rem;line-height:1.7;padding-bottom:76px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+/* ===== CONTAINER ===== */
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 16px}
+
+/* ===== TYPOGRAPHY ===== */
+.pre-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.75rem;display:block}
+h1{font-family:var(--font-head);font-size:clamp(1.75rem,5vw,3.5rem);font-weight:300;line-height:1.2;margin-bottom:1.25rem}
+h2{font-family:var(--font-head);font-size:clamp(1.4rem,3vw,2.25rem);font-weight:300;line-height:1.3;margin-bottom:1.25rem}
+h3{font-family:var(--font-head);font-size:1.1rem;font-weight:600;line-height:1.4;margin-bottom:.5rem}
+p{margin-bottom:1rem;font-weight:300}
+
+/* ===== BUTTONS ===== */
+.btn{display:inline-block;background:var(--accent);color:var(--navy-deep);font-family:var(--font-head);font-weight:700;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;padding:16px 32px;border:none;border-radius:var(--r);cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;text-align:center}
+.btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn-sm{padding:9px 16px;font-size:.72rem;white-space:nowrap}
+.risk{display:block;font-size:.72rem;color:var(--text-muted);margin-top:.6rem;text-align:center}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy-deep);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);padding:0 12px;gap:8px}
+.nav-logo{display:flex;align-items:center;flex-shrink:1;min-width:0;max-width:140px}
+.nav-logo svg{width:auto;height:22px;max-width:140px;flex-shrink:1}
+.nav-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.nav-cta-desktop{display:none}
+
+/* ===== HERO (Image variant -- 2 col) ===== */
+.hero{padding:calc(var(--nav-h) + 48px) 0 48px;background:var(--bg)}
+.hero-grid{display:flex;flex-direction:column;gap:2rem}
+.hero-content{order:1}
+.hero-image{order:2;border-radius:var(--r);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.hero-image img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;display:block}
+.hero-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.badge{background:var(--card);color:var(--text-muted);font-size:.7rem;font-weight:500;padding:6px 12px;border-radius:20px;letter-spacing:.04em;white-space:nowrap}
+.hero-btn-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:.5rem}
+
+/* ===== PROOF BAR ===== */
+.proof-bar{background:var(--surface);border-bottom:1px solid var(--line);padding:20px 0}
+.proof-items{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:center}
+.proof-num{font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--accent);line-height:1.1}
+.proof-label{font-size:.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+
+/* ===== IMAGE STRIP ===== */
+.img-strip{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 16px 0}
+.img-strip::-webkit-scrollbar{display:none}
+.img-strip img{height:200px;width:280px;border-radius:10px;object-fit:cover;flex-shrink:0}
+
+/* ===== SECTION BASE ===== */
+section{padding:48px 0}
+section.alt{background:var(--surface)}
+
+/* ===== PAIN SECTION ===== */
+.pain-grid{display:flex;flex-direction:column;gap:2rem}
+.pain-grid__img{display:none;border-radius:var(--r);overflow:hidden}
+.pain-grid__img img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;border-radius:var(--r)}
+.pain-title{font-family:var(--font-body);font-size:clamp(1.3rem,3vw,2rem);font-weight:600;color:var(--accent);line-height:1.3;margin-bottom:1.5rem}
+.pain-list{display:grid;gap:.85rem;margin-bottom:1.5rem}
+.pain-list li{background:#fff;color:#111;border-radius:var(--r);padding:1rem 1.1rem 1rem 3rem;position:relative;font-size:.9rem;line-height:1.65;font-weight:400;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.pain-list li::before{content:'';position:absolute;left:1.1rem;top:1.3rem;width:10px;height:10px;background:var(--navy-deep);border-radius:50%;opacity:.5}
+.bridge{background:var(--navy);color:var(--text);border-radius:var(--r);padding:1.4rem 1.6rem;font-size:.95rem;line-height:1.7;border-left:3px solid var(--accent)}
+.bridge strong{color:var(--accent)}
+
+/* ===== SOLUTION SECTION ===== */
+.mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:var(--navy);border-radius:var(--r);overflow:hidden;margin-top:1.5rem}
+.mini-stat{padding:1rem .75rem;text-align:center;border-right:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.mini-stat:nth-child(2n){border-right:none}
+.mini-stat__num{font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--accent);line-height:1;margin-bottom:.2rem}
+.mini-stat__label{font-size:.6rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em}
+
+/* ===== PROCESS STEPS ===== */
+.steps{display:grid;grid-template-columns:1fr;gap:1.5rem}
+.step{background:var(--card);border-radius:var(--r);overflow:hidden}
+.step img{width:100%;height:220px;object-fit:cover}
+.step__body{padding:1.5rem}
+.step__num{font-size:2rem;font-weight:700;color:var(--accent);line-height:1;margin-bottom:.5rem}
+.step__name{font-family:var(--font-head);font-weight:600;font-size:1.1rem;margin-bottom:.5rem;color:var(--text)}
+.step__desc{font-size:.9rem;color:var(--text-muted);line-height:1.65;margin:0}
+.img-placeholder{background:var(--card);border:1px dashed rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;color:var(--text-muted);font-size:.85rem;height:220px}
+
+/* ===== SOCIAL PROOF ===== */
+.proof-cards{display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:2rem}
+.proof-card{background:var(--card);border-radius:var(--r);padding:1.5rem;border-left:3px solid var(--accent)}
+.stars{display:flex;gap:3px;margin-bottom:.75rem}
+.star{fill:#f59e0b}
+.proof-card blockquote{font-size:.95rem;font-style:italic;line-height:1.7;color:var(--accent);margin-bottom:.75rem}
+.proof-card cite{font-size:.78rem;color:var(--text-muted);font-style:normal}
+.creds-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.5rem;padding:1.5rem 0;border-top:1px solid var(--line);margin-top:2rem}
+
+/* ===== FOUNDER ===== */
+.founder-grid{display:flex;flex-direction:column;gap:2rem}
+.founder-photo{border-radius:var(--r);overflow:hidden}
+.founder-photo .img-placeholder{height:360px}
+.founder-creds{display:grid;gap:.6rem;margin-top:1.25rem}
+.founder-cred{font-size:.9rem;color:var(--text-muted);padding-left:1.25rem;position:relative}
+.founder-cred::before{content:'--';position:absolute;left:0;color:var(--accent)}
+
+/* ===== FORM ===== */
+section#form{background:var(--navy)}
+.form-box{background:var(--card);border-radius:var(--r);padding:2rem;max-width:600px;margin:0 auto}
+.form-friction{font-size:.78rem;color:var(--text-muted);margin-bottom:1.5rem;text-align:center}
+.form-row-2{display:grid;grid-template-columns:1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.form-group label{font-size:.82rem;font-weight:600;color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+input,select,textarea{background:var(--navy);border:1px solid var(--line);color:var(--text);font-family:var(--font-body);font-size:16px;font-weight:300;padding:14px 16px;border-radius:8px;-webkit-appearance:none;width:100%;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+select option{background:var(--navy)}
+textarea{resize:vertical;min-height:100px}
+.form-submit{width:100%;margin-top:.5rem;padding:16px;font-size:1rem;min-height:48px;border-radius:8px}
+.form-legal{font-size:.72rem;color:var(--text-muted);text-align:center;margin-top:.75rem}
+.what-next{display:grid;gap:.6rem;margin-bottom:2rem}
+.what-next li{padding-left:1.5rem;position:relative;font-size:.9rem;color:var(--text-muted)}
+.what-next li::before{content:'';position:absolute;left:0;top:.55rem;width:8px;height:8px;background:var(--accent);border-radius:50%}
+
+/* ===== FAQ ===== */
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-btn{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:20px 0;text-align:left;font-family:var(--font-head);font-size:.95rem;font-weight:600;color:var(--text)}
+.faq-btn::after{content:'+';color:var(--accent);font-size:1.4rem;flex-shrink:0;margin-left:1rem}
+.faq-item.open .faq-btn::after{content:'x'}
+.faq-answer{display:none;padding-bottom:16px;color:var(--text-muted);line-height:1.75;font-size:.9rem}
+.faq-item.open .faq-answer{display:block}
+
+/* ===== FINAL CTA ===== */
+.final-cta{text-align:center;background:var(--navy-deep);border-top:1px solid var(--line)}
+.sub-note{font-size:.78rem;color:var(--text-muted);margin-top:1rem}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy-deep);border-top:1px solid var(--line);padding:24px 0;text-align:center}
+footer p{font-size:.78rem;color:var(--text-muted);margin:0}
+
+/* ===== MOBILE STICKY CTA ===== */
+.mobile-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:99;padding:10px 12px;gap:8px;align-items:center;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 -4px 20px rgba(0,0,0,.4);border-top:1px solid var(--line)}
+.mobile-cta .btn{flex:1;padding:13px 12px;font-size:.82rem;text-align:center}
+
+/* ===== TABLET ===== */
+@media(min-width:641px){
+  :root{--nav-h:64px}
+  body{padding-bottom:0}
+  .mobile-cta{display:none}
+  .nav-inner{height:var(--nav-h);padding:0 24px;gap:12px}
+  .nav-logo{max-width:none;flex-shrink:0}
+  .nav-logo svg{height:28px;max-width:none}
+  .nav-cta-desktop{display:inline-block}
+  .btn-sm{display:none}
+  .hero{padding:calc(var(--nav-h)+64px) 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .hero-content{order:1}
+  .hero-image{order:2}
+  .hero-btn-wrap{flex-direction:row;align-items:center}
+  .risk{text-align:left;margin-top:0}
+  .proof-items{grid-template-columns:repeat(4,1fr);gap:20px}
+  .proof-num{font-size:1.8rem}
+  .img-strip img{height:240px;width:340px}
+  .img-strip{padding:32px 24px 0}
+  .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+  .pain-grid__img{display:block;position:sticky;top:calc(var(--nav-h)+2rem)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .mini-stats{grid-template-columns:repeat(4,1fr)}
+  .mini-stat{border-bottom:none}
+  .mini-stat:nth-child(2n){border-right:1px solid rgba(255,255,255,.08)}
+  .mini-stat:last-child{border-right:none}
+  .mini-stat__num{font-size:1.7rem}
+  .proof-cards{grid-template-columns:repeat(3,1fr)}
+  .founder-grid{display:grid;grid-template-columns:300px 1fr;gap:3rem;align-items:start}
+  .form-row-2{grid-template-columns:1fr 1fr}
+  section{padding:64px 0}
+}
+
+/* ===== DESKTOP ===== */
+@media(min-width:961px){
+  :root{--nav-h:72px}
+  .nav-inner{height:var(--nav-h);padding:0 32px}
+  .nav-logo svg{height:32px}
+  .hero{padding:calc(var(--nav-h)+80px) 0 80px}
+  .img-strip img{height:280px;width:400px}
+  section{padding:80px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#" aria-label="Eggersmann Hasselt">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 679.74 125.64" aria-hidden="true">
+        <path fill="white" d="M142.34,79.77c0-15.59,10.53-27.64,25.31-27.64s23.59,11.64,23.59,26.23v4.05h-37.26c.91,9.11,6.38,14.68,14.18,14.68,5.97,0,10.73-3.04,12.35-8.5l10.43,3.95c-3.75,9.32-12.15,14.88-22.78,14.88-15.19,0-25.82-11.24-25.82-27.64h0ZM154.59,73.29h24.4c-.1-5.87-3.75-10.94-11.44-10.94-6.28,0-11.14,3.75-12.96,10.94ZM220.21,125.64c-12.25,0-20.86-5.16-24.2-15.49l11.34-4.05c1.62,5.97,6.18,9.72,12.86,9.72,8.2,0,13.77-4.05,13.77-13.77v-3.75c-2.83,3.75-8.2,6.68-14.99,6.68-14.58,0-23.29-11.85-23.29-26.43s8.71-26.43,23.29-26.43c6.68,0,12.15,2.94,14.99,6.68v-5.67h12.15v47.79c0,15.69-10.73,24.71-25.92,24.71h0ZM221.32,62.76c-8.4,0-13.37,5.87-13.37,15.8s4.96,15.8,13.37,15.8c7.59,0,12.86-5.57,12.86-15.09v-1.21c0-9.72-5.26-15.29-12.86-15.29h0ZM276.82,125.64c-12.25,0-20.86-5.16-24.2-15.49l11.34-4.05c1.62,5.97,6.18,9.72,12.86,9.72,8.2,0,13.77-4.05,13.77-13.77v-3.75c-2.83,3.75-8.2,6.68-14.99,6.68-14.58,0-23.29-11.85-23.29-26.43s8.71-26.43,23.29-26.43c6.68,0,12.15,2.94,14.99,6.68v-5.67h12.15v47.79c0,15.69-10.73,24.71-25.92,24.71h0ZM277.93,62.76c-8.4,0-13.37,5.87-13.37,15.8s4.96,15.8,13.37,15.8c7.59,0,12.86-5.57,12.86-15.09v-1.21c0-9.72-5.27-15.29-12.86-15.29h0ZM309.22,79.77c0-15.59,10.53-27.64,25.31-27.64s23.59,11.64,23.59,26.23v4.05h-37.26c.91,9.11,6.38,14.68,14.18,14.68,5.97,0,10.73-3.04,12.35-8.5l10.43,3.95c-3.75,9.32-12.15,14.88-22.78,14.88-15.19,0-25.82-11.24-25.82-27.64h0ZM321.47,73.29h24.4c-.1-5.87-3.75-10.94-11.44-10.94-6.28,0-11.14,3.75-12.96,10.94ZM394.38,65.19c-1.52-.2-2.73-.3-4.46-.3-7.7,0-13.57,4.96-13.57,13.47v27.95h-12.15v-53.16h12.15v7.9c2.33-4.96,7.8-8.2,14.58-8.2,1.42,0,2.53.1,3.44.2v12.15h.01ZM402.29,88.88c3.14,5.16,9.21,8.61,15.39,8.61,5.16,0,9.92-1.82,9.92-6.58s-4.46-5.06-12.86-6.78c-8.4-1.72-18.02-3.85-18.02-15.19,0-9.72,8.5-16.81,20.76-16.81,9.32,0,17.62,4.15,21.47,10.02l-8.2,7.39c-3.04-4.76-8.1-7.49-13.97-7.49-4.96,0-8.2,2.23-8.2,5.77,0,3.85,3.85,4.56,10.53,5.97,9.01,1.92,20.35,3.85,20.35,16,0,10.73-9.82,17.62-21.87,17.62-9.82,0-19.64-3.95-24.4-11.24l9.11-7.29h0ZM457.88,106.3h-12.15v-53.16h12.15v5.67c2.94-3.54,7.49-6.68,14.58-6.68,6.38,0,11.14,2.83,14.07,7.39,3.24-3.44,8.3-7.39,16.5-7.39,10.94,0,18.02,7.7,18.02,19.14v35.04h-12.15v-31.49c0-6.58-2.43-11.34-8.91-11.34-5.16,0-10.53,4.05-10.53,11.64v31.19h-12.15v-31.49c0-6.58-2.43-11.34-8.91-11.34-5.16,0-10.53,4.05-10.53,11.64v31.19h.01ZM526.54,91.52c0-10.13,7.59-14.58,17.82-16.71l14.68-3.04v-.91c0-5.06-2.63-8.2-9.11-8.2-5.77,0-8.81,2.63-10.23,7.8l-11.44-2.63c2.63-8.81,10.43-15.7,22.17-15.7,12.76,0,20.45,6.08,20.45,18.33v22.88c0,3.04,1.32,3.95,4.66,3.54v9.42c-8.81,1.01-13.47-.71-15.29-5.06-3.34,3.75-8.91,5.97-15.8,5.97-10.13,0-17.92-6.18-17.92-15.69h0ZM559.04,81.09l-11.44,2.43c-5.16,1.11-9.01,2.73-9.01,7.49,0,4.15,3.04,6.48,7.7,6.48,6.48,0,12.76-3.44,12.76-9.92v-6.48h-.01ZM581.12,53.14h12.15v5.67c3.04-3.54,7.8-6.68,14.68-6.68,11.14,0,17.82,7.7,17.82,19.14v35.04h-12.15v-31.49c0-6.58-2.63-11.34-9.32-11.34-5.47,0-11.04,4.05-11.04,11.64v31.19h-12.15v-53.16h.01ZM635.09,53.14h12.15v5.67c3.04-3.54,7.8-6.68,14.68-6.68,11.14,0,17.82,7.7,17.82,19.14v35.04h-12.15v-31.49c0-6.58-2.63-11.34-9.32-11.34-5.47,0-11.04,4.05-11.04,11.64v31.19h-12.15v-53.16h.01ZM0,0v53.16h55.84v8.93H0v13.51h55.84v8.92H0v13.27h55.84v8.55h49.71V0H0h0Z"/>
+      </svg>
+    </a>
+    <div class="nav-right">
+      <a href="#form" class="btn btn-sm nav-cta-mobile">Boek bezoek</a>
+      <a href="#form" class="btn btn-sm nav-cta-desktop">Gratis showroombezoek</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO (Image variant) ========== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="pre-label">Voor wie zijn interieur wil laten ontwerpen, niet zomaar uitkiezen</span>
+        <h1>Jouw thuis verdient een keuken die past bij hoe jij echt leeft.</h1>
+        <p>Bij Eggersmann Hasselt ervaar je je toekomstige interieur in een echte woonomgeving -- geen showroomopstelling, maar een ruimte die aanvoelt als een thuis. Keuken, badkamer, dressing. Persoonlijk begeleid door Tom Geuns van begin tot eind.</p>
+        <div class="hero-badges">
+          <span class="badge">316 afgewerkte projecten</span>
+          <span class="badge">Hasselt en omgeving</span>
+          <span class="badge">Persoonlijk begeleid</span>
+        </div>
+        <div class="hero-btn-wrap">
+          <a href="#form" class="btn">Boek je gratis showroombezoek</a>
+          <span class="risk">Geen verplichtingen. Geen verkoopdruk. De koffie staat al klaar.</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://eggersmannhasselt.be/wp-content/uploads/2025/09/DSC_3692.jpg" alt="Afgewerkt Eggersmann keukenproject -- maatwerk keuken in Hasselt" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOCIAL PROOF BAR ========== -->
+<div class="proof-bar">
+  <div class="wrap">
+    <div class="proof-items">
+      <div>
+        <div class="proof-num">316</div>
+        <div class="proof-label">Afgewerkte projecten</div>
+      </div>
+      <div>
+        <div class="proof-num">3</div>
+        <div class="proof-label">Expertises</div>
+      </div>
+      <div>
+        <div class="proof-num">100+</div>
+        <div class="proof-label">Jaar vakmanschap</div>
+      </div>
+      <div>
+        <div class="proof-num">1</div>
+        <div class="proof-label">Vaste begeleider</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== IMAGE STRIP 1 ========== -->
+<div class="img-strip" style="padding-top:32px">
+  <img src="https://eggersmannhasselt.be/wp-content/uploads/2025/10/Header_Corswarem-scaled.jpg" alt="Eggersmann Hasselt keukenproject Corswarem" loading="lazy">
+  <img src="https://eggersmannhasselt.be/wp-content/uploads/2025/10/header_badkamer_corswarem-scaled.jpg" alt="Eggersmann Hasselt badkamer project Corswarem" loading="lazy">
+  <img src="https://eggersmannhasselt.be/wp-content/uploads/2025/10/Header_Rondelez-scaled.jpg" alt="Eggersmann Hasselt totaalinterieur project Rondelez" loading="lazy">
+</div>
+
+<!-- ========== SECTION 2: PAIN AGITATION ========== -->
+<section class="alt">
+  <div class="wrap">
+    <div class="pain-grid">
+      <div>
+        <span class="pre-label">Herken je dit?</span>
+        <h2 class="pain-title">De meeste keukenzaken tonen je een display. Thuis kun je het je niet voorstellen.</h2>
+        <ul class="pain-list">
+          <li>Je bent al bij vier of vijf showrooms langs geweest en vertrekt telkens met meer twijfels dan antwoorden.</li>
+          <li>De verkopers tonen je van alles -- maar niemand neemt de tijd om te begrijpen hoe jij eigenlijk leeft en wat jouw huis nodig heeft.</li>
+          <li>Alles ziet er goed uit onder showroomspotlights. Maar je kunt je echt niet inbeelden hoe het in jouw ruimte zou staan.</li>
+          <li>Je hebt ooit een project uitbesteed en halverwege werd je doorgegeven aan iemand die niets wist van wat er eerder afgesproken was.</li>
+          <li>Je wil het dit keer goed doen. Niet over vijf jaar opnieuw beginnen. Maar je weet niet hoe je zeker kunt zijn dat het klopt.</li>
+        </ul>
+        <div class="bridge">
+          Het probleem is <strong>niet jouw smaak</strong>. Het is de manier waarop de meeste keukenstudio's werken. Ze tonen je producten. Wij laten je iets <strong>ervaren</strong>. Dat is een fundamenteel verschil.
+        </div>
+      </div>
+      <div class="pain-grid__img">
+        <img src="https://eggersmannhasselt.be/wp-content/uploads/2025/10/nami-black-tempest-hero-zf8k85nx40at835-1.jpg" alt="Eggersmann Hasselt maatwerk keuken detail" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 3: SOLUTION ========== -->
+<section>
+  <div class="wrap">
+    <span class="pre-label">De Eggersmann aanpak</span>
+    <h2>Een showroom die aanvoelt als een thuis. Niet een rij van displays.</h2>
+    <p>Wij laten het klassieke keukenwinkelgevoel achter ons. Bij Eggersmann Hasselt betreed je een plek waar interieursarchitectuur tot leven komt. Geen tien keukens naast elkaar onder dezelfde spotlights. Echte woonomgevingen -- keuken, badkamer, dressing -- zoals ze in een echt huis staan.</p>
+    <p>Je voelt de materialen. Je ziet hoe het licht valt op travertin, op fineer, op marmer. Je besluit op basis van wat je ervaart, niet op basis van wat je veronderstelt. <strong>Inspireren zonder te overprikkelen</strong> -- dat is de belofte.</p>
+    <p class="result-highlight" style="font-size:.85rem;color:var(--text-muted)">316 afgewerkte projecten in ons portfolio. Echte huizen van echte mensen -- geen staged resultaten.</p>
+    <div class="mini-stats">
+      <div class="mini-stat">
+        <div class="mini-stat__num">316</div>
+        <div class="mini-stat__label">Klantprojecten</div>
+      </div>
+      <div class="mini-stat">
+        <div class="mini-stat__num">3</div>
+        <div class="mini-stat__label">Expertises</div>
+      </div>
+      <div class="mini-stat">
+        <div class="mini-stat__num">100+</div>
+        <div class="mini-stat__label">Jaar vakmanschap</div>
+      </div>
+      <div class="mini-stat">
+        <div class="mini-stat__num">1</div>
+        <div class="mini-stat__label">Begeleider van a tot z</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="#form" class="btn">Boek je gratis showroombezoek</a>
+      <span class="risk">Geen verplichtingen. Geen voorbereiding nodig.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 4: PROCESS STEPS ========== -->
+<section class="alt">
+  <div class="wrap">
+    <span class="pre-label">Hoe het werkt</span>
+    <h2>Drie stappen. Eén visie. Nul handoffs.</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="https://eggersmannhasselt.be/wp-content/uploads/2025/09/image_processing20230627-2467710-75krec.png" alt="Stap 1 - Bezoek de Eggersmann Hasselt showroom" loading="lazy">
+        <div class="step__body">
+          <div class="step__num">01</div>
+          <div class="step__name">Bezoek de showroom</div>
+          <p class="step__desc">Geen voorbereiding nodig. Je komt gewoon kijken en voelen. Tom neemt de tijd om te begrijpen wat jij zoekt -- zonder verkoopdruk.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="img-placeholder">
+          <!-- Stap 2 afbeelding: ontwerpgesprek met Tom Geuns in de showroom of aan de ontwerpstafel -->
+        </div>
+        <div class="step__body">
+          <div class="step__num">02</div>
+          <div class="step__name">Ontwerp met Tom</div>
+          <p class="step__desc">Persoonlijk ontwerptraject van begin tot eind. Materiaaladvies, technische details, praktische oplossingen afgestemd op jouw thuis en levensstijl.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="img-placeholder">
+          <!-- Stap 3 afbeelding: afgewerkt resultaat, installatie of oplevering van een Eggersmann project -->
+        </div>
+        <div class="step__body">
+          <div class="step__num">03</div>
+          <div class="step__name">Installatie en oplevering</div>
+          <p class="step__desc">Ons installatieteam werkt precies en netjes. Vragen of twijfels? Een telefoontje en Tom kijkt het samen met je. Je staat er nooit alleen voor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== IMAGE STRIP 2 ========== -->
+<div class="img-strip" style="padding-top:32px">
+  <img src="https://eggersmannhasselt.be/wp-content/uploads/2025/10/Header_MHC-scaled.jpg" alt="Eggersmann Hasselt totaalinterieur project MHC" loading="lazy">
+  <img src="https://eggersmannhasselt.be/wp-content/uploads/2025/09/202405_Level_TDK_043-1-scaled.jpg" alt="Eggersmann Hasselt maatwerk project Level TDK" loading="lazy">
+  <img src="https://eggersmannhasselt.be/wp-content/uploads/2025/10/83b6c0e_slide2-1200x960.jpg" alt="Eggersmann Hasselt keukendetail met premium afwerking" loading="lazy">
+</div>
+
+<!-- ========== SECTION 5: SOCIAL PROOF ========== -->
+<section>
+  <div class="wrap">
+    <span class="pre-label">Echte resultaten</span>
+    <h2>316 afgewerkte projecten. Echte huizen, geen staged foto's.</h2>
+    <p style="color:var(--text-muted);font-size:.9rem">Elk project in ons portfolio is een echt klantenhuis, gefotografeerd zoals het dagelijks wordt gebruikt. Geen renders, geen styling voor de fotoshoot. Dit is wat we opleveren.</p>
+    <div class="proof-cards">
+      <div class="proof-card">
+        <div class="stars">
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+        </div>
+        <blockquote>"Sculpturale leefruimte in fineer en kwartsiet -- een ruimte die precies past bij hoe wij leven."</blockquote>
+        <cite>Klantproject 47 -- Totaalinterieur, Hasselt</cite>
+      </div>
+      <div class="proof-card">
+        <div class="stars">
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+        </div>
+        <blockquote>"Forest Green marmer als absolute blikvanger -- exactement zoals we ons voorgesteld hadden, maar beter."</blockquote>
+        <cite>Klantproject 112 -- Maatwerk keuken, Limburg</cite>
+      </div>
+      <div class="proof-card">
+        <div class="stars">
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#f59e0b" class="star"/></svg>
+        </div>
+        <blockquote>"Een totaalrenovatie waarin minimalisme en warmte samenkomen. Tom heeft ons door alles begeleid van a tot z."</blockquote>
+        <cite>Klantproject 238 -- Totaalrenovatie, Hasselt</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 6: FOUNDER ========== -->
+<section class="alt">
+  <div class="wrap">
+    <div class="founder-grid">
+      <div class="founder-photo">
+        <div class="img-placeholder">
+          <!-- Portretfoto Tom Geuns: man in donkere nette kledij, ontspannen maar zelfzeker, in de Eggersmann Hasselt showroom met een afgewerkte keuken op de achtergrond in zachte focus -->
+        </div>
+      </div>
+      <div>
+        <span class="pre-label">De mens achter elk project</span>
+        <h2>Tom Geuns, eigenaar Eggersmann Hasselt</h2>
+        <p>Wij laten het klassieke keukenwinkelgevoel achter ons. In plaats daarvan creeren we een plek waar interieursarchitectuur tot leven komt. Ik weet hoe spannend het kan zijn om een nieuw interieur te kiezen. Dat is waarom ik je persoonlijk begeleid van begin tot eind -- van je eerste showroombezoek tot het ontwerp, de uitvoering en de installatie.</p>
+        <p>Je staat er nooit alleen voor. Omdat we met een klein, hecht team werken, kunnen we snel schakelen. Laatste twijfels? Wil je iets aanpassen? Geen probleem. Niet zeker over het werkblad? Kom nog eens langs. Twijfel je over de kraan in je inloopdouche? Een telefoontje en we bekijken het samen.</p>
+        <div class="founder-creds">
+          <div class="founder-cred">Exclusief Belgisch dealer voor Eggersmann (Duits merk, opgericht in 1924)</div>
+          <div class="founder-cred">316 afgewerkte projecten: keukens, badkamers en dressings</div>
+          <div class="founder-cred">Showroom in Hasselt: echte woonomgevingen, geen showroomopstellingen</div>
+          <div class="founder-cred">Materiaalpartners: Laminam, Gaggenau en andere premium merken</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 7: FORM ========== -->
+<section id="form">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:2rem">
+      <span class="pre-label">Gratis, vrijblijvend bezoek</span>
+      <h2>Boek je gratis showroombezoek</h2>
+      <ul class="what-next">
+        <li>Tom neemt contact op binnen 24 uur om je bezoek in te plannen</li>
+        <li>Je bezoekt de showroom op jouw tempo -- geen verkooppraat, wel goede koffie</li>
+        <li>Je vertrekt met een helder beeld van de mogelijkheden voor jouw thuis</li>
+      </ul>
+    </div>
+    <div class="form-box">
+      <p class="form-friction">Duurt minder dan 60 seconden. Tom neemt contact op binnen 24 uur.</p>
+      <!--
+        FORMSPREE SETUP:
+        1. Ga naar formspree.io en maak een gratis account aan
+        2. Maak een nieuw formulier aan en kopieer het formulier-ID
+        3. Vervang het ID hieronder door jouw echte formulier-ID
+        Inzendingen worden automatisch per e-mail doorgestuurd.
+      -->
+      <form action="https://formspree.io/f/xpending01" method="POST">
+        <input type="hidden" name="_subject" value="Nieuw showroombezoek verzoek -- Eggersmann Hasselt">
+        <div class="form-group">
+          <label for="project-type">Wat wil je laten aanpakken?</label>
+          <select id="project-type" name="project_type" required>
+            <option value="" disabled selected>Selecteer een optie</option>
+            <option value="keuken">Keuken</option>
+            <option value="badkamer">Badkamer</option>
+            <option value="dressing">Dressing</option>
+            <option value="meerdere">Meerdere ruimtes</option>
+            <option value="totaalinterieur">Totaalinterieur</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="timeline">Wanneer wil je starten?</label>
+          <select id="timeline" name="timeline" required>
+            <option value="" disabled selected>Selecteer een optie</option>
+            <option value="zsm">Zo snel mogelijk</option>
+            <option value="3maanden">Binnen 3 maanden</option>
+            <option value="6maanden">Binnen 3 tot 6 maanden</option>
+            <option value="later">Over meer dan 6 maanden</option>
+            <option value="orienteren">We orienteren ons nog</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget">Wat is je budgetrange?</label>
+          <select id="budget" name="budget">
+            <option value="" disabled selected>Selecteer een optie</option>
+            <option value="onder15k">Minder dan 15.000 EUR</option>
+            <option value="15-30k">15.000 tot 30.000 EUR</option>
+            <option value="30-50k">30.000 tot 50.000 EUR</option>
+            <option value="50kplus">Meer dan 50.000 EUR</option>
+            <option value="onzeker">Weet ik nog niet</option>
+          </select>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="fname">Voornaam</label>
+            <input type="text" id="fname" name="voornaam" placeholder="Voornaam" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Achternaam</label>
+            <input type="text" id="lname" name="achternaam" placeholder="Achternaam" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mailadres</label>
+          <input type="email" id="email" name="email" placeholder="jouw@email.be" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefoonnummer</label>
+          <input type="tel" id="phone" name="telefoon" placeholder="+32 4xx xxx xxx">
+        </div>
+        <button type="submit" class="btn form-submit">Boek mijn gratis showroombezoek</button>
+        <p class="form-legal">Geen spam. Geen verplichtingen. Je gegevens blijven vertrouwelijk.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 8: FAQ ========== -->
+<section>
+  <div class="wrap" style="max-width:680px">
+    <span class="pre-label">Veelgestelde vragen</span>
+    <h2>Alles wat je wil weten voor je langskomt</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn">Is er iets verplicht na het showroombezoek?</button>
+        <div class="faq-answer">
+          Nee, absoluut niet. Het showroombezoek is volledig vrijblijvend. Je komt kijken, je ervaart de ruimte, je praat met Tom. Er is geen druk om te beslissen, geen offerte die je moet tekenen. Als je nadien wil verder gaan, is dat geweldig. Als je nog niet klaar bent, ook goed. Tom staat klaar als je er klaar voor bent.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Kan ik nog aanpassingen doen na de ontwerpfase?</button>
+        <div class="faq-answer">
+          Ja, laatste twijfels of aanpassingen zijn deel van het proces. Omdat we met een klein, hecht team werken, kunnen we snel schakelen. Niet zeker over het werkblad? Kom nog eens langs. Twijfel je over de kraan in je douche? Een telefoontje en we bekijken het samen. Flexibiliteit is voor ons vanzelfsprekend.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Werkt Eggersmann Hasselt alleen in de regio Hasselt?</button>
+        <div class="faq-answer">
+          Onze showroom is gevestigd in Hasselt. We werken voornamelijk in de regio Hasselt, de provincie Limburg en de Antwerpse regio. Twijfel je of jouw locatie bereikbaar is? Neem gewoon contact op en we bekijken het samen.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Kan ik ook alleen een badkamer of dressing laten ontwerpen?</button>
+        <div class="faq-answer">
+          Absoluut. Eggersmann Hasselt ontwerpt keukens, badkamers en dressings -- elk apart of als onderdeel van een totaalinterieurproject. Of je nu een enkele ruimte wil aanpakken of je hele huis, het proces blijft hetzelfde: persoonlijk begeleid door Tom van het eerste bezoek tot de oplevering.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Hoe lang duurt een gemiddeld keukenproject?</button>
+        <div class="faq-answer">
+          Dat hangt af van de omvang en complexiteit van het project. Tijdens je eerste showroombezoek en het ontwerp overlegt Tom concrete timing op basis van jouw specifieke situatie. Een maatwerkkeuken is geen standaardproduct -- elk project heeft zijn eigen traject. Wat je wel kunt verwachten: transparante communicatie over elke stap en een team dat vlot communiceert.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 9: FINAL CTA ========== -->
+<section class="final-cta">
+  <div class="wrap" style="text-align:center">
+    <span class="pre-label">Klaar om te ervaren</span>
+    <h2>Jouw thuis. Jouw keuken. Klaar wanneer jij klaar bent.</h2>
+    <p style="color:var(--text-muted);max-width:520px;margin:0 auto 2rem">Geen voorbereiding nodig. Kom gewoon langs en ervaar wat er mogelijk is voor jouw interieur. Tom staat klaar om je te begeleiden van het eerste gesprek tot een resultaat voor twintig jaar.</p>
+    <a href="#form" class="btn">Boek je gratis showroombezoek</a>
+    <p class="sub-note">316 afgewerkte klantprojecten in ons portfolio. Echte huizen, echte resultaten.</p>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="wrap">
+    <p>Eggersmann Hasselt &copy; 2026 -- Maatwerk keukens, badkamers en dressings in Hasselt, Belgie</p>
+  </div>
+</footer>
+
+<!-- ========== MOBILE STICKY CTA ========== -->
+<div class="mobile-cta">
+  <a href="#form" class="btn">Boek je gratis bezoek</a>
+</div>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.parentElement;
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+    if(!isOpen)item.classList.add('open');
+  });
+});
+
+// Hide sticky CTA when form is visible
+(function(){
+  var mc=document.querySelector('.mobile-cta');
+  if(!mc)return;
+  var form=document.getElementById('form');
+  if(!form)return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      mc.style.transform=e.isIntersecting?'translateY(100%)':'translateY(0)';
+      mc.style.transition='transform 0.3s ease';
+    });
+  },{threshold:0.1});
+  io.observe(form);
+})();
+</script>
+
+</body>
+</html>
