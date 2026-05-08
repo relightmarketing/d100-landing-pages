@@ -188,6 +188,14 @@ section{padding:96px 0}
 /* Footer */
 footer{padding:32px 0;border-top:1px solid var(--line);text-align:center;color:var(--sub2);font-size:.85rem}
 
+/* Lightbox */
+#lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+#lightbox.active{display:flex}
+#lightbox img{max-width:min(90vw,900px);max-height:90vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.6);cursor:default}
+#lightbox-close{position:absolute;top:20px;right:24px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+#lightbox-close:hover{background:rgba(255,255,255,.22)}
+.ad-card img{cursor:zoom-in}
+
 /* Fade animation */
 .fade{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
 .fade.in{opacity:1;transform:none}
@@ -847,6 +855,11 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
 </section>
 
 <!-- FOOTER -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close">&#x2715;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
 <footer>
   <div class="wrap">
     <p>Relight Marketing - built for Eggersmann Hasselt</p>
@@ -854,6 +867,22 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
 </footer>
 
 <script>
+// Lightbox
+document.querySelectorAll('.ad-card img').forEach(function(img){
+  img.addEventListener('click', function(){
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').alt = img.alt;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+document.getElementById('lightbox-img').addEventListener('click', function(e){ e.stopPropagation(); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
 // Nav scroll
 var nav = document.getElementById('nav');
 window.addEventListener('scroll', function(){ nav.classList.toggle('bg', scrollY > 40); }, {passive:true});
