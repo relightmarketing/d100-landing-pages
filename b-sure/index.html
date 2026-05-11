@@ -38,9 +38,12 @@
   /* ---- NAV ---- */
   #nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-    padding: 16px 24px;
-    display: flex; align-items: center; justify-content: space-between;
+    padding: 0;
     transition: background 0.3s, box-shadow 0.3s;
+  }
+  .nav-inner {
+    max-width: 1120px; margin: 0 auto; padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
   }
   #nav.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--line); }
   .nav-logo img { height: 36px; filter: brightness(0) invert(1); transition: filter 0.3s; }
@@ -110,9 +113,7 @@
     box-shadow: 0 40px 100px rgba(0,0,0,0.45);
     background: #0a2e1f;
     aspect-ratio: 16/9;
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 16px;
-    cursor: pointer; position: relative;
+    position: relative;
   }
   .video-box-bg {
     position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3;
@@ -417,18 +418,27 @@
   .case-card h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--txt); margin-bottom: 8px; }
   .case-card p { color: var(--sub); font-size: 0.92rem; line-height: 1.6; }
   @media (max-width: 860px) { .case-grid { grid-template-columns: 1fr; } }
+
+  /* ---- LIGHTBOX ---- */
+  #lb { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.88); align-items: center; justify-content: center; cursor: zoom-out; }
+  #lb.open { display: flex; }
+  #lb img { max-width: 92vw; max-height: 92vh; object-fit: contain; border-radius: 8px; box-shadow: 0 24px 80px rgba(0,0,0,0.6); }
+  .ad-img-wrap { cursor: zoom-in; }
 </style>
 </head>
 <body>
+<div id="lb" onclick="closeLightbox()"><img id="lb-img" src="" alt=""></div>
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-logo">
-    <a href="https://b-sure.eu/" target="_blank">
-      <img src="https://b-sure.eu/wp-content/uploads/2022/03/b-sure-logo-1.png" alt="B-sure">
-    </a>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="https://b-sure.eu/" target="_blank">
+        <img src="https://b-sure.eu/wp-content/uploads/2022/03/b-sure-logo-1.png" alt="B-sure">
+      </a>
+    </div>
+    <a href="#calendly" class="btn-gold">Laten we dit live zetten</a>
   </div>
-  <a href="#calendly" class="btn-gold">Laten we dit live zetten</a>
 </nav>
 
 <!-- HERO -->
@@ -441,25 +451,15 @@
       <span class="kicker-dot"></span>
       Exclusief gebouwd voor B-sure
     </div>
-    <h1 class="dm"><span class="h1-highlight">15 nieuwe klanten</span> per maand: hier is de volledige Meta Ads strategie voor B-sure</h1>
+    <h1 class="dm"><span class="h1-highlight">10-15 kwalitatieve gesprekken</span> met jullie ideale klantenprofiel per maand: de volledige advertentiestrategie uitgewerkt.</h1>
     <p class="hero-sub">Advertenties, scripts, landingspagina en funnel. Volledig op maat gebouwd. Klaar om live te zetten.</p>
   </div>
 </div>
 
 <!-- VIDEO BLEED -->
 <div class="video-bleed-wrap">
-  <!-- LOOM: Record a personalized 5-8 min walkthrough for B-sure.
-       Cover: (1) who this funnel is for, (2) the primary angle (zero-cost bank broker),
-       (3) walk through each of the 9 ads, (4) read the video script hooks live,
-       (5) show the landing page preview, (6) close with the Calendly CTA.
-       Upload to Loom > Share > Embed > paste the embed URL here and replace this placeholder.
-  -->
   <div class="video-box">
-    <img class="video-box-bg" src="https://b-sure.eu/wp-content/uploads/2025/09/DSF8860-1.jpg" alt="B-sure">
-    <div class="play-btn">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="#01573a"/></svg>
-    </div>
-    <span class="video-label">Bekijk mijn persoonlijke video voor B-sure</span>
+    <iframe src="https://www.loom.com/embed/0b428a8a0aff41748ef1d5da4bb9d459" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
   </div>
 </div>
 
@@ -638,42 +638,6 @@
   </div>
 </section>
 
-<!-- SOCIAL PROOF -->
-<section class="section sp-section" id="proof">
-  <div class="wrap">
-    <div class="fade" style="text-align:center;max-width:640px;margin:0 auto;">
-      <p class="eyebrow">Bewezen resultaten</p>
-      <h2 class="h2">Resultaten van onze klanten</h2>
-    </div>
-    <div class="case-grid fade">
-      <div class="case-card">
-        <img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case" class="case-img">
-        <div class="case-body">
-          <img src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent" class="case-logo">
-          <h3>145 leads in 2 weken</h3>
-          <p>Niche B2B-recruitingbedrijf. Koude Meta-funnel van nul naar 145 gekwalificeerde leads in de eerste 14 dagen.</p>
-        </div>
-      </div>
-      <div class="case-card">
-        <img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case" class="case-img">
-        <div class="case-body">
-          <img src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen" class="case-logo">
-          <h3>66 vaste klanten in 27 dagen</h3>
-          <p>Servicebedrijf met seizoensvraag. Agenda gevuld met betalende vaste klanten in minder dan een maand.</p>
-        </div>
-      </div>
-      <div class="case-card">
-        <img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case" class="case-img">
-        <div class="case-body">
-          <img src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner" class="case-logo">
-          <h3>50 vaste klanten in 2 weken</h3>
-          <p>Lokale thuisservice. Op maat gebouwde funnel die 50 terugkerende servicecontracten boekte in 14 dagen.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ADS SECTION -->
 <section class="section ads-section" id="ads">
   <div class="wrap">
@@ -687,7 +651,7 @@
     <div class="ads-grid fade">
       <div class="ad-card">
         <div class="ad-img-wrap">
-          <img src="./images/1.png" alt="Ad 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="./images/1.png" alt="Ad 1" onclick="openLightbox(this.src)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ad-placeholder" style="display:none">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             Drop 1.png hier
@@ -703,7 +667,7 @@
       </div>
       <div class="ad-card">
         <div class="ad-img-wrap">
-          <img src="./images/2.png" alt="Ad 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="./images/2.png" alt="Ad 2" onclick="openLightbox(this.src)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ad-placeholder" style="display:none">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             Drop 2.png hier
@@ -719,7 +683,7 @@
       </div>
       <div class="ad-card">
         <div class="ad-img-wrap">
-          <img src="./images/3.png" alt="Ad 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="./images/3.png" alt="Ad 3" onclick="openLightbox(this.src)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ad-placeholder" style="display:none">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             Drop 3.png hier
@@ -739,7 +703,7 @@
     <div class="ads-grid fade">
       <div class="ad-card">
         <div class="ad-img-wrap">
-          <img src="./images/4.png" alt="Ad 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="./images/4.png" alt="Ad 4" onclick="openLightbox(this.src)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ad-placeholder" style="display:none">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             Drop 4.png hier
@@ -755,7 +719,7 @@
       </div>
       <div class="ad-card">
         <div class="ad-img-wrap">
-          <img src="./images/5.png" alt="Ad 5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="./images/5.png" alt="Ad 5" onclick="openLightbox(this.src)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ad-placeholder" style="display:none">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             Drop 5.png hier
@@ -771,7 +735,7 @@
       </div>
       <div class="ad-card">
         <div class="ad-img-wrap">
-          <img src="./images/6.png" alt="Ad 6" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="./images/6.png" alt="Ad 6" onclick="openLightbox(this.src)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ad-placeholder" style="display:none">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             Drop 6.png hier
@@ -791,7 +755,7 @@
     <div class="ads-grid fade">
       <div class="ad-card">
         <div class="ad-img-wrap">
-          <img src="./images/7.png" alt="Ad 7" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="./images/7.png" alt="Ad 7" onclick="openLightbox(this.src)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ad-placeholder" style="display:none">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             Drop 7.png hier
@@ -807,7 +771,7 @@
       </div>
       <div class="ad-card">
         <div class="ad-img-wrap">
-          <img src="./images/8.png" alt="Ad 8" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="./images/8.png" alt="Ad 8" onclick="openLightbox(this.src)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ad-placeholder" style="display:none">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             Drop 8.png hier
@@ -823,7 +787,7 @@
       </div>
       <div class="ad-card">
         <div class="ad-img-wrap">
-          <img src="./images/9.png" alt="Ad 9" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="./images/9.png" alt="Ad 9" onclick="openLightbox(this.src)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ad-placeholder" style="display:none">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             Drop 9.png hier
@@ -1043,6 +1007,42 @@ Dat is financieel geluk en gemoedsrust op lange termijn. Voor u en uw familie.</
   </div>
 </section>
 
+<!-- SOCIAL PROOF -->
+<section class="section sp-section" id="proof">
+  <div class="wrap">
+    <div class="fade" style="text-align:center;max-width:640px;margin:0 auto;">
+      <p class="eyebrow">Bewezen resultaten</p>
+      <h2 class="h2">Resultaten van onze klanten</h2>
+    </div>
+    <div class="case-grid fade">
+      <div class="case-card">
+        <img src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case" class="case-img">
+        <div class="case-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent" class="case-logo">
+          <h3>145 leads in 2 weken</h3>
+          <p>Niche B2B-recruitingbedrijf. Koude Meta-funnel van nul naar 145 gekwalificeerde leads in de eerste 14 dagen.</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <img src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case" class="case-img">
+        <div class="case-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen" class="case-logo">
+          <h3>66 vaste klanten in 27 dagen</h3>
+          <p>Servicebedrijf met seizoensvraag. Agenda gevuld met betalende vaste klanten in minder dan een maand.</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <img src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case" class="case-img">
+        <div class="case-body">
+          <img src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner" class="case-logo">
+          <h3>50 vaste klanten in 2 weken</h3>
+          <p>Lokale thuisservice. Op maat gebouwde funnel die 50 terugkerende servicecontracten boekte in 14 dagen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BAND -->
 <div class="cta-band">
   <div class="cta-inner">
@@ -1079,6 +1079,11 @@ Dat is financieel geluk en gemoedsrust op lange termijn. Voor u en uw familie.</
 </footer>
 
 <script>
+  // Lightbox
+  function openLightbox(src) { document.getElementById('lb-img').src = src; document.getElementById('lb').classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeLightbox() { document.getElementById('lb').classList.remove('open'); document.body.style.overflow = ''; }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
   // Nav scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -1108,6 +1113,35 @@ Dat is financieel geluk en gemoedsrust op lange termijn. Voor u en uw familie.</
   window.addEventListener('resize', scaleMockup);
   window.addEventListener('load', scaleMockup);
   scaleMockup();
+
+  // Page-open notification
+  var _host = window.location.hostname;
+  if (window.location.protocol !== 'file:' && _host !== 'localhost' && _host !== '127.0.0.1') {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('preview') !== 'test') {
+      var payload = {
+        _subject: '43 B-sure just opened your pitch page',
+        prospect: 'B-sure',
+        number: '43',
+        time: new Date().toLocaleString('en-US', {timeZone: 'America/New_York'}),
+        device: navigator.userAgent,
+        screen: screen.width + 'x' + screen.height,
+        referrer: document.referrer || 'direct',
+        url: window.location.href
+      };
+      fetch('https://ipapi.co/json/')
+        .then(function(r) { return r.json(); })
+        .then(function(geo) {
+          payload.city = geo.city || '';
+          payload.region = geo.region || '';
+          payload.country = geo.country_name || '';
+          return fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec', {method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});
+        })
+        .catch(function() {
+          fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec', {method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});
+        });
+    }
+  }
 </script>
 </body>
 </html>
