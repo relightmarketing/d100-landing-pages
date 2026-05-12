@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Agent for Moms: paid ads funnel built for Julia</title>
+<meta name="description" content="A complete Meta ads funnel built for the WhatsApp voice agent for moms. 9 image ads, 9 UGC video scripts, and the validation plan to hit 5 real users on $5,000.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1B3A4B;
+  --navy-deep: #122833;
+  --gold: #F5B95A;
+  --gold-light: rgba(245, 185, 90, 0.12);
+  --sage: #B8C9B5;
+  --cream: #FAF6F0;
+  --bg: #ffffff;
+  --off: #f9fafb;
+  --line: #eaecf0;
+  --txt: #1a2332;
+  --sub: #64748b;
+  --sub2: #94a3b8;
+  --wa: #25D366;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--txt);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dm { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.wrap-sm { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+.eyebrow {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--gold);
+}
+h1, h2, h3 { color: var(--txt); }
+h1.dm { font-size: clamp(2.4rem, 4.8vw, 4rem); line-height: 1.1; }
+h2 { font-size: clamp(2rem, 3.5vw, 3.25rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
+h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; }
+p { color: var(--sub); }
+p.lead { font-size: 1.125rem; color: var(--txt); }
+.fade { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade.in { opacity: 1; transform: none; }
+
+/* Lightbox */
+#lb {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 999;
+  display: none; align-items: center; justify-content: center; padding: 32px; cursor: zoom-out;
+}
+#lb.open { display: flex; }
+#lb img { max-width: 100%; max-height: 100%; border-radius: 8px; }
+
+/* Nav */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+.nav-inner {
+  max-width: 1120px; margin: 0 auto; padding: 16px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+#nav.bg { background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--line); }
+.nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #fff; transition: color 0.3s; }
+#nav.bg .nav-logo { color: var(--navy); }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 22px; font-weight: 600; font-size: 0.95rem; border-radius: 999px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: #efad42; transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
+#nav.bg .btn-ghost { color: var(--navy); border-color: var(--line); }
+.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--line); }
+
+/* Hero */
+#hero {
+  background: linear-gradient(155deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: #fff; padding: 140px 0 0; position: relative; overflow: visible;
+}
+#hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 20% 30%, rgba(245,185,90,0.08) 0%, transparent 40%),
+                    radial-gradient(circle at 80% 70%, rgba(184,201,181,0.06) 0%, transparent 40%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; text-align: center; max-width: 880px; margin: 0 auto; padding: 0 24px; }
+.kicker-badge {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px;
+  background: var(--gold-light); color: var(--gold);
+  border-radius: 999px; font-size: 0.82rem; font-weight: 600; margin-bottom: 24px;
+}
+.kicker-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+#hero h1 { color: #fff; margin-bottom: 24px; }
+.hero-sub { color: rgba(255,255,255,0.78); font-size: 1.15rem; max-width: 700px; margin: 0 auto 36px; }
+.video-wrap {
+  position: relative; max-width: 880px; margin: 0 auto;
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  background: #000; aspect-ratio: 16 / 9;
+  margin-bottom: -120px;
+}
+.video-placeholder {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 16px;
+  background: linear-gradient(135deg, #0e2632 0%, #1B3A4B 100%); color: #fff;
+}
+.play-btn {
+  width: 88px; height: 88px; border-radius: 50%; background: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 0 rgba(245,185,90,0.6); animation: pulse-ring 2.2s infinite;
+}
+.play-btn svg { width: 32px; height: 32px; margin-left: 4px; fill: var(--navy); }
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(245,185,90,0.55); } 70% { box-shadow: 0 0 0 28px rgba(245,185,90,0); } 100% { box-shadow: 0 0 0 0 rgba(245,185,90,0); } }
+.video-caption { color: rgba(255,255,255,0.7); font-size: 0.95rem; max-width: 440px; text-align: center; }
+.hero-cta-wrap { margin-top: 32px; }
+.muted-hint { display: block; color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-top: 12px; }
+
+/* Sections */
+section { padding: 96px 0; }
+section.first-after-hero { padding-top: 192px; }
+section.off { background: var(--off); }
+.section-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+.section-head h2 { margin: 12px 0 16px; }
+.section-head p { font-size: 1.075rem; }
+
+/* Deliverables grid */
+.del-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.del-card { border: 1.5px solid var(--line); border-radius: 20px; padding: 32px; background: #fff; transition: border-color 0.25s; }
+.del-card:hover { border-color: var(--gold); }
+.del-num { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--gold); }
+.del-card h3 { margin: 16px 0 12px; }
+.del-card p { font-size: 0.95rem; }
+
+/* Why grid */
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.why-left blockquote { border-left: 3px solid var(--gold); padding: 4px 0 4px 20px; color: var(--txt); font-size: 1.15rem; font-style: italic; margin: 24px 0 0; }
+.why-points { display: flex; flex-direction: column; gap: 32px; }
+.why-point { display: flex; gap: 16px; }
+.why-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; margin-top: 10px; flex-shrink: 0; }
+.why-point h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+.why-point p { font-size: 0.97rem; }
+
+/* Targeting (FB vs IG split) */
+.targ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.targ-card { border: 1.5px solid var(--line); border-radius: 20px; padding: 32px; background: #fff; }
+.targ-platform { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 16px; }
+.targ-card h3 { margin-bottom: 12px; }
+.targ-card .meta { font-size: 0.88rem; color: var(--sub2); margin-bottom: 18px; font-weight: 600; }
+.targ-card ul { list-style: none; padding: 0; margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+.targ-card ul li { padding-left: 18px; position: relative; font-size: 0.95rem; color: var(--sub); }
+.targ-card ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border: 2px solid var(--gold); border-radius: 50%; }
+
+/* Phase divider */
+.phase-divider { display: flex; align-items: center; gap: 16px; margin: 56px 0 32px; }
+.phase-divider .line { flex: 1; height: 1px; background: var(--line); }
+.phase-divider .label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--sub); }
+
+/* Ad cards */
+.ad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ad-card { border: 1.5px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; }
+.ad-img-wrap { background: linear-gradient(135deg, var(--cream) 0%, #f0e7d4 100%); min-height: 280px; display: flex; align-items: center; justify-content: center; cursor: zoom-in; position: relative; }
+.ad-img-wrap img { width: 100%; height: auto; display: block; }
+.ad-img-wrap .placeholder { color: var(--sub2); font-size: 0.85rem; font-weight: 600; padding: 20px; text-align: center; }
+.ad-body { padding: 20px; }
+.ad-num { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); }
+.ad-type { font-weight: 700; margin: 6px 0 8px; font-size: 1.02rem; }
+.ad-desc { font-size: 0.92rem; color: var(--sub); }
+
+/* Video scripts (accordion + WhatsApp mockup) */
+.scripts-wrap { max-width: 880px; margin: 0 auto; }
+.accordion { border: 1.5px solid var(--line); border-radius: 16px; margin-bottom: 14px; background: #fff; transition: border-color 0.2s; }
+.accordion.open { border-color: var(--gold); }
+.acc-head { padding: 22px 26px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.acc-title-wrap { flex: 1; }
+.acc-title { font-weight: 700; font-size: 1.08rem; }
+.acc-sub { font-size: 0.88rem; color: var(--sub); margin-top: 4px; }
+.acc-icon { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--line); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s, background 0.3s; font-size: 1.1rem; color: var(--sub); }
+.accordion.open .acc-icon { background: var(--gold); border-color: var(--gold); color: var(--navy); transform: rotate(45deg); }
+.acc-body { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+.acc-inner { padding: 0 26px 26px; }
+.sblock { background: var(--off); border-radius: 12px; padding: 18px 20px; margin-top: 12px; }
+.sblock-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 8px; }
+.sblock p { font-size: 0.96rem; color: var(--txt); margin-top: 6px; }
+.sblock p:first-of-type { margin-top: 0; }
+.filming-list { font-size: 0.93rem; color: var(--txt); }
+.filming-list dt { font-weight: 700; margin-top: 8px; display: inline; }
+.filming-list dd { display: inline; margin-left: 6px; color: var(--sub); }
+.filming-list dt:first-child { margin-top: 0; }
+
+/* WhatsApp mockup */
+.wa-section { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.wa-copy h2 { margin-bottom: 18px; }
+.wa-copy p { font-size: 1.05rem; }
+.wa-frame {
+  background: #075e54;
+  border-radius: 28px; padding: 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+  max-width: 360px; margin: 0 auto;
+}
+.wa-header {
+  background: #075e54; color: #fff; padding: 14px 16px; border-radius: 20px 20px 0 0;
+  display: flex; align-items: center; gap: 12px; font-size: 0.95rem;
+}
+.wa-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--navy); font-family: 'DM Serif Display'; }
+.wa-name { font-weight: 600; }
+.wa-status { font-size: 0.75rem; opacity: 0.8; }
+.wa-chat { background: #ECE5DD; padding: 18px 14px; min-height: 380px; display: flex; flex-direction: column; gap: 8px; }
+.wa-bubble { padding: 8px 12px; border-radius: 12px; font-size: 0.88rem; max-width: 78%; word-wrap: break-word; }
+.wa-bubble.out { background: #DCF8C6; align-self: flex-end; border-bottom-right-radius: 4px; }
+.wa-bubble.in { background: #fff; align-self: flex-start; border-bottom-left-radius: 4px; color: var(--txt); }
+.wa-voice { display: flex; align-items: center; gap: 8px; }
+.wa-voice .play { width: 26px; height: 26px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.wa-voice .play svg { width: 10px; height: 10px; fill: #fff; margin-left: 1px; }
+.wa-wave { display: flex; align-items: center; gap: 2px; height: 18px; }
+.wa-wave span { width: 2px; background: #777; border-radius: 1px; }
+.wa-duration { font-size: 0.72rem; color: #555; margin-left: 6px; }
+.wa-check { display: inline-block; font-size: 0.7rem; color: var(--wa); font-weight: 700; margin-right: 4px; }
+.wa-input {
+  background: #fff; border-radius: 0 0 20px 20px; padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--sub2);
+}
+.wa-mic { width: 32px; height: 32px; border-radius: 50%; background: var(--wa); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.wa-mic svg { width: 14px; height: 14px; fill: #fff; }
+
+/* Flow steps */
+.flow-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position: relative; }
+.flow-step { text-align: center; position: relative; }
+.flow-dot { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: var(--navy); font-family: 'DM Serif Display'; font-size: 1.3rem; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; }
+.flow-step h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 6px; }
+.flow-step p { font-size: 0.88rem; }
+.flow-grid::before { content: ''; position: absolute; top: 24px; left: 10%; right: 10%; height: 2px; background: var(--line); z-index: 1; }
+
+/* KPI plan */
+.kpi-band {
+  background: linear-gradient(155deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: #fff; border-radius: 32px; padding: 64px 48px; position: relative; overflow: hidden;
+}
+.kpi-band::after { content: ''; position: absolute; top: -100px; right: -100px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(245,185,90,0.22) 0%, transparent 60%); }
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; position: relative; z-index: 2; margin-top: 40px; }
+.kpi-stat { text-align: left; }
+.kpi-num { font-family: 'DM Serif Display'; font-size: 3rem; color: var(--gold); line-height: 1; }
+.kpi-label { color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-top: 8px; line-height: 1.4; }
+.kpi-band h2 { color: #fff; max-width: 600px; }
+.kpi-band .eyebrow { color: var(--gold); }
+.kpi-band .lead { color: rgba(255,255,255,0.8); margin-top: 14px; max-width: 600px; }
+
+/* CTA band */
+.cta-band {
+  background: linear-gradient(155deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: #fff; border-radius: 32px; padding: 56px; position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: center;
+}
+.cta-band::after { content: ''; position: absolute; top: -80px; right: -80px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(245,185,90,0.28) 0%, transparent 60%); }
+.cta-band h2 { color: #fff; max-width: 480px; position: relative; z-index: 2; }
+.cta-band p { color: rgba(255,255,255,0.78); margin-top: 12px; position: relative; z-index: 2; }
+.cta-band .btn-wrap { position: relative; z-index: 2; text-align: right; }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: center; }
+.about-img { width: 100%; border-radius: 20px; }
+.about-copy h2 { margin: 12px 0 20px; }
+.about-copy p { font-size: 1.02rem; margin-bottom: 14px; }
+
+/* Cases */
+.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.case-card { border: 1.5px solid var(--line); border-radius: 20px; overflow: hidden; background: #fff; }
+.case-img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.case-body { padding: 24px; }
+.case-logo { height: 28px; margin-bottom: 14px; opacity: 0.85; }
+.case-result { font-family: 'DM Serif Display'; font-size: 1.4rem; color: var(--navy); margin-bottom: 8px; }
+.case-desc { font-size: 0.92rem; }
+
+/* FAQ */
+.faq-wrap { max-width: 760px; margin: 0 auto; }
+
+/* Calendly */
+.cal-wrap { max-width: 700px; margin: 40px auto 0; border-radius: 16px; overflow: hidden; border: 1.5px solid var(--line); box-shadow: 0 10px 40px rgba(0,0,0,0.06); }
+.cal-wrap iframe { width: 100%; height: 700px; border: none; display: block; }
+
+/* Footer */
+footer { padding: 32px 24px; text-align: center; color: var(--sub2); font-size: 0.88rem; border-top: 1px solid var(--line); }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .del-grid, .targ-grid, .ad-grid, .case-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid, .wa-section, .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .flow-grid { grid-template-columns: 1fr; gap: 24px; }
+  .flow-grid::before { display: none; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .cta-band { grid-template-columns: 1fr; padding: 40px 28px; text-align: center; }
+  .cta-band .btn-wrap { text-align: center; }
+  .cta-band .btn { width: 100%; }
+}
+@media (max-width: 640px) {
+  section { padding: 64px 0; }
+  section.first-after-hero { padding-top: 152px; }
+  .del-grid, .targ-grid, .ad-grid, .case-grid { grid-template-columns: 1fr; }
+  .kpi-grid { grid-template-columns: 1fr; }
+  .kpi-band { padding: 40px 28px; }
+}
+</style>
+</head>
+<body>
+
+<div id="lb" onclick="closeLightbox()"><img id="lbimg" src="" alt=""></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo dm">Voice Agent for Moms</div>
+    <a href="#calendly" class="btn btn-gold">Let's get this live</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-inner">
+    <div class="kicker-badge"><span class="kicker-dot"></span>Built exclusively for Julia and the voice agent for moms launch</div>
+    <h1 class="dm">I will help you hit your 5-user validation target on $5,000 of ad spend in 14 days, with this Meta funnel I built specifically for the WhatsApp voice agent.</h1>
+    <p class="hero-sub">9 image ads, 9 UGC video scripts, and a targeting plan that splits Facebook's mature moms from Instagram's first-time moms. Ad to WhatsApp deep link, no landing page in between, no friction added.</p>
+    <div class="video-wrap">
+      <!--
+        Loom video walkthrough goes here.
+        Replace the placeholder div with:
+        <iframe src="LOOM_EMBED_URL" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+                style="width:100%;height:100%;position:absolute;inset:0;"></iframe>
+        Loom URL is stored in /Users/arthur/D100-workspace/Output/59-voice-agent-moms/loom-url.txt
+      -->
+      <div class="video-placeholder">
+        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="video-caption">Loom walkthrough loads here. Press play for the 6-minute funnel review built for Julia.</div>
+      </div>
+    </div>
+    <div class="hero-cta-wrap">
+      <a href="#calendly" class="btn btn-gold">Let's get this live</a>
+      <span class="muted-hint">No cost, no obligation, 30 minutes to see if it fits.</span>
+    </div>
+  </div>
+</section>
+
+<section class="first-after-hero">
+  <div class="wrap">
+    <div class="section-head fade">
+      <div class="eyebrow">Everything below is yours, for free</div>
+      <h2 class="dm">A complete validation funnel, built for the WhatsApp voice agent.</h2>
+      <p>9 image ad concepts, 9 UGC video scripts, and the targeting plus pacing plan that hits the 5-user validation target on $5,000.</p>
+    </div>
+    <div class="del-grid fade">
+      <div class="del-card">
+        <div class="del-num dm">01</div>
+        <h3>9 UGC image ads</h3>
+        <p>Selfie-cam mom scenes, kitchen and bedroom and Sunday-night moments. Every concept hits a different pain mode. Ready for Higgsfield nano banana with brand block, scene, and overlays written out.</p>
+      </div>
+      <div class="del-card">
+        <div class="del-num dm">02</div>
+        <h3>9 UGC video scripts</h3>
+        <p>Three times the angle coverage of a standard test. Each script targets a distinct buyer: the 3am wake-up, the kitchen-mid-thought, the ChatGPT-skeptic, the tried-everything mom. Hook, body, CTA, and filming brief per script.</p>
+      </div>
+      <div class="del-card">
+        <div class="del-num dm">03</div>
+        <h3>Targeting + KPI plan</h3>
+        <p>Facebook for mature moms, Instagram for first-time moms, $5,000 split with daily pacing to hit 5 real users by day 14. Ad to WhatsApp deep link, no landing page friction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="why-grid fade">
+      <div class="why-left">
+        <div class="eyebrow">The opportunity</div>
+        <h2 class="dm">Every competitor makes moms type. You let them speak.</h2>
+        <blockquote>"I just want to say it once and have it be handled."</blockquote>
+      </div>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-dot"></div>
+          <div>
+            <h4>Voice is the unclaimed angle</h4>
+            <p>Duckbill, Yohana, and Milo all require typing or scheduling. None of them lead with the voice angle. Speaking is 3 to 4 times faster than typing, and one sentence does four things for the user.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-dot"></div>
+          <div>
+            <h4>WhatsApp removes install friction</h4>
+            <p>Moms already open WhatsApp 23 plus times a day for the school group chat. Ad to WhatsApp deep link is zero install, zero password, zero new icon to remember.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-dot"></div>
+          <div>
+            <h4>Two avatars, two platforms</h4>
+            <p>Facebook still indexes for mature moms with multiple kids. Instagram indexes for younger and first-time moms. The funnel runs both with separate creative angles, not the same ad pushed across both.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap">
+    <div class="section-head fade">
+      <div class="eyebrow">Targeting plan</div>
+      <h2 class="dm">Two platforms, two avatars, no shared creative.</h2>
+      <p>Same product. Different language, different scenes, different ad sets per platform. The algorithm splits the spend; the creative does the avatar-level segmentation.</p>
+    </div>
+    <div class="targ-grid fade">
+      <div class="targ-card">
+        <div class="targ-platform"><span style="width:8px;height:8px;background:#1877F2;border-radius:50%;"></span>Facebook</div>
+        <h3>Mature moms, multi-kid households</h3>
+        <div class="meta">Ages 35 to 50, household income $80k+, partnered, 2+ kids</div>
+        <p>Carries the calendar, the school WhatsApp groups, the grocery list, the doctor appointments. Has tried paper planners, Notion, shared Google Calendar, Cozi.</p>
+        <ul>
+          <li>Lead creative: Scripts 1 (3am wake-up), 3 (asked-him-to-remember), 7 (Sunday-night list)</li>
+          <li>Image ads: 1 (Pain kitchen), 3 (Pain 3am), 5 (Social Proof 80% stat)</li>
+          <li>Interest signals: Cozi users, family calendar app interests, school WhatsApp behaviors</li>
+        </ul>
+      </div>
+      <div class="targ-card">
+        <div class="targ-platform"><span style="width:8px;height:8px;background:#E4405F;border-radius:50%;"></span>Instagram</div>
+        <h3>Younger and first-time moms, tech-native</h3>
+        <div class="meta">Ages 25 to 34, first or second kid, partnered or single, tech-native</div>
+        <p>Lives in WhatsApp and Instagram DMs already. Has tried ChatGPT for life admin. Frustrated that AI gives advice without doing anything.</p>
+        <ul>
+          <li>Lead creative: Scripts 4 (ChatGPT trap), 5 (five lists), 6 (voice is faster), 8 (live demo)</li>
+          <li>Image ads: 2 (Voice speed), 6 (Not another app), 8 (Lead Hero demo)</li>
+          <li>Interest signals: ChatGPT users, new-mom lifestyle accounts, baby gear brands</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head fade">
+      <div class="eyebrow">9 image ad concepts</div>
+      <h2 class="dm">UGC selfie-cam aesthetic, brand-locked palette, every concept on a different pain.</h2>
+      <p>Higgsfield nano banana prompts are written in full. Click any concept for a fullscreen view once the renders land.</p>
+    </div>
+
+    <div class="phase-divider"><span class="line"></span><span class="label">Phase 1: Prospecting (cold)</span><span class="line"></span></div>
+    <div class="ad-grid fade">
+      <div class="ad-card">
+        <div class="ad-img-wrap" onclick="openLightbox('./images/1.png')"><img src="./images/1.png" alt="Ad 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">Ad 1 render lands here once Higgsfield generates it.</div></div>
+        <div class="ad-body">
+          <div class="ad-num">Ad 01</div>
+          <div class="ad-type">Pain / Problem (cognitive)</div>
+          <p class="ad-desc">Real kitchen scene, mom mid-thought, toddler tugging shirt, sage banner reads "Drowning yet?" Calls out the daytime forgetting moment.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap" onclick="openLightbox('./images/2.png')"><img src="./images/2.png" alt="Ad 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">Ad 2 render lands here once Higgsfield generates it.</div></div>
+        <div class="ad-body">
+          <div class="ad-num">Ad 02</div>
+          <div class="ad-type">Education / Tip</div>
+          <p class="ad-desc">Top-down phone on a wooden table, stopwatch at 5 seconds, headline "Speak it once. Save 25 seconds." The voice-is-faster insight.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap" onclick="openLightbox('./images/3.png')"><img src="./images/3.png" alt="Ad 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">Ad 3 render lands here once Higgsfield generates it.</div></div>
+        <div class="ad-body">
+          <div class="ad-num">Ad 03</div>
+          <div class="ad-type">Pain / Problem (3am)</div>
+          <p class="ad-desc">Dim bedroom, 3:14am clock, phone screen glow on her face. "Awake again. Why." Hits the night-time forgetting moment.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-divider"><span class="line"></span><span class="label">Phase 2: Trust (warm)</span><span class="line"></span></div>
+    <div class="ad-grid fade">
+      <div class="ad-card">
+        <div class="ad-img-wrap" onclick="openLightbox('./images/4.png')"><img src="./images/4.png" alt="Ad 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">Ad 4 render lands here once Higgsfield generates it.</div></div>
+        <div class="ad-body">
+          <div class="ad-num">Ad 04</div>
+          <div class="ad-type">Owner / Team</div>
+          <p class="ad-desc">UGC selfie of the founder in deep teal, home-office corner. "Built by a mom who got tired of remembering everything." Credibility ad.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap" onclick="openLightbox('./images/5.png')"><img src="./images/5.png" alt="Ad 5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">Ad 5 render lands here once Higgsfield generates it.</div></div>
+        <div class="ad-body">
+          <div class="ad-num">Ad 05</div>
+          <div class="ad-type">Social Proof</div>
+          <p class="ad-desc">Top-down kitchen counter with lunchboxes and a sticky note. Giant amber "80%" stat: "of household decisions made by mom." Validates the problem.</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap" onclick="openLightbox('./images/6.png')"><img src="./images/6.png" alt="Ad 6" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">Ad 6 render lands here once Higgsfield generates it.</div></div>
+        <div class="ad-body">
+          <div class="ad-num">Ad 06</div>
+          <div class="ad-type">FAQ / Myth-Bust</div>
+          <p class="ad-desc">Split frame: greyed-out app icons with a strikethrough on the left, clean WhatsApp chat on the right. "Not another app. Just a chat."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-divider"><span class="line"></span><span class="label">Phase 3: Conversion (hot)</span><span class="line"></span></div>
+    <div class="ad-grid fade">
+      <div class="ad-card">
+        <div class="ad-img-wrap" onclick="openLightbox('./images/7.png')"><img src="./images/7.png" alt="Ad 7" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">Ad 7 render lands here once Higgsfield generates it.</div></div>
+        <div class="ad-body">
+          <div class="ad-num">Ad 07</div>
+          <div class="ad-type">Free Offer</div>
+          <p class="ad-desc">Split frame: mom on couch holding her phone after a voice note, cream copy panel with "Say it once. Have it handled." Amber CTA: "Try free in WhatsApp."</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap" onclick="openLightbox('./images/8.png')"><img src="./images/8.png" alt="Ad 8" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">Ad 8 render lands here once Higgsfield generates it.</div></div>
+        <div class="ad-body">
+          <div class="ad-num">Ad 08</div>
+          <div class="ad-type">Lead / Hero</div>
+          <p class="ad-desc">iPhone on cream backdrop showing the actual WhatsApp chat: voice note in, four action confirmations out. "One voice note. Four things done."</p>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-img-wrap" onclick="openLightbox('./images/9.png')"><img src="./images/9.png" alt="Ad 9" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">Ad 9 render lands here once Higgsfield generates it.</div></div>
+        <div class="ad-body">
+          <div class="ad-num">Ad 09</div>
+          <div class="ad-type">Urgency</div>
+          <p class="ad-desc">Sunday 9:47pm, kitchen island, dim warm light, paper list visible. "It's Sunday again. Speak the list. Go to bed." Drives last-click action.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap-sm">
+    <div class="section-head fade">
+      <div class="eyebrow">9 UGC video scripts</div>
+      <h2 class="dm">Nine angles, nine creators, one validation budget.</h2>
+      <p>Each script is a complete shoot brief: hook, body, CTA, environment, framing, lighting, energy, and wardrobe. The right two or three win at $5k spend; the rest get killed without ego.</p>
+    </div>
+    <div class="scripts-wrap fade">
+      <!-- Script 1 -->
+      <div class="accordion" id="acc1">
+        <div class="acc-head" onclick="toggle('acc1')">
+          <div class="acc-title-wrap"><div class="acc-title">Script 1: The 3am wake-up</div><div class="acc-sub">Pain / Circumstance. Targets night-time forgetters.</div></div>
+          <div class="acc-icon">+</div>
+        </div>
+        <div class="acc-body" id="acc1-body">
+          <div class="acc-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>The cognitive-load forgetting that wakes you up at 3am is a product problem, not a personal failing.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>It's 3:14 in the morning and I am wide awake because I just remembered Anna's permission slip is due tomorrow. My brain has too many tabs open. I haven't slept through the night since she started kindergarten.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>This happens to me at least twice a week. I lie there running the list. Permission slip, Mark's mom's birthday, the vet, the grocery delivery window. I try to type it into the Notes app but then I'm awake for another hour. I tried sticky notes. I tried Cozi. I tried writing a list before bed so my brain would let go. None of it works because the list isn't the problem. The problem is I'm the only person in this house who knows what is happening.</p><p>Someone showed me this thing two weeks ago. It's a voice agent that lives inside WhatsApp. You send it one voice note. You say everything you're worried about forgetting. It sets the calendar event, adds to the grocery list, texts your partner the thing they need to do, and reminds you in the morning. I tried it the next time I was up at 3am. I held my phone up, I said "permission slip, vet appointment, Mark's mom's birthday next week," and I went back to sleep.</p><p>I slept through the night for the first time in I don't know how long.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you wake up at 3am running the list, here's what you do. Tap the button below. WhatsApp will open with a message ready to send. Say one sentence about what's in your head right now. The agent does the rest. It's free. No card. No app to install. You're already in WhatsApp anyway.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><dl class="filming-list"><dt>Environment:</dt><dd>Real bedroom in low light, propped against the headboard, dim lamp on the nightstand visible in frame.</dd><br><dt>Camera:</dt><dd>iPhone front camera, propped against a pillow at eye level.</dd><br><dt>Framing:</dt><dd>Close-up, shoulders and above. Hair slightly mussed, no makeup, glasses on.</dd><br><dt>Lighting:</dt><dd>Lamp on the nightstand is the only light. Phone screen glow allowed.</dd><br><dt>Energy:</dt><dd>Half-whisper, tired but composed. Not performing tired. Actually tired.</dd><br><dt>Wardrobe:</dt><dd>Plain neutral pajama or t-shirt in a deep tone. No prints.</dd></dl></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 2 -->
+      <div class="accordion" id="acc2">
+        <div class="acc-head" onclick="toggle('acc2')">
+          <div class="acc-title-wrap"><div class="acc-title">Script 2: Kitchen mid-thought</div><div class="acc-sub">Pain / Circumstance. Targets the daytime overwhelmed.</div></div>
+          <div class="acc-icon">+</div>
+        </div>
+        <div class="acc-body" id="acc2-body">
+          <div class="acc-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>Standing in the kitchen forgetting what you were just doing is not a memory problem, it's an overload problem.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>I'm standing in the kitchen right now and I have completely forgotten what I came in here to do. My toddler is pulling on my pants. There are three things I'm supposed to be remembering and I cannot get to any of them.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>This is my entire day. I walk into a room. I forget. I walk back out. I remember. I walk back in. I forget again. It's not me. I'm not getting worse at this. I am running an unstaffed logistics operation for a family of four and the operations team is just my brain.</p><p>The thing that actually changed it for me is this voice agent that lives in WhatsApp. I don't have to remember anything anymore. When something comes into my head, I open WhatsApp, hold the record button, and just say it. "Dentist Tuesday at three. Add milk and eggs. Tell Mark to grab the kids at five. Remind me about Anna's slip in the morning." One sentence. Four things land in the right place. The calendar gets the dentist. The grocery list updates. My husband gets a text. I get a reminder tomorrow morning.</p><p>I used to have lists in five different places and none of them were right. Now I just say it once and have it be handled.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you walk into rooms and forget what you came in for, this is for you. Tap the button below. WhatsApp will open. Send one voice note. See what happens. Free. No app. No card. Stop carrying it in your head.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><dl class="filming-list"><dt>Environment:</dt><dd>Real kitchen mid-day. Real mess on the counter is preferred over staged clean.</dd><br><dt>Camera:</dt><dd>iPhone front camera, held at arm's length or propped on the counter.</dd><br><dt>Framing:</dt><dd>Medium shot, chest and above. Phone slightly below eye level for natural angle.</dd><br><dt>Lighting:</dt><dd>Whatever natural window light is in the kitchen at that time of day.</dd><br><dt>Energy:</dt><dd>Mid-task. Slightly distracted. The energy of someone trying to remember something. Background child sounds good.</dd><br><dt>Wardrobe:</dt><dd>Whatever a real mom would actually wear at home. No styling.</dd></dl></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 3 -->
+      <div class="accordion" id="acc3">
+        <div class="acc-head" onclick="toggle('acc3')">
+          <div class="acc-title-wrap"><div class="acc-title">Script 3: The "I asked him to remember" trap</div><div class="acc-sub">Pain / Relational. Targets the resentful relational mom.</div></div>
+          <div class="acc-icon">+</div>
+        </div>
+        <div class="acc-body" id="acc3-body">
+          <div class="acc-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>The unfairness of being expected to remember everyone's everything is not solved by asking the other person to remember. It's solved by something else remembering for both of you.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>Yesterday I asked my husband to remember to pick up the kids from soccer. He forgot. And somehow I am the bad guy for being upset.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>This is the thing nobody warns you about. The mental load isn't just remembering everything. It's also being the only person who remembers, and then being told you should have just reminded him. Which is its own task. Which means I'm still the one doing it.</p><p>I tried shared calendars. He doesn't check it. I tried texting him. The text gets lost in our chat. I tried writing it on the fridge. He walked past it three times.</p><p>The thing that finally works is this voice agent in WhatsApp. When I have a thing I need him to do, I say it once into a voice note. The agent texts him directly. Not a forwarded calendar invite. An actual text message in his thread, with the time and what he needs to do. He doesn't forget because the message is right there on his phone. And I don't have to track whether he saw the calendar, because I never sent a calendar invite, I just said one sentence into my phone.</p><p>It is the first thing that has actually moved something off my plate.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you're tired of being the only person who knows what is happening, try this. Tap the button below, send one voice note, watch your husband get the text directly. Free. No app. No card. You'll feel it within the first five minutes.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><dl class="filming-list"><dt>Environment:</dt><dd>Real living room or car. Somewhere a mom would actually vent. Not staged.</dd><br><dt>Camera:</dt><dd>iPhone front camera, handheld or propped.</dd><br><dt>Framing:</dt><dd>Medium close, slight head room. Direct eye contact.</dd><br><dt>Lighting:</dt><dd>Natural daylight or car light. Slight shadow is fine.</dd><br><dt>Energy:</dt><dd>Vented, slightly frustrated, landing in calm by the body. Like telling her best friend over coffee.</dd><br><dt>Wardrobe:</dt><dd>Casual, brand-adjacent (deep teal, cream, sage). No prints.</dd></dl></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 4 -->
+      <div class="accordion" id="acc4">
+        <div class="acc-head" onclick="toggle('acc4')">
+          <div class="acc-title-wrap"><div class="acc-title">Script 4: ChatGPT doesn't actually do anything</div><div class="acc-sub">Contrarian / Insight. Targets the tech-fluent skeptic.</div></div>
+          <div class="acc-icon">+</div>
+        </div>
+        <div class="acc-body" id="acc4-body">
+          <div class="acc-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>ChatGPT is great at writing things. It is not a household operating system. The voice agent for moms is.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>I tried using ChatGPT to manage my life as a mom. Let me tell you what happened.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>I typed into ChatGPT, "I have a meeting at three, Anna has a dentist on Tuesday, I'm out of milk, and my husband needs to pick up the kids." It gave me a beautifully formatted bullet-point summary of my own life. It told me I should consider using a calendar.</p><p>I already knew. I have a calendar. The problem isn't knowing the things. The problem is the things have to actually get into the right place. ChatGPT can talk to me. It cannot text my husband. It cannot add to my grocery list. It cannot set my calendar. It is a chatbot. I need a household.</p><p>This voice agent for moms is different. It's not a chatbot. You say one sentence into WhatsApp. It actually does the things. The calendar event appears. The grocery item gets added to your list. Your husband gets a text. You get a reminder in the morning. One sentence in, four things done.</p><p>It's the difference between being told what to do and having it done.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you've been using ChatGPT for life admin and getting beautiful bullet points but no actual help, switch. Tap the button below. Send one voice note. See an AI actually do something for once. Free, in WhatsApp, no app to install.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><dl class="filming-list"><dt>Environment:</dt><dd>Desk or kitchen table with a laptop visible in the background.</dd><br><dt>Camera:</dt><dd>iPhone front camera, propped on a stack of books or tripod.</dd><br><dt>Framing:</dt><dd>Medium shot, slight angle to show desk surface.</dd><br><dt>Lighting:</dt><dd>Bright daylight from a window, slightly cool. Tech-context.</dd><br><dt>Energy:</dt><dd>Slightly amused, slightly tired-of-it. Not bitter. The energy of someone who's seen the trick.</dd><br><dt>Wardrobe:</dt><dd>Slightly more put-together. Plain top in deep teal or charcoal.</dd></dl></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 5 -->
+      <div class="accordion" id="acc5">
+        <div class="acc-head" onclick="toggle('acc5')">
+          <div class="acc-title-wrap"><div class="acc-title">Script 5: Lists in five different apps</div><div class="acc-sub">Pain / Practical. Targets the app-fatigued.</div></div>
+          <div class="acc-icon">+</div>
+        </div>
+        <div class="acc-body" id="acc5-body">
+          <div class="acc-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>App sprawl is the secret reason the mental load is unsolvable. The solution isn't a sixth app. It is having no app at all.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>I have lists in five different apps and none of them are right. Notes app. Reminders. Cozi. Sticky notes on the fridge. Texts to myself I never read.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>Every time I see another app advertised as the thing that will finally help moms, I think, where is this going to live? On the fifth screen of my home screen, between the other apps I forgot about? My problem is not that I don't have a tool. My problem is I have too many tools.</p><p>This voice agent doesn't ask me to install anything. It lives in WhatsApp. The app I already open thirty times a day for the school group chat. When I have a thing on my mind, I just go to that thread. I hold the record button. I say it. Done.</p><p>No new login. No new password. No new icon I forget about. No syncing two calendars. No checking five lists. One sentence into WhatsApp, four things land. The dishes app does not solve having too many dishes apps. This solves having too many dishes apps by not being one.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you have five different lists right now and zero of them are working, stop adding lists. Tap the button below, send one voice note in WhatsApp, see what happens. Free. No new app. Promise.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><dl class="filming-list"><dt>Environment:</dt><dd>Counter or kitchen island where multiple devices and notebooks are visible.</dd><br><dt>Camera:</dt><dd>iPhone front camera, propped against a coffee cup or holder.</dd><br><dt>Framing:</dt><dd>Medium, slightly wide so the desk clutter shows.</dd><br><dt>Lighting:</dt><dd>Daylight. Slightly clinical to match the show-me-the-problem tone.</dd><br><dt>Energy:</dt><dd>Frustrated by the situation, not by you. Almost laughing at the absurdity.</dd><br><dt>Wardrobe:</dt><dd>Cream or sage casual top.</dd></dl></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 6 -->
+      <div class="accordion" id="acc6">
+        <div class="acc-head" onclick="toggle('acc6')">
+          <div class="acc-title-wrap"><div class="acc-title">Script 6: Why speaking is faster than typing</div><div class="acc-sub">Education / Insight. Targets the efficiency-driven.</div></div>
+          <div class="acc-icon">+</div>
+        </div>
+        <div class="acc-body" id="acc6-body">
+          <div class="acc-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>Speaking is roughly 3 to 4 times faster than typing. A voice note that takes 5 seconds replaces a typed task that takes 30.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>I'm going to show you why typing your to-do list is the slowest possible way to do it.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>Watch this. I'm going to type a normal mom task. Permission slip, dentist Tuesday, text my husband to pick up the kids. Three things. I have to open the right app. I have to type each line. I have to figure out which app to add the calendar event to. I have to remember to text my husband separately.</p><p>That took me, what, almost a minute.</p><p>Now I'm going to say the same thing. "Sign Anna's permission slip tomorrow morning, dentist Tuesday at three, tell Mark to grab the kids at five." Five seconds. And the difference is the voice note didn't just record what I said. The voice agent in WhatsApp turned it into a calendar event, a reminder, and an actual text to my husband. One sentence in. Three things done in the time it took me to start typing.</p><p>A mom in this country makes 80% of household decisions. If each one of those takes thirty seconds to type and five seconds to say, the day gets a lot of itself back.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you're typing everything, stop typing. Tap the button below, send one voice note, see how much faster your life works in WhatsApp. Free. Try it once.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><dl class="filming-list"><dt>Environment:</dt><dd>Clean kitchen or desk with phone in hand. The visual is the demo.</dd><br><dt>Camera:</dt><dd>iPhone front camera, propped on tripod or wall.</dd><br><dt>Framing:</dt><dd>Medium shot, phone visible in hand. Optional over-the-shoulder mid-shot.</dd><br><dt>Lighting:</dt><dd>Bright daylight. Clean light for the teaching tone.</dd><br><dt>Energy:</dt><dd>Slightly didactic, friendly. "Let me show you something." Not preachy.</dd><br><dt>Wardrobe:</dt><dd>Deep teal or amber top. Slightly more polished.</dd></dl></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 7 -->
+      <div class="accordion" id="acc7">
+        <div class="acc-head" onclick="toggle('acc7')">
+          <div class="acc-title-wrap"><div class="acc-title">Script 7: Sunday night list dread</div><div class="acc-sub">Pain / Cyclical. Targets the cyclical-week-dreader.</div></div>
+          <div class="acc-icon">+</div>
+        </div>
+        <div class="acc-body" id="acc7-body">
+          <div class="acc-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>Sunday night is the moment the week lands on you. A voice agent gives you back Sunday night.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>It's 9pm on a Sunday and I am sitting at the kitchen island writing the list for the week. School lunches. Dentist. Library books. Mark's mom's birthday. The vet. I have not had a thought of my own in weeks.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>Every Sunday I do this. I sit down, I run the week, I write everything I can think of, and I still wake up Monday afraid I missed something. The list is not actually the work. The work is carrying the list around in my head all week, hoping I remember to look at it at the right moments.</p><p>A friend of mine started using a voice agent in WhatsApp. She said it changed her Sunday nights. So I tried it. I sat down at 9pm last Sunday and I just talked to my phone for two minutes straight. School lunches, dentist, library, Mark's mom's birthday on Thursday, vet on Friday, grocery delivery for Wednesday. Everything I would normally write on paper, I just said out loud.</p><p>By the time I got up from the island, my calendar was set for the week, my grocery list was full, my husband had three texts in his inbox with the things he needed to handle, and I had reminders queued for each morning. I went to bed at 9:20pm on a Sunday for the first time in years.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If your Sunday nights are list nights, give this Sunday night to yourself. Tap the button below, send one voice note in WhatsApp, dump the week out of your head. Free. Five minutes total.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><dl class="filming-list"><dt>Environment:</dt><dd>Evening kitchen, dim warm light, kitchen island with a paper list and pen visible.</dd><br><dt>Camera:</dt><dd>iPhone front camera, propped against a glass or holder.</dd><br><dt>Framing:</dt><dd>Medium close, candlelit-warm tone.</dd><br><dt>Lighting:</dt><dd>Under-cabinet or pendant only. Warm Sunday energy.</dd><br><dt>Energy:</dt><dd>Tired, soft, reflective. Not depressed. The energy of admitting the truth.</dd><br><dt>Wardrobe:</dt><dd>Cream sweater or sage cardigan. Sunday clothes.</dd></dl></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 8 -->
+      <div class="accordion" id="acc8">
+        <div class="acc-head" onclick="toggle('acc8')">
+          <div class="acc-title-wrap"><div class="acc-title">Script 8: Live demo, one in, four out</div><div class="acc-sub">Result / Walkthrough. Targets the show-me-don't-tell-me.</div></div>
+          <div class="acc-icon">+</div>
+        </div>
+        <div class="acc-body" id="acc8-body">
+          <div class="acc-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>Show, don't tell. The product is its own pitch when you watch it work.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>I'm going to do this in real time. Watch what happens when I send one voice note.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>Here's my phone. I'm opening WhatsApp. The agent thread is right there with the school group chat and my mom and my husband. I hold the record button. I'm just going to say what's in my head.</p><p>"Sign Anna's permission slip tomorrow morning. Add eggs and bread to the grocery list. Tell Mark to pick up the kids at five. Set a reminder for me about the vet on Friday at nine."</p><p>I'm releasing the button. Send.</p><p>Watch the screen. The agent is replying. There's the calendar event for the permission slip, scheduled for tomorrow morning at 8am. Eggs and bread, added to my grocery list. Mark is getting a text right now in his thread, watch, sent. Vet reminder set for Friday at 9am.</p><p>That voice note was eleven seconds long. It did four things. I did not open four different apps. I did not write anything down. I did not text my husband. The agent did it. It's not a script for me to write later. The work is already done.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you want to see this happen in your own WhatsApp, tap the button below. Send one voice note. Free. Try it once. You'll feel the difference before you even put your phone down.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><dl class="filming-list"><dt>Environment:</dt><dd>Anywhere with a small surface for the phone.</dd><br><dt>Camera:</dt><dd>iPhone front camera on a tripod, plus a second device or screen recording capturing the WhatsApp conversation as B-roll.</dd><br><dt>Framing:</dt><dd>Medium close, with a phone-screen overlay or PiP showing the chat as the demo happens.</dd><br><dt>Lighting:</dt><dd>Bright, clean daylight. Screen visibility matters.</dd><br><dt>Energy:</dt><dd>Confident demo-mode. A friend showing you a trick on her phone.</dd><br><dt>Wardrobe:</dt><dd>Brand-adjacent: deep teal, cream, sage, charcoal.</dd></dl></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 9 -->
+      <div class="accordion" id="acc9">
+        <div class="acc-head" onclick="toggle('acc9')">
+          <div class="acc-title-wrap"><div class="acc-title">Script 9: Tried-everything contrarian</div><div class="acc-sub">Contrarian / Authority. Targets the burned-by-mom-tech.</div></div>
+          <div class="acc-icon">+</div>
+        </div>
+        <div class="acc-body" id="acc9-body">
+          <div class="acc-inner">
+            <div class="sblock"><div class="sblock-label">Central angle</div><p>Most mom-tech tools fail for the same structural reason. Naming the reason is the credibility move.</p></div>
+            <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>I have tried Cozi, Yohana, Hearth, Notion, and four different family calendar apps. Here is why none of them moved the mental load.</p></div>
+            <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>The problem is they all assume I have time to sit down and set them up. Configure the calendar. Add the family members. Categorize the chores. Train the assistant. Type the lists. Every single one of those tools wanted me to do an hour of admin to save thirty minutes a week. The math does not work for a mom.</p><p>The reason the voice agent for moms is different is that the setup is one voice note. The first time I used it, the setup was the first task. I said "remind me about Anna's dentist Tuesday, add milk to the list, text Mark to pick up the kids." That was the onboarding. There was no configuration. No tutorial. The first interaction was the work, and the work was already done.</p><p>It lives in WhatsApp because every mom is already in WhatsApp twenty-three times a day for the school group chat. There is no new app. There is no learning curve. There is no team to manage. It is one chat thread. You say a sentence. The thing happens.</p><p>That is the difference. The other tools want you to build a system. This one is already a system. You just talk to it.</p></div>
+            <div class="sblock"><div class="sblock-label">CTA (90 to 120s)</div><p>If you've tried every mom app and given up, try one more thing. This one's free, it's in WhatsApp, and the setup is the first message. Tap the button below. Send one voice note. See if the math works for you.</p></div>
+            <div class="sblock"><div class="sblock-label">Filming brief</div><dl class="filming-list"><dt>Environment:</dt><dd>Couch or kitchen island. Settled, slightly skeptical.</dd><br><dt>Camera:</dt><dd>iPhone front camera, propped.</dd><br><dt>Framing:</dt><dd>Medium close. Direct eye contact throughout.</dd><br><dt>Lighting:</dt><dd>Warm afternoon or evening daylight.</dd><br><dt>Energy:</dt><dd>Someone who has been burned letting you in on the conclusion. Authoritative-friendly.</dd><br><dt>Wardrobe:</dt><dd>Deep teal sweater or cream blouse. Adult, considered.</dd></dl></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="wa-section fade">
+      <div class="wa-copy">
+        <div class="eyebrow">The funnel destination</div>
+        <h2 class="dm">No landing page. The product is the landing page.</h2>
+        <p>Every ad CTA opens WhatsApp directly with a prefilled "Hi" message to the agent. A landing page in between would only add friction. The first thing the prospect does is the product itself: send one voice note and watch four things happen.</p>
+        <p style="margin-top:14px">This is faster, lower friction, and a stronger demo than any landing page could simulate. We instrument click-to-WhatsApp and first-voice-note as the two conversion events.</p>
+      </div>
+      <div class="wa-frame">
+        <div class="wa-header">
+          <div class="wa-avatar">V</div>
+          <div>
+            <div class="wa-name">Voice Agent for Moms</div>
+            <div class="wa-status">online</div>
+          </div>
+        </div>
+        <div class="wa-chat">
+          <div class="wa-bubble out wa-voice">
+            <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="wa-wave"><span style="height:6px"></span><span style="height:12px"></span><span style="height:8px"></span><span style="height:16px"></span><span style="height:10px"></span><span style="height:14px"></span><span style="height:6px"></span><span style="height:11px"></span><span style="height:9px"></span><span style="height:15px"></span><span style="height:7px"></span><span style="height:13px"></span></div>
+            <div class="wa-duration">0:11</div>
+          </div>
+          <div class="wa-bubble in"><span class="wa-check">✓</span>Calendar event set: sign Anna's permission slip, tomorrow 8am.</div>
+          <div class="wa-bubble in"><span class="wa-check">✓</span>Added to grocery list: eggs, bread.</div>
+          <div class="wa-bubble in"><span class="wa-check">✓</span>Texted Mark: pick up the kids at 5pm.</div>
+          <div class="wa-bubble in"><span class="wa-check">✓</span>Reminder set: vet appointment, Friday 9am.</div>
+        </div>
+        <div class="wa-input">
+          <span style="flex:1">Message</span>
+          <div class="wa-mic"><svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap">
+    <div class="section-head fade">
+      <div class="eyebrow">How the funnel works</div>
+      <h2 class="dm">Five steps from cold scroll to first voice note.</h2>
+    </div>
+    <div class="flow-grid fade">
+      <div class="flow-step"><div class="flow-dot dm">1</div><h4>Meta ad shown</h4><p>FB to mature moms, IG to younger moms, with avatar-matched creative.</p></div>
+      <div class="flow-step"><div class="flow-dot dm">2</div><h4>WhatsApp deep link</h4><p>One tap opens WhatsApp with a prefilled message to the agent.</p></div>
+      <div class="flow-step"><div class="flow-dot dm">3</div><h4>First voice note</h4><p>Prospect speaks one sentence describing what's on her plate.</p></div>
+      <div class="flow-step"><div class="flow-dot dm">4</div><h4>Agent fires four actions</h4><p>Calendar, grocery, partner text, reminder. All under 60 seconds.</p></div>
+      <div class="flow-step"><div class="flow-dot dm">5</div><h4>User activated</h4><p>One of the 5 real users you need to validate the concept.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kpi-band fade">
+      <div class="eyebrow">The validation plan</div>
+      <h2 class="dm">Your goal: 5 real users on $5,000 in 14 days. Here is how the math works.</h2>
+      <p class="lead">Spend is split 60/40 between Instagram and Facebook to bias toward the tech-fluent cohort first, with daily reallocation based on which creative is delivering activated users (defined as completed first voice notes), not just clicks.</p>
+      <div class="kpi-grid">
+        <div class="kpi-stat"><div class="kpi-num">$5k</div><div class="kpi-label">Total test budget across Meta, two-week sprint with a one-week buffer.</div></div>
+        <div class="kpi-stat"><div class="kpi-num">5</div><div class="kpi-label">Activated users (first voice note completed) needed to call the experiment positive.</div></div>
+        <div class="kpi-stat"><div class="kpi-num">2</div><div class="kpi-label">Winning angles expected to surface from the 9 video scripts by day 7.</div></div>
+        <div class="kpi-stat"><div class="kpi-num">$60k</div><div class="kpi-label">Monthly budget the funnel scales to immediately if signal is positive.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap">
+    <div class="cta-band fade">
+      <div>
+        <div class="eyebrow" style="color:var(--gold)">Ready to go?</div>
+        <h2 class="dm">This funnel is ready. Let's get it live before the week ends.</h2>
+        <p>30-minute call, no obligation. We walk through everything in this page together and decide what to launch first.</p>
+      </div>
+      <div class="btn-wrap"><a href="#calendly" class="btn btn-gold">Let's get this live</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head fade">
+      <div class="eyebrow">What happens next</div>
+      <h2 class="dm">From review call to live ads in three steps.</h2>
+    </div>
+    <div class="del-grid fade">
+      <div class="del-card">
+        <div class="del-num dm">01</div>
+        <h3>We walk through the funnel together</h3>
+        <p>30-minute call. You see everything in this page in full, we align on the public brand name, any palette substitutions, and which video scripts to film first.</p>
+      </div>
+      <div class="del-card">
+        <div class="del-num dm">02</div>
+        <h3>We brief UGC creators</h3>
+        <p>Three to four UGC mom creators get the filming briefs. Scripts are short and tested for natural delivery. First batch back in 5 to 7 days.</p>
+      </div>
+      <div class="del-card">
+        <div class="del-num dm">03</div>
+        <h3>We launch on day 8</h3>
+        <p>Ad accounts configured, audiences uploaded, creative tested. Daily optimization on activated-user cost, not click cost. Day 14 readout against the 5-user target.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap">
+    <div class="section-head fade">
+      <div class="eyebrow">Proven results</div>
+      <h2 class="dm">What this system has delivered for other clients.</h2>
+      <p>Verifiable campaigns we have managed in the past 18 months. Different niches, same playbook.</p>
+    </div>
+    <div class="case-grid fade">
+      <div class="case-card">
+        <img class="case-img" src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent case study">
+        <div class="case-body">
+          <img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent">
+          <div class="case-result dm">145 leads in 2 weeks</div>
+          <p class="case-desc">Niche B2B recruiting firm. Full funnel built from zero, three video angles tested in week one. 145 qualified applications in 14 days for under 8 euros per lead.</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <img class="case-img" src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen case study">
+        <div class="case-body">
+          <img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen">
+          <div class="case-result dm">66 recurring clients in 27 days</div>
+          <p class="case-desc">Service business with seasonal demand. Calendar filled with paying recurring clients in under a month.</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <img class="case-img" src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner case study">
+        <div class="case-body">
+          <img class="case-logo" src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner">
+          <div class="case-result dm">50 recurring clients in 2 weeks</div>
+          <p class="case-desc">Local home service. Custom-built funnel that booked 50 recurring service contracts in 14 days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-sm">
+    <div class="section-head fade">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="dm">The questions worth asking.</h2>
+    </div>
+    <div class="faq-wrap fade">
+      <div class="accordion" id="faq1">
+        <div class="acc-head" onclick="toggle('faq1')"><div class="acc-title-wrap"><div class="acc-title">Why are you giving this away for free?</div></div><div class="acc-icon">+</div></div>
+        <div class="acc-body" id="faq1-body"><div class="acc-inner"><div class="sblock"><p>Because a cold email saying "we can help you run ads" is easy to ignore. A complete, live funnel built specifically for your validation goal is not. We do the work first. If you see the quality and want to run it, we talk. If not, you keep everything and we part ways. That deal only makes sense if the work is genuinely good, which keeps us accountable.</p></div></div></div>
+      </div>
+      <div class="accordion" id="faq2">
+        <div class="acc-head" onclick="toggle('faq2')"><div class="acc-title-wrap"><div class="acc-title">Why should I trust you with a $5,000 validation budget?</div></div><div class="acc-icon">+</div></div>
+        <div class="acc-body" id="faq2-body"><div class="acc-inner"><div class="sblock"><p>You have everything in front of you right now: the ads, the scripts, the targeting, the KPI plan. You can evaluate the quality before a single conversation. The case studies above are verifiable. The funnel is built around your stated metric, 5 activated users in 14 days, not vanity clicks. If we miss the metric in the first week, we kill the losing creative and shift to whatever is signaling. That is the entire deal.</p></div></div></div>
+      </div>
+      <div class="accordion" id="faq3">
+        <div class="acc-head" onclick="toggle('faq3')"><div class="acc-title-wrap"><div class="acc-title">How quickly would results show up?</div></div><div class="acc-icon">+</div></div>
+        <div class="acc-body" id="faq3-body"><div class="acc-inner"><div class="sblock"><p>Meta's algorithm needs 3 to 5 days of learning. First voice notes from real users typically arrive in week one. The 5-user validation target is achievable inside 14 days at the $5k spend level, with a one-week buffer for re-creative if the first batch underperforms. We confirm the realistic floor on the call.</p></div></div></div>
+      </div>
+      <div class="accordion" id="faq4">
+        <div class="acc-head" onclick="toggle('faq4')"><div class="acc-title-wrap"><div class="acc-title">What would you need from our side?</div></div><div class="acc-icon">+</div></div>
+        <div class="acc-body" id="faq4-body"><div class="acc-inner"><div class="sblock"><p>Access to your Meta Business account. WhatsApp Business API endpoint or the deep link that opens the agent. A go-ahead to film the UGC scripts (we handle creator sourcing if you don't have someone). And the public brand name for the wordmark. That is it. We handle ad account setup, audience config, creative production, and daily optimization on activated-user cost.</p></div></div></div>
+      </div>
+      <div class="accordion" id="faq5">
+        <div class="acc-head" onclick="toggle('faq5')"><div class="acc-title-wrap"><div class="acc-title">What if the experiment doesn't hit 5 users?</div></div><div class="acc-icon">+</div></div>
+        <div class="acc-body" id="faq5-body"><div class="acc-inner"><div class="sblock"><p>You kill the experiment and we walk away. That is the explicit validation logic in your brief and we respect it. Your team gets the data on why the angles didn't land, which is valuable input for the next product idea. Our fee is structured so the work is delivered up front. If the test fails, you don't owe us more. That is the deal.</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap">
+    <div class="about-grid fade">
+      <div><img class="about-img" src="https://preview.relightmarketing.com/assets/relight-team.png" alt="Arthur, Relight Marketing"></div>
+      <div class="about-copy">
+        <div class="eyebrow">About</div>
+        <h2 class="dm">Arthur, Relight Marketing</h2>
+        <p>I run paid social funnels for founders who need real signal, fast. The work in front of you is a real example of how we approach a launch: complete creative, locked anchors, targeting that respects the avatar split, and a metric we agree on before we spend a euro.</p>
+        <p>You're a founder validating ideas with paid ads. I am the operator who runs them. The math is simple. If the work hits, we keep going. If it doesn't, you keep the work and we both move on.</p>
+        <a href="#calendly" class="btn btn-gold" style="margin-top:18px">Let's get this live</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-sm" style="text-align:center">
+    <div class="eyebrow fade">Let's do this</div>
+    <h2 class="dm fade" style="margin:12px 0 16px">Let's get this voice agent funnel live ASAP.</h2>
+    <p class="fade">2-3 weeks is a tight window. The faster we get the call done, the more of the window we save for actual ad spend. Pick a time below.</p>
+    <div id="calendly" class="cal-wrap fade">
+      <iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Book a 30-minute call with Arthur"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>Relight Marketing: built for Julia and the voice agent for moms launch.</footer>
+
+<script>
+// Lightbox
+function openLightbox(src) {
+  const lb = document.getElementById('lb');
+  const img = document.getElementById('lbimg');
+  img.src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('bg', scrollY > 40), { passive: true });
+
+// Fade in
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade:not(.in)').forEach(el => io.observe(el));
+
+// Accordion
+function toggle(id) {
+  const acc = document.getElementById(id);
+  const body = document.getElementById(id + '-body');
+  const open = acc.classList.contains('open');
+  document.querySelectorAll('.accordion.open').forEach(a => {
+    a.classList.remove('open');
+    a.querySelector('.acc-body').style.maxHeight = null;
+  });
+  if (!open) {
+    acc.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+// Page-open notification (skip for local opens and owner preview)
+var _host = window.location.hostname;
+if (window.location.protocol !== 'file:' && _host !== 'localhost' && _host !== '127.0.0.1') {
+  var OWNER_TOKEN = 'test';
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('preview') !== OWNER_TOKEN) {
+    fetch('https://ipapi.co/json/')
+      .then(function(r){return r.json()})
+      .then(function(geo){
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec',{
+          method:'POST', headers:{'Content-Type':'text/plain'},
+          body:JSON.stringify({
+            _subject:'65 Voice Agent for Moms (Julia) just opened your pitch page',
+            prospect:'Voice Agent for Moms (Julia Yuvchenko)', number:'65',
+            time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+            city:geo.city||'',region:geo.region||'',country:geo.country_name||'',
+            device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+            referrer:document.referrer||'direct',url:window.location.href
+          })
+        });
+      })
+      .catch(function(){
+        fetch('https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec',{
+          method:'POST', headers:{'Content-Type':'text/plain'},
+          body:JSON.stringify({
+            _subject:'65 Voice Agent for Moms (Julia) just opened your pitch page',
+            prospect:'Voice Agent for Moms (Julia Yuvchenko)', number:'65',
+            time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+            device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+            referrer:document.referrer||'direct',url:window.location.href
+          })
+        });
+      });
+  }
+}
+</script>
+</body>
+</html>
