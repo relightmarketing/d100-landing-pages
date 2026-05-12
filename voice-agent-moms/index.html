@@ -173,12 +173,6 @@ section.off { background: var(--off); }
 
 /* Video scripts (accordion + WhatsApp mockup) */
 .scripts-wrap { max-width: 880px; margin: 0 auto; }
-.preview-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--gold-light); color: var(--navy); padding: 3px 10px; border-radius: 999px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-left: 10px; vertical-align: middle; }
-.preview-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
-.script-video-wrap { position: relative; margin: 0 auto 14px; border-radius: 14px; overflow: hidden; background: #000; max-width: 300px; aspect-ratio: 9 / 16; box-shadow: 0 12px 32px rgba(0,0,0,0.18); }
-.script-video-wrap video { width: 100%; height: 100%; display: block; object-fit: cover; }
-.sblock.video-block { background: transparent; padding: 0 0 4px; }
-.sblock.video-block .sblock-label { text-align: center; margin-bottom: 14px; }
 .accordion { border: 1.5px solid var(--line); border-radius: 16px; margin-bottom: 14px; background: #fff; transition: border-color 0.2s; }
 .accordion.open { border-color: var(--gold); }
 .acc-head { padding: 22px 26px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
@@ -541,18 +535,17 @@ footer { padding: 32px 24px; text-align: center; color: var(--sub2); font-size: 
     <div class="section-head fade">
       <div class="eyebrow">9 UGC video scripts</div>
       <h2 class="dm">Nine angles, nine creators, one validation budget.</h2>
-      <p>Each script is a complete shoot brief: hook, body, CTA, environment, framing, lighting, energy, and wardrobe. The right two or three win at $5k spend; the rest get killed without ego. Three scripts ship with AI-generated visual previews so you can see the tone and framing before a single UGC creator is briefed.</p>
+      <p>Each script is a complete shoot brief: hook, body, CTA, environment, framing, lighting, energy, and wardrobe. The right two or three win at $5k spend; the rest get killed without ego.</p>
     </div>
     <div class="scripts-wrap fade">
       <!-- Script 1 -->
       <div class="accordion" id="acc1">
         <div class="acc-head" onclick="toggle('acc1')">
-          <div class="acc-title-wrap"><div class="acc-title">Script 1: The 3am wake-up<span class="preview-badge">Preview ready</span></div><div class="acc-sub">Pain / Circumstance. Targets night-time forgetters.</div></div>
+          <div class="acc-title-wrap"><div class="acc-title">Script 1: The 3am wake-up</div><div class="acc-sub">Pain / Circumstance. Targets night-time forgetters.</div></div>
           <div class="acc-icon">+</div>
         </div>
         <div class="acc-body" id="acc1-body">
           <div class="acc-inner">
-            <div class="sblock video-block"><div class="sblock-label">Visual preview</div><div class="script-video-wrap"><video src="./videos/video-1-3am-wakeup.mp4" controls muted loop playsinline preload="metadata"></video></div></div>
             <div class="sblock"><div class="sblock-label">Central angle</div><p>The cognitive-load forgetting that wakes you up at 3am is a product problem, not a personal failing.</p></div>
             <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>It's 3:14 in the morning and I am wide awake because I just remembered Anna's permission slip is due tomorrow. My brain has too many tabs open. I haven't slept through the night since she started kindergarten.</p></div>
             <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>This happens to me at least twice a week. I lie there running the list. Permission slip, Mark's mom's birthday, the vet, the grocery delivery window. I try to type it into the Notes app but then I'm awake for another hour. I tried sticky notes. I tried Cozi. I tried writing a list before bed so my brain would let go. None of it works because the list isn't the problem. The problem is I'm the only person in this house who knows what is happening.</p><p>Someone showed me this thing two weeks ago. It's a voice agent that lives inside WhatsApp. You send it one voice note. You say everything you're worried about forgetting. It sets the calendar event, adds to the grocery list, texts your partner the thing they need to do, and reminds you in the morning. I tried it the next time I was up at 3am. I held my phone up, I said "permission slip, vet appointment, Mark's mom's birthday next week," and I went back to sleep.</p><p>I slept through the night for the first time in I don't know how long.</p></div>
@@ -565,12 +558,11 @@ footer { padding: 32px 24px; text-align: center; color: var(--sub2); font-size: 
       <!-- Script 2 -->
       <div class="accordion" id="acc2">
         <div class="acc-head" onclick="toggle('acc2')">
-          <div class="acc-title-wrap"><div class="acc-title">Script 2: Kitchen mid-thought<span class="preview-badge">Preview ready</span></div><div class="acc-sub">Pain / Circumstance. Targets the daytime overwhelmed.</div></div>
+          <div class="acc-title-wrap"><div class="acc-title">Script 2: Kitchen mid-thought</div><div class="acc-sub">Pain / Circumstance. Targets the daytime overwhelmed.</div></div>
           <div class="acc-icon">+</div>
         </div>
         <div class="acc-body" id="acc2-body">
           <div class="acc-inner">
-            <div class="sblock video-block"><div class="sblock-label">Visual preview</div><div class="script-video-wrap"><video src="./videos/video-2-kitchen.mp4" controls muted loop playsinline preload="metadata"></video></div></div>
             <div class="sblock"><div class="sblock-label">Central angle</div><p>Standing in the kitchen forgetting what you were just doing is not a memory problem, it's an overload problem.</p></div>
             <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>I'm standing in the kitchen right now and I have completely forgotten what I came in here to do. My toddler is pulling on my pants. There are three things I'm supposed to be remembering and I cannot get to any of them.</p></div>
             <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>This is my entire day. I walk into a room. I forget. I walk back out. I remember. I walk back in. I forget again. It's not me. I'm not getting worse at this. I am running an unstaffed logistics operation for a family of four and the operations team is just my brain.</p><p>The thing that actually changed it for me is this voice agent that lives in WhatsApp. I don't have to remember anything anymore. When something comes into my head, I open WhatsApp, hold the record button, and just say it. "Dentist Tuesday at three. Add milk and eggs. Tell Mark to grab the kids at five. Remind me about Anna's slip in the morning." One sentence. Four things land in the right place. The calendar gets the dentist. The grocery list updates. My husband gets a text. I get a reminder tomorrow morning.</p><p>I used to have lists in five different places and none of them were right. Now I just say it once and have it be handled.</p></div>
@@ -600,12 +592,11 @@ footer { padding: 32px 24px; text-align: center; color: var(--sub2); font-size: 
       <!-- Script 4 -->
       <div class="accordion" id="acc4">
         <div class="acc-head" onclick="toggle('acc4')">
-          <div class="acc-title-wrap"><div class="acc-title">Script 4: ChatGPT doesn't actually do anything<span class="preview-badge">Preview ready</span></div><div class="acc-sub">Contrarian / Insight. Targets the tech-fluent skeptic.</div></div>
+          <div class="acc-title-wrap"><div class="acc-title">Script 4: ChatGPT doesn't actually do anything</div><div class="acc-sub">Contrarian / Insight. Targets the tech-fluent skeptic.</div></div>
           <div class="acc-icon">+</div>
         </div>
         <div class="acc-body" id="acc4-body">
           <div class="acc-inner">
-            <div class="sblock video-block"><div class="sblock-label">Visual preview</div><div class="script-video-wrap"><video src="./videos/video-4-chatgpt.mp4" controls muted loop playsinline preload="metadata"></video></div></div>
             <div class="sblock"><div class="sblock-label">Central angle</div><p>ChatGPT is great at writing things. It is not a household operating system. The voice agent for moms is.</p></div>
             <div class="sblock"><div class="sblock-label">Hook (0 to 10s)</div><p>I tried using ChatGPT to manage my life as a mom. Let me tell you what happened.</p></div>
             <div class="sblock"><div class="sblock-label">Body (11 to 90s)</div><p>I typed into ChatGPT, "I have a meeting at three, Anna has a dentist on Tuesday, I'm out of milk, and my husband needs to pick up the kids." It gave me a beautifully formatted bullet-point summary of my own life. It told me I should consider using a calendar.</p><p>I already knew. I have a calendar. The problem isn't knowing the things. The problem is the things have to actually get into the right place. ChatGPT can talk to me. It cannot text my husband. It cannot add to my grocery list. It cannot set my calendar. It is a chatbot. I need a household.</p><p>This voice agent for moms is different. It's not a chatbot. You say one sentence into WhatsApp. It actually does the things. The calendar event appears. The grocery item gets added to your list. Your husband gets a text. You get a reminder in the morning. One sentence in, four things done.</p><p>It's the difference between being told what to do and having it done.</p></div>
