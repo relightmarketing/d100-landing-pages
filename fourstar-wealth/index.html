@@ -117,6 +117,22 @@ section{padding:96px 0}
 .video-card-info h3{font-size:.97rem;font-weight:700;color:var(--txt);margin-bottom:6px;letter-spacing:-.01em}
 .video-card-info p{font-size:.83rem;color:var(--sub);line-height:1.55}
 
+/* Accordion (FAQ) */
+.accordion{border:1.5px solid var(--line);border-radius:20px;margin-bottom:16px;overflow:hidden;transition:.2s}
+.accordion.open{border-color:var(--gold)}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;cursor:pointer;gap:16px}
+.acc-header-left h3{font-size:1.05rem;font-weight:700;margin-bottom:2px;color:var(--txt)}
+.acc-header-left p{font-size:.85rem;color:var(--sub)}
+.acc-icon{width:32px;height:32px;border-radius:50%;background:var(--off);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s}
+.accordion.open .acc-icon{background:var(--gold-light);border-color:var(--gold);transform:rotate(45deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.acc-body-inner{padding:0 28px 28px}
+.sblock{background:var(--off);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.sblock:last-child{margin-bottom:0}
+.sblock-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
+.sblock p{font-size:.9rem;color:var(--sub);line-height:1.65}
+.sblock p+p{margin-top:10px}
+
 /* Section 5b: Video Options */
 #video-options{background:var(--off)}
 .options-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
