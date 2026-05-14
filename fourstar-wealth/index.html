@@ -105,22 +105,35 @@ section{padding:96px 0}
 .ad-info h4{font-size:.92rem;font-weight:700;color:var(--txt);margin-bottom:6px}
 .ad-info p{font-size:.82rem;color:var(--sub);line-height:1.5}
 
-/* Section 5: Scripts */
+/* Section 5: Video Ads */
 #scripts{background:var(--bg)}
-.accordion{border:1.5px solid var(--line);border-radius:20px;margin-bottom:16px;overflow:hidden;transition:.2s}
-.accordion.open{border-color:var(--gold)}
-.acc-header{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;cursor:pointer;gap:16px}
-.acc-header-left h3{font-size:1.05rem;font-weight:700;margin-bottom:2px;color:var(--txt)}
-.acc-header-left p{font-size:.85rem;color:var(--sub)}
-.acc-icon{width:32px;height:32px;border-radius:50%;background:var(--off);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s}
-.accordion.open .acc-icon{background:var(--gold-light);border-color:var(--gold);transform:rotate(45deg)}
-.acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
-.acc-body-inner{padding:0 28px 28px}
-.sblock{background:var(--off);border-radius:12px;padding:16px 20px;margin-bottom:12px}
-.sblock:last-child{margin-bottom:0}
-.sblock-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
-.sblock p{font-size:.9rem;color:var(--sub);line-height:1.65}
-.sblock p+p{margin-top:10px}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.video-card{background:var(--bg);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;transition:.2s}
+.video-card:hover{border-color:var(--gold);box-shadow:0 8px 32px rgba(0,0,0,.07)}
+.video-card video{width:100%;display:block;background:#000;max-height:280px;object-fit:cover}
+.video-card-info{padding:20px}
+.video-card-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--gold-light);color:var(--gold);font-size:.72rem;font-weight:700;margin-bottom:10px}
+.video-card-info h3{font-size:1rem;font-weight:700;color:var(--txt);margin-bottom:4px}
+.video-card-info p{font-size:.82rem;color:var(--sub);line-height:1.5}
+
+/* Section 5b: Video Options */
+#video-options{background:var(--off)}
+.options-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.option-card{background:var(--bg);border:1.5px solid var(--line);border-radius:20px;padding:36px 32px;transition:.2s}
+.option-card.featured{background:var(--navy);border-color:var(--navy)}
+.option-badge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:20px;background:var(--gold-light);color:var(--gold)}
+.option-card.featured .option-badge{background:rgba(138,22,25,.25);color:var(--gold)}
+.option-card h3{font-size:1.25rem;font-weight:800;color:var(--txt);margin-bottom:10px;letter-spacing:-.02em}
+.option-card.featured h3{color:#fff}
+.option-card .option-desc{font-size:.93rem;color:var(--sub);line-height:1.7;margin-bottom:20px}
+.option-card.featured .option-desc{color:rgba(255,255,255,.6)}
+.option-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.option-list li{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--sub);line-height:1.5}
+.option-card.featured .option-list li{color:rgba(255,255,255,.65)}
+.option-check{flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--gold-light);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.option-card.featured .option-check{background:rgba(138,22,25,.3)}
+.option-check svg{width:9px;height:9px;fill:var(--gold)}
+.option-note{display:inline-block;margin-top:24px;font-size:.78rem;font-weight:600;color:var(--gold);letter-spacing:.04em}
 
 /* Section 6: Landing Page */
 #landing{background:var(--off)}
@@ -214,12 +227,14 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
   .flow-step{flex:0 0 45%;text-align:left}
   .flow-step::after{display:none}
   .flow-dot{margin:0 0 12px 0}
+  .video-grid{grid-template-columns:1fr 1fr}
+  .options-grid{grid-template-columns:1fr}
 }
 /* Responsive 640px */
 @media(max-width:640px){
   section{padding:64px 0}
   #deliverables{padding-top:140px}
-  .cards-3,.ads-grid,.cases-grid,.how-grid{grid-template-columns:1fr}
+  .cards-3,.ads-grid,.cases-grid,.how-grid,.video-grid{grid-template-columns:1fr}
   #hero h1{font-size:1.95rem}
   .cta-card{padding:36px 24px}
   .cta-card .btn{width:100%;justify-content:center}
@@ -421,116 +436,105 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
   </div>
 </section>
 
-<!-- SECTION 5: VIDEO SCRIPTS -->
+<!-- SECTION 5: VIDEO ADS -->
 <section id="scripts" class="fade">
   <div class="wrap">
     <div class="text-center" style="margin-bottom:48px">
-      <h2 class="section-title">Film these with your phone.</h2>
+      <span class="eyebrow">3 video ad examples</span>
+      <h2 class="section-title dm">Here's what your video ads look like.</h2>
+      <p style="color:var(--sub);max-width:560px;margin:16px auto 0;font-size:.97rem;">Three angles, each targeting a different version of your ideal client. These are example ads we produced to show you the style and format. Yours would feature FourStar advisors and messaging.</p>
     </div>
-    
-    <div class="accordion" id="acc1">
-      <div class="acc-header" onclick="toggle('acc1')">
-        <div class="acc-header-left">
-          <h3>Script 1: The Scattered Account Problem</h3>
-          <p>Pain and Circumstance</p>
-        </div>
-        <div class="acc-icon">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="video-grid">
+      <div class="video-card">
+        <video controls preload="metadata" poster="">
+          <source src="./ad-video-1.mp4" type="video/mp4">
+        </video>
+        <div class="video-card-info">
+          <div class="video-card-num">01</div>
+          <h3>The Scattered Account Problem</h3>
+          <p>Pain and circumstance. Speaks to pre-retirees who have money everywhere but no coordinated plan.</p>
         </div>
       </div>
-      <div class="acc-body" id="acc1-body">
-        <div class="acc-body-inner">
-          <div class="sblock">
-            <div class="sblock-label">Central angle</div>
-            <p>Pre-retiree who has built wealth at multiple institutions but has no one managing the complete picture</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">Hook (0-10s)</div>
-            <p>If you have a 401k at one place, a brokerage account somewhere else, an old IRA from a job you left 15 years ago, and a savings account at your bank, and nobody is looking at all of it together, your retirement plan has a massive hole in it.</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">Body (11-90s)</div>
-            <p>I&#x27;m Brian Kasal, founder of FourStar Wealth Advisors here in Chicago. And what I just described is the most common thing I see when someone sits down with us for the first time.</p><p>They&#x27;ve been doing the right things for decades. Saving consistently. Contributing to their 401k. Building up accounts. But each one is managed separately, by a different institution, with a different goal in mind.</p><p>Nobody has the full picture. And when you get close to retirement, when you need those accounts to work together to generate a reliable monthly income, that disconnection becomes a real problem.</p><p>Because growing money and living from money are two completely different skills. Most advisors are good at helping you accumulate. Very few know how to take what you&#x27;ve built and turn it into a paycheck that lasts 30 years without running out.</p><p>At FourStar, we work on all three phases of your financial life. We call it Build, Live, Share. Building your wealth is only the first part. We also plan how you&#x27;ll live from it, and what you&#x27;ll leave behind.</p><p>If you have over $250,000 in investable assets and you&#x27;re within 10 years of retirement, we&#x27;ll sit down with you for free, look at the full picture, and show you exactly what a coordinated strategy looks like.</p><p>No pitch. No product sales. Just the truth about where you stand and what&#x27;s possible.</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">CTA (90-120s)</div>
-            <p>Click the link below, watch the short overview video on the next page, then fill out the form to apply for your free retirement income strategy session. We&#x27;re based right here in Chicago and we respond within one business day.</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">Filming brief</div>
-            <p><strong>Environment:</strong> Office or neutral dark background, Chicago window view optional</p><p><strong>Camera:</strong> Direct-to-camera, medium close-up, eye level</p><p><strong>Framing:</strong> Centered, clean composition, no clutter in background</p><p><strong>Lighting:</strong> Key light from the front-left, soft fill from right, no harsh shadows</p><p><strong>Energy:</strong> Measured and direct. Confident without sounding salesy. Pause after the hook.</p><p><strong>Wardrobe:</strong> Wear dark charcoal or black suit jacket over white shirt. Avoid beige, bright red, light blue, patterns.</p>
-          </div>
+      <div class="video-card">
+        <video controls preload="metadata" poster="">
+          <source src="./ad-video-2.mp4" type="video/mp4">
+        </video>
+        <div class="video-card-info">
+          <div class="video-card-num">02</div>
+          <h3>The Contractor Who Finally Slept</h3>
+          <p>Result and case study. Targets business owners and tradespeople who built wealth but lack a retirement income structure.</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" poster="">
+          <source src="./ad-video-3.mp4" type="video/mp4">
+        </video>
+        <div class="video-card-info">
+          <div class="video-card-num">03</div>
+          <h3>The Question Nobody Asks</h3>
+          <p>Contrarian insight. Challenges the "save forever, never spend" mindset that leaves retirees afraid of their own money.</p>
         </div>
       </div>
     </div>
-    <div class="accordion" id="acc2">
-      <div class="acc-header" onclick="toggle('acc2')">
-        <div class="acc-header-left">
-          <h3>Script 2: The Contractor Who Finally Slept</h3>
-          <p>Result and Case Study</p>
-        </div>
-        <div class="acc-icon">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
-      </div>
-      <div class="acc-body" id="acc2-body">
-        <div class="acc-body-inner">
-          <div class="sblock">
-            <div class="sblock-label">Central angle</div>
-            <p>Skilled trades professional or business owner who built wealth through hard work but had no investment structure</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">Hook (0-10s)</div>
-            <p>I had a client, a contractor, had been running his own business for 25 years, come into our office and say: I have a lot of money sitting in accounts. I just don&#x27;t know if I&#x27;m doing the right thing with it. And I haven&#x27;t slept well in years because of it.</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">Body (11-90s)</div>
-            <p>He&#x27;d built real wealth. But he&#x27;d spent his whole career focused on the next job, the next payroll, the next project. He never had time to think about how to turn what he&#x27;d built into a retirement plan.</p><p>Here&#x27;s what I told him. The money he&#x27;d saved was the easy part: he&#x27;d already done that. The hard part was connecting it all into a strategy that would actually pay him a reliable income once he stopped working.</p><p>We put together a three-phase plan. First, we made sure his remaining working years were optimized: tax strategy, investment allocation, business succession. Second, we structured a retirement income plan, specific income streams designed to replace his monthly paycheck without depleting what he&#x27;d built. Third, we worked on what he&#x27;d leave behind. He had kids. He&#x27;d been involved in his community his whole life. He wanted to leave something meaningful.</p><p>A year later, he came back in and said, and I won&#x27;t forget this: I actually enjoy looking at my statements now.</p><p>That&#x27;s what a coordinated strategy does. FourStar Wealth Advisors has been named a Top 10 Financial Advisory Firm in Chicago by Advisory HQ three consecutive years. We&#x27;re not a big bank. We&#x27;re independent. We don&#x27;t sell products. We build plans.</p><p>If you&#x27;re a business owner or a professional who has worked hard and built wealth but you&#x27;re not confident it&#x27;s structured to last, this conversation is for you.</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">CTA (90-120s)</div>
-            <p>Click the link below. On the next page you&#x27;ll find a short overview of how we work, then a form to request your free strategy session. Takes less than 2 minutes to apply. We&#x27;ll take it from there.</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">Filming brief</div>
-            <p><strong>Environment:</strong> Seated at a desk or in a meeting room, Chicago window behind you is ideal</p><p><strong>Camera:</strong> Direct-to-camera, medium close-up, slight forward lean for storytelling posture</p><p><strong>Framing:</strong> Centered, engaged posture, not lecture posture</p><p><strong>Lighting:</strong> Warm key light, soft fill, no harsh overhead shadows</p><p><strong>Energy:</strong> Slower and warmer than Script 1. This is a story. Give the client&#x27;s situation room to breathe before moving to the solution.</p><p><strong>Wardrobe:</strong> Wear dark charcoal suit jacket. Avoid beige, bright red, light blue, busy patterns.</p>
-          </div>
-        </div>
-      </div>
+  </div>
+</section>
+
+<!-- SECTION 5b: VIDEO PRODUCTION OPTIONS -->
+<section id="video-options" class="fade">
+  <div class="wrap">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="eyebrow">Two ways to produce your videos</span>
+      <h2 class="section-title dm">We handle everything. You choose the approach.</h2>
+      <p style="color:var(--sub);max-width:580px;margin:16px auto 0;font-size:.97rem;">Both options produce scroll-stopping video ads. The difference is how we get there.</p>
     </div>
-    <div class="accordion" id="acc3">
-      <div class="acc-header" onclick="toggle('acc3')">
-        <div class="acc-header-left">
-          <h3>Script 3: The Question Nobody Asks Their Advisor</h3>
-          <p>Contrarian and Insight</p>
-        </div>
-        <div class="acc-icon">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
+    <div class="options-grid">
+      <div class="option-card">
+        <div class="option-badge">Option A</div>
+        <h3>Film with your actual team</h3>
+        <p class="option-desc">We write the scripts, you record them. Brian or any FourStar advisor records direct-to-camera on a phone or laptop. We edit, add captions, brand overlays, and music. The result is authentic, humanizing, and builds real personal trust with your audience.</p>
+        <ul class="option-list">
+          <li>
+            <span class="option-check"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Scripts written and delivered, ready to read
+          </li>
+          <li>
+            <span class="option-check"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Record on any phone in 20 minutes, no studio needed
+          </li>
+          <li>
+            <span class="option-check"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Edited with branded captions, music, and intro card
+          </li>
+          <li>
+            <span class="option-check"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Advisors' real faces build the fastest possible trust
+          </li>
+        </ul>
+        <span class="option-note">Best for: firms comfortable on camera</span>
       </div>
-      <div class="acc-body" id="acc3-body">
-        <div class="acc-body-inner">
-          <div class="sblock">
-            <div class="sblock-label">Central angle</div>
-            <p>The wealth management industry trains people to build but not to spend or give, and that is a failure of planning</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">Hook (0-10s)</div>
-            <p>Here&#x27;s a question almost nobody asks their financial advisor: When do I actually get to spend this? They&#x27;ve spent 40 years being told to save more, invest more, contribute more. And then they get to retirement and they&#x27;re afraid to spend anything.</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">Body (11-90s)</div>
-            <p>The wealth management industry has trained people to be great at building a number. What they haven&#x27;t taught anyone is how to live from it without fear.</p><p>I&#x27;ve sat with people who have two million dollars and are terrified to replace their furnace because they don&#x27;t want to touch their savings.</p><p>That is a failure of financial planning. Not a failure of the client.</p><p>There are three phases of your financial life. Building your wealth is the first one. Living freely from it in retirement is the second. And leaving what matters, to your family, to causes you care about, to your community, that&#x27;s the third.</p><p>At every major firm I worked at before founding FourStar, Morgan Stanley, William Blair, Lehman Brothers, the focus was overwhelmingly on the accumulation phase. The products, the portfolios, the AUM. Not on the day-to-day reality of what retirement actually feels like.</p><p>That&#x27;s why I built FourStar the way I did. Independent. No product pressure. No institutional handcuffs. Just a team of advisors who work on your entire picture, from the day you sit down with us to the day you achieve your hopes and dreams and beyond.</p><p>If you&#x27;re approaching retirement and you have real wealth but you&#x27;re not sure how to structure it to live from it confidently, come talk to us. We&#x27;re in Chicago. We&#x27;re independent. And we&#x27;re very good at the part of wealth management most firms ignore.</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">CTA (90-120s)</div>
-            <p>Click the link below. Read how we work on the next page. Fill out the short form to request your free retirement income strategy session. FourStar Wealth Advisors. Build. Live. Share.</p>
-          </div>
-          <div class="sblock">
-            <div class="sblock-label">Filming brief</div>
-            <p><strong>Environment:</strong> Standing at desk or in front of a Chicago skyline window view</p><p><strong>Camera:</strong> Direct-to-camera, medium shot, slight pause after the hook line</p><p><strong>Framing:</strong> Standing or seated, direct eye contact, reflective posture</p><p><strong>Lighting:</strong> Clean key light, natural if possible, no harsh studio feel</p><p><strong>Energy:</strong> Deliberate and measured. This is the contrarian script. Slower, more reflective. The &#x27;terrified to replace their furnace&#x27; line needs a natural pause after it.</p><p><strong>Wardrobe:</strong> Wear dark charcoal or black suit jacket. Avoid beige, bright colors, busy patterns.</p>
-          </div>
-        </div>
+      <div class="option-card featured">
+        <div class="option-badge">Option B</div>
+        <h3>AI video using your photos</h3>
+        <p class="option-desc">Send us a photo of the advisor, we generate a video that looks 100% like a real person speaking directly to camera. The AI preserves exact likeness, expressions, and voice. Indistinguishable from real footage. No filming, no scheduling, no setup.</p>
+        <ul class="option-list">
+          <li>
+            <span class="option-check"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            One photo is all we need to generate the video
+          </li>
+          <li>
+            <span class="option-check"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Exact likeness preserved: face, hair, expression
+          </li>
+          <li>
+            <span class="option-check"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Looks like real filmed footage. Not a cartoon or avatar.
+          </li>
+          <li>
+            <span class="option-check"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            All 3 video ads delivered with zero filming required
+          </li>
+        </ul>
+        <span class="option-note">Best for: firms who want zero production overhead</span>
       </div>
     </div>
   </div>
