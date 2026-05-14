@@ -107,14 +107,15 @@ section{padding:96px 0}
 
 /* Section 5: Video Ads */
 #scripts{background:var(--bg)}
-.video-stack{display:flex;flex-direction:column;gap:24px;margin-top:48px}
-.video-card{background:var(--bg);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;transition:.2s;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.video-stack{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.video-card{background:var(--bg);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;transition:.2s;display:flex;flex-direction:column}
 .video-card:hover{border-color:var(--gold);box-shadow:0 8px 32px rgba(0,0,0,.07)}
-.video-card video{width:100%;height:100%;display:block;background:#111;object-fit:cover;min-height:260px;max-height:340px}
-.video-card-info{padding:28px 32px;display:flex;flex-direction:column;justify-content:center}
-.video-card-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--gold-light);color:var(--gold);font-size:.75rem;font-weight:700;margin-bottom:14px}
-.video-card-info h3{font-size:1.15rem;font-weight:700;color:var(--txt);margin-bottom:8px;letter-spacing:-.01em}
-.video-card-info p{font-size:.9rem;color:var(--sub);line-height:1.6}
+.video-ratio{position:relative;width:100%;aspect-ratio:9/16;background:#111;overflow:hidden;flex-shrink:0}
+.video-ratio video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.video-card-info{padding:20px 22px;flex:1;display:flex;flex-direction:column;justify-content:flex-start}
+.video-card-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--gold-light);color:var(--gold);font-size:.72rem;font-weight:700;margin-bottom:10px}
+.video-card-info h3{font-size:.97rem;font-weight:700;color:var(--txt);margin-bottom:6px;letter-spacing:-.01em}
+.video-card-info p{font-size:.83rem;color:var(--sub);line-height:1.55}
 
 /* Section 5b: Video Options */
 #video-options{background:var(--off)}
@@ -218,7 +219,7 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
 
 /* Responsive 960px */
 @media(max-width:960px){
-  .cards-3,.ads-grid,.cases-grid,.how-grid{grid-template-columns:1fr 1fr}
+  .cards-3,.cases-grid,.how-grid{grid-template-columns:1fr 1fr}
   .why-grid{grid-template-columns:1fr;gap:40px}
   .cta-card{flex-direction:column;align-items:flex-start;padding:48px 40px}
   .about-grid{grid-template-columns:1fr;gap:32px}
@@ -227,7 +228,7 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
   .flow-step{flex:0 0 45%;text-align:left}
   .flow-step::after{display:none}
   .flow-dot{margin:0 0 12px 0}
-  .video-card{grid-template-columns:1fr}
+  .video-stack{grid-template-columns:1fr}
   .options-grid{grid-template-columns:1fr}
 }
 /* Responsive 640px */
@@ -235,8 +236,7 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
   section{padding:64px 0}
   #deliverables{padding-top:140px}
   .cards-3,.ads-grid,.cases-grid,.how-grid{grid-template-columns:1fr}
-  .video-card{grid-template-columns:1fr}
-  .video-card video{min-height:200px;max-height:260px}
+  .video-stack{grid-template-columns:1fr}
   #hero h1{font-size:1.95rem}
   .cta-card{padding:36px 24px}
   .cta-card .btn{width:100%;justify-content:center}
@@ -354,41 +354,37 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
       <p class="section-sub">Each ad is written for Higgsfield Nano Banana Pro. The set runs cold-to-warm: prospecting ads create awareness, trust ads build credibility, and conversion ads drive free strategy session applications.</p>
     </div>
     
-    <div class="phase-label"><span>Phase 1: Generate Interest</span></div>
     <div class="ads-grid">
       <div class="ad-card">
         <img src="./images/1.png" alt="Ad 1 - Pain/Problem">
         <div class="ad-info">
           <div class="ad-num">01</div>
-          <h4>Pain/Problem</h4>
-          <p>Overhead flat-lay of five scattered financial account statements from different institutions on a gray surface. Cold, desaturated lighting. Overlay copy: TOO MANY ACCOUNTS. / NOBODY HAS THE FULL PICTURE. Speaks directly to the #1 pain pre-retirees report.</p>
+          <h4>Pain / Problem</h4>
+          <p>Scattered accounts. Nobody managing the full picture. Stop-the-scroll for cold audiences.</p>
         </div>
       </div>
       <div class="ad-card">
         <img src="./images/2.png" alt="Ad 2 - Education/Tip">
         <div class="ad-info">
           <div class="ad-num">02</div>
-          <h4>Education/Tip</h4>
-          <p>Dark typographic ad with three stacked horizontal bands: BUILD (chart icon), LIVE (sun icon), SHARE (network icon). Headline: THREE PHASES. Subtext: Most advisors only handle one. Positions FourStar as the authority who thinks beyond accumulation.</p>
+          <h4>Education / Tip</h4>
+          <p>Three phases: Build, Live, Share. Most advisors only handle one. Positions FourStar as the authority.</p>
         </div>
       </div>
       <div class="ad-card">
         <img src="./images/3.png" alt="Ad 3 - Before/After">
         <div class="ad-info">
           <div class="ad-num">03</div>
-          <h4>Before/After</h4>
-          <p>Split-screen: left side shows five overlapping disconnected account circles in cold gray, desaturated. Right side shows three clean coordinated circles, Build, Live, Share, in FourStar burgundy and white. Visual contrast shows the transformation without a word.</p>
+          <h4>Before / After</h4>
+          <p>Scattered accounts on the left. Coordinated three-phase strategy on the right. The transformation at a glance.</p>
         </div>
       </div>
-    </div>
-    <div class="phase-label"><span>Phase 2: Build Trust</span></div>
-    <div class="ads-grid">
       <div class="ad-card">
         <img src="./images/4.png" alt="Ad 4 - Owner/Team">
         <div class="ad-info">
           <div class="ad-num">04</div>
-          <h4>Owner/Team</h4>
-          <p>Brian Kasal direct-to-camera, dark charcoal suit, warm smile, brick-wall Chicago background. Left panel with credentials: Morgan Stanley. William Blair. 30+ years. Below: Build. Live. Share. in burgundy. His story of leaving institutional finance to build something better is the credibility.</p>
+          <h4>Owner / Team</h4>
+          <p>Brian Kasal. Morgan Stanley. William Blair. 30+ years. The founder who left institutional finance to build something better.</p>
         </div>
       </div>
       <div class="ad-card">
@@ -396,15 +392,15 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
         <div class="ad-info">
           <div class="ad-num">05</div>
           <h4>Social Proof</h4>
-          <p>Dark background with centered award seal: four gold stars, TOP 10 in large white bold text, Chicago Advisory Firm in burgundy, 3 Consecutive Years below. Advisory HQ at the top of the seal. The only verifiable ranking in the Chicago wealth management space.</p>
+          <p>Top 10 Chicago Advisory Firm. Advisory HQ. Three consecutive years. The only verifiable ranking in the market.</p>
         </div>
       </div>
       <div class="ad-card">
         <img src="./images/6.png" alt="Ad 6 - FAQ/Myth-Bust">
         <div class="ad-info">
           <div class="ad-num">06</div>
-          <h4>FAQ/Myth-Bust</h4>
-          <p>Dark background, two-line typographic layout. Top line: BIG BANK = BETTER RESULTS in muted gray with a thick burgundy strike-through. Bottom line: INDEPENDENT. / NO PRODUCT PRESSURE. in white and burgundy. Addresses the #1 objection of pre-retirees who already have an advisor.</p>
+          <h4>FAQ / Myth-Bust</h4>
+          <p>Big bank = better results. Crossed out. Independent, no product pressure. Addresses the #1 objection directly.</p>
         </div>
       </div>
       <div class="ad-card">
@@ -412,26 +408,23 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
         <div class="ad-info">
           <div class="ad-num">07</div>
           <h4>Process</h4>
-          <p>Dark background with three horizontal process rows separated by thin burgundy rules. Row 1: 01 / chart icon / BUILD YOUR WEALTH. Row 2: 02 / sun icon / LIVE FROM IT FREELY. Row 3: 03 / network icon / SHARE WHAT MATTERS. Headline: HOW WE WORK. Bottom: Build. Live. Share.</p>
+          <p>Build. Live. Share. Three rows, three phases, one coordinated team. How FourStar works in one image.</p>
         </div>
       </div>
-    </div>
-    <div class="phase-label"><span>Phase 3: Convert</span></div>
-    <div class="ads-grid">
       <div class="ad-card">
         <img src="./images/8.png" alt="Ad 8 - Free Offer">
         <div class="ad-info">
           <div class="ad-num">08</div>
           <h4>Free Offer</h4>
-          <p>Left 55%: nighttime Chicago cityscape, deep blue-black sky, city lights reflected in the river. Right 45%: solid burgundy panel with FREE STRATEGY SESSION as headline, Retirement income planning as subtitle, Achieve your hopes and dreams in italic, and white CTA button: Get Your Free Session.</p>
+          <p>Chicago skyline at night plus a burgundy panel. Free Strategy Session. Achieve your hopes and dreams. Drive the click.</p>
         </div>
       </div>
       <div class="ad-card">
         <img src="./images/9.png" alt="Ad 9 - Lead/Hero">
         <div class="ad-info">
           <div class="ad-num">09</div>
-          <h4>Lead/Hero</h4>
-          <p>Low-angle close-up of the Chicago Cloud Gate sculpture at dusk. Polished mirrored surface reflecting the downtown skyline in warm gold and deep blue. No people, no crowds. Bottom strip with FourStar logo left and YOUR CHICAGO ADVISORS right. CTA button: Get Your Free Strategy Session. Premium, aspirational, uniquely Chicago.</p>
+          <h4>Lead / Hero</h4>
+          <p>Chicago Cloud Gate at dusk. Your Chicago Advisors. Premium, aspirational close for warm retargeted audiences.</p>
         </div>
       </div>
     </div>
@@ -448,33 +441,39 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
     </div>
     <div class="video-stack">
       <div class="video-card">
-        <video controls preload="metadata">
-          <source src="./ad-video-1.mp4" type="video/mp4">
-        </video>
+        <div class="video-ratio">
+          <video controls preload="metadata">
+            <source src="./ad-video-1.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="video-card-info">
           <div class="video-card-num">01</div>
           <h3>The Scattered Account Problem</h3>
-          <p>Pain and circumstance. Speaks to pre-retirees who have money everywhere but no coordinated plan. Strong opener for cold audiences who don't know FourStar yet.</p>
+          <p>Pain and circumstance. Cold audiences who have money everywhere but no coordinated plan.</p>
         </div>
       </div>
       <div class="video-card">
-        <video controls preload="metadata">
-          <source src="./ad-video-2.mp4" type="video/mp4">
-        </video>
+        <div class="video-ratio">
+          <video controls preload="metadata">
+            <source src="./ad-video-2.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="video-card-info">
           <div class="video-card-num">02</div>
           <h3>The Contractor Who Finally Slept</h3>
-          <p>Result and case study. Targets business owners and tradespeople who built wealth through hard work but lack a retirement income structure.</p>
+          <p>Result and case study. Business owners who built wealth but lack retirement income structure.</p>
         </div>
       </div>
       <div class="video-card">
-        <video controls preload="metadata">
-          <source src="./ad-video-3.mp4" type="video/mp4">
-        </video>
+        <div class="video-ratio">
+          <video controls preload="metadata">
+            <source src="./ad-video-3.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="video-card-info">
           <div class="video-card-num">03</div>
-          <h3>The Question Nobody Asks Their Advisor</h3>
-          <p>Contrarian insight. Challenges the "save forever, never spend" mindset that leaves retirees afraid of their own money. Hits hard for warm audiences.</p>
+          <h3>The Question Nobody Asks</h3>
+          <p>Contrarian insight. Warm audiences afraid to spend the wealth they spent 40 years building.</p>
         </div>
       </div>
     </div>
