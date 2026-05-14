@@ -107,14 +107,14 @@ section{padding:96px 0}
 
 /* Section 5: Video Ads */
 #scripts{background:var(--bg)}
-.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.video-card{background:var(--bg);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;transition:.2s}
+.video-stack{display:flex;flex-direction:column;gap:24px;margin-top:48px}
+.video-card{background:var(--bg);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;transition:.2s;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
 .video-card:hover{border-color:var(--gold);box-shadow:0 8px 32px rgba(0,0,0,.07)}
-.video-card video{width:100%;display:block;background:#000;max-height:280px;object-fit:cover}
-.video-card-info{padding:20px}
-.video-card-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--gold-light);color:var(--gold);font-size:.72rem;font-weight:700;margin-bottom:10px}
-.video-card-info h3{font-size:1rem;font-weight:700;color:var(--txt);margin-bottom:4px}
-.video-card-info p{font-size:.82rem;color:var(--sub);line-height:1.5}
+.video-card video{width:100%;height:100%;display:block;background:#111;object-fit:cover;min-height:260px;max-height:340px}
+.video-card-info{padding:28px 32px;display:flex;flex-direction:column;justify-content:center}
+.video-card-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--gold-light);color:var(--gold);font-size:.75rem;font-weight:700;margin-bottom:14px}
+.video-card-info h3{font-size:1.15rem;font-weight:700;color:var(--txt);margin-bottom:8px;letter-spacing:-.01em}
+.video-card-info p{font-size:.9rem;color:var(--sub);line-height:1.6}
 
 /* Section 5b: Video Options */
 #video-options{background:var(--off)}
@@ -227,14 +227,16 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
   .flow-step{flex:0 0 45%;text-align:left}
   .flow-step::after{display:none}
   .flow-dot{margin:0 0 12px 0}
-  .video-grid{grid-template-columns:1fr 1fr}
+  .video-card{grid-template-columns:1fr}
   .options-grid{grid-template-columns:1fr}
 }
 /* Responsive 640px */
 @media(max-width:640px){
   section{padding:64px 0}
   #deliverables{padding-top:140px}
-  .cards-3,.ads-grid,.cases-grid,.how-grid,.video-grid{grid-template-columns:1fr}
+  .cards-3,.ads-grid,.cases-grid,.how-grid{grid-template-columns:1fr}
+  .video-card{grid-template-columns:1fr}
+  .video-card video{min-height:200px;max-height:260px}
   #hero h1{font-size:1.95rem}
   .cta-card{padding:36px 24px}
   .cta-card .btn{width:100%;justify-content:center}
@@ -444,35 +446,35 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
       <h2 class="section-title dm">Here's what your video ads look like.</h2>
       <p style="color:var(--sub);max-width:560px;margin:16px auto 0;font-size:.97rem;">Three angles, each targeting a different version of your ideal client. These are example ads we produced to show you the style and format. Yours would feature FourStar advisors and messaging.</p>
     </div>
-    <div class="video-grid">
+    <div class="video-stack">
       <div class="video-card">
-        <video controls preload="metadata" poster="">
+        <video controls preload="metadata">
           <source src="./ad-video-1.mp4" type="video/mp4">
         </video>
         <div class="video-card-info">
           <div class="video-card-num">01</div>
           <h3>The Scattered Account Problem</h3>
-          <p>Pain and circumstance. Speaks to pre-retirees who have money everywhere but no coordinated plan.</p>
+          <p>Pain and circumstance. Speaks to pre-retirees who have money everywhere but no coordinated plan. Strong opener for cold audiences who don't know FourStar yet.</p>
         </div>
       </div>
       <div class="video-card">
-        <video controls preload="metadata" poster="">
+        <video controls preload="metadata">
           <source src="./ad-video-2.mp4" type="video/mp4">
         </video>
         <div class="video-card-info">
           <div class="video-card-num">02</div>
           <h3>The Contractor Who Finally Slept</h3>
-          <p>Result and case study. Targets business owners and tradespeople who built wealth but lack a retirement income structure.</p>
+          <p>Result and case study. Targets business owners and tradespeople who built wealth through hard work but lack a retirement income structure.</p>
         </div>
       </div>
       <div class="video-card">
-        <video controls preload="metadata" poster="">
+        <video controls preload="metadata">
           <source src="./ad-video-3.mp4" type="video/mp4">
         </video>
         <div class="video-card-info">
           <div class="video-card-num">03</div>
-          <h3>The Question Nobody Asks</h3>
-          <p>Contrarian insight. Challenges the "save forever, never spend" mindset that leaves retirees afraid of their own money.</p>
+          <h3>The Question Nobody Asks Their Advisor</h3>
+          <p>Contrarian insight. Challenges the "save forever, never spend" mindset that leaves retirees afraid of their own money. Hits hard for warm audiences.</p>
         </div>
       </div>
     </div>
@@ -550,7 +552,7 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
     </div>
     <div class="mobile-mockup">
       <div class="phone-frame">
-        <iframe src="../index.html" title="Landing page preview" loading="lazy"></iframe>
+        <iframe src="./landing-page/index.html" title="Landing page preview" loading="lazy"></iframe>
       </div>
     </div>
     <div class="lp-qa">
