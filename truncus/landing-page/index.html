@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Truncus is een multi-family office en erkend vermogensbeheerder. Eerste en enige Belgische onderneming in de Chambers & Partners Private Wealth ranking. Voor ondernemers na bedrijfsverkoop en vermogende families." />
+  <title>Truncus - Uw partner op alle belangrijke momenten in uw leven</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:          #ffffff;
+      --surface:     #f4f3ef;
+      --accent:      #B89A5E;
+      --accent-dark: #9a8049;
+      --navy:        #0a1d45;
+      --navy-deep:   #050f25;
+      --text:        #0a1d45;
+      --text-muted:  rgba(10, 29, 69, 0.65);
+      --line:        #e6e3d9;
+      --font-head:   'Open Sans', system-ui, -apple-system, sans-serif;
+      --font-body:   'Open Sans', system-ui, -apple-system, sans-serif;
+      --nav-h:       56px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-text-size-adjust: 100%;
+      padding-bottom: 76px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      margin: 0 0 1rem 0;
+    }
+
+    p { margin: 0 0 1rem 0; }
+    a { color: var(--navy); text-decoration: none; }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+    section { padding: 48px 0; }
+
+    /* ---- NAV ---- */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--navy);
+      z-index: 100;
+      height: var(--nav-h);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 960px;
+      margin: 0 auto;
+      height: 100%;
+      padding: 0 12px;
+      gap: 8px;
+    }
+    .nav-logo {
+      font-family: var(--font-head);
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #ffffff;
+      font-size: 0.95rem;
+      flex-shrink: 1;
+      min-width: 0;
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .nav-logo span { color: var(--accent); margin-left: 2px; }
+    .nav-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .nav-phone-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      display: grid; place-items: center;
+    }
+    .nav-phone-icon svg { width: 18px; height: 18px; fill: #ffffff; }
+    .nav-phone-text { display: none; color: #ffffff; font-size: 0.85rem; }
+    .nav-cta-mobile {
+      display: inline-flex;
+      align-items: center;
+      background: var(--accent);
+      color: var(--navy);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      padding: 8px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+    .nav-cta-desktop { display: none; }
+
+    body { padding-top: var(--nav-h); }
+
+    /* ---- HERO ---- */
+    .hero {
+      background: var(--navy-deep);
+      color: #ffffff;
+      padding: 56px 0 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center top, rgba(184, 154, 94, 0.12), transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .pre-headline {
+      font-family: var(--font-head);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      color: #ffffff;
+      font-size: clamp(1.75rem, 5vw, 3rem);
+      max-width: 720px;
+      margin: 0 auto 1.25rem;
+    }
+    .hero h1 .gold { color: var(--accent); }
+    .hero-sub {
+      color: rgba(255,255,255,0.78);
+      font-size: 1rem;
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      line-height: 1.65;
+    }
+
+    .vsl-placeholder {
+      position: relative;
+      width: 100%;
+      max-width: 840px;
+      margin: 0 auto 2rem;
+      aspect-ratio: 16 / 9;
+      background:
+        linear-gradient(135deg, rgba(10,29,69,0.6), rgba(5,15,37,0.85)),
+        linear-gradient(135deg, #1c2f5c 0%, #050f25 100%);
+      border-radius: 8px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      border: 1px solid rgba(184,154,94,0.18);
+    }
+    .vsl-play {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: grid; place-items: center;
+      box-shadow: 0 10px 30px rgba(184,154,94,0.35);
+    }
+    .vsl-play svg { width: 24px; height: 24px; fill: var(--navy); margin-left: 3px; }
+    .vsl-caption {
+      position: absolute;
+      bottom: 16px; left: 16px; right: 16px;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--navy);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 16px 28px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+      max-width: 360px;
+      min-height: 48px;
+      text-align: center;
+    }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.3); }
+
+    .risk-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 1rem;
+    }
+    .light .risk-note { color: var(--text-muted); }
+
+    /* ---- PROOF BAR (under hero) ---- */
+    .proof-bar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      padding: 18px 0;
+    }
+    .proof-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      text-align: center;
+    }
+    .proof-num {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+    .proof-num .gold { color: var(--accent); }
+    .proof-label {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    /* ---- TRUST SIGNALS BAR ---- */
+    .trust-bar {
+      background: var(--surface);
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .trust-bar-title {
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .trust-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      align-items: center;
+    }
+    .trust-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 1rem 1.1rem;
+      text-align: center;
+    }
+    .trust-card-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .trust-card-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* ---- PAIN SECTION ---- */
+    .pain {
+      background: var(--surface);
+    }
+    .pre-label {
+      font-family: var(--font-head);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+    .pain-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .pain-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 1.75rem;
+    }
+    .pain-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .pain-list li {
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 1.1rem 1.25rem 1.1rem 3.2rem;
+      position: relative;
+      color: var(--text);
+      font-size: 0.97rem;
+      line-height: 1.6;
+      box-shadow: 0 1px 6px rgba(10,29,69,0.04);
+      border-left: 3px solid var(--accent);
+    }
+    .pain-list li::before {
+      content: '';
+      position: absolute;
+      left: 1.25rem; top: 1.4rem;
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.85;
+    }
+    .pain-list li strong {
+      display: block;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
+    }
+    .bridge {
+      background: var(--navy);
+      color: #ffffff;
+      border-radius: 6px;
+      padding: 1.5rem 1.75rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+    .bridge strong { color: var(--accent); }
+    .pain-quote {
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+      border-left: 4px solid var(--accent);
+      color: var(--navy);
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.6;
+      box-shadow: 0 1px 6px rgba(10,29,69,0.05);
+    }
+    .pain-quote-source {
+      display: block;
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ---- SOLUTION SECTION ---- */
+    .solution { background: #ffffff; }
+    .solution h2 {
+      font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+      max-width: 740px;
+      margin-bottom: 1rem;
+    }
+    .solution h2 .gold { color: var(--accent); }
+    .solution p { color: var(--text); max-width: 740px; }
+    .solution .result-highlight { display: none; } /* hidden - used as mini-stats below */
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      background: var(--navy);
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    .mini-stat {
+      padding: 1.1rem 0.85rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .mini-stat:nth-child(2n) { border-right: none; }
+    .mini-stat__num {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .mini-stat__num .gold { color: var(--accent); }
+    .mini-stat__label {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.3;
+    }
+
+    /* ---- PROCESS SECTION ---- */
+    .process { background: var(--surface); }
+    .process h2 {
+      font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+      margin-bottom: 0.6rem;
+    }
+    .process-intro { color: var(--text-muted); margin-bottom: 2rem; max-width: 720px; }
+    .steps { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .step {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 1.5rem 1.4rem;
+      border: 1px solid var(--line);
+      position: relative;
+    }
+    .step__icon {
+      width: 48px; height: 48px;
+      border-radius: 8px;
+      background: var(--navy);
+      display: grid; place-items: center;
+      margin-bottom: 1rem;
+    }
+    .step__icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; }
+    .step__num {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .step__title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .step__body {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    .timeline-line {
+      margin-top: 2rem;
+      padding: 1.1rem 1.25rem;
+      background: #ffffff;
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+
+    /* ---- SOCIAL PROOF ---- */
+    .social-proof { background: #ffffff; }
+    .social-proof h2 { font-size: clamp(1.4rem, 3.4vw, 2rem); margin-bottom: 2rem; }
+    .stat-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat {
+      text-align: center;
+      padding: 1.2rem 0.75rem;
+      background: var(--surface);
+      border-radius: 6px;
+      border: 1px solid var(--line);
+    }
+    .stat-num {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.4rem;
+      line-height: 1.3;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .case-card {
+      background: var(--surface);
+      border-radius: 8px;
+      padding: 1.5rem 1.4rem;
+      border: 1px solid var(--line);
+    }
+    .case-stars { display: flex; gap: 2px; margin-bottom: 0.75rem; }
+    .case-stars svg { width: 16px; height: 16px; fill: var(--accent); }
+    .case-card-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .case-card-body {
+      color: var(--text);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .case-card-result {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ---- FOUNDER ---- */
+    .founders { background: var(--surface); }
+    .founders h2 { margin-bottom: 1.5rem; }
+    .founders-intro { color: var(--text); max-width: 720px; margin-bottom: 2rem; }
+    .founders-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .founder-card {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 1.25rem 1.25rem 1.5rem;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+    .founder-portrait {
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      background:
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+      display: grid; place-items: center;
+      color: var(--accent);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--accent);
+    }
+    .founder-name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .founder-role {
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .founder-bio {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ---- FORM ---- */
+    .form-section { background: var(--navy); color: #ffffff; }
+    .form-section h2 { color: #ffffff; font-size: clamp(1.5rem, 3.4vw, 2.1rem); margin-bottom: 1rem; }
+    .form-section h2 .gold { color: var(--accent); }
+    .form-intro { color: rgba(255,255,255,0.75); max-width: 620px; margin-bottom: 1.5rem; }
+    .form-bullets { list-style: none; padding: 0; margin: 0 0 2rem 0; display: grid; gap: 0.7rem; }
+    .form-bullets li {
+      position: relative;
+      padding-left: 1.6rem;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .form-bullets li::before {
+      content: '✓';
+      position: absolute;
+      left: 0; top: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .form-box {
+      background: #ffffff;
+      color: var(--text);
+      border-radius: 10px;
+      padding: 1.5rem 1.4rem 1.6rem;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+    }
+    .form-box-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+    }
+    .form-box-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .form-field { margin-bottom: 1rem; }
+    .form-field label {
+      display: block;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--text);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-field textarea { min-height: 90px; resize: vertical; }
+    .form-field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%230a1d45' d='M10 14l-5-5h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 14px;
+      padding-right: 36px;
+    }
+    .form-row-2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .form-box .btn { width: 100%; max-width: none; margin-top: 0.5rem; }
+    .privacy-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.85rem;
+    }
+
+    /* ---- FAQ ---- */
+    .faq { background: #ffffff; }
+    .faq h2 { margin-bottom: 1.5rem; }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item:first-child { border-top: 1px solid var(--line); }
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      text-align: left;
+      font-family: var(--font-head);
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .faq-btn::after {
+      content: '+';
+      color: var(--accent);
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+    .faq-item.open .faq-btn::after { content: '−'; }
+    .faq-answer {
+      display: none;
+      padding-bottom: 18px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ---- FINAL CTA ---- */
+    .final-cta {
+      background:
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(184,154,94,0.10), transparent 60%);
+      pointer-events: none;
+    }
+    .final-cta h2 {
+      color: #ffffff;
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      max-width: 720px;
+      margin: 0 auto 1rem;
+    }
+    .final-cta h2 .gold { color: var(--accent); }
+    .final-cta p {
+      color: rgba(255,255,255,0.8);
+      max-width: 620px;
+      margin: 0 auto 1.5rem;
+    }
+    .sub-note {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.82rem;
+      margin-top: 1.25rem;
+      font-style: italic;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.55);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+    .footer a { color: rgba(255,255,255,0.7); }
+
+    /* ---- STICKY MOBILE CTA ---- */
+    .mobile-cta {
+      display: flex;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 99;
+      padding: 10px 12px;
+      gap: 8px;
+      align-items: center;
+      background: rgba(10,29,69,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(184,154,94,0.2);
+    }
+    .mobile-cta .btn {
+      flex: 1;
+      padding: 13px 12px;
+      font-size: 0.78rem;
+      max-width: none;
+      min-height: 44px;
+    }
+    .mobile-cta .cta-call {
+      width: 44px; height: 44px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.10);
+      display: grid; place-items: center;
+      flex-shrink: 0;
+    }
+    .mobile-cta .cta-call svg { width: 18px; height: 18px; fill: #ffffff; }
+
+    /* ---- TABLET ---- */
+    @media (min-width: 641px) {
+      :root { --nav-h: 64px; }
+      .container { padding: 0 24px; }
+      section { padding: 64px 0; }
+      .nav-inner { height: 64px; padding: 0 24px; gap: 12px; }
+      .nav-logo { font-size: 1.05rem; max-width: none; flex-shrink: 0; }
+      .nav-phone-icon { display: none; }
+      .nav-phone-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.88rem;
+        color: rgba(255,255,255,0.85);
+      }
+      .nav-cta-mobile { display: none; }
+      .nav-cta-desktop {
+        display: inline-flex;
+        align-items: center;
+        background: var(--accent);
+        color: var(--navy);
+        font-family: var(--font-head);
+        font-weight: 700;
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        padding: 10px 18px;
+        border-radius: 6px;
+        text-transform: uppercase;
+      }
+      .hero { padding: 80px 0 88px; }
+      .proof-items { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+      .proof-num { font-size: 1.5rem; }
+      .trust-row { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+      .pain-grid { gap: 2.5rem; }
+      .pain-list { grid-template-columns: 1fr; }
+      .mini-stats { grid-template-columns: repeat(4, 1fr); }
+      .mini-stat { border-bottom: none; }
+      .mini-stat:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.08); }
+      .mini-stat:last-child { border-right: none; }
+      .mini-stat__num { font-size: 1.6rem; }
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .stat-bar { grid-template-columns: repeat(4, 1fr); }
+      .stat-num { font-size: 1.8rem; }
+      .case-grid { grid-template-columns: repeat(2, 1fr); }
+      .founders-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+      .form-row-2 { grid-template-columns: 1fr 1fr; }
+      .mobile-cta { display: none; }
+      body { padding-bottom: 0; padding-top: 64px; }
+    }
+
+    /* ---- DESKTOP ---- */
+    @media (min-width: 961px) {
+      :root { --nav-h: 72px; }
+      .container { padding: 0 32px; }
+      section { padding: 88px 0; }
+      .nav-inner { height: 72px; padding: 0 32px; }
+      .nav-logo { font-size: 1.15rem; }
+      .hero { padding: 96px 0 104px; }
+      .hero h1 { font-size: clamp(2.25rem, 4.2vw, 3.4rem); }
+      .pain-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+      .pain-grid .pain-left { padding-right: 1rem; }
+      .steps { grid-template-columns: repeat(4, 1fr); }
+      .case-grid { grid-template-columns: repeat(3, 1fr); }
+      body { padding-top: 72px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">TRUNCUS<span>·</span></a>
+      <div class="nav-right">
+        <a href="tel:+3252409740" class="nav-phone-icon" aria-label="Bel Truncus">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6-.4-.1-.8 0-1.1.3l-1.6 1.6c-2.6-1.4-4.7-3.5-6.1-6.1l1.6-1.6c.3-.3.4-.7.3-1.1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H5c-.6 0-1 .4-1 1 0 8.8 7.2 16 16 16 .6 0 1-.4 1-1v-2.6c0-.6-.4-1-1-1z"/></svg>
+        </a>
+        <a href="tel:+3252409740" class="nav-phone-text">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6-.4-.1-.8 0-1.1.3l-1.6 1.6c-2.6-1.4-4.7-3.5-6.1-6.1l1.6-1.6c.3-.3.4-.7.3-1.1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H5c-.6 0-1 .4-1 1 0 8.8 7.2 16 16 16 .6 0 1-.4 1-1v-2.6c0-.6-.4-1-1-1z"/></svg>
+          +32 52 40 97 40
+        </a>
+        <a href="#form" class="nav-cta-mobile">Plan gesprek</a>
+        <a href="#form" class="nav-cta-desktop">Plan een vrijblijvend kennismakingsgesprek</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="pre-headline">Voor ondernemers na bedrijfsverkoop en vermogende families</p>
+      <h1>Uw partner op alle belangrijke momenten <span class="gold">in uw leven.</span></h1>
+      <p class="hero-sub">Truncus is een multi-family office en erkend vermogensbeheerder uit Zele. Wij beheren, beschermen en dragen het vermogen over van generatie op generatie, in één geïntegreerd plan van aanpak, met één vast aanspreekpunt voor uw familie.</p>
+
+      <!-- VSL: Record a 3 tot 5 minuten talking-head video waarin Pieter Van Neste of Stefaan Vanden Berghe:
+        1. Specifiek aanspreekt: de Vlaamse ondernemer die zijn bedrijf zonet verkocht of die het gaat doen, en de vermogende familie die overweegt om weg van de huisbank te stappen
+        2. De #1 pijn benoemt: "Uw zaak verkocht. Wat nu?" in hun eigen woorden, en de overvloed aan grafieken/pitches die volgt
+        3. Uitlegt waarom de gebruikelijke oplossingen (private banker, losse adviseurs, ESG-marketing) niet werken voor dit segment
+        4. Truncus introduceert vanuit het primary angle: "Wij zijn geen bank en geen makelaar - Truncus is een accountantskantoor met een vermogensbeheer-vergunning sinds 2001"
+        5. De Chambers and Partners ranking aanhaalt als externe validatie (eerste en enige Belgische onderneming, sinds 2018)
+        6. Eindigt met een directe instructie: vul het formulier hieronder in voor een vrijblijvend kennismakingsgesprek
+        Upload naar Loom of YouTube (unlisted) en vervang deze placeholder met de embed.
+      -->
+      <div class="vsl-placeholder">
+        <div class="vsl-play" aria-label="Speel video af">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vsl-caption">Wie wij zijn · 4 min met onze Managing Partner</div>
+      </div>
+
+      <a href="#form" class="btn">Plan een vrijblijvend kennismakingsgesprek</a>
+      <p class="risk-note">Geen verkoop. Geen verplichting. Eén gesprek waarin wij beginnen bij u.</p>
+    </div>
+  </section>
+
+  <!-- PROOF BAR -->
+  <div class="proof-bar">
+    <div class="container">
+      <div class="proof-items">
+        <div>
+          <div class="proof-num">25<span class="gold">+</span></div>
+          <div class="proof-label">Jaar trackrecord</div>
+        </div>
+        <div>
+          <div class="proof-num">250</div>
+          <div class="proof-label">Externe portefeuilles opgevolgd</div>
+        </div>
+        <div>
+          <div class="proof-num">15</div>
+          <div class="proof-label">Landen wereldwijd</div>
+        </div>
+        <div>
+          <div class="proof-num">1<span class="gold">e</span></div>
+          <div class="proof-label">Belgische family office in Chambers &amp; Partners</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST SIGNAL BAR -->
+  <section class="trust-bar" style="padding-top: 32px; padding-bottom: 32px;">
+    <div class="container">
+      <div class="trust-bar-title">Erkend, geauditeerd, internationaal getoetst</div>
+      <div class="trust-row">
+        <div class="trust-card">
+          <div class="trust-card-title">Chambers &amp; Partners</div>
+          <div class="trust-card-sub">Private Wealth ranking. Eerste en enige Belgische onderneming, sinds 2018.</div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-title">Erkend Vermogensbeheerder</div>
+          <div class="trust-card-sub">Eigen vergunning, naast multi-family office en accountancy DNA sinds 2001.</div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card-title">Truncus Investment Fund</div>
+          <div class="trust-card-sub">Promotor van het eigen fund, naast 40+ externe asset managers wereldwijd.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN -->
+  <section class="pain">
+    <div class="container">
+      <div class="pain-grid">
+        <div class="pain-left">
+          <span class="pre-label">Herkent u dit?</span>
+          <h2 class="pain-title">Uw zaak verkocht. Wat nu?</h2>
+          <ul class="pain-list">
+            <li><strong>Uw dagelijkse houvast valt weg.</strong>Dertig jaar lang ging u elke ochtend naar uw bedrijf. Vandaag staat de verkoopprijs op één rekening en is uw agenda leger dan ze ooit was.</li>
+            <li><strong>Iedereen zit plots aan tafel.</strong>Uw huisbank wijst u een private banker toe. Twee onafhankelijke kantoren hebben u al gemaild. Een fiscalist en een notaris die u via via kent, hebben u allebei iets gestuurd.</li>
+            <li><strong>Een overvloed aan informatie, grafieken en beloftes over rendement.</strong>Drie pitch decks, drie keer een andere boodschap, drie keer een ander product, en geen enkele begint bij u of bij uw familie.</li>
+            <li><strong>Uw notaris, uw fiscalist en uw belegger praten niet met elkaar.</strong>Drie adviseurs, drie facturen, geen samenhangend plan. U bent het integratiepunt geworden, terwijl u dat net niet meer wou zijn.</li>
+            <li><strong>Wat als uw hoofdcontact bij de bank weer vertrekt?</strong>U kent uw huidige relatiebeheerder amper twee jaar, de vorige was het amper drie. Continuïteit voor uw kinderen en kleinkinderen lijkt een papieren belofte.</li>
+            <li><strong>De échte kosten blijven onduidelijk.</strong>Beheersvergoeding, fonds-TER, retrocessies, instapkosten. U vermoedt dat er meerdere lagen kosten zijn dan u op uw rapport ziet, maar niemand legt het exact uit.</li>
+          </ul>
+          <div class="pain-quote">
+            "Ik heb 30 jaar gebouwd aan dit bedrijf. Nu staat het op een rekening en niemand begint nog bij mij."
+            <span class="pain-quote-source">Vlaamse ondernemer, eerste gesprek met Truncus</span>
+          </div>
+        </div>
+        <div>
+          <div class="bridge">
+            U bent niet de eerste die hier zit. Sinds 2001 begeleidt Truncus families door net deze fase. Wij zijn ontstaan binnen een accountancy en audit praktijk: <strong>wij denken in dossiers, niet in producten.</strong> Daarom begint elk traject bij ons met uw cijfers en uw familie, en niet bij een fondsenkeuze.
+          </div>
+          <div class="mini-stats" style="margin-top: 1.5rem;">
+            <div class="mini-stat">
+              <div class="mini-stat__num">2001</div>
+              <div class="mini-stat__label">Opgericht in Zele</div>
+            </div>
+            <div class="mini-stat">
+              <div class="mini-stat__num">4</div>
+              <div class="mini-stat__label">Stappen tot uw plan</div>
+            </div>
+            <div class="mini-stat">
+              <div class="mini-stat__num">1</div>
+              <div class="mini-stat__label">Vast aanspreekpunt</div>
+            </div>
+            <div class="mini-stat">
+              <div class="mini-stat__num">30<span class="gold">+</span></div>
+              <div class="mini-stat__label">Specialisten in eigen huis</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution">
+    <div class="container">
+      <span class="pre-label">Een ander DNA</span>
+      <h2>Geen bank en geen makelaar. <span class="gold">Een accountantskantoor met een vermogensbeheer-vergunning.</span></h2>
+      <p>Bijna iedere onafhankelijke vermogensbeheerder in dit land is een ex-bankier of ex-makelaar die een eigen kantoor begon. Hun reflexen blijven hetzelfde: bij een vraag wordt eerst een product gezocht. Onze reflex is anders. Wij zijn in 2001 ontstaan binnen een accountancy- en auditpraktijk. Vóór wij over één belegging praten, zit een team van juristen, fiscalisten en family officers aan tafel met uw cijfers en uw familie.</p>
+      <p>Pas daarna komt het beleggingsbeleid. En als de beste oplossing voor uw situatie een product is dat een bank elders aanbiedt, dan zeggen wij dat ook. Wij verkopen geen huis. Wij maken een plan.</p>
+
+      <!-- Anchor 4 Proof Point as mini-stats -->
+      <p class="result-highlight">Het eerste en enige Belgische family office in de Chambers &amp; Partners Private Wealth ranking, sinds 2018 meerdere jaren op rij vermeld.</p>
+      <div class="mini-stats" aria-label="Externe validatie">
+        <div class="mini-stat">
+          <div class="mini-stat__num">2018</div>
+          <div class="mini-stat__label">Eerste vermelding Chambers &amp; Partners</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat__num">1<span class="gold">e</span></div>
+          <div class="mini-stat__label">En enige Belgische onderneming</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat__num">15</div>
+          <div class="mini-stat__label">Landen waar wij portefeuilles volgen</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat__num">40<span class="gold">+</span></div>
+          <div class="mini-stat__label">Internationale partner-asset managers</div>
+        </div>
+      </div>
+
+      <a href="#form" class="btn">Plan een vrijblijvend kennismakingsgesprek</a>
+      <p class="risk-note" style="color: var(--text-muted);">Eén gesprek, in Zele of bij u thuis. Geen verkoop, geen verplichting.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="container">
+      <span class="pre-label">Hoe wij werken</span>
+      <h2>Uw plan in vier stappen.</h2>
+      <p class="process-intro">Geen pitch deck. Eén plan op één pagina, gedragen door inventaris, fiscaliteit en uw eigen doelen. Hieronder leest u exact wat wij in de eerste maanden samen doen.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+          </div>
+          <div class="step__num">Stap 01</div>
+          <div class="step__title">Vermogensinventaris</div>
+          <div class="step__body">Activa, passiva, liquiditeit, geplande uitgaven. Geen blad onaangeraakt. Wij brengen uw volledige vermogen in beeld voor we één gesprek over beleggen voeren.</div>
+        </div>
+        <div class="step">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step__num">Stap 02</div>
+          <div class="step__title">Juridische &amp; fiscale analyse</div>
+          <div class="step__body">Uw bestaande structuren, holdings, schenkingen en testamenten worden door onze juristen en fiscalisten doorgelicht. Risico's en optimalisaties komen op één overzicht.</div>
+        </div>
+        <div class="step">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" stroke-linecap="round"/></svg>
+          </div>
+          <div class="step__num">Stap 03</div>
+          <div class="step__title">Doelen voor u en uw familie</div>
+          <div class="step__body">Korte termijn, lange termijn, en de generatie na u. Wij praten met u, uw partner en waar wenselijk uw kinderen, vóór wij een strategie voorstellen.</div>
+        </div>
+        <div class="step">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step__num">Stap 04</div>
+          <div class="step__title">Plan van aanpak</div>
+          <div class="step__body">Eén geïntegreerd plan: vermogen, fiscaliteit, juridiek, beleggingsbeleid en overdracht. Eén document, één vast aanspreekpunt, doorlopend opgevolgd in eigen huis.</div>
+        </div>
+      </div>
+      <div class="timeline-line">
+        Tijdslijn: de meeste families hebben binnen acht tot twaalf weken na het eerste gesprek hun volledige plan op tafel. Daarna is het uitvoering en kwartaalbespreking.
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="social-proof">
+    <div class="container">
+      <span class="pre-label">Externe toetsing</span>
+      <h2>Internationaal getoetst aan de standaarden van Zürich, Londen en Genève.</h2>
+
+      <div class="stat-bar">
+        <div class="stat">
+          <div class="stat-num">2001</div>
+          <div class="stat-label">Opgericht in Zele</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">30<span style="color: var(--navy);">+</span></div>
+          <div class="stat-label">Specialisten in eigen huis</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">250</div>
+          <div class="stat-label">Portefeuilles wereldwijd opgevolgd</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">40<span style="color: var(--navy);">+</span></div>
+          <div class="stat-label">Partner-asset managers</div>
+        </div>
+      </div>
+
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+          <div class="case-card-title">Chambers &amp; Partners Private Wealth</div>
+          <div class="case-card-body">Truncus werd in september 2018 als eerste en enige Belgische onderneming opgenomen in de jaarlijkse private wealth ranking van Chambers en Partners, een Britse autoriteit die diepgaand onderzoek doet bij klanten en juristen wereldwijd. De vermelding werd in de jaren daarna meermaals herbevestigd.</div>
+          <div class="case-card-result">Eerste en enige Belgische family office in de ranking.</div>
+        </div>
+        <div class="case-card">
+          <div class="case-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+          <div class="case-card-title">Wereldwijd onderzoek, lokaal team</div>
+          <div class="case-card-body">Vandaag volgt Truncus 250 externe portefeuilles in 15 landen op en werkt het samen met meer dan 40 internationale asset managers. De combinatie van een lokaal team in Zele met een wereldwijde selectie van fondsbeheerders is uniek voor een Belgisch huis van deze schaal.</div>
+          <div class="case-card-result">250 portefeuilles · 15 landen · 40+ partners.</div>
+        </div>
+        <div class="case-card">
+          <div class="case-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+          <div class="case-card-title">Generaties continuïteit</div>
+          <div class="case-card-body">Truncus werkt vandaag met klantenfamilies waarvan de eerste contacten meer dan twintig jaar teruggaan. Meerdere medewerkers hebben tien tot twintig jaar dienst in hetzelfde kantoor. Voor uw kinderen en kleinkinderen betekent dat één team, niet een wisselende stoelendans.</div>
+          <div class="case-card-result">Generaties rekenen op ons sinds 2001.</div>
+        </div>
+      </div>
+
+      <a href="#form" class="btn">Plan een vrijblijvend kennismakingsgesprek</a>
+      <p class="risk-note" style="color: var(--text-muted);">Geen verkoop, geen verplichting.</p>
+    </div>
+  </section>
+
+  <!-- FOUNDERS -->
+  <section class="founders">
+    <div class="container">
+      <span class="pre-label">Wie u aan tafel ziet</span>
+      <h2>Een bestuur van juristen, fiscalisten en portfolio managers.</h2>
+      <p class="founders-intro">Truncus wordt geleid door een team met decennia ervaring in vermogensbeheer, accountancy en familiale planning. Geen wisselende accountmanagers. Vanaf het eerste gesprek heeft u één vast aanspreekpunt dat uw dossier én uw familie kent.</p>
+      <div class="founders-grid">
+        <div class="founder-card">
+          <div class="founder-portrait" aria-hidden="true">PVN</div>
+          <div class="founder-name">Pieter Van Neste</div>
+          <div class="founder-role">Managing Partner · Oprichter</div>
+          <div class="founder-bio">Richtte in 2001 VGD Family Office op, vandaag Truncus. Bachelor in accountancy en fiscaliteit, master in European governance.</div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-portrait" aria-hidden="true">SVB</div>
+          <div class="founder-name">Stefaan Vanden Berghe</div>
+          <div class="founder-role">CEO</div>
+          <div class="founder-bio">Master in de rechten (UGent), General Management Program (Vlerick). Eerder actief bij BBL-ING, ABN AMRO en Puilaetco Dewaay.</div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-portrait" aria-hidden="true">BT</div>
+          <div class="founder-name">Bruno Toye</div>
+          <div class="founder-role">Managing Partner</div>
+          <div class="founder-bio">25 jaar in vermogensbeheer en financiële markten. Eerder bij Merrill Lynch en Petercam, mede-oprichter van Investor AM in 2008.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="form">
+    <div class="container">
+      <span class="pre-label" style="color: var(--accent);">Aanvraag kennismakingsgesprek</span>
+      <h2>Eén gesprek waarin wij <span class="gold">beginnen bij u.</span></h2>
+      <p class="form-intro">Vul het formulier hieronder in. Wij nemen binnen één werkdag contact met u op om een gesprek te plannen in ons kantoor in Zele of, indien u dat verkiest, bij u thuis.</p>
+      <ul class="form-bullets">
+        <li>U krijgt binnen één werkdag een telefoontje van een vast aanspreekpunt, geen callcenter.</li>
+        <li>Het eerste gesprek duurt ongeveer een uur en is volledig vrijblijvend.</li>
+        <li>Wij komen voorbereid: we kijken vooraf naar de structuren die u doorgeeft, zodat we de tijd nuttig besteden.</li>
+      </ul>
+
+      <div class="form-box">
+        <div class="form-box-title">Plan een vrijblijvend kennismakingsgesprek</div>
+        <p class="form-box-sub">Neemt minder dan 60 seconden. Wij reageren binnen één werkdag.</p>
+        <!--
+          FORMSPREE SETUP:
+          1. Ga naar formspree.io en maak een gratis account
+          2. Maak een nieuw formulier en kopieer het form ID (bv. "xabcdefg")
+          3. Vervang YOUR_FORM_ID hieronder
+          Submissions komen direct in uw inbox.
+        -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="firstname">Voornaam</label>
+              <input type="text" id="firstname" name="firstname" required />
+            </div>
+            <div class="form-field">
+              <label for="lastname">Familienaam</label>
+              <input type="text" id="lastname" name="lastname" required />
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Telefoonnummer</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="situation">Uw situatie vandaag</label>
+            <select id="situation" name="situation" required>
+              <option value="" disabled selected>Kies één optie</option>
+              <option>Bedrijfsverkoop afgerond, vermogen wacht op een plan</option>
+              <option>Bedrijfsverkoop in onderhandeling of binnen 12 maanden gepland</option>
+              <option>Bestaande familievermogen, ontevreden over huidige bank</option>
+              <option>Generatie-overdracht (schenking, opvolging) staat op de agenda</option>
+              <option>Institutionele klant (stichting, vzw, onderneming met patrimonium)</option>
+              <option>Andere situatie</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="liquid">Indicatie liquide vermogen na exit (vertrouwelijk)</label>
+            <select id="liquid" name="liquid" required>
+              <option value="" disabled selected>Kies een orde van grootte</option>
+              <option>Onder € 1 miljoen</option>
+              <option>€ 1 tot 3 miljoen</option>
+              <option>€ 3 tot 10 miljoen</option>
+              <option>€ 10 tot 25 miljoen</option>
+              <option>Boven € 25 miljoen</option>
+              <option>Liever bespreek ik dat in het gesprek</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="timing">Binnen welke termijn wenst u een gesprek?</label>
+            <select id="timing" name="timing" required>
+              <option value="" disabled selected>Kies een termijn</option>
+              <option>Zo snel mogelijk, deze week of volgende week</option>
+              <option>Binnen 1 tot 3 maanden</option>
+              <option>Binnen 3 tot 6 maanden</option>
+              <option>Ik oriënteer mij rustig, geen haast</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Korte beschrijving van uw vraag (optioneel)</label>
+            <textarea id="message" name="message" placeholder="Bv. ik verkoop dit jaar mijn vennootschap en wil weten welke stappen ik vooraf moet zetten."></textarea>
+          </div>
+          <button type="submit" class="btn">Plan een vrijblijvend kennismakingsgesprek</button>
+          <p class="privacy-note">Vertrouwelijk. Geen verkoop. Wij gebruiken uw gegevens enkel om contact op te nemen.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <span class="pre-label">Veelgestelde vragen</span>
+      <h2>Wat u redelijkerwijs wil weten vóór een eerste gesprek.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-btn">Hoeveel kost dit ons écht, alle lagen mee gerekend?</button>
+          <div class="faq-answer">Truncus rekent één transparante beheersvergoeding op het vermogen dat u toevertrouwt. De onderliggende fondskosten (TER) worden zichtbaar gemaakt op uw rapportering, en wij ontvangen geen retrocessies die u niet op uw overzicht ziet. In het eerste gesprek lichten wij uw concrete kostenplaatje door, ook van uw huidige bank, zodat u kunt vergelijken.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Hoe weten wij dat jullie écht onafhankelijk zijn?</button>
+          <div class="faq-answer">Wij zijn geen dochter van een bank, geen verzekeraar en geen makelaar. Truncus is ontstaan binnen een accountancy- en auditpraktijk en heeft zelf een vergunning als erkend vermogensbeheerder opgebouwd. Wij selecteren beleggingsoplossingen wereldwijd, uit meer dan 40 partner-asset managers. Als de beste oplossing voor uw situatie elders ligt, zeggen wij dat ook.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Wat als ons hoofdcontact vertrekt, zijn we dan terug bij af?</button>
+          <div class="faq-answer">Continuïteit is voor ons geen verkoopargument, het is hoe wij georganiseerd zijn. Elk klantdossier wordt gedragen door een vast team van minstens twee senior medewerkers, met dubbele back-office documentatie. Meerdere van onze family officers en wealth managers zijn al tien tot meer dan twintig jaar in huis. Uw kinderen praten morgen met dezelfde mensen die u vandaag kent.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Wij kennen onze huisbank al twintig jaar, waarom zouden wij overstappen?</button>
+          <div class="faq-answer">Een lange bankrelatie is een waarde. Wij vragen u niet om die op te zeggen. Wij vragen u om één gesprek waarin wij naast uw huidige situatie een geïntegreerd Truncus-plan zetten. Veel families kiezen vervolgens een combinatie, waarbij wij het strategische en juridische luik dragen, en de bank een specifiek mandaat blijft uitvoeren. Soms is het andersom. U beslist na het plan, niet ervoor.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Hoeveel tijd ga ik hier zelf nog aan moeten besteden?</button>
+          <div class="faq-answer">In de opbouwfase (acht tot twaalf weken) vragen wij twee tot drie gesprekken van een uur, plus het delen van bestaande documenten. Daarna is een kwartaalbespreking van een uur de norm, en zijn wij beschikbaar tussendoor voor concrete vragen. Wij worden nooit een tijdsverslinder, ook niet als uw vermogen complex is.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Is er een minimuminbreng om bij Truncus te starten?</button>
+          <div class="faq-answer">Wij hanteren geen vaste publieke drempel. In de praktijk werken wij met families en ondernemers waarbij de complexiteit van het dossier de meerwaarde van een multi-family office rechtvaardigt, typisch vanaf enkele miljoenen liquide vermogen of bij een nakende exit. Tijdens het eerste gesprek beoordelen wij samen of een traject bij Truncus zinvol is.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Eén gesprek. Eén plan. <span class="gold">Generaties rust.</span></h2>
+      <p>Of u nu zonet uw bedrijf heeft verkocht, of u twijfelt of uw huidige bank u nog dient zoals u dat wenst, dit eerste gesprek kost u niets, behalve één uur van uw tijd. Wij beginnen bij u, niet bij een product.</p>
+      <a href="#form" class="btn">Plan een vrijblijvend kennismakingsgesprek</a>
+      <p class="sub-note">Truncus is het eerste en enige Belgische family office in de Chambers &amp; Partners Private Wealth ranking, sinds 2018 meerdere jaren op rij vermeld.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 Truncus Vermogensbeheer · Spinnerijstraat 12, 9240 Zele · <a href="tel:+3252409740">+32 52 40 97 40</a>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="mobile-cta">
+    <a href="tel:+3252409740" class="cta-call" aria-label="Bel Truncus">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6-.4-.1-.8 0-1.1.3l-1.6 1.6c-2.6-1.4-4.7-3.5-6.1-6.1l1.6-1.6c.3-.3.4-.7.3-1.1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H5c-.6 0-1 .4-1 1 0 8.8 7.2 16 16 16 .6 0 1-.4 1-1v-2.6c0-.6-.4-1-1-1z"/></svg>
+    </a>
+    <a href="#form" class="btn">Plan een vrijblijvend kennismakingsgesprek</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    (function(){
+      var mc = document.querySelector('.mobile-cta');
+      if (!mc) return;
+      var form = document.getElementById('form');
+      if (!form) return;
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+          mc.style.transition = 'transform 0.3s ease';
+        });
+      }, {threshold: 0.1});
+      io.observe(form);
+    })();
+  </script>
+
+</body>
+</html>
