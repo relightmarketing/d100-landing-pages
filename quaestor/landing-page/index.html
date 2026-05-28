@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quaestor is pionier in private equity sinds 2000. € 2 mld+ AUM, € 88 mio investering in Revolut. Private markets-toegang voor vermogens vanaf € 2,5 miljoen." />
+  <title>Quaestor - Pionier in private equity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:          #f0eeeb;
+      --surface:     #e2ded9;
+      --surface-2:   #d3d5d0;
+      --accent:      #000000;
+      --accent-dark: #1a1a1a;
+      --greige:      #7e8880;
+      --navy:        #101828;
+      --navy-deep:   #000000;
+      --text:        #101828;
+      --text-muted:  rgba(16, 24, 40, 0.65);
+      --line:        #cdc9c2;
+      --font-head:   'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      --font-body:   'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      --nav-h:       56px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-text-size-adjust: 100%;
+      padding-bottom: 76px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin: 0 0 1rem 0;
+    }
+    p { margin: 0 0 1rem 0; }
+    a { color: var(--accent); text-decoration: none; }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+    section { padding: 56px 0; }
+
+    /* ---- NAV ---- */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(240, 238, 235, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 100;
+      height: var(--nav-h);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1040px;
+      margin: 0 auto;
+      height: 100%;
+      padding: 0 12px;
+      gap: 8px;
+    }
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 1;
+      min-width: 0;
+      max-width: 140px;
+    }
+    .nav-logo img { height: 24px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .nav-phone-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--surface);
+      display: grid; place-items: center;
+    }
+    .nav-phone-icon svg { width: 18px; height: 18px; fill: var(--accent); }
+    .nav-phone-text { display: none; color: var(--text); font-size: 0.88rem; }
+    .nav-cta-mobile {
+      display: inline-flex;
+      align-items: center;
+      background: var(--accent);
+      color: var(--bg);
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      padding: 8px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .nav-cta-desktop { display: none; }
+    body { padding-top: var(--nav-h); }
+
+    /* ---- HERO ---- */
+    .hero {
+      background: var(--navy-deep);
+      color: #ffffff;
+      padding: 56px 0 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
+        url('https://cdn.prod.website-files.com/66daf6688e673eff3f90cf8b/68f109945f425c21a185ff40_PE%20grote%20vermogens%20thumb.webp') center/cover no-repeat;
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .pre-headline {
+      font-family: var(--font-head);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      color: #ffffff;
+      font-size: clamp(1.85rem, 5vw, 3.2rem);
+      max-width: 720px;
+      margin: 0 auto 1.25rem;
+      line-height: 1.1;
+    }
+    .hero h1 .accent { font-style: italic; font-weight: 400; }
+    .hero-sub {
+      color: rgba(255,255,255,0.78);
+      font-size: 1rem;
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      line-height: 1.65;
+    }
+
+    .vsl-placeholder {
+      position: relative;
+      width: 100%;
+      max-width: 840px;
+      margin: 0 auto 2rem;
+      aspect-ratio: 16 / 9;
+      background:
+        linear-gradient(135deg, rgba(20,20,20,0.55), rgba(0,0,0,0.85)),
+        url('https://cdn.prod.website-files.com/66daf6688e673eff3f90cf8b/68f5eeb2bb54292a8a55b256_Q%20invest%20thumb.webp') center/cover no-repeat;
+      border-radius: 6px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .vsl-play {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--bg);
+      display: grid; place-items: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+    .vsl-play svg { width: 22px; height: 22px; fill: var(--accent); margin-left: 3px; }
+    .vsl-caption {
+      position: absolute;
+      bottom: 16px; left: 16px; right: 16px;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--bg);
+      color: var(--navy-deep);
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      padding: 15px 28px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, color 0.2s;
+      width: 100%;
+      max-width: 380px;
+      min-height: 48px;
+      text-align: center;
+    }
+    .btn:hover { background: #ffffff; transform: translateY(-1px); }
+    .btn-dark {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    .btn-dark:hover { background: var(--accent-dark); color: #ffffff; }
+
+    .risk-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 1rem;
+    }
+    .light .risk-note { color: var(--text-muted); }
+
+    /* ---- PROOF BAR ---- */
+    .proof-bar {
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+    }
+    .proof-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      text-align: center;
+    }
+    .proof-num {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+    .proof-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 6px;
+      line-height: 1.3;
+    }
+
+    /* ---- IMAGE STRIPS ---- */
+    .img-strip {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px 16px;
+      background: var(--bg);
+    }
+    .img-strip::-webkit-scrollbar { display: none; }
+    .img-strip img {
+      height: 220px;
+      width: 320px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* ---- MEDIA LOGOS / PRESS QUOTES ---- */
+    .press-bar {
+      background: var(--surface);
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .press-bar-title {
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .press-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .press-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 1.1rem 1.25rem;
+      text-align: left;
+    }
+    .press-card-pub {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .press-card-headline {
+      font-family: var(--font-head);
+      font-weight: 500;
+      color: var(--text);
+      font-size: 0.98rem;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    /* ---- PAIN ---- */
+    .pain { background: var(--surface); }
+    .pre-label {
+      font-family: var(--font-head);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.7rem;
+    }
+    .pain-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .pain-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy-deep);
+      line-height: 1.2;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.01em;
+    }
+    .pain-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .pain-list li {
+      background: var(--bg);
+      border-radius: 6px;
+      padding: 1.1rem 1.25rem 1.1rem 3.2rem;
+      position: relative;
+      color: var(--text);
+      font-size: 0.97rem;
+      line-height: 1.6;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+      border-left: 3px solid var(--accent);
+    }
+    .pain-list li::before {
+      content: '';
+      position: absolute;
+      left: 1.25rem; top: 1.45rem;
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .pain-list li strong {
+      display: block;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
+    }
+    .bridge {
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 6px;
+      padding: 1.5rem 1.75rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+    .bridge strong { color: #ffffff; text-decoration: underline; text-decoration-color: var(--greige); text-underline-offset: 4px; }
+
+    /* ---- SOLUTION ---- */
+    .solution { background: var(--bg); }
+    .solution h2 {
+      font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+      max-width: 760px;
+      margin-bottom: 1rem;
+    }
+    .solution h2 em { font-style: italic; font-weight: 400; color: var(--greige); }
+    .solution p { color: var(--text); max-width: 760px; }
+    .solution .result-highlight { display: none; }
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      background: var(--accent);
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    .mini-stat {
+      padding: 1.1rem 0.85rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .mini-stat:nth-child(2n) { border-right: none; }
+    .mini-stat__num {
+      font-family: var(--font-head);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+    .mini-stat__label {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.3;
+    }
+
+    /* ---- PROCESS ---- */
+    .process { background: var(--surface); }
+    .process h2 {
+      font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+      margin-bottom: 0.6rem;
+    }
+    .process-intro { color: var(--text-muted); margin-bottom: 2rem; max-width: 720px; }
+    .steps { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .step {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 1.5rem 1.4rem;
+      border: 1px solid var(--line);
+    }
+    .step__icon {
+      width: 44px; height: 44px;
+      border-radius: 8px;
+      background: var(--accent);
+      display: grid; place-items: center;
+      margin-bottom: 1rem;
+    }
+    .step__icon svg { width: 20px; height: 20px; stroke: var(--bg); fill: none; stroke-width: 2; }
+    .step__num {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .step__title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--navy-deep);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .step__body {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    .timeline-line {
+      margin-top: 2rem;
+      padding: 1.1rem 1.25rem;
+      background: var(--bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: var(--navy-deep);
+    }
+
+    /* ---- SOCIAL PROOF ---- */
+    .social-proof { background: var(--bg); }
+    .social-proof h2 { font-size: clamp(1.4rem, 3.4vw, 2rem); margin-bottom: 2rem; max-width: 720px; }
+    .stat-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat {
+      text-align: center;
+      padding: 1.3rem 0.75rem;
+      background: var(--surface);
+      border-radius: 6px;
+      border: 1px solid var(--line);
+    }
+    .stat-num {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.7rem;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.5rem;
+      line-height: 1.3;
+    }
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .case-card {
+      background: var(--surface);
+      border-radius: 8px;
+      padding: 1.5rem 1.4rem;
+      border: 1px solid var(--line);
+    }
+    .case-stars { display: flex; gap: 2px; margin-bottom: 0.8rem; }
+    .case-stars svg { width: 16px; height: 16px; fill: var(--accent); }
+    .case-card-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--navy-deep);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .case-card-body {
+      color: var(--text);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .case-card-result {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.92rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* ---- FOUNDERS ---- */
+    .founders { background: var(--surface); }
+    .founders h2 { margin-bottom: 1.25rem; max-width: 720px; }
+    .founders-intro { color: var(--text); max-width: 720px; margin-bottom: 2rem; }
+    .founders-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+    .founder-card {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 0.85rem 0.85rem 1rem;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+    .founder-portrait {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 6px;
+      margin-bottom: 0.7rem;
+      object-fit: cover;
+      display: block;
+    }
+    .founder-name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--navy-deep);
+      font-size: 0.85rem;
+      margin-bottom: 0.15rem;
+    }
+    .founder-role {
+      font-size: 0.7rem;
+      color: var(--greige);
+      letter-spacing: 0.04em;
+    }
+
+    /* ---- FORM ---- */
+    .form-section { background: var(--accent); color: #ffffff; }
+    .form-section h2 { color: #ffffff; font-size: clamp(1.5rem, 3.4vw, 2.2rem); margin-bottom: 1rem; }
+    .form-section h2 em { color: var(--bg); font-style: italic; font-weight: 400; }
+    .form-intro { color: rgba(255,255,255,0.78); max-width: 620px; margin-bottom: 1.5rem; }
+    .form-bullets { list-style: none; padding: 0; margin: 0 0 2rem 0; display: grid; gap: 0.7rem; }
+    .form-bullets li {
+      position: relative;
+      padding-left: 1.7rem;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .form-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0; top: 0;
+      color: var(--bg);
+      font-weight: 700;
+    }
+    .form-box {
+      background: var(--bg);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 1.5rem 1.4rem 1.6rem;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+    }
+    .form-box-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--navy-deep);
+      font-size: 1.15rem;
+      margin-bottom: 0.35rem;
+    }
+    .form-box-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .form-field { margin-bottom: 1rem; }
+    .form-field label {
+      display: block;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      color: var(--navy-deep);
+      margin-bottom: 0.4rem;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--text);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-field textarea { min-height: 90px; resize: vertical; }
+    .form-field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23101828' d='M10 14l-5-5h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 14px;
+      padding-right: 36px;
+    }
+    .form-row-2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .form-box .btn { width: 100%; max-width: none; margin-top: 0.5rem; background: var(--accent); color: var(--bg); }
+    .form-box .btn:hover { background: var(--accent-dark); color: #ffffff; }
+    .privacy-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.85rem;
+    }
+
+    /* ---- FAQ ---- */
+    .faq { background: var(--bg); }
+    .faq h2 { margin-bottom: 1.5rem; }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item:first-child { border-top: 1px solid var(--line); }
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+      text-align: left;
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+    }
+    .faq-btn::after {
+      content: '+';
+      color: var(--accent);
+      font-size: 1.5rem;
+      font-weight: 300;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+    .faq-item.open .faq-btn::after { content: '−'; }
+    .faq-answer {
+      display: none;
+      padding-bottom: 20px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ---- FINAL CTA ---- */
+    .final-cta {
+      background: var(--navy-deep);
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.92)),
+        url('https://cdn.prod.website-files.com/66daf6688e673eff3f90cf8b/6a104360db3c784f84d4efcf_Gebouw%20Quaestor%20small.webp') center/cover no-repeat;
+      pointer-events: none;
+    }
+    .final-cta-inner { position: relative; z-index: 1; }
+    .final-cta h2 {
+      color: #ffffff;
+      font-size: clamp(1.5rem, 4vw, 2.6rem);
+      max-width: 720px;
+      margin: 0 auto 1rem;
+    }
+    .final-cta h2 em { color: var(--greige); font-style: italic; font-weight: 400; }
+    .final-cta p {
+      color: rgba(255,255,255,0.8);
+      max-width: 620px;
+      margin: 0 auto 1.5rem;
+    }
+    .sub-note {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.82rem;
+      margin-top: 1.25rem;
+      font-style: italic;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      background: var(--accent);
+      color: rgba(255,255,255,0.55);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+    .footer a { color: rgba(255,255,255,0.75); }
+
+    /* ---- STICKY MOBILE CTA ---- */
+    .mobile-cta {
+      display: flex;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 99;
+      padding: 10px 12px;
+      gap: 8px;
+      align-items: center;
+      background: rgba(0,0,0,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-cta .btn {
+      flex: 1;
+      padding: 13px 12px;
+      font-size: 0.82rem;
+      max-width: none;
+      min-height: 44px;
+      background: var(--bg);
+      color: var(--accent);
+    }
+    .mobile-cta .cta-call {
+      width: 44px; height: 44px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      display: grid; place-items: center;
+      flex-shrink: 0;
+    }
+    .mobile-cta .cta-call svg { width: 18px; height: 18px; fill: #ffffff; }
+
+    /* ---- TABLET ---- */
+    @media (min-width: 641px) {
+      :root { --nav-h: 64px; }
+      .container { padding: 0 24px; }
+      section { padding: 72px 0; }
+      .nav-inner { height: 64px; padding: 0 24px; gap: 12px; }
+      .nav-logo { max-width: none; flex-shrink: 0; }
+      .nav-logo img { height: 28px; }
+      .nav-phone-icon { display: none; }
+      .nav-phone-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.9rem;
+      }
+      .nav-cta-mobile { display: none; }
+      .nav-cta-desktop {
+        display: inline-flex;
+        align-items: center;
+        background: var(--accent);
+        color: var(--bg);
+        font-family: var(--font-head);
+        font-weight: 600;
+        font-size: 0.85rem;
+        padding: 10px 18px;
+        border-radius: 6px;
+      }
+      .hero { padding: 88px 0 96px; }
+      .img-strip img { height: 260px; width: 380px; }
+      .proof-items { grid-template-columns: repeat(4, 1fr); gap: 22px; }
+      .proof-num { font-size: 1.8rem; }
+      .press-row { grid-template-columns: repeat(3, 1fr); }
+      .mini-stats { grid-template-columns: repeat(4, 1fr); }
+      .mini-stat { border-bottom: none; }
+      .mini-stat:nth-child(2n) { border-right: 1px solid rgba(255,255,255,0.08); }
+      .mini-stat:last-child { border-right: none; }
+      .mini-stat__num { font-size: 1.7rem; }
+      .steps { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+      .stat-bar { grid-template-columns: repeat(4, 1fr); }
+      .case-grid { grid-template-columns: repeat(3, 1fr); }
+      .founders-grid { grid-template-columns: repeat(5, 1fr); gap: 0.9rem; }
+      .form-row-2 { grid-template-columns: 1fr 1fr; }
+      .mobile-cta { display: none; }
+      body { padding-bottom: 0; padding-top: 64px; }
+    }
+
+    /* ---- DESKTOP ---- */
+    @media (min-width: 961px) {
+      :root { --nav-h: 72px; }
+      .container { padding: 0 32px; }
+      section { padding: 96px 0; }
+      .nav-inner { height: 72px; padding: 0 32px; }
+      .nav-logo img { height: 32px; }
+      .hero { padding: 104px 0 112px; }
+      .hero h1 { font-size: clamp(2.4rem, 4.2vw, 3.6rem); }
+      .pain-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      body { padding-top: 72px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="https://cdn.prod.website-files.com/66d841b725247125a09e6e2b/66d85b593b69fa5c7364c6a8_Quaestor_Logo_RGB.svg" alt="Quaestor" />
+      </a>
+      <div class="nav-right">
+        <a href="tel:+3251263360" class="nav-phone-icon" aria-label="Bel Quaestor">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6-.4-.1-.8 0-1.1.3l-1.6 1.6c-2.6-1.4-4.7-3.5-6.1-6.1l1.6-1.6c.3-.3.4-.7.3-1.1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H5c-.6 0-1 .4-1 1 0 8.8 7.2 16 16 16 .6 0 1-.4 1-1v-2.6c0-.6-.4-1-1-1z"/></svg>
+        </a>
+        <a href="tel:+3251263360" class="nav-phone-text">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6-.4-.1-.8 0-1.1.3l-1.6 1.6c-2.6-1.4-4.7-3.5-6.1-6.1l1.6-1.6c.3-.3.4-.7.3-1.1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H5c-.6 0-1 .4-1 1 0 8.8 7.2 16 16 16 .6 0 1-.4 1-1v-2.6c0-.6-.4-1-1-1z"/></svg>
+          +32 51 26 33 60
+        </a>
+        <a href="#form" class="nav-cta-mobile">Praat met experts</a>
+        <a href="#form" class="nav-cta-desktop">Praat met onze experts</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="pre-headline">Voor ondernemers en families vanaf € 2,5 miljoen vermogen</p>
+      <h1>Wij benaderen vermogen als investeerder, <span class="accent">niet als belegger.</span></h1>
+      <p class="hero-sub">Quaestor is sinds 2000 pionier in private equity in België. Via onze eigen feeder fund-structuur krijgt u toegang tot dezelfde internationale top-PE-fondsen waar normaal alleen vermogens van € 50 miljoen+ instappen.</p>
+
+      <!-- VSL: Record een 3 tot 5 minuten talking-head video waarin Philippe Vanmarcke, Geert Vastiau of Olivier Rogiest:
+        1. Specifiek aanspreekt: de Vlaamse ondernemer of family-CEO met 2,5 tot 25 miljoen liquide vermogen
+        2. De #1 pijn benoemt: "Private equity is alleen voor grote vermogens" (Trends headline) en het peer-verschil
+        3. Uitlegt waarom de gebruikelijke oplossingen (private bank, drie fondsen, koers-denken) niet meer volstaan voor dit segment
+        4. Quaestor introduceert vanuit het primary angle: "Wij ademen private equity. Pionier sinds 2000. 25 jaar. 2 miljard onder beheer."
+        5. De 88 miljoen Revolut-deal aanhaalt als externe validatie (De Tijd headline)
+        6. Eindigt met een directe instructie: vul het formulier hieronder in voor een vrijblijvend gesprek met onze experts in Roeselare
+        Upload naar Loom of YouTube (unlisted) en vervang deze placeholder met de embed.
+      -->
+      <div class="vsl-placeholder">
+        <div class="vsl-play" aria-label="Speel video af">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vsl-caption">Onze visie · 4 min met onze founding partner</div>
+      </div>
+
+      <a href="#form" class="btn">Praat met onze experts</a>
+      <p class="risk-note">Geen verkoop. Eén uur. In Roeselare of bij u op locatie.</p>
+    </div>
+  </section>
+
+  <!-- PROOF BAR -->
+  <div class="proof-bar">
+    <div class="container">
+      <div class="proof-items">
+        <div>
+          <div class="proof-num">€ 2 mld+</div>
+          <div class="proof-label">Activa onder beheer (2024)</div>
+        </div>
+        <div>
+          <div class="proof-num">€ 88 mio</div>
+          <div class="proof-label">Investering in Revolut</div>
+        </div>
+        <div>
+          <div class="proof-num">25 jaar</div>
+          <div class="proof-label">Pionier sinds 2000</div>
+        </div>
+        <div>
+          <div class="proof-num">35+</div>
+          <div class="proof-label">Specialisten in eigen huis</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE STRIP -->
+  <div class="img-strip" aria-label="Quaestor in beeld">
+    <img src="https://cdn.prod.website-files.com/66d841b725247125a09e6e2b/66d8757cf54a586da9ad937e_Quaestor_288.webp" alt="Quaestor kantoor interieur" loading="lazy" />
+    <img src="https://cdn.prod.website-files.com/66daf6688e673eff3f90cf8b/6a104360db3c784f84d4efcf_Gebouw%20Quaestor%20small.webp" alt="Quaestor kantoorgebouw Roeselare" loading="lazy" />
+    <img src="https://cdn.prod.website-files.com/66d841b725247125a09e6e2b/66d98450a6e0e2190a9deaf4_Quaestor_321.webp" alt="Quaestor team in vergadering" loading="lazy" />
+  </div>
+
+  <!-- PRESS BAR -->
+  <section class="press-bar" style="padding-top: 32px; padding-bottom: 32px;">
+    <div class="container">
+      <div class="press-bar-title">Eerder in de pers</div>
+      <div class="press-row">
+        <div class="press-card">
+          <div class="press-card-pub">De Tijd</div>
+          <div class="press-card-headline">"West-Vlaamse vermogensbeheerder Quaestor investeerde 88 miljoen euro in Revolut"</div>
+        </div>
+        <div class="press-card">
+          <div class="press-card-pub">Trends</div>
+          <div class="press-card-headline">"Private equity is alleen voor grote vermogens"</div>
+        </div>
+        <div class="press-card">
+          <div class="press-card-pub">Sterck Magazine</div>
+          <div class="press-card-headline">"Wij ademen private equity"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN -->
+  <section class="pain">
+    <div class="container">
+      <div class="pain-grid">
+        <div class="pain-left">
+          <span class="pre-label">Herkent u dit?</span>
+          <h2 class="pain-title">"Private equity is alleen voor grote vermogens."</h2>
+          <ul class="pain-list">
+            <li><strong>Drie fondsen, elk jaar opnieuw.</strong>Uw private banker biedt u dezelfde drie aandelen- en obligatiefondsen aan als toen u uw eerste miljoen had. De productenlijst groeit niet mee met uw vermogen.</li>
+            <li><strong>U hoort van peers over deals waar u geen toegang toe heeft.</strong>Op een netwerkdiner valt de naam Revolut, Sofindev, Venturi. U knikt mee, maar binnenshuis krijgt u die deals nooit op tafel.</li>
+            <li><strong>Voor een echt family office bent u te klein. Voor mass-market te groot.</strong>De huizen die alleen vanaf € 50 miljoen werken, openen voor u niet. De banken die voor iedereen werken, behandelen u als belegger.</li>
+            <li><strong>Niemand legt u in mensentaal uit wat een feeder fund is.</strong>U leest over AIFM, GP/LP-structuren, J-curves. Maar geen enkele gespreksparter neemt twee minuten om het concreet te maken voor uw situatie.</li>
+            <li><strong>Uw portefeuille beweegt te erg mee met de beurs.</strong>U ziet één getal op kwartaalrapport en weet niet of dat groei is of ruis. U wil eigenaar zijn van iets, niet enkel koers-houder van iets.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="bridge">
+            U bent niet alleen. Tot ongeveer tien jaar geleden was directe toegang tot internationale PE-fondsen inderdaad voorbehouden aan de allergrootste vermogens. Sinds 2018 heeft Quaestor een eigen feeder fund-structuur opgezet die <strong>dezelfde fondsen toegankelijk maakt vanaf € 2,5 miljoen</strong>. Niet als marketingbelofte, als 25 jaar dagelijkse praktijk.
+          </div>
+          <div class="mini-stats" style="margin-top: 1.5rem;">
+            <div class="mini-stat">
+              <div class="mini-stat__num">2000</div>
+              <div class="mini-stat__label">Opgericht</div>
+            </div>
+            <div class="mini-stat">
+              <div class="mini-stat__num">2018</div>
+              <div class="mini-stat__label">Feeder fund-structuur</div>
+            </div>
+            <div class="mini-stat">
+              <div class="mini-stat__num">€ 2,5 mio</div>
+              <div class="mini-stat__label">Drempel bij Quaestor</div>
+            </div>
+            <div class="mini-stat">
+              <div class="mini-stat__num">€ 50 mio</div>
+              <div class="mini-stat__label">Drempel klassieke PE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution">
+    <div class="container">
+      <span class="pre-label">Pionier in private equity</span>
+      <h2>Wij ademen private equity. <em>Niet één hoekje van onze website.</em></h2>
+      <p>Bijna iedere onafhankelijke vermogensbeheerder in dit land biedt private equity aan als optie naast een uitgebreid productaanbod. Bij Quaestor is het andersom. Sinds onze oprichting in 2000 is de aanpak één en dezelfde: vermogens worden niet beheerd, ze worden geïnvesteerd. Eerst kijken we naar private markten, dan vullen we aan met publieke aandelen en obligaties; nooit andersom.</p>
+      <p>Met onze AICB-vergunning en feeder fund-structuur kunnen we Vlaamse families en ondernemers laten meedoen aan internationale top-PE-deals. De € 88 miljoen die we in 2024 in Revolut investeerden is geen pitch-vergadering, dat zijn enkele tientallen klantfamilies die samen instapten. Dat is wat we bedoelen met "voor en door ondernemers".</p>
+
+      <p class="result-highlight">Quaestor investeerde € 88 miljoen euro in Revolut, zoals gerapporteerd door De Tijd. € 2 miljard+ activa onder beheer in 2024, 25 jaar trackrecord sinds 2000.</p>
+
+      <div class="mini-stats" aria-label="Externe validatie en schaal">
+        <div class="mini-stat">
+          <div class="mini-stat__num">€ 88 mio</div>
+          <div class="mini-stat__label">Investering in Revolut (De Tijd)</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat__num">€ 2 mld+</div>
+          <div class="mini-stat__label">AUM in 2024</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat__num">9 ×</div>
+          <div class="mini-stat__label">Pers-coverage in top-pers</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat__num">25 jr</div>
+          <div class="mini-stat__label">Trackrecord sinds 2000</div>
+        </div>
+      </div>
+
+      <a href="#form" class="btn btn-dark">Praat met onze experts</a>
+      <p class="risk-note" style="color: var(--text-muted);">Vrijblijvend gesprek. In Roeselare of bij u op locatie.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="container">
+      <span class="pre-label">Hoe wij werken</span>
+      <h2>Van eerste gesprek tot portefeuille.</h2>
+      <p class="process-intro">Geen pitch deck. Eerst uw situatie, dan een mandaat dat publieke en private markten in juiste verhoudingen spreidt, daarna doorlopende kwartaalopvolging waar u uw vermogen ziet, niet enkel uw koersen.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 11h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8a2 2 0 012-2h2M9 11V7a3 3 0 116 0v4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step__num">Stap 01</div>
+          <div class="step__title">Kennismaking</div>
+          <div class="step__body">Eén uur in Roeselare of bij u thuis. Geen pitch-deck. Wij luisteren naar uw vermogen, uw familie, uw tijdshorizon, en uw appetijt voor private markten. U beslist niets in dat gesprek.</div>
+        </div>
+        <div class="step">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 12l9-9 9 9M5 10v10a2 2 0 002 2h10a2 2 0 002-2V10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step__num">Stap 02</div>
+          <div class="step__title">Mandaat en spreiding</div>
+          <div class="step__body">Discretionair of adviserend mandaat naar uw voorkeur. Diversificatie tussen publieke markten (aandelen, obligaties) en private markten (PE, private debt) via onze eigen feeder fund-structuur en internationale fondsen.</div>
+        </div>
+        <div class="step">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="3 17 9 11 13 15 21 7" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 7 21 7 21 14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step__num">Stap 03</div>
+          <div class="step__title">Doorlopende opvolging</div>
+          <div class="step__body">Kwartaalbespreking waar u uw vermogen ziet, niet enkel uw koersen. Volledige rapportering over publieke én private positions. Eén vast aanspreekpunt voor u en uw familie, jaar na jaar.</div>
+        </div>
+      </div>
+      <div class="timeline-line">
+        Tijdslijn: vanaf het eerste gesprek tot een actief mandaat doorgaans tussen vier en acht weken, afhankelijk van de inventarisatie van uw bestaande positions en de structuur van uw vermogen.
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="social-proof">
+    <div class="container">
+      <span class="pre-label">Wat ons herkenbaar maakt</span>
+      <h2>Een Belgisch huis met internationale schaal en lokale wortels.</h2>
+
+      <div class="stat-bar">
+        <div class="stat">
+          <div class="stat-num">2000</div>
+          <div class="stat-label">Opgericht in Roeselare</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">35+</div>
+          <div class="stat-label">Specialisten in eigen huis</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">€ 2 mld+</div>
+          <div class="stat-label">AUM 2024</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">AICB</div>
+          <div class="stat-label">Gereguleerd door FSMA</div>
+        </div>
+      </div>
+
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+          <div class="case-card-title">€ 88 miljoen in Revolut</div>
+          <div class="case-card-body">Quaestor schreef via zijn feeder fund-structuur een ticket van € 88 miljoen in Revolut, één van Europa's snelst groeiende fintechs. De deal werd gerapporteerd door De Tijd. Tientallen Vlaamse families en ondernemers stapten samen mee in dezelfde deal als institutionele PE-investeerders.</div>
+          <div class="case-card-result">De Tijd, 2024.</div>
+        </div>
+        <div class="case-card">
+          <div class="case-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+          <div class="case-card-title">Van 0 naar € 2 miljard in 24 jaar</div>
+          <div class="case-card-body">Vijf founding partners begonnen Quaestor in 2000 in Roeselare. In 2024 passeerde het kantoor voor het eerst € 2 miljard activa onder beheer, gedragen door een team van meer dan 35 specialisten. De vijf founders zijn vandaag nog elke dag actief.</div>
+          <div class="case-card-result">€ 2 mld+ AUM in 2024.</div>
+        </div>
+        <div class="case-card">
+          <div class="case-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+          <div class="case-card-title">Pers-coverage als externe toetsing</div>
+          <div class="case-card-body">Quaestor verschijnt regelmatig in De Tijd, Trends, Business Vlaanderen, Sterck Magazine, FinInfo en Investment Officer. Negen mediavermeldingen waarvan vier in De Tijd. Geen marketing-budgetten; redactionele aandacht voor de PE-deals zelf.</div>
+          <div class="case-card-result">9 × in top-financieel pers.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDERS -->
+  <section class="founders">
+    <div class="container">
+      <span class="pre-label">Wie u aan tafel ziet</span>
+      <h2>Vijf founding partners. Zeven partners. 35+ specialisten.</h2>
+      <p class="founders-intro">Quaestor is in 2000 opgericht door vijf ondernemers in Roeselare. Vandaag, 25 jaar later, zijn alle founding partners nog elke dag actief. Geen wisselende accountmanagers. Vanaf het eerste gesprek heeft u één vast aanspreekpunt dat uw dossier én uw familie kent.</p>
+      <div class="founders-grid">
+        <div class="founder-card">
+          <img class="founder-portrait" src="https://cdn.prod.website-files.com/66daf6688e673eff3f90cf8b/66def8feeb590fdbcaef8649_Quaestor_Portrettenwebsite.webp" alt="Philippe Vanmarcke" loading="lazy" />
+          <div class="founder-name">Philippe Vanmarcke</div>
+          <div class="founder-role">Founding Partner</div>
+        </div>
+        <div class="founder-card">
+          <img class="founder-portrait" src="https://cdn.prod.website-files.com/66daf6688e673eff3f90cf8b/66def6f958f8e4033e70af1a_Quaestor_Portrettenwebsite19.webp" alt="Geert Vastiau" loading="lazy" />
+          <div class="founder-name">Geert Vastiau</div>
+          <div class="founder-role">Founding Partner</div>
+        </div>
+        <div class="founder-card">
+          <img class="founder-portrait" src="https://cdn.prod.website-files.com/66daf6688e673eff3f90cf8b/66def7b85408ba2f0b22a705_Quaestor_Portrettenwebsite39.webp" alt="Lode Langedock" loading="lazy" />
+          <div class="founder-name">Lode Langedock</div>
+          <div class="founder-role">Partner</div>
+        </div>
+        <div class="founder-card">
+          <img class="founder-portrait" src="https://cdn.prod.website-files.com/66daf6688e673eff3f90cf8b/66def76ccad4b71e328425c3_Quaestor_Portrettenwebsite33.webp" alt="Kris Van Lerberghe" loading="lazy" />
+          <div class="founder-name">Kris Van Lerberghe</div>
+          <div class="founder-role">Partner</div>
+        </div>
+        <div class="founder-card">
+          <img class="founder-portrait" src="https://cdn.prod.website-files.com/66daf6688e673eff3f90cf8b/66def5fe7ef10ff4b27169d2_Quaestor_Portrettenwebsite5.webp" alt="Bart Baetens" loading="lazy" />
+          <div class="founder-name">Bart Baetens</div>
+          <div class="founder-role">Partner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="form">
+    <div class="container">
+      <span class="pre-label" style="color: var(--bg);">Aanvraag kennismakingsgesprek</span>
+      <h2>Praat met onze experts. <em>Geen pitch, geen verkoop.</em></h2>
+      <p class="form-intro">Vul het formulier hieronder in. Wij nemen binnen één werkdag contact met u op om een gesprek te plannen in ons kantoor in Roeselare of, indien u dat verkiest, bij u thuis.</p>
+      <ul class="form-bullets">
+        <li>U krijgt binnen één werkdag een telefoontje van een vast aanspreekpunt, geen callcenter.</li>
+        <li>Het eerste gesprek duurt ongeveer een uur en is volledig vrijblijvend.</li>
+        <li>Wij komen voorbereid: u krijgt vooraf vragen door om de tijd nuttig te besteden.</li>
+      </ul>
+
+      <div class="form-box">
+        <div class="form-box-title">Plan een vrijblijvend gesprek</div>
+        <p class="form-box-sub">Neemt minder dan 60 seconden. Wij reageren binnen één werkdag.</p>
+        <!--
+          FORMSPREE SETUP:
+          1. Ga naar formspree.io en maak een gratis account
+          2. Maak een nieuw formulier en kopieer het form ID (bv. "xabcdefg")
+          3. Vervang YOUR_FORM_ID hieronder
+          Submissions komen direct in uw inbox.
+        -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="firstname">Voornaam</label>
+              <input type="text" id="firstname" name="firstname" required />
+            </div>
+            <div class="form-field">
+              <label for="lastname">Familienaam</label>
+              <input type="text" id="lastname" name="lastname" required />
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Telefoonnummer</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="situation">Uw situatie vandaag</label>
+            <select id="situation" name="situation" required>
+              <option value="" disabled selected>Kies één optie</option>
+              <option>Ondernemer met liquide vermogen, wil overstappen van huisbank</option>
+              <option>Bedrijfsverkoop afgerond, zoek private markets-toegang</option>
+              <option>Bestaand vermogen bij andere vermogensbeheerder, wil PE-spreiding</option>
+              <option>Specifiek geïnteresseerd in private equity feeder fund</option>
+              <option>Family-CEO met meerdere familieleden in scope</option>
+              <option>Andere situatie</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="liquid">Indicatie liquide vermogen (vertrouwelijk)</label>
+            <select id="liquid" name="liquid" required>
+              <option value="" disabled selected>Kies een orde van grootte</option>
+              <option>Onder € 2,5 miljoen (op dit moment buiten onze drempel)</option>
+              <option>€ 2,5 tot 5 miljoen</option>
+              <option>€ 5 tot 10 miljoen</option>
+              <option>€ 10 tot 25 miljoen</option>
+              <option>Boven € 25 miljoen</option>
+              <option>Liever bespreek ik dat in het gesprek</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="timing">Binnen welke termijn wenst u een gesprek?</label>
+            <select id="timing" name="timing" required>
+              <option value="" disabled selected>Kies een termijn</option>
+              <option>Zo snel mogelijk, deze week of volgende week</option>
+              <option>Binnen 1 tot 3 maanden</option>
+              <option>Binnen 3 tot 6 maanden</option>
+              <option>Ik oriënteer mij rustig, geen haast</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Korte beschrijving van uw vraag (optioneel)</label>
+            <textarea id="message" name="message" placeholder="Bv. ik wil graag begrijpen hoe het feeder fund werkt en welke deals er vandaag open staan."></textarea>
+          </div>
+          <button type="submit" class="btn">Praat met onze experts</button>
+          <p class="privacy-note">Vertrouwelijk. Geen verkoop. Wij gebruiken uw gegevens enkel om contact op te nemen.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <span class="pre-label">Veelgestelde vragen</span>
+      <h2>Wat u redelijkerwijs wil weten vóór een eerste gesprek.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-btn">Wat is een feeder fund eigenlijk, in mensentaal?</button>
+          <div class="faq-answer">Een feeder fund is een vehikel waarin verschillende beleggers samen geld bundelen om vervolgens in te stappen in een groter doel-fonds dat normaal een veel hogere minimale ticket vraagt. Concreet: in plaats van zelf € 50 miljoen te moeten kunnen schrijven voor een top-PE-fonds, stapt u via Quaestor's feeder fund mee in vanaf € 2,5 miljoen. U bent wel degelijk economisch eigenaar van uw aandeel in het doel-fonds, met alle rechten en rapportering die daar bij hoort.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Wat als ik mijn geld terug nodig heb?</button>
+          <div class="faq-answer">Private equity is per definitie een langetermijnverhaal. Een doel-fonds heeft typisch een looptijd van 7 tot 10 jaar, met geleidelijke uitkeringen vanaf jaar 4 tot 5. Daarom adviseren wij om alleen het deel van uw vermogen in private markten te zetten dat u meerjaar kunt missen. Bij Quaestor stellen wij altijd een spreiding voor tussen publieke markten (liquide) en private markten (illiquide), in de verhouding die past bij uw situatie.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Hoe weet ik dat dit niet gewoon hogere kosten met een marketing-laag is?</button>
+          <div class="faq-answer">Onze fee-structuur is transparant en wordt in het eerste gesprek volledig opengetrokken. Beheersvergoeding, fonds-TER, eventuele administratieve kosten: alles wordt vooraf vastgelegd. Wij ontvangen geen verborgen retrocessies. De prijs hangt af van de complexiteit en omvang van het mandaat. Onze AICB-vergunning verplicht ons tot volledige transparantie naar de FSMA.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Hebben jullie ook publieke markten, of moet ik alles in PE zetten?</button>
+          <div class="faq-answer">Vier asset classes draaien parallel: publieke aandelen, publieke obligaties, private equity en private debt. Wij raden geen enkele klant aan om alles in PE te zetten. De meerwaarde van Quaestor zit in het feit dat we de private markten écht beheersen, maar de portefeuilles waar we dagelijks aan werken zijn altijd multi-asset.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Wij kennen onze huisbank al twintig jaar, waarom zouden wij overstappen?</button>
+          <div class="faq-answer">Een lange bankrelatie is een waarde. Wij vragen u niet om die op te zeggen. Veel klantfamilies kiezen voor een combinatie waarbij wij het private markets-luik en de strategische spreiding dragen, en de bank een specifiek publiek mandaat blijft uitvoeren. U beslist na het plan, niet ervoor.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Is € 2,5 miljoen een harde drempel?</button>
+          <div class="faq-answer">Ja, voor onze feeder fund-aanpak met volledige spreiding tussen publieke en private markten werken wij vanaf € 2,5 miljoen liquide vermogen. Onder die drempel kunnen wij voor uw situatie geen optimale diversificatie aanleveren en zijn andere oplossingen geschikter. Tijdens het eerste gesprek bespreken wij dat openlijk en, indien wenselijk, verwijzen wij gericht door.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <h2>Eén gesprek. Eén plan. <em>Eén einde aan "drie fondsen elk jaar".</em></h2>
+      <p>Of u nu zonet een bedrijf verkocht heeft, of u twijfelt of uw huidige bank u nog dient zoals u dat wenst, dit eerste gesprek kost u niets, behalve één uur van uw tijd. Wij beginnen bij u, niet bij een product.</p>
+      <a href="#form" class="btn">Praat met onze experts</a>
+      <p class="sub-note">Quaestor investeerde € 88 miljoen euro in Revolut (De Tijd). € 2 miljard+ activa onder beheer in 2024. 25 jaar pionier in private equity sinds 2000.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 Quaestor Vermogensbeheer NV · Meensesteenweg 406, 8800 Roeselare · <a href="tel:+3251263360">+32 51 26 33 60</a> · <a href="mailto:info@quaestor.be">info@quaestor.be</a>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="mobile-cta">
+    <a href="tel:+3251263360" class="cta-call" aria-label="Bel Quaestor">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6-.4-.1-.8 0-1.1.3l-1.6 1.6c-2.6-1.4-4.7-3.5-6.1-6.1l1.6-1.6c.3-.3.4-.7.3-1.1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H5c-.6 0-1 .4-1 1 0 8.8 7.2 16 16 16 .6 0 1-.4 1-1v-2.6c0-.6-.4-1-1-1z"/></svg>
+    </a>
+    <a href="#form" class="btn">Praat met onze experts</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    (function(){
+      var mc = document.querySelector('.mobile-cta');
+      if (!mc) return;
+      var form = document.getElementById('form');
+      if (!form) return;
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+          mc.style.transition = 'transform 0.3s ease';
+        });
+      }, {threshold: 0.1});
+      io.observe(form);
+    })();
+  </script>
+
+</body>
+</html>
