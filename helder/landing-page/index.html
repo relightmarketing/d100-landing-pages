@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Helder - 360° inzicht in uw vermogen</title>
+<meta name="description" content="Eén helder financieel plan voor ondernemers en vermogende families. 15 specialisten die het geheel bewaken en uw plan levenslang opvolgen. Kom kennismaken.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#f3f5f7;
+  --accent:#5E7C92;
+  --accent-dark:#496174;
+  --accent-soft:#C3D3DD;
+  --navy:#14202B;
+  --navy-deep:#0B141C;
+  --text:#1D1D1B;
+  --text-muted:#5c6670;
+  --line:#e6e9ec;
+  --font-head:'Inter',system-ui,-apple-system,sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,sans-serif;
+  --font-serif:'Abhaya Libre',Georgia,serif;
+  --nav-h:56px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.6;font-size:1.0625rem;padding-bottom:76px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-head);font-weight:300;letter-spacing:-.01em;line-height:1.18}
+strong{font-weight:600}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+section{padding:48px 0}
+.pre-headline{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--accent)}
+.eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin-bottom:14px;display:block}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-family:var(--font-head);font-weight:600;font-size:1rem;letter-spacing:.01em;padding:15px 30px;border:none;border-radius:8px;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;text-align:center}
+.btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn-light{background:var(--accent-soft);color:var(--navy)}
+.btn-light:hover{background:#aec2cf}
+.risk{font-size:.78rem;color:var(--text-muted);margin-top:12px}
+.section-dark .risk{color:rgba(255,255,255,.55)}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:var(--navy-deep);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);padding:0 14px;gap:8px;max-width:1100px;margin:0 auto}
+.nav-logo{height:22px;max-width:130px;flex-shrink:1;min-width:0;filter:brightness(0) invert(1)}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.nav-cta-mobile{background:var(--accent-soft);color:var(--navy);font-family:var(--font-head);font-weight:600;font-size:.72rem;padding:8px 13px;border-radius:7px;text-decoration:none;white-space:nowrap}
+.nav-cta-desktop{display:none}
+/* hero */
+.hero{position:relative;background:var(--navy-deep);color:#fff;text-align:center;padding:54px 0 56px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,20,28,.82),rgba(11,20,28,.92)),url('https://helder.eu/wp-content/uploads/2025/07/Helder_273_7998-1600x1067.jpg') center/cover;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero .pre-headline{color:var(--accent-soft)}
+.hero h1{font-size:clamp(2.1rem,6vw,3.4rem);color:#fff;margin:14px auto 8px;max-width:14ch}
+.hero h1 .accent{font-family:var(--font-serif);font-weight:600;font-style:italic;color:var(--accent-soft)}
+.hero-sub{font-family:var(--font-serif);font-size:1.12rem;color:rgba(255,255,255,.84);max-width:30rem;margin:0 auto 22px;line-height:1.5}
+.vsl{position:relative;width:100%;max-width:760px;margin:26px auto 24px;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.vsl .video-wrap{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden}
+.vsl .video-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.vsl .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.vsl .play svg{margin-left:4px}
+.vsl .vsl-label{position:absolute;bottom:12px;left:0;right:0;text-align:center;color:rgba(255,255,255,.8);font-size:.8rem;letter-spacing:.02em}
+/* proof bar */
+.proof-bar{background:var(--bg);border-bottom:1px solid var(--line);padding:18px 0}
+.proof-items{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:center;max-width:960px;margin:0 auto;padding:0 16px}
+.proof-num{font-size:1.25rem;font-weight:700;color:var(--accent);line-height:1.15;font-family:var(--font-head)}
+.proof-label{font-size:.64rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.09em;margin-top:3px}
+/* image strip */
+.img-strip{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:24px 16px}
+.img-strip::-webkit-scrollbar{display:none}
+.img-strip img{height:200px;width:300px;border-radius:10px;object-fit:cover;flex-shrink:0}
+/* pain */
+.section-surface{background:var(--surface)}
+.pain-grid{display:flex;flex-direction:column;gap:1.6rem}
+.pain-grid__img{display:none}
+.pain-title{font-family:var(--font-serif);font-weight:600;font-size:clamp(1.7rem,5vw,2.3rem);color:var(--navy);line-height:1.25;margin:8px 0 1.4rem}
+.pain-list{list-style:none;display:grid;gap:.8rem;margin-bottom:1.6rem}
+.pain-list li{background:#fff;border-radius:10px;padding:1rem 1.1rem 1rem 2.9rem;position:relative;color:var(--text-muted);font-size:.97rem;line-height:1.6;box-shadow:0 1px 5px rgba(20,32,43,.05)}
+.pain-list li::before{content:"";position:absolute;left:1.1rem;top:1.25rem;width:10px;height:10px;background:var(--accent);border-radius:50%;opacity:.7}
+.bridge{background:var(--navy);color:#fff;border-radius:12px;padding:1.4rem 1.5rem;font-size:1rem;line-height:1.65;font-family:var(--font-serif)}
+.bridge strong{color:var(--accent-soft);font-weight:600}
+/* solution */
+.lead-p{font-size:1.05rem;color:var(--text-muted);margin-top:1rem;line-height:1.7}
+.lead-p strong{color:var(--text)}
+.result-highlight{font-family:var(--font-serif);font-weight:600;font-size:1.35rem;color:var(--navy);margin:1.6rem 0 1rem;line-height:1.4}
+.mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:var(--navy);border-radius:10px;overflow:hidden;margin-top:1rem}
+.mini-stat{padding:1.1rem .75rem;text-align:center;border-right:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
+.mini-stat:nth-child(2n){border-right:none}
+.mini-stat__num{font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--accent-soft);line-height:1;margin-bottom:.25rem}
+.mini-stat__label{font-size:.62rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.09em}
+/* steps */
+.steps{display:grid;gap:1.1rem;margin-top:1.8rem}
+.step{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.step img{width:100%;height:170px;object-fit:cover}
+.step__body{padding:1.1rem 1.2rem 1.3rem}
+.step__num{font-family:var(--font-head);font-weight:700;color:var(--accent);font-size:.8rem;letter-spacing:.08em}
+.step__body h3{font-size:1.2rem;margin:.3rem 0 .45rem;color:var(--navy);font-weight:400}
+.step__body p{color:var(--text-muted);font-size:.94rem}
+.incl{list-style:none;display:grid;gap:.7rem;margin:1.8rem 0 0}
+.incl li{position:relative;padding-left:1.9rem;color:var(--text);font-size:1rem}
+.incl li::before{content:"";position:absolute;left:0;top:.15rem;width:18px;height:18px;border-radius:50%;background:var(--accent-soft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2314202B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.incl li strong{font-weight:600}
+/* why cards */
+.cards3{display:grid;gap:1rem;margin-top:1.8rem}
+.why-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.4rem}
+.why-card .ic{width:42px;height:42px;border-radius:10px;background:var(--surface);display:grid;place-items:center;margin-bottom:.9rem}
+.why-card h3{font-size:1.1rem;color:var(--navy);font-weight:400;margin-bottom:.4rem}
+.why-card p{color:var(--text-muted);font-size:.94rem}
+.creds-bar{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--surface);border-radius:10px;overflow:hidden;margin-top:1.6rem}
+.cred{padding:1rem .75rem;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cred:nth-child(2n){border-right:none}
+.cred__num{font-family:var(--font-head);font-weight:700;font-size:1.2rem;color:var(--accent)}
+.cred__label{font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+/* founder */
+.founder-grid{display:flex;flex-direction:column;gap:1.6rem}
+.founder-grid img{width:100%;border-radius:14px;object-fit:cover;aspect-ratio:4/3}
+.founder-copy h2{color:var(--navy)}
+.founder-copy p{color:var(--text-muted);margin-top:1rem}
+.founder-copy .sig{font-family:var(--font-serif);font-size:1.05rem;color:var(--text);margin-top:1rem}
+/* form */
+.section-dark{background:var(--navy);color:#fff}
+.section-dark h2,.section-dark h3{color:#fff}
+.section-dark .eyebrow{color:var(--accent-soft)}
+.form-bullets{list-style:none;display:grid;gap:.7rem;margin:1.4rem 0}
+.form-bullets li{position:relative;padding-left:1.9rem;color:rgba(255,255,255,.85);font-size:.97rem}
+.form-bullets li::before{content:"";position:absolute;left:0;top:.2rem;width:16px;height:16px;border-radius:50%;background:var(--accent-soft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%2314202B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.form-box{background:#fff;color:var(--text);border-radius:16px;padding:1.5rem 1.3rem;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.form-box h3{color:var(--navy);font-size:1.3rem;font-weight:400}
+.form-note{font-size:.78rem;color:var(--text-muted);margin:.4rem 0 1.1rem}
+.form-field{margin-bottom:1rem}
+.form-field label{display:block;font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:.4rem}
+.form-field input,.form-field select,.form-field textarea{width:100%;font-size:16px;font-family:var(--font-body);padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text);-webkit-appearance:none;appearance:none}
+.form-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235c6670' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-field textarea{min-height:88px;resize:vertical}
+.form-row-2{display:grid;grid-template-columns:1fr;gap:1rem}
+.form-box .btn{width:100%;margin-top:.4rem}
+.privacy{font-size:.72rem;color:var(--text-muted);text-align:center;margin-top:.8rem}
+/* faq */
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-btn{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:20px 0;text-align:left;font-family:var(--font-head);font-size:1.02rem;font-weight:500;color:var(--navy)}
+.faq-btn::after{content:'+';color:var(--accent);font-size:1.5rem;flex-shrink:0;line-height:1}
+.faq-item.open .faq-btn::after{content:'\2212'}
+.faq-answer{display:none;padding-bottom:18px;color:var(--text-muted);line-height:1.7;font-size:.97rem}
+.faq-item.open .faq-answer{display:block}
+/* final cta */
+.final{background:var(--navy-deep);color:#fff;text-align:center}
+.final h2{color:#fff;font-size:clamp(1.8rem,5vw,2.6rem)}
+.final p{color:rgba(255,255,255,.8);max-width:34rem;margin:1rem auto 1.5rem;font-family:var(--font-serif)}
+.sub-note{font-size:.85rem;color:var(--accent-soft);margin-top:1.1rem;letter-spacing:.02em}
+/* footer */
+footer{background:var(--navy-deep);color:rgba(255,255,255,.55);text-align:center;padding:30px 16px;font-size:.82rem;border-top:1px solid rgba(255,255,255,.08)}
+footer img{height:24px;margin:0 auto 12px;filter:brightness(0) invert(1);opacity:.85}
+/* mobile sticky cta */
+.mobile-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:99;padding:10px 12px;gap:8px;align-items:center;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 -4px 20px rgba(0,0,0,.12);border-top:1px solid var(--line)}
+.mobile-cta .btn{flex:1;padding:14px 12px;font-size:.92rem}
+.section-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin-bottom:.5rem;display:block}
+h2.sec{font-size:clamp(1.7rem,4.5vw,2.4rem);color:var(--navy);font-weight:300}
+.center{text-align:center}
+/* tablet */
+@media (min-width:641px){
+  :root{--nav-h:64px}
+  section{padding:64px 0}
+  .wrap{padding:0 24px}
+  .nav-inner{height:64px;padding:0 24px;gap:12px}
+  .nav-logo{height:30px;max-width:none;flex-shrink:0}
+  .nav-cta-mobile{display:none}
+  .nav-cta-desktop{display:inline-flex;font-size:.82rem;padding:10px 20px}
+  .proof-items{grid-template-columns:repeat(4,1fr);gap:20px}
+  .proof-num{font-size:1.6rem}
+  .img-strip img{height:240px;width:360px}
+  .pain-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2.4rem;align-items:start}
+  .pain-grid__img{display:block;width:100%;border-radius:12px;object-fit:cover;aspect-ratio:3/4;position:sticky;top:calc(var(--nav-h) + 1.5rem)}
+  .mini-stats{grid-template-columns:repeat(4,1fr)}
+  .mini-stat{border-bottom:none}
+  .mini-stat:nth-child(2n){border-right:1px solid rgba(255,255,255,.1)}
+  .mini-stat:last-child{border-right:none}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .cards3{grid-template-columns:repeat(3,1fr)}
+  .creds-bar{grid-template-columns:repeat(4,1fr)}
+  .cred{border-bottom:none}
+  .cred:nth-child(2n){border-right:1px solid var(--line)}
+  .cred:last-child{border-right:none}
+  .founder-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.4rem;align-items:center}
+  .form-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:2.4rem;align-items:start}
+  .form-row-2{grid-template-columns:1fr 1fr}
+  .mobile-cta{display:none}
+  body{padding-bottom:0}
+}
+@media (min-width:961px){
+  section{padding:80px 0}
+  .wrap{padding:0 32px}
+  .hero{padding:72px 0 76px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <img class="nav-logo" src="https://helder.eu/wp-content/uploads/2025/06/helder-logo.svg" alt="Helder">
+    <div class="nav-right">
+      <a class="nav-cta-mobile" href="#form">Kom kennismaken</a>
+      <a class="btn nav-cta-desktop" href="#form">Kom kennismaken</a>
+    </div>
+  </div>
+</nav>
+
+<!-- SECTION 1: HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="pre-headline">Voor ondernemers en vermogende families in Vlaanderen</span>
+    <h1>360° <span class="accent">inzicht</span> in uw vermogen</h1>
+    <div class="vsl">
+      <!-- VSL: Record a 3 to 5 min talking-head video where Bregt Winters (Managing Partner, Team Helder):
+        1. Names exactly who this is for: successful entrepreneurs and affluent families in Flanders
+        2. Calls out the #1 pain in their own words: "U hebt een bankier, een boekhouder en een notaris. Maar wie bewaakt het geheel?"
+        3. Explains why the usual solutions fail: fragmented advice, the bank with a targetsheet, nobody owning the whole (PRIMARY ANGLE: the coordination gap)
+        4. Introduces Helder as the one party that oversees the whole and makes one clear 360 degree plan, coordinated and followed up for life
+        5. Tells them exactly what to do next: fill out the form below to plan a vrijblijvend kennismakingsgesprek
+        Upload to YouTube (unlisted is fine) and replace this placeholder with the embed. -->
+      <div class="video-wrap">
+        <img src="https://helder.eu/wp-content/uploads/2025/07/Helder_052_6887-1600x1067.jpg" alt="Team Helder in gesprek met een klant">
+        <div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#14202B"/></svg></div>
+        <span class="vsl-label">Bekijk in 3 minuten hoe Helder werkt</span>
+      </div>
+    </div>
+    <p class="hero-sub">U hebt een bankier, een boekhouder en een notaris. Wij zijn het team dat het geheel bewaakt en er een helder plan van maakt.</p>
+    <a class="btn btn-light" href="#form">Kom kennismaken</a>
+    <p class="risk">Vrijblijvend kennismakingsgesprek. Geen verkoop, geen verplichting.</p>
+  </div>
+</header>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-items">
+    <div><div class="proof-num">15</div><div class="proof-label">Specialisten in huis</div></div>
+    <div><div class="proof-num">4</div><div class="proof-label">Domeinen, 1 plan</div></div>
+    <div><div class="proof-num">360&deg;</div><div class="proof-label">Inzicht in uw vermogen</div></div>
+    <div><div class="proof-num">Levenslang</div><div class="proof-label">Jaarlijks opgevolgd</div></div>
+  </div>
+</div>
+
+<!-- IMAGE STRIP 1 -->
+<div class="img-strip">
+  <img src="https://helder.eu/wp-content/uploads/2025/07/Helder_185_4059-1-800x1200.jpg" alt="Helder financieel planner" loading="lazy">
+  <img src="https://helder.eu/wp-content/uploads/2025/07/Helder_030_6720-800x533.jpg" alt="Helder kantoor Hasselt" loading="lazy">
+  <img src="https://helder.eu/wp-content/uploads/2025/07/Helder_161_3933-1600x1067.jpg" alt="Team Helder overleg" loading="lazy">
+</div>
+
+<!-- SECTION 2: PROBLEM -->
+<section class="section-surface">
+  <div class="wrap">
+    <div class="pain-grid">
+      <div>
+        <span class="pre-headline">Herkenbaar?</span>
+        <h2 class="pain-title">Maar wie bewaakt het geheel?</h2>
+        <ul class="pain-list">
+          <li>U hebt een bankier, een boekhouder en een notaris. Elk doet goed werk, maar elk in zijn eigen vakje.</li>
+          <li>Niemand denkt mee over hoe alles samenvalt. En vooral: over wat ontbreekt.</li>
+          <li>U vermoedt dat er geld blijft liggen. In belastingen, in stilstaand kapitaal in uw vennootschap, in een successie die niet klopt.</li>
+          <li>Uw pensioen en nalatenschap zijn nog altijd niet deftig geregeld. U weet het, maar u komt er niet aan toe.</li>
+          <li>Bij de bank krijgt u advies dat toevallig bij een product past, niet bij uw volledige situatie.</li>
+        </ul>
+        <div class="bridge">Uw vermogen verdient meer dan enkele snelle tips. Het verdient <strong>iemand die het geheel bewaakt</strong> en alles op elkaar afstemt.</div>
+      </div>
+      <img class="pain-grid__img" src="https://helder.eu/wp-content/uploads/2025/07/Helder_107_3671-800x1200.jpg" alt="Financieel planner van Helder" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: SOLUTION -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">De aanpak</span>
+    <h2 class="sec">Eén plan dat alles verbindt</h2>
+    <p class="lead-p">Losse stukken advies vormen samen geen plan. Een bank denkt in producten, een boekhouder in aangiftes, een notaris ziet u alleen bij een akte. Stuk voor stuk goed werk, maar niemand legt het samen.</p>
+    <p class="lead-p">Wij wel. Helder is die ene partij die <strong>het geheel bewaakt</strong>. We brengen uw volledige situatie in kaart, prive en voor uw zaak, en maken er een concreet plan van. Slim opgebouwd, fiscaal doordacht en afgestemd met uw boekhouder, notaris en bankier. Geen bank, geen producten, geen targetsheet. Gewoon een objectief overzicht en een team dat het opvolgt.</p>
+    <p class="result-highlight">Een plan. 15 specialisten. Levenslang opgevolgd.</p>
+    <div class="mini-stats">
+      <div class="mini-stat"><div class="mini-stat__num">15</div><div class="mini-stat__label">Specialisten in huis</div></div>
+      <div class="mini-stat"><div class="mini-stat__num">4</div><div class="mini-stat__label">Domeinen samen</div></div>
+      <div class="mini-stat"><div class="mini-stat__num">360&deg;</div><div class="mini-stat__label">Inzicht</div></div>
+      <div class="mini-stat"><div class="mini-stat__num">Jaarlijks</div><div class="mini-stat__label">Proactief bijgestuurd</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: OFFER DETAIL -->
+<section class="section-surface">
+  <div class="wrap">
+    <span class="eyebrow">Zo pakken wij het aan</span>
+    <h2 class="sec">Scan. Plan. Levenslang.</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="https://helder.eu/wp-content/uploads/2025/07/Helder_255_4453-1600x1067.jpg" alt="Scan van uw financiele situatie" loading="lazy">
+        <div class="step__body">
+          <div class="step__num">01 / SCAN</div>
+          <h3>We brengen alles in kaart</h3>
+          <p>Uw volledige financiele situatie, prive en voor uw zaak. Zo zien we waar uw vermogen vandaag rendeert en wat beter kan.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="https://helder.eu/wp-content/uploads/2025/07/Helder_080_3620-800x533.jpg" alt="Een concreet financieel plan opstellen" loading="lazy">
+        <div class="step__body">
+          <div class="step__num">02 / PLAN</div>
+          <h3>We bouwen een concreet plan</h3>
+          <p>Met duidelijke stappen op korte, middellange en lange termijn. We coordineren elke stap en zorgen dat de acties ook echt gebeuren.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="https://helder.eu/wp-content/uploads/2025/07/Helder_004_6588-800x535.jpg" alt="Levenslange opvolging van uw plan" loading="lazy">
+        <div class="step__body">
+          <div class="step__num">03 / LEVENSLANG</div>
+          <h3>We volgen het levenslang op</h3>
+          <p>Uw leven verandert, uw plan dus ook. We nemen jaarlijks proactief contact op, sturen bij en denken met u mee.</p>
+        </div>
+      </div>
+    </div>
+    <ul class="incl">
+      <li><strong>Vastgoed &amp; beleggingen</strong> die afgestemd zijn op uw doelen, prive of via de vennootschap.</li>
+      <li><strong>Fiscale optimalisatie</strong> zodat u betaalt wat moet, en geen euro te veel.</li>
+      <li><strong>Pensioenopbouw</strong> die fiscaal slim is en klopt binnen uw bredere plan.</li>
+      <li><strong>Successieplanning</strong> zodat uw erfgenamen zo weinig mogelijk kosten betalen.</li>
+    </ul>
+    <div class="center" style="margin-top:1.8rem">
+      <a class="btn" href="#form">Kom kennismaken</a>
+      <p class="risk">Vrijblijvend. We bekijken eerst of we iets voor u kunnen betekenen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE STRIP 2 -->
+<div class="img-strip">
+  <img src="https://helder.eu/wp-content/uploads/2025/12/HELDER-EVENT-19.11-63-e1764853993327.jpg" alt="Het jaarlijkse Helder congres" loading="lazy">
+  <img src="https://helder.eu/wp-content/uploads/2025/07/Helder_233_4333-1-800x534.jpg" alt="Team Helder aan het werk" loading="lazy">
+  <img src="https://helder.eu/wp-content/uploads/2025/07/Helder_188_7565-800x534.jpg" alt="Helder adviesgesprek" loading="lazy">
+</div>
+
+<!-- SECTION 5: WHY HELDER -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Waarom Helder</span>
+    <h2 class="sec">Onafhankelijk. Volledig. Voor de lange termijn.</h2>
+    <div class="cards3">
+      <div class="why-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E7C92" stroke-width="1.7"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></div>
+        <h3>Echt onafhankelijk</h3>
+        <p>Geen bank, geen vast aanbod aan producten, geen targetsheet. U krijgt een objectief overzicht van alle opties.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E7C92" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+        <h3>Het volledige plaatje</h3>
+        <p>15 specialisten voor successie, pensioen, vastgoed, fiscaliteit en juridische structurering. Eén dossier, van A tot Z opgevolgd.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E7C92" stroke-width="1.7"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></div>
+        <h3>Levenslang opgevolgd</h3>
+        <p>Financiele planning stopt niet na het eerste plan. We komen elk jaar proactief bij u terug en sturen bij waar nodig.</p>
+      </div>
+    </div>
+    <div class="creds-bar">
+      <div class="cred"><div class="cred__num">15</div><div class="cred__label">Specialisten</div></div>
+      <div class="cred"><div class="cred__num">4</div><div class="cred__label">Domeinen</div></div>
+      <div class="cred"><div class="cred__num">Hasselt</div><div class="cred__label">Team Helder</div></div>
+      <div class="cred"><div class="cred__num">Jaarlijks</div><div class="cred__label">Helder congres</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: TEAM / FOUNDER -->
+<section class="section-surface">
+  <div class="wrap">
+    <div class="founder-grid">
+      <img src="https://helder.eu/wp-content/uploads/2025/07/Helder_113_7218-1-800x1199.jpg" alt="Bregt Winters, Managing Partner bij Helder" loading="lazy">
+      <div class="founder-copy">
+        <span class="eyebrow">Team Helder</span>
+        <h2 class="sec">Mensen die het geheel bewaken</h2>
+        <p>Helder vertrekt vanuit een simpele overtuiging: succesvolle mensen hebben geen tekort aan adviseurs, ze hebben er net te veel, allemaal los van elkaar. Wij zijn de partij die het samenlegt.</p>
+        <p>Voor elke situatie hebben we professionals in huis: successie, pensioenopbouw, vermogensbescherming, vastgoed en juridische structurering. We vervangen uw bankier, boekhouder of notaris niet, we versterken waar nodig en houden uw dossier volledig en consistent.</p>
+        <p class="sig">Helder omgaan met geld, dat is onze ambitie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: FORM -->
+<section class="section-dark" id="form">
+  <div class="wrap">
+    <div class="form-layout">
+      <div>
+        <span class="eyebrow">Kom kennismaken</span>
+        <h2 class="sec" style="color:#fff">Plan uw vrijblijvende kennismaking</h2>
+        <ul class="form-bullets">
+          <li>Een eerste helder gesprek, bij u of bij ons in Hasselt.</li>
+          <li>We luisteren naar uw situatie en bekijken of we iets voor u kunnen betekenen.</li>
+          <li>U krijgt een eerlijk beeld van wat een Helder plan voor u zou opleveren.</li>
+        </ul>
+        <p class="risk" style="color:rgba(255,255,255,.6)">Geen verkoop. Geen verplichting. Gewoon helderheid.</p>
+      </div>
+      <div class="form-box">
+        <h3>Vertel ons kort over uw situatie</h3>
+        <p class="form-note">Duurt minder dan 60 seconden. We reageren binnen 1 werkdag.</p>
+        <!--
+          FORMSPREE SETUP:
+          1. Ga naar formspree.io en maak een gratis account
+          2. Maak een nieuw formulier en kopieer de form ID
+          3. Vervang REPLACE_WITH_FORM_ID hieronder door die ID
+          Inzendingen worden automatisch naar u gemaild.
+        -->
+        <form action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" required>
+            </div>
+            <div class="form-field">
+              <label for="tel">Telefoon</label>
+              <input type="tel" id="tel" name="telefoon" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="situatie">Wat omschrijft u het best?</label>
+            <select id="situatie" name="situatie" required>
+              <option value="" disabled selected>Maak een keuze</option>
+              <option>Ondernemer met een vennootschap</option>
+              <option>Bedrijfsleider</option>
+              <option>Vrij beroep</option>
+              <option>Particulier met opgebouwd vermogen</option>
+              <option>Anders</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="vermogen">Geschatte omvang van uw vermogen (excl. eigen woning)</label>
+            <select id="vermogen" name="vermogen" required>
+              <option value="" disabled selected>Maak een keuze</option>
+              <option>Minder dan 250.000 euro</option>
+              <option>250.000 tot 500.000 euro</option>
+              <option>500.000 tot 1 miljoen euro</option>
+              <option>1 tot 2,5 miljoen euro</option>
+              <option>Meer dan 2,5 miljoen euro</option>
+              <option>Liever niet zeggen</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="focus">Wat wilt u vooral helder krijgen?</label>
+            <select id="focus" name="focus" required>
+              <option value="" disabled selected>Maak een keuze</option>
+              <option>Vastgoed &amp; beleggingen</option>
+              <option>Fiscale optimalisatie</option>
+              <option>Pensioenopbouw</option>
+              <option>Successieplanning</option>
+              <option>Het volledige overzicht</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="timing">Wanneer wilt u hier werk van maken?</label>
+            <select id="timing" name="timing" required>
+              <option value="" disabled selected>Maak een keuze</option>
+              <option>Zo snel mogelijk</option>
+              <option>Binnen 1 tot 3 maanden</option>
+              <option>Binnen 3 tot 6 maanden</option>
+              <option>Ik ben aan het orienteren</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="bericht">Iets dat we vooraf moeten weten? (optioneel)</label>
+            <textarea id="bericht" name="bericht"></textarea>
+          </div>
+          <button type="submit" class="btn">Kom kennismaken</button>
+          <p class="privacy">Geen spam. Geen verplichting. Uw gegevens blijven vertrouwelijk.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: FAQ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow center" style="display:block;text-align:center">Veelgestelde vragen</span>
+    <h2 class="sec center">Goed om te weten</h2>
+    <div style="max-width:760px;margin:1.8rem auto 0">
+      <div class="faq-item">
+        <button class="faq-btn">Is dit weer iemand die mij producten wil verkopen?</button>
+        <div class="faq-answer">Nee. We zijn geen bank en hebben geen vast aanbod aan financiele producten. We werken onafhankelijk en geven u een objectief overzicht van alle opties. Ons werk is u helderheid en een plan geven dat 100% bij uw doelen past, niet een product slijten.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Ik heb al een bankier en een boekhouder. Waarom dan Helder?</button>
+        <div class="faq-answer">Precies daarom. Zij doen goed werk binnen hun rol, maar niemand bewaakt het geheel. Wij vervangen hen niet, we stemmen met hen af zodat iedereen aan hetzelfde plan werkt. Wij zijn de partij die de losse schakels verbindt en het overzicht bewaakt.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Gaat dit mij veel tijd kosten?</button>
+        <div class="faq-answer">Nee. Het start met een kennismaking en een scan van uw situatie. Daarna doen wij het zware werk: het plan opstellen, coordineren met uw partijen en de acties opvolgen. U beslist, wij voeren uit en houden u op de hoogte.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Is mijn situatie hier wel geschikt voor?</button>
+        <div class="faq-answer">Helder werkt voor ondernemers, bedrijfsleiders, vrije beroepen en families met opgebouwd vermogen. Bent u niet zeker? Plan dan gerust een vrijblijvende kennismaking. We zeggen u eerlijk of we iets voor u kunnen betekenen.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Wat gebeurt er na het eerste gesprek?</button>
+        <div class="faq-answer">Niets dat u niet wilt. De kennismaking is vrijblijvend. Klikt het, dan starten we met een volledige scan en bouwen we samen uw plan. Daarna volgen we het levenslang op, met een jaarlijks moment om bij te sturen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Maak uw financien helder</h2>
+    <p>Een team dat het geheel bewaakt, en u levenslang opvolgt. Het start met een gesprek.</p>
+    <a class="btn btn-light" href="#form">Kom kennismaken</a>
+    <p class="sub-note">15 specialisten. Een plan. Levenslang opgevolgd.</p>
+  </div>
+</section>
+
+<footer>
+  <div style="font-family:var(--font-head);font-weight:600;letter-spacing:.18em;color:#fff;font-size:1rem;margin-bottom:10px">HELDER</div>
+  <div>Helder Plan BV, Hasselt. Maak uw financien Helder.</div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta">
+  <a href="#form" class="btn">Kom kennismaken</a>
+</div>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+  // Hide sticky CTA when form is visible
+  (function(){
+    var mc = document.querySelector('.mobile-cta');
+    if(!mc) return;
+    var form = document.getElementById('form');
+    if(!form) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        mc.style.transition = 'transform 0.3s ease';
+        mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+      });
+    }, {threshold: 0.1});
+    io.observe(form);
+  })();
+</script>
+</body>
+</html>

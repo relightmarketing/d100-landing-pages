@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!--
+  WEALTH MANAGER PITCH PAGE - Helder (prospect 70)
+  Dutch translation of the locked wealth-manager template (section order locked 2026-06-04).
+  Section order: hero -> mistake -> why-meta -> deliverables (6 ads + 3 scripts + landing) -> roi -> proof -> how -> faq -> cta + calendly.
+-->
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Helder x Relight Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14202B;
+  --navy-deep:#0B141C;
+  --gold:#C3D3DD;
+  --gold-light:rgba(195,211,221,.16);
+  --ink-accent:#4E6A7E;
+  --bg:#ffffff;--off:#f7f9fa;--line:#e6e9ec;--txt:#1D1D1B;--sub:#5c6670;--sub2:#94a3b8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--txt);background:var(--bg);line-height:1.6}
+.dm{font-family:'DM Serif Display',serif;font-weight:400}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap-sm{max-width:760px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-accent);margin-bottom:14px}
+h1{font-size:clamp(2.4rem,4.8vw,4rem);line-height:1.12}
+h2{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;line-height:1.15}
+.sub{color:var(--sub);font-size:1rem}
+.btn{display:inline-block;border-radius:999px;padding:15px 32px;font-weight:700;font-size:.95rem;text-decoration:none;transition:.25s}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(195,211,221,.5)}
+.fade{opacity:0;transform:translateY(22px);transition:.65s ease}
+.fade.in{opacity:1;transform:none}
+/* nav */
+#nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+#nav.bg{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+#nav .logo img{height:32px;display:block}
+#nav:not(.bg) .logo.invert img{filter:brightness(0) invert(1)}
+/* hero */
+.hero{background:radial-gradient(1100px 500px at 70% -10%,rgba(195,211,221,.22),transparent),linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;text-align:center;padding:150px 0 0;overflow:visible}
+.kicker{display:inline-flex;align-items:center;gap:9px;background:rgba(195,211,221,.14);border:1px solid rgba(195,211,221,.4);color:var(--gold);border-radius:999px;padding:8px 18px;font-size:.78rem;font-weight:700;letter-spacing:.06em;margin-bottom:26px}
+.kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero .sub{color:rgba(255,255,255,.72);max-width:640px;margin:20px auto 0}
+.video-shell{max-width:860px;margin:48px auto -120px;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.45);background:#000;position:relative;aspect-ratio:16/9}
+.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(150deg,#16263a,#0b141c);color:rgba(255,255,255,.65)}
+.play{width:78px;height:78px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;animation:pulse 1.8s infinite}
+.play svg{margin-left:5px}
+.hero-cta{padding:170px 0 0;text-align:center}
+.muted-line{color:var(--sub2);font-size:.85rem;margin-top:14px}
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{border:1.5px solid var(--line);border-radius:20px;padding:32px;transition:.25s;background:#fff}
+.card:hover{border-color:var(--gold)}
+.card .num{color:var(--ink-accent);font-weight:800;font-size:.85rem;letter-spacing:.1em;margin-bottom:12px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+/* mistake section */
+.channel-list{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;margin:32px 0}
+.channel-list li{list-style:none;display:flex;align-items:flex-start;gap:12px;padding:10px 0;color:var(--sub);font-size:1rem}
+.channel-list li i{width:9px;height:9px;border-radius:50%;background:var(--sub2);margin-top:9px;flex:none}
+.punch{background:var(--gold-light);border-left:3px solid var(--ink-accent);border-radius:0 16px 16px 0;padding:24px 28px;margin:32px 0}
+.punch p{color:var(--txt)}
+.big-q{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--navy);line-height:1.3;margin-top:36px}
+/* steps */
+.step-card{background:var(--off);border:1.5px solid var(--line);border-radius:20px;padding:32px;position:relative}
+.step-card .big-num{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--ink-accent);opacity:.5;line-height:1;margin-bottom:14px}
+.step-card h3{font-size:1.15rem;margin-bottom:8px}
+/* ads */
+.phase-div{display:flex;align-items:center;gap:14px;margin:44px 0 20px}
+.phase-div span{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--sub)}
+.phase-div::after{content:"";flex:1;height:1px;background:var(--line)}
+.ad-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;overflow:hidden}
+.ad-img-wrap{background:linear-gradient(140deg,#f2f4f7,#e8ecf1);cursor:zoom-in;min-height:200px}
+.ad-img-wrap img{width:100%;height:auto;display:block}
+.ad-meta{padding:22px}
+.ad-meta .tag{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.ad-meta .tag i{width:9px;height:9px;border-radius:50%;background:var(--ink-accent)}
+/* accordions */
+.accordion{border:1.5px solid var(--line);border-radius:18px;margin-bottom:16px;overflow:hidden;background:#fff}
+.acc-head{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;cursor:pointer;gap:16px}
+.acc-head .ico{font-size:1.5rem;color:var(--ink-accent);transition:.3s;line-height:1;flex:none}
+.accordion.open .ico{transform:rotate(45deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;padding:0 28px}
+.acc-body .ans{padding-bottom:24px;color:var(--sub)}
+.sblock{background:var(--off);border-radius:14px;padding:20px;margin-bottom:14px}
+.sblock .lbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-accent);margin-bottom:6px}
+.sblock p+p{margin-top:10px}
+/* phone mockup */
+.phone{width:400px;max-width:88vw;margin:48px auto 0;border:10px solid #101828;border-radius:36px;overflow:hidden;box-shadow:0 30px 70px rgba(16,24,40,.25);background:#fff}
+.phone iframe{width:100%;height:680px;border:0;display:block}
+/* calculator */
+.calc{background:var(--navy);border-radius:32px;padding:56px;color:#fff}
+.calc .eyebrow{color:var(--gold)}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px}
+.cin label{display:flex;justify-content:space-between;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.85);margin:22px 0 8px}
+.cin label output{color:var(--gold);font-weight:800}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.cout{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px}
+.crow{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.92rem}
+.crow:last-child{border:none}
+.crow b{color:var(--gold);font-size:1.05rem}
+.crow.hl b{font-size:1.5rem}
+.calc-note{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:18px}
+/* cases */
+.case-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;overflow:hidden}
+.case-card img.shot{width:100%;height:200px;object-fit:cover;display:block}
+.case-body{padding:24px}
+.case-body img.clogo{height:26px;margin-bottom:12px}
+.case-body .res{font-weight:800;color:var(--navy);font-size:1.15rem;margin-bottom:6px}
+/* cta band */
+.band{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);border-radius:32px;padding:64px;display:flex;align-items:center;justify-content:space-between;gap:40px;color:#fff;position:relative;overflow:hidden}
+.band::after{content:"";position:absolute;top:-80px;right:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(195,211,221,.35),transparent 70%)}
+.band .eyebrow{color:var(--gold)}
+.band .sub{color:rgba(255,255,255,.7)}
+/* calendly */
+.cal-shell{max-width:700px;margin:48px auto 0;border:1.5px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(16,24,40,.08)}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(8,14,22,.88);z-index:100;display:none;align-items:center;justify-content:center;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:92vw;max-height:92vh;border-radius:12px}
+footer{padding:36px 0;text-align:center;color:var(--sub2);font-size:.85rem;border-top:1px solid var(--line)}
+@media(max-width:960px){
+  .grid3,.calc-grid{grid-template-columns:1fr 1fr}
+  .band{flex-direction:column;text-align:center}
+}
+@media(max-width:640px){
+  section{padding:64px 0}
+  .grid3,.grid2,.calc-grid{grid-template-columns:1fr}
+  .calc{padding:36px 24px}
+  .band{padding:44px 28px}
+  .band .btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div id="lb" onclick="closeLightbox()"><img id="lb-img" src="" alt="Advertentie voorbeeld"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="logo invert"><img src="https://helder.eu/wp-content/uploads/2025/06/helder-logo.svg" alt="Helder"></div>
+    <a class="btn btn-gold" href="#calendly" style="padding:11px 24px">Plan het gesprek</a>
+  </div>
+</nav>
+
+<!-- SECTION 1: HERO + LOOM -->
+<section class="hero" id="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="kicker"><span class="dot"></span>Exclusief gemaakt voor Helder</div>
+    <h1 class="dm">15 vermogende clienten voor Helder in de komende 60 dagen, met deze Meta-advertenties</h1>
+    <p class="sub">Ik heb de volledige funnel al gebouwd. De advertenties, de videoscripts, de landingspagina. Het staat allemaal op deze pagina, en het is sowieso van u. Ik neem u er even doorheen:</p>
+    <div class="video-shell">
+      <!-- LOOM EMBED: vervang deze placeholder door de Loom iframe uit loom-url.txt -->
+      <div class="video-ph">
+        <div class="play"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#14202B"/></svg></div>
+        <span>Persoonlijke walkthrough voor Bregt (3 min)</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hero-cta">
+  <a class="btn btn-gold" href="#calendly">Plan het gesprek</a>
+  <p class="muted-line">Gratis, vrijblijvend. Wij worden pas betaald als het werkt.</p>
+</div>
+
+<!-- SECTION 2: THE #1 MISTAKE -->
+<section class="fade" id="mistake" style="background:var(--off)">
+  <div class="wrap-sm">
+    <p class="eyebrow">Het patroon</p>
+    <h2>Elk vermogenskantoor groeit op dezelfde manier. Dat is net het probleem.</h2>
+    <p class="sub" style="margin-top:20px">Vraag om het even welk kantoor waar hun clienten vandaan komen, en u hoort steeds dezelfde lijst:</p>
+    <ul class="channel-list">
+      <li><i></i>Doorverwijzingen van tevreden clienten</li>
+      <li><i></i>Introducties via boekhouders, advocaten en andere partners</li>
+      <li><i></i>Het persoonlijke netwerk van de zaakvoerders</li>
+      <li><i></i>De website, SEO, nieuwsbrieven, events, LinkedIn</li>
+      <li><i></i>En als u doorvraagt: nog meer doorverwijzingen</li>
+    </ul>
+    <p class="sub">Allemaal goede kanalen. Behoud ze stuk voor stuk.</p>
+    <div class="punch">
+      <p>Maar kijk naar wat ze gemeen hebben: elk van die kanalen is passief. U kunt ze niet hoger zetten. U kunt niet beslissen "we willen dit kwartaal acht extra ideale gezinnen" en een van die kanalen dat laten leveren. U doet goed werk, u blijft zichtbaar, en dan wacht u af. De juiste mensen dienen zich aan, of niet.</p>
+    </div>
+    <p class="sub">Dat is de fout. Geen slecht kanaal, maar een ontbrekend kanaal: er staat geen enkel kanaal in die lijst dat u zelf in handen hebt.</p>
+    <p class="big-q">Uw vermogen onder beheer groeit misschien. Maar groeit uw clientenbestand voorspelbaar?</p>
+  </div>
+</section>
+
+<!-- SECTION 3: WHY BOTHER WITH META ADS -->
+<section class="fade" id="why-meta">
+  <div class="wrap">
+    <p class="eyebrow">Het ontbrekende kanaal</p>
+    <h2>Het enige kanaal waar u beslist<br>hoeveel ideale clienten u zien.</h2>
+    <div class="wrap-sm" style="padding:0;margin:24px 0 0">
+      <p class="sub">Want het is het omgekeerde van alles op die lijst.</p>
+      <p class="sub" style="margin-top:14px">De vermogende vijftigers en zestigers die u bedient, zitten elke dag op Facebook en Instagram, tussen het nieuws en de foto's van hun kleinkinderen. Met Meta zet u Helder voor precies die gezinnen, in uw regio, zo vaak als u wilt, met een budget dat u zelf bepaalt.</p>
+      <p class="sub" style="margin-top:14px">Daardoor krijgt het werven van clienten voor het eerst een knop waaraan u kunt draaien:</p>
+    </div>
+    <div class="grid3" style="margin-top:40px">
+      <div class="card">
+        <div class="num">VOLUME</div>
+        <h3>U bepaalt het volume</h3>
+        <p class="sub">Meer budget, meer van de juiste mensen zien u. Minder budget, minder. Geen enkel ander kanaal op die lijst kan dat zeggen.</p>
+      </div>
+      <div class="card">
+        <div class="num">KWALITEIT</div>
+        <h3>U bepaalt wie er doorkomt</h3>
+        <p class="sub">De funnel filtert op vermogen voordat iemand een afspraak boekt. Wie niet past, bereikt u nooit.</p>
+      </div>
+      <div class="card">
+        <div class="num">VERSTERKING</div>
+        <h3>U versterkt, u vervangt niet</h3>
+        <p class="sub">De advertenties zorgen dat mensen uw naam kennen. Daardoor wordt elke doorverwijzing net makkelijker om te sluiten, niet moeilijker.</p>
+      </div>
+    </div>
+    <p class="big-q" style="text-align:center">Doorverwijzingen hebben Helder gebouwd. Meta maakt de volgende fase voorspelbaar.</p>
+  </div>
+</section>
+
+<!-- SECTION 4: DELIVERABLES -->
+<section class="fade" id="deliverables" style="background:var(--off)">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Alles hieronder is van u, gratis</p>
+    <h2>Een complete funnel om clienten te werven, gebouwd voor Helder.</h2>
+    <p class="sub" style="max-width:620px;margin:18px auto 0">Geen voorstel. Geen mockup. Het afgewerkte werk, klaar om te lanceren.</p>
+    <div class="grid3" style="margin-top:48px;text-align:left">
+      <div class="card"><div class="num">01</div><h3>6 beeldadvertenties</h3><p class="sub">In uw huisstijl, geschreven voor uw clienten. Twee om aandacht te trekken, twee om vertrouwen te bouwen, twee om te converteren.</p></div>
+      <div class="card"><div class="num">02</div><h3>3 videoscripts</h3><p class="sub">Woord voor woord, in uw stem. Bregt kan ze van deze pagina aflezen en alle drie op een namiddag filmen.</p></div>
+      <div class="card"><div class="num">03</div><h3>Een live landingspagina</h3><p class="sub">Staat al online. Ze informeert eerst, filtert de verkeerde mensen eruit en boekt de juiste rechtstreeks in uw agenda.</p></div>
+    </div>
+  </div>
+
+  <!-- 6 ad concepts, 3 phases x 2. Types from Research Brief section 11. -->
+  <div class="wrap">
+    <div class="phase-div"><span>Fase 1 - Interesse wekken</span></div>
+    <div class="grid2">
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/1.png" alt="Advertentie 1" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Advertentie 01 - Pijn / Probleem</div><p class="sub">De herkenbare situatie: een bankier, een boekhouder, een notaris, maar wie bewaakt het geheel? Deze advertentie raakt precies die pijn en opent het verhaal.</p></div></div>
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/2.png" alt="Advertentie 2" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Advertentie 02 - Inzicht</div><p class="sub">Het 360 graden beeld in een heldere visual. Positioneert Helder als de partij die het volledige plaatje ziet, zonder productpitch.</p></div></div>
+    </div>
+    <div class="phase-div"><span>Fase 2 - Vertrouwen bouwen</span></div>
+    <div class="grid2">
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/3.png" alt="Advertentie 3" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Advertentie 03 - Team</div><p class="sub">Het gezicht van Helder: een echt team van 15 specialisten in Hasselt. Het sterkste vertrouwenssignaal, menselijk en geloofwaardig.</p></div></div>
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/4.png" alt="Advertentie 4" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Advertentie 04 - Mythe ontkracht</div><p class="sub">Ontkracht de grootste twijfel: een financieel planner wil mij iets verkopen. De waarheid: geen bank, geen producten, geen targetsheet.</p></div></div>
+    </div>
+    <div class="phase-div"><span>Fase 3 - Converteren</span></div>
+    <div class="grid2">
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/5.png" alt="Advertentie 5" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Advertentie 05 - Aanpak</div><p class="sub">Scan, Plan, Levenslang in een rustige visual. Maakt de volgende stap concreet en verlaagt de drempel net voor de vraag.</p></div></div>
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/6.png" alt="Advertentie 6" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Advertentie 06 - Aanbod</div><p class="sub">De heldere conversie: kom kennismaken. Een rustig beeld, een duidelijk aanbod en een call to action.</p></div></div>
+    </div>
+  </div>
+
+  <!-- 3 video scripts, verbatim -->
+  <div class="wrap-sm" style="margin-top:72px">
+    <p class="eyebrow" style="text-align:center">Videoscripts</p>
+    <h2 style="text-align:center;font-size:clamp(1.7rem,2.8vw,2.4rem)">Drie scripts, drie invalshoeken, klaar om te filmen.</h2>
+    <div style="margin-top:36px">
+      <div class="accordion" id="s1">
+        <div class="acc-head" onclick="toggle('s1')"><div><strong>Script 1 - Pijn / Situatie</strong><p class="sub" style="font-size:.85rem">De coordinatiekloof: wie bewaakt het geheel?</p></div><span class="ico">+</span></div>
+        <div class="acc-body" id="s1-body">
+          <div class="sblock"><div class="lbl">Centrale invalshoek</div><p class="sub">De coordinatiekloof (hoofdinvalshoek). Een succesvolle ondernemer heeft een bankier, een boekhouder en een notaris, maar niemand die het geheel bewaakt. Net die kloof is het echte probleem.</p></div>
+          <div class="sblock"><div class="lbl">Hook (0-10s)</div><p class="sub">"U hebt een bankier. Een boekhouder. Een notaris. Maar wie bewaakt het geheel?"</p></div>
+          <div class="sblock"><div class="lbl">Body (11-90s)</div><p class="sub">"Elk van hen doet goed werk, binnen zijn eigen vakje. De bankier kijkt naar uw beleggingen. De boekhouder naar uw cijfers. De notaris ziet u alleen op het moment van een akte.</p><p class="sub">Maar niemand denkt mee over hoe alles samenvalt. Of wat ontbreekt. En net daar, in de ruimte tussen die losse schakels, blijft geld liggen. In belastingen die u niet had moeten betalen. In een successie die niet klopt. In kansen die niemand op tafel legt.</p><p class="sub">Bij Helder zijn wij die ene partij die het geheel bewaakt. We brengen uw volledige situatie in kaart, prive en voor uw zaak, en we maken er een plan van. Slim opgebouwd, fiscaal doordacht. We stemmen af met uw boekhouder, uw notaris en uw bankier, zodat iedereen aan hetzelfde plan werkt.</p><p class="sub">Geen bank. Geen producten. Geen targetsheet. Gewoon een objectief overzicht en een team van vijftien specialisten dat uw dossier van A tot Z opvolgt. Levenslang. Zo krijgt u eindelijk 360 graden inzicht in uw vermogen."</p></div>
+          <div class="sblock"><div class="lbl">CTA (90-120s)</div><p class="sub">"Wilt u weten wat een Helder plan voor u zou betekenen? Klik op de link hieronder. U komt op een korte pagina waar ik u in een video laat zien hoe we werken. Vul daarna het korte formulier in, dan plannen we een vrijblijvende kennismaking. Kom kennismaken met Helder."</p></div>
+          <div class="sblock" style="margin-bottom:24px"><div class="lbl">Filmbriefing</div><p class="sub">Omgeving: een rustig, modern Helder-kantoor in Hasselt, warm hout en glas zacht onscherp op de achtergrond. Camera: een vaste camera op ooghoogte. Kader: medium shot, borst en hoofd, spreker licht uit het midden. Licht: zacht zijlicht van een raam, geen harde schaduwen. Energie: kalm en geaard, alsof u tegenover een client zit. Laat de openingsvraag even hangen. Kledij: antraciet of donkerblauw pak met een zacht blauwgrijs of wit accent, vermijd felrood, fel oranje en helgroen.</p></div>
+        </div>
+      </div>
+      <div class="accordion" id="s2">
+        <div class="acc-head" onclick="toggle('s2')"><div><strong>Script 2 - Resultaat / Voorbeeld</strong><p class="sub" style="font-size:.85rem">Van losse stukken naar een plan, levenslang opgevolgd.</p></div><span class="ico">+</span></div>
+        <div class="acc-body" id="s2-body">
+          <div class="sblock"><div class="lbl">Centrale invalshoek</div><p class="sub">Wat de eerste scan oplevert. Een illustratief, representatief voorbeeld van een ondernemer wiens versnipperde financien een helder, gecoordineerd en levenslang plan worden. Geen echte client wordt genoemd en geen cijfers worden beloofd, het is een representatief scenario.</p></div>
+          <div class="sblock"><div class="lbl">Hook (0-10s)</div><p class="sub">"Een ondernemer kwam bij ons met een goede zaak, vastgoed, beleggingen en een pensioen. En toch geen rust."</p></div>
+          <div class="sblock"><div class="lbl">Body (11-90s)</div><p class="sub">"Op papier had hij alles. In zijn hoofd had hij vooral vragen. Zit er te veel geld stil in mijn vennootschap? Is mijn pensioen fiscaal wel slim opgebouwd? En als ik er morgen niet meer ben, klopt mijn successie dan?</p><p class="sub">Stuk voor stuk had iemand daar ooit iets over gezegd. Maar niemand had het samengelegd. Wij begonnen met een scan: zijn volledige situatie, prive en zaak, in kaart. Daarna bouwden we een concreet plan, met duidelijke stappen op korte, middellange en lange termijn. We coordineerden met zijn boekhouder en notaris, en we voerden de acties ook echt uit.</p><p class="sub">Het echte resultaat is geen cijfer dat ik u hier beloof. Het is rust. Het is een plan in plaats van losse stukken. Het is een team van vijftien specialisten dat elk aspect opvolgt, en dat jaarlijks bij hem terugkomt om bij te sturen. Levenslang opgevolgd. Dat is 360 graden inzicht in uw vermogen."</p></div>
+          <div class="sblock"><div class="lbl">CTA (90-120s)</div><p class="sub">"Herkent u uzelf in dat verhaal? Klik dan op de link onder deze video. Op de volgende pagina laat ik u in het kort zien hoe onze aanpak werkt. Vul daarna het formulier in en we plannen een vrijblijvende kennismaking. Kom kennismaken met Helder."</p></div>
+          <div class="sblock" style="margin-bottom:24px"><div class="lbl">Filmbriefing</div><p class="sub">Omgeving: aan een vergadertafel in het kantoor, een gesloten plandocument en een koffie op tafel. Camera: een camera op statief, ooghoogte, statisch, eventueel een tweede hoek voor B-roll van het document. Kader: medium close, met een stukje tafel in beeld voor de gesprekssfeer. Licht: zacht, warm natuurlijk licht, geen kleurzweem. Energie: warm en reflectief, de toon van iemand die een verhaal vertelt, niet verkoopt. Kledij: donker pak of donkere trui over een licht hemd, vermijd fel geel, fel oranje en felblauw.</p></div>
+        </div>
+      </div>
+      <div class="accordion" id="s3">
+        <div class="acc-head" onclick="toggle('s3')"><div><strong>Script 3 - Contrair / Inzicht</strong><p class="sub" style="font-size:.85rem">Meer advies is niet de oplossing. Coordinatie wel.</p></div><span class="ico">+</span></div>
+        <div class="acc-body" id="s3-body">
+          <div class="sblock"><div class="lbl">Centrale invalshoek</div><p class="sub">Een contraire stelling dat meer advies niet de oplossing is, en dat onafhankelijk advies op zich evenmin de oplossing is. De echte fix is coordinatie: een partij die het geheel bewaakt.</p></div>
+          <div class="sblock"><div class="lbl">Hook (0-10s)</div><p class="sub">"Meer financieel advies is niet wat u nodig hebt. U hebt al genoeg adviseurs."</p></div>
+          <div class="sblock"><div class="lbl">Body (11-90s)</div><p class="sub">"Dat klinkt vreemd uit de mond van een financieel planner. Maar het is waar. De meeste succesvolle mensen hebben geen tekort aan advies. Ze hebben er net te veel, en allemaal los van elkaar.</p><p class="sub">De bank geeft advies dat toevallig bij een product past. De boekhouder denkt in aangiftes. Online vindt u duizend snelle tips. Stuk voor stuk goed bedoeld. Samen vormen ze geen plan.</p><p class="sub">Wat ontbreekt is geen extra mening. Het is iemand die het geheel bewaakt. Iemand die onafhankelijk is, geen producten verkoopt, en wel de eindverantwoordelijkheid neemt om alles op elkaar af te stemmen. Dat is wat wij bij Helder doen. We verbinden de losse schakels tot een plan, we coordineren uw bankier, boekhouder en notaris, en we volgen het jaarlijks op. Levenslang.</p><p class="sub">Uw vermogen verdient meer dan enkele snelle tips. Het verdient een plan dat klopt, en iemand die het blijft bewaken."</p></div>
+          <div class="sblock"><div class="lbl">CTA (90-120s)</div><p class="sub">"Bent u benieuwd hoe dat er voor uw situatie uitziet? Klik op de link hieronder. Ik neem u op de volgende pagina kort mee in onze aanpak. Vul daarna het formulier in, dan plannen we een vrijblijvende kennismaking. Kom kennismaken met Helder."</p></div>
+          <div class="sblock" style="margin-bottom:24px"><div class="lbl">Filmbriefing</div><p class="sub">Omgeving: een nette, minimale hoek met een effen donkere of neutrale muur, weinig rekwisieten. Camera: een camera op ooghoogte, statisch of een hele trage push-in. Kader: medium shot, iets strakker dan script 1, om direct en persoonlijk te voelen. Licht: clean, iets meer contrast dan de andere twee. Energie: zelfzeker en direct, een respectvolle uitdaging, nooit arrogant. Kledij: effen donkergrijs of donkerblauw, vermijd fel oranje, felrood en patroon-overhemden.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Landing page mobile preview -->
+  <div class="wrap" style="text-align:center;margin-top:72px">
+    <p class="eyebrow">De landingspagina</p>
+    <h2 style="font-size:clamp(1.7rem,2.8vw,2.4rem)">Waar gekwalificeerde gezinnen geboekte gesprekken worden.</h2>
+    <p class="sub" style="max-width:600px;margin:16px auto 0">Deze pagina staat al online. Ze informeert eerst, kwalificeert dan op vermogen en boekt vervolgens. Scroll er gerust doorheen.</p>
+    <div class="phone"><iframe src="../index.html" title="Landingspagina voorbeeld"></iframe></div>
+  </div>
+</section>
+
+<!-- SECTION 5: ROI CALCULATOR -->
+<section class="fade" id="roi">
+  <div class="wrap">
+    <div class="calc">
+      <p class="eyebrow">De rekensom</p>
+      <h2 style="color:#fff">Wat is een nieuwe client u echt waard?</h2>
+      <p class="sub" style="color:rgba(255,255,255,.65);max-width:620px;margin-top:14px">Sleep de schuifknoppen naar uw eigen cijfers. Een client in vermogensbeheer blijft jaren, en dat maakt deze rekensom moeilijk te weerleggen.</p>
+      <div class="calc-grid">
+        <div class="cin">
+          <label>Maandelijks advertentiebudget <output id="o-spend">&euro;2,500</output></label>
+          <input type="range" id="i-spend" min="1000" max="10000" step="250" value="2500" oninput="calc()">
+          <label>Kost per gekwalificeerde lead <output id="o-cpl">&euro;150</output></label>
+          <input type="range" id="i-cpl" min="50" max="400" step="10" value="150" oninput="calc()">
+          <label>Leads die client worden <output id="o-conv">10%</output></label>
+          <input type="range" id="i-conv" min="2" max="30" step="1" value="10" oninput="calc()">
+          <label>Gemiddelde omzet per client per jaar <output id="o-rev">&euro;10,000</output></label>
+          <input type="range" id="i-rev" min="2000" max="40000" step="500" value="10000" oninput="calc()">
+          <label>Gemiddelde duur van een clientrelatie in jaren <output id="o-yrs">10</output></label>
+          <input type="range" id="i-yrs" min="3" max="30" step="1" value="10" oninput="calc()">
+        </div>
+        <div class="cout">
+          <div class="crow"><span>Gekwalificeerde leads per maand</span><b id="r-leads">17</b></div>
+          <div class="crow"><span>Nieuwe clienten per kwartaal</span><b id="r-clients">5</b></div>
+          <div class="crow"><span>Kost om een client te werven</span><b id="r-cac">&euro;1,500</b></div>
+          <div class="crow"><span>Levenslange omzet per client</span><b id="r-ltv">&euro;100,000</b></div>
+          <div class="crow hl"><span>Levenslange omzet per jaar advertenties</span><b id="r-total">&euro;2,000,000</b></div>
+          <div class="crow hl"><span>Rendement per advertentie-euro</span><b id="r-roi">67x</b></div>
+        </div>
+      </div>
+      <p class="calc-note">Illustratief, geen garantie. Pas alles aan uw realiteit aan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: SOCIAL PROOF -->
+<section class="fade" id="proof" style="background:var(--off)">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Bewijs</p>
+    <h2>Wij bouwen funnels die agenda's vullen.</h2>
+    <p class="sub" style="max-width:600px;margin:16px auto 0">Verschillende sectoren, hetzelfde systeem: een informerende funnel die filtert voordat hij boekt.</p>
+    <div class="grid3" style="margin-top:48px;text-align:left">
+      <div class="case-card">
+        <img class="shot" src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent campagne">
+        <div class="case-body"><img class="clogo" src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent"><p class="res">145 leads in 2 weken</p><p class="sub">Meta-funnel voor een rekruteringskantoor, van geen betaalde aanwezigheid naar een volle pijplijn in 14 dagen.</p></div>
+      </div>
+      <div class="case-card">
+        <img class="shot" src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen campagne">
+        <div class="case-body"><img class="clogo" src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen"><p class="res">66 terugkerende klanten in 27 dagen</p><p class="sub">Lokaal servicebedrijf, terugkerende contracten getekend binnen de eerste maand na lancering.</p></div>
+      </div>
+      <div class="case-card">
+        <img class="shot" src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner campagne">
+        <div class="case-body"><img class="clogo" src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner"><p class="res">50 terugkerende klanten in 2 weken</p><p class="sub">Een vertrouwensgedreven lokale dienst, verkocht via een informerende funnel. Exact de structuur die voor u is gebouwd.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: HOW IT WORKS -->
+<section class="fade" id="how">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Hoe het werkt</p>
+    <h2>Drie stappen. Ongeveer twee uur van uw tijd.</h2>
+    <div class="grid3" style="margin-top:48px;text-align:left">
+      <div class="step-card">
+        <div class="big-num">01</div>
+        <h3>We praten</h3>
+        <p class="sub">Een gesprek van 30 minuten. We overlopen samen de funnel en bepalen wat een gekwalificeerde afspraak is voor Helder.</p>
+      </div>
+      <div class="step-card">
+        <div class="big-num">02</div>
+        <h3>We lanceren</h3>
+        <p class="sub">U keurt elk woord goed, Bregt filmt de drie scripts, wij doen de rest. Opzet, targeting, budget, optimalisatie.</p>
+      </div>
+      <div class="step-card">
+        <div class="big-num">03</div>
+        <h3>U spreekt gekwalificeerde prospecten</h3>
+        <p class="sub">Wie door de filter raakt, boekt rechtstreeks in uw agenda. U doet waar u al het beste in bent: adviseren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: FAQ -->
+<section class="fade" id="faq" style="background:var(--off)">
+  <div class="wrap-sm">
+    <p class="eyebrow" style="text-align:center">Vragen</p>
+    <h2 style="text-align:center">De vier vragen die elk kantoor ons stelt.</h2>
+    <div style="margin-top:36px">
+      <div class="accordion" id="f1">
+        <div class="acc-head" onclick="toggle('f1')"><strong>Hoeveel tijd kost dit aan onze kant?</strong><span class="ico">+</span></div>
+        <div class="acc-body" id="f1-body"><p class="ans">Ongeveer twee uur, alles samen. Een gesprek, een namiddag filmen, en een ja of nee op het materiaal. De rest doen wij. Kost het u meer tijd dan dat, dan hebben wij het verkeerd aangepakt.</p></div>
+      </div>
+      <div class="accordion" id="f2">
+        <div class="acc-head" onclick="toggle('f2')"><strong>Is dit wel conform de regelgeving?</strong><span class="ico">+</span></div>
+        <div class="acc-body" id="f2-body"><p class="ans">Ja, en u houdt daar de controle over. De advertenties zijn informerend, doen geen beloftes over rendement, en niets gaat live voordat u alles hebt goedgekeurd. Alles wordt bijgehouden. Compliance is hier een checklist, geen muur.</p></div>
+      </div>
+      <div class="accordion" id="f3">
+        <div class="acc-head" onclick="toggle('f3')"><strong>Ga ik geen tijd verliezen aan ongekwalificeerde leads?</strong><span class="ico">+</span></div>
+        <div class="acc-body" id="f3-body"><p class="ans">Nee, en net daar lopen veel adviseurs tegen aan. De landingspagina vraagt naar vermogen en timing voordat iemand kan boeken. Wie niet past, bereikt uw agenda nooit. U spreekt enkel met wie door de filter is geraakt.</p></div>
+      </div>
+      <div class="accordion" id="f4">
+        <div class="acc-head" onclick="toggle('f4')"><strong>Waarom zouden we u vertrouwen? Marketingbureaus beloven altijd te veel.</strong><span class="ico">+</span></div>
+        <div class="acc-body" id="f4-body"><p class="ans">Terecht. Net daarom bouwden we de funnel al voordat we u iets vroegen. Beoordeel het werk op deze pagina, niet onze beloftes. En wij worden pas betaald als het werkt, dus werkt het niet, dan is dat ons probleem, niet het uwe.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: CTA -->
+<section class="fade" id="cta" style="padding-bottom:48px">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <p class="eyebrow">Geen retainer. Geen risico.</p>
+        <h2 style="color:#fff;font-size:clamp(1.7rem,2.8vw,2.6rem)">Wij worden pas betaald als dit werkt.</h2>
+        <p class="sub" style="margin-top:14px;max-width:520px">De funnel is gebouwd. Een gesprek om het live te zetten: we spreken af wat een gekwalificeerde afspraak u waard is, en vanaf dan betaalt u voor resultaat, niet voor beloftes.</p>
+      </div>
+      <a class="btn btn-gold" href="#calendly">Plan het gesprek van 30 minuten</a>
+    </div>
+  </div>
+</section>
+
+<section id="calendly" style="padding-top:48px">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Laten we starten</p>
+    <h2>Laten we dit live zetten voor uw concurrenten deze pagina vinden.</h2>
+    <p class="sub" style="margin-top:14px">30 minuten, vrijblijvend. In het slechtste geval houdt u alles hierboven. Kies hieronder een moment.</p>
+    <div class="cal-shell"><iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Plan een gesprek met Arthur" width="100%" height="700" frameborder="0"></iframe></div>
+  </div>
+</section>
+
+<footer>Relight Marketing - gebouwd voor Helder</footer>
+
+<script>
+// nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('bg',scrollY>40),{passive:true});
+// fade in
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.1});
+document.querySelectorAll('.fade:not(.in)').forEach(el=>io.observe(el));
+// accordion
+function toggle(id){
+  const acc=document.getElementById(id),body=document.getElementById(id+'-body');
+  const open=acc.classList.contains('open');
+  document.querySelectorAll('.accordion.open').forEach(a=>{a.classList.remove('open');a.querySelector('.acc-body').style.maxHeight=null;});
+  if(!open){acc.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';}
+}
+// lightbox
+function openLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+// ROI calculator
+const CUR='€';
+function fmt(n){return CUR+Math.round(n).toLocaleString('en-US');}
+function calc(){
+  const spend=+document.getElementById('i-spend').value;
+  const cpl=+document.getElementById('i-cpl').value;
+  const conv=+document.getElementById('i-conv').value/100;
+  const rev=+document.getElementById('i-rev').value;
+  const yrs=+document.getElementById('i-yrs').value;
+  document.getElementById('o-spend').textContent=fmt(spend);
+  document.getElementById('o-cpl').textContent=fmt(cpl);
+  document.getElementById('o-conv').textContent=Math.round(conv*100)+'%';
+  document.getElementById('o-rev').textContent=fmt(rev);
+  document.getElementById('o-yrs').textContent=yrs;
+  const leads=spend/cpl;
+  const clientsMo=leads*conv;
+  const cac=clientsMo>0?spend/clientsMo:0;
+  const ltv=rev*yrs;
+  const totalLtv=clientsMo*12*ltv;
+  const roi=spend>0?totalLtv/(spend*12):0;
+  document.getElementById('r-leads').textContent=Math.round(leads);
+  document.getElementById('r-clients').textContent=(clientsMo*3).toFixed(1);
+  document.getElementById('r-cac').textContent=fmt(cac);
+  document.getElementById('r-ltv').textContent=fmt(ltv);
+  document.getElementById('r-total').textContent=fmt(totalLtv);
+  document.getElementById('r-roi').textContent=Math.round(roi)+'x';
+}
+calc();
+// page-open notification
+var _host=window.location.hostname;
+if(window.location.protocol!=='file:'&&_host!=='localhost'&&_host!=='127.0.0.1'){
+  var OWNER_TOKEN='test';
+  var params=new URLSearchParams(window.location.search);
+  if(params.get('preview')!==OWNER_TOKEN){
+    var payload=function(geo){return JSON.stringify({
+      _subject:'70 Helder just opened your pitch page',
+      prospect:'Helder',number:'70',
+      time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+      city:geo&&geo.city||'',region:geo&&geo.region||'',country:geo&&geo.country_name||'',
+      device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+      referrer:document.referrer||'direct',url:window.location.href});};
+    var EP='https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec';
+    fetch('https://ipapi.co/json/').then(function(r){return r.json()})
+      .then(function(geo){fetch(EP,{method:'POST',headers:{'Content-Type':'text/plain'},body:payload(geo)});})
+      .catch(function(){fetch(EP,{method:'POST',headers:{'Content-Type':'text/plain'},body:payload(null)});});
+  }
+}
+</script>
+</body>
+</html>
