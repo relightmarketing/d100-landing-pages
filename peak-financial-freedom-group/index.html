@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<!--
+  WEALTH MANAGER PITCH PAGE TEMPLATE (reusable master)
+  ====================================================
+  Section order (persuasion sequence, locked 2026-06-04):
+    1. Hero: promise headline + Loom
+    2. The #1 mistake (passive channels, no dial)
+    3. Why bother with Meta ads (the missing channel)
+    3b. The objections (3 Meta objections rebutted: clients not on Facebook, can't target wealthy, tire-kicker leads)
+    4. Deliverables: 6 image ads + 3 scripts + landing page
+    5. ROI calculator
+    6. Social proof
+    7. How it works (3 steps)
+    8. FAQ (4 questions)
+    9. CTA: performance-based band + Calendly
+
+  Per-prospect slots to replace before publishing:
+    Peak Financial Freedom Group        - prospect firm name
+    Dan and Jim     - founder first name
+    71  - tracker number
+    <img src='https://peakfinancialfreedomgroup.com/wp-content/themes/yootheme/cache/Peak_cobrand-1084e45f.png' alt='Peak Financial Freedom Group' style='height:32px'>        - logo img/svg (32px height)
+    5    - Loom length in minutes
+    $         - $ or EUR sign
+    Colors in :root      - from Research Brief section 2
+    Ad descriptions      - 6 cards, types from Research Brief section 11
+    Scripts              - 3 verbatim scripts from video-ad-scripts.md
+    Testimonial slots    - replace when wealth-specific proof exists
+  The hero promise ("15 high net worth clients ... 60 days") is the
+  wealth-manager default. Adjust number/timeframe per prospect size.
+  Standard rules: 6 ad images at ./images/1.png - 6.png,
+  landing page iframe at ../index.html, Calendly hardcoded.
+  Preview with ?preview=test only.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Peak Financial Freedom Group x Relight Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14151B;        /* prospect primary */
+  --navy-deep:#0C0D11;   /* darker variant */
+  --gold:#EDC300;        /* prospect accent */
+  --gold-light:rgba(237,195,0,.12);
+  --bg:#ffffff;--off:#f9fafb;--line:#eaecf0;--txt:#1a2332;--sub:#64748b;--sub2:#94a3b8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--txt);background:var(--bg);line-height:1.6}
+.dm{font-family:'DM Serif Display',serif;font-weight:400}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap-sm{max-width:760px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin-bottom:14px}
+h1{font-size:clamp(2.4rem,4.8vw,4rem);line-height:1.12}
+h2{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;line-height:1.15}
+.sub{color:var(--sub);font-size:1rem}
+.btn{display:inline-block;border-radius:999px;padding:15px 32px;font-weight:700;font-size:.95rem;text-decoration:none;transition:.25s}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(237,195,0,.35)}
+.fade{opacity:0;transform:translateY(22px);transition:.65s ease}
+.fade.in{opacity:1;transform:none}
+/* nav */
+#nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+#nav.bg{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+#nav .logo img{height:32px;display:block}
+#nav:not(.bg) .logo.invert img{filter:brightness(0) invert(1)}
+/* hero */
+.hero{background:radial-gradient(1100px 500px at 70% -10%,rgba(237,195,0,.18),transparent),linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;text-align:center;padding:150px 0 0;overflow:visible}
+.kicker{display:inline-flex;align-items:center;gap:9px;background:rgba(237,195,0,.14);border:1px solid rgba(237,195,0,.4);color:var(--gold);border-radius:999px;padding:8px 18px;font-size:.78rem;font-weight:700;letter-spacing:.06em;margin-bottom:26px}
+.kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero .sub{color:rgba(255,255,255,.72);max-width:640px;margin:20px auto 0}
+.video-shell{max-width:860px;margin:48px auto -120px;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.45);background:#000;position:relative;aspect-ratio:16/9}
+/* LOOM: replace inner div with Loom embed iframe when recorded */
+.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(150deg,#1b1d27,#0c0d11);color:rgba(255,255,255,.65)}
+.play{width:78px;height:78px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;animation:pulse 1.8s infinite}
+.play svg{margin-left:5px}
+.hero-cta{padding:170px 0 0;text-align:center}
+.muted-line{color:var(--sub2);font-size:.85rem;margin-top:14px}
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{border:1.5px solid var(--line);border-radius:20px;padding:32px;transition:.25s;background:#fff}
+.card:hover{border-color:var(--gold)}
+.card .num{color:var(--gold);font-weight:800;font-size:.85rem;letter-spacing:.1em;margin-bottom:12px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+/* mistake section */
+.channel-list{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;margin:32px 0}
+.channel-list li{list-style:none;display:flex;align-items:flex-start;gap:12px;padding:10px 0;color:var(--sub);font-size:1rem}
+.channel-list li i{width:9px;height:9px;border-radius:50%;background:var(--sub2);margin-top:9px;flex:none}
+.punch{background:var(--gold-light);border-left:3px solid var(--gold);border-radius:0 16px 16px 0;padding:24px 28px;margin:32px 0}
+.punch p{color:var(--txt)}
+.big-q{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--navy);line-height:1.3;margin-top:36px}
+/* objections */
+.obj-section{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;position:relative;overflow:hidden}
+.obj-section::after{content:"";position:absolute;top:-120px;right:-120px;width:340px;height:340px;background:radial-gradient(circle,rgba(237,195,0,.22),transparent 70%)}
+.obj-section .wrap{position:relative;z-index:1}
+.obj-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:30px}
+.obj-q{font-family:'DM Serif Display',serif;font-size:1.2rem;color:rgba(255,255,255,.55);line-height:1.32;margin-bottom:16px}
+.obj-real{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:8px}
+.obj-a{color:rgba(255,255,255,.82);font-size:.98rem}
+/* steps */
+.step-card{background:var(--off);border:1.5px solid var(--line);border-radius:20px;padding:32px;position:relative}
+.step-card .big-num{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--gold);opacity:.45;line-height:1;margin-bottom:14px}
+.step-card h3{font-size:1.15rem;margin-bottom:8px}
+/* ads */
+.phase-div{display:flex;align-items:center;gap:14px;margin:44px 0 20px}
+.phase-div span{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--sub)}
+.phase-div::after{content:"";flex:1;height:1px;background:var(--line)}
+.ad-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;overflow:hidden}
+.ad-img-wrap{background:linear-gradient(140deg,#f2f4f7,#e8ecf1);cursor:zoom-in;min-height:200px}
+.ad-img-wrap img{width:100%;height:auto;display:block}
+.ad-meta{padding:22px}
+.ad-meta .tag{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.ad-meta .tag i{width:9px;height:9px;border-radius:50%;background:var(--gold)}
+/* accordions */
+.accordion{border:1.5px solid var(--line);border-radius:18px;margin-bottom:16px;overflow:hidden;background:#fff}
+.acc-head{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;cursor:pointer;gap:16px}
+.acc-head .ico{font-size:1.5rem;color:var(--gold);transition:.3s;line-height:1;flex:none}
+.accordion.open .ico{transform:rotate(45deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;padding:0 28px}
+.acc-body .ans{padding-bottom:24px;color:var(--sub)}
+.sblock{background:var(--off);border-radius:14px;padding:20px;margin-bottom:14px}
+.sblock .lbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:6px}
+.sblock p+p{margin-top:10px}
+/* phone mockup */
+.phone{width:400px;max-width:88vw;margin:48px auto 0;border:10px solid #101828;border-radius:36px;overflow:hidden;box-shadow:0 30px 70px rgba(16,24,40,.25);background:#fff}
+.phone iframe{width:100%;height:680px;border:0;display:block}
+/* calculator */
+.calc{background:var(--navy);border-radius:32px;padding:56px;color:#fff}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px}
+.cin label{display:flex;justify-content:space-between;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.85);margin:22px 0 8px}
+.cin label output{color:var(--gold);font-weight:800}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.cout{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px}
+.crow{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.92rem}
+.crow:last-child{border:none}
+.crow b{color:var(--gold);font-size:1.05rem}
+.crow.hl b{font-size:1.5rem}
+.calc-note{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:18px}
+/* cases */
+.case-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;overflow:hidden}
+.case-card img.shot{width:100%;height:200px;object-fit:cover;display:block}
+.case-body{padding:24px}
+.case-body img.clogo{height:26px;margin-bottom:12px}
+.case-body .res{font-weight:800;color:var(--navy);font-size:1.15rem;margin-bottom:6px}
+.tcard{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:30px;font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--navy)}
+.tcard cite{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:.82rem;color:var(--sub);margin-top:14px}
+/* cta band */
+.band{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);border-radius:32px;padding:64px;display:flex;align-items:center;justify-content:space-between;gap:40px;color:#fff;position:relative;overflow:hidden}
+.band::after{content:"";position:absolute;top:-80px;right:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(237,195,0,.35),transparent 70%)}
+.band .sub{color:rgba(255,255,255,.7)}
+/* calendly */
+.cal-shell{max-width:700px;margin:48px auto 0;border:1.5px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(16,24,40,.08)}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(8,14,22,.88);z-index:100;display:none;align-items:center;justify-content:center;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:92vw;max-height:92vh;border-radius:12px}
+footer{padding:36px 0;text-align:center;color:var(--sub2);font-size:.85rem;border-top:1px solid var(--line)}
+@media(max-width:960px){
+  .grid3,.calc-grid{grid-template-columns:1fr 1fr}
+  .band{flex-direction:column;text-align:center}
+}
+@media(max-width:640px){
+  section{padding:64px 0}
+  .grid3,.grid2,.calc-grid{grid-template-columns:1fr}
+  .calc{padding:36px 24px}
+  .band{padding:44px 28px}
+  .band .btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div id="lb" onclick="closeLightbox()"><img id="lb-img" src="" alt="Ad preview"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="logo invert"><img src='https://peakfinancialfreedomgroup.com/wp-content/themes/yootheme/cache/Peak_cobrand-1084e45f.png' alt='Peak Financial Freedom Group' style='height:32px'></div>
+    <a class="btn btn-gold" href="#calendly" style="padding:11px 24px">Let's get this live</a>
+  </div>
+</nav>
+
+<!-- SECTION 1: HERO + LOOM -->
+<section class="hero" id="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="kicker"><span class="dot"></span>Built exclusively for Peak Financial Freedom Group</div>
+    <h1 class="dm">15 qualified retirement appointments for Peak Financial Freedom Group in the next 60 days, with these Meta ads</h1>
+    <p class="sub">I already built the entire funnel. The ads, the video scripts, the landing page. It's all on this page, and it's yours either way. Watch me walk you through it:</p>
+    <div class="video-shell">
+      <!-- LOOM EMBED: replace this placeholder div with the Loom iframe from loom-url.txt -->
+      <div class="video-ph">
+        <div class="play"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#14151B"/></svg></div>
+        <span>Personal walkthrough for Dan and Jim (5 min)</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hero-cta">
+  <a class="btn btn-gold" href="#calendly">Let's get this live</a>
+  <p class="muted-line">Free, no strings attached. We only get paid when it performs.</p>
+</div>
+
+<!-- SECTION 2: THE #1 MISTAKE -->
+<section class="fade" id="mistake" style="background:var(--off)">
+  <div class="wrap-sm">
+    <p class="eyebrow">The pattern</p>
+    <h2>Every wealth management firm grows the same way. That's the problem.</h2>
+    <p class="sub" style="margin-top:20px">Ask any firm where their clients come from and you'll hear the same list:</p>
+    <ul class="channel-list">
+      <li><i></i>Referrals from happy clients</li>
+      <li><i></i>Introductions from accountants, lawyers and other partners</li>
+      <li><i></i>The founder's personal network</li>
+      <li><i></i>The website, SEO, newsletters, webinars, LinkedIn</li>
+      <li><i></i>And when pressed: more referrals</li>
+    </ul>
+    <p class="sub">All good channels. Keep every one of them.</p>
+    <div class="punch">
+      <p>But look at what they have in common: every single one is passive. You can't turn them up. You can't decide "we want eight more ideal households this quarter" and make any of those channels deliver it. You do great work, you stay visible, and then you wait. The right people show up, or they don't.</p>
+    </div>
+    <p class="sub">That's the mistake. Not a bad channel, a missing one: there is no channel in that list you control.</p>
+    <p class="big-q">Your AUM may be growing. But is your client base growing predictably?</p>
+  </div>
+</section>
+
+<!-- SECTION 3: WHY BOTHER WITH META ADS -->
+<section class="fade" id="why-meta">
+  <div class="wrap">
+    <p class="eyebrow">The missing channel</p>
+    <h2>The only channel where you decide<br>how many ideal clients see you.</h2>
+    <div class="wrap-sm" style="padding:0;margin:24px 0 0">
+      <p class="sub">Because it's the inverse of everything on that list.</p>
+      <p class="sub" style="margin-top:14px">The wealthy 50 to 65 year olds you serve are on Facebook and Instagram every day, between the news and photos of their grandchildren. Meta lets you put Peak Financial Freedom Group in front of exactly those households, in your region, as often as you choose, with a budget you set.</p>
+      <p class="sub" style="margin-top:14px">Which means for the first time, client acquisition gets a dial:</p>
+    </div>
+    <div class="grid3" style="margin-top:40px">
+      <div class="card">
+        <div class="num">VOLUME</div>
+        <h3>You control the volume</h3>
+        <p class="sub">More budget, more of the right people see you. Less, fewer. No other channel on that list can say that.</p>
+      </div>
+      <div class="card">
+        <div class="num">QUALITY</div>
+        <h3>You control who gets through</h3>
+        <p class="sub">The funnel filters on investable assets before anyone books. Wrong fits never reach you.</p>
+      </div>
+      <div class="card">
+        <div class="num">COMPOUND</div>
+        <h3>You compound, not replace</h3>
+        <p class="sub">The ads make people know your name. That makes every referral easier to close, not harder.</p>
+      </div>
+    </div>
+    <p class="big-q" style="text-align:center">Referrals built Peak Financial Freedom Group. Meta makes the next stage predictable.</p>
+  </div>
+</section>
+
+<!-- SECTION 3b: OBJECTIONS ABOUT META -->
+<!-- Fixed copy (no per-prospect slots). For NL/BE prospects, translate to Dutch/Flemish.
+     Do NOT add a named-pundit objection (e.g. "even Kitces says social doesn't work")
+     unless the prospect's market actually recognizes that figure. -->
+<section class="fade obj-section" id="objections">
+  <div class="wrap">
+    <p class="eyebrow">The objections</p>
+    <h2 style="color:#fff">We know what you're thinking.</h2>
+    <p class="sub" style="color:rgba(255,255,255,.72);max-width:660px;margin-top:14px">Three objections come up with almost every wealth management firm about Meta. Each one is fair, and each one is why most financial advertising fails. This funnel is built to solve them, not to talk around them.</p>
+    <div class="grid3" style="margin-top:44px">
+      <div class="obj-card">
+        <p class="obj-q">"Our clients aren't on Facebook."</p>
+        <p class="obj-real">The reality</p>
+        <p class="obj-a">The numbers say otherwise. The 55 to 70 year olds you serve are among the most active people on Facebook and Instagram. Your ideal client scrolls in the evening, on the weekend, and between appointments. And Meta is more than Facebook: it is also Instagram, where those same retirees follow their family, their travels, and their grandchildren. It stopped being the platform of teenagers a long time ago.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-q">"You can't target wealthy people anymore."</p>
+        <p class="obj-real">The reality</p>
+        <p class="obj-a">True, and you don't need to. You no longer target wealth with a toggle inside Meta. You target with the funnel. The ad speaks to exactly the person who recognizes themselves in it, and the landing page asks about investable assets before anyone can book. The funnel selects on its own. On top of that, regional targeting and lookalike audiences built on your best clients still work perfectly.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-q">"Facebook leads are tire-kickers."</p>
+        <p class="obj-real">The reality</p>
+        <p class="obj-a">That is true of bad funnels: a free download in exchange for an email, with no filter at all. Not this one. The qualification step, the questions about investable assets and timeline before anyone can book, lets tire-kickers screen themselves out. People who aren't serious don't answer those questions. You only ever speak with the ones who passed the filter. Quality here isn't luck, it is the design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: DELIVERABLES -->
+<section class="fade" id="deliverables" style="background:var(--off)">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Everything below is yours, for free</p>
+    <h2>A complete client acquisition funnel, built for Peak Financial Freedom Group.</h2>
+    <p class="sub" style="max-width:620px;margin:18px auto 0">Not a proposal. Not a mockup. The finished work, ready to launch.</p>
+    <div class="grid3" style="margin-top:48px;text-align:left">
+      <div class="card"><div class="num">01</div><h3>6 image ads</h3><p class="sub">Designed in your brand, written for your clients. Two to earn attention, two to build trust, two to convert.</p></div>
+      <div class="card"><div class="num">02</div><h3>3 video scripts</h3><p class="sub">Word for word, in your voice. Dan and Jim can read them off this page and film all three in one afternoon.</p></div>
+      <div class="card"><div class="num">03</div><h3>A live landing page</h3><p class="sub">Already online. It educates first, filters out the wrong people, and books the right ones straight into your calendar.</p></div>
+    </div>
+  </div>
+
+  <!-- 6 ad concepts, 3 phases x 2. Types come from Research Brief section 11. -->
+  <div class="wrap">
+    <div class="phase-div"><span>Phase 1 - Generate interest</span></div>
+    <div class="grid2">
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/1.png" alt="Ad 1" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Ad 01 - Pain / Problem</div><p class="sub">A quiet, pre-dawn desk with brokerage statements and a cold coffee, and one question across the bottom: “Will I outlive my savings?” It calls out the exact retiree who has the money but not the certainty, and stops them mid-scroll.</p></div></div>
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/2.png" alt="Ad 2" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Ad 02 - Education / Tip</div><p class="sub">The contrarian risk lesson in a single chart: a 40% loss needs a 67% gain just to get back to even. It positions Dan and Jim as the advisors who define risk as how much you can lose, not how much you might miss.</p></div></div>
+    </div>
+    <div class="phase-div"><span>Phase 2 - Build trust</span></div>
+    <div class="grid2">
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/3.png" alt="Ad 3" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Ad 03 - Owner / Team</div><p class="sub">Dan and Jim, in your brand colors, direct to camera. In retirement planning people trust a face before a firm. Five Star Wealth Managers, 50+ years, the two people who actually build the plan.</p></div></div>
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/4.png" alt="Ad 4" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Ad 04 - Social Proof</div><p class="sub">The credential proof, clean and premium: five gold stars and “Five Star Wealth Manager, 7 years running, 2019 to 2026.” Authority a cold prospect absorbs in one second.</p></div></div>
+    </div>
+    <div class="phase-div"><span>Phase 3 - Convert</span></div>
+    <div class="grid2">
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/5.png" alt="Ad 5" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Ad 05 - Free Offer</div><p class="sub">The free 2nd Opinion framed as the offer: a written plan, no cost, from Five Star Wealth Managers, with the button “Get My Free 2nd Opinion.” The low-risk first step for a cautious retiree.</p></div></div>
+      <div class="ad-card"><div class="ad-img-wrap"><img src="./images/6.png" alt="Ad 6" onclick="openLightbox(this.src)"></div><div class="ad-meta"><div class="tag"><i></i>Ad 06 - Lead / Hero</div><p class="sub">The deliverable itself: a charcoal-and-gold binder embossed “Retirement Income Plan,” with the line “income that lasts as long as you live.” The entire promise in one image.</p></div></div>
+    </div>
+  </div>
+
+  <!-- 3 video scripts, verbatim -->
+  <div class="wrap-sm" style="margin-top:72px">
+    <p class="eyebrow" style="text-align:center">Video scripts</p>
+    <h2 style="text-align:center;font-size:clamp(1.7rem,2.8vw,2.4rem)">Three scripts, three angles, ready to film.</h2>
+    <div style="margin-top:36px">
+      <div class="accordion" id="s1">
+        <div class="acc-head" onclick="toggle('s1')"><div><strong>Script 1 - The 2am Question</strong><p class="sub" style="font-size:.85rem">Pain / Circumstance, for the retiree who has money but no certainty</p></div><span class="ico">+</span></div>
+        <div class="acc-body" id="s1-body">
+          <div class="sblock"><div class="lbl">Central angle</div><p class="sub">You have the money, but no written plan proving it lasts, so the worry never switches off.</p></div>
+          <div class="sblock"><div class="lbl">Hook (0-10s)</div><p class="sub">Will I outlive my savings? If you are a few years from retirement and that question has woken you up at 2am, here is something worth knowing: the problem usually isn't your number. It's that nobody has ever shown you, in writing, that it lasts.</p></div>
+          <div class="sblock"><div class="lbl">Body (11-90s)</div><p class="sub">Here is what we see almost every week. Someone sits down with a healthy account, a decent advisor, and a thick stack of statements. Then we ask one question: can I see the written plan that shows your income for every single year of your retirement? And the room goes quiet. Because there isn't one. They have investments. They don't have a plan. And that is not the same thing. You spent forty years learning how to save. Nobody ever taught you how to turn that pile into a paycheck that doesn't stop, survives the next market drop, and lasts as long as you live. That is the entire job of a retirement income plan, and most people retire without one. When you finally see it laid out on paper, the monthly income, the taxes, the what-if-the-market-falls, the worry doesn't shrink. It goes away. Because you stop guessing. You have dependable, predictable income that lasts as long as you live, in writing.</p></div>
+          <div class="sblock"><div class="lbl">CTA (90-120s)</div><p class="sub">So if you are tired of doing the math in your head, click the link below, watch the short video on the next page, then fill out the form to get your free 2nd Opinion. We build you the written plan, you take it home, no cost and no commitment.</p></div>
+          <div class="sblock" style="margin-bottom:24px"><div class="lbl">Filming brief</div><p class="sub">Environment: a quiet home study or office with a warm lamp visible. Camera: phone on a mini-tripod at eye level, direct to camera. Framing: medium shot, chest and above. Lighting: soft natural window light or a ring light, warm tone. Energy: calm and reassuring, leaning in slightly, talking one person off a worry. Wardrobe: charcoal or navy with a subtle gold tie or pocket-square accent, avoid bright royal blue, red, and green.</p></div>
+        </div>
+      </div>
+      <div class="accordion" id="s2">
+        <div class="acc-head" onclick="toggle('s2')"><div><strong>Script 2 - The 3% You Cannot See</strong><p class="sub" style="font-size:.85rem">Result / Case Study, the hidden fees and risk a real review surfaces</p></div><span class="ico">+</span></div>
+        <div class="acc-body" id="s2-body">
+          <div class="sblock"><div class="lbl">Central angle</div><p class="sub">Retirees cannot see the fees or the real risk they carry, and a real review puts exact numbers on both.</p></div>
+          <div class="sblock"><div class="lbl">Hook (0-10s)</div><p class="sub">Most retirees I sit down with believe they pay about 1% a year in investment fees. When we actually run the numbers, it is closer to 3%. And across a retirement, that gap can cost you up to $250,000.</p></div>
+          <div class="sblock"><div class="lbl">Body (11-90s)</div><p class="sub">Here is why that matters: you can't fix what you can't see. The same is true of risk. We had a couple come in last year with a classic 60/40 portfolio that they had been told was 'balanced.' We stress-tested it against 2008. That balanced portfolio would have lost close to 40%. And to climb back from a 40% loss, you don't need 40%, you need 67%, at the exact age you can least afford to wait for it. That is what the free 2nd Opinion is for. We find the fees you cannot see, we show you the real risk hiding inside the word 'balanced,' and we put every bit of it in writing. I'm one half of the team here, and together we have been named a Five Star Wealth Manager seven years in a row, from 2019 through 2026, with more than fifty years of combined experience doing exactly this. But you don't have to take our word for any of it. You take the written analysis home and judge it for yourself.</p></div>
+          <div class="sblock"><div class="lbl">CTA (90-120s)</div><p class="sub">If no one has ever shown you what you are really paying and what you are really risking, click the link below, watch the short video on the next page, then fill out the form to get your free 2nd Opinion.</p></div>
+          <div class="sblock" style="margin-bottom:24px"><div class="lbl">Filming brief</div><p class="sub">Environment: seated at a desk with a laptop or a single printed statement in frame. Camera: phone on a mini-tripod at eye level, direct to camera. Framing: medium shot, chest and above. Lighting: natural window light or a ring light, clean and even. Energy: confident and matter-of-fact, a little intensity on the numbers, never alarmist. Wardrobe: charcoal or navy suit with a subtle gold tie accent, avoid bright royal blue, red, and green.</p></div>
+        </div>
+      </div>
+      <div class="accordion" id="s3">
+        <div class="acc-head" onclick="toggle('s3')"><div><strong>Script 3 - A Portfolio Is Not a Plan</strong><p class="sub" style="font-size:.85rem">Contrarian / Insight, the difference between an advisor and a plan</p></div><span class="ico">+</span></div>
+        <div class="acc-body" id="s3-body">
+          <div class="sblock"><div class="lbl">Central angle</div><p class="sub">Most people think they have a plan; they have a portfolio. A real plan is a written document you can hold.</p></div>
+          <div class="sblock"><div class="lbl">Hook (0-10s)</div><p class="sub">Here is an uncomfortable question. You have a financial advisor. But do you actually have a financial plan? Because those are not the same thing, and in retirement, that difference is the whole ballgame.</p></div>
+          <div class="sblock"><div class="lbl">Body (11-90s)</div><p class="sub">A portfolio is a pie chart and a login. A plan is a document. It says, on paper, how much income you get every month, where it comes from, what happens to it if the market drops 30%, what you will owe in taxes, and what your spouse is left with if something happens to you. If your advisor cannot hand you that, you don't have a plan, you have a hope. Our whole firm runs on one rule: if it's not in writing, don't believe it. So we built a 16-step process with one job, to produce a single thing: a comprehensive written retirement income plan, customized to you and projected over 30 years. By our count, more than 99% of firms never build one. We hand you yours in a binder, you take it home, and for the first time you can actually see, in black and white, that you are going to be okay. That is the difference between worrying about your money and being finished worrying about it.</p></div>
+          <div class="sblock"><div class="lbl">CTA (90-120s)</div><p class="sub">So if you have never once been handed your plan in writing, click the link below, watch the short video on the next page, then fill out the form to get your free 2nd Opinion. We build it, you keep it, even if we never work together.</p></div>
+          <div class="sblock" style="margin-bottom:24px"><div class="lbl">Filming brief</div><p class="sub">Environment: standing or seated in the office with a closed plan binder within reach as a prop. Camera: phone on a mini-tripod at eye level, direct to camera. Framing: medium shot, chest and above. Lighting: natural window light or a ring light. Energy: direct and teacherly, calm conviction, stating an obvious truth. Wardrobe: charcoal or navy suit with a subtle gold tie accent, avoid bright royal blue, red, and green.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Landing page mobile preview -->
+  <div class="wrap" style="text-align:center;margin-top:72px">
+    <p class="eyebrow">The landing page</p>
+    <h2 style="font-size:clamp(1.7rem,2.8vw,2.4rem)">Where qualified households become booked calls.</h2>
+    <p class="sub" style="max-width:600px;margin:16px auto 0">This page is already live. It educates first, then qualifies on investable assets, then books. Scroll it yourself.</p>
+    <div class="phone"><iframe src="./landing-page/" title="Landing page preview"></iframe></div>
+  </div>
+</section>
+
+<!-- SECTION 5: ROI CALCULATOR -->
+<section class="fade" id="roi">
+  <div class="wrap">
+    <div class="calc">
+      <p class="eyebrow">The math</p>
+      <h2 style="color:#fff">What is one new client actually worth to you?</h2>
+      <p class="sub" style="color:rgba(255,255,255,.65);max-width:620px;margin-top:14px">Drag the sliders to your own numbers. A wealth management client stays for years, which makes this math hard to argue with.</p>
+      <div class="calc-grid">
+        <div class="cin">
+          <label>Monthly ad budget <output id="o-spend">$2,500</output></label>
+          <input type="range" id="i-spend" min="1000" max="10000" step="250" value="2500" oninput="calc()">
+          <label>Cost per qualified lead <output id="o-cpl">$150</output></label>
+          <input type="range" id="i-cpl" min="50" max="400" step="10" value="150" oninput="calc()">
+          <label>Leads that become clients <output id="o-conv">10%</output></label>
+          <input type="range" id="i-conv" min="2" max="30" step="1" value="10" oninput="calc()">
+          <label>Average revenue per client per year <output id="o-rev">$10,000</output></label>
+          <input type="range" id="i-rev" min="2000" max="40000" step="500" value="10000" oninput="calc()">
+          <label>Average client relationship in years <output id="o-yrs">10</output></label>
+          <input type="range" id="i-yrs" min="3" max="30" step="1" value="10" oninput="calc()">
+        </div>
+        <div class="cout">
+          <div class="crow"><span>Qualified leads per month</span><b id="r-leads">17</b></div>
+          <div class="crow"><span>New clients per quarter</span><b id="r-clients">5</b></div>
+          <div class="crow"><span>Cost to acquire one client</span><b id="r-cac">$1,500</b></div>
+          <div class="crow"><span>Lifetime revenue per client</span><b id="r-ltv">$100,000</b></div>
+          <div class="crow hl"><span>Lifetime revenue per year of ads</span><b id="r-total">$2,000,000</b></div>
+          <div class="crow hl"><span>Return per ad dollar</span><b id="r-roi">67x</b></div>
+        </div>
+      </div>
+      <p class="calc-note">Illustrative, not a guarantee. Adjust everything to your reality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: SOCIAL PROOF -->
+<section class="fade" id="proof" style="background:var(--off)">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Proof</p>
+    <h2>We build funnels that fill calendars.</h2>
+    <p class="sub" style="max-width:600px;margin:16px auto 0">Different industries, same system: an educational funnel that filters before it books.</p>
+    <div class="grid3" style="margin-top:48px;text-align:left">
+      <div class="case-card">
+        <img class="shot" src="https://preview.relightmarketing.com/assets/case-techtalent.png" alt="TechTalent campaign">
+        <div class="case-body"><img class="clogo" src="https://preview.relightmarketing.com/assets/logo-techtalent.png" alt="TechTalent"><p class="res">145 leads in 2 weeks</p><p class="sub">Meta funnel for a recruitment firm, from zero paid presence to a full pipeline in 14 days.</p></div>
+      </div>
+      <div class="case-card">
+        <img class="shot" src="https://preview.relightmarketing.com/assets/case-vossen.png" alt="Vossen campaign">
+        <div class="case-body"><img class="clogo" src="https://preview.relightmarketing.com/assets/logo-vossen.png" alt="Vossen"><p class="res">66 recurring clients in 27 days</p><p class="sub">Local service business, recurring contracts signed within the first month of launch.</p></div>
+      </div>
+      <div class="case-card">
+        <img class="shot" src="https://preview.relightmarketing.com/assets/case-containercleaner.png" alt="Container Cleaner campaign">
+        <div class="case-body"><img class="clogo" src="https://preview.relightmarketing.com/assets/logo-containercleaner.webp" alt="Container Cleaner"><p class="res">50 recurring clients in 2 weeks</p><p class="sub">A trust-driven local service, sold through an educational funnel, exactly the structure built for you.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: HOW IT WORKS -->
+<section class="fade" id="how">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">How it works</p>
+    <h2>Three steps. About two hours of your time.</h2>
+    <div class="grid3" style="margin-top:48px;text-align:left">
+      <div class="step-card">
+        <div class="big-num">01</div>
+        <h3>We talk</h3>
+        <p class="sub">A 30 minute call. We walk through the funnel together and define what a qualified meeting looks like for Peak Financial Freedom Group.</p>
+      </div>
+      <div class="step-card">
+        <div class="big-num">02</div>
+        <h3>We launch</h3>
+        <p class="sub">You approve every word, Dan or Jim films the three scripts, we handle everything else. Setup, targeting, budget, optimization.</p>
+      </div>
+      <div class="step-card">
+        <div class="big-num">03</div>
+        <h3>You meet qualified prospects</h3>
+        <p class="sub">People who passed the filter book straight into your calendar. You do what you already do best: advise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: FAQ -->
+<section class="fade" id="faq" style="background:var(--off)">
+  <div class="wrap-sm">
+    <p class="eyebrow" style="text-align:center">Questions</p>
+    <h2 style="text-align:center">The four things every firm asks us.</h2>
+    <div style="margin-top:36px">
+      <div class="accordion" id="f1">
+        <div class="acc-head" onclick="toggle('f1')"><strong>How much time will this take on our end?</strong><span class="ico">+</span></div>
+        <div class="acc-body" id="f1-body"><p class="ans">About two hours, total. One call, one afternoon of filming, and a yes or no on the materials. We do everything else. If it takes more of your time than that, we've done it wrong.</p></div>
+      </div>
+      <div class="accordion" id="f2">
+        <div class="acc-head" onclick="toggle('f2')"><strong>Is this even compliant with regulations?</strong><span class="ico">+</span></div>
+        <div class="acc-body" id="f2-body"><p class="ans">Yes, and you stay in control of that. The ads are educational, make no performance promises, and nothing goes live before you and your compliance officer have approved every word. Everything is archived. Compliance is a checklist here, not a wall.</p></div>
+      </div>
+      <div class="accordion" id="f3">
+        <div class="acc-head" onclick="toggle('f3')"><strong>Won't I be wasting time talking to unqualified leads?</strong><span class="ico">+</span></div>
+        <div class="acc-body" id="f3-body"><p class="ans">No, and this is the part most advisors get burned on. The landing page asks about investable assets and timeline before anyone can book. People who don't fit never reach your calendar. You speak only with those who passed the filter.</p></div>
+      </div>
+      <div class="accordion" id="f4">
+        <div class="acc-head" onclick="toggle('f4')"><strong>Why should we trust you? Marketing agencies overpromise all the time.</strong><span class="ico">+</span></div>
+        <div class="acc-body" id="f4-body"><p class="ans">Fair. That's exactly why we built the funnel before asking you for anything. Judge the work on this page, not our promises. And we only get paid when it performs, so if it doesn't work, that's our problem, not yours.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: CTA -->
+<section class="fade" id="cta" style="padding-bottom:48px">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <p class="eyebrow">No retainer. No risk.</p>
+        <h2 style="color:#fff;font-size:clamp(1.7rem,2.8vw,2.6rem)">We only get paid when this performs.</h2>
+        <p class="sub" style="margin-top:14px;max-width:520px">The funnel is built. One call to set it live: we agree on what a qualified meeting is worth to you, and from then on you pay for results, not promises.</p>
+      </div>
+      <a class="btn btn-gold" href="#calendly">Book the 30 minute call</a>
+    </div>
+  </div>
+</section>
+
+<section id="calendly" style="padding-top:48px">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Let's do this</p>
+    <h2>Let's get this live before your competitors find this page.</h2>
+    <p class="sub" style="margin-top:14px">30 minutes, no obligation. Worst case, you keep everything above. Pick a time below.</p>
+    <div class="cal-shell"><iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Book a call with Arthur" width="100%" height="700" frameborder="0"></iframe></div>
+  </div>
+</section>
+
+<footer>Relight Marketing - built for Peak Financial Freedom Group</footer>
+
+<script>
+// nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('bg',scrollY>40),{passive:true});
+// fade in
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.1});
+document.querySelectorAll('.fade:not(.in)').forEach(el=>io.observe(el));
+// accordion
+function toggle(id){
+  const acc=document.getElementById(id),body=document.getElementById(id+'-body');
+  const open=acc.classList.contains('open');
+  document.querySelectorAll('.accordion.open').forEach(a=>{a.classList.remove('open');a.querySelector('.acc-body').style.maxHeight=null;});
+  if(!open){acc.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';}
+}
+// lightbox
+function openLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+// ROI calculator
+const CUR='$';
+function fmt(n){return CUR+Math.round(n).toLocaleString('en-US');}
+function calc(){
+  const spend=+document.getElementById('i-spend').value;
+  const cpl=+document.getElementById('i-cpl').value;
+  const conv=+document.getElementById('i-conv').value/100;
+  const rev=+document.getElementById('i-rev').value;
+  const yrs=+document.getElementById('i-yrs').value;
+  document.getElementById('o-spend').textContent=fmt(spend);
+  document.getElementById('o-cpl').textContent=fmt(cpl);
+  document.getElementById('o-conv').textContent=Math.round(conv*100)+'%';
+  document.getElementById('o-rev').textContent=fmt(rev);
+  document.getElementById('o-yrs').textContent=yrs;
+  const leads=spend/cpl;
+  const clientsMo=leads*conv;
+  const cac=clientsMo>0?spend/clientsMo:0;
+  const ltv=rev*yrs;
+  const totalLtv=clientsMo*12*ltv;
+  const roi=spend>0?totalLtv/(spend*12):0;
+  document.getElementById('r-leads').textContent=Math.round(leads);
+  document.getElementById('r-clients').textContent=(clientsMo*3).toFixed(1);
+  document.getElementById('r-cac').textContent=fmt(cac);
+  document.getElementById('r-ltv').textContent=fmt(ltv);
+  document.getElementById('r-total').textContent=fmt(totalLtv);
+  document.getElementById('r-roi').textContent=Math.round(roi)+'x';
+}
+calc();
+// page-open notification
+var _host=window.location.hostname;
+if(window.location.protocol!=='file:'&&_host!=='localhost'&&_host!=='127.0.0.1'){
+  var OWNER_TOKEN='test';
+  var params=new URLSearchParams(window.location.search);
+  if(params.get('preview')!==OWNER_TOKEN){
+    var payload=function(geo){return JSON.stringify({
+      _subject:'71 Peak Financial Freedom Group just opened your pitch page',
+      prospect:'Peak Financial Freedom Group',number:'71',
+      time:new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+      city:geo&&geo.city||'',region:geo&&geo.region||'',country:geo&&geo.country_name||'',
+      device:navigator.userAgent,screen:screen.width+'x'+screen.height,
+      referrer:document.referrer||'direct',url:window.location.href});};
+    var EP='https://script.google.com/macros/s/AKfycbx-E1MNi2SblAY1f2s2gDxnT_PnJj2_MGSjudn-qloowNDZxoVM5N_VuKGcsvD1ibr1/exec';
+    fetch('https://ipapi.co/json/').then(function(r){return r.json()})
+      .then(function(geo){fetch(EP,{method:'POST',headers:{'Content-Type':'text/plain'},body:payload(geo)});})
+      .catch(function(){fetch(EP,{method:'POST',headers:{'Content-Type':'text/plain'},body:payload(null)});});
+  }
+}
+</script>
+</body>
+</html>
