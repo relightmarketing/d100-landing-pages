@@ -67,6 +67,14 @@ h2{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spacing:-.03em;lin
 .punch{background:var(--gold-light);border-left:3px solid var(--gold);border-radius:0 16px 16px 0;padding:24px 28px;margin:32px 0}
 .punch p{color:var(--txt)}
 .big-q{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--navy);line-height:1.3;margin-top:36px}
+/* objections */
+.obj-section{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;position:relative;overflow:hidden}
+.obj-section::after{content:"";position:absolute;top:-120px;right:-120px;width:340px;height:340px;background:radial-gradient(circle,rgba(201,151,58,.22),transparent 70%)}
+.obj-section .wrap{position:relative;z-index:1}
+.obj-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:30px}
+.obj-q{font-family:'DM Serif Display',serif;font-size:1.2rem;color:rgba(255,255,255,.55);line-height:1.32;margin-bottom:16px}
+.obj-real{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:8px}
+.obj-a{color:rgba(255,255,255,.82);font-size:.98rem}
 /* steps */
 .step-card{background:var(--off);border:1.5px solid var(--line);border-radius:20px;padding:32px;position:relative}
 .step-card .big-num{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--gold);opacity:.45;line-height:1;margin-bottom:14px}
@@ -213,6 +221,32 @@ footer{padding:36px 0;text-align:center;color:var(--sub2);font-size:.85rem;borde
       </div>
     </div>
     <p class="big-q" style="text-align:center">Doorverwijzingen hebben B-Sure gebouwd. Meta maakt de volgende fase voorspelbaar.</p>
+  </div>
+</section>
+
+<!-- SECTION 3b: OBJECTIONS ABOUT META -->
+<section class="fade obj-section" id="objections">
+  <div class="wrap">
+    <p class="eyebrow">De bezwaren</p>
+    <h2 style="color:#fff">We weten wat u nu denkt.</h2>
+    <p class="sub" style="color:rgba(255,255,255,.72);max-width:660px;margin-top:14px">Drie bezwaren horen we bij zowat elke vermogensbeheerder over Meta. Stuk voor stuk terecht, en stuk voor stuk de reden waarom de meeste financiele campagnes mislukken. Deze funnel is net zo gebouwd dat ze die bezwaren oplost, in plaats van eraan voorbij te gaan.</p>
+    <div class="grid3" style="margin-top:44px">
+      <div class="obj-card">
+        <p class="obj-q">"Onze klanten zitten niet op Facebook."</p>
+        <p class="obj-real">De realiteit</p>
+        <p class="obj-a">De cijfers zeggen iets anders. In Vlaanderen is net de groep van 45 tot 65 jaar een van de actiefste op Facebook en Instagram. Uw ideale klant scrolt tussen twee vergaderingen door, 's avonds, in het weekend. En Meta is meer dan Facebook alleen: het is ook Instagram, waar diezelfde ondernemers hun netwerk, hun reizen en hun gezin volgen. Het is al lang niet meer het platform van tieners.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-q">"Je kunt vermogende mensen toch niet meer targeten?"</p>
+        <p class="obj-real">De realiteit</p>
+        <p class="obj-a">Klopt, en dat hoeft ook niet. U target geen vermogen meer via een schuifknop bij Meta. U target via de funnel. De boodschap spreekt net de ondernemer aan die zich erin herkent, en de landingspagina vraagt naar de vermogenssituatie voordat iemand kan boeken. De funnel selecteert zelf. Daarnaast werken regio-targeting en vergelijkbare doelgroepen, gebouwd op uw beste klanten, nog perfect.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-q">"Facebook-leads zijn tijdverspillers."</p>
+        <p class="obj-real">De realiteit</p>
+        <p class="obj-a">Dat geldt voor slechte funnels: een gratis weggever in ruil voor een e-mailadres, zonder enige filter. Niet voor deze. De kwalificatiestap, de vragen over vermogenssituatie en timing voordat iemand kan boeken, laat tijdverspillers zichzelf wegfilteren. Wie niet serieus is, vult die vragen niet in. U spreekt enkel met wie door de filter raakt. Kwaliteit is hier geen toeval, maar het ontwerp.</p>
+      </div>
+    </div>
   </div>
 </section>
 
