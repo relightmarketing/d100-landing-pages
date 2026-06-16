@@ -231,9 +231,10 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
 /* Section 5b: Competitor video reference */
 #vidref{background:var(--bg)}
 .vid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.vid-embed{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--line)}
-.vid-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.vid-cap{margin-top:12px}
+.vid-card{display:flex;flex-direction:column;align-items:center}
+.vid-embed{position:relative;width:100%;max-width:300px;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#000;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.18)}
+.vid-embed video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
+.vid-cap{margin-top:14px;text-align:center}
 .vid-cap strong{display:block;font-size:.9rem;color:var(--txt);font-weight:700}
 .vid-cap span{font-size:.8rem;color:var(--sub)}
 
@@ -559,23 +560,22 @@ h2.section-title{font-size:clamp(2rem,3.5vw,3.25rem);font-weight:800;letter-spac
     <div class="text-center">
       <span class="eyebrow">Style reference</span>
       <h2 class="section-title">Some example video ads.</h2>
-      <p class="section-sub">Your three scripts are ready to film. For reference, here is the kind of video ad your competitors already run, so you can picture the style and tone before Joshua shoots his.</p>
+      <p class="section-sub">Your three scripts are ready to film. Here are a few example video ads in this vertical style, so you can picture the look and tone before Joshua shoots his.</p>
     </div>
     <div class="vid-grid">
       <div class="vid-card">
-        <div class="vid-embed"><iframe src="https://www.youtube.com/embed/LExIMHCkS4U" title="Transworld Business Advisors video example" loading="lazy" allowfullscreen></iframe></div>
-        <div class="vid-cap"><strong>Transworld Business Advisors</strong><span>Brand explainer, selling a business</span></div>
+        <div class="vid-embed"><video src="./video%20ad%20examples/video-8Fkqz4sPr8UuYqHjAD6J.mp4#t=0.5" controls preload="metadata" playsinline></video></div>
+        <div class="vid-cap"><strong>Example 1</strong><span>Vertical video ad, 9:16</span></div>
       </div>
       <div class="vid-card">
-        <div class="vid-embed"><iframe src="https://www.youtube.com/embed/DPUeUvQkgy8" title="Florida business broker video example" loading="lazy" allowfullscreen></iframe></div>
-        <div class="vid-cap"><strong>Transworld, Florida broker</strong><span>Educational talking-head ad</span></div>
+        <div class="vid-embed"><video src="./video%20ad%20examples/video-pzmTqxgFr6MrCOct63lH.mp4#t=0.5" controls preload="metadata" playsinline></video></div>
+        <div class="vid-cap"><strong>Example 2</strong><span>Vertical video ad, 9:16</span></div>
       </div>
       <div class="vid-card">
-        <div class="vid-embed"><iframe src="https://www.youtube.com/embed/BOriCooSAGY" title="Short-form business broker video example" loading="lazy" allowfullscreen></iframe></div>
-        <div class="vid-cap"><strong>Transworld</strong><span>Short-form, vertical style</span></div>
+        <div class="vid-embed"><video src="./video%20ad%20examples/video-jLNFB7kkTvpszQcPwvH5.mp4#t=0.5" controls preload="metadata" playsinline></video></div>
+        <div class="vid-cap"><strong>Example 3</strong><span>Vertical video ad, 9:16</span></div>
       </div>
     </div>
-    <p class="section-sub" style="margin-top:30px;font-size:.85rem">Competitor videos, shown only as a style reference. None of them run the protect-your-proceeds angle your three scripts are built on.</p>
   </div>
 </section>
 
