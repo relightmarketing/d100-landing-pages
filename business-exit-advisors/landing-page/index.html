@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sell your business confidentially, for a favorable price, and keep more of what you built. Business Exit Advisors is a Boca Raton brokerage that protects your proceeds, not just your sale price.">
+<title>Business Exit Advisors | Sell Confidentially, Keep More of What You Built</title>
+<!--
+  ANCHOR-TO-PAGE MAPPING: Business Exit Advisors
+  Anchor 1 (Primary Angle):  Protect your proceeds -> Section 3 h2 + differentiation + VSL recording brief comment
+  Anchor 2 (Hero Phrase):    "keep more of what you built" -> Section 1 h1
+  Anchor 3 (Pain Phrase):    "I left so much money on the table" -> Section 2 h2.pain-title
+  Anchor 4 (Proof Point):    5.0 Google + Million Dollar Circle 2018 and 2019 -> Section 3 p.result-highlight + Section 9 p.sub-note
+  Anchor 5 (Brand Identity): gold #a98536, navy #1e1e1e, white #ffffff -> :root vars
+  Anchor 6 (CTA Chain):      "Book My Confidential Consultation" -> all a.btn href="#form"
+  Anchor 7 (Banned Angles):  no price-maximization lead, no free-valuation hook, no EBITDA multiples, no CEPA, no volume boasts
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#faf7ef;
+  --accent:#a98536;
+  --accent-dark:#8a6b2b;
+  --navy:#1e1e1e;
+  --navy-deep:#000000;
+  --text:#1e1e1e;
+  --text-muted:#666666;
+  --line:#ece6d8;
+  --gold-soft:rgba(169,133,54,0.10);
+  --font-head:'Playfair Display SC', Georgia, 'Times New Roman', serif;
+  --font-body:'Open Sans', system-ui, -apple-system, sans-serif;
+  --nav-h:56px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--text-muted);background:var(--bg);line-height:1.7;font-size:1.0625rem;padding-bottom:76px}
+h1,h2,h3{font-family:var(--font-head);color:var(--text);line-height:1.25;font-weight:700}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+.pre-headline,.pre-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);font-weight:700;margin-bottom:0.85rem;display:block}
+
+/* Buttons */
+.btn{display:inline-block;background:var(--accent);color:var(--navy-deep);font-family:var(--font-body);font-weight:700;font-size:1rem;letter-spacing:0.04em;text-transform:uppercase;padding:16px 30px;border:none;border-radius:4px;cursor:pointer;text-align:center;transition:background 0.2s,transform 0.15s;width:100%}
+.btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.risk{display:block;font-size:0.78rem;color:var(--text-muted);margin-top:0.7rem;text-align:center}
+
+/* Nav */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);border-bottom:1px solid rgba(169,133,54,0.25)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);max-width:960px;margin:0 auto;padding:0 12px;gap:8px}
+.nav-logo{height:36px;max-width:150px;flex-shrink:1;min-width:0;width:auto}
+.nav-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.nav-phone-icon{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.08);display:grid;place-items:center}
+.nav-phone-icon svg{width:18px;height:18px;fill:var(--accent)}
+.nav-phone-text{display:none}
+.nav-cta-mobile{background:var(--accent);color:var(--navy-deep);font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.03em;padding:9px 12px;border-radius:6px;white-space:nowrap;width:auto}
+.nav-cta-desktop{display:none}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,#000000 0%,#1e1e1e 60%,#2a2317 100%);color:#fff;text-align:center;padding:calc(var(--nav-h) + 44px) 16px 56px}
+.hero .pre-headline{color:var(--accent)}
+.hero h1{color:#fff;font-size:1.95rem;margin-bottom:1rem;letter-spacing:0.01em}
+.hero h1 .gold{color:var(--accent)}
+.hero-sub{color:rgba(255,255,255,0.78);max-width:620px;margin:0 auto 1.6rem;font-size:1rem}
+.vsl{max-width:720px;margin:0 auto 1.7rem}
+.vsl-frame{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;background:radial-gradient(circle at 50% 40%,#332a16 0%,#0a0a0a 75%);border:1px solid rgba(169,133,54,0.4);box-shadow:0 24px 60px rgba(0,0,0,0.5)}
+.vsl-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.play{width:64px;height:64px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(169,133,54,0.18)}
+.play svg{width:26px;height:26px;fill:var(--navy-deep);margin-left:4px}
+.vsl-label{font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.6)}
+
+/* Proof bar */
+.proof-bar{background:var(--bg);border-bottom:1px solid var(--line);padding:18px 0}
+.proof-items{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:center}
+.proof-num{font-family:var(--font-head);font-size:1.25rem;font-weight:700;color:var(--accent);line-height:1.2}
+.proof-label{font-size:0.64rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
+
+/* Sections */
+section{padding:48px 0}
+.section-surface{background:var(--surface)}
+.section-dark{background:var(--navy);color:#fff}
+h2.sec{font-size:1.6rem;margin-bottom:1rem}
+.lead{font-size:1.05rem;margin-bottom:1rem}
+
+/* Pain */
+.pain-title{font-family:var(--font-body);font-size:1.5rem;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:1.6rem}
+.pain-list{list-style:none;display:grid;gap:0.8rem;margin-bottom:1.8rem}
+.pain-list li{background:#fff;border-radius:8px;padding:1rem 1.1rem 1rem 3rem;position:relative;color:var(--text-muted);font-size:0.97rem;line-height:1.6;box-shadow:0 1px 5px rgba(0,0,0,0.05);border:1px solid var(--line)}
+.pain-list li::before{content:'';position:absolute;left:1.1rem;top:1.25rem;width:10px;height:10px;background:var(--accent);border-radius:50%}
+.bridge{background:var(--navy);color:#fff;border-radius:8px;padding:1.4rem 1.5rem;font-size:1rem;line-height:1.65}
+.bridge strong{color:var(--accent)}
+
+/* Solution / mini stats */
+.mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:var(--navy);border-radius:8px;overflow:hidden;margin:1.5rem 0}
+.mini-stat{padding:1.1rem 0.75rem;text-align:center;border-right:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1)}
+.mini-stat:nth-child(2n){border-right:none}
+.mini-stat__num{font-family:var(--font-head);font-size:1.15rem;color:var(--accent);line-height:1.1;margin-bottom:0.25rem}
+.mini-stat__label{font-size:0.6rem;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.08em}
+.result-highlight{font-size:0.95rem;color:var(--text);background:var(--gold-soft);border-left:3px solid var(--accent);padding:0.9rem 1.1rem;border-radius:4px;margin-top:0.5rem}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:1fr;gap:1rem;margin:1.5rem 0}
+.step{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.4rem;text-align:left}
+.step__icon{width:48px;height:48px;border-radius:10px;background:var(--gold-soft);display:grid;place-items:center;margin-bottom:0.9rem}
+.step__icon svg{width:24px;height:24px;fill:none;stroke:var(--accent);stroke-width:2}
+.step__num{font-family:var(--font-head);color:var(--accent);font-size:0.85rem;letter-spacing:0.1em}
+.step h3{font-size:1.12rem;margin:0.2rem 0 0.5rem}
+.step p{font-size:0.93rem}
+.incl{list-style:none;display:grid;gap:0.6rem;margin:1.4rem 0}
+.incl li{position:relative;padding-left:1.9rem;font-size:0.96rem;color:var(--text-muted)}
+.incl li::before{content:'';position:absolute;left:0;top:0.35rem;width:16px;height:16px;border-radius:50%;background:var(--accent);-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z' fill='black'/></svg>") center/12px no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z' fill='black'/></svg>") center/12px no-repeat}
+.timeline{border:1px solid var(--accent);border-radius:8px;padding:1rem 1.2rem;color:var(--text);font-size:0.95rem;background:var(--gold-soft)}
+
+/* Team strip */
+.team-strip{display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;padding:8px 0 4px}
+.team-strip::-webkit-scrollbar{display:none}
+.team-card{flex:0 0 auto;width:150px;text-align:center}
+.team-card img{width:150px;height:150px;border-radius:12px;object-fit:cover;border:1px solid var(--line);margin-bottom:0.5rem}
+.team-card .nm{font-family:var(--font-head);font-size:0.92rem;color:var(--text)}
+.team-card .rl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em}
+
+/* Social proof */
+.creds-bar{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;text-align:center;margin-bottom:1.8rem}
+.cred-num{font-family:var(--font-head);font-size:1.4rem;color:var(--accent)}
+.cred-label{font-size:0.66rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted)}
+.cases{display:grid;grid-template-columns:1fr;gap:1rem}
+.case{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.3rem}
+.stars{display:flex;gap:3px;margin-bottom:0.7rem}
+.stars svg{width:16px;height:16px;fill:#f5b50a}
+.case p{font-style:italic;color:var(--text);font-size:0.96rem;margin-bottom:0.7rem}
+.case .who{font-weight:700;color:var(--text);font-style:normal;font-size:0.85rem;margin:0}
+
+/* Founder */
+.founder-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:center}
+.founder-img img{width:100%;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.founder-bullets{list-style:none;display:grid;gap:0.55rem;margin-top:1rem}
+.founder-bullets li{position:relative;padding-left:1.6rem;font-size:0.95rem}
+.founder-bullets li::before{content:'';position:absolute;left:0;top:0.55rem;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+/* Form */
+.form-grid{display:grid;grid-template-columns:1fr;gap:1.6rem;align-items:start}
+.form-aside h3{font-size:1.15rem;margin-bottom:0.7rem}
+.form-aside ul{list-style:none;display:grid;gap:0.6rem;margin:1rem 0}
+.form-aside li{position:relative;padding-left:1.7rem;font-size:0.95rem;color:var(--text-muted)}
+.form-aside li::before{content:'';position:absolute;left:0;top:0.35rem;width:15px;height:15px;border-radius:50%;background:var(--accent);-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z' fill='black'/></svg>") center/11px no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z' fill='black'/></svg>") center/11px no-repeat}
+.book-img{margin-top:1.2rem}
+.book-img img{width:170px;border-radius:6px;box-shadow:0 12px 30px rgba(0,0,0,0.2)}
+.form-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.5rem;box-shadow:0 6px 24px rgba(0,0,0,0.06)}
+.form-box h3{font-size:1.2rem;margin-bottom:0.3rem}
+.form-sub{font-size:0.78rem;color:var(--text-muted);margin-bottom:1.2rem}
+.form-box label{display:block;font-size:0.82rem;font-weight:600;color:var(--text);margin:0.9rem 0 0.35rem}
+.form-box input,.form-box select,.form-box textarea{width:100%;font-size:16px;font-family:var(--font-body);padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text);-webkit-appearance:none;appearance:none}
+.form-box textarea{min-height:84px;resize:vertical}
+.form-row-2{display:grid;grid-template-columns:1fr;gap:0}
+.form-box .btn{margin-top:1.3rem}
+.privacy{font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:0.8rem}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-btn{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:18px 0;text-align:left;font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--text)}
+.faq-btn::after{content:'+';color:var(--accent);font-size:1.4rem;flex-shrink:0}
+.faq-item.open .faq-btn::after{content:'\2212'}
+.faq-answer{display:none;padding-bottom:16px;color:var(--text-muted);line-height:1.75;font-size:0.96rem}
+.faq-item.open .faq-answer{display:block}
+
+/* Final CTA */
+.final{background:linear-gradient(160deg,#000 0%,#1e1e1e 70%,#2a2317 100%);color:#fff;text-align:center}
+.final h2{color:#fff;font-size:1.7rem;margin-bottom:0.9rem}
+.final p{color:rgba(255,255,255,0.8);max-width:560px;margin:0 auto 1.5rem}
+.final .btn{max-width:420px;margin:0 auto}
+.sub-note{font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:1rem}
+
+/* Footer */
+footer{background:var(--navy-deep);color:rgba(255,255,255,0.6);text-align:center;padding:32px 16px;font-size:0.82rem}
+footer img{height:54px;margin:0 auto 14px;width:auto}
+footer .fline{margin-top:6px}
+
+/* Mobile sticky CTA */
+.mobile-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:99;padding:10px 12px;gap:8px;align-items:center;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 -4px 20px rgba(0,0,0,0.12);border-top:1px solid var(--line)}
+.mobile-cta .btn{flex:1;padding:13px 12px;font-size:0.82rem}
+.mobile-cta .cta-call{width:48px;height:48px;border-radius:8px;background:var(--navy);display:grid;place-items:center;flex-shrink:0}
+.mobile-cta .cta-call svg{width:20px;height:20px;fill:var(--accent)}
+
+@media (min-width:641px){
+  :root{--nav-h:64px}
+  .wrap{padding:0 24px}
+  section{padding:64px 0}
+  .nav-inner{height:64px;padding:0 24px;gap:12px}
+  .nav-logo{height:42px;max-width:none;flex-shrink:0}
+  .nav-phone-icon{display:none}
+  .nav-phone-text{display:flex;align-items:center;gap:6px;color:#fff;font-size:0.85rem;font-weight:600}
+  .nav-phone-text svg{width:16px;height:16px;fill:var(--accent)}
+  .nav-cta-mobile{display:none}
+  .nav-cta-desktop{display:inline-flex;background:var(--accent);color:var(--navy-deep);font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.03em;padding:11px 20px;border-radius:6px}
+  .hero{padding:calc(var(--nav-h) + 60px) 24px 72px}
+  .hero h1{font-size:2.9rem}
+  .hero-sub{font-size:1.1rem}
+  .btn{width:auto}
+  .proof-items{grid-template-columns:repeat(4,1fr);gap:20px}
+  .proof-num{font-size:1.6rem}
+  .mini-stats{grid-template-columns:repeat(4,1fr)}
+  .mini-stat{border-bottom:none}
+  .mini-stat:nth-child(2n){border-right:1px solid rgba(255,255,255,0.1)}
+  .mini-stat:last-child{border-right:none}
+  .mini-stat__num{font-size:1.5rem}
+  h2.sec{font-size:2rem}
+  .pain-title{font-size:1.9rem}
+  .pain-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:2.5rem;align-items:start}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .creds-bar{grid-template-columns:repeat(4,1fr)}
+  .cases{grid-template-columns:repeat(3,1fr)}
+  .founder-grid{grid-template-columns:0.8fr 1.2fr;gap:2.5rem}
+  .form-grid{grid-template-columns:0.85fr 1.15fr;gap:2.5rem}
+  .form-row-2{grid-template-columns:1fr 1fr;gap:1rem}
+  .mobile-cta{display:none}
+  body{padding-bottom:0}
+  .final h2{font-size:2.2rem}
+}
+@media (min-width:961px){
+  .wrap{padding:0 32px}
+  section{padding:80px 0}
+  .hero h1{font-size:3.3rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" aria-label="Business Exit Advisors home"><img class="nav-logo" src="https://myexitplan.com/wp-content/uploads/2025/02/BEA-Logo-980x980.png" alt="Business Exit Advisors"></a>
+    <div class="nav-right">
+      <a class="nav-phone-icon" href="tel:+15613888888" aria-label="Call Business Exit Advisors">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+      </a>
+      <a class="nav-phone-text" href="tel:+15613888888"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>(561) 388-8888</a>
+      <a class="nav-cta-mobile" href="#form">Free Consult</a>
+      <a class="nav-cta-desktop" href="#form">Book My Confidential Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- SECTION 1: HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="pre-headline">For Florida owners thinking about selling</span>
+    <h1>Sell your business confidentially, and <span class="gold">keep more of what you built</span>.</h1>
+    <div class="vsl">
+      <div class="vsl-frame">
+        <!-- VSL: Record a 3 to 5 min talking-head video where Joshua Sagman:
+          1. Names exactly who this is for: the Florida owner who knows they will sell one day but keeps putting it off
+          2. Calls out the #1 fear in their words: getting lowballed and leaving money on the table, and people finding out
+          3. Explains why the usual approaches fail: taking the first offer, listing publicly, asking the accountant
+          4. Introduces the Protect Your Proceeds approach: a confidential sale plus asset protection and tax planning so you keep more
+          5. Tells them exactly what to do next: fill out the form below to request a confidential consultation
+          Upload to YouTube (unlisted is fine) and replace this placeholder with the embed.
+        -->
+        <div class="vsl-inner">
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="vsl-label">Watch: a 3 minute walkthrough</span>
+        </div>
+      </div>
+    </div>
+    <p class="hero-sub">Most brokers chase the highest sale price, take their commission, and disappear the day the wire hits. We sell your business quietly, then coordinate the asset-protection and tax planning with the right specialists, so you protect more of what you walk away with.</p>
+    <a class="btn" href="#form">Book My Confidential Consultation</a>
+    <span class="risk">Free and completely confidential. No obligation.</span>
+  </div>
+</header>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="wrap">
+    <div class="proof-items">
+      <div><div class="proof-num">5.0</div><div class="proof-label">Google Rating</div></div>
+      <div><div class="proof-num">2018 &amp; 2019</div><div class="proof-label">Million Dollar Circle</div></div>
+      <div><div class="proof-num">16</div><div class="proof-label">Person Team</div></div>
+      <div><div class="proof-num">10</div><div class="proof-label">Florida Counties</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: PROBLEM AGITATION -->
+<section class="section-surface">
+  <div class="wrap">
+    <div class="pain-grid">
+      <div>
+        <span class="pre-label">Does this sound familiar?</span>
+        <h2 class="pain-title">"I left so much money on the table."</h2>
+        <ul class="pain-list">
+          <li>You know you will sell one day, but you keep putting it off because the timing never feels right.</li>
+          <li>A larger company or competitor sent an offer, and a part of you is afraid the number is far below what the business is worth.</li>
+          <li>You cannot list it publicly, because the moment your employees, customers, and competitors find out you are leaving, the value starts to slip.</li>
+          <li>You tried an online listing site and got buried under tire kickers who asked endless questions and then vanished.</li>
+          <li>You asked your accountant what it is worth and got a number you are not sure you can trust.</li>
+          <li>Quietly, you are not even sure what you would do with yourself the Monday after the business is gone.</li>
+        </ul>
+        <div class="bridge">None of this means you are not ready to sell. It means you have not had a team that handles the sale <strong>quietly</strong> and protects what you walk away with. That is the entire reason Business Exit Advisors exists.</div>
+      </div>
+      <div>
+        <ul class="founder-bullets" style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.4rem 1.4rem 1.4rem 1.4rem">
+          <li>Your staff and competitors never find out before you are ready.</li>
+          <li>One lowball offer becomes competing offers from vetted buyers.</li>
+          <li>Your proceeds are protected and tax planned before the wire hits.</li>
+          <li>You leave with a plan for what comes next, not just a check.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: SOLUTION INTRODUCTION -->
+<section>
+  <div class="wrap">
+    <span class="pre-headline">A different kind of brokerage</span>
+    <h2 class="sec">We protect your proceeds, not just your sale price.</h2>
+    <p class="lead">Selling it yourself, taking the first offer, or handing it to a volume brokerage all share the same blind spot. They obsess over the headline price and go silent the moment the deal closes, leaving you exposed to post-sale lawsuits, clawbacks, and a tax bill that quietly eats your payout.</p>
+    <p>Our approach starts before anything is public and continues long after closing. We build a confidential plan, run a quiet process so buyers compete instead of lowball, and coordinate asset-protection and tax planning with the right specialists. The question we answer is not only what you sell for. It is what you actually keep.</p>
+    <div class="mini-stats">
+      <div class="mini-stat"><div class="mini-stat__num">5.0</div><div class="mini-stat__label">Google Rated</div></div>
+      <div class="mini-stat"><div class="mini-stat__num">2018 &amp; 2019</div><div class="mini-stat__label">Million Dollar Circle</div></div>
+      <div class="mini-stat"><div class="mini-stat__num">12 step</div><div class="mini-stat__label">Proven Process</div></div>
+      <div class="mini-stat"><div class="mini-stat__num">Boca Raton</div><div class="mini-stat__label">Local Team</div></div>
+    </div>
+    <p class="result-highlight">Rated 5.0 on Google and recognized in the Business Brokers of Florida Million Dollar Circle in 2018 and 2019.</p>
+  </div>
+</section>
+
+<!-- SECTION 4: OFFER DETAIL -->
+<section class="section-surface">
+  <div class="wrap">
+    <span class="pre-headline">How it works</span>
+    <h2 class="sec">A quiet, protected sale in three moves.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg></div>
+        <div class="step__num">01</div>
+        <h3>Confidential plan</h3>
+        <p>We start with a private valuation and a discreet plan. Nothing goes public. Your team and competitors stay in the dark until you decide otherwise.</p>
+      </div>
+      <div class="step">
+        <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3M8 11c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3m0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5C15 14.2 10.3 13 8 13m8 0c-.3 0-.6 0-1 .1 1.2.8 2 1.9 2 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5"/></svg></div>
+        <div class="step__num">02</div>
+        <h3>Vetted buyers</h3>
+        <p>We market to qualified, screened buyers, sometimes from a buyer group we already have in hand, so one offer becomes several and the price moves in your favor.</p>
+      </div>
+      <div class="step">
+        <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="M9.2 12.2 11 14l4-4.2" fill="none"/></svg></div>
+        <div class="step__num">03</div>
+        <h3>Protected proceeds</h3>
+        <p>Before you sign, we coordinate tax and asset-protection planning with the right specialists, so your proceeds are structured to be protected, and we help you map what comes next.</p>
+      </div>
+    </div>
+    <ul class="incl">
+      <li>A confidential valuation so you know what your business is truly worth</li>
+      <li>A Confidential Information Memorandum that markets without exposing you</li>
+      <li>Buyer screening and negotiation handled by seasoned advisors</li>
+      <li>Asset-protection and tax planning coordinated with trusted specialists</li>
+      <li>A purposeful plan for life after the sale</li>
+    </ul>
+    <div class="timeline">Most confidential sales run 6 to 12 months from our first conversation to closing. Starting early is what gives you leverage and options.</div>
+    <div style="margin-top:1.6rem"><a class="btn" href="#form">Book My Confidential Consultation</a><span class="risk">Free and completely confidential. No obligation.</span></div>
+  </div>
+</section>
+
+<!-- TEAM STRIP -->
+<section style="padding-top:8px;padding-bottom:8px">
+  <div class="wrap">
+    <span class="pre-headline" style="text-align:center">A 16-person Boca Raton team behind your sale</span>
+    <div class="team-strip">
+      <div class="team-card"><img src="https://myexitplan.com/wp-content/uploads/2025/04/Nick-DiFrancesco.png" alt="Nick DiFrancesco, Business Exit Advisors broker" loading="lazy"><div class="nm">Nick DiFrancesco</div><div class="rl">Broker</div></div>
+      <div class="team-card"><img src="https://myexitplan.com/wp-content/uploads/2025/04/Danielle-Barcenas-Updated.png" alt="Danielle Barcenas, Managing Director at Business Exit Advisors" loading="lazy"><div class="nm">Danielle Barcenas</div><div class="rl">Managing Director</div></div>
+      <div class="team-card"><img src="https://myexitplan.com/wp-content/uploads/2025/04/Andy-Updated.png" alt="Andy Hecht, Franchising Director at Business Exit Advisors" loading="lazy"><div class="nm">Andy Hecht</div><div class="rl">Franchising Director</div></div>
+      <div class="team-card"><img src="https://myexitplan.com/wp-content/uploads/2025/04/Jaime-Altschul.png" alt="Jaime Altschul, Business Exit Advisors team" loading="lazy"><div class="nm">Jaime Altschul</div><div class="rl">Advisor</div></div>
+      <div class="team-card"><img src="https://myexitplan.com/wp-content/uploads/2025/02/8.png" alt="Business Exit Advisors team member" loading="lazy"><div class="nm">Our Team</div><div class="rl">Boca Raton, FL</div></div>
+      <div class="team-card"><img src="https://myexitplan.com/wp-content/uploads/2025/02/7.png" alt="Business Exit Advisors team member" loading="lazy"><div class="nm">Our Team</div><div class="rl">Boca Raton, FL</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: SOCIAL PROOF -->
+<section class="section-surface">
+  <div class="wrap">
+    <span class="pre-headline">What owners say</span>
+    <h2 class="sec">Rated 5.0 by the owners we have guided.</h2>
+    <div class="creds-bar">
+      <div><div class="cred-num">5.0</div><div class="cred-label">Google Rating</div></div>
+      <div><div class="cred-num">IBBA &amp; BBF</div><div class="cred-label">Members</div></div>
+      <div><div class="cred-num">2018 &amp; 2019</div><div class="cred-label">Million Dollar Circle</div></div>
+      <div><div class="cred-num">10</div><div class="cred-label">FL Counties Served</div></div>
+    </div>
+    <div class="cases">
+      <div class="case">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+        <p>"Working with Business Exit Advisors was one of the best business decisions my husband and I have made. The team was knowledgeable, responsive, and genuinely cared about helping me navigate the process. Josh and the entire staff made selling my business feel far less overwhelming than we expected."</p>
+        <p class="who">Judy Turton, Google review</p>
+      </div>
+      <div class="case">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+        <p>"Excellent service and top-tier advisory work. They are easily the best on the market. If you are on the fence or indecisive about which brokers to trust with your business, look no further. I went with Business Exit Advisors and do not regret it for a second."</p>
+        <p class="who">Jessie Garcia, Google review</p>
+      </div>
+      <div class="case">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+        <p>"Super knowledgeable team and extremely easy to work with. I appreciated the transparency and professionalism."</p>
+        <p class="who">Cedrick McNealy, Google review</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: FOUNDER -->
+<section>
+  <div class="wrap">
+    <div class="founder-grid">
+      <div class="founder-img"><img src="https://myexitplan.com/wp-content/uploads/2025/02/josh.png" alt="Joshua D. Sagman, Founder and Managing Partner of Business Exit Advisors" loading="lazy"></div>
+      <div>
+        <span class="pre-headline">Meet our founder</span>
+        <h2 class="sec">Joshua D. Sagman</h2>
+        <p>Josh built Business Exit Advisors around the part of a sale most brokers ignore: what happens after the deal closes. His view is simple. Anyone can chase a number. Protecting what you walk away with is the real job. He and his team treat your sale as the life event it is, not a transaction to push through.</p>
+        <ul class="founder-bullets">
+          <li>Founder and Managing Partner, Business Exit Advisors</li>
+          <li>Co-author of "Insider Secrets to Selling Your Business"</li>
+          <li>Business Brokers of Florida Million Dollar Circle, 2018 and 2019</li>
+          <li>Member of the IBBA and the Business Brokers of Florida</li>
+          <li>Serving owners across 10 Florida counties, in English and Spanish</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: LEAD FILTER FORM -->
+<section id="form" class="section-surface">
+  <div class="wrap">
+    <div class="form-grid">
+      <div class="form-aside">
+        <span class="pre-headline">Request your consultation</span>
+        <h3>A private conversation about your exit.</h3>
+        <p>Tell us a little about your business. In your confidential consultation we will give you an honest read on what it could sell for, how to keep it quiet, and how to protect your proceeds.</p>
+        <ul>
+          <li>A confidential, no-pressure conversation</li>
+          <li>An honest view of what your business could be worth</li>
+          <li>A clear next step, whether you sell now or later</li>
+        </ul>
+        <div class="book-img"><img src="https://myexitplan.com/wp-content/uploads/2025/02/Book-Cover-1.png" alt="Insider Secrets to Selling Your Business, by Joshua D. Sagman" loading="lazy"></div>
+      </div>
+      <div class="form-box">
+        <h3>Book My Confidential Consultation</h3>
+        <p class="form-sub">Takes less than 60 seconds. We respond within 1 business day.</p>
+        <!--
+          FORMSPREE SETUP (Arthur to complete before sending traffic):
+          1. Go to formspree.io and create a free account
+          2. Create a new form and copy the form ID (e.g. "xabcdefg")
+          3. Replace REPLACE-WITH-FORM-ID below with that ID
+          Submissions will be emailed to you automatically.
+        -->
+        <form action="https://formspree.io/f/REPLACE-WITH-FORM-ID" method="POST">
+          <div class="form-row-2">
+            <div>
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+
+          <label for="revenue">Approximate annual revenue</label>
+          <select id="revenue" name="annual_revenue" required>
+            <option value="">Select one</option>
+            <option>Under $500,000</option>
+            <option>$500,000 to $1 million</option>
+            <option>$1 million to $3 million</option>
+            <option>$3 million to $10 million</option>
+            <option>Over $10 million</option>
+            <option>Not sure yet</option>
+          </select>
+
+          <label for="timeline">How soon are you thinking about selling?</label>
+          <select id="timeline" name="timeline" required>
+            <option value="">Select one</option>
+            <option>As soon as possible</option>
+            <option>Within 6 to 12 months</option>
+            <option>In 1 to 3 years</option>
+            <option>Just exploring for now</option>
+          </select>
+
+          <label for="reason">What is prompting you to consider selling?</label>
+          <select id="reason" name="reason" required>
+            <option value="">Select one</option>
+            <option>Retirement</option>
+            <option>Burnout, ready to step back</option>
+            <option>I received an offer</option>
+            <option>Health or family</option>
+            <option>I want to start something new</option>
+            <option>Other</option>
+          </select>
+
+          <label for="concern">What worries you most about selling?</label>
+          <textarea id="concern" name="biggest_concern" placeholder="Getting a fair price, keeping it confidential, protecting my proceeds, what I will do next..."></textarea>
+
+          <button type="submit" class="btn">Book My Confidential Consultation</button>
+          <p class="privacy">No spam. No obligation. Your information is kept strictly confidential.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: FAQ -->
+<section>
+  <div class="wrap">
+    <span class="pre-headline">Honest answers</span>
+    <h2 class="sec">Questions owners ask us first.</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-btn">Honestly, why should I trust a business broker?</button>
+        <div class="faq-answer">It is a fair question, and plenty of owners have been burned. The difference is in how we are built. We sell confidentially, we explain our fees plainly before you sign anything, and our work does not end at the closing table, because we also protect your proceeds afterward. Owners rate us 5.0 on Google and we were recognized in the Business Brokers of Florida Million Dollar Circle in 2018 and 2019. Start with a free, no-pressure conversation and judge for yourself.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">How do you keep the sale confidential?</button>
+        <div class="faq-answer">Confidentiality is the center of how we work, not a footnote. Nothing about your business goes public without your say. We market through a blind profile, screen buyers, and require non-disclosure agreements before any sensitive detail is shared. In many cases we already have vetted buyers in hand, so a sale can happen quietly off-market. Your employees, customers, and competitors do not find out before you are ready.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Is the commission really worth it versus selling it myself?</button>
+        <div class="faq-answer">Owners who sell on their own often take the first offer, get buried in unqualified buyers, or accidentally tip off their staff. A real process turns one offer into competing offers, and protecting your proceeds with proper tax and asset planning frequently saves more than the fee itself. We will walk you through exactly how we are paid in your first conversation, with no surprises.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">What does protecting my proceeds actually mean?</button>
+        <div class="faq-answer">After a sale there is a window where you can be exposed to lawsuits and clawbacks, and a large unprotected lump sum can be eaten by taxes. Before you sign, we coordinate the tax and asset-protection planning with the right specialists, so your proceeds are structured to be protected and efficient. Most brokers never raise this. It is the heart of what we do.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">I am not even sure what I would do after I sell. Is it too early to talk?</button>
+        <div class="faq-answer">No, this is exactly the right time. The hardest part of selling is rarely the deal, it is the Monday after. We help you map a purposeful path forward before you exit, so you are walking toward something, not away from everything. There is no obligation to sell to have the conversation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Find out what your business is worth, quietly.</h2>
+    <p>One confidential conversation. An honest read on your value, your options, and how to keep more of what you built. Whether you sell this year or in three, the owners who start early are the ones with leverage.</p>
+    <a class="btn" href="#form">Book My Confidential Consultation</a>
+    <p class="sub-note">Rated 5.0 on Google and recognized in the Business Brokers of Florida Million Dollar Circle in 2018 and 2019.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://myexitplan.com/wp-content/uploads/2025/02/BEA-Logo-480x480.png" alt="Business Exit Advisors">
+  <div>Business Exit Advisors, LLC. 6830 N. Federal Hwy, Boca Raton, FL 33487. (561) 388-8888</div>
+  <div class="fline">Copyright 2026 Business Exit Advisors. Our business is selling your business.</div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta">
+  <a class="cta-call" href="tel:+15613888888" aria-label="Call Business Exit Advisors"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg></a>
+  <a class="btn" href="#form">Book My Confidential Consultation</a>
+</div>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+    if(!isOpen) item.classList.add('open');
+  });
+});
+// Hide sticky CTA when the form is visible
+(function(){
+  var mc = document.querySelector('.mobile-cta');
+  if(!mc) return;
+  var form = document.getElementById('form');
+  if(!form) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      mc.style.transition = 'transform 0.3s ease';
+      mc.style.transform = e.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+    });
+  }, {threshold:0.1});
+  io.observe(form);
+})();
+</script>
+</body>
+</html>
