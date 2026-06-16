@@ -456,10 +456,12 @@ footer .fline{margin-top:6px}
           FORMSPREE SETUP (Arthur to complete before sending traffic):
           1. Go to formspree.io and create a free account
           2. Create a new form and copy the form ID (e.g. "xabcdefg")
-          3. Replace REPLACE-WITH-FORM-ID below with that ID
-          Submissions will be emailed to you automatically.
+          3. Replace REPLACE-WITH-FORM-ID below with that ID (in the form action)
+          Submissions are emailed to you, and the form redirects to the thank-you page automatically.
         -->
         <form action="https://formspree.io/f/REPLACE-WITH-FORM-ID" method="POST">
+          <input type="hidden" name="_next" value="https://preview.relightmarketing.com/business-exit-advisors/landing-page/thank-you/">
+          <input type="hidden" name="_subject" value="New confidential consultation request - Business Exit Advisors">
           <div class="form-row-2">
             <div>
               <label for="name">Full name</label>
