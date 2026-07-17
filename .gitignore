@@ -27,3 +27,25 @@ __pycache__/
 .env
 .env.local
 .env.*.local
+
+# ---------------------------------------------------------------------------
+# D100 INTERNAL WORKING DATA — never publish (public GitHub Pages repo).
+# These hold research briefs, scraped data, the target list, and sales strategy.
+# See efficiency-audit-2026-07-17.md (Priority 0).
+# ---------------------------------------------------------------------------
+# Numbered internal prospect dirs: Output/{N}-{slug}/  (public dirs are {slug}/)
+/[0-9]*-*/
+# Retired prospects.
+/archive/
+# Outbound target list.
+/prospects.csv
+
+# Internal artifacts, in case one ever lands inside a public {slug}/ dir.
+*-scraped-data.json
+*-asset-inventory.json
+pitch-content.json
+loom-url.txt
+live-pages.md
+scraper-run.log
+*.log
+intake.json
