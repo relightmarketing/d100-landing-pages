@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+  <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Mens: Your Complete Meta Ads Funnel by Relight</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -942,7 +943,19 @@ footer{text-align:center;padding:32px 24px;font-size:0.8rem;color:var(--sub2);bo
       <p>The funnel is built. The scripts are ready. The landing page is live. Pick a time below and we will spend 30 minutes walking through it together, answering your questions, and deciding whether to run it.</p>
     </div>
     <div class="calendly-wrap">
-      <iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Book a call with Relight Marketing"></iframe>
+      <div style="width:100%;height:720px;overflow:auto" id="my-cal-inline-30min"></div>
+<script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.eu/embed/embed.js", "init");
+      Cal("init", "30min", {origin:"https://app.cal.eu"});
+      Cal.config = Cal.config || {};
+      Cal.config.forwardQueryParams = true;
+      Cal.ns["30min"]("inline", {
+        elementOrSelector:"#my-cal-inline-30min",
+        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+        calLink: "arthur-vandelaer/30min",
+      });
+      Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
     </div>
   </div>
 </section>

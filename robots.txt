@@ -1,0 +1,13 @@
+# preview.relightmarketing.com
+#
+# Prospect-pitchpagina's en landingspagina-previews. Elke map is
+# vernoemd naar een echt bedrijf. Niets hier hoort in een zoekmachine.
+#
+# Twee lagen, met opzet:
+#   1. Dit bestand — houdt crawlers weg van de hele host
+#   2. <meta name="robots" content="noindex, nofollow"> op elke pagina —
+#      vangt het geval waarin een crawler hier toch komt via een externe
+#      link, want een disallow alleen voorkomt geen indexering.
+
+User-agent: *
+Disallow: /

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KORA HR - Your Complete Ad Funnel by Relight Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -756,7 +757,19 @@ a{text-decoration:none;color:inherit}
     <h2 class="dm" style="font-size:clamp(2rem,3.5vw,3.25rem);margin-top:12px">Let's get this ad funnel live ASAP.</h2>
     <p style="color:var(--sub);max-width:560px;margin:16px auto 0;font-size:.95rem">Everything on this page is built for KORA HR and ready to launch. The only step left is a 30-minute conversation to walk through it together. Pick a time below.</p>
     <div class="calendly-wrap">
-      <iframe src="https://calendly.com/arthur-relightmarketing/30min" title="Book a call with Arthur"></iframe>
+      <div style="width:100%;height:720px;overflow:auto" id="my-cal-inline-30min"></div>
+<script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.eu/embed/embed.js", "init");
+      Cal("init", "30min", {origin:"https://app.cal.eu"});
+      Cal.config = Cal.config || {};
+      Cal.config.forwardQueryParams = true;
+      Cal.ns["30min"]("inline", {
+        elementOrSelector:"#my-cal-inline-30min",
+        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+        calLink: "arthur-vandelaer/30min",
+      });
+      Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
     </div>
   </div>
 </section>
